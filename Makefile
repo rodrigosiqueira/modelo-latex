@@ -1,6 +1,6 @@
 # makefile para a compilacao do documento
 
-BASE_NAME := tese-exemplo
+BASE_NAME := tese-siqueira
 
 LATEX := pdflatex
 #LATEX := lualatex

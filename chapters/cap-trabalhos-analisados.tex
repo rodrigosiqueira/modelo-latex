@@ -1,0 +1,243 @@
+\chapter{Trabalhos Analisados}
+\label{cap:trabalhos-analisados}
+
+\section{Implementação Estrutural Leve}
+
+\subsection{Dune}
+
+\subsection{Shreds}
+
+\section{Implementação Estrutural Pesada}
+
+\subsection{Nooks}
+% deixar claro que tudo isso é no nível do kernel
+\cite{nooks} conduziram uma pesquisa motivada pela busca por
+adicionar mais confiabilidade e resiliência aos SOs de produção. O principal
+problema que os autores buscam resolver são as constantes falhas geradas pela
+expansão dos SOs por meio dos programas que controlam um dispositivo, também
+conhecido com \emph{modules} ou \emph{device drivers} (Seção \ref{sec:dd}). O
+artigo apresenta diversas evidências relacionadas as falhas geradas pelos
+pelas extensões feitas nos SOs e sugere uma nova abordagem chamada
+\emph{Nooks}.
+
+\emph{Nooks} é uma nova camada que se interpõe entre o Kernel e as extensões.
+Essa camada comporta-se como um subsistema responsável por tratar as operações
+passadas via kernel para os módulos e vice-versa; o controle feito sobre cada
+parte representa uma camada a mais de verificação que adiciona mais segurança e
+confiabilidade para o SO. Para fornecer a separação e controle dentro do SO, o
+\emph{Nooks} apresenta o conceito de \emph{lightweight kernel protection
+domain} (LKPD). Esta abstração permite isolar partes da memória no nível do
+Kernel e
+atribuir diferentes permissões de leitura e escrita para a região. Note que
+todo o controle entre as regiões de memória e a comunicação entre o kernel com
+as extensões ocorre no domínio do kernel, não tendo relação direta com o
+userspace.
+
+O projeto do \emph{Nooks} foi totalmente guiado por dois princípios
+fundamentais:
+\begin{enumerate}
+	\item \emph{Nooks} deve ser resistente a falhas e não tolerante a falhas;
+	\item \emph{Nooks} deve ser projetado para evitar erros e não para evitar
+				abusos.
+\end{enumerate}
+Esses dois princípios são importantes para deixar claro a área de atuação desta
+técnica e para guiar os três objetivos princípais que o \emph{Nooks} busca
+atender:
+\begin{enumerate}
+	\item \textbf{Isolamento:} \emph{Nooks} precisa ser capaz de isolar as
+				extensões presentes no Kernel de forma a evitar falhas, consequentemente
+				ele precisa ser capaz de detectar falhas antes que outras partes do
+				SO sejam afetadas;
+	\item \textbf{Recuperação:} A arquitetura precisa dar suporte para a
+				recuperação da aplicação em caso de falhas;
+	\item \textbf{Compatibilidade com versões anteriores:} \emph{Nooks} deve ser
+				compatível com as extensões já existentes e usadas.
+\end{enumerate}
+
+% TODO: FIGURA
+
+A Figura X ilustra de forma geral a arquitetura do \emph{Nooks}. Note precisa
+passar pelo \emph{Nooks} para se comunicar com as extensões e vice-versa. Esse
+intermédio é conduzido pelo \emph{Nooks Isolation Manager (NIM)} que é o
+responsável por implementar os objetivos do projeto. O \emph{Nooks} precisa
+estender-se em parte para o Kernel e em parte para as extensões. No Kernel, é
+preciso alterar aquelas funções que são disponibilizadas para as extensões ou
+que interagem com os módulos. Felizmente, este tipo de função pode ser
+detectada por algum padrão que por sua vez pode ser abstraído para um script e
+este tipo de modificação precisa ser feita uma única vez. Do ponto de vista dos
+módulos, no geral, são poucos os casos que precisam ser alterados diretamente
+uma vez que este faz uso dos recursos fornecido pelo Kernel. Normamente,
+módulos que exportam estruturas de dados próprias e que são exportáveis para o
+Kernel precisam ser alteradas.
+
+O \emph{Nooks} fornece isolamento por meio do LKPD uma vez que toda extensão
+adicionada ao SO executa dentro do seu próprio LKPD que por sua vez é chamado
+de \emph{contexto de execução}. Os domínios utilizam o mesmo nível de proteção
+fornecido pelo processador para o Kernel, com a diferença de que o acesso de
+escrita para certas porções é limitada e gerenciada pelo \emph{NIM}. Neste
+sentido, podemos dividir o esquema de isolamento do \emph{Nooks} em duas partes:
+o gerenciador de memória e o Extension Procedure Call (XPC).
+
+% TODO: FIGURA
+
+O gerenciador de memória do \emph{Nooks} é responsável por alocar, desalocar e
+manipular os LKPD. A Figura X ilustra o kernel address space, note que o Kernel
+tem permissão de escrita e leitura sobre toda a memória, mas os LKPD mostrados
+só tem acesso de leitura e escrita a si mesmo. A leitura de outras regiões de
+memória de dentro de um LKPD depende do controle de acesso feito pelo NIM, mas
+no geral só é permitido a leitura de outras regiões da memória.
+
+O outro mecânismo de isolamento fornecido pelo \emph{Nooks} é o XPC, este atua
+como um serviço de transferência de controle criado para isolar as operações
+feitas dentro do Kernel. A transferência de controle pode acontecer em duas
+vias: do Kernel para a extensão (\texttt{nooks\_driver\_call}) e da extensão
+para o Kernel (\texttt{nooks\_kernel\_call}). Basicamente essas funções esperam
+três argumentos: um ponteiro para a função que será executada, uma lista de
+argumentos e o domínio em que será executada. Toda vez que a rotina de
+transferência é chamada o contexto da stack que realizou a chamada é salva e o
+\emph{Page Table} para o novo domínio alvo é carregado.
+
+Um dos objetivos do \emph{Nooks} é o de ser usado em SO de produção, para isto
+ele tem uma preocupação direta em se integrar com o SO de forma a causar o
+menor impacto possível nas extensões. Por isto, o \emph{Nooks} isola as
+extensões com o XPC e também implementa um mecânismo de rastreamento de
+estruturas de dados chamado \emph{object-tracking} (parte do \emph{NIM}). O
+\emph{object-tracking} tem três recursos básicos: manter uma lista de
+estruturas de dados do Kernel que são manipulados por uma extensão, controlar
+todas as modificações para estas extensões e fornecer informações de objetos
+para limpeza de dados quando a extensão falhar. O rastreamento dos objetos
+começa com o armazenamento de todos os objetos em uso por uma extensão e em
+seguida é feita uma associação entre o Kernel e as versões das extensões.
+
+Por fim, o \emph{Nooks} possuí um mecânismo de recuperação que busca detectar
+falhas de software quando uma extensão é chamada de forma inapropriada ou se
+uma extensão está consumindo muitos recursos. A estratégia de recuperação é
+subdividida em duas partes: \emph{recovery management} e \emph{user-mode
+agent}. O primeiro é responsável por desalocar recursos e se necessário
+realocar novamente os mesmos. O segundo é quem coordena a ação de recuperação e
+é definida no espaço de usuário. Note que a flexibilidade do \emph{agent-mode}
+permite várias possíveis formas de recuperação, sendo a mais direta forçar a
+remoção da extensão, seguida da reinserção e em seguida prosseguindo com a
+execução da aplicação.
+
+O \emph{Nooks} utilizou uma base de dados de inserção de falhas em módulos para
+validadar a sua eficácia, conseguindo tratar 99\% dos casos. Além disto, os
+autores também validaram o trabalho da perspectiva do desempenho e notaram que
+na maioria dos casos os gastos com a estrutura são compensado pelas vantagens.
+
+\subsection{Mondrian Memory Protection e Mondrix}
+
+\cite{mmp} buscaram explorar técnicas para realizar controle fino sobre da
+memória, com o objetivo de adicionar mais confiabilidade e segurança para os
+SOs. Os autores discutem os problemas associados com a decisão de se promover
+isolamento por meio da separação do espaço de endereçamento dos processos, que
+por sua vez faz com que todas as \emph{threads} de um processo compartilhe um
+mesmo domínio de proteção. Além disto o modelo de paginação adotado tem como
+menor nível de controle sobre a memória definido pelo tamanho da página, logo,
+o menor compartilhamento possível é o de uma página que tem o mesmo nível de
+permissão para todos os elementos contido nela. Os autores argumentam que
+apesar das vantagem oferecidas pelo modelo atual, muitos problemas de segurança
+e estabilidade do sistema são comprometidos. Dois exemplos são apontados pelos
+autores, o primeiro ilustra o caso do Servido Apache que pode carregar multiplos
+plugins externos, contudo, se algum código malicioso ou defeituoso for carregado
+este comprometerá toda a estabilidade do servidor (em alguns casos quebrando
+a aplicação). Outro exemplo refere-se ao acesso de ponteiros em outros domínios
+da memória (por exemplo, acesso do espaço de usuário para o do Kernel) que
+atualmente não são permitidos sendo necessário realizar operações de cópias.
+
+% TODO: Figura Y
+
+Os autores defendem que mecânismos de controle fino do acesso à memória podem
+trazer grandes benefícios em termos de segurança, confiábilidade e em certos
+casos ganho de desempenho. Nesse sentido \cite{mmp} propuseram uma abordagem
+que permite o controle de acesso da memória no nível do tamanho das palavras de
+dado, para isto é apresentando um novo tipo de abordagem baseada em hardware e
+software chamada de \emph{Mondrian Memory Protection (MMP)}~\citep{mmp}. Além
+disto uma implementação prática chamada de \emph{Mondrix}~\cite{mondrix} foi
+feita no GNU/Linux. A Figura Y, resume a representação de memória que o MMP
+busca atingir, repare que não existem porções de memória específica; note que a
+memória é dividida em diversos compartimentos chamados de \emph{Protection
+Domain (PD)}. Um PD é definido como um contexto que determina a permissão para
+executar um código. Cada PD é independente do espaço de endereçamento; cada PD
+pode conter múltiplas threads, mas cada thread só pode pertencer a um único PD.
+O projeto do MMP é guiado por três requisitos:
+
+\begin{enumerate}
+	\item \textbf{Diferente}: Cada PD diferente pode ter um domínio deferente
+				para a mesma região de memória;
+	\item \textbf{Pequeno}: A granularidade de compartilhamento deve ser menor
+				do que uma página;
+	\item \textbf{Revogável}: Um PD é dono da sua própria região de memória e
+				pode mudar a forma como outros domínios veem a sua memória.
+\end{enumerate}
+
+% TODO: FIGURA K
+
+Os autores afirmam que o MMP tem a semântica da segmentação sem os problemas. O
+MMP fornece controle fino sobre a proteção dos dados compartilhados, utiliza
+endereçamento linear, é compátivel com \emph{ISA} existentes, não necessita de
+registradores de segmentos, possui um mecânismo simples de revogação de
+permissões e não tem ponteiros marcados. A Figura K mostra o comparativo entre
+a abordagem utilizando segmentos e o MMP. Para que o MMP possa garantir o
+controle de acesso à memória este precisa verificar as permissões de acesso
+feitas por cada operação de \emph{load/store}, isto claramente consome mais
+recursos computacionais. Por isto o MMP é uma solução que também depende da
+utilização de um hardware personalizado.
+
+% TODO: FIGURA G
+
+A Figura G ilustra a arquitetura de hardware proposta para a implementação do
+MMP, note que ela introduz muitos elementos novos. %TODO: Descrever o hardware
+
+Da perpectiva do Software, o Mondrix \citep{mondrix} sugere a utilização de um
+novo elemento chamado de Supervisor de Memória, este é dividido em duas partes:
+parte superior responsável pelo controle do acesso; parte inferior responsável
+por escrever nas tabelas de permissão. A parte superior é a mais importante,
+sendo responsável por manter e controlar as políticas, interface com o Kernel,
+rastrear objetos compartilhados e implementar grupos de permissão. As
+definições de permissão da memória é descrita por três elementos:
+\begin{enumerate}
+	\item \emph{Permissão de Acesso}: As permissões de acesso são definidas pelo
+				seguinte conjunto de elementos: permissão do domínio, gates, tabela de
+				stack;
+	\item \emph{Dono da Memória}: Define quem tem autoridade sobre a região de
+				memória (domínio). Note que o espaço de endereçamento é contínuo e sem
+				sobreposição, logo, cada região tem apenas um dono;
+	\item \emph{Permissões Exportadas}: É possível exportar as permissões de
+				acesso, isto é feito para permitir que outras regiões chamem códigos
+				fora do seu domínio. Contudo a exportação pode ser controlada de forma
+				que outros trechos que acessem o código, tenham uma visão limitada da
+				região.
+\end{enumerate}
+Dado esses elementos, o Supervisor de memória atual tomando as decisões
+referentes ao acesso a uma dada região da memória.
+
+Um aspecto interessante de se notar do Supervisor de Memória é a sua separação
+lógica do alocador de memória. O Mondrix permite que o Kernel escolha qual
+alocador de memória deseja utilizar, isto é possível pois um domínio solicita
+memória para o alocador e o Supervisor só estabelece as permissões para a
+memória solicitada.
+% Gosto muito dessa ideia de separar o alocador do controlador de acesso à
+% memória, na minha opinião em termos práticas essa é uma das ideias mais
+% valiosas desse trabalho.
+
+O Supervisor também é responsável por revogar permissões quando uma região de
+memória é liberada, além de manter o rastreamento de qual domínio tem acesso a
+qual região de memória. O Supervisor também gerencia o acesso a \emph{stack}
+das \emph{threads} (uma \emph{thread} só pode controlar \emph{stacks} que estão
+no seu domínio), cria e destrói proteções de domínio e também valida as
+políticas de acesso.
+
+\subsection{Light-weight Contexts}
+
+\subsection{SpaceJMP}
+
+\subsection{Resource Containers}
+
+\section{Implementação Independente}
+
+\subsection{Exokernel}
+
+\subsection{Singularity}
+
+\subsection{Corey}
