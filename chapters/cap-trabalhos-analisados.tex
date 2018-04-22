@@ -16,7 +16,7 @@ adicionar mais confiabilidade e resiliência aos SOs de produção. O principal
 problema que os autores buscam resolver são as constantes falhas geradas pela
 expansão dos SOs por meio dos programas que controlam um dispositivo, também
 conhecido com \emph{modules} ou \emph{device drivers} (Seção \ref{sec:dd}). O
-artigo apresenta diversas evidências relacionadas as falhas geradas pelos
+artigo apresenta diversas evidências relacionadas as falhas geradas
 pelas extensões feitas nos SOs e sugere uma nova abordagem chamada
 \emph{Nooks}.
 
@@ -27,11 +27,10 @@ parte representa uma camada a mais de verificação que adiciona mais segurança
 confiabilidade para o SO. Para fornecer a separação e controle dentro do SO, o
 \emph{Nooks} apresenta o conceito de \emph{lightweight kernel protection
 domain} (LKPD). Esta abstração permite isolar partes da memória no nível do
-Kernel e
-atribuir diferentes permissões de leitura e escrita para a região. Note que
-todo o controle entre as regiões de memória e a comunicação entre o kernel com
-as extensões ocorre no domínio do kernel, não tendo relação direta com o
-userspace.
+Kernel e atribuir diferentes permissões de leitura e escrita para a região.
+Note que todo o controle entre as regiões de memória e a comunicação entre o
+kernel com as extensões ocorre no domínio do kernel, não tendo relação direta
+com o \emph{userspace}.
 
 O projeto do \emph{Nooks} foi totalmente guiado por dois princípios
 fundamentais:
@@ -56,19 +55,19 @@ atender:
 
 % TODO: FIGURA
 
-A Figura X ilustra de forma geral a arquitetura do \emph{Nooks}. Note precisa
-passar pelo \emph{Nooks} para se comunicar com as extensões e vice-versa. Esse
-intermédio é conduzido pelo \emph{Nooks Isolation Manager (NIM)} que é o
-responsável por implementar os objetivos do projeto. O \emph{Nooks} precisa
-estender-se em parte para o Kernel e em parte para as extensões. No Kernel, é
-preciso alterar aquelas funções que são disponibilizadas para as extensões ou
-que interagem com os módulos. Felizmente, este tipo de função pode ser
-detectada por algum padrão que por sua vez pode ser abstraído para um script e
-este tipo de modificação precisa ser feita uma única vez. Do ponto de vista dos
-módulos, no geral, são poucos os casos que precisam ser alterados diretamente
-uma vez que este faz uso dos recursos fornecido pelo Kernel. Normamente,
-módulos que exportam estruturas de dados próprias e que são exportáveis para o
-Kernel precisam ser alteradas.
+A Figura X ilustra de forma geral a arquitetura do \emph{Nooks}. Note que o
+"diálogo" entre o Kernel e as extensões (vice-versa) precisam passar pelo
+\emph{Nooks}. Esse intermédio é conduzido pelo \emph{Nooks Isolation Manager
+(NIM)} que é o responsável por implementar os objetivos do projeto. O
+\emph{Nooks} precisa estender-se em parte para o Kernel e em parte para as
+extensões. No Kernel, é preciso alterar aquelas funções que são
+disponibilizadas para as extensões ou que interagem com os módulos. Felizmente,
+este tipo de função pode ser detectada por algum padrão que por sua vez pode
+ser abstraído para um \emph{script} e este tipo de modificação precisa ser
+feita uma única vez. Do ponto de vista dos módulos, no geral, são poucos os
+casos que precisam ser alterados diretamente uma vez que este faz uso dos
+recursos fornecido pelo Kernel. Normamente, módulos que exportam estruturas de
+dados próprias e que são exportáveis para o Kernel precisam ser alteradas.
 
 O \emph{Nooks} fornece isolamento por meio do LKPD uma vez que toda extensão
 adicionada ao SO executa dentro do seu próprio LKPD que por sua vez é chamado
@@ -76,7 +75,7 @@ de \emph{contexto de execução}. Os domínios utilizam o mesmo nível de prote�
 fornecido pelo processador para o Kernel, com a diferença de que o acesso de
 escrita para certas porções é limitada e gerenciada pelo \emph{NIM}. Neste
 sentido, podemos dividir o esquema de isolamento do \emph{Nooks} em duas partes:
-o gerenciador de memória e o Extension Procedure Call (XPC).
+o gerenciador de memória e o \emph{Extension Procedure Call} (XPC).
 
 % TODO: FIGURA
 
@@ -131,19 +130,20 @@ na maioria dos casos os gastos com a estrutura são compensado pelas vantagens.
 memória, com o objetivo de adicionar mais confiabilidade e segurança para os
 SOs. Os autores discutem os problemas associados com a decisão de se promover
 isolamento por meio da separação do espaço de endereçamento dos processos, que
-por sua vez faz com que todas as \emph{threads} de um processo compartilhe um
+por sua vez faz com que todas as \emph{threads} de um processo compartilhem um
 mesmo domínio de proteção. Além disto o modelo de paginação adotado tem como
 menor nível de controle sobre a memória definido pelo tamanho da página, logo,
 o menor compartilhamento possível é o de uma página que tem o mesmo nível de
 permissão para todos os elementos contido nela. Os autores argumentam que
 apesar das vantagem oferecidas pelo modelo atual, muitos problemas de segurança
 e estabilidade do sistema são comprometidos. Dois exemplos são apontados pelos
-autores, o primeiro ilustra o caso do Servido Apache que pode carregar multiplos
-plugins externos, contudo, se algum código malicioso ou defeituoso for carregado
-este comprometerá toda a estabilidade do servidor (em alguns casos quebrando
-a aplicação). Outro exemplo refere-se ao acesso de ponteiros em outros domínios
-da memória (por exemplo, acesso do espaço de usuário para o do Kernel) que
-atualmente não são permitidos sendo necessário realizar operações de cópias.
+autores, o primeiro ilustra o caso do Servido Apache que pode carregar
+multiplos plugins externos, contudo, se algum código malicioso ou defeituoso
+for carregado este comprometerá toda a estabilidade do servidor (em alguns
+casos quebrando a aplicação). Outro exemplo refere-se ao acesso de ponteiros em
+outros domínios da memória (por exemplo, acesso do espaço de usuário para o do
+Kernel) que atualmente não são permitidos sendo necessário realizar operações
+de cópias.
 
 % TODO: Figura Y
 
@@ -198,8 +198,8 @@ rastrear objetos compartilhados e implementar grupos de permissão. As
 definições de permissão da memória é descrita por três elementos:
 \begin{enumerate}
 	\item \emph{Permissão de Acesso}: As permissões de acesso são definidas pelo
-				seguinte conjunto de elementos: permissão do domínio, gates, tabela de
-				stack;
+				seguinte conjunto de elementos: permissão do domínio, \emph{gates},
+        tabela de \emph{stack};
 	\item \emph{Dono da Memória}: Define quem tem autoridade sobre a região de
 				memória (domínio). Note que o espaço de endereçamento é contínuo e sem
 				sobreposição, logo, cada região tem apenas um dono;
@@ -223,7 +223,7 @@ memória solicitada.
 
 O Supervisor também é responsável por revogar permissões quando uma região de
 memória é liberada, além de manter o rastreamento de qual domínio tem acesso a
-qual região de memória. O Supervisor também gerencia o acesso a \emph{stack}
+qual região de memória. O Supervisor também gerência o acesso a \emph{stack}
 das \emph{threads} (uma \emph{thread} só pode controlar \emph{stacks} que estão
 no seu domínio), cria e destrói proteções de domínio e também valida as
 políticas de acesso.
@@ -237,6 +237,102 @@ políticas de acesso.
 \section{Implementação Independente}
 
 \subsection{Exokernel}
+
+\cite{exokernel} defendem que os projetos de SOs possuem uma série de
+desvantagens por terem várias abstrações diretamente programada no núcleo. Os
+autores argumentam que as abstrações implementadas diretamente no SO possuem
+sérios impactos no desempenho, reduz considerávelmente a flexibilidade das
+aplicações e reduz as possibilidades de ampliar as funcionalidade
+disponibilizadas no espaço do usuário. A implementação dessas abstrações
+diretamenta no núcleo do SO são problemática uma vez que: impedem a aplicação
+de tirar proveito das otimizações que são específcas do seu domínio, as
+mudanças em tais abstrações são desencorajadas e reduzem as possibilidade do
+que pode ser feito no espaço de usuário.
+
+Segundo os autores, a fixação das abstrações de alto-nível apresentam as
+seguintes limitações:
+\begin{itemize}
+  \item A degradação do desempenho ocorre uma vez que atender ao maior número
+        de aplicações possível com a mesma abstração tem um custo
+        computacional. Por exemplo, algumas aplicações podem sofrer com o
+        \emph{overhead} gerado por outras camadas de abstrações na qual não
+        precisa;
+  \item As informações de utilização de recursos são escondidas das aplicações,
+        isto dificulta a aplicação ter controle sobre os recuros utilizados;
+  \item As aplicações ficam limitadas a utilizar apenas aquelas interfaces
+        padrão fornecidade pelo SO.
+\end{itemize}
+Por fim, com esses problemas em mente e motivados pela antiga observação de que:
+quanto mais baixo o nível das primitivas (simples), mais eficiêntemente ela
+pode ser implementada e maior a amplitude de ação fornecida para abstrações de
+alto-nível; os propuseram uma nova arquitetura de SO chamada \emph{exokernel}.
+
+\emph{Exokernel} busca ser um núcleo mínimo que permita multiplexar de forma
+segura os recursos de hardware e ao mesmo tempo fornecer uma interface de
+baixo-nível na qual as abstrações do SO podem ser construída sobre ela. Para que
+seja possível implementar um SO usando este conceito é preciso implementar a
+chamada biblioteca do SO com acesso aos recursos de baixo nível e com as
+abstrações construídas nela (e.g. processos, arquivos, escalonador, etc). Para
+que a implementação de tal conceito seja possível, os autores os seguintes
+princípios:
+\begin{enumerate}
+  \item \textbf{\emph{Expor o hardware de forma segura:}} O conceito
+        fundamental do \emph{exokernel} consistem em exportar de forma segura
+        e controlada o acesso de baixo nível ao hardware, por isto toda
+        implementação do \emph{exokernel} deve concentrar-se em exportar os
+        privilégios e recursos de máquina. Por isto ele não deve impor
+        abstrações de alto-nível, i.e, o \emph{exokernel} deve evitar gerir
+        recursos;
+  \item \textbf{\emph{Expor alocações:}} Um \emph{exokernel} deve permitir que
+        uma biblioteca de SO aloque recursos. Além disto, os recursos não devem
+        ser implicitamente alocados uma vez que a bibliteca de SO tem a
+        obrigação de participar de todas as decisões de alocação;
+  \item \textbf{\emph{Expor nomes:}} Um \emph{exokernel} deve exportar nomes
+        físicos. Isto é eficiênte uma vez que reduz o nível de indireção, e por
+        sua vez o número de traduções necessárias entre nomes virtuais e
+        fisícos. Por fim expor nomes físicos também encapsula atributos de
+        recuros uteis, por exemplo, um sistema de caches fisicamente indexado
+        e diretamente mapeado, tem o nome da página física (i.e. o número da
+        página) determina qual página que conflita;
+  \item \textbf{\emph{Expor revogações:}} Um \emph{exokernel} deve utilizar um
+        protocolo de revogação de recursos explicitas para que a biblioteca do
+        SO pssa gerir os recursos de forma eficiênte;
+\end{enumerate}
+Por fim, além desses princípios o \emph{exokernel} também deve especificar as
+políticas para arbitrar a competição entre as bibliotecas do SO. Dado esses
+princípios o \emph{exokernel} deve disponibilizar as seguinte tarefas: ligação
+segura, visibilidade de recuros e protocolo de falha.
+
+A ligação segura (\emph{Secure Bindings - SB}) é o mecânismo que desacopla a
+autorização do uso dos recursos. Para implementar o SB é preciso um conjunto de
+primitivas que a aplicação pode usar para expressar verifcações de proteção.
+Essas podem ser implementadas em hardware ou software, por exemplo, a entrada
+da TLB é uma primitiva de hardware. Na prática o SB trabalha com o conceito de
+"baixar o código para o kernel", esse código é chamado para cada acesso ou
+evento do recurso para determinar o dono e a ação que o Kernel deve tomar.
+Baixar o código dentro do kernel permite uma thread da aplicação ter controle
+sobre os eventos. Isto melhora o desempenho uma vez que elimina a camada
+intermédiaria do Kernel e também propícia limitar a aplicação aos seus
+recursos.
+
+A tarefa de \emph{revogação visível} é o mecânismo para recuperar os recursos
+e romper com o SB estabelicido. Vale observar que este mecânismo pode ser
+visível ou invisível para a aplicação. Tradicionalmente os SOs realizam a
+revogação de forma invisível desalocando recursos sem o involvimento da
+aplicação. O \emph{exokernel} utiliza revogação visível para a maioria dos
+recursos, msmo o processador é explicitamente revogado ao fim de um tempo de
+execução determinado de forma que a biblioteca do SO é informada para que possa
+reagir. O processo de revogação é como um diálogo entre o \emph{exokernel} e a
+biblioteca do SO; a biblioteca precisa organizar uma lista de recursos que pode
+ser desalocado rápidamente.
+
+Por fim, um \emph{exokernel} pode definir um segundo estágio de revogação no
+seu protocolo, na qual um pedido se torna um imperativo. Isto ajuda no caso em
+que a biblioteca do SO falha, então o \emph{exokernel} pode simplesmente
+quebrar o SB e informar a biblioteca. Todos as perdas de recursos forçadas são
+armazenadas em um vetor de recuperação.
+
+%TODO: Falta dar o fechamento com a parte dos processos e talz
 
 \subsection{Singularity}
 
