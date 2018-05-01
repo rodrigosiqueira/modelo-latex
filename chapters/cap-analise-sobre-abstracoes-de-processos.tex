@@ -1,3 +1,9 @@
 \chapter{Analise Sobre Abstrações de Processos}
 \label{cap:analise-sobre-abstracoes-de-processos}
 
+% Memory Access Control
+% it describes a process and memory association; melhor colocar essa conversa quando for falar do spacejmp e como todos os OSs atuais fazem essa associação 
+% Lastly, processes have mechanisms to expand a program at runtime through a dynamic load and link code; the Linux loadable modules and application plugins are examples the use of these features. However, when an external code becomes part of the program, it receives the same permission and data access, which can potentially crash the system.
+
+% Programming Model
+% Um programa rodando possui o seu próprio execution model que é definido pela linguagem. Em várias circunstâncias o programador deseja acessar um execution model diferente do seu para utilizar recursos que extrapolam aqueles definidos pela linguagem. O programming model é o mecanismo que permite acessar diferentes execution model, por sua vez, o programming model é implementado por meio de uma API. Por exemplo, um programa escrito em C, que cria threads, roda no GNU/Linux e no Windows, tem o seu próprio execution model na qual utiliza um programming model para utilizar o paralelismo, tudo isto é feito por meio de uma API construída sobre o programming model de threads (pthreads or WindowsThreads).

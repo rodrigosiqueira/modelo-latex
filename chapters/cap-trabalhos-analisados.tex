@@ -9,6 +9,189 @@
 
 \section{Implementação Estrutural Pesada}
 
+\subsection{Wedge}
+
+Existe um princípio chamado de \emph{"Princípio do Menor Privilégio"} que diz:
+
+\begin{quote}
+Divida o código em compartimentos na qual cada um vai executar com o menor
+privilégio para completar a sua tarefa. Essa abordagem previne contra ataques
+e também previne bugs que levam ao vazamento de dados.
+\citep{protectionprinciple}
+\end{quote}
+
+Apesar deste princípio ter sido apresentado em 1975 e ser amplamento aceito,
+nota-se que várias aplicações que tem acesso a Internet (um ponto de acesso
+para o mundo) não aplicam buscam se atender a este fundamento e acabam abrindo
+pottencias pontes de vazamento de dados ou falhas de segurança. Alguns
+pesquisadores defendem que esse problema surge do fado de que os SO atuais
+garantem privilégios por padrão. Isto significa que impor limites requer mais
+esforço por parte do programador e também é propenso a erros.
+
+A chamada de sistama \texttt{fork} ilustra a característica de garantir
+privilégios por padrão. Quando o processo pai cria um filho, este recebe uma
+cópia praticamente exata ao do pai. Se o programador desejar restringir o
+nível de acesso do processo filho é preciso realizar uma série de operações
+manuais que não garantem que nenhum aspecto tenha sido ignorado.
+
+\cite{wedge} buscaram resolver tal problema mudando o princípio atual de
+garantir prinvilégio por padrão, para negar privilégios por padrão. Nessa
+abordagem o programador deve indicar explicitamente que deseja garantir
+permissões adicionais. Os autores alteraram o GNU/Linux para que este
+suportasse a remoção de permissões por patrão e chamaram o modelo proposto por
+eles de \emph{Wedge}. O \emph{Wedge} fornece um conjunto de primitivas de
+programação para permitir criar componentes com semântica de negar permissão
+por padrão tornando o acesso mais restrito. Para isto, o \emph{Wedge} oferece
+um esquema simples e flexível de marcação (\emph{tagging}) da memória o que
+permite ao programador alocar objetos de memória distintas com a mesma
+marcação.
+
+O \emph{Wedge} permite que o programdor crie um número arbitário de
+componentes, cada um sem privilégios por padrão, mas existem mecânismos que
+permitem o controle fino. Neste sentido o \emph{Wedge} busca se assemlhar as
+primitivas atuais para facilitar a adoção e para que seja simples a introdução
+delas em aplicações legadas. A proposta é constituída de três primitivas:
+\emph{Sthread}, \emph{Tagged Memory}, and \emph{callgates}. O acesso a todas
+essas primitivas é feito via chamada de sistemas.
+
+Uma \emph{Sthread} define um compartimento dentro de uma aplicação, o
+programador pode atribuir permissão de acesso para a memória e outros recursos
+por meio das \emph{sthreads}. Estas consistem de uma thread de controle e
+políticas de segurança associado a si, que especificam:
+
+\begin{itemize}
+	\item As marcações de memória que o \emph{sthread} pode acessar e a permissão
+				para cada um (leitura, leitura-escrita, copy-on-write);
+	\item Os descritores de arquivo que a \emph{sthread} pode acessar e as
+				permissões de cada (leitura, escrita, leitura-escrita);
+	\item Os \emph{callgates} que a \emph{sthread} pode chamar;
+	\item O \emph{Unix user id}, o \emph{root directory} e o \emph{SELinux}.
+\end{itemize}
+
+Uma nova \emph{sthread} não mantém as permissões de acesso por padrão, a não
+ser pelo \emph{snapshot} intocado do \emph{copy-on-write} acessado. Note que o
+novo componente não tem permissão para acessar qualquer outra memória ou mesmo
+descritor de arquivo do pai. Contudo o pai pode anexar permissões de acesso no
+filho durante a sua criação. O \emph{sthread} só pode criar um filho com
+permissão igual ou menor do que a sua. Para a implementação os autores criaram
+o \emph{sthread} como uma variante dos processos do GNU/Linux, só que ao invés
+de herdar as informações do pai ela apenas herda as regiões de memória e tabela
+de descritores assegurada pela política de segurança.
+
+Quando alguma alocação de memória ocorre, o programador deve marcar a memória
+com uma única \emph{tag}; as permissões de acesso a está memória são garantidas
+em termos destas. Por exemplo, pode-se definir leitura e escrita para uma
+memória com a \emph{tag} "t". O programador expressa os privilégios de memória
+em termos das \emph{tags} que são atribuídos para a memória em tempo de
+alocação. Vale acrescentar que uma \emph{tag} nunca implica em privilégios de
+outra \emph{tag}. A operação de criação de \emph{tags} começa pela criação dela
+por parte do programador, essa operação aloca um segmento de memória e armazena
+um mapa da \emph{tag} para o segmento. Em seguida o programador chama a função
+para alocar a memória marcada (\texttt{smalloc}) especificando a \emph{tag} e o
+tamanho solicitado e assim aloca um \emph{buffer} do segmento com a \emph{tag}.
+
+Um \emph{callgate} é uma porção de código que executa em um nível de privilégio
+(normalmente) diferente de quem o chamou. Como um \emph{sthread} sempre roda
+com o menor privilégio possível, sempre que for preciso executar algo em um
+nível de permissão maior, será preciso chamar um \emph{callgate} para executar
+a operação. Note que instalar um \emph{callgate} com acesso para dados
+sensíveis funciona como um isolamento. Um \emph{callgate} define um conjunto de
+permissões, um ponto de entrada e argumentos de confiçã definods pelo criador.
+
+\subsection{Resource Container}
+
+\cite{resourcecontainers} argumentam que as abtrações de SO tem recebido grandes
+contribuições para melhorar questões de desempenho, mas argumentam que pouca
+atenção tem sido dado para o gerenciamento de recursos. \emph{Denial Attack}
+consiste em fazer com que todos os recursos da máquina sejam consumidos,
+ataques como esses ainda são comums e ilustram como a gerência de recursos é
+um elemento crítico nos SOs. Neste sentido, \cite{resourcecontainers}
+assumem que a raiz dos problemas de gestão de recursos encontra-se no modelo
+atual dos SOs de propósito geral; isto significa que primitivas de
+escalonamento e de gerência de recursos extende-se por todo o Kernel. Esse
+acoplamento torna complicado o processo de permitir que uma aplicação controle
+os seus próprios recursos.
+
+%TODO: Verificar se vale a pena adicionar a figura do problema
+
+Para ilustrar as questões referentes a gestão de recursos nos SOs, a figura X
+ilustra 4 cernários diferentes. O primeiro cenário consiste em uma aplicação
+rodando em user space que não necessita de qualquer recursos diretamente
+controlado pelo Kernel, por tanto, a seu consumo de recursos não se estende
+para o Kernel. O segundo cenário representa uma aplicação que precisa utilizar
+recursos do Kernel para terminar alguma de suas tarefas (e.g., uma aplicação
+que usa recursos de rede), note que parte da aplicação consome recuros dentro
+do user space; contudo, a outra parte da aplicação expande para os recuros do
+Kernel. O terceiro cenário mostra multiplos processos cooperando para concluir
+uma tarefa sem precisar de recursos do Kernel. Por fim, tem uma aplicação com
+um único processo que dispõe de multiplas threads que além de utilizar recursos
+no user space também demandam recursos oriundos do Kernel. Repare como sistemas
+tradicionais tem pouco ou nenhum controle sobre os recursos consumidos, veja
+que esses casos podem levar o escalonador a fazer contagens imprecisas levando
+o mesmo a comportar-se de forma inadequada.
+
+Inspirados pela falta de uma separação clara do gerenciamento de recursos por
+parte dos SOs, \cite{resourcecontainers} sugeriram a criação de uma nova
+abstração chamada \emph{Resource Containers (RC)}. Este é uma entidade que
+logicamente contém todos os recursos utilizados pela aplicação para atingir uma
+determinada atividade. Este tem atributos que são usados para fornecer
+parâmetros de escalonamento, limites de recursos, e \emph{QoS} para rede. A
+ideia é que o Kernel cuidadosamente manipule esses recursos tal qual CPU e
+memória consumido por um RC. O escalonador pode acessar as informações
+provenientes dos RCs e utilizar elas para melhorar o processo de escalonamento.
+
+A adição do RC cria uma clara distinção entre o domínio da proteção e o de
+recursos, além de forner um controle fino sobre os recursos. O RC fornece um
+mecânismo para ligar os recursos a uma thread, isto pode ser feito de forma
+dinâmica e sob controle da aplicação (isto também é chamado de \emph{resource
+binding}). Note que isto permite que multiplas threads podem ser associadas a
+multiplos RC ao mesmo tempo, mas por padrão, uma thread começa com um RC
+herdado do processo pai. A aplicação poder religar-se para qualquer outro
+container caso exista a necessidade.
+
+Uma das implicações diretas do RC é que uma aplicação associe informações com
+uma ativiade ao invés de associar a uma thread ou processo, isto permite que
+o \emph{scheduler} forneça informações diretas para a atividade.
+% TODO: Voltar no artigo e elaborar mais essa questão dos atributos
+A alocação de atributos está diretamente apropriada para um modelo de
+escalonamento associado com cada RC em um sistema. Uma thread é normalmente
+escalonada de acordo com os atributos do container na qual é limitada. Contudo,
+se uma thread é mutiplixada entre vários containers, pode custar muito o
+reescalonamento, para cada mudança de binging. Na prática a thread deve ser
+escalonada baseado na combinação entre alocação de recursos e uso de
+containers. Para isto, o modelo define um \emph{scheduler binging} entre cada
+thread e um conjunto de container sob o atual sendo multiplexado. 
+
+É interessante observar que os containers formam hieraquias, ou seja, o uso de
+um recurso usado por um container filho é restringido pelos parâmetros do
+container pai. Por exemplo, se o container pai tem 70\% dos recursos
+garantidos, então os container filhos não podem extrapolar esse limite.
+
+De forma geral, para se utilizar o RC os autores sugerem uma API na qual
+contém:
+\begin{itemize}
+	\item \textbf{Criar um Novo Container:} Por padrão, um container é criado
+				como parte do \texttt{fork} e são visíveis para a aplicação na forma
+				de descritor de arquivos;
+	\item \textbf{Ajuste do Container API:} Um processo pode mudar quem e o seu
+				container pai;
+	\item \textbf{Liberar o Container:} Um processo pode liberar a sua referência
+				para um container usando o \texttt{close};
+	\item \textbf{Compartilhar Container entre Processos:} Quando um processo
+				recebe uma referência para um container, ele pode usar o recurso como
+				um \emph{resource context}. Isto permite mover uma aplicação ou
+				computação entre multiplos domínios de proteção;
+	\item \textbf{Atributos do Container:} Uma aplicação pode ler e ajustar
+				atributos de um container;
+	\item \textbf{Uso de Informações dos Containers}
+	\item \textbf{Binding threads para um container:} Uma thread pode fazer o
+				\emph{binding} para uma \emph{thread} a qualquer momento;
+	\item \textbf{Resetar o Scheduler Binding}
+	\item \textbf{Binding de Socket ou Arquivo para um Container:} Um processo
+				pode fazer o \emph{bind} de um socket ou arquivo para um container,
+				assim o consumo subsequente dos recursos do kernel ficam no container.
+\end{itemize}
+
 \subsection{Nooks}
 % deixar claro que tudo isso é no nível do kernel
 \cite{nooks} conduziram uma pesquisa motivada pela busca por

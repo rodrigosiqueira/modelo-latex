@@ -2,3 +2,105 @@
 \chapter{Introdução}
 \label{cap:introducao}
 
+Sistemas Operacionais (SO) são projetos de software grandes e complexos; cada
+uma das suas partes é perfeitamente definida baseada nas entradas, saídas e
+funcionalidades \cite{silberschatz}. Coletivamente, essas partes representam
+uma coleção de abstrações construídas sobre o hardware (e.g., processadores,
+memórias e dispositivos de armazenamento) para fornecer recursos para os
+usuários. SO empregam conceitos, tal qual processos, escalonadores,
+gerenciadores de memória e sistemas de arquivo que oferecem mecanismos para
+alicações de usuários poderem utilizar os recursos de hardware.
+
+Uma das abstrações mais antigas fornecida pelos SOs é o conceito de
+\emph{processos}. Este da a noção de processamento virtualização, oferecendo a
+ilusão de multiplos programas rodando ao mesmo tempo\cite{love, tanenbaum}.
+Esta abstração continuamente evolui para atender as demandas de hardware,
+segurança, escalabilidade, modelos de programação e desempenho.
+
+Infelizmente, melhorar a abstração de processos para atender novos requisitos é
+uma tarefa delicada. Em um SO voltado para produção (e.g., GNU/Linux e
+FreeBSD), uma mudança incorreta na abstração de processo pode comprometer
+completamente a estabilidade do sistema. Portanto, identificar e implementar
+novos atributos dentro dos processos normalmente demanda um significate esforço
+e raramente esses terminam sendo adotados fora da comunicda comunidade
+ciêntifica. Dessa maneira, para tornar as pesquisas nessa área mais robusta e
+com maior potêncial de adoção por parte dos principais SO, novas propostas
+tipicamente precisão endereçar três aspectos: apresentar uma implementação
+viável, medir o desempenho e demonstrar benefícios para as aplicações.
+
+Iniciativas para melhorar as abstrações de processos vem sendo propostas por
+diversos grupos de pesquisas, cada um apresentando uma implementação utilizando
+propostas diferentes. Nos classificamos as abordagens utilizadas em uma das
+três categorias descritas abaixo:
+
+\begin{itemize}
+\item \textbf{Implementação Estrutural Pesada} consite na modificação do núcleo
+  de um SO de produção conhecido de forma a apresentar as melhorias;
+\item \textbf{Implementação Estrutural Level} consiste na implementação das
+  novas abstrações em um sistema já consolidado, mas evitando mudaças diretas
+  no núcleo;
+\item \textbf{Implementação Independênte} consiste na criação de um SO
+  totalmente novo e sem qualquer depêndencia. Normalmente este tipo de trabalho
+  introduz várias inovações em diferentes áreas, contudo, neste texto estamos
+  interessados nas propostas relacionadas as abstrações de processos;
+\end{itemize}
+Essa categorização foi feita meramente para fornecer pistas das consequências
+de cada proposta em termos do impacto no projeto de um SO. Cada uma dessas
+abordagens oferece um balanceamento entre o escopo das propostas modificação, o
+esforço necessário para o desenvolvimento e a facíl integração com um SO
+existente. Não existe uma abordagem considerada adequada para todos os projetos
+de pesquisa.
+
+Depois que uma implementação se torna funcional, pesquisadores comumente
+utilizam um conjunto de \emph{microbenchmark} para avaliar o desempenho das
+propostas deles. A peculiaridade de cada trabalho explica a pluralidade de
+estratégias de \emph{microbenchmark}: pesquisadores tem que selecionar um
+conjunto de procedimentos para mostra os pros e contras da sua abordagem.
+Contudo, identificar o \emph{microbenchmark} para evidênciar um comportamento
+particular é uma tarefa difícil e que requer certa experiência por parte do
+pesquisador.
+
+Por fim , para validar as propostas e verificar o impacto delas em um cenário
+minimamente realista, os pesquisadores normalmente selecionam uma aplicação
+utilizada em certos contextos para testar as modificações feitas.
+
+Contudo, selecionar um software para realizar os testes representa uma tarefa
+complicada devido a característica singular de cada aplicação. Por exemplo, um
+software pode utilizar muita memória e consumir boa parte dos recursos da CPU,
+o que é desejável para demonstrar o uso de novas abstrações de processos em uma
+situação de pressão. Ainda assim, pode não revelar nada de útil relacionada a
+melhorias de segurança.
+
+% "unification"?
+Apesar dos diversos trabalhos na área, propostas para expandir os conceitos
+de processos ainda necessitam de unificação e validação para justificar o
+trabalho de implementar as mesmas em um SO de produão. Neste trabalho, nos
+avaliamos iniciativas que melhoram oas abstrações de processos levando-se em
+consideração a implementação, as questões que a nova proposta visa resolver e
+os impactos no SO como um todo. Para isto, nos examinamox X trabalhos de
+pesquisa com o objetivo de responder as seguintes perguntas de pesquisa:
+
+\begin{quote}
+ \item \textit{RQ1:.} "Quais são as características desejáveis para a próxima geração de abtração de processos?"
+ \item \textit{RQ2:.} "Quais são os princípais desafios em se implementar a próxima geração de abstração de processos?"
+ \item \textit{RQ3:.} "Qual o conjunto de \emph{microbenchmark} que pode ser utilizado para melhor avaliar os impactos de uma nova característica adicionada para as abstrações de processos?"
+ \item \textit{RQ4:.} "Quais aplicações podem tirar o melhor proveito da nova abstração adicionada ao SO?"
+\end{quote}
+
+Para responder a questão RQ1, nos identificamos as princípais características
+propostas por vários pesquisadores, extraímos o conceito central dos vários
+trabalhos, como descrito na Seção \ref{} e Seção \ref{}. Para responder RQ2,
+nos investigamos diferentes técnicas de implementação, descritas na seção
+\ref{}. Para responder RQ3, nos analisamos todos os \emph{microbenchmark}
+adotados pelos pesquisadores e selecionamos um conjunto de experimentos (Seção
+\ref{}). Por fim, para responder RQ4, nos extraímos dos trabalhos análisados
+uma coleção de programas que podem se beneficiar das modificações levando
+vantagens para o usuário final (Seção \ref{}).
+
+Combinando o resultado das quatro perguntas de pesquisa, nos derivamos um
+conjunto de propriedades desejáveis para a próxima geração de abstrações de
+processos. Nos esperamos que atualizações nos conceitos de processos serão
+extremamente importante para a discussão sobre a alteração de projeto de SO.
+Nos também discutimos as implicações de novas abstrações de processos no
+projeto de um SO na Seção \ref{}. Este trabalho ajudará a entender as potências
+abstrações de processos e como validar as mesmas.
