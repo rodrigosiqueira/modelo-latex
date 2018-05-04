@@ -411,11 +411,127 @@ das \emph{threads} (uma \emph{thread} só pode controlar \emph{stacks} que estã
 no seu domínio), cria e destrói proteções de domínio e também valida as
 políticas de acesso.
 
-\subsection{Light-weight Contexts}
-
 \subsection{SpaceJMP}
 
-\subsection{Resource Containers}
+Toda vez que um processo é criado, ele inicializa diferentes estruturas de
+dados relacionadas a sua execução. Um dos elementos fundamentais dos processos
+é o espaço de endereçamento virtual (\emph{Virtual Address Space - VAS}), que é
+completamente acoplado aos processos. Normalmente, as VAS são maiores que a
+memória fisicia e são totalmente isoladas de outros processos. Se um processo
+precisar compartilhar dados com outros processos, será necessário criar e
+gerenciar uma região da memória que permita que outros processos leia e/ou
+escrevam na área compartilhada. O atual modelo de VAS não da suporte para
+passar estruturas de dados baseadas em ponteiros entre processos, normalmente,
+é necessário serializar os dados para que tal tarefa seja possível; esses
+mecânismos tem se tornado um incomodo.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.7\textwidth]{vas_vs_physical_address} 
+  \caption{VAS and Memóra Física}
+  \label{fig:vas_vs_physical} 
+\end{figure}
+
+Em 1990s, os processadores tinham poucos bits para o VAS, mas eram o suficiente
+para endereçar toda a memória fisica disponivel na epoca. Apesar disto, durante
+esse periodo, o tamanho da memória cresceu considerávelmente e os processadores
+não foram capaz de endereçar diretamente todo o endereço de memória disponível
+\cite{crowley}. A Figura \ref{fig:vas_vs_physical} exemplifica o problema
+mencionados acima; a parte da esquerda ilustra uma CPU com bits suficientes
+para a VAS de forma que consegue endereçar todo o espaço de endereçamento
+físico da memória. O lado direito da figura representa uma situação na qual a
+VAS é menor do que a memória física, assim, um um único processo não é capaz de
+acessar toda a memória física disponível; isto impõe um limite ao processo
+quanto ao tamanho que este pode ter. A situação na Figura
+\ref{fig:vas_vs_physical} não é uma novidade, enquanto a industria não produzia
+novos processadores com bits extras para elevar o tamanho da VAS, os
+desenvolvedores tiveram que utilizar de vários artifícios para superar o
+problema de bits insuficientes. Hoje em dia, este problema está sob controle
+uma vez que os processadores atuais possuem um grande espaço de endereçamento.
+Contudo, estamos no ínicio de uma geração conhecida por \emph{data-centric} na
+qual será dominada por grandes memórias não-volateis \citep{outlook}, assim,
+simplesmente incrementar o total de bits para a VAS nas CPUs não vai mais
+funcionar. Elevar o número de bits na VAS tem impactos na produção, desempenho
+e consumo de energia \citep{spacejmp}.
+
+Um dos problemas do modelo de processos atuais está relacionado a representação
+de como estruturas de dados baseadas em ponteiros fora dos limites dos
+processos. A serialização de dados ou ponteiros especiais podem ser empregados
+para resolver este problema, contudo, ambos os métodos são um incómodo,
+ineficiente e em muitos casos confusos \cite{spacejmp}. O segundo problema está
+associado com a tarefa de coordenar o compartilhamento de memória entre
+multiplos processos, uma vez que está é uma tarefa complicada e tediosa.
+
+Para tentar resolver os problemas citados acima, \cite{spacejmp} propuseram uma
+técnica chamada \emph{SpaceJMP}. Os autores propõem desacoplar a VAS dos
+processos e permitir que um único processo tenha Multiplas VAS (MVAS)
+associadas a si. Nesse contexto, a VAS é promovida para um objeto de
+primeira-classe no SO e dando ao processo a hablidade de gerir as multiplas
+VAS.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.7\textwidth]{solve_huge_address_memory}
+  \caption{Resolvendo o problema de endereçar memórias físicas grandes}
+  \label{fig:large_memory}
+\end{figure}
+
+A Figura \ref{fig:large_memory} ilustra como MVAS resolver o problema de
+endereçar memórias físicas maiores do que o VAS. Basicamente, todo processo
+pode criar multiplas VAS e mudar entre elas. Se os processos precisarem de mais
+memória do que o disponivel, basta criar um novo address pace com o começo
+apontando para uma região de memória não utilizada e em seguida anexar a nova
+VAS ao processo. Com isto, torna-se possível que o processo faça trocas entre
+as diferentes VAS. O problema da serialização e compartilhamento de dados podem
+ser simplificados pela MVAS uma vez que está pode criar uma VAS e permitir que
+multiplos processos se anexem à ela.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.7\textwidth]{traditional_vs_mvas} 
+  \caption{VAS e MVAS, imagem baseada no \citep{spacejmp}}
+  \label{fig:traditional_vs_mvas} 
+\end{figure}
+
+A Figura \ref{fig:traditional_vs_mvas}, ilustra a princípal diferença entre um
+processo com uma VAS acoplada para um modelo na qual a VAS é desacoplada
+(MVAS). O lado esquerdo da Figura mostra um processo tradicional como explicado
+na Seção \ref{sec:processos-e-threads}. O lado direito da figura, representa um
+processo com multiplas VAS e diferetnes informações dentro de cada \emph{Heap}
+e segmentos de memória. Nesse novo cenário, a pilha, os dados, e os segmentos
+de texto são compartilhados entre as multiplas MVAS. Por fim, é importante
+notar que os processos precisam manter a informação sobre a atual VAS em
+execução.
+ 
+Os autores da técnica fizeram uma implementação para GNU/Linux. A principal
+funcionalidade do MVAS foi exposta para o usuário via \emph{system calls}. A
+lista a seguir mostra o conjunto de funções expostas para o usuário:
+
+\begin{itemize}
+  \item \texttt{vas\_create}: Cria uma nova VAS com o nome indicado;
+  \item \texttt{vas\_delete}: Remove uma VAS criada previamente;
+  \item \texttt{vas\_find}: Encontra uma VAS de acordo com o nome;
+  \item \texttt{vas\_attach}: Anexa uma VAS ao processo;
+  \item \texttt{vas\_detach}: Desanexa uma VAS do processo;
+  \item \texttt{vas\_switch}: Muda a atual VAS instalada no processo para outra.
+\end{itemize}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.7\textwidth]{mvas_example} 
+  \caption{System Call disponibilizada pelo SpaceJMP, imagem baseada em \cite{ellarge}}
+  \label{fig:mvas_example}
+\end{figure}
+
+A Figura \ref{fig:mvas_example}, ilustra o comportamento da chamada de sistemas
+implementadas. O topo da figura ilustra um processo normal com uma VAS padrão
+associada a si; em seguida a chamda para a função \texttt{vas\_create} é feita
+de forma a criar uma nova VAS. Após criar, é preciso anexar a VAS ao processo
+por meio da chamada de sistema \texttt{vas\_attach}, por fim, o processo pode
+mudar entre as VAS por meio da chamada para \texttt{vas\_switch}.
+
+\subsection{Light-weight Contexts}
+
 
 \section{Implementação Independente}
 
