@@ -112,23 +112,29 @@ escalonamento e de gerência de recursos extende-se por todo o Kernel. Esse
 acoplamento torna complicado o processo de permitir que uma aplicação controle
 os seus próprios recursos.
 
-%TODO: Verificar se vale a pena adicionar a figura do problema
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{resource_constainer_scenarios} 
+  \caption{Cenários das aplicações}
+  \label{fig:resource_constainer_scenarios}
+\end{figure}
 
-Para ilustrar as questões referentes a gestão de recursos nos SOs, a figura X
-ilustra 4 cernários diferentes. O primeiro cenário consiste em uma aplicação
-rodando em user space que não necessita de qualquer recursos diretamente
-controlado pelo Kernel, por tanto, a seu consumo de recursos não se estende
-para o Kernel. O segundo cenário representa uma aplicação que precisa utilizar
-recursos do Kernel para terminar alguma de suas tarefas (e.g., uma aplicação
-que usa recursos de rede), note que parte da aplicação consome recuros dentro
-do user space; contudo, a outra parte da aplicação expande para os recuros do
-Kernel. O terceiro cenário mostra multiplos processos cooperando para concluir
-uma tarefa sem precisar de recursos do Kernel. Por fim, tem uma aplicação com
-um único processo que dispõe de multiplas threads que além de utilizar recursos
-no user space também demandam recursos oriundos do Kernel. Repare como sistemas
-tradicionais tem pouco ou nenhum controle sobre os recursos consumidos, veja
-que esses casos podem levar o escalonador a fazer contagens imprecisas levando
-o mesmo a comportar-se de forma inadequada.
+Para ilustrar as questões referentes a gestão de recursos nos SOs, a Figura
+\ref{fig:resource_constainer_scenarios} ilustra 4 cernários diferentes. O
+primeiro cenário consiste em uma aplicação rodando em user space que não
+necessita de qualquer recursos diretamente controlado pelo Kernel, por tanto, a
+seu consumo de recursos não se estende para o Kernel. O segundo cenário
+representa uma aplicação que precisa utilizar recursos do Kernel para terminar
+alguma de suas tarefas (e.g., uma aplicação que usa recursos de rede), note que
+parte da aplicação consome recuros dentro do user space; contudo, a outra parte
+da aplicação expande para os recuros do Kernel. O terceiro cenário mostra
+multiplos processos cooperando para concluir uma tarefa sem precisar de
+recursos do Kernel. Por fim, tem uma aplicação com um único processo que dispõe
+de multiplas threads que além de utilizar recursos no user space também
+demandam recursos oriundos do Kernel. Repare como sistemas tradicionais tem
+pouco ou nenhum controle sobre os recursos consumidos, veja que esses casos
+podem levar o escalonador a fazer contagens imprecisas levando o mesmo a
+comportar-se de forma inadequada.
 
 Inspirados pela falta de uma separação clara do gerenciamento de recursos por
 parte dos SOs, \cite{resourcecontainers} sugeriram a criação de uma nova
