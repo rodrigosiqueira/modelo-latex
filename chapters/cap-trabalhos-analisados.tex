@@ -242,14 +242,19 @@ atender:
 				compatível com as extensões já existentes e usadas.
 \end{enumerate}
 
-% TODO: FIGURA
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{nooks_nim}
+  \caption{Visão geral da arquitetura do Nooks, imagem baseada no \citep{nooks}}
+  \label{fig:nooks_nim}
+\end{figure}
 
-A Figura X ilustra de forma geral a arquitetura do \emph{Nooks}. Note que o
-"diálogo" entre o Kernel e as extensões (vice-versa) precisam passar pelo
-\emph{Nooks}. Esse intermédio é conduzido pelo \emph{Nooks Isolation Manager
-(NIM)} que é o responsável por implementar os objetivos do projeto. O
-\emph{Nooks} precisa estender-se em parte para o Kernel e em parte para as
-extensões. No Kernel, é preciso alterar aquelas funções que são
+A Figura \ref{fig:nooks_nim} ilustra de forma geral a arquitetura do
+\emph{Nooks}. Note que o "diálogo" entre o Kernel e as extensões (vice-versa)
+precisam passar pelo \emph{Nooks}. Esse intermédio é conduzido pelo \emph{Nooks
+Isolation Manager (NIM)} que é o responsável por implementar os objetivos do
+projeto. O \emph{Nooks} precisa estender-se em parte para o Kernel e em parte
+para as extensões. No Kernel, é preciso alterar aquelas funções que são
 disponibilizadas para as extensões ou que interagem com os módulos. Felizmente,
 este tipo de função pode ser detectada por algum padrão que por sua vez pode
 ser abstraído para um \emph{script} e este tipo de modificação precisa ser

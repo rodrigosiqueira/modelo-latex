@@ -171,9 +171,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="-1.7972244"
-     inkscape:cy="664.45753"
+     inkscape:zoom="0.35"
+     inkscape:cx="924.69154"
+     inkscape:cy="224.30587"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -202,7 +202,10 @@
      id="layer1">
     <g
        id="g12683"
-       transform="translate(284.90933,-205.79754)">
+       transform="translate(284.90933,-205.79754)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
       <ellipse
          ry="70.773239"
          rx="57.20776"
@@ -313,7 +316,7 @@
        x="50.358776"
        y="28.535879"
        id="text4508-35-3-1"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
@@ -331,7 +334,10 @@
        y="149.54581"
        x="473.47781"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
          id="tspan15436"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.34722233px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          y="149.54581"
@@ -341,13 +347,16 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        inkscape:connector-curvature="0"
        id="path24256"
        d="m 387.74491,215.61981 -23.54586,0"
        style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker24260);paint-order:normal" />
     <g
-       id="g16218">
+       id="g16218"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
       <path
          inkscape:connector-curvature="0"
          id="path8374"
@@ -384,7 +393,10 @@
     </g>
     <g
        id="g10430"
-       transform="translate(220.08226,-1.5398547)">
+       transform="translate(220.08226,-1.5398547)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
       <ellipse
          transform="rotate(90)"
          style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#a7b3cd;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -420,7 +432,10 @@
     </g>
     <g
        id="g10495"
-       transform="translate(443.18478,-2.1381562)">
+       transform="translate(443.18478,-2.1381562)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
       <path
          transform="scale(0.26458333)"
          id="ellipse10456"
@@ -479,7 +494,7 @@
        d="M -109.70594,152.92048 H 512.32891"
        id="path25198"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -489,13 +504,19 @@
        width="623.99036"
        height="122.39978"
        x="-110.68369"
-       y="154.74167" />
+       y="154.74167"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="466.05017"
        y="168.25467"
-       id="text12694"><tspan
+       id="text12694"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          x="466.05017"
          y="168.25467"
@@ -508,19 +529,22 @@
        cx="-30.923525"
        cy="-103.25162"
        rx="20.860573"
-       ry="10.402811" />
+       ry="10.402811"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
     <path
        id="path16209"
        style="fill:none;stroke:#000000;stroke-width:1.53336608;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 3.4365352,29.925491 c 0,0 3.96254,3.40092 0,7.36345 -3.96252996,3.96254 0,7.67546 0,7.67546 m 0,-30.07782 c 0,0 3.96254,3.40092 0,7.36345 -3.96252996,3.96254 0,7.67546 0,7.67546"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        id="text16631"
        y="27.779926"
        x="164.50758"
@@ -543,14 +567,17 @@
        cx="30.923525"
        cy="-235.67131"
        rx="20.657675"
-       ry="10.216009" />
+       ry="10.216009"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="290.39154"
        y="23.397186"
        id="text19089"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          id="tspan19087"
@@ -576,7 +603,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        id="text19249"
        y="247.69688"
        x="154.48105"
@@ -607,7 +634,7 @@
        d="M 104.32524,240.52827 63.023196,204.88297"
        id="path19273"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -615,7 +642,7 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        inkscape:connector-curvature="0"
        id="path20725"
        d="m 202.37304,240.52827 41.30204,-35.6453"
@@ -626,7 +653,7 @@
        x="418.21448"
        y="217.83676"
        id="text21633"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          id="tspan21631"
@@ -639,7 +666,10 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="33.41045"
        y="75.271179"
-       id="text23020"><tspan
+       id="text23020"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          x="33.410454"
          y="75.271179"
@@ -655,7 +685,10 @@
        y="75.271179"
        x="155.01808"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
          id="tspan23024"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.34722233px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          y="75.271179"
@@ -671,7 +704,10 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="317.51794"
        y="75.271179"
-       id="text23034"><tspan
+       id="text23034"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          x="317.51794"
          y="75.271179"
@@ -687,7 +723,10 @@
        y="75.271179"
        x="-50.311275"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
          id="tspan23042"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.34722233px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          y="75.271179"
