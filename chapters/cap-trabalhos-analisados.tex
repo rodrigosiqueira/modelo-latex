@@ -5,7 +5,235 @@
 
 \subsection{Dune}
 
+Como mostrado na Seção \ref{sec:virtualizacao},  o conceito de virtualização já
+é amplamente conhecido e adotado pela indústria; dentre os recentes avanços
+destacam-se a virtualização via hardware disponível nos processadores modernos.
+O mecânismo de virtualização é utilizada com o objetivo de fornecer abstrações
+para a criação de diversos tipos de máquinas virtuais. Com esse conceito em
+mente, \citep{belay} decidiram dar outra utilidade para esses recursos de
+hardware: fornecer processos ao invés de máquinas virtuais.
+
+Os autores defendem que uma ampla variedade de aplicações podem se beneficiar
+do acesso a certos recursos que são apenas disponíveis ao kernel. Dentre as
+aplicações que podem comprovadamente ganhar algum desempenho ao obter acesso
+direto ao hardware, os destacam:
+
+\begin{itemize}
+  \item \textbf{Garbage Collection (GC)}: Os GC pode ganhar desempenho caso
+        tenha como controlar diretamente o hardware de páginação, como XPTO
+        demostraram com o Azul Systems;
+  \item \textbf{Process Migration}: Programas no espaço de usuário podem tirar
+        proveito do acesso direto as faltas de páginas e chamadas de sistema.
+\end{itemize}
+
+Não obstante, fornecer o acesso direto aos recursos de hardware de forma segura
+e gerenciável não é uma tarefa trivial uma vez que requer mudanças na forma
+como o espaço de usuário e o espaço do Kernel intergagem. Além disso,
+alterações no Kernel são consideradas invasivas e perigosas uma vez que uma
+modificação feita de forma errada pode comprometer toda a estabilidade do
+sistema. Outra alternativa para dar acesso de hardware para aplicações é por
+meio de imagens de máquina virtual, assim uma aplicação consegue acesso seguro
+aos recursos de hardware através da interface de virtualização. Uma desvantagem
+desta abordagem é que ela tem pouca integração com o SO da máquina \emph{host}
+o que impede um processo de obter ganhos de desempenho.  \citep{belay} oferecem
+uma alternativa que consiste em utilizar a abstração de virtualização
+disponível nos processadores modernos de forma a fornecer um novo tipo de
+processo que executa no chamado \emph{Dune Mode}. Tal modo é um estado
+irreversível no qual o processo indica explicitamente que quer entrar; nesse
+modo o processo passa a ter acesso direto a modos com maior privilégio,
+registradores de memória virtual, tabelas de páginas, interrupções, execeções e
+vetores de chamada de sistema. Para auxiliar a aplicação no espaço de usuário a
+interagir com tais recuros, os autores criaram uma biblioteca chamada
+\emph{libDune} que auxilia as aplicações a utilizarem os novos recuros.
+
+Dentre as vantagens que o Dune promete, destaca-se o fato de que no modo Dune o
+processo comporta-se como um processo normal com a diferença de que este use a
+instrução VMCALL para fazer chamadas de sistema. Além disto, devido ao fato de
+que o Dune não tem por objetivo fornecer máquinas virtuais este
+consequentemente consegue ser mais simples e rápido. As aplicações que se
+adequam ao uso desse modelo podem obter melhorias de desempenho e isolamento.
+
+Para implementar o Dune, os pequisadores utilizaram os processadores Intel com
+suporte para a tecnologia VT-x e parte do código do KVM já disponível no Kernel
+Linux. O Dune apresenta três tipos de instruções privilégiadas para os
+processos:
+
+\begin{itemize}
+  \item \textbf{Exceções}:  As instruções LIDT, LTR, IRET, STI e CLI são
+        expostas diretamente para os processos. Note que emulações, depuração e
+        rastreamento de desempenho são aplicações que podem tirar proveito
+        desta caractéristica uma vez que o Dune pode reduzir considerávelmente
+        a sobrecarga em entregar exceções. Isso se deve ao fato que o Dune
+        consegue entregar exceções diretamente para o hardware de forma segura
+        (gerencia pelo hardware de virtualização);
+  \item \textbf{Memória Virtual}: As instruções MOV CRn, INVLPG e INVPCID são
+        apresentadas para o processo Dune. O acesso flexível a memória virtual
+        pode ser benéfico para aplicações que fazem \emph{checkpointing}, GC,
+        compressão de dados nas páginas e memória compartilhada distribuída. O
+        Dune traz melhorias para o acesso a memória virtual expondo as entradas
+        da tabela de páginas para as aplicações, isso permite que eles
+        controlem a tradução de endereços, permissão de acesso, bits globais e
+        modifiquem/acessem as páginas com simples referências. Por fim, o Dune
+        também da a habilidade para controlar as invalidações da TLB
+        manualmente o que pode ser vantajoso para alguns tipos de aplicações;
+  \item \textbf{Modos privilégiados}: As instruções LGDT e LLDT permitem que o
+        Dune exponha os modos privilégiados. O Dune consegue expor os modos
+        privilégiados de forma eficiênte por que o VMX non-root mantém o seu
+        próprio conjunto de anéis privilégiados.
+\end{itemize}
+
+Para melhor entender a arquitetura do Dune veja a Figura X. O Dune extende o
+Kernel como um módule que habilita o VT-x, colocando o Kernel em no modo VMX
+root. Assim processos usando Dune tem acesso seguro e garantido para hardware
+privilégiado utilizando o VMX non-root mode. O módule Dune intercepta os VM
+exits, o único motivo para o processo acessar o Kenrel e realizar qualquer
+ação. Repare que o Dune é aplicado de forma seletiva aos processos que de fato
+precisam deles, isto significa que um processo que não usa o Dune não é
+afetado. A transição de um processo normal para o modo Dune ocorre por meio de
+uma chamada de \texttt{ioctl} no dispositivo \texttt{/dev/dune}, repare que ao
+entrar em tal modo o processo não pode retornar ao modo anterior. Sempre que um
+processo Dune faz um \texttt{fork}, o processo filho não incia em modo Dune,
+contudo pode reentrar caso queira.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{dune_architecture} 
+  \caption{A arquitetura do Dune, imagem baseada em \citep{belay}}
+  \label{fig:resource_constainer_scenarios}
+\end{figure}
+
+%TODO: Lembrar que na seção de fundamentação teórica vc precisa tratar disto Na
+Seção \ref{sec:virtualizacao} apresentamos as princípais características dos
+VMMs, com o objetivo de deixar claro as diferenças entre o VMMs e as
+caractéristicas de hardware expostas pelo Dune, seguem as principais
+diferenças:
+
+%TODO: Parei a revisão aqui
+
+\begin{itemize}
+  \item No Dune, o mecânismo de hypercall invocam system calls comuns do Linux.
+  \item Apenas características de hardware que podem ser acessadas diretamente sem a intervenção do VMM estão disponíveis, nos casos em que isto não é possível o Dune retorna o controle para o SO.
+  \item Podemos limitar as diferenças entre guest e host uma vez que processos usando Dune tem uma interface próxima da de hardware.
+  \item No Dune é preciso configurar o EPT para refletir o endereço do espaço de usuário.
+\end{itemize}
+
 \subsection{Shreds}
+
+Existe uma categoria de ataques chamadas de "abusos intra-processos de conteúdo
+de memória", na qual o invasor busca acessar determinado tipo de conteúdo
+sensível na memória (e.g., dados secretos) ou uma região de código crítica
+(e.g., funções privilégiadas) \cite{shreds}. O roubo deste tipo de dados
+acontece por meio da introdução de algum código injetado ou por meio de alguma
+biblioteca maliciosa que permite acessar alguma região da memória não protegida
+da vítima. Note que bibliotecas maliciosas são especialmente perigosas uma vez
+que estas podem executar funções privilegiadas que são de fato parte do
+processo, por exemplo, a função \texttt{dlopen}. Por fim, se o atacante
+conseguir o acesso a memória, este pode ler todos os dados buscando por outras
+informações.
+
+\cite{shreds} defendem que o problema de segurança referente aos ataques
+intra-processos decorrem da falta de controle-fino, conveniente e eficiente do
+conteúdo de sensível da memória; além disto, eles argumentam que séria benéfico
+se tais funcionalidades fossem disponibilizadas para os programados.  Para
+resolver tal problema os autores apresentam uma nova abstração de processos que
+cria uma nova unidade de execução chamada de \emph{shreds}, que tem associado a
+si um fragmento de memória protegida denominada de \emph{shred-private pool
+(s-pool)}. O tamanho do segmento de memória criado tem o seu tamanho variável
+dependendo da necessidade da aplicação, além disso este comporta-se de forma a
+existir apenas durante o momento em que é necessário para um pedaço da
+aplicação. A implementação do \emph{shreds} é baseado em três pilares: uma API
+para o usuário conseguir utilizar facilmente as funcionalidade oferecidas, um
+\emph{toolchain} de compilação que verifica a correta utilização dos
+\emph{shreds} (\emph{S-compiler}) e um módulo Linux que faz o gerenciamento da
+memória (\emph{S-driver}).
+
+O \emph{shreds} foi projetado buscando três propriedades que visam garantir
+segurança, são elas:
+
+\begin{itemize}
+  \item \textbf{Acesso exclusivo para s-pool:} Um \emph{s-pool} só é acessível
+        para o \emph{shreds} associado a si;
+  \item \textbf{Evitar vazamentos na entrada e saída:} Dados carregados em um
+        \emph{s-pool} não podem ser copiados ou exportado sem ter uma operação
+        de limpeza antes;
+  \item \textbf{Execuções não desviáveis:} O fluxo de execução não pode ser
+        alterado para fora do \emph{shreds}.
+\end{itemize}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{shreds} 
+  \caption{Funcionamento geral do shreds}
+  \label{fig:shreds}
+\end{figure}
+
+
+Para melhor entender como o \emph{shreds} se comporta, veja a Figura
+\ref{fig:shreds} ilustrando uma aplicação que lida com uma senha (dado
+sensível) e o código que manipula tal dado. A aplicação possui uma thread que
+comporta-se da forma padrão, contudo, ao ter que lidar com um dado sensível ela
+faz uma chamada para uma função da API fornecida pelo \emph{shreds} chamada
+\texttt{shred\_enter}. Ao realizar a chamada para a função o fluxo de execução
+entra em um modo seguro no qual o \emph{shreds} gerência o acesso a memória e
+garante que os dados são isolados no sistema. Por fim, após realizar a operação
+na região protegida a aplicação do usuário chama \texttt{shred\_exit}. Repare
+que para utilizar a proposta dos autores, é preciso alterar as aplicações alvo.
+
+A API fornecida pelo \emph{shred} consiste de apenas quatro funções:
+
+\begin{itemize}
+  \item \texttt{shred\_enter()}: Inicia a execução na thread atual, faz uma
+        troca para execução em uma stack alocada em para um s-pool e espera um
+        descritor para um pool;
+  \item \texttt{shred\_exit()}: Suspende o shred chamado, revoga as permissões
+        de acesso da thread atual sobre o s-pool e recupera a stack de execução
+        original;
+  \item \texttt{spool\_alloc()}: Alocar memória para o s-pool associado com a
+        thread;
+  \item \texttt{spool\_free()}: Apaga a memória alocada.
+\end{itemize}
+
+Para garantir que as regras de utilização da API sejam seguidas o
+\emph{S-compiler} realiza vrificações e instrumentações para evitar falhas que
+abram brechas de segurança.
+
+Para este trabalho, a parte mais importante do \emph{shred} é o \emph{S-driver}
+que consiste em um módulo do Linux responsável por gerir as \emph{shreds} e
+\emph{s-pools}. A implementação dessa técnica é baseada em domínios de memória
+do ARM (Seção \ref{sec:outros_mecanismos_memoria}), contudo, dado que está
+técnologia não foi projeta para os propósitos sugeridos pelo \emph{shreds} a
+mesma apresenta duas limitações:
+
+\begin{itemize}
+  \item O ARM fornece apenas 16 domínios, isso impede que se crie um domínio
+        para cada \emph{s-pool} uma vez que este pode crescer de forma
+        indeterminada;
+  \item O controle de acesso a memória é extremamente limitado.
+\end{itemize}
+
+A solução adotada pelos autores foi implementar um mecânismo que multiplexa os
+domínios e introduz identidades dentro da lógica de acesso. Para permitir que
+uma aplicação tenha várias \emph{shreds} o \emph{s-driver} utiliza os domínios
+de forma temporária e rotacionando as identidades de segurança para o
+\emph{s-pool}. Toda vez que uma \emph{shreds} inicia ou retoma a sua execução
+em uma $CPU_i$ o \emph{S-driver} atribui um \emph{s-pool} associado a um
+domínio $Dom_i$, isto faz com que uma \emph{shred} consiga acessar o seu
+\emph{s-pool} enquanto outra threads concorrente não consegue acessar. Quando o
+\emph{shred} finaliza ou tem a sua execução parada em detrimento de outro
+processo, o \emph{S-driver} muda o domínio prevenindo que outro processo
+consiga acessar a região de memória. Note que o driver permite ou rejeita o
+acesso a um \emph{s-pool} baseado na CPU, isso faz com que mesmo que um código
+malicioso consiga executar em paralelo com o \emph{shred} ele não consiga ter
+acesso ao \emph{s-pool} sem que seja disparada uma falha de domínio.
+
+Uma das funcionalidades fornecidas pelo \emph{shread} é a habilidade de
+permitir fazer cópias para regiões de memória não protegidas de forma segura
+(e.g., atribuir dados de um \emph{s-pool} para uma variável local). Note que
+para realizar tal procedimento é preciso acessar uma stack regular que pode ter
+sido atacada e conter um código mal-intencionado, o que violaria toda proteção
+fornecida pelo \emph{s-compiler} e \emph{S-driver}. Para prevenir que dados
+sejam vazados via stack, o \emph{S-driver} crea uma stack segura para cada
+\emph{shred} alocada partindo do \emph{s-pool} associado a si.
 
 \section{Implementação Estrutural Pesada}
 
@@ -543,6 +771,37 @@ mudar entre as VAS por meio da chamada para \texttt{vas\_switch}.
 
 \subsection{Light-weight Contexts}
 
+The execution flow of a process is controlled by its Program Counter (PC), and
+the OS Scheduler is responsible for retrieving its execution context before the
+next instructions, as indicated by the PC, can be executed. Accordingly, both
+the PC and the rest of the kernel level data about the process (memory map,
+file descriptor table, etc.) are kept together and manipulated by the Scheduler
+as a single entity (the task).
+
+Departing from this idea, Litton et al. propose to decouple the PC and the
+Scheduler from the rest of the process context data: with Lightweight Contexts
+(lwC), a single process (with a single PC) may have multiple different internal
+contexts. This allows us to perform interesting manipulations, such as creating
+a snapshot of the current process state and, later on, reverting to this
+previous state. Another possibility is switching to a new process context with
+restricted access to memory regions before the execution of security-sensitive
+code. This is not unlike using independent processes or threads but, instead of
+relying on the Scheduler to swap the process context (which is reasonably
+expensive), it is the application itself that chooses when and how to
+manipulate the context, bringing finer control to the programmer along with
+better performance.
+
+An lwC comprises a virtual memory mapping, a collection of page mappings, file
+descriptor bindings, and set of credentials; whenever a new process is created,
+the system creates a new lwC for it. The application may access all lwC
+features directly from user space through system calls that fine-tune its
+behavior. The most important ones are lwCreate and lwSwitch, which have
+semantics similar to fork: after lwCreate returns, the current process has a
+new lwC (child) associated with itself which is a snapshot of the caller
+process. This snapshot differs from fork because no new PID or thread is
+created (because these only make sense to track different PCs). After the child
+is created, the application is free to switch (lwSwitch) back to the snapshot
+at any given time.
 
 \section{Implementação Independente}
 

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg6083"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="shreds.svg">
+  <defs
+     id="defs6077">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker110861-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path110859-5"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker78254-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path78252-6"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6036"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6034"
+         style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="-135.71429"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata6080">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker6036)"
+       d="M 194.0521,16.916627 C 204.49656,0.72290712 220.99087,-8.7061919 242.90878,-6.7615919"
+       id="path100332"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       id="path3628"
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 104.12302,50.365958 c 0,0 -11.089706,12.921033 -24.010736,0 -12.92103,-12.92103 -25.02814,0 -25.02814,0 m 98.077736,0 c 0,0 -11.0897,12.921033 -24.01072,0 -12.92104,-12.92103 -25.02814,0 -25.02814,0"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <path
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:connector-curvature="0"
+       d="m 207.24846,47.190937 c 0,0 -11.08971,12.921034 -24.01074,0 -12.92103,-12.92103 -25.02814,0 -25.02814,0 m 98.07773,0 c 0,0 -11.08969,12.921034 -24.0107,0 -12.92105,-12.92103 -25.02815,0 -25.02815,0"
+       style="fill:none;stroke:#c83737;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4728" />
+    <path
+       id="path4730"
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 310.37391,44.015919 c 0,0 -11.08972,12.921032 -24.01075,0 -12.92104,-12.921031 -25.02813,0 -25.02813,0 m 98.07773,0 c 0,0 -11.08969,12.921032 -24.01072,0 -12.92104,-12.921031 -25.02813,0 -25.02813,0"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:2.99999976;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:3.00000008, 6.00000018;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect100358"
+       width="102.50258"
+       height="59.989983"
+       x="155.91913"
+       y="13.039477"
+       ry="0.024667773"
+       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-34.554672"
+       y="58.780704"
+       id="text5970"><tspan
+         sodipodi:role="line"
+         id="tspan5968"
+         x="-34.554672"
+         y="58.780704"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;font-family:Hack;-inkscape-font-specification:'Hack Bold';stroke-width:0.26458332">Thread</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:connector-curvature="0"
+       id="path78250"
+       d="M 156.42734,9.5109871 V -23.089909"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000017, 8.00000036;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker78254-3);paint-order:normal" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:connector-curvature="0"
+       id="path110857"
+       d="M 258.45168,76.557951 V 115.98959"
+       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000008, 8.00000019;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker110861-7);paint-order:normal" />
+    <text
+       id="text6028"
+       y="-33.66769"
+       x="110.30542"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';stroke-width:0.26458332"
+         y="-33.66769"
+         x="110.30542"
+         id="tspan6026"
+         sodipodi:role="line">shred_enter</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="210.79877"
+       y="133.10849"
+       id="text6032"><tspan
+         sodipodi:role="line"
+         id="tspan6030"
+         x="210.79877"
+         y="133.10849"
+         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';stroke-width:0.26458332">shred_exit</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="312.40948"
+       y="-14.768882"
+       id="text6040"><tspan
+         sodipodi:role="line"
+         id="tspan6038"
+         x="312.40948"
+         y="-14.768882"
+         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332">Executes private</tspan><tspan
+         sodipodi:role="line"
+         x="312.40948"
+         y="2.8700058"
+         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan6042">code and access</tspan><tspan
+         sodipodi:role="line"
+         x="312.40948"
+         y="20.508892"
+         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan6044">s-pool</tspan></text>
+  </g>
+</svg>
