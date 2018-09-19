@@ -1,6 +1,50 @@
 \chapter{Trabalhos Analisados}
 \label{cap:trabalhos-analisados}
 
+Operating Systems researchers produce a vast set of innovation with the
+intention of pushing forward the boundaries of the field; however,
+production-oriented OSes and research projects have different constraints. The
+implementation of new proposals that expand the process abstraction has to
+address issues related to compatibility, better use of current hardware
+resources, reliability, and general enough to support multiple programming
+languages.
+
+Production-oriented OSes demand strong validation to maintain system
+reliability at a variety of scalable configurations: preventing illegal memory
+access, API violations, excessive resource consumption, and synchronization or
+locking errors are features taken for granted by OS users.[ref Mondrix]. This
+makes it hard to adopt research proposals no matter how well they solve any
+single specific aspect.
+
+There is a significant set of existing user applications that perform essential
+tasks; for example, both web servers and browsers are vital players in the
+Internet context. For a new OS feature to be adopted, it is important to
+guarantee that such applications will not suffer in performance or ease of use.
+
+Hardware manufacturers continuously develop new features that, once implemented
+in servers or niche devices, swiftly spread among end users. An example of this
+fast evolution is hardware virtualization: once a server-only capability, it is
+now available on most computers. Such new hardware feature present additional
+unintended opportunities to improve a process abstraction. Nonetheless, such
+proposals may have problems related to the dependency on some specific features
+which may not be available for all users. For this reason, any change to
+processes that require specialized hardware must handle all sorts of corner
+cases. Conversely, proposals for improvements in the process abstraction that
+suggest changes to hardware could be helpful in pushing chip design forward. Of
+course, hardware evolution should take care not to break binary compatibility
+with legacy applications. Unfortunately, this may make the ample adoption of
+some ideas impracticable.
+
+Some of the new process abstraction proposals have dependencies on other
+innovative technologies. While this can bring advantages for both the new
+process concept and the related technology, it also reduces the chances of the
+new abstraction to get adopted in production-oriented OSes due to this
+dependence on another potentially unstable technology.  A new proposal of
+change in the process abstraction has to carefully analyze the mentioned
+tradeoffs to achieve production quality. Academia and industry have to find an
+equilibrium between research and development to bring benefits for end users in
+a timely fashion.
+
 \section{Implementação Estrutural Leve}
 
 \subsection{Dune}
@@ -771,37 +815,71 @@ mudar entre as VAS por meio da chamada para \texttt{vas\_switch}.
 
 \subsection{Light-weight Contexts}
 
-The execution flow of a process is controlled by its Program Counter (PC), and
-the OS Scheduler is responsible for retrieving its execution context before the
-next instructions, as indicated by the PC, can be executed. Accordingly, both
-the PC and the rest of the kernel level data about the process (memory map,
-file descriptor table, etc.) are kept together and manipulated by the Scheduler
-as a single entity (the task).
+O fluxo de execução do processo é controlado pelo seu \emph{Program Counter
+(PC)} e o escalonador do SO é responsável por recuperar o seu contexto de
+execução ante da próxima instrução, como indicado pelo PC, ser executada.
+Consequentemente, tanto o PC quanto o resto dos dados do processo no nível do
+kernel são mantidos juntos e manipulados pelo escalonador como uma entidade
+única (a chamada \emph{task}).
 
-Departing from this idea, Litton et al. propose to decouple the PC and the
-Scheduler from the rest of the process context data: with Lightweight Contexts
-(lwC), a single process (with a single PC) may have multiple different internal
-contexts. This allows us to perform interesting manipulations, such as creating
-a snapshot of the current process state and, later on, reverting to this
-previous state. Another possibility is switching to a new process context with
-restricted access to memory regions before the execution of security-sensitive
-code. This is not unlike using independent processes or threads but, instead of
-relying on the Scheduler to swap the process context (which is reasonably
-expensive), it is the application itself that chooses when and how to
-manipulate the context, bringing finer control to the programmer along with
-better performance.
+Partindo desta ideia, \cite{litton} propuseram desacoplar o PC e o escalonador
+do resto dos dados de contexto do processo: com \emph{Lightweight Context}
+(lwc), um único processo (com um único PC) pode ter multiplos contextos
+internos. Isso cria diversas oportunidades que novos tipos de manipulações
+sejam realizadas, tal como criar \emph{snapshot} do atual estado do processo e
+depois reverter o processo para o estado anterior. Outra possibilidade é mudar
+para um novo contexto de processo com acesso restrito para alguma região da
+memória antes da execução de um código sensível. Isso não é como utilizar
+threads ou processos independêntes, mas ao invés de depender do escalonador
+para mudar o contexto do processo (que é razoávelmente caro) a própria
+aplicação por si mesmo pde escolher quando e qual contexto manipular, levando
+assim um controle fino para os programadores que melhor o desempenho e
+segurança com essa técnica. Note que a figura do escalonador não é removida, a
+troca de contexto no lwC acontece dentro do time quantum fornecido pelo
+escalonador.
 
-An lwC comprises a virtual memory mapping, a collection of page mappings, file
-descriptor bindings, and set of credentials; whenever a new process is created,
-the system creates a new lwC for it. The application may access all lwC
-features directly from user space through system calls that fine-tune its
-behavior. The most important ones are lwCreate and lwSwitch, which have
-semantics similar to fork: after lwCreate returns, the current process has a
-new lwC (child) associated with itself which is a snapshot of the caller
-process. This snapshot differs from fork because no new PID or thread is
-created (because these only make sense to track different PCs). After the child
-is created, the application is free to switch (lwSwitch) back to the snapshot
-at any given time.
+Um lwc compreende um mapemento de memória virtual, uma coleção de mapeamento de
+páginas, \emph{bindings} de descritores de arquivos e conjuntos de credenciais;
+sempre que um novo processo é criado, o sistema crea um novo lwC para ele. A
+aplicação pode acessar todas características do lwC diretamente do user space
+através de chamadas de sistemas que fazem o controle fino dos comportamentos
+fornecidos. O mais importante de todos é o \texttt{lwCreate} e o
+\texttt{lwSwitch} que tem uma semântica similar ao \texttt{fork}: depois que o
+\texttt{lwCreate} retorna, o atual processo tem um novo lwC (filho) associado
+consigo mesmo que é um \emph{snapshot} do processo que foi chamado. Esse
+\emph{snapshot} se difere do \texttt{fork} uma vez que nenhum PID novo ou
+thread é criado (porque isso só faz sentido para manter o rastreio de
+diferentes PCs). Depois que o filho é criado, a aplicação é livre para fazer a
+troca (\texttt{lwSwitch}) para algum \emph{snapshot} a qualquer momento.
+
+A Figura \ref{fig:lwc} ilustra a operação de troca entre diferentes lwCs. Um
+processo em execução pode criar multiplos lwCs durante a sua execução e em
+diferentes momentos; dados os lwCs pertencentes aos processos, este pode
+seletivamente escolher transferir o seu fluxo de execução para outro lwC por
+meio de uma chamada para \texttt{lwSwitch}. A mudança da thread é feita pelo SO
+que é responsável por mudar automáticamente o mapeamento da memória virtual, as
+entradas das tabelas de arquivos, o stack de instrução e o \emph{stack
+pointer}.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{lwc} 
+  \caption{Exemplo do comportamento do lwC}
+  \label{fig:lwc} 
+\end{figure}
+
+A interface do lwC também permite que outras operações como: compartilhamento
+dinâmico ou estático de recursos, controle sobre o acesso as
+\emph{capabilities}, emulação de chamadas de sistema e novas camadas de
+isolamento dentro do processo. Todo o conjunto de chamadas de sistemas do lwC
+fornecem um sofisticado modelo de programação que permite novas capacidades
+tais quais rápido \emph{roll-back}, isolamento de seções e compartimentos de
+proteção.
+
+Os autores demonstram os conceitos do lwC em uma implementação no FreeBSD. As
+modificações princípais foram feita na memória e estruturas de dados do
+processo. Por fim, o uso foi demonstrado em adaptações feitas no Apache, Nginx
+e OpenSSH.
 
 \section{Implementação Independente}
 
