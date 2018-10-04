@@ -1,7 +1,7 @@
 \chapter{Fundamentação Teórica}
 
 Nesse capítulo apresentamos uma breve introdução sobre as abstrações de
-processos e os vários temas que órbitam tal conceito (threads, \emph{fork},
+processos e os vários temas que orbitam tal conceito (threads, \emph{fork},
 representação na memória, virtualização, dentre outros). Apresentamos conceitos
 que são \textbf{indiretamente} ligado as abstrações de processos e que por isto
 não são habitualmente explicitados na bibliografia padrão, desse modo,
@@ -267,36 +267,38 @@ parte do SO.
 % Falar de PCID
 
 \subsection{Troca de Contexto}
+% TODO: Fazer a distinção entre user space e kernel space
 
 \section{Espaço de Endereçamento Virtual}
 
-Making memory available and usable for user applications represents one of the
-core OS duties, and most OSes offer the illusion of full memory availability by
-decoupling the physical memory from how processes see it. Processes only see a
-Virtual Address Space (VAS), which is mapped by the OS to the physical memory,
-guaranteeing good isolation among processes. For handling VASes and offering a
-useful feature for user applications, OSes have to adopt a specific memory
-model;  currently, most of the production-oriented OSes and hardware broadly
-support the page-base memory management model. This model divides the VAS and
-the physical address space of each process into a set of pages, which is a
-small range of contiguous addresses with a fixed size, start address, and
-permissions. The page memory model has some attractive advantages: permission
-control at the page size level, mechanisms for data sharing, fast protection
-checking, accurate notifications about protection violations, and the
-possibility of mapping memory to disk.
+Fazer com que a memória do sistema esteja disponível e utilizável para uma
+aplicação representa uma das principais responsabilidade de um SO. A maioria
+dos SOs oferece a ilusão de que toda a memória está acessível para o processo,
+isso é possível devido ao desacoplamento da memória física de como um processo
+a vê. Processos só veem o \emph{Virtual Address Space (VAS)}, por sua vez, esse
+é mapeado por um SO para uma memória física o que garante um bom isolamento
+entre processos. Para manipular VASes e oferecer um recurso útil para a
+aplicação do usuário, os SOs tem que adotar um modelo de memória especifica;
+atualmente, a maioria dos SOs de produção e hardware suportam amplamente o
+modelo de gerenciamento de páginas.  Esse modelo separa a VAS e o espaço de
+endereçamento físico para cada processo em um conjunto de páginas, essas tem um
+pequeno intervalo contíguo de endereços, tamanho fixado, endereço de início e
+permissões. O modelo de paginação tem algumas vantagens: controle das
+permissões no nível da página, mecanismos de compartilhamento, rápida
+verificação de proteção, notificações acuradas sobre violações e a
+possibilidade de mapear memória em disco.
 
-The approach of using a single address space per process has proven to be
-efficient over the years but, despite its success, it is not flawless and is
-still open for improvements. First, the single linear address space approach
-isolates each process in the memory, which enhances system reliability and
-security. Nevertheless, the process has virtually no way to restrict its own
-access to some of its memory segments, which might be useful to reduce the
-security risk of using third-party binary code. Second, control of memory
-sharing is limited to the page size; this makes data sharing less efficient and
-reduces the programming possibilities in user space. Finally, the coarseness of
-page-level protection creates opportunities for malicious exploits, such as
-buffer and stack overflows or code execution in shared libraries.
-
+A abordagem de utilizar um único espaço de endereçamento por processo tem se
+provado eficiente ao longo dos anos, contudo, apesar do seu sucesso, essa não é
+uma abordagem a prova de falhas e ainda precisa receber melhorias. Primeiramente, a
+abordagem de isolar os processos por meio do espaço de endereçamento linear
+melhora a confiabilidade do sistema e a segurança. Contudo, um processo não tem
+uma forma de restringir o seu próprio acesso ao seu segmento de memória que
+pode ser útil para reduzir os riscos de falhas de segurança ocasionados por
+binários de terceiros. Em segundo lugar, o controle do compartilhamento de
+memória acontece no tamanho de uma página e cria a oportunidade para explorar
+falhas, tai quais \emph{buffer e stack overflow} ou mesmo o compartilhamento de
+bibliotecas comprometidas.
 
 \subsection{Modelo de Paginação}
 
@@ -352,10 +354,79 @@ um recurso não fundamental mas que oferece novos recursos aos desenvolvedores.
 
 \section{Chamadas de Sistema}
 
+\cite{silberschatz} apresenta diversas perspectivas sobre os SOs, dentre elas
+destaca-se a ideia de que um SO fornece serviços para tornar as tarefas de
+programação mais simples para os desenvolvedores. Partindo de tal concepção
+podemos notar os seguintes serviços: controle sobre a execução de um programa,
+operações de I/O, manipulação de sistemas de arquivos, comunicação, detecção de
+erros, alocação de recursos, dentre outros. Dado a vasta quantidade de serviços
+oferecidos, deve-se ter a seguinte pergunta em mente: qual mecanismo utilizado
+pelo SO para dar acesso para todos os serviços? A resposta é simples: chamadas
+de sistema (também conhecidas por \emph{system call} ou \emph{syscall}).
+
+De forma geral, podemos dizer que uma chamada de sistema consiste em uma API de
+baixo nível que permite que uma aplicação executando no espaço de usuário
+(\emph{user space}) faça uma requisição de baixo nível para o SO. Por sua vez,
+esse pedido é rigorosamente validada pelo SO que pode permitir executar a
+operação até o fim, retornando o que a aplicação solicitou; ou pode negar caso
+encontre uma inconsistência. Na prática, esse tipo de operação consiste em uma
+simples chamada de função que é tratada pelo SO. Normalmente cada
+\emph{syscall} tem um número associado a si, com isso o SO consulta uma tabela
+que identifica a função que deve ser chamada. Além disso, passar parâmetros
+para esse tipo de função pode depender da arquitetura e de outros detalhes.
+Para tentar esconder toda a complexidade por trás desse tipo de operação,
+muitas vezes são escritas bibliotecas que encapsulam esse tipo de chamada. O
+exemplo mais emblemático é a \emph{libc} que oculta vários detalhes de baixo
+nível como a leitura e escrita de um arquivo.
+
+Para ilustrar como esse conceito funciona na prática, veja a Figura X mostrando
+um simples programa que pede o seu PID para o SO (exemplo baseado em
+\cite{syscallex}). O programa executando está na memória e esse tem o seu
+\emph{Address Space} devidamente inicializado; ao invocar a função
+\texttt{getpid()}, o seu fluxo de execução é levado para a \emph{libc}. Por sua
+vez a \emph{libc} faz algumas operações, tal qual alocar espaço na memória para
+fazer cache do PID. Quando a \emph{libc} estiver pronta ela finalmente faz a
+chamada para o sistema. Note que nessa etapa ocorre uma mudança de um modo de
+execução menos privilégiado (\emph{ring 3}) para um modo privilégiado
+(\emph{ring 0}). Nesse momento o SO tem total controle sobre o pedido feito e
+faz a verificação dos parâmetros e permissões. Se tudo ocorrer bem, o SO se
+encarrega de copiar a informação pós-processada do \emph{Kernel space} para o
+\emph{user space}. Por fim, a \emph{libc} salva o valor do seu cache evitando a
+necessidade do SO intervir no futuro e a aplicação finalmente recebe o seu PID.
+
+% Figura X
+
 \subsection{Modos de Programação e API}
 
 \section{Device Drivers}
 \label{sec:dd}
+
+Um SO é repleto de elementos que buscam manipular e esconde a complexidade de
+lidar com o hardware, portanto, tal software é consideravelmente grande e
+complexo. Para tornar esse cenário ainda mais desafiador é preciso levar em
+consideração que um SO deve fornecer suporte para uma infinidade de
+dispositivos; a forma como os \emph{drivers} interagem com o Kernel deve ser
+projetada com muito cuidado visando reduzir a complexidade e acoplamento.  O
+design adotado na maioria dos SOs, é uma abordagem flexível na qual o código
+para um dispositivo é mantido isolado em um \emph{driver}.
+
+O isolamento fornecido por um \emph{device driver} é interessante, uma vez que
+esse fornece um mecanismo e não uma política \cite{ddbook}. Entenda por
+mecanismo como a capacidade que deve ser fornecido e por política como a forma
+que a capacidade deve ser usada. Esse separação é interessante pois limita o
+que um \emph{driver} deve fazer e por sua vez simplifica a implementação do
+mesmo. Um exemplo disto é o \emph{Direct Rendering Managemente} do Kernel
+Linux, esse fornece várias capacidades, dentre elas, a operação de trocar
+\emph{framebuffers} primários com secundários; contudo é a aplicação que deve
+controlar tal operação.
+
+Por fim, é interessante ressaltar que alguns sistemas fornecem a ideia de
+\textbf{Módulos carregáveis} (\textbf{loadable modules}) que significa que em
+tempo de execução é possível carregar um novo \emph{device driver}. Esse tipo
+de funcionalidade torna o SO mais leve e facilmente configurável. Por fim, os
+módulos são extremamente flexíveis do ponto de vista da implementação uma vez
+que são um código separado do núcleo do SO, respeitam a interface definida pelo
+mesmo.
 
 \section{Virtualização}
 \label{sec:virtualizacao}
