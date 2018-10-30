@@ -379,22 +379,28 @@ muitas vezes são escritas bibliotecas que encapsulam esse tipo de chamada. O
 exemplo mais emblemático é a \emph{libc} que oculta vários detalhes de baixo
 nível como a leitura e escrita de um arquivo.
 
-Para ilustrar como esse conceito funciona na prática, veja a Figura X mostrando
-um simples programa que pede o seu PID para o SO (exemplo baseado em
-\cite{syscallex}). O programa executando está na memória e esse tem o seu
-\emph{Address Space} devidamente inicializado; ao invocar a função
-\texttt{getpid()}, o seu fluxo de execução é levado para a \emph{libc}. Por sua
-vez a \emph{libc} faz algumas operações, tal qual alocar espaço na memória para
-fazer cache do PID. Quando a \emph{libc} estiver pronta ela finalmente faz a
-chamada para o sistema. Note que nessa etapa ocorre uma mudança de um modo de
-execução menos privilégiado (\emph{ring 3}) para um modo privilégiado
-(\emph{ring 0}). Nesse momento o SO tem total controle sobre o pedido feito e
-faz a verificação dos parâmetros e permissões. Se tudo ocorrer bem, o SO se
-encarrega de copiar a informação pós-processada do \emph{Kernel space} para o
-\emph{user space}. Por fim, a \emph{libc} salva o valor do seu cache evitando a
-necessidade do SO intervir no futuro e a aplicação finalmente recebe o seu PID.
+Para ilustrar como esse conceito funciona na prática, veja a Figura
+\ref{fig:userspace_kernelspace} mostrando um simples programa que pede o seu
+PID para o SO (exemplo baseado em \cite{syscallex}). O programa executando está
+na memória e esse tem o seu \emph{Address Space} devidamente inicializado; ao
+invocar a função \texttt{getpid()}, o seu fluxo de execução é levado para a
+\emph{libc}. Por sua vez a \emph{libc} faz algumas operações, tal qual alocar
+espaço na memória para fazer cache do PID. Quando a \emph{libc} estiver pronta
+ela finalmente faz a chamada para o sistema. Note que nessa etapa ocorre uma
+mudança de um modo de execução menos privilégiado (\emph{ring 3}) para um modo
+privilégiado (\emph{ring 0}). Nesse momento o SO tem total controle sobre o
+pedido feito e faz a verificação dos parâmetros e permissões. Se tudo ocorrer
+bem, o SO se encarrega de copiar a informação pós-processada do \emph{Kernel
+space} para o \emph{user space}. Por fim, a \emph{libc} salva o valor do seu
+cache evitando a necessidade do SO intervir no futuro e a aplicação finalmente
+recebe o seu PID.
 
-% Figura X
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{userspace_to_kernel} 
+  \caption{Execução do user space até o kernel space}
+  \label{fig:userspace_kernelspace}
+\end{figure}
 
 \subsection{Modos de Programação e API}
 
@@ -522,6 +528,7 @@ extremamente eficiênte devido ao seu sofisticado mecânismo de \emph{cache}.
 %FIGURA X
 
 \subsection{A tecnologia VT-x}
+\label{sec:vtx}
 
 Em 2005 Uhlig \citep{uhlig} apresentaram a tecnologia de virtualização adotada
 pela Intel para fornecer a virtualização completa no nível do processador. Na
