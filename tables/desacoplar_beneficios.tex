@@ -1,0 +1,32 @@
+\begin{table}[]
+\small
+\centering
+  \begin{tabular}{|@{}c@{}|@{}l@{}|@{}l@{}|@{}l@{}|@{}l@{}|@{}l@{}|@{}l@{}|}
+  % TOPO DA TABELA
+  % |M{2.5cm}|M{2.5cm}|M{2.5cm}|
+  \hline
+  \multicolumn{1}{|l|}{\diagbox[width=2.5cm, height=2cm]{Desacoplar}{Vantagem}} &
+    % Troca de contexto
+    \multicolumn{1}{@{}c@{}|}{\begin{tabular}[c]{@{}c@{}}Troca de\\ Contexto \\no Espaço\\ de Usuário\end{tabular}} &
+    % Persistência de processos
+    \multicolumn{1}{@{}c@{}|}{\begin{tabular}[c]{@{}c@{}}Persistência\\ de processos\end{tabular}} &
+    % Controle fino de privilégios
+    \multicolumn{1}{@{}c|}{\begin{tabular}[c]{@{}c@{}}Controle \\fino de \\ privilégios\end{tabular}} &
+    % Segurança
+    \multicolumn{1}{@{}c|}{Segurança} &
+    % Recuperação
+    \multicolumn{1}{@{}c|}{Recuperação} &
+    % Otimização
+    \multicolumn{1}{@{}c|}{Otimização} \\ \hline
+  % Início da tabela
+  PC                                                                    &                             & & & & & \\ \hline
+  \begin{tabular}[c]{@{}c}Isolamento \\de memória\end{tabular}          &                             & & & & & \\ \hline
+  VAS                                                                   &                             & & & & & \\ \hline
+  \begin{tabular}[c]{@{}c}Resource\\ Management\end{tabular}            & \ding{52}\ding{52}\ding{52} & & & & & \\ \hline
+  \begin{tabular}[c]{@{}c}Controle de\\ acesso a\\ memória\end{tabular} &                             & & & & & \\ \hline
+  Virtualização                                                         &                             & & & & & \\ \hline
+  Privilégios                                                           &                             & & & & & \\ \hline
+  \end{tabular}
+\caption{Relação desacoplamento beneficio}
+\label{tab:desacoplamento_beneficio}
+\end{table}

@@ -1,52 +1,6 @@
 \chapter{Trabalhos Analisados}
 \label{cap:trabalhos-analisados}
 
-Pesquisas em SO buscam avançar o estado da arte desse campo, contudo, SOs
-usados em produção e projetos de pesquisa tem diferentes restrições. Se uma
-nova proposta feita pela academia tem por objetivo ser utilizada em aplicações
-que estão no estado da prática, essas devem considerar questões referentes
-a compatibilidade, melhor uso do hardware atual, confiabilidade e ser genérico
-o bastante para ser utilizado por múltiplas linguagens de programação.
-
-Os SOs usados em produção demandam uma rigorosa validação para manter o sistema
-estável em uma variedade de configurações, como prevenir acesso ilegal a
-memória, impossibilitar violação de API, evitar consumo excessivo de recursos e
-impedir erros de sincronização ou \textit{locking}. Essas características tem
-que ser garantidas pelo SO \citep{mondrix}, como pode-se esperar, tais
-restrições são complicadas de atendidas por propostas de pesquisas que
-normalmente concentram-se em um único problema sem considerar outros impactos.
-Por esses motivos, para que um novo componente sugerido por meio de pesquisa
-atinga os SOs atuais, é importante garantir fique as aplicações que já existem
-não sofram impactos negativos em termos de desempenho e de uso.
-
-Outra perspectiva a se considerar é o contínuo desenvolvimento de novos
-recursos no nível do hardware, por exemplo, é comum observar componentes que
-são especializados em um nicho e que ao longo do tempo chegam ao usuário
-final tornando-se comum. Um caso simples que ilustra tal evolução é o
-uso de hardware especializado para virtualização, uma vez que esses existiam
-apenas para servidores e hoje estão disponíveis para a maioria dos usuários
-comuns. Tais recursos representam um novo leque de opções não exploradas,
-inclusive para trazer melhorias para as atuais abstrações de processos.
-Entretanto, qualquer tentativa de incorporar os novos recursos de hardware para
-a abstração de processos deve levar em consideração que alguns usuários podem
-não ter tal recurso disponível. Por essa razão qualquer mudança nos processos
-que adicionem suporte a novos recursos de hardware devem levar em consideração
-todo tipo de caso. De modo inverso, propostas para melhorar uma abstração de
-processos podem sugerir mudanças para hardware sendo útil para avançar os
-estado da arte dos chips modernos. Claro que a evolução do hardware deve ter
-cuidado para não quebrar a compatibilidade binária com aplicações legadas.
-Infelizmente, é preciso ter em mente que tais limitações fazem com que a ampla
-adoção de uma determinada melhoria seja impraticável.
-
-Algumas das novas abstrações de processos propostas por diversos pesquisadores
-tem enorme dependência com outras tecnologias experimentais. Se por um lado
-isso traz vantagens para as tecnologias em desenvolvimento, por outro reduz a
-chance de uma nova abstração de processos ser adotada por um SO de produção
-devido a dependência em tecnologias instáveis. Um nova proposta de mudança em
-abstrações de processos devem analisar cuidadosamente as limitações citadas
-para que possam atender aos requisitos de qualidade exigidas por sistemas em
-produção.
-
 Esse capítulo tem como objetivo destacar as principais pesquisas realizadas com
 o objetivo de expandir as abstrações de processos. Para a seleção dos trabalhos
 aqui apresentados, o autor levou em consideração os seguintes aspectos:

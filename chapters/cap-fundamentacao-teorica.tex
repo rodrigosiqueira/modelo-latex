@@ -11,16 +11,19 @@ dos conceitos apresentados nessa seção baseiam-se em sistemas Unix e no padrã
 POSIX. Em resumo, a proposta desse capítulo é fornecer as informações básicas
 para a assimilação das ideias apresentadas neste texto.
 
+% TODO: Avisar que vamos dar um panorama e aprofundar os conceitos para esse
+% trabalho. Falar também que boa parte dos conceitos são baseados no livro X,y
+
 \label{cap:fundamentacao-teorica}
 
-\section{Processos e Threads}
+\section{Uma breve jornada sobre os processos}
 \label{sec:processos-e-threads}
 
 Normalmente programas são escritos em uma linguagem de programação específica
 (e.g.; C/C++, Java, Python, Ruby, etc) e posteriormente convertidas para um
 conjunto de instruções que uma máquina é capaz executar. O código fonte de uma
 aplicação é representado como um ou mais arquivos que é armazenado em uma
-memória \emph{não-volátil} (e.g,; disco rígido), por sua vez, este pode ter uma
+memória \emph{não-volátil} (e.g.; disco rígido), por sua vez, este pode ter uma
 relação com um ou mais arquivos executáveis (binários) gerados a partir do
 fonte. O arquivo binário tem um conjunto de metadados \footnote{Descrição ou
 conjunto de características de um dado ou de um item} no seu começo que auxilia
@@ -28,7 +31,7 @@ o SO a executar de forma correta um programa, tais informações são inseridas
 pelo compilador e são conhecidas como \emph{headers}. Dado esse contexto, o SO
 carrega o executável do disco para a memória com o objetivo de criar um novo
 processo; em seguida o SO realiza a leitura dos metadados dentro do binário e
-utiliza tais informações para criar os segmenos de memórias pertencentes aos
+utiliza tais informações para criar os segmento de memórias pertencentes aos
 processos. Cada pedaço da memória tem um propósito específico que habilita
 o SO a gerir o processo.
 
@@ -42,21 +45,21 @@ o SO a gerir o processo.
 A Figura \ref{fig:memory_segment} ilustra seis segmentos de memória diferentes
 representando o \emph{layout} de um processo após a criação dele por parte do
 SO. O \textbf{segmento de texto} (\emph{Text Segment}) representa a região da
-memória que mantém o código executável (compartilhável e que é somente
+memória que mantém o código executável (compartilhável de somente
 leitura). Já o \textbf{segmento de dados inicializáveis} (\emph{Initialized
 Data Segment}) é responsável por manter variáveis estáticas, enquanto o
 \textbf{segmento de dados não inicializados} (\emph{Uninitialized Data
 Segment}) mantém variáveis estáticas não inicializadas.  Vale observar que o
 segmento de dados não inicializável também é comumente conhecido como
 \emph{Block Started by Symbol (BSS)} por causa de um antigo operador usado
-pelos montadores \cite{gdb}. O \textbf{segmento de Mapeamento de Memória}
+pelos montadores \citep{gdb}. O \textbf{segmento de Mapeamento de Memória}
 (\emph{Memory Mapping Segment}) é a região na qual o SO mapeia arquivos
 diretamente na memória (e.g.; bibliotecas dinâmicas ou arquivos especificados
 pelo programador). O \textbf{segmento da Stack} compreende aos dados usados
 pelo programa durante a execução, como por exemplo, valores de parâmetros de
 função, endereço de retorno e variáveis locais (dados temporários)
-\cite{silberschatz}.  Por fim, o \textbf{segmento do Heap} mantém a memória
-dinâmicamente alocada durante a execução do programa; repare que o \emph{stack}
+\citep{silberschatz}.  Por fim, o \textbf{segmento do Heap} mantém a memória
+dinamicamente alocada durante a execução do programa; repare que o \emph{stack}
 e o \emph{heap} estão em lados oposto da memória.
 
 O primeiro passo realizado pelo SO quando ele lê o arquivo executável é olhar
@@ -68,11 +71,8 @@ próximo passo consiste em copiar toda a região de código e dados lidas do
 arquivo binário para a memória recém alocada; complementarmente, é feita a
 inicialização de todos os registradores e os devidos ajustes no \emph{stack
 pointer}. O processo tem o seu \emph{Program Counter} (PC) ajustado para a
-função \emph{main} do programa \cite{patterson}, por fim, o SO insere o novo
-processo na fila do escalonador. Vale a pena observar que a noção de
-\textbf{Virtual Address Space (VAS)} é diretamente associada ao endereço físico
-de memória atribuído a um novo processo e que por isso um processo não deve
-ter conhecimento sobre outras VAS pertencentes a outros processos.
+função \emph{main} do programa \citep{patterson}, por fim, o SO insere o novo
+processo na fila do escalonador.
 
 \begin{figure}[!h]
   \centering
@@ -80,6 +80,8 @@ ter conhecimento sobre outras VAS pertencentes a outros processos.
   \caption{Stack frames, imagem baseada em \cite{patterson}}
   \label{fig:stack_frames} 
 \end{figure}
+
+% TODO: Fazer uma ponte melhor do PC com a execução
 
 A \emph{stack} é organizada em uma coleção de \textbf{Stack Frames}. Toda vez
 que uma função é chamada ela cria um novo \emph{frame} que mantém as variáveis
@@ -92,13 +94,13 @@ função \texttt{main}. Quando uma função local é chamada, o SO vai alocar um
 novo \emph{stack frame} no topo do \emph{frame} da \texttt{main}, esse
 procedimento permite que a execução do processo ocorra de forma consistente. No
 fim da execução da função, ela retorna para o ponto na qual a função foi
-invocada e o processo de echer e esvaziar a \emph{stack} continua.
+invocada e o processo de preencher e esvaziar a \emph{stack} continua.
 
 Todo os processos são descritos por meio de uma estrutura de dados chamado
 \textbf{Process Control Block (PCB)} que é responsável por manter informações
 sobre o status do processo, \emph{program counter} (PC), registradores da CPU,
 informações sobre escalonamento, dados sobre contas de usuários, status de
-operações de I/O e assim por diante \cite{silberschatz}. Uma dos principais
+operações de I/O e assim por diante \citep{silberschatz}. Uma dos principais
 motivos para a PCB existir é o conceito de \textbf{troca de contexto} que é
 responsável por colocar e tirar processos para executar em uma CPU. Por
 exemplo, se o usuário tem vários processos rodando ao mesmo tempo, o SO tem que
@@ -107,9 +109,6 @@ intervalo de tempo. O SO realiza o processo de troca em duas etapas gerais: (1)
 salva a PCB atual do processo e (2) carrega a PCB do outro processo. Em
 poucas palavras, a troca de contexto tem que ser rápida uma vez que esta não
 faz nenhum processamento considerado útil.
-
-%TODO: Esse parágrafo é importante e está ruim. Essa discussão tem que virar
-% uma seção no futuro e explorar bem a questão do isolamento e os seus tradoffs
 
 O conceito apresentado acima revela uma característica de isolamento associada
 com a forma na qual os processos funcionam; normalmente, segurança e
@@ -120,9 +119,9 @@ processos atual. Para resolver parte desse problema, algumas bibliotecas ou
 chamadas de sistemas são fornecidas como uma interface para coordenar a
 interação entre processos executando concomitantemente, esses são conhecidos
 pelo nome de \textbf{Interprocess Communication} (IPC). Por exemplo,
-desenvolvedores podem utilizar IPC para compartilhar daddos, melhorar o
-desempenho das aplicações, modularidade ou por alguma questão de conveniência
-em suas aplicações. O IPC tem três limitações princípais: elevam o consumo de
+desenvolvedores podem utilizar IPC para compartilhar dados, melhorar o
+desempenho das aplicações, modularizar ou por alguma questão de conveniência
+da sua aplicação. O IPC tem três limitações principais: elevam o consumo de
 memória, adicionam sobrecargas extras de comunicação e tem uma certa
 complexidade para serem implementadas. Essas limitações são proibitivas em
 aplicações com grande demanda computacional.
@@ -135,18 +134,18 @@ aplicações com grande demanda computacional.
 \end{figure}
 
 Como é possível perceber, processos são abstrações poderosas com algumas
-limitações, princípalmente ao que se refere ao desempenho e complexidade. Além
-disso, processos tem apenas uma \emph{thread} para realizar todo o trabalho e
-naturalmente os desenvolvedores buscam atingir mais paralelismo ou concorrência
-por meio de IPC; contudo os programadores tem que lidar com as sobregargas
-extras impostas por essa estratégia. Por esse motivo, buscou-se por muito tempo
-por formas de elevar o desempenho das aplicações por meio de melhorias no grau
-de paralelismo. Como resultado direto de tal esforço sugiu o conceito de um
-processo ter multiplas \emph{threads} compartilhando práticamente todos os
-elementos básicos com execessão da \emph{stack} e do PC. A Figura
-\ref{fig:single_thread_multi_thread} mostra um processo com uma \emph{thread} e
-outro com multiplas \emph{threads}, note na figura o isolamento da \emph{stack}
-e do PC.
+limitações, principalmente ao que se refere ao desempenho e complexidade. Além
+disso, processos tem apenas um fluxo de execução (\textit{thread}) para
+realizar todo o trabalho. Naturalmente os desenvolvedores buscam atingir mais
+paralelismo ou concorrência por meio de IPC, contudo os programadores tem que
+lidar com as sobrecargas extras impostas por essa estratégia. Por esse motivo,
+buscou-se por muito tempo por formas de elevar o desempenho das aplicações por
+meio de melhorias no grau de paralelismo. Como resultado direto de tal esforço
+surgiu o conceito de um processo ter múltiplas \emph{threads} compartilhando
+praticamente todos os elementos básicos com exceção da \emph{stack} e do PC. A
+Figura \ref{fig:single_thread_multi_thread} mostra um processo com uma
+\emph{thread} e outro com múltiplas \emph{threads}, note na figura o isolamento
+da \emph{stack} e do PC.
 
 \lstinputlisting[
                  language=C,
@@ -170,27 +169,26 @@ O Código \ref{lst:simplethreads} ilustra o comportamento básico das
 \emph{threads} por meio de uma biblioteca chamada de \emph{POSIX Thread Library
 (Pthread)}. Veja no Código a criação de duas novas \emph{threads} que mostram
 mensagens simples, note também que a implementação tem três \emph{threads}
-diferentes: a \emph{thread} princípal associada ao processo e outras duas
-\emph{threads} diferentes criadas após a função \texttt{main} iniciar a sua
-execução. A função \texttt{thread\_kernel} tem o código que é executado por
-cada nova \emph{thread} criada na função princípal. Note que
-\texttt{thread\_kernel} recebe um ponteiro genérico, converte esse para
-\texttt{char} e mostra o valor
-no final.
+diferentes: a \emph{thread} principal associada ao processo e outras duas
+\emph{threads} diferentes criadas após a função \texttt{main()} iniciar a sua
+execução. A função \texttt{thread\_kernel()} tem o código que é executado por
+cada nova \emph{thread} criada na função principal. Note que
+\texttt{thread\_kernel} recebe um ponteiro genérico, converte esse para um tipo
+\texttt{char} e mostra o valor no final.
 
-A função \texttt{main} declara duas variáveis do tipo \texttt{pthread\_t}, que
+A função \texttt{main()} declara duas variáveis do tipo \texttt{pthread\_t}, que
 são responsáveis por manter as informações referêntes as \emph{threads}.
 Adicionalmente, são declaradas duas \emph{strings} de mensagens para serem
 mostradas posteriormente dentro das \emph{threads} criadas. Quando o programa
 chega na função \texttt{pthread\_create()}, a biblioteca solicita ao SO a
 criação de uma nova \emph{thread} que executa a função \texttt{thread\_kernel}
-em paralelo. A \texttt{pthread\_create} é chamada novamente e cria a segunda
+em paralelo. A função \texttt{pthread\_create()} é chamada novamente e cria a segunda
 \emph{thread} de execução baseada na função \texttt{thread\_kernel}, contudo,
 com outra mensagem associada com ela. O código termina com a função
 \texttt{pthread\_join()}, que mantém a \emph{thread} princípal até que as duas
 \emph{threads} terminem a sua execução. A saída ilustrada em
 \ref{lst:simpleThreadOutput} mostra as duas execuções que aconteceram em
-paralelo, isso pode ser percebido pela sequência não deterministica da saída. A
+paralelo, isso pode ser percebido pela sequência não determinística da saída. A
 diferença na sequência é explicada pela variação imposta pelo escalonador.
 
 \begin{figure}[!h]
@@ -203,16 +201,18 @@ diferença na sequência é explicada pela variação imposta pelo escalonador.
 Para a melhor compreensão de como o SO trata o Código \ref{lst:simplethreads}
 durante a execução, veja a Figura \ref{fig:stack_threads} ilustrando o que
 acontece da perspectiva do processo. Como esperado, o segmento de texto e dados
-é compartilhados entre as \emph{threads} (a VAS é a mesma para todas as
-\emph{threads}). A princípal mudança pode ser observada no segmento da
-\emph{stack}, toda vez que uma nova \emph{thread} é criada um novo segmento de
-\emph{stack} é gerado; a independência entre \emph{threads} é assegurada por
-multiplas \emph{stacks} isoladas. Toda vez que a \emph{thread} é mudada, o
-\emph{stack pointer} e os registradores são atulizados.
+é compartilhados entre as \emph{threads}. A principal mudança pode ser
+observada no segmento da \emph{stack}, toda vez que uma nova \emph{thread} é
+criada um novo segmento de \emph{stack} é gerado; a independência entre
+\emph{threads} é assegurada por multiplas \emph{stacks} isoladas. Toda vez que
+a \emph{thread} é mudada, o \emph{stack pointer} e os registradores são
+atualizados.
 
+% TODO: Talvez essas seções fiquem melhor mais para frente e se forem
+% mais gerais
 \subsection{Modelos de programação}
 
-Além da minipulação de dispositivos de hardware, os SOs fornecem várias
+Além da manipulação de dispositivos de hardware, os SOs fornecem vários
 recursos adicionais para o espaço de usuário, tal qual \emph{file locking} e
 primitivas de segurança. Para fazer uso de tais recursos, a aplicação precisa
 ser capaz de acessar as mesmas por meio de um modelo de programação coerente,
@@ -224,19 +224,19 @@ programação de paralelismo.
 
 Atualmente, a maioria dos SOs dão suporte para um grande número de modelos de
 programação e suas respectivas APIs. Contudo, as aplicações mudam ao longo dos
-anos e criam demandas para melhorias em areas como camadas de segurança, opções
-de otimizações e simplicação de código; esses aspectos são problemas reais.
+anos e criam demandas para melhorias em áreas como camadas de segurança, opções
+de otimizações e simplificação de código; esses aspectos são problemas reais.
 Nesse sentido, propostas para expandir as abstrações de processos visando
 introduzir novos modelos de programação são recorrentes e representam uma
 interessante área para inovações.
 
 %TODO: Mudar esse nome para algo melhor
-\subsection{Implementation Aspects}
+\subsection{Aspectos de implementação}
 
-As abstrações de processos são o ponto central no projeto de um SO, mapeando
-outras abstrações para ele; assim, outros serviços são suportados pelo SO com a
-intenção de fornecer os mecânismos necessários para orquestrar todas as
-operações dos processos (e.g., escalonador e gerenciamento de memória). Toda
+As abstrações de processos são o ponto central no projeto de um SO moderno,
+mapeando outras abstrações para ele; assim, outros serviços são suportados pelo
+SO com a intenção de fornecer os mecanismos necessários para orquestrar todas
+as operações dos processos (e.g., escalonador e gerenciamento de memória). Toda
 estrutura necessária para gerir processos tem o lado negativo de utilizar CPU
 (\emph{overhead}); para tentar mitigar essa situação, os SOs empregam um vasto
 número de otimizações de hardware e software.
@@ -246,21 +246,21 @@ as consequências podem variar de acordo com a proposta de modificação. Por
 exemplo, uma verificação adicional em uma camada pode elevar a sobrecarga no
 sistema devido a uma nova característica implementada. Contudo, enquanto
 extensões de processos podem degradar o desempenho, mas também podem trazer
-benéficios de desempenho explorando alguma característica do hardware.
+benefícios de desempenho explorando alguma característica do hardware.
 
-\subsection{Resource Management}
+\subsection{Gerenciamento de Recursos}
 
 Toda aplicação executando em um SO consome recursos do sistema. Frequentemente,
 eles realizam boa parte do trabalho no espaço de usuário, o que requer pouca
-intervenção do SO. Por exemplo, uma aplicação que faz calculos complexos não
+intervenção do SO. Por exemplo, uma aplicação que faz cálculos complexos não
 precisa de muito intervenção do SO. Contudo, existe uma grande quantidade de
 software que demandam significante participação do SO para atingir os seus
-objetivos, extendendo assim o seu consumo de recursos para o sistema. Por
+objetivos, estendendo assim o seu consumo de recursos para o sistema. Por
 exemplo, uma aplicação que utiliza recursos de rede tem várias partes das suas
 atividades conduzidas pelo SO quando um pacote chega. Essa situação pode gerar
 problemas devido ao controle indireto e descontrolado do uso de recursos por
 atividades não confiáveis ao Kernel. Ataques do tipo \emph{Denial-of-service}
-representam um exemplo da vida real que elevam o consumo do uso de recuros por
+representam um exemplo da vida real que elevam o consumo do uso de recursos por
 parte do SO.
 
 \subsection{Descritores de Arquivo}
@@ -270,54 +270,183 @@ parte do SO.
 % TODO: Fazer a distinção entre user space e kernel space
 
 \section{Espaço de Endereçamento Virtual}
-
+% TODO: Merge com a próxima seção
 Fazer com que a memória do sistema esteja disponível e utilizável para uma
 aplicação representa uma das principais responsabilidade de um SO. A maioria
 dos SOs oferece a ilusão de que toda a memória está acessível para o processo,
 isso é possível devido ao desacoplamento da memória física de como um processo
 a vê. Processos só veem o \emph{Virtual Address Space (VAS)}, por sua vez, esse
-é mapeado por um SO para uma memória física o que garante um bom isolamento
-entre processos. Para manipular VASes e oferecer um recurso útil para a
-aplicação do usuário, os SOs tem que adotar um modelo de memória especifica;
-atualmente, a maioria dos SOs de produção e hardware suportam amplamente o
-modelo de gerenciamento de páginas.  Esse modelo separa a VAS e o espaço de
-endereçamento físico para cada processo em um conjunto de páginas, essas tem um
-pequeno intervalo contíguo de endereços, tamanho fixado, endereço de início e
-permissões. O modelo de paginação tem algumas vantagens: controle das
-permissões no nível da página, mecanismos de compartilhamento, rápida
-verificação de proteção, notificações acuradas sobre violações e a
+é mapeado por um SO (com auxílio de hardware) para uma memória física o que
+garante um bom isolamento entre processos. Para manipular VASes e oferecer um
+recurso útil para a aplicação do usuário, os SOs tem que adotar um modelo de
+memória especifica; atualmente, a maioria dos SOs de produção e hardware
+suportam amplamente o modelo de gerenciamento de páginas.  Esse modelo separa a
+VAS e o espaço de endereçamento físico para cada processo em um conjunto de
+páginas, essas tem um pequeno intervalo contíguo de endereços, tamanho fixado,
+endereço de início e permissões. O modelo de paginação tem algumas vantagens:
+controle das permissões no nível da página, mecanismos de compartilhamento,
+rápida verificação de proteção, notificações acuradas sobre violações e a
 possibilidade de mapear memória em disco.
 
-A abordagem de utilizar um único espaço de endereçamento por processo tem se
-provado eficiente ao longo dos anos, contudo, apesar do seu sucesso, essa não é
-uma abordagem a prova de falhas e ainda precisa receber melhorias. Primeiramente, a
-abordagem de isolar os processos por meio do espaço de endereçamento linear
-melhora a confiabilidade do sistema e a segurança. Contudo, um processo não tem
-uma forma de restringir o seu próprio acesso ao seu segmento de memória que
-pode ser útil para reduzir os riscos de falhas de segurança ocasionados por
-binários de terceiros. Em segundo lugar, o controle do compartilhamento de
-memória acontece no tamanho de uma página e cria a oportunidade para explorar
-falhas, tai quais \emph{buffer e stack overflow} ou mesmo o compartilhamento de
-bibliotecas comprometidas.
+\section{Endereços lógicos, físicos e Paginação}
 
-\subsection{Modelo de Paginação}
+Imagine um programa escrito em C, em algum momento do código esse faz uma
+alocação de memória e em um outro momento essa região é lida ou escrita. Esse
+programa de alto nível é traduzido para um conjunto de instruções de baixo
+nível na qual a CPU consegue manipular, o arquivo contendo essas informações é
+comumente chamada de binário.  Posteriormente esse binário é carregado pelo SO
+e o programa começa a sua execução. Durante a realização das tarefas da
+aplicação, naturalmente ocorrem acessos aos endereços de memória. Da relação
+entre o código de alto nível, o binário e o acesso a memória, surgem algumas
+questões, dentre elas: como o programa consegue acessar o endereço sem conhecer
+as características da máquina? Como os programas evitam os acessos aos mesmos
+endereços?
+
+A resposta para as perguntas acima nascem de três conceitos: \textit{address
+binding} em tempo de execução, espaço de endereçamento e paginação. O processo
+de "construção" do endereço nasce durante a compilação do código fonte, nesse
+momento o compilador consegue identificar diversos tipos de acesso a memória
+(não entraremos em detalhes, por fugir do escopo desse trabalho) e este faz uma
+marcação em certos endereços que indicam que o mesmo deve ser definido em tempo
+de execução. Com base nessa "marcação" os SO e o hardware ganham um mecanismo
+para definir o endereço em tempo de execução.
+
+Como dito anteriormente, o binário contém certas informações necessárias para a
+criação do processo e também para a definição de acesso de um endereço. Quando
+o software começa a sua execução, significa que a CPU está executando as
+instruções descritas no binário, dentre elas as tentativas de acesso a certos
+endereços na memória.
+
+Todo endereço gerado pela CPU recebe o nome de \textbf{endereço virtual} ou
+\textbf{endereço lógico}\index{Endereço lógico}, por sua vez, o conjunto desses
+endereços recebe o nome de \textbf{espaço de endereçamento virtual (Virtual
+Address Space)} ou simplesmente VAS. De forma simplificada, podemos dizer que
+esses endereços gerados pela CPU não são válidos da perspectiva da memória,
+i.e., são apenas endereços usados pela aplicação mas que não correspondem ao
+endereço real da memória física. Os endereços reais da memória são chamados de
+\textbf{endereços físicos} e o conjunto de todos os endereços da memória são
+chamados de \textbf{espaço de endereçamento físico}. Agora você deve está se
+perguntando: qual a relação entre esses dois tipos de endereços? Como eles
+ajudam a resolver os problemas citados no começo? Eis que surge um terceiro
+elemento entre esses conceitos, o \textit{Memory-Management Unit
+(MMU)}\index{MMU}. Veja a Figura \ref{fig:mmu} ilustrando a posição "física"
+desse hardware:
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{mmu} 
+  \caption{Representação didática da MMU}
+  \label{fig:mmu}
+\end{figure}
+
+A MMU é um hardware usado para fazer o mapeamento do endereço virtual para o
+endereço físico em tempo de execução. A Figura \ref{fig:mmu} mostra a CPU
+gerando um endereço, que por sua vez é entregue a MMU. A MMU converte o
+endereço virtual em um endereço físico e procede com o acesso a memória. Dado a
+visão geral do que acontece do endereço virtual para o endereço físico com o
+intermédio da CPU, podemos olhar com mais detalhes o funcionamento do
+mapeamento e introduzir o conceito de paginação.
+
+Antes de nos aprofundarmos na paginação, vale a pena fazer uma última reflexão
+sobre os endereços físicos e virtuais. Começando com os endereços virtuais,
+repare que esses precisam ter algum intervalo definido e que seja finito, qual
+seria? Esse intervalo começa em 0 e vai até um valor máximo definido em um
+conjunto de bits chamado de \textit{virtual bits}. Durante muito tempo, o total
+de bits era de 32 o que dava um espaço de endereçamento de 4 Gb; hoje em dia é
+relativamente simples encontrar CPUs com 48 bits o que gera uma VAS de 256 TiB.
+Na prática, isso significa que um software executando em um SO moderno tem a
+ilusão de que pode acessar todos os endereços fornecidos pela VAS. Por
+enquanto, sabemos que isso não é verdade, pois dificilmente conseguimos
+fornecer tanta memória. Por esse motivo e como ilustrado na Figura
+\ref{fig:vas_pas}, notamos que o endereço virtual é várias vezes maior do que o
+endereço físico. Para piorar, a memória física deve ser compartilhada entre
+vários processos em execução no SO.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{virtual_vs_fisico} 
+  \caption{Espaço de endereçamento virtual vs. físico}
+  \label{fig:vas_pas}
+\end{figure}
+
+O modelo de paginação é um esquema que surge com o objetivo de permitir que os
+endereços físicos do processo possam ser dispostos na memória de forma
+não-contínua. A implicação direta desse modelo é a de que um processo não
+precisa estar totalmente na memória e que esse conceito se sustenta para "n"
+processos. Contudo, para que tal modelo possa ser implementado, é preciso
+dividir o espaço de endereçamento virtual e físico em \textbf{páginas} e
+\textbf{frames} respectivamente. Uma vez que ambos os espaços de endereçamentos
+são subdivididos, é necessário ter um mecanismo para saber o que está presente
+ou não na memória. Para ter uma visão de como todo o modelo de paginação
+funciona, veja a Figura \ref{fig:paginacao}.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{paginacao} 
+  \caption{Modelo de paginação}
+  \label{fig:paginacao}
+\end{figure}
+
+Na Figura \ref{fig:paginacao} observamos que a CPU gera um endereço lógico, por
+sua vez esse endereço é subdividido em duas partes: um \textit{page} e um
+\textit{offset}. O page comporta-se como um index corresponde a uma entrada em
+uma estrutura de dados chamada de \textbf{Tabela de Paginação}, essa tabela faz
+parte da abstração de processos e tem uma entrada especificada na PCB, ou seja,
+todo processo tem tal tabela associada a si. Cada entrada na tabela corresponde
+ao endereço de início de um frame na memória que está associado ao processo.
+Para ilustrar melhor esse conceito, imagine um programa que aloca espaço na
+memória, na prática o SO cria uma nova entrada na tabela e retorna o endereço
+virtual para a aplicação.  Depois que o valor referente ao index é recuperado a
+MMU soma o \textit{offset} da segunda parte do endereço virtual e finalmente o
+acesso a memória física ocorre.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{paginacao_passos} 
+  \caption{Passos do acesso a memória com paginação}
+  \label{fig:passos_paginacao}
+\end{figure}
+
+A Figura \ref{fig:passos_paginacao} exemplifica o processo descrito
+anteriormente. Repare que são necessários vários acessos a memória para
+construir o endereço final e finalmente conseguir acessar a palavra de dados,
+claramente isso não é eficiente. Nesse sentido, existe um mecanismo que busca
+reduzir esses acessos por meio de uma tabela chamada de \textbf{Translation
+look-aside Buffer (TLB)}. Essa tabela salva o último acesso (coluna e valor)
+feito a tabela de páginas evitando que a memória seja consultada inúmeras
+vezes. Tal mecanismo é ilustrado na Figura \ref{fig:paginacao}, note que a
+busca na TLB e na tabela de página ocorre em paralelo, se a TLB tiver um acerto
+a procura na da memória; do contrário, \textit{TLB Miss}, a busca na memória já
+se inciou.
+
+% TODO: Claramente você explicou um modelo antigo. Tu deve deixar isso claro
+%aqui no fim ou logo no começo. Lembrar que o objetivo é só apresentar os
+%conceitos
+
+Por fim, é importante destacar que os mecanismos descritos nessa seção trazem
+inúmeros benefícios diretos e indiretos. Talvez as vantagens mais direta seja a
+possibilidade de ter o processo na memória de forma não contígua e assim
+conseguir controlar o que deve ou não estar presente na memória. Indiretamente,
+esses mecanismos isolam cada processo de acordo com a VAS uma vez que todo
+processo tem a ilusão de que tem total controle da memória. Além disso, o
+mecanismo de paginação facilita a operação de realizar o compartilhamento de
+dados entre os processos; o SO orquestra um conjunto de páginas com a mesma
+visibilidade (indicada pelo programa no espaço de usuário) para ser
+compartilhado entre processos.
 
 \subsection{Modelo de Segmentação}
 
 \subsection{Page Walk}
 
-\subsection{TLB}
-% Falar de TLB tagged
-
 \subsection{Outros Mecanismos de Memória}
 \label{sec:outros_mecanismos_memoria}
 
 Os microprocessadores ARM oferecem alguns recursos adicionais atrelados a
-tabelas de tradução, dentre eles destacam-se os campos de permissão e o dominío
+tabelas de tradução, dentre eles destacam-se os campos de permissão e o domínio
 (estes trabalham juntos). Cada região de memória definida na tabela de tradução
 é controlada por um domínio que é especificado em um campo da tabela, no total
 existem 16 desses domínios diferentes disponíveis para utilização
-\cite{armdeveloperguide}. O aspecto mais interessante em se utilizar dominíos
+\cite{armdeveloperguide}. O aspecto mais interessante em se utilizar domínios
 está no comportamento que este apresenta caso ocorra alguma tentativa de acesso
 da memória, dentre elas:
 
@@ -329,7 +458,7 @@ da memória, dentre elas:
 \end{itemize}
 
 Normalmente quem faz a solicitação de acesso a memória é a CPU em favor de
-algum processo, então a MMU precisa proceder com algumas vericações que
+algum processo, então a MMU precisa proceder com algumas verificações que
 consiste em três passos:
 
 \begin{enumerate}
@@ -348,7 +477,7 @@ consiste em três passos:
 Nesse contexto o SO pode tomar algumas decisões para cada aplicação; dentre
 elas permitir, restringir ou negar o acesso para diferentes áreas da memória.
 Além disso, o SO pode mudar permissões de acesso para um grande número de
-regiões simultâneas. Note que o mecânismo de domínios é um recursos adicional
+regiões simultâneas. Note que o mecanismo de domínios é um recursos adicional
 ao tradicional modelo de controle da memória adotado pelos SOs, ou seja, é
 um recurso não fundamental mas que oferece novos recursos aos desenvolvedores.
 
@@ -442,16 +571,16 @@ mesmo.
 
 A ideia de oferecer a abstrações de máquinas virtuais dentro de uma mesma
 máquina é um aspiração de longa data como o emblemático trabalho de Popek e
-Goldberg \cite{popek} demonstra. Este foi públicado em 1974 indicando os
+Goldberg \cite{popek} demonstra. Este foi publicado em 1974 indicando os
 requisitos necessários para a terceira geração processadores fornecessem
 virtualização completa. Neste período se tinha noção de algumas das vantagens
 que a virtualização por software e hardware poderia entregar. Dentre as
 inúmeras vantagens da virtualização destacam-se a possibilidade de executar
 aplicações legadas em um SO antigo, recursos que facilitam o processo de
-desenvolvimento de software, serviços de núvem, \emph{checkpoints}, migração de
+desenvolvimento de software, serviços de nuvem, \emph{checkpoints}, migração de
 processos, isolamento, dentre outras.
 
-O elemento central da virtualiação é o \emph{Virtual Machine Monitor (VMM)}
+O elemento central da virtualização é o \emph{Virtual Machine Monitor (VMM)}
 (também conhecido como \textbf{hypervisor}) que é responsável por criar a
 ilusão de múltiplas máquinas em um mesmo hardware físico \cite{tanenbaum}.
 Essas máquinas virtuais rodando sobre o mesmo hardware tem a capacidade de
@@ -463,11 +592,11 @@ que está executando sobre o hardware com privilégios.
 Um dos objetivos da virtualização consiste em permitir que um SO inicialize
 como se estivesse dando boot em uma máquina real. Para que isso seja possível é
 preciso emular o hardware de forma que o \emph{guest} não perceba que está em
-um mecânismo simulado; ao mesmo tempo este processo deve ocorrer de forma
-eficiênte. Em 1974, \citep{popek} sugeriram alguns requisitos para que os
+um mecanismo simulado; ao mesmo tempo este processo deve ocorrer de forma
+eficiente. Em 1974, \citep{popek} sugeriram alguns requisitos para que os
 hardware modernos dessem suporte completo para virtualização, esses conceitos
 são amplamente implementados nos processadores modernos. Basicamente os autores
-destacam que três dimênsões que devem ser consideradas para fornecer a
+destacam que três dimensões que devem ser consideradas para fornecer a
 virtualização completa no nível dos processadores: segurança, fidelidade e
 eficiência.
 
@@ -499,30 +628,30 @@ três grupos de diferentes:
 
 Se você tentar fazer algo em modo usuário que você não deveria ser capaz de
 fazer, o hardware deve capturar essa ação; em outras palavras, Popek e Goldberg
-mostraram que uma máquina é virtualizável se o conjunto de instruções sensíveis
+mostraram que uma máquina é virtualizavel se o conjunto de instruções sensíveis
 é um subconjunto das instruções privilégiadas. Apesar de parecer um conceito
 simples, levaram-se vários anos para que as CPUs incorporassem tais definições
 e assim oferecessem um adequado suporte de hardware para a virtualização.
 
 O suporte completo para a virtualização em hardware foi resolvido apenas em
-2005 pela intel \cite{uhlig} com uma técnologia chamada \textbf{Virtualization
+2005 pela Intel \cite{uhlig} com uma tecnologia chamada \textbf{Virtualization
 Technology (VT-x)}. A AMD tem uma solução parecida chamada \textbf{Secure
 Virtual Machine (SVM)}. A ideia básica é criar um invólucro no qual a máquina
 virtual pode executar um SO \emph{guest} iniciado dentro deste recipiente, o SO
 contínua lá até que provoque uma \emph{trap} que faz com que o VMM tenha que
 lidar com a situação. O conjunto de instruções que provocam uma \emph{trap} são
 controlados por um conjunto de bits na qual o VMM tem acesso, essa extensão
-torna possível a execução classíca de uma máquina virtual baseada em
+torna possível a execução clássica de uma máquina virtual baseada em
 "interrupção-e-emulação" \cite{tanenbaum}.
 
 Do ponto de vista da eficiência, a virtualização deve fazer com que a maior
-parte do código executado pelo SO \emph{guest} não sofra interferêcia do VMM.
+parte do código executado pelo SO \emph{guest} não sofra interferência do VMM.
 Uma das abordagens utilizada antes de se ter o hardware de virtualização foi a
 adoção de técnicas na qual o hypervisor interceptava as instruções e as
 reescrevia em tempo de execução com uma sequência de código considerada segura.
-Esse mecânismo permitia substituir instruções sensíveis, mas não privilégiadas;
+Esse mecanismo permitia substituir instruções sensíveis, mas não privilégiadas;
 tal técnica ficou conhecida como \textbf{tradução binária} e demostrou-se
-extremamente eficiênte devido ao seu sofisticado mecânismo de \emph{cache}.
+extremamente eficiente devido ao seu sofisticado mecanismo de \emph{cache}.
 
 % TODO: Falar dos tipos de hypervisor
 %FIGURA X
@@ -549,8 +678,8 @@ interessante observar que os dois modos tem suporte para os quatro níveis de
 privilégios fornecidos pelos processadores Intel, isto permite que a máquina
 \emph{guest} que tente executar uma instrução privilégiada em algum desses
 nível forneçam tal informação para o VMM. Contudo, os software executando como
-\emph{VMX non-root} são desprivilégiados de certa forma, a não pelo nível de
-privilégios. Note da Figura \ref{fig:vt-x_flow} que existe uma trasição chamada
+\emph{VMX non-root} são desprivilegiados de certa forma, a não pelo nível de
+privilégios. Note da Figura \ref{fig:vt-x_flow} que existe uma transição chamada
 \emph{VM exit} e \emph{VM entry}. A transição \emph{VM exit} ocorre quando o
 controle é transferido do \emph{guest} para o VMM, isto faz com que o estado da
 máquina \emph{guest} seja salvo e o estado do \emph{host} seja carregado para
