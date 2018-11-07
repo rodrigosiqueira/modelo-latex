@@ -14,10 +14,117 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="memory_anatomy.svg">
   <defs
      id="defs2">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7219"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path7217"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker6151"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path6149"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4937"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4935"
+         style="fill:#a7b3cd;fill-opacity:1;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker1815"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#444444;fill-opacity:1;fill-rule:evenodd;stroke:#444444;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path1813"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1709"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1707"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1593"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1591"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker2155"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path2153"
+         style="fill:#008066;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
     <marker
        inkscape:isstock="true"
        style="overflow:visible"
@@ -312,29 +419,14 @@
        refX="0"
        refY="0"
        orient="auto"
-       inkscape:stockid="Arrow2Send">
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
       <path
          transform="matrix(-0.3,0,0,-0.3,0.69,0)"
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
          style="fill:#008066;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
          id="path15203"
          inkscape:connector-curvature="0" />
-    </marker>
-    <marker
-       inkscape:stockid="Arrow2Send"
-       orient="auto"
-       refY="0"
-       refX="0"
-       id="marker14413"
-       style="overflow:visible"
-       inkscape:isstock="true"
-       inkscape:collect="always">
-      <path
-         inkscape:connector-curvature="0"
-         id="path14411"
-         style="fill:#008066;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
     </marker>
     <marker
        inkscape:isstock="true"
@@ -348,24 +440,8 @@
       <path
          transform="matrix(-0.3,0,0,-0.3,0.69,0)"
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#008066;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
          id="path13472"
-         inkscape:connector-curvature="0" />
-    </marker>
-    <marker
-       inkscape:isstock="true"
-       style="overflow:visible"
-       id="marker11436"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Arrow2Send"
-       inkscape:collect="always">
-      <path
-         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         id="path11434"
          inkscape:connector-curvature="0" />
     </marker>
     <marker
@@ -470,7 +546,8 @@
        refX="0"
        id="marker5682"
        style="overflow:visible"
-       inkscape:isstock="true">
+       inkscape:isstock="true"
+       inkscape:collect="always">
       <path
          inkscape:connector-curvature="0"
          id="path5680"
@@ -599,7 +676,7 @@
       <path
          inkscape:connector-curvature="0"
          id="path4595-9"
-         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         style="fill:#008066;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
          d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
          transform="scale(-0.6)" />
     </marker>
@@ -619,22 +696,6 @@
          transform="scale(-0.6)" />
     </marker>
     <marker
-       inkscape:stockid="Arrow2Send"
-       orient="auto"
-       refY="0"
-       refX="0"
-       id="marker5985-3"
-       style="overflow:visible"
-       inkscape:isstock="true"
-       inkscape:collect="always">
-      <path
-         inkscape:connector-curvature="0"
-         id="path5983-1"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
-    </marker>
-    <marker
        inkscape:isstock="true"
        style="overflow:visible"
        id="marker24260"
@@ -650,22 +711,6 @@
          id="path24258"
          inkscape:connector-curvature="0" />
     </marker>
-    <marker
-       inkscape:stockid="Arrow2Send"
-       orient="auto"
-       refY="0"
-       refX="0"
-       id="marker19064"
-       style="overflow:visible"
-       inkscape:isstock="true"
-       inkscape:collect="always">
-      <path
-         inkscape:connector-curvature="0"
-         id="path19062"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
-    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -674,9 +719,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.175"
-     inkscape:cx="-1938.4768"
-     inkscape:cy="1370.9531"
+     inkscape:zoom="0.12374369"
+     inkscape:cx="586.43935"
+     inkscape:cy="1144.9121"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -711,7 +756,7 @@
        x="118.12042"
        y="51.431702"
        ry="0.12087343"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <text
@@ -720,7 +765,7 @@
        x="196.89481"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.79999924px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -733,13 +778,13 @@
        d="M 116.33561,246.78975 H 273.96276"
        id="path4634"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <path
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path1144"
        d="M 116.33561,150.02785 H 273.96276"
@@ -747,7 +792,7 @@
     <rect
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        ry="0.032638855"
        y="-43.022415"
        x="118.12042"
@@ -763,13 +808,13 @@
        x="118.12042"
        y="-211.63971"
        ry="0.063677721"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="196.11346"
@@ -786,7 +831,7 @@
        x="195.25769"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.79999924px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -797,7 +842,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="196.42351"
@@ -814,7 +859,7 @@
        x="196.42351"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -828,7 +873,7 @@
        x="196.42352"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -839,7 +884,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="196.42352"
@@ -853,7 +898,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="195.96463"
@@ -867,7 +912,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="196.315"
@@ -891,13 +936,13 @@
        x="118.12042"
        y="-314.56827"
        ry="0.032638855"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="195.25769"
@@ -911,7 +956,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="196.42351"
@@ -925,7 +970,7 @@
     <rect
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        ry="0.032638855"
        y="260.59573"
        x="-426.04037"
@@ -936,7 +981,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-246.02841"
@@ -953,7 +998,7 @@
        x="-245.41829"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -969,7 +1014,7 @@
        x="-426.04037"
        y="165.18456"
        ry="0.032638855"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <text
@@ -978,7 +1023,7 @@
        x="-246.02841"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.27777863px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -989,7 +1034,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-245.41829"
@@ -1003,7 +1048,7 @@
     <rect
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        ry="0.032638855"
        y="71.105682"
        x="-426.04037"
@@ -1014,7 +1059,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-246.02841"
@@ -1031,7 +1076,7 @@
        x="-245.41829"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -1047,7 +1092,7 @@
        x="-426.04037"
        y="-30.456738"
        ry="0.032638855"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <text
@@ -1056,7 +1101,7 @@
        x="-246.02841"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.27777863px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -1067,7 +1112,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-245.41829"
@@ -1081,7 +1126,7 @@
     <rect
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        ry="0.032638855"
        y="-124.53561"
        x="-426.04037"
@@ -1092,7 +1137,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-246.02841"
@@ -1109,7 +1154,7 @@
        x="-245.41829"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -1125,7 +1170,7 @@
        x="-426.04037"
        y="-212.20001"
        ry="0.032638855"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <text
@@ -1134,7 +1179,7 @@
        x="-246.02841"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.27777863px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -1145,7 +1190,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-245.41829"
@@ -1159,7 +1204,7 @@
     <rect
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        ry="0.032638855"
        y="-318.03876"
        x="-426.04037"
@@ -1170,7 +1215,7 @@
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-246.02841"
@@ -1187,7 +1232,7 @@
        x="-245.41829"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
@@ -1196,17 +1241,20 @@
          sodipodi:role="line"
          id="tspan1282">VM_READ | VM_WRITE</tspan></text>
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#008066;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5985-3);paint-order:normal"
+       style="fill:none;fill-rule:evenodd;stroke:#008066;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-2);paint-order:normal"
        d="M -246.15563,454.18668 V 351.51843"
        id="path13168"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
     <g
        id="g13115"
-       transform="translate(-1.5131073)">
+       transform="translate(-1.5131073)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
       <rect
          style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#008066;stroke-width:3.99999976;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect1286"
@@ -1235,7 +1283,10 @@
     </g>
     <g
        id="g13450"
-       transform="translate(0,8.4267349)">
+       transform="translate(0,8.4267349)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
       <rect
          inkscape:export-ydpi="144.75999"
          inkscape:export-xdpi="144.75999"
@@ -1263,7 +1314,10 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">task_struct</tspan></text>
     </g>
     <g
-       id="g14385">
+       id="g14385"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
       <rect
          style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect1290"
@@ -1291,7 +1345,11 @@
            id="tspan1366">struct file</tspan></text>
     </g>
     <g
-       id="g14390">
+       id="g14390"
+       transform="translate(-3.0238095,3.0238095)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
       <rect
          inkscape:export-ydpi="144.75999"
          inkscape:export-xdpi="144.75999"
@@ -1320,7 +1378,10 @@
     </g>
     <g
        id="g14395"
-       transform="translate(0,16.630952)">
+       transform="translate(0,16.630952)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
       <rect
          style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect1376"
@@ -1348,11 +1409,11 @@
            id="tspan1378">struct file</tspan></text>
     </g>
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000015, 8.00000031;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker19064);paint-order:normal"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4, 8;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker1593);paint-order:normal"
        d="M -57.976675,260.69327 108.90741,251.31985"
        id="path19060"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -1360,7 +1421,7 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path24256"
        d="m -62.001267,340.49192 170.232097,3.02381"
@@ -1369,7 +1430,7 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path3668"
        d="M -57.976675,166.19923 110.41931,157.20378"
@@ -1379,7 +1440,7 @@
        d="M -57.976675,72.083154 110.79729,59.307947"
        id="path4010"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -1387,7 +1448,7 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path4376"
        d="M -57.976675,-29.970417 108.90741,-42.745624"
@@ -1397,7 +1458,7 @@
        d="m -61.378461,-122.19661 170.285871,-5.59365"
        id="path4736"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -1405,7 +1466,7 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path5132"
        d="m -57.976675,-211.02101 166.884085,0.45396"
@@ -1415,7 +1476,7 @@
        d="m -57.976675,-317.98827 166.884085,3.47777"
        id="path5678"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -1424,7 +1485,7 @@
        d="M -60.111386,243.77834 108.60881,241.13251"
        id="path9440"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -1432,7 +1493,7 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path9800"
        d="M -62.001267,149.63461 110.49869,147.36676"
@@ -1442,7 +1503,7 @@
        d="M -61.245315,49.584098 110.12071,48.45017"
        id="path10154"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -1450,7 +1511,7 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path10604"
        d="m -62.001267,-46.514357 170.232097,3.02381"
@@ -1460,7 +1521,7 @@
        d="M -61.623291,-134.79389 108.98678,-137.8177"
        id="path11060"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -1468,26 +1529,26 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path11432"
        d="m -62.001267,-237.87934 170.232097,3.02381"
-       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker11436);paint-order:normal" />
+       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker1709);paint-order:normal" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path13470"
        d="m -610.45404,495.56518 h 253.85873"
        style="fill:none;fill-rule:evenodd;stroke:#008066;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker13474);paint-order:normal" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#008066;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker14413);paint-order:normal"
+       style="fill:none;fill-rule:evenodd;stroke:#008066;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker18782);paint-order:normal"
        d="m -432.97107,317.16042 -179.7754,45.35714"
        id="path14409"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -1495,7 +1556,7 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path15201"
        d="m -432.97107,221.91042 -179.7754,49.89285"
@@ -1505,7 +1566,7 @@
        d="M -431.45917,-60.815772 H -618.79409"
        id="path15753"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
@@ -1513,7 +1574,7 @@
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/prefork.png"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
        inkscape:connector-curvature="0"
        id="path16677"
        d="M -431.45917,-162.1134 H -618.79409"
@@ -1522,31 +1583,460 @@
        inkscape:connector-curvature="0"
        id="path22820"
        d="m -435.67943,201.68074 a 36.578666,24.663281 0 0 1 -32.31464,-11.95038 36.578666,24.663281 0 0 1 -0.48481,-24.84821 36.578666,24.663281 0 0 1 31.83719,-12.51943"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker22824)" />
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker22824)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker23822)"
        d="m -435.67943,290.41422 a 36.578666,24.663281 0 0 1 -32.31464,-11.95038 36.578666,24.663281 0 0 1 -0.48481,-24.84821 36.578666,24.663281 0 0 1 31.83719,-12.51943"
        id="path23818"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker24572)"
        d="m -435.67943,99.049242 a 36.578666,24.663281 0 0 1 -32.31464,-11.95038 36.578666,24.663281 0 0 1 -0.48481,-24.84821 36.578666,24.663281 0 0 1 31.83719,-12.51943"
        id="path24568"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
     <path
        inkscape:connector-curvature="0"
        id="path25066"
        d="m -435.67943,6.0394465 a 36.578666,24.663281 0 0 1 -32.31464,-11.95038 36.578666,24.663281 0 0 1 -0.48481,-24.8482105 36.578666,24.663281 0 0 1 31.83719,-12.51943"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker25070)" />
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker25070)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
     <path
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker25628)"
        d="m -435.67943,-82.694037 a 36.578666,24.663281 0 0 1 -32.31464,-11.95038 36.578666,24.663281 0 0 1 -0.48481,-24.848213 36.578666,24.663281 0 0 1 31.83719,-12.51943"
        id="path25624"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
     <path
        inkscape:connector-curvature="0"
        id="path26140"
        d="m -435.67943,-188.31651 a 36.578666,38.96116 0 0 1 -32.31464,-18.87829 36.578666,38.96116 0 0 1 -0.48481,-39.2533 36.578666,38.96116 0 0 1 31.83719,-19.77723"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker26144)" />
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker26144)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       id="text1262"
+       y="271.5231"
+       x="-523.87811"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="271.5231"
+         x="-523.87811"
+         sodipodi:role="line"
+         id="tspan1260">vm_next</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-523.87811"
+       y="182.32072"
+       id="text1271"><tspan
+         id="tspan1269"
+         sodipodi:role="line"
+         x="-523.87811"
+         y="182.32072"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">vm_next</tspan></text>
+    <text
+       id="text1477"
+       y="79.5112"
+       x="-523.87811"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="79.5112"
+         x="-523.87811"
+         sodipodi:role="line"
+         id="tspan1475">vm_next</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-523.87811"
+       y="-11.203086"
+       id="text1481"><tspan
+         id="tspan1479"
+         sodipodi:role="line"
+         x="-523.87811"
+         y="-11.203086"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">vm_next</tspan></text>
+    <text
+       id="text1485"
+       y="-101.91737"
+       x="-523.87811"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="-101.91737"
+         x="-523.87811"
+         sodipodi:role="line"
+         id="tspan1483">vm_next</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-523.87811"
+       y="-220.58504"
+       id="text1615"><tspan
+         id="tspan1613"
+         sodipodi:role="line"
+         x="-523.87811"
+         y="-220.58504"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">vm_next</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-481.11499"
+       y="485.6741"
+       id="text1619"><tspan
+         id="tspan1617"
+         sodipodi:role="line"
+         x="-481.11499"
+         y="485.6741"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">mm</tspan></text>
+    <text
+       id="text1623"
+       y="417.98679"
+       x="-194.60207"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="417.98679"
+         x="-194.60207"
+         sodipodi:role="line"
+         id="tspan1621">mmap</tspan></text>
+    <text
+       id="text2265"
+       y="386.98352"
+       x="-566.64124"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Italic';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="386.98352"
+         x="-566.64124"
+         sodipodi:role="line"
+         id="tspan2263">vm_file</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-566.64124"
+       y="238.38167"
+       id="text2269"><tspan
+         id="tspan2267"
+         sodipodi:role="line"
+         x="-566.64124"
+         y="238.38167"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Italic';text-align:center;text-anchor:middle;stroke-width:0.26458332px">vm_file</tspan></text>
+    <text
+       id="text2273"
+       y="-36.371407"
+       x="-566.64124"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Italic';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="-36.371407"
+         x="-566.64124"
+         sodipodi:role="line"
+         id="tspan2271">vm_file</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-566.64124"
+       y="-141.14107"
+       id="text2277"><tspan
+         id="tspan2275"
+         sodipodi:role="line"
+         x="-566.64124"
+         y="-141.14107"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Italic';text-align:center;text-anchor:middle;stroke-width:0.26458332px">vm_file</tspan></text>
+    <g
+       id="g2572"
+       transform="translate(56.696429,-327.38057)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         ry="0.018339928"
+         y="228.84328"
+         x="335.03491"
+         height="44.601189"
+         width="156.60619"
+         id="rect2471"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#d4aa00;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text2475"
+         y="256.21298"
+         x="413.18365"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px;stroke-linecap:butt"
+           y="256.21298"
+           x="413.18365"
+           sodipodi:role="line"
+           id="tspan2473">page 1</tspan></text>
+      <rect
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#d4aa00;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2482"
+         width="156.60619"
+         height="44.601189"
+         x="335.03491"
+         y="277.44446"
+         ry="0.018339928"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="413.18365"
+         y="304.81418"
+         id="text2486"><tspan
+           id="tspan2484"
+           sodipodi:role="line"
+           x="413.18365"
+           y="304.81418"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px;stroke-linecap:butt">page 2</tspan></text>
+      <rect
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         ry="0.018339928"
+         y="326.04565"
+         x="335.03491"
+         height="44.601189"
+         width="156.60619"
+         id="rect2490"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#d4aa00;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text2494"
+         y="353.41537"
+         x="413.18365"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter"
+           y="353.41537"
+           x="413.18365"
+           sodipodi:role="line"
+           id="tspan2492">page 3</tspan></text>
+      <rect
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#d4aa00;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2498"
+         width="156.60619"
+         height="44.601189"
+         x="335.03491"
+         y="374.64685"
+         ry="0.018339928"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="413.18365"
+         y="402.01654"
+         id="text2502"><tspan
+           id="tspan2500"
+           sodipodi:role="line"
+           x="413.18365"
+           y="402.01654"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px;stroke-linecap:butt">page 4</tspan></text>
+    </g>
+    <g
+       id="g1297"
+       transform="translate(114.90476,-322.79167)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#668000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect2554"
+         width="156.60619"
+         height="44.601189"
+         x="534.31104"
+         y="226.54747"
+         ry="0.018339928"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="613.10126"
+         y="256.21298"
+         id="text2558"><tspan
+           id="tspan1290"
+           sodipodi:role="line"
+           x="613.10126"
+           y="256.21298"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px;stroke-linecap:butt">frame 1</tspan></text>
+    </g>
+    <g
+       id="g1313"
+       transform="translate(114.90476,-179.91666)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#668000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1307"
+         width="156.60619"
+         height="44.601189"
+         x="534.31104"
+         y="226.54747"
+         ry="0.018339928"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="613.10126"
+         y="256.21298"
+         id="text1311"><tspan
+           id="tspan1309"
+           sodipodi:role="line"
+           x="613.10126"
+           y="256.21298"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px;stroke-linecap:butt">frame 2</tspan></text>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#444444;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker1815);paint-order:normal"
+       d="m 554.08074,-18.660494 87.03877,-50.64881"
+       id="path1811"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#444444;stroke:#444444;stroke-width:0.26458329"
+       id="use8"
+       d="m 366.47368,122.07758 h -6.67079 c -8.00505,0 -13.34159,0 -18.67863,-1.33416 -5.33653,-1.33416 -10.67307,-5.33668 -14.67585,-10.67342 -4.00227,-5.33669 -5.33653,-10.67337 -6.67079,-17.344267 -1.33426,-6.67089 -1.33426,-18.67847 -1.33426,-34.68858 0,-12.00758 0,-20.01264 -1.33426,-26.68348 -1.33426,-6.6709 -4.00227,-13.34179 -8.00505,-17.34432 -4.00228,-4.00252 -9.33932,-6.6708399 -17.34437,-6.6708399 V -14.008337 c 8.00505,0 13.34209,-2.66831 17.34437,-6.67084 4.00278,-4.00253 6.67079,-10.67342 8.00505,-17.34432 1.33426,-6.67084 1.33426,-14.6759 1.33426,-26.68348 0,-16.01011 0,-28.01769 1.33426,-34.68858 1.33426,-6.670903 2.66852,-12.007583 6.67079,-17.344273 4.00278,-5.33674 9.33932,-9.33926 14.67585,-10.67342 5.33704,-1.33416 10.67358,-1.33416 18.67863,-1.33416 h 6.67079 v 20.01263 h -4.00227 c -9.33931,0 -14.67635,1.33416 -17.34437,4.00253 -4.00278,4.00253 -5.33704,5.336693 -5.33704,9.339213 v 33.35438 c 0,20.01263 -2.66801,33.35442 -6.67079,41.35948 -4.00228,8.00505 -12.00733,13.3417401 -20.01238,17.3442701 8.00505,4.00252004 16.0101,9.33921 20.01238,17.3442599 4.00278,8.00506 6.67079,21.34685 6.67079,41.35948 v 33.35438 c 0,4.00252 1.33426,5.33668 5.33704,9.33921 2.66802,2.668367 8.00506,4.002527 17.34437,4.002527 h 4.00227 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:connector-curvature="0"
+       id="path4933"
+       d="m 554.08074,78.101411 90.06258,-2.267858"
+       style="fill:none;fill-rule:evenodd;stroke:#444444;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4937);paint-order:normal" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:connector-curvature="0"
+       id="path6145"
+       d="M 314.06251,-301.28229 H 480.94659"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000015, 8.00000031;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6151);paint-order:normal" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7219);paint-order:normal"
+       d="M 312.3885,-252.4036 H 482.6206"
+       id="path6147"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="541.9928"
+       y="-297.82404"
+       id="text7199"><tspan
+         id="tspan7197"
+         sodipodi:role="line"
+         x="541.9928"
+         y="-297.82404"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">vm_end</tspan></text>
+    <text
+       id="text7215"
+       y="-248.94533"
+       x="548.06995"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/kernel_manages_memory.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="-248.94533"
+         x="548.06995"
+         sodipodi:role="line"
+         id="tspan7213">vm_start</tspan></text>
   </g>
 </svg>

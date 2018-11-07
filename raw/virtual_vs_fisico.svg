@@ -15,7 +15,7 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg4407"
    version="1.1"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="virtual_vs_fisico.svg">
   <defs
      id="defs4409">
@@ -330,15 +330,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.25"
-     inkscape:cx="2299.1944"
-     inkscape:cy="1282.4248"
+     inkscape:zoom="0.1767767"
+     inkscape:cx="1503.0962"
+     inkscape:cy="1204.4687"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="1920"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-others="false"
@@ -352,7 +352,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -365,7 +365,7 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"
-       transform="translate(495,-1085.2466)">
+       transform="translate(-777.79221,-67.012833)">
       <g
          transform="translate(-108.75,49.532377)"
          id="g1111">
@@ -483,7 +483,7 @@
       </g>
     </g>
     <g
-       transform="matrix(0,1.368034,-1.3739811,0,3454.1308,-827.26915)"
+       transform="matrix(0,1.368034,-1.3739811,0,2181.3386,190.96462)"
        id="g1453"
        style="stroke-width:0.72939229"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
@@ -1081,14 +1081,14 @@
        height="1390.8792"
        x="2482.1213"
        y="-486.30219"
-       transform="matrix(1.6241878,0,0,1.0188634,-2555.8704,-724.91784)"
+       transform="matrix(1.6241878,0,0,1.0188634,-3828.6626,293.31593)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
        inkscape:connector-curvature="0"
        style="opacity:1;fill:#37abc8;fill-opacity:1;stroke:#28170b;stroke-width:2.0999999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 1474.9156,-1220.7096 v 86.6034 h 414.1679 v -86.6034 z m 0,88.7426 v 86.6034 h 414.1679 v -86.6034 z m 0,88.7446 v 86.60337 h 414.1679 v -86.60337 z m 0,88.74259 v 86.60339 h 414.1679 v -86.60339 z m 0,88.74261 v 86.60339 h 414.1679 v -86.60339 z m 0,88.74259 v 86.6034 h 414.1679 v -86.6034 z m 0,88.7426 v 86.60341 h 414.1679 v -86.60341 z m 0,88.74462 v 86.6034 h 414.1679 v -86.6034 z m 0,88.7426 v 86.6034 h 414.1679 v -86.6034 z m 0,88.74261 v 86.6034 h 414.1679 v -86.6034 z m 0,88.7426 v 86.60338 h 414.1679 v -86.60338 z m 0,88.74261 v 86.60347 h 414.1679 v -86.60347 z m 0,88.74461 v 86.603389 h 414.1679 v -86.603389 z m 0,88.742595 v 86.603389 h 414.1679 v -86.603389 z m 0,88.742696 v 86.603289 h 414.1679 V 21.692931 Z m 0,88.742489 v 86.60349 h 414.1679 v -86.60349 z"
+       d="m 202.12339,-202.47583 v 86.6034 h 414.1679 v -86.6034 z m 0,88.7426 v 86.603397 h 414.1679 v -86.603397 z m 0,88.744597 v 86.60337 h 414.1679 v -86.60337 z m 0,88.74259 v 86.603393 h 414.1679 V 63.753957 Z m 0,88.742613 v 86.60339 h 414.1679 v -86.60339 z m 0,88.74259 v 86.6034 h 414.1679 v -86.6034 z m 0,88.7426 v 86.60341 h 414.1679 v -86.60341 z m 0,88.74462 v 86.6034 h 414.1679 v -86.6034 z m 0,88.7426 v 86.6034 h 414.1679 v -86.6034 z m 0,88.74261 v 86.6034 h 414.1679 v -86.6034 z m 0,88.7426 v 86.60338 h 414.1679 v -86.60338 z m 0,88.74261 v 86.60347 h 414.1679 V 773.6968 Z m 0,88.74461 v 86.60339 h 414.1679 v -86.60339 z m 0,88.74259 v 86.6034 h 414.1679 V 951.184 Z m 0,88.7427 v 86.6033 h 414.1679 v -86.6033 z m 0,88.7425 v 86.6035 h 414.1679 v -86.6035 z"
        id="rect6385"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
        inkscape:export-xdpi="90"
@@ -1100,13 +1100,13 @@
        height="1111.1974"
        x="129.55206"
        y="-59.058151"
-       transform="matrix(1.4904927,0,0,0.8943608,2114.0036,-746.47219)"
+       transform="matrix(1.4904927,0,0,0.8943608,841.21139,271.76158)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <path
        style="opacity:1;fill:#71c837;fill-opacity:1;stroke:#00840f;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 2307.3667,-799.68316 v 107.16433 h 408.756 v -107.16433 z m 0,110.74178 v 107.16434 h 408.756 v -107.16434 z m 0,110.74178 v 107.16259 h 408.756 V -578.1996 Z m 0,110.74003 v 107.16434 h 408.756 v -107.16434 z m 0,110.74179 v 107.16433 h 408.756 v -107.16433 z m 0,110.74177 v 107.16259 h 408.756 v -107.16259 z m 0,110.74003 v 107.164344 h 408.756 V -135.23598 Z m 0,110.741787 V 82.668395 h 408.756 V -24.494193 Z m 0,110.740031 V 193.41014 h 408.756 V 86.245838 Z"
+       d="m 1034.5745,218.55061 v 107.16433 h 408.756 V 218.55061 Z m 0,110.74178 v 107.16434 h 408.756 V 329.29239 Z m 0,110.74178 v 107.16259 h 408.756 V 440.03417 Z m 0,110.74003 v 107.16434 h 408.756 V 550.7742 Z m 0,110.74179 v 107.16433 h 408.756 V 661.51599 Z m 0,110.74177 v 107.16259 h 408.756 V 772.25776 Z m 0,110.74003 v 107.16434 h 408.756 V 882.99779 Z m 0,110.74178 v 107.16263 h 408.756 V 993.73957 Z m 0,110.74003 v 107.1643 h 408.756 v -107.1643 z"
        id="rect7078"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
@@ -1115,83 +1115,83 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375"
-       x="1680.7856"
-       y="279.86221"
+       x="407.99344"
+       y="1298.0959"
        id="text1984"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan1982"
-         x="1680.7856"
-         y="279.86221"
+         x="407.99344"
+         y="1298.0959"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:70px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.9375">Espaço de</tspan><tspan
          sodipodi:role="line"
-         x="1680.7856"
-         y="367.36221"
+         x="407.99344"
+         y="1385.5959"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:70px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.9375"
          id="tspan1986">Endereçamento</tspan><tspan
          sodipodi:role="line"
-         x="1680.7856"
-         y="454.86221"
+         x="407.99344"
+         y="1473.0959"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:70px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.9375"
          id="tspan1992">Virtual</tspan></text>
     <text
        id="text2000"
-       y="279.86221"
-       x="2510.8398"
+       y="1298.0959"
+       x="1238.0476"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375"
        xml:space="preserve"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:70px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.9375"
-         y="279.86221"
-         x="2510.8398"
+         y="1298.0959"
+         x="1238.0476"
          id="tspan1994"
          sodipodi:role="line">Espaço de</tspan><tspan
          id="tspan1996"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:70px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.9375"
-         y="367.36221"
-         x="2510.8398"
+         y="1385.5959"
+         x="1238.0476"
          sodipodi:role="line">Endereçamento</tspan><tspan
          id="tspan1998"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:70px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.9375"
-         y="454.86221"
-         x="2510.8398"
+         y="1473.0959"
+         x="1238.0476"
          sodipodi:role="line">Físico</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="358.17578"
-       y="-1086.614"
+       x="-914.61646"
+       y="-68.380249"
        id="text9664"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
-         x="358.17578"
-         y="-1086.614"
+         x="-914.61646"
+         y="-68.380249"
          id="tspan9683"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:34.77485657px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:1px">1110 0001 0101 0000 0000 0000 0000 0010</tspan><tspan
          sodipodi:role="line"
-         x="358.17578"
-         y="-1043.1454"
+         x="-914.61646"
+         y="-24.911619"
          id="tspan9687"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:34.77485657px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:1px">1110 0001 1010 0000 0000 0000 0000 0111</tspan><tspan
          sodipodi:role="line"
-         x="358.17578"
-         y="-999.67688"
+         x="-914.61646"
+         y="18.556887"
          id="tspan9689"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:34.77485657px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:1px">1110 0011 0010 0000 1111 0000 0000 0000</tspan><tspan
          sodipodi:role="line"
-         x="358.17578"
-         y="-956.20825"
+         x="-914.61646"
+         y="62.025455"
          id="tspan9691"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:34.77485657px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:1px">1110 0001 0010 1111 1111 1111 0001 1110</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 317.82423,-957.7461 39.58788,73.0001 h 366.35745 l 41.23045,65.0538 41.23045,-65.0538 h 366.35744 l 39.5879,-73.0001"
+       d="m -954.96798,60.487667 39.58788,73.000103 h 366.35745 l 41.23045,65.0538 41.23045,-65.0538 h 366.35744 l 39.587901,-73.000103"
        id="path9693"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccc"
@@ -1200,7 +1200,7 @@
        inkscape:export-ydpi="90" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:18.08947754;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:18.08947878, 36.17895754;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12311);paint-order:normal"
-       d="m 1082.3684,-463.02757 h 286.7312"
+       d="M -190.42381,555.2062 H 96.307391"
        id="path12307"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
@@ -1214,7 +1214,7 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/virtual_vs_fisico.png"
        inkscape:connector-curvature="0"
        id="path3334"
-       d="m 1941.1184,-463.02757 h 286.7312"
+       d="m 668.32619,555.2062 h 286.7312"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:18.08947754;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:18.08947878, 36.17895754;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker3338);paint-order:normal" />
   </g>
 </svg>

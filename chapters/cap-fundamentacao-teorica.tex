@@ -52,7 +52,7 @@ Data Segment}) é responsável por manter variáveis estáticas, enquanto o
 Segment}) mantém variáveis estáticas não inicializadas.  Vale observar que o
 segmento de dados não inicializável também é comumente conhecido como
 \emph{Block Started by Symbol (BSS)} por causa de um antigo operador usado
-pelos montadores \citep{gdb}. O \textbf{segmento de Mapeamento de Memória}
+pelos montadores \citep{gdb}. O \boldAndIndex{segmento de Mapeamento de Memória}
 (\emph{Memory Mapping Segment}) é a região na qual o SO mapeia arquivos
 diretamente na memória (e.g.; bibliotecas dinâmicas ou arquivos especificados
 pelo programador). O \textbf{segmento da Stack} compreende aos dados usados
@@ -480,6 +480,136 @@ Além disso, o SO pode mudar permissões de acesso para um grande número de
 regiões simultâneas. Note que o mecanismo de domínios é um recursos adicional
 ao tradicional modelo de controle da memória adotado pelos SOs, ou seja, é
 um recurso não fundamental mas que oferece novos recursos aos desenvolvedores.
+
+\section{Uma visão prática do programa na memória}
+
+A maioria dos conceitos apresentados até agora representam o ponto de vista
+teórico dos SOs, nessa seção revisitamos e expandimos alguns dos conceitos da
+perspectiva do Kernel Linux. Essa visão é relevante para o presente texto uma
+vez que a maioria dos trabalhos analisados faz uso de SOs baseados no Kernel
+Linux. Por fim, por uma questão de simplicidades usaremos o termo Kernel como
+sinônimo de Linux nessa seção.
+
+Para iniciar a analise, começamos por um fato interessante sobre VAS no Linux
+em uma arquitetura x86: uma vez que a VAS é ativada, todo sistema é afetado
+incluindo o Kernel. Por este motivo, uma porção da VAS tem que ser reservada
+para o Linux de forma a manter o acesso restrito (privilégiado) e sempre
+presente na memória física. Por outro lado, a VAS dos processos são movidas
+constantemente de acordo com a troca de contexto e podem ser acessados pela
+aplicação.
+
+A Figura \ref{fig:vas_contexto} busca ilustrar o mapeamento da VAS levando-se
+em consideração o espaço reservado para Kernel e os processos. O lado esquerdo
+da figura mostra de forma detalhada a área do Kernel e os segmentos alocados
+para o processo em execução (descrito na seção \ref{sec:processos-e-threads}).
+A figura também demonstra a troca de contexto que ocorre entre dois processos;
+repare que a VAS dos processos é alterada mas o kernel permanece constante.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{segmento_troca_contexto}
+  \caption{VAS durante a troca de contexto, imagem baseada em \citep{kernel_manages_memory}}
+  \label{fig:vas_contexto}
+\end{figure}
+
+O \textit{layout} de uma VAS é o mesmo para todos os processos, note que isso
+cria brechas de segurança uma vez que um atacante que compreenda essa informação
+pode explorar a mesma com o objetivo de realizar ataques. Como resposta a essa
+falha de segurança o Kernel implementa uma série de mecanismos de randomização
+conhecidos como ASLR, KASLR and KARL~\citep{aslr, kaslr}. Tal recurso faz com
+que a sequência dos segmentos sejam randomizada a cada execução do processo,
+tornando o sistema mais seguro.
+
+Como explicado na Seção \ref{sec:processos-e-threads}, toda vez que uma função
+é chamada, um \textit{stack frame} novo é criado e inserido na \textit{stack}.
+Essa \textit{stack} começa com um tamanho pré-definido (8 Mb) que normalmente é
+o suficiente para a maioria das aplicações. Contudo esse limite pode ser
+ultrapassado, consequentemente o Kernel faz uma operação para expandir o
+tamanho da stack. Se o tamanho máximo da \textit{stack} for atingido, então um
+\textbf{stack overflow} ocorre. Vale observar que depois que a \textit{stack} é
+aumentada ela pode ser encolhida.
+
+Ainda na Figura \ref{fig:vas_contexto}, note que o processo possuí um conjunto
+de segmentos que mapeia arquivos diretamente na memória para o rápido acesso;
+tal segmento recebe o nome de \textbf{segmento de memória mapeada}. O uso mais
+interessante de tal segmento, do ponto de vista do kernel, é o
+\textbf{mapeamento anônimo} que é realizado pelo programa para obter espaço
+para dados; o uso comum para essa região é o mapeamento das bibliotecas
+dinâmicas. A biblioteca C (\textit{libc}) utiliza esse recurso como uma forma
+de otimizar grandes alocações solicitadas via \texttt{malloc()}, basicamente a
+libc cria um mapeamento anonimo para tais casos.
+
+Observando a Figura X, note que temos o \textit{heap} e como esperado esse é
+manipulado pela função \texttt{malloc()} na maior parte do tempo. Todo processo
+inicia com um pequeno espaço para o \textit{heap} e que é manipulado pela libc,
+geralmente o tamanho fornecido é suficiente. Contudo, se o programa demandar
+mais memória, então a biblioteca faz uma chamada de sistema para a função
+\texttt{brk()} que expande o tamanho da \textit{heap}. Na Figura X o BSS é um
+segmento anonimo, uma vez que esse armazena variáveis estáticas não
+inicializadas (valores não disponíveis no código fonte). Ao contrário do BSS, a
+região de Data mapeia um arquivo uma vez que esse mantém o conteúdo das
+variáveis estáticas mapeadas do código. A mesma ideia é valida para a região do
+\textit{text}.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{kernel_manages_memory}
+  \caption{Visão interna do gerenciamento da memória, imagem baseada em \citep{kernel_manages_memory}}
+  \label{fig:kernel_manages_memory}
+\end{figure}
+
+Para entender na prática como o Kernel gerencia a memória, vamos expandir os
+conceitos da Figura X para a forma como eles são implementado no Linux. Veja a
+Figura \ref{fig:kernel_manages_memory} ilustrando as estruturas de dados usadas
+pelo Linux e as suas ligações. No Kernel a estrutura responsável por manter
+todas as informações do processo (i.e.; PCB) chama-se \texttt{task\_struct},
+essa tem um ponteiro para outra estrutura de dados chamada de
+\texttt{mm\_struct}; por sua vez tal estrutura de dados mantém uma lista ligada
+para estruturas do tipo \texttt{vm\_area\_struct} (ou \textbf{virtual memory
+area - VMA}). A VMA em conjunto com a tabela de páginas orquestram o
+gerenciamento do programa na memória.
+
+Uma VMA consiste de um intervalo de endereços virtuais contíguos e sem
+sobreposição com algumas \textit{flags} de controle de acesso associado a si. A
+informação se a VMA é anonima ou não, vem do campo \texttt{vm\_file} (se esse
+estiver vazio, então a área é anonima). Repare na figura que cada segmento
+corresponde a uma VMA com exceção do segmento de mapeamento que pode ter mais.
+
+Lembre-se que a VAS é dividia em páginas, por esse motivo o tamanho de uma VMA
+deve ser um múltiplo de uma página. Toda vez que um acesso na memória é feito,
+a tabela de páginas do processo é consultada e cada entrada dessa tabela é
+descrita por uma série de metadados que descreve a região de memória. Cada
+entrada recebe o nome de \textbf{entrada da tabela de páginas} (\textit{Page
+Table Entry}) ou simplesmente PTE. A Figura \ref{fig:pte} ilustra como a
+entrada é representada. Sem entrar em detalhes nos campos (a figura é
+autoexplicativa), podemos concluir que uma página virtual é a unidade de
+proteção da memória por que todos os bytes dela compartilham os bits User/Root
+e Leitura/Escrita.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{pte}
+  \caption{Entrada da tabela de páginas}
+  \label{fig:pte}
+\end{figure}
+
+Por fim para exemplificar como esses mecanismos estão relacionados, veja a
+Figura \ref{fig:malloc_linux}. Nesse exemplo, temos um programa com algumas
+paginas já mapeada para uma memória física. A aplicação decide alocar mais
+memória por meio da função \texttt{malloc()}, por sua vez, uma chamada para
+\texttt{brk()} é feita e o kernel atualiza o VMA do \textit{heap} com o tamanho
+solicitado e retorna o ponteiro. Na prática, nenhum endereço físico foi alocado
+e enquanto o programa não acessar a região alocada nenhum frame é criado. Na
+primeira tentativa de acesso ocorre uma falha de página e a função
+\texttt{do\_page\_fault()} é chamada. Se o processo atender as permissões
+indicadas na PTE, então o kernel aloca e associa o frame a página.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.70\textwidth]{malloc}
+  \caption{Alocação de memória com \texttt{malloc()}, imagem baseada em \citep{anatomy_program_mem}}
+  \label{fig:malloc_linux}
+\end{figure}
 
 \section{Chamadas de Sistema}
 

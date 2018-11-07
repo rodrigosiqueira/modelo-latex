@@ -548,12 +548,7 @@ Basicamente, MVAS tem problemas relacionados a alocação de \emph{stack}.
 Infelizmente, resolver esse problema requer mudar praticamente toda a
 implementação atual do MVAS.
 
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=.70\textwidth]{mvas_problem}
-  \caption{Alocação de memória com \texttt{malloc}, imagem baseada em \citep{kernel_malloc}}
-  \label{fig:malloc_linux}
-\end{figure}
+% TODO: O comportamento já está descrito na fundamentação. Refatorar o texto
 
 Para o segundo problema, nos primeiro temos que entender como o Linux aloca
 memória. A Figura \ref{fig:malloc_linux} ilustra o segmento \emph{heap} para um
