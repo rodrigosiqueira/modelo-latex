@@ -14,7 +14,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="dune_architecture.svg">
   <defs
      id="defs2">
@@ -299,8 +299,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.19872337"
-     inkscape:cx="1649.7625"
-     inkscape:cy="1403.1275"
+     inkscape:cx="698.69167"
+     inkscape:cy="1382.999"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -318,7 +318,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -333,8 +333,8 @@
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
        inkscape:connector-curvature="0"
        id="path1775"
-       d="M 551.71792,-212.54823 H 304.88351"
-       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4.00000048;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000047, 8.00000078000000059;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal;" />
+       d="M 161.61324,-12.835936 H -85.22117"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4.00000048;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000047, 8.00000078;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:export-ydpi="144.75999"
@@ -342,10 +342,11 @@
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
        inkscape:connector-curvature="0"
        id="path7476"
-       d="M 828.39601,-12.925468 H 322.60881"
+       d="M 438.29133,186.78683 H -67.49587"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000032, 8.00000048;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <g
-       id="g1453">
+       id="g1453"
+       transform="translate(-390.10468,199.71229)">
       <rect
          inkscape:export-ydpi="144.75999"
          inkscape:export-xdpi="144.75999"
@@ -381,11 +382,11 @@
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
        inkscape:connector-curvature="0"
        id="path7132"
-       d="M 695.6733,-52.949392 V 108.56463"
+       d="M 305.56862,146.7629 V 308.27692"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#TriangleInM);marker-end:url(#TriangleOutM);paint-order:normal" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker1746);marker-end:url(#marker1742);paint-order:normal"
-       d="M 428.28598,-41.273704 V 53.784462"
+       d="m 38.1813,158.43859 v 95.05817"
        id="path7622"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
@@ -399,10 +400,11 @@
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
        inkscape:connector-curvature="0"
        id="path7743"
-       d="m 428.30071,-239.44435 v 43.52528"
+       d="M 38.19603,-39.732056 V 3.7932235"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker1750);marker-end:url(#marker1758);paint-order:normal" />
     <g
-       id="g1378">
+       id="g1378"
+       transform="translate(-390.10468,199.71229)">
       <rect
          inkscape:export-ydpi="144.75999"
          inkscape:export-xdpi="144.75999"
@@ -450,14 +452,14 @@
          x="428.2829"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555556px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
            y="-86.973312"
            x="428.2829"
            id="tspan2290"
            sodipodi:role="line">Hardware</tspan><tspan
            id="tspan1303"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.69999981px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-           y="-74.830917"
+           y="-74.844498"
            x="428.2829"
            sodipodi:role="line">(VMX non-root, ring 0)</tspan></text>
       <rect
@@ -484,11 +486,12 @@
            sodipodi:role="line"
            x="428.3728"
            y="-159.42548"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555556px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
            id="tspan1309">Dune Process</tspan></text>
     </g>
     <g
-       id="g1344">
+       id="g1344"
+       transform="translate(-390.10468,199.71229)">
       <rect
          transform="rotate(-90)"
          style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -517,12 +520,13 @@
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.69999981px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Hardware</tspan><tspan
            sodipodi:role="line"
            x="428.2829"
-           y="-273.94818"
+           y="-273.96176"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.69999981px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
            id="tspan1325">(VMX non-root, ring 3)</tspan></text>
     </g>
     <g
-       id="g1355">
+       id="g1355"
+       transform="translate(-390.10468,199.71229)">
       <rect
          inkscape:export-ydpi="144.75999"
          inkscape:export-xdpi="144.75999"
@@ -551,7 +555,8 @@
            sodipodi:role="line">Untrusted Code</tspan></text>
     </g>
     <g
-       id="g1420">
+       id="g1420"
+       transform="translate(-390.10468,199.71229)">
       <g
          transform="translate(267.37259,183.11257)"
          id="g1388">
@@ -580,16 +585,16 @@
              id="tspan1382"
              x="428.2829"
              y="-286.09058"
-             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555556px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Hardware</tspan><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Hardware</tspan><tspan
              sodipodi:role="line"
              x="428.2829"
-             y="-273.94818"
+             y="-273.96176"
              style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.69999981px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
              id="tspan1384">(VMX non-root, ring 3)</tspan></text>
       </g>
       <rect
          transform="rotate(-90)"
-         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#d4aa00;stroke-width:4.00000011;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#d4aa00;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect1390"
          width="37.720985"
          height="170.07971"
@@ -611,11 +616,12 @@
            sodipodi:role="line"
            x="695.74542"
            y="-144.65929"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555556px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
            id="tspan1392">Normal Process</tspan></text>
     </g>
     <g
-       id="g1458">
+       id="g1458"
+       transform="translate(-390.10468,199.71229)">
       <rect
          transform="rotate(-90)"
          style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -646,7 +652,7 @@
     </g>
     <g
        id="g1445"
-       transform="translate(0,0.21143627)">
+       transform="translate(-390.10468,199.92373)">
       <rect
          transform="rotate(-90)"
          style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"

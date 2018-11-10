@@ -14,7 +14,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="nooks_nim.svg">
   <defs
      id="defs2">
@@ -87,8 +87,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="-666.52392"
-     inkscape:cy="736.08454"
+     inkscape:cx="211.47608"
+     inkscape:cy="390.08454"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -119,8 +119,8 @@
        id="rect4641"
        width="81.601189"
        height="293.95419"
-       x="-8.347991"
-       y="-405.60455"
+       x="-93.014664"
+       y="-51.062889"
        ry="0.12087343"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:export-xdpi="144.75999"
@@ -130,8 +130,8 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        ry="0.12087343"
-       y="-405.60455"
-       x="-234.72528"
+       y="-51.062889"
+       x="-319.39194"
        height="293.95419"
        width="81.601189"
        id="rect4569"
@@ -139,7 +139,7 @@
        transform="rotate(-90)" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4.91402102;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.91402112, 4.91402112;stroke-dashoffset:0;stroke-opacity:1"
-       d="M -152.30239,-32.172169 V 186.4543"
+       d="M 202.23927,52.494498 V 271.12097"
        id="path4572-3-6-7-5"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
@@ -151,11 +151,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:connector-curvature="0"
        id="path4563"
-       d="M -218.97781,-32.172169 V 186.4543"
+       d="M 135.56386,52.494498 V 271.12097"
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4.91402102;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.91402112, 4.91402112;stroke-dashoffset:0;stroke-opacity:1" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4.91402102;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.91402112, 4.91402112;stroke-dashoffset:0;stroke-opacity:1"
-       d="M -295.70746,-32.172169 V 186.4543"
+       d="M 58.834207,52.494498 V 271.12097"
        id="path4565"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
@@ -167,30 +167,30 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:connector-curvature="0"
        id="path4567"
-       d="M -367.67458,-32.172169 V 186.4543"
+       d="M -13.132914,52.494498 V 271.12097"
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4.91402102;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.91402112, 4.91402112;stroke-dashoffset:0;stroke-opacity:1" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="5.2020793"
-       y="79.73011"
+       x="359.74374"
+       y="164.39677"
        id="text4508-9"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          id="tspan4506-1"
-         x="5.2020779"
-         y="79.73011"
+         x="359.74374"
+         y="164.39677"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.22916698px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Nooks Isolation</tspan><tspan
          sodipodi:role="line"
-         x="5.2020812"
-         y="92.959282"
+         x="359.74374"
+         y="177.62595"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.22916698px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4643">Manager</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000015, 4.00000015;stroke-dashoffset:0;stroke-opacity:1"
-       d="M -111.65035,9.202293 -1.1251533,57.716866"
+       d="m 242.89131,93.86896 110.5252,48.51457"
        id="path4572-3-6-7"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
@@ -199,7 +199,7 @@
        sodipodi:nodetypes="cc" />
     <g
        id="g4561"
-       transform="rotate(-90,-173.63575,124.96788)"
+       transform="rotate(-90,45.968417,-9.9696197)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999">
@@ -244,7 +244,7 @@
            sodipodi:role="line">Rastreamento</tspan><tspan
            id="tspan4544"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.22916698px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-           y="88.504745"
+           y="88.491165"
            x="-131.41148"
            sodipodi:role="line">de objeto</tspan></text>
       <text
@@ -302,16 +302,16 @@
     </g>
     <text
        id="text4614"
-       y="207.7449"
-       x="-258.68533"
+       y="292.41156"
+       x="95.856331"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="207.7449"
-         x="-258.68533"
+         y="292.41156"
+         x="95.856339"
          sodipodi:role="line"
          id="tspan4633">Expansões do Kernel</tspan></text>
     <text
@@ -320,13 +320,13 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-258.68533"
-       y="-44.66066"
+       x="95.856331"
+       y="40.006008"
        id="text4639"><tspan
          id="tspan4637"
          sodipodi:role="line"
-         x="-258.68533"
-         y="-44.66066"
+         x="95.856331"
+         y="40.006008"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Kernel</tspan></text>
     <path
        sodipodi:nodetypes="cc"
@@ -335,7 +335,7 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:connector-curvature="0"
        id="path4645"
-       d="M -111.65035,152.96687 -1.1251533,104.45229"
+       d="m 242.89131,237.63354 110.5252,-48.51458"
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000015, 4.00000015;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
 </svg>
