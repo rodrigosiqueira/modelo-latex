@@ -5,12 +5,12 @@
 % Este pacote define o formato da capa, páginas de rosto, dedicatória e
 % resumo. Se você pretende criar essas páginas manualmente, não precisa
 % carregar este pacote nem definir os dados abaixo.
-\usepackage{imeusp}
+\usepackagefromsubdir{extras/}{imeusp-capa}
 
 % Define o texto da capa e da referência que vai na página do resumo;
 % "masc" ou "fem" definem se serão usadas palavras no masculino ou feminino
 % (Mestre/Mestra, Doutor/Doutora, candidato/candidata).
-\mestrado[fem]
+\mestrado[masc]
 %\doutorado[masc]
 
 % Se "\title" está em inglês, você pode definir o título em português aqui
@@ -25,10 +25,13 @@
 % Se isto não for definido, "\subtitulo" é utilizado no lugar
 \subtituloeng{a subtitle}
 
-\orientador[fem]{Prof. Dr. Fabio Kon}
+\orientador[masc]{Prof. Dr. Fabio Kon}
 
 % Se não houver, remova
 % \coorientador[masc]{Prof. Dr. Ciclano}
+
+% Se isto não for definido, "\coorientador" é utilizado no lugar
+%\coorientadoreng{Prof. Dr. Ciclano}
 
 \programa{Ciência da Computação}
 
