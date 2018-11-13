@@ -26,7 +26,7 @@ desenvolver e testar novas propostas.
 
 Como mostrado na Seção \ref{sec:virtualizacao}, o conceito de virtualização já
 é amplamente conhecido e adotado pela indústria; dentre os recentes avanços
-destacam-se a virtualização via hardware proporcionado pelos processadores
+destacam-se a virtualização via hardware proporcionada pelos processadores
 modernos. O mecanismo de virtualização é utilizada com o objetivo de fornecer
 abstrações para a criação de máquinas virtuais. Com esse conceito em mente,
 \cite{belay} decidiram dar outra utilidade para esses recursos de hardware:
@@ -54,22 +54,23 @@ alternativa para dar acesso de hardware para aplicações é por meio de imagens
 de máquina virtual, assim uma aplicação consegue acesso seguro aos recursos de
 hardware através da interface de virtualização. Uma desvantagem desta abordagem
 é que ela tem pouca integração com o SO da máquina \emph{host} o que impede um
-processo de obter ganhos de desempenho. \cite{belay} oferecem uma alternativa
-que consiste em utilizar a abstração de virtualização disponível nos
-processadores modernos de forma a fornecer um novo tipo de processo que executa
-no chamado \emph{Dune Mode} (modo Dune). Tal modo é um estado irreversível no
-qual o processo indica explicitamente que quer entrar; nesse modo o processo
-passa a ter acesso direto a modos de operação com maior privilégio,
-registradores de memória virtual, tabelas de páginas, interrupções, exceções e
-vetores de chamada de sistema. Para auxiliar a aplicação no espaço de usuário a
-interagir com tais recursos, os autores criaram uma biblioteca chamada
-\emph{libDune} que auxilia as aplicações a tirarem proveito das novas
-funcionalidades.
+processo de obter ganhos de desempenho.
+
+\cite{belay} oferecem uma alternativa que consiste em utilizar a abstração de
+virtualização disponível nos processadores modernos de forma a fornecer um novo
+tipo de processo que executa no chamado \emph{Dune Mode} (modo Dune). Tal modo
+é um estado irreversível no qual o processo indica explicitamente que quer
+entrar; nesse modo o processo passa a ter acesso direto, por meio dos recursos
+de virtualização, a modos de operação com maior privilégio, registradores de
+memória virtual, tabelas de páginas, interrupções, exceções e vetores de
+chamada de sistema. Para auxiliar a aplicação no espaço de usuário a interagir
+com tais recursos, os autores criaram uma biblioteca chamada \emph{libDune} que
+na utilização das novas funcionalidades.
 
 Dentre as vantagens que o Dune promete, destacam-se o fato de que no modo Dune
-o processo comporta-se como um processo normal com a diferença de que este use
-a instrução VMCALL para fazer chamadas de sistema. Além disto, devido ao fato
-de que o Dune não tem por objetivo fornecer máquinas virtuais este
+o processo comporta-se como um processo normal com a diferença de que este
+utiliza a instrução VMCALL para fazer chamadas de sistema. Além disto, devido
+ao fato de que o Dune não tem por objetivo fornecer máquinas virtuais este
 consequentemente consegue ser mais simples e rápido. As aplicações que se
 adequam ao uso desse modelo podem obter melhorias de desempenho e isolamento.
 
@@ -99,13 +100,13 @@ privilégiadas para os processos:
         para alguns tipos de aplicações;
   \item \textbf{Modos privilégiados}: As instruções \texttt{LGDT} e
         \texttt{LLDT} permitem que o Dune exponha os modos privilégiados de
-        forma segura. O Dune consegue expor os modos privilégiados de forma
-        eficiente por que o VMX non-root mantém o seu próprio conjunto de anéis
-        privilégiados (Veja \ref{sec:vtx}).
+        forma segura. O Dune expõe esse modos de forma eficiente e segura por
+        que o VMX non-root mantém o seu próprio conjunto de anéis privilégiados
+        (Veja \ref{sec:vtx}).
 \end{itemize}
 
 A Figura \ref{fig:dune_architecture} ilustra a arquitetura do Dune. O Dune
-estende o Kernel como um módule que habilita o VT-x, colocando o mesmo em um
+estende o Kernel como um modulo que habilita o VT-x, colocando o mesmo em um
 modo VMX root. Assim processos usando Dune tem acesso seguro e garantido para
 hardware privilégiado utilizando o VMX non-root mode. O módule Dune intercepta
 os VM exits, o único motivo para o processo acessar o kernel e realizar
@@ -114,7 +115,7 @@ de fato precisam deles, isto significa que um processo que não usa o Dune não 
 afetado. A transição de um processo normal para o modo Dune ocorre por meio de
 uma chamada de \texttt{ioctl} no dispositivo \texttt{/dev/dune}, repare que ao
 entrar em tal modo o processo não pode retornar ao modo anterior. Sempre que um
-processo Dune faz um \texttt{fork}, o processo filho não incia em modo Dune,
+processo Dune faz um \texttt{fork()}, o processo filho não incia em modo Dune,
 contudo pode reentrar caso queira.
 
 \begin{figure}[!h]
@@ -515,7 +516,7 @@ atender:
 \end{figure}
 
 A Figura \ref{fig:nooks_nim} ilustra de forma geral a arquitetura do
-\emph{Nooks}. Note que o "diálogo" entre o Kernel e as extensões (vice-versa)
+\emph{Nooks}. Note que a comunicação entre o Kernel e as extensões (vice-versa)
 precisam passar pelo \emph{Nooks}. Esse intermédio é conduzido pelo \emph{Nooks
 Isolation Manager (NIM)} que é o responsável por implementar os objetivos do
 projeto. O \emph{Nooks} precisa estender-se em parte para o Kernel e em parte
@@ -526,7 +527,8 @@ ser abstraído para um \emph{script} e este tipo de modificação precisa ser
 feita uma única vez. Do ponto de vista dos módulos, no geral, são poucos os
 casos que precisam ser alterados diretamente uma vez que este faz uso dos
 recursos fornecido pelo Kernel. Normalmente, módulos que exportam estruturas de
-dados próprias e que são exportáveis para o Kernel precisam ser alteradas.
+dados próprias e que são exportáveis para o Kernel, consequentemente precisam
+ser alteradas.
 
 O \emph{Nooks} fornece isolamento por meio do LKPD uma vez que toda extensão
 adicionada ao SO executa dentro do seu próprio LKPD que por sua vez é chamado
@@ -562,16 +564,16 @@ transferência é chamada o contexto da stack que realizou a chamada é salva e 
 \emph{Page Table} para o novo domínio alvo carregado.
 
 Um dos objetivos do \emph{Nooks} é o de ser usado em SO de produção, para isto
-ele tem uma preocupação direta em se integrar com o SO de forma a causar o
-menor impacto possível nas extensões. Por isto, o \emph{Nooks} isola as
-extensões com o XPC e também implementa um mecanismo de rastreamento de
-estruturas de dados chamado \emph{object-tracking} (parte do \emph{NIM}). O
-\emph{object-tracking} tem três recursos básicos: manter uma lista de
-estruturas de dados do Kernel que são manipulados por uma extensão, controlar
-todas as modificações para estas extensões e fornecer informações de objetos
-para limpeza de dados quando a extensão falhar. O rastreamento dos objetos
-começa com o armazenamento de todos os objetos em uso por uma extensão e em
-seguida é feita uma associação entre o Kernel e as versões das extensões.
+ele tem uma de se integrar com o SO de forma a causar o menor impacto possível
+nas extensões. Por isto, o \emph{Nooks} isola as extensões com o XPC e também
+implementa um mecanismo de rastreamento de estruturas de dados chamado
+\emph{object-tracking} (parte do \emph{NIM}). O \emph{object-tracking} tem três
+recursos básicos: manter uma lista de estruturas de dados do Kernel que são
+manipulados por uma extensão, controlar todas as modificações para estas
+extensões e fornecer informações de objetos para limpeza de dados quando a
+extensão falhar. O rastreamento dos objetos começa com o armazenamento de todos
+os objetos em uso por uma extensão e em seguida é feita uma associação entre o
+Kernel e as versões das extensões.
 
 Por fim, o \emph{Nooks} possuí um mecanismo de recuperação que busca detectar
 falhas de software quando uma extensão é chamada de forma inapropriada ou se
@@ -817,42 +819,35 @@ processo pode mudar entre as VAS por meio da chamada para
 
 \subsection{Light-weight Contexts}
 
-O fluxo de execução do processo é controlado pelo seu \emph{Program Counter
-(PC)} e o escalonador do SO é responsável por recuperar o seu contexto de
-execução antes da próxima instrução ser executada (como indicado pelo PC).
-Consequentemente, tanto o PC quanto o resto dos dados do processo no nível do
-kernel são mantidos juntos e manipulados pelo escalonador como uma entidade
-única (a chamada \emph{task}).
+O fluxo de execução do processo é controlado pelo \textit{Program Counter (PC)}
+juntamente com os dados da memória, por sua vez, o escalonador é a entidade que
+orquestra quando tirar e inserir um novo processo na CPU. Consequentemente,
+tanto o PC quando os demais dados do processo são mantidos juntos no nível do
+kernel.
 
-Partindo desta ideia, \cite{litton} propuseram desacoplar o PC e o escalonador
-do resto dos dados de contexto do processo: com \emph{Lightweight Context}
-(lwc), um único processo (com um único PC) pode ter vários contextos internos.
-Isso cria diversas oportunidades que novos tipos de manipulações sejam
-realizadas, tal como criar \emph{snapshot} do atual estado do processo e depois
-reverter o processo para o estado anterior. Outra possibilidade é mudar para um
-novo contexto de processo com acesso restrito para alguma região da memória
-antes da execução de um código sensível. Isso não é como utilizar threads ou
-processos independentes, mas ao invés de depender do escalonador para mudar o
-contexto do processo (que é razoavelmente caro) a própria aplicação por si
-mesmo pode escolher quando e qual contexto manipular, levando assim um controle
-fino para os programadores que pode melhorar o desempenho e a segurança. Note
-que a figura do escalonador não é removida, a troca de contexto no lwC acontece
-dentro do time quantum fornecido pelo escalonador.
+\cite{litton} afirmam que o desacoplamento do isolamento da memória, estado de
+execução e separação dos privilégios dos processos trazem benefícios. Com tal
+ideia em mente, os atores sugerem uma nova abstração de processos chamada de
+\textit{lightweight-context (lwc)}. Basicamente, cada processo pode ter um
+(lwC root) ou mais lwCs na qual cada um contém o seu próprio mapeamento
+virtual da memória, descritor de arquivos e credenciais. Opcionalmente, a API
+do lwC permite controlar quais elementos podem ser compartilháveis ou não entre
+os lwCs.
 
-Um lwc compreende um mapeamento de memória virtual, uma coleção de mapeamento
+Um lwC compreende um mapeamento de memória virtual, uma coleção de mapeamento
 de páginas, \emph{bindings} de descritores de arquivos e conjuntos de
 credenciais; sempre que um novo processo é criado, o sistema cria um novo lwC
-para ele. A aplicação pode acessar todas características do lwC diretamente do
-\textit{user space} através de chamadas de sistemas que fazem o controle fino
-dos comportamentos fornecidos. O mais importante de todos é o
-\texttt{lwCreate()} e o \texttt{lwSwitch()} que tem uma semântica similar ao
-\texttt{fork()}: depois que o \texttt{lwCreate()} retorna, o atual processo tem
-um novo lwC (filho) associado consigo mesmo que consiste em um \emph{snapshot}
-do processo que foi chamado. Esse \emph{snapshot} se difere do \texttt{fork()}
-uma vez que nenhum PID novo ou thread é criado (porque isso só faz sentido para
-manter o rastreio de diferentes PCs). Depois que o filho é criado, a aplicação
-é livre para fazer a troca (\texttt{lwSwitch()}) para algum \emph{snapshot} a
-qualquer momento.
+para ele. A aplicação pode acessar todas as funcionalidades do lwC via espaço
+do usuário através de chamadas de sistemas que fazem o controle fino dos
+comportamentos fornecidos.  As chamadas mais interessantes são:
+\texttt{lwCreate()} e \texttt{lwSwitch()}. O \texttt{lwCreate()} tem uma
+semântica similar ao \texttt{fork()}: depois que o \texttt{lwCreate()} retorna,
+o atual processo tem um novo lwC (filho) associado consigo mesmo que consiste
+em um \emph{snapshot} do processo que foi chamado. Esse \emph{snapshot} se
+difere do \texttt{fork()} uma vez que nenhum PID novo ou thread é criado.
+Depois da criação do processo filho, a aplicação é livre para fazer a troca
+(com o \texttt{lwSwitch()}) para algum de seus \emph{snapshots} a qualquer
+momento.
 
 A Figura \ref{fig:lwc} ilustra a operação de troca entre diferentes lwCs. Um
 processo em execução pode criar vários lwCs durante a sua execução e em
@@ -876,12 +871,15 @@ dinâmico ou estático de recursos, controle sobre o acesso as
 isolamento dentro do processo. Todo o conjunto de chamadas de sistemas do lwC
 fornecem um sofisticado modelo de programação que permite novas capacidades
 tais quais rápido \emph{roll-back}, isolamento de seções e compartimentos de
-proteção.
+proteção. A API do lwC é composta das seguintes funções:
+
+%TODO: Funcoes
 
 Os autores demonstram os conceitos do lwC em uma implementação no FreeBSD. As
 modificações principais foram feita na memória e estruturas de dados do
-processo. Por fim, o uso foi demonstrado em adaptações feitas no Apache, Nginx
-e OpenSSH.
+processo. O uso foi demonstrado em adaptações feitas no Apache, Nginx e
+OpenSSH. Por fim, os autores propõem certos algoritmos que discutiremos no
+Capítulo \ref{cap:analise-sobre-abstracoes-de-processos}.
 
 \section{Implementação Independente}
 
