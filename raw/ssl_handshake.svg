@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="ssl_handshake.svg"
+   inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/request_a_page.png"
+   inkscape:export-xdpi="144.75999"
+   inkscape:export-ydpi="144.75999">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="TriangleInS"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleInS"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1729"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#ffd42a;stroke-width:1pt;stroke-opacity:1;fill:#ffd42a;fill-opacity:1"
+         transform="scale(-0.2)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutS"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker15435"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path15433"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.2)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker15215"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path15213"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker15031"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path15029"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker14841"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path14839"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#c83737;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker14681"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path14679"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#c83737;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutS"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker14527"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path14525"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#ffd42a;stroke-width:1pt;stroke-opacity:1;fill:#ffd42a;fill-opacity:1"
+         transform="scale(0.2)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutL"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker14379"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path14377"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.8)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Sstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1620"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#c83737;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker11632"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path11630"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker11126"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#ff2a2a;fill-opacity:1;fill-rule:evenodd;stroke:#ff2a2a;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path11124"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker10970"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="scale(0.3) rotate(180) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#37c8ab;stroke-opacity:1;fill:#37c8ab;fill-opacity:1"
+         id="path10968" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker10452"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:#71c837;fill-opacity:1;fill-rule:evenodd;stroke:#71c837;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path10450"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker8452"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="scale(0.3) rotate(180) translate(-2.3,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#225500;stroke-opacity:1;fill:#225500;fill-opacity:1"
+         id="path8450" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Send"
+       style="overflow:visible;"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path1623"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#37c8ab;stroke-opacity:1;fill:#37c8ab;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1617"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#225500;stroke-opacity:1;fill:#225500;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker5730"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#ff2a2a;fill-opacity:1;fill-rule:evenodd;stroke:#ff2a2a;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path5728"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4868"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4866"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#37c8ab;fill-opacity:1;fill-rule:evenodd;stroke:#37c8ab;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutS"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleOutS"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1738"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#ff6600;stroke-width:1pt;stroke-opacity:1;fill:#ff6600;fill-opacity:1"
+         transform="scale(0.2)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutL"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleOutL"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1732"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.8)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path11250"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#225500;stroke-width:1pt;stroke-opacity:1;fill:#225500;fill-opacity:1"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path11238"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Send-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path11250-6"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#225500;fill-opacity:1;fill-rule:evenodd;stroke:#225500;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Send-5"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path11250-3"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#225500;fill-opacity:1;fill-rule:evenodd;stroke:#225500;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Send-3-0"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path11250-6-9"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#ff6600;fill-opacity:1;fill-rule:evenodd;stroke:#ff6600;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Send-3-0-4"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path11250-6-9-3"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#71c837;fill-opacity:1;fill-rule:evenodd;stroke:#71c837;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Send-5-9"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path11250-3-3"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#37c8ab;fill-opacity:1;fill-rule:evenodd;stroke:#37c8ab;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter6525"
+       x="-0.024744359"
+       width="1.0494887"
+       y="-0.023299117"
+       height="1.0465982">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.73298674"
+         id="feGaussianBlur6527" />
+    </filter>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker2724"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path2722"
+         style="fill:#ff2a2a;fill-opacity:1;fill-rule:evenodd;stroke:#ff2a2a;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="833.8278"
+     inkscape:cy="599.21432"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:object-nodes="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       y="61.955818"
+       x="-47.905891"
+       id="image11230"
+       xlink:href="data:image/png;base64,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 "
+       preserveAspectRatio="none"
+       height="59.375908"
+       width="75.546364"
+       style="stroke-width:1.39623594"
+       transform="scale(-1,1)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.20034695px;line-height:6.44019985px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="272.82678"
+       y="91.418007"
+       id="text12514-8-1"
+       transform="scale(1.0583006,0.94491112)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan12512-74-9"
+         x="272.82678"
+         y="91.418007"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.3499999px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Autoridade</tspan><tspan
+         sodipodi:role="line"
+         x="272.82678"
+         y="99.118164"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.3499999px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan10438">Certificadora</tspan><tspan
+         sodipodi:role="line"
+         x="272.82678"
+         y="106.81831"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.3499999px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan10440">(CA)</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#ff6600;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutS)"
+       d="m -49.012042,91.643773 h 14.633233"
+       id="path11233-7-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-66.467018"
+       y="123.06892"
+       id="text12514-85"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="-66.467018"
+         y="123.06892"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:7.9375px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan13341">Cliente</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="81.231133"
+       y="31.458136"
+       id="text12514-1-8"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan12512-3-0"
+         x="81.231133"
+         y="31.458136"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555556px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Oi</tspan></text>
+    <g
+       id="g2844"
+       transform="translate(-40.353652,14.177762)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+         ry="0.015337456"
+         y="57.071987"
+         x="383.09668"
+         height="40.788048"
+         width="125.28072"
+         id="rect14924"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#71c837;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+         id="text12514-1-9"
+         y="81.411507"
+         x="405.39584"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
+           y="81.411507"
+           x="405.39584"
+           id="tspan12512-3-7"
+           sodipodi:role="line">Servidor Web</tspan></text>
+      <rect
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+         ry="0.012499047"
+         y="60.273834"
+         x="498.35486"
+         height="33.239651"
+         width="5.3453879"
+         id="rect14924-9"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#0088aa;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:#37c8ab;fill-rule:evenodd;stroke:#37c8ab;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.00000006, 4.00000011000000022;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Send-5-9)"
+       d="M 81.378086,78.523493 H 222.29394"
+       id="path11233-5-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g6602"
+       transform="matrix(0.25841299,0,0,0.26888465,-47.138326,71.230845)"
+       style="fill:#ffffff;stroke-width:3.79367232"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <path
+         inkscape:connector-curvature="0"
+         d="m -127.34857,69.820899 h 71.093709 m -35.145947,31.805071 26.326052,26.32605 M -91.400808,53.250188 v 48.375782 l -27.127862,27.12786"
+         style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:11.38101673;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path6456" />
+      <path
+         id="path6469"
+         style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:11.38101673;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter6525)"
+         d="m -127.87774,70.879233 h 71.093712 m -35.145947,31.805077 26.326052,26.32605 M -91.929975,54.308522 v 48.375788 l -27.127865,27.12786"
+         inkscape:connector-curvature="0" />
+      <circle
+         r="16.971615"
+         cy="41.891235"
+         cx="-91.272545"
+         id="path6450"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:15.17468929;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+    </g>
+    <path
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:connector-curvature="0"
+       id="path4576"
+       d="m 81.378086,34.22465 219.582454,0"
+       style="fill:#37c8ab;fill-rule:evenodd;stroke:#37c8ab;stroke-width:2;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow2Send)"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#ff2a2a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.00000006, 2.00000006000000008;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker2724);paint-order:normal"
+       d="M 300.96054,54.053018 H 81.378086"
+       id="path2720"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:#37c8ab;fill-rule:evenodd;stroke:#37c8ab;stroke-width:2;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4868)"
+       d="m -74.659066,139.88441 h 60.59584"
+       id="path4864"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       id="text5718"
+       y="143.82991"
+       x="-8.8900852"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
+         y="143.82991"
+         x="-8.8900852"
+         id="tspan5716"
+         sodipodi:role="line">Cliente</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:connector-curvature="0"
+       id="path5726"
+       d="m 400.35302,139.89402 h 64.34254"
+       style="fill:none;fill-rule:evenodd;stroke:#ff2a2a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.00000006, 2.00000006000000008;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5730);paint-order:normal" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="343.37115"
+       y="143.82991"
+       id="text6166"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan6164"
+         x="343.37115"
+         y="143.82991"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Servidor</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       id="text6584"
+       y="40.926533"
+       x="178.37245"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444447px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
+         y="40.926533"
+         x="178.37245"
+         id="tspan6582"
+         sodipodi:role="line">(versão SSL, algoritmo, compressão)</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       id="text8436"
+       y="50.80764"
+       x="288.18066"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555556px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
+         y="50.80764"
+         x="288.18066"
+         id="tspan8434"
+         sodipodi:role="line">Oi</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="87.15757"
+       y="60.921284"
+       id="text8440"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan8438"
+         x="87.15757"
+         y="60.921284"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444447px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">(Algoritmo selecionado, ID, certificado, chave pública)</tspan></text>
+    <g
+       id="g9028"
+       transform="matrix(0.06063368,0,0,0.06063368,233.02995,73.711222)"
+       style="stroke-width:4.36363649"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <g
+         id="home__x2C__house__x2C__key__x2C_"
+         style="stroke-width:4.36363649">
+        <g
+           id="g8974"
+           style="stroke-width:4.36363649">
+          <linearGradient
+             y2="235.89011"
+             y1="235.89011"
+             x2="496"
+             x1="16"
+             id="SVGID_1_"
+             gradientUnits="userSpaceOnUse">
+            <stop
+               id="stop8901"
+               style="stop-color:#8A9AA9"
+               offset="0" />
+            <stop
+               id="stop8903"
+               style="stop-color:#C3D2DB"
+               offset="0.3214" />
+            <stop
+               id="stop8905"
+               style="stop-color:#C3D2DB"
+               offset="0.699" />
+            <stop
+               id="stop8907"
+               style="stop-color:#8A9AA9"
+               offset="1" />
+          </linearGradient>
+          <path
+             id="path8910"
+             style="clip-rule:evenodd;fill:url(#SVGID_1_);fill-rule:evenodd;stroke-width:4.36363649"
+             d="m 496,286.542 h -59.915 l 0.769,149.545 H 75.916 V 286.542 H 16 L 255.96,35.693 C 381.304,166.725 341.468,125.017 496,286.542 Z"
+             inkscape:connector-curvature="0" />
+          <radialGradient
+             r="7.2550001"
+             id="SVGID_2_"
+             gradientUnits="userSpaceOnUse"
+             gradientTransform="matrix(6.7855,0,0,6.7855,-1481.413,-1278.0966)"
+             cy="211.8096"
+             cx="278.55759">
+            <stop
+               id="stop8912"
+               style="stop-color:#000000"
+               offset="0" />
+            <stop
+               id="stop8914"
+               style="stop-color:#3D4148"
+               offset="1" />
+          </radialGradient>
+          <polygon
+             id="polygon8917"
+             style="clip-rule:evenodd;fill:url(#SVGID_2_);fill-rule:evenodd;stroke-width:4.36363649"
+             points="435.228,94.754 435.228,223.518 382.241,168.205 382.241,94.754 " />
+          <radialGradient
+             r="24.966999"
+             id="SVGID_3_"
+             gradientUnits="userSpaceOnUse"
+             gradientTransform="matrix(6.7855,0,0,6.7855,-1481.413,-1278.0966)"
+             cy="255.5322"
+             cx="256.03079">
+            <stop
+               id="stop8919"
+               style="stop-color:#000000"
+               offset="0" />
+            <stop
+               id="stop8921"
+               style="stop-color:#3D4148"
+               offset="1" />
+          </radialGradient>
+          <polygon
+             id="polygon8924"
+             style="clip-rule:evenodd;fill:url(#SVGID_3_);fill-rule:evenodd;stroke-width:4.36363649"
+             points="17.399,475.225 17.173,435.32 494.362,435.32 494.591,476.307 17.399,476.307 " />
+          <linearGradient
+             y2="161.11771"
+             y1="161.11771"
+             x2="496"
+             x1="16"
+             id="SVGID_4_"
+             gradientUnits="userSpaceOnUse">
+            <stop
+               id="stop8926"
+               style="stop-color:#610000"
+               offset="0" />
+            <stop
+               id="stop8928"
+               style="stop-color:#790501"
+               offset="0.0242" />
+            <stop
+               id="stop8930"
+               style="stop-color:#940A02"
+               offset="0.0583" />
+            <stop
+               id="stop8932"
+               style="stop-color:#AA0E03"
+               offset="0.0975" />
+            <stop
+               id="stop8934"
+               style="stop-color:#BB1103"
+               offset="0.1433" />
+            <stop
+               id="stop8936"
+               style="stop-color:#C61304"
+               offset="0.1999" />
+            <stop
+               id="stop8938"
+               style="stop-color:#CD1504"
+               offset="0.2794" />
+            <stop
+               id="stop8940"
+               style="stop-color:#CF1504"
+               offset="0.5" />
+            <stop
+               id="stop8942"
+               style="stop-color:#CD1504"
+               offset="0.7297" />
+            <stop
+               id="stop8944"
+               style="stop-color:#C61304"
+               offset="0.8124" />
+            <stop
+               id="stop8946"
+               style="stop-color:#BB1003"
+               offset="0.8714" />
+            <stop
+               id="stop8948"
+               style="stop-color:#AA0C02"
+               offset="0.9191" />
+            <stop
+               id="stop8950"
+               style="stop-color:#940701"
+               offset="0.9595" />
+            <stop
+               id="stop8952"
+               style="stop-color:#790100"
+               offset="0.9951" />
+            <stop
+               id="stop8954"
+               style="stop-color:#750000"
+               offset="1" />
+          </linearGradient>
+          <polygon
+             id="polygon8957"
+             style="clip-rule:evenodd;fill:url(#SVGID_4_);fill-rule:evenodd;stroke-width:4.36363649"
+             points="16,286.542 75.916,286.542 256.502,100.195 436.085,286.542 496,286.542 255.96,35.693 " />
+          <linearGradient
+             y2="305.44821"
+             y1="305.44821"
+             x2="299.9248"
+             x1="211.99409"
+             id="SVGID_5_"
+             gradientUnits="userSpaceOnUse">
+            <stop
+               id="stop8959"
+               style="stop-color:#5B5A5A"
+               offset="0" />
+            <stop
+               id="stop8961"
+               style="stop-color:#2B2B2B"
+               offset="0.15" />
+            <stop
+               id="stop8963"
+               style="stop-color:#0C0C0C"
+               offset="0.2701" />
+            <stop
+               id="stop8965"
+               style="stop-color:#000000"
+               offset="0.3367" />
+            <stop
+               id="stop8967"
+               style="stop-color:#403E40"
+               offset="0.7194" />
+            <stop
+               id="stop8969"
+               style="stop-color:#999999"
+               offset="1" />
+          </linearGradient>
+          <path
+             id="path8972"
+             style="clip-rule:evenodd;fill:url(#SVGID_5_);fill-rule:evenodd;stroke-width:4.36363649"
+             d="m 244.29,269.745 v 49.092 c -18.593,5.127 -32.296,22.181 -32.296,42.409 0,24.271 19.696,43.947 43.966,43.947 24.349,0 43.965,-19.677 43.965,-43.947 0,-20.229 -13.622,-37.282 -32.213,-42.409 V 213.48 c 0,-4.12 -3.114,-7.54 -7.236,-7.777 h -8.951 c -4.12,0.237 -7.234,3.657 -7.234,7.777 v 7.474 h -22.793 c -1.637,0 -2.879,1.4 -2.879,2.956 v 6.151 c 0,1.629 1.242,2.88 2.879,2.88 h 22.793 v 6.377 h -16.729 c -1.706,0 -2.879,1.401 -2.879,3.036 v 5.984 c 0,1.715 1.173,3.037 2.879,3.037 h 16.729 v 6.376 h -6.617 c -1.626,0 -3.026,1.402 -3.026,2.957 v 6.079 c 0,1.635 1.4,2.957 3.026,2.957 h 6.616 z m -14.315,91.501 c 0,-14.393 11.672,-25.985 25.985,-25.985 14.393,0 25.983,11.593 25.983,25.985 0,14.314 -11.591,25.983 -25.983,25.983 -14.314,0 -25.985,-11.668 -25.985,-25.983 z"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+      <g
+         id="Layer_1"
+         style="stroke-width:4.36363649" />
+    </g>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       id="text9926"
+       y="74.363998"
+       x="81.231133"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555556px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
+         y="74.363998"
+         x="81.231133"
+         id="tspan9924"
+         sodipodi:role="line">CA, o certificado é válido?</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:connector-curvature="0"
+       id="path10448"
+       d="m 220.03953,94.122864 -138.661444,0"
+       style="fill:none;fill-rule:evenodd;stroke:#71c837;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.00000006, 4.00000011;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker10452)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="153.10704"
+       y="91.469246"
+       id="text10678"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan10676"
+         x="153.10704"
+         y="91.469246"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555534px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">sim, pode confiar</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       id="text10964"
+       y="110.93271"
+       x="81.045097"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555556px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
+         y="110.93271"
+         x="81.045097"
+         id="tspan10962"
+         sodipodi:role="line">Segue a chave criptografada</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       style="fill:#37c8ab;fill-rule:evenodd;stroke:#37c8ab;stroke-width:2;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker10970)"
+       d="M 81.378086,113.61505 H 300.96054"
+       id="path10966"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:connector-curvature="0"
+       id="path11122"
+       d="M 300.96054,133.44343 H 81.378086"
+       style="fill:none;fill-rule:evenodd;stroke:#ff2a2a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.00000006, 2.00000006000000008;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker11126);paint-order:normal" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="115.62617"
+       y="130.72122"
+       id="text11620"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan11618"
+         x="115.62617"
+         y="130.72122"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555534px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Tudo certo, segue a mensagem criptografada</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#ffd42a;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#TriangleInS);marker-end:url(#marker14527);paint-order:normal"
+       d="m 297.09561,147.68798 -207.020789,0"
+       id="path11628"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#444444;stroke-width:0.26458326"
+       inkscape:connector-curvature="0"
+       d="m 57.274265,53.350595 c 1.563089,10.159488 3.125972,12.503827 3.125972,22.663315 0,6.252059 -11.722431,11.722279 -11.722431,11.722279 v 7.815151 c 0,0 11.722431,5.47053 11.722431,11.7223 0,10.15949 -1.56309,12.50412 -3.125972,22.66331 -2.344338,16.41155 6.251973,24.22641 14.066916,24.22641 h 8.095923 v -7.34435 c 0,0 -13.499949,1.5625 -13.499949,-7.81515 0,-7.03331 1.563089,-15.31867 3.125972,-30.94868 0.781544,-7.03331 -3.907457,-12.50384 -8.596429,-16.411261 4.688972,-3.90773 9.377944,-8.5967 8.596429,-15.630009 -2.344338,-15.630005 -3.125972,-25.518978 -3.125972,-32.552288 0,-9.377944 13.499949,-8.5964 13.499949,-8.5964 V 29.12419 h -8.095923 c -8.596458,0 -16.411402,7.814855 -14.066916,24.226405 z"
+       id="path12149"
+       sodipodi:nodetypes="csccscsccscccsccsc"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <path
+       sodipodi:nodetypes="csccscsccscccsccsc"
+       id="path12173"
+       d="m 328.48847,53.350595 c -1.56309,10.159488 -3.12597,12.503827 -3.12597,22.663315 0,6.252059 11.72243,11.722279 11.72243,11.722279 v 7.815151 c 0,0 -11.72243,5.47053 -11.72243,11.7223 0,10.15949 1.56309,12.50412 3.12597,22.66331 2.34434,16.41155 -6.25197,24.22641 -14.06692,24.22641 h -8.09592 v -7.34435 c 0,0 13.49995,1.5625 13.49995,-7.81515 0,-7.03331 -1.56309,-15.31867 -3.12597,-30.94868 -0.78155,-7.03331 3.90745,-12.50384 8.59643,-16.411261 -4.68898,-3.90773 -9.37795,-8.5967 -8.59643,-15.630009 2.34434,-15.630005 3.12597,-25.518978 3.12597,-32.552288 0,-9.377944 -13.49995,-8.5964 -13.49995,-8.5964 V 29.12419 h 8.09592 c 8.59646,0 16.41141,7.814855 14.06692,24.226405 z"
+       inkscape:connector-curvature="0"
+       style="fill:#444444;stroke-width:0.26458326"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       id="text16467"
+       y="119.98785"
+       x="129.11888"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444447px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
+         y="119.98785"
+         x="129.11888"
+         id="tspan16465"
+         sodipodi:role="line">(chave escolhida criptografada com a chave pública)</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       id="text16471"
+       y="138.69672"
+       x="85.553955"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444447px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
+         y="138.69672"
+         x="85.553955"
+         id="tspan16469"
+         sodipodi:role="line">(Mensagem criptografada)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="137.05896"
+       y="151.63347"
+       id="text16613"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssl_handshake.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan16611"
+         x="137.05896"
+         y="151.63347"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Canal Estabelecido</tspan></text>
+  </g>
+</svg>

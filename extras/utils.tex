@@ -317,9 +317,9 @@ heading_suffix "}\\nopagebreak\n"
 % Aqui, um truque para a configuração abaixo funcionar com ambas
 % as versões.
 \makeatletter
-\newcommand*\columnsAsMonths{%
-  \@ifpackagelater{pgfgantt}{2018/01/01}{time slot unit=month}{compress calendar}%
-}
+\@ifpackagelater{pgfgantt}{2018/01/01}
+  {\ganttset{time slot unit=month}}
+  {\ganttset{compress calendar}}
 \makeatother
 
 % Estes parâmetros definem a aparência das gantt charts e variam

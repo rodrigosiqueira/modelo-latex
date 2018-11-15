@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="camadas_ssl.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker1700"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#a7b3cd;fill-opacity:1;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path1698"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4595"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4595-5"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-2"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4595-9"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-3-1"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4595-5-2"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="412.60057"
+     inkscape:cy="549.83035"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-nodes="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3.99999976;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4504"
+       width="260.98584"
+       height="241.03484"
+       x="-1.7425402"
+       y="-27.948256"
+       ry="0.099113084"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="129.61398"
+       y="7.7258625"
+       id="text4508-35"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="129.61398"
+         y="7.7258625"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan4570">ssh-connection</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="111.49416"
+       y="172.57608"
+       id="text4508-9"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan4506-1"
+         x="111.49416"
+         y="172.57608"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">TCP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="119.58875"
+       y="203.36447"
+       id="text4508-7-2"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan4506-5-7"
+         x="119.58875"
+         y="203.36447"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">IP</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -1.8073491,184.10537 H 260.57228"
+       id="path4572-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1.0535774,148.71886 261.6258574,0"
+       id="path4572-3-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4632"
+       d="m -1.0535774,89.812677 261.6258574,0"
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -1.0535774,30.906467 261.6258574,0"
+       id="path4634"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#444444;stroke:#444444;stroke-width:0.4524059"
+       id="use8"
+       d="m -7.6991759,150.26726 h -4.7851581 c -5.742176,0 -9.570278,0 -13.398383,-0.94598 -3.828141,-0.94598 -7.656245,-3.78391 -10.527332,-7.56781 -2.871089,-3.78391 -3.828105,-7.56781 -4.785159,-12.29769 -0.957017,-4.72989 -0.957017,-13.24367 -0.957017,-24.59539 0,-8.51379 0,-14.18965 -0.957016,-18.919533 -0.957054,-4.72988 -2.871089,-9.459762 -5.742176,-12.297692 -2.871087,-2.837929 -6.699227,-4.72988 -12.441401,-4.72988 V 53.77766 c 5.742174,0 9.570314,-1.891951 12.441401,-4.729879 2.871087,-2.837929 4.785122,-7.567813 5.742176,-12.297696 0.957016,-4.72988 0.957016,-10.405737 0.957016,-18.919529 0,-11.3517138 0,-19.8654995 0.957017,-24.5953875 0.957054,-4.7298675 1.91407,-8.5137855 4.785159,-12.2976835 2.871087,-3.783898 6.699191,-6.621827 10.527332,-7.567817 3.828105,-0.945969 7.656207,-0.945969 13.398383,-0.945969 h 4.7851581 v 14.189643 h -2.8710891 c -6.699191,0 -10.527332,0.945969 -12.441365,2.837929 -2.871087,2.8379283 -3.828141,3.7838975 -3.828141,6.6218261 V 19.722515 c 0,14.189641 -1.914035,23.649408 -4.785122,29.325266 -2.871087,5.675859 -8.613261,9.459763 -14.355437,12.297692 5.742176,2.837931 11.48435,6.621835 14.355437,12.297692 2.871087,5.675859 4.785122,15.135622 4.785122,29.325275 v 23.64941 c 0,2.83793 0.957054,3.7839 3.828141,6.62183 1.914033,1.89196 5.742174,2.83793 12.441365,2.83793 h 2.8710891 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       id="text1997"
+       y="63.317921"
+       x="129.61397"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan1995"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="63.317921"
+         x="129.61397"
+         sodipodi:role="line">ssh-userauth</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="129.14268"
+       y="122.11722"
+       id="text2001"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="129.14268"
+         y="122.11722"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan1999">ssh-transport</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       id="text2107"
+       y="59.932438"
+       x="-109.79627"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan2105"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:15.45166683px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="59.932438"
+         x="-109.79627"
+         sodipodi:role="line">Camadas</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:15.45166683px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="75.384102"
+         x="-109.79627"
+         sodipodi:role="line"
+         id="tspan2109">SSH</tspan></text>
+  </g>
+</svg>

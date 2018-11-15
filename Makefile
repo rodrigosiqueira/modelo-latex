@@ -51,7 +51,7 @@ OTHERTEXFILES := $(wildcard *.tex) $(wildcard *.sty) $(wildcard extras/*) $(wild
 BIBFILES      := $(wildcard *.bib)
 IMGFILES      := $(wildcard figuras/*)
 # Voce pode acrescentar outras dependencias aqui
-MISCFILES     :=
+MISCFILES     := $(wildcard chapters/*) $(wildcard tables/*)
 
 
 ###############################################################################

@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="openssl_arch.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker16461"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4)"
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path16459" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker16289"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleInM">
+      <path
+         transform="scale(-0.4)"
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path16287" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker12765"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4)"
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path12763" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker12093"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path12091"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker11637"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.4)"
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path11635" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker11019"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path11017"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker10481"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.4)"
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path10479" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker8252"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4)"
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path8250" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker6698"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path6696"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker6270"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleInM">
+      <path
+         transform="scale(-0.4)"
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path6268" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1758"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1756"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1754"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1752"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1750"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1748"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1742"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path1740"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleOutM"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path1605"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1475"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleInM"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path1596"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1469"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1466"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.4) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1484"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#c83737;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1478"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#c83737;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1460"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#c83737;stroke-width:1pt;stroke-opacity:1;fill:#c83737;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7749"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path7747"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7482"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path7480"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6410"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6408"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker86594"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path86592"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker110861"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path110859"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker100380"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path100378" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.24764443"
+     inkscape:cx="1880.4575"
+     inkscape:cy="1361.2997"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:object-nodes="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       transform="rotate(-90)"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1942"
+       width="74.447731"
+       height="159.80588"
+       x="-106.10656"
+       y="31.667442"
+       ry="0.065711886"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <rect
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       ry="0.065711886"
+       y="31.667442"
+       x="-31.731794"
+       height="159.80588"
+       width="74.447731"
+       id="rect1940"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="rotate(-90)" />
+    <rect
+       transform="rotate(-90)"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1938"
+       width="74.364517"
+       height="149.92062"
+       x="-31.648581"
+       y="-118.49428"
+       ry="0.061647084"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <path
+       sodipodi:nodetypes="cac"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:connector-curvature="0"
+       id="path7132"
+       d="M 256.61307,43.936621 C 283.45901,99.637701 436.73383,123.771 532.4545,123.771 c 95.72068,0 262.29191,-29.266844 275.84144,-79.834379"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#TriangleInM);marker-end:url(#TriangleOutM);paint-order:normal" />
+    <g
+       id="g14165"
+       transform="translate(-0.78824815)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         transform="rotate(-90)"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1315"
+         width="30.474775"
+         height="170.07971"
+         x="180.06581"
+         y="545.35712"
+         ry="0.069936462"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="630.1875"
+         y="-187.08458"
+         id="text1327"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999"><tspan
+           sodipodi:role="line"
+           x="630.1875"
+           y="-187.08458"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan1325">Source BIO</tspan></text>
+    </g>
+    <rect
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       ry="0.25411564"
+       y="-118.49429"
+       x="118.8077"
+       height="617.98828"
+       width="51.842777"
+       id="rect1424"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="rotate(-90)" />
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       id="text1428"
+       y="-137.85106"
+       x="-40.094227"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.80539703px;line-height:6.75337362px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0209824,0.97944881)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.93295288px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px"
+         y="-137.85106"
+         x="-40.094227"
+         id="tspan1426"
+         sodipodi:role="line">Interface de linha de comando</tspan></text>
+    <rect
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       ry="0.12761788"
+       y="-118.49428"
+       x="42.827461"
+       height="310.35617"
+       width="75.779144"
+       id="rect2294"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="rotate(-90)" />
+    <text
+       transform="scale(1.0209824,0.97944881)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.80539703px;line-height:6.75337362px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-72.866928"
+       y="-75.256317"
+       id="text1437"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan1435"
+         x="-72.866928"
+         y="-75.256317"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.93295288px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px">API EVP Crypto</tspan></text>
+    <rect
+       transform="rotate(-90)"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1828"
+       width="47.535561"
+       height="342.20621"
+       x="71.071045"
+       y="157.35138"
+       ry="0.14071456"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       id="text1832"
+       y="-88.408157"
+       x="266.4827"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.80539703px;line-height:6.75337362px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0209824,0.97944881)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.93295288px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px"
+         y="-88.408157"
+         x="266.4827"
+         id="tspan1830"
+         sodipodi:role="line">SSL/TLS</tspan></text>
+    <rect
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       ry="0.044858232"
+       y="191.90692"
+       x="-31.730112"
+       height="109.09154"
+       width="102.67567"
+       id="rect1834"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="rotate(-90)" />
+    <rect
+       transform="rotate(-90)"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1836"
+       width="102.67567"
+       height="99.438774"
+       x="-31.730112"
+       y="301.17233"
+       ry="0.040889036"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <rect
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       ry="0.04034156"
+       y="401.47711"
+       x="-31.730112"
+       height="98.107361"
+       width="102.67567"
+       id="rect1838"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="rotate(-90)" />
+    <text
+       transform="scale(1.0209824,0.97944881)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.80539703px;line-height:6.75337362px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="240.64366"
+       y="-38.767677"
+       id="text1842"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan1840"
+         x="190.48445"
+         y="-38.767677"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px;text-anchor:middle;text-align:center">Tratamento</tspan><tspan
+         sodipodi:role="line"
+         x="190.48445"
+         y="-13.706345"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px;text-anchor:middle;text-align:center"
+         id="tspan1844">de</tspan><tspan
+         sodipodi:role="line"
+         x="190.48445"
+         y="11.354987"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px;text-anchor:middle;text-align:center"
+         id="tspan1846">Erros</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       id="text1859"
+       y="-39.5821"
+       x="343.40762"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.80539703px;line-height:6.75337362px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0209824,0.97944881)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px;text-anchor:middle;text-align:center"
+         y="-39.5821"
+         x="298.10599"
+         sodipodi:role="line"
+         id="tspan1866">BIO</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px;text-anchor:middle;text-align:center"
+         y="-14.520767"
+         x="298.10599"
+         sodipodi:role="line"
+         id="tspan1872">Abstração</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px;text-anchor:middle;text-align:center"
+         y="10.540565"
+         x="298.10599"
+         sodipodi:role="line"
+         id="tspan1870">de I/O</tspan></text>
+    <text
+       transform="scale(1.0209824,0.97944881)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.80539703px;line-height:6.75337362px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="440.89566"
+       y="-26.237013"
+       id="text1880"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         id="tspan1878"
+         sodipodi:role="line"
+         x="440.89566"
+         y="-26.237013"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Estrutura</tspan><tspan
+         sodipodi:role="line"
+         x="440.89566"
+         y="-1.1756792"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan1887">de dados</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       id="text1895"
+       y="-25.123112"
+       x="-42.949348"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.80539703px;line-height:6.75337362px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0209824,0.97944881)"><tspan
+         id="tspan1893"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="-25.123112"
+         x="-42.949348"
+         sodipodi:role="line">Implementação</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="-0.061778795"
+         x="-42.949348"
+         sodipodi:role="line"
+         id="tspan1920">em Software</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="24.999554"
+         x="-42.949348"
+         sodipodi:role="line"
+         id="tspan1924">(Crypto)</tspan></text>
+    <text
+       transform="scale(1.0209824,0.97944881)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.80539703px;line-height:6.75337362px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="109.28988"
+       y="-0.76626009"
+       id="text1903"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="109.28988"
+         y="-0.76626009"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan1901">Engine API</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       id="text1911"
+       y="62.663204"
+       x="109.54206"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.80539703px;line-height:6.75337362px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0209824,0.97944881)"><tspan
+         id="tspan1909"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="62.663204"
+         x="109.54206"
+         sodipodi:role="line">Aceleração</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:25.0613327px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="87.724533"
+         x="109.54206"
+         sodipodi:role="line"
+         id="tspan1936">de Crypto</tspan></text>
+    <g
+       id="g10887"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+         inkscape:connector-curvature="0"
+         id="path7622"
+         d="m 785.66809,-181.29635 11.76816,25.39067"
+         style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker1742);paint-order:normal" />
+      <rect
+         transform="rotate(-90)"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#d4aa00;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect1390"
+         width="37.720985"
+         height="170.07971"
+         x="106.2559"
+         y="782.88898"
+         ry="0.069936462"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="867.58636"
+         y="-118.05532"
+         id="text1394"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999"><tspan
+           sodipodi:role="line"
+           x="867.58636"
+           y="-118.05532"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan1392">Erro 1</tspan></text>
+      <rect
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
+         ry="0.069936462"
+         y="782.88898"
+         x="69.641975"
+         height="170.07971"
+         width="37.720985"
+         id="rect5732"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#d4aa00;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         transform="rotate(-90)" />
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         id="text5736"
+         y="-83.76786"
+         x="867.93365"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan5734"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="-83.76786"
+           x="867.93365"
+           sodipodi:role="line">Erro 2</tspan></text>
+      <rect
+         transform="rotate(-90)"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#d4aa00;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect5738"
+         width="37.720985"
+         height="170.07971"
+         x="31.696638"
+         y="782.88898"
+         ry="0.069936462"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="867.95776"
+         y="-49.187366"
+         id="text5742"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999"><tspan
+           sodipodi:role="line"
+           x="867.95776"
+           y="-49.187366"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan5740">...</tspan></text>
+      <rect
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
+         ry="0.069936462"
+         y="782.88898"
+         x="-4.9172816"
+         height="170.07971"
+         width="37.720985"
+         id="rect5744"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#d4aa00;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         transform="rotate(-90)" />
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         id="text5748"
+         y="-6.8821473"
+         x="867.89508"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan5746"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="-6.8821473"
+           x="867.89508"
+           sodipodi:role="line">Erro n</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="867.89508"
+         y="27.73465"
+         id="text5752"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999"><tspan
+           sodipodi:role="line"
+           x="867.89508"
+           y="27.73465"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan5750">Stack de erro</tspan></text>
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         id="text5756"
+         y="-185.95749"
+         x="787.70148"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan5754"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="-185.95749"
+           x="787.70148"
+           sodipodi:role="line">Push</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="948.13702"
+         y="-188.17613"
+         id="text5760"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999"><tspan
+           sodipodi:role="line"
+           x="948.13702"
+           y="-188.17613"
+           style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan5758">Pop</tspan></text>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8252);paint-order:normal"
+         d="m 929.9021,-149.69265 11.76816,-25.39067"
+         id="path8248"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <g
+       id="g14160"
+       transform="translate(-0.78824815)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
+         ry="0.069936462"
+         y="545.35712"
+         x="110.0856"
+         height="170.07971"
+         width="27.269575"
+         id="rect10334"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         transform="rotate(-90)" />
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         id="text10338"
+         y="-115.50178"
+         x="630.1875"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan10336"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="-115.50178"
+           x="630.1875"
+           sodipodi:role="line">Filtro BIO I</tspan></text>
+    </g>
+    <g
+       id="g14155"
+       transform="translate(-0.78824815)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         transform="rotate(-90)"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect10340"
+         width="27.269575"
+         height="170.07971"
+         x="33.160797"
+         y="545.35712"
+         ry="0.069936462"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="630.1875"
+         y="-38.576973"
+         id="text10344"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999"><tspan
+           sodipodi:role="line"
+           x="630.1875"
+           y="-38.576973"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan10342">Filtro BIO n</tspan></text>
+    </g>
+    <g
+       id="g14150"
+       transform="translate(-0.78824815)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
+         ry="0.069936462"
+         y="545.35712"
+         x="-40.024609"
+         height="170.07971"
+         width="21.927574"
+         id="rect10346"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         transform="rotate(-90)" />
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
+         id="text10350"
+         y="37.279434"
+         x="630.1875"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan10348"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="37.279434"
+           x="630.1875"
+           sodipodi:role="line">Sink BIO</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="630.05243"
+       y="-244.24397"
+       id="text10354"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="630.05243"
+         y="-244.24397"
+         style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan10352">Entrada</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       id="text10377"
+       y="84.289047"
+       x="630.1875"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:11.27125168px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan10375"
+         style="font-style:oblique;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.75555611px;line-height:11.27125168px;font-family:hack;-inkscape-font-specification:'hack Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="84.289047"
+         x="630.1875"
+         sodipodi:role="line">Saída</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:connector-curvature="0"
+       id="path10477"
+       d="m 629.60872,-176.48855 v 26.99327"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker10481);paint-order:normal" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker11019);paint-order:normal"
+       d="M 629.60872,-31.186138 V 4.8885316"
+       id="path11015"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:connector-curvature="0"
+       id="path11633"
+       d="M 629.60872,44.670267 V 62.582136"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker11637);paint-order:normal" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12093);paint-order:normal"
+       d="m 629.60872,-240.05836 v 18.98027"
+       id="path12089"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:connector-curvature="0"
+       id="path12761"
+       d="m 629.60872,-108.11095 v 36.608872"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3.00000008, 9.00000025;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12765);paint-order:normal" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker16289);marker-end:url(#marker16461);paint-order:normal"
+       d="m 355.58003,43.936621 c 17.78419,70.330749 153.35519,73.518069 190.5668,9.065675"
+       id="path16285"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/openssl_arch.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
