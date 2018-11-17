@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="redis.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker3114"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path3112"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker2724"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path2722"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter886"
+       x="-0.024"
+       width="1.048"
+       y="-0.024"
+       height="1.048">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="1.6555357"
+         id="feGaussianBlur888" />
+    </filter>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker110861-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path110859-5"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInS"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleInS"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1729"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         style="fill:#ffd42a;fill-opacity:1;fill-rule:evenodd;stroke:#ffd42a;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="scale(-0.2)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutS"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker14527"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path14525"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         style="fill:#ffd42a;fill-opacity:1;fill-rule:evenodd;stroke:#ffd42a;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="scale(0.2)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.25"
+     inkscape:cx="40.120228"
+     inkscape:cy="744.17519"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:object-nodes="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:5.10500002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.1050002, 5.1050002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker2724);paint-order:normal"
+       d="m 97.70564,132.20947 100.27963,-1.5575"
+       id="path2720"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g1355"
+       transform="matrix(0.66127845,0,0,0.66127845,-233.77258,67.452828)"
+       style="stroke-width:1.51222229"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <g
+         transform="translate(663.04225,39.662798)"
+         id="g1329"
+         style="stroke-width:1.51222229">
+        <g
+           id="g3736"
+           transform="translate(27.689123,-18.708867)"
+           inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
+           inkscape:export-xdpi="144.75999"
+           inkscape:export-ydpi="144.75999"
+           style="stroke-width:1.51222229">
+          <circle
+             transform="matrix(1.8950228,0,0,1.8950228,573.89469,164.26552)"
+             style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:2.39399052;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter886)"
+             id="circle880"
+             cx="-499.90094"
+             cy="-47.24316"
+             r="82.776787" />
+          <circle
+             r="156.86389"
+             cy="74.738655"
+             cx="-373.42899"
+             id="path829"
+             style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.53666687;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        </g>
+        <path
+           id="path3628"
+           style="fill:none;stroke:#808080;stroke-width:7.56111097;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -422.82544,53.037308 c 0,0 -41.21894,-20.877297 0,-45.2022186 41.21893,-24.3249144 0,-47.1175644 0,-47.1175644 m 0,184.639545 c 0,0 -41.21894,-20.87727 0,-45.20221 41.21893,-24.324916 0,-47.117552 0,-47.117552"
+           inkscape:connector-curvature="0"
+           inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
+           inkscape:export-xdpi="144.75999"
+           inkscape:export-ydpi="144.75999" />
+        <text
+           inkscape:export-ydpi="144.75999"
+           inkscape:export-xdpi="144.75999"
+           inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
+           id="text3784"
+           y="53.592308"
+           x="-314.15463"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40010878px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan3782"
+             style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.40010878px"
+             y="53.592308"
+             x="-314.15463"
+             sodipodi:role="line">Processo:</tspan><tspan
+             style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.40010878px"
+             y="72.589394"
+             x="-314.15463"
+             sodipodi:role="line"
+             id="tspan1320">Redis Server</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g4403"
+       transform="translate(-85.312434)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
+         ry="17.0753"
+         y="-513.10339"
+         x="-177.29665"
+         height="170.54872"
+         width="93.128761"
+         id="rect1024"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#37c8ab;stroke-width:4.19534349;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         transform="rotate(-90)" />
+      <text
+         id="text1333"
+         y="126.64227"
+         x="-427.61957"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan1339"
+           style="font-size:22.57777786px;line-height:0;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           y="126.64227"
+           x="-427.61957"
+           sodipodi:role="line">Redis API</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="-427.69675"
+         y="154.11641"
+         id="text1345"><tspan
+           sodipodi:role="line"
+           x="-427.69675"
+           y="154.11641"
+           style="font-size:22.57777786px;line-height:0;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           id="tspan1343">Comandos</tspan></text>
+    </g>
+    <g
+       transform="matrix(0.66127845,0,0,0.66127845,551.80028,93.680982)"
+       id="g1371"
+       style="stroke-width:1.51222229"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <g
+         id="g1361"
+         transform="translate(27.689123,-18.708867)"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999"
+         style="stroke-width:1.51222229">
+        <circle
+           transform="matrix(1.8950228,0,0,1.8950228,573.89469,164.26552)"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:2.39399052;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter886)"
+           id="circle1357"
+           cx="-499.90094"
+           cy="-47.24316"
+           r="82.776787" />
+        <circle
+           r="156.86389"
+           cy="74.738655"
+           cx="-373.42899"
+           id="circle1359"
+           style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.53666687;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      </g>
+      <path
+         id="path1363"
+         style="fill:none;stroke:#808080;stroke-width:7.56111097;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -422.82544,53.037308 c 0,0 -41.21894,-20.877297 0,-45.2022186 41.21893,-24.3249144 0,-47.1175644 0,-47.1175644 m 0,184.639545 c 0,0 -41.21894,-20.87727 0,-45.20221 41.21893,-24.324916 0,-47.117552 0,-47.117552"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <text
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
+         id="text1369"
+         y="53.592308"
+         x="-314.15463"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.40010878px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan1365"
+           style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.40010878px"
+           y="53.592308"
+           x="-314.15463"
+           sodipodi:role="line">Processo Filho:</tspan><tspan
+           style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.40010878px"
+           y="72.589394"
+           x="-314.15463"
+           sodipodi:role="line"
+           id="tspan1367">Persiste dados</tspan><tspan
+           style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.40010878px"
+           y="91.586487"
+           x="-314.15463"
+           sodipodi:role="line"
+           id="tspan2581">em disco</tspan></text>
+    </g>
+    <text
+       id="text2571"
+       y="116.99422"
+       x="150.94669"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         id="tspan2569"
+         style="font-size:22.57777786px;line-height:0;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="116.99422"
+         x="150.94669"
+         sodipodi:role="line">fork()</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:2.99999976;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:3.00000014, 6.00000028;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect100358"
+       width="789.40564"
+       height="287.20941"
+       x="-145.17163"
+       y="-4.790288"
+       ry="0.11809999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:connector-curvature="0"
+       id="path110857"
+       d="m 433.62806,160.78627 34.14881,19.71582"
+       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000012, 8.00000028;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker110861-7);paint-order:normal" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="249.54222"
+       y="18.101255"
+       id="text3197"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="249.54222"
+         y="18.101255"
+         style="font-size:22.57777786px;line-height:0;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan3195">Servidor</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#ffd42a;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#TriangleInS);marker-end:url(#marker14527);paint-order:normal"
+       d="m -148.39808,130.73228 h -266.7149"
+       id="path11628"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <text
+       id="text4683"
+       y="114.66859"
+       x="-279.12708"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         style="font-size:22.57777786px;line-height:0;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="114.66859"
+         x="-279.12708"
+         sodipodi:role="line"
+         id="tspan4685">Envio e Recebimento</tspan><tspan
+         style="font-size:22.57777786px;line-height:0;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="167.58527"
+         x="-279.12708"
+         sodipodi:role="line"
+         id="tspan4687">de Dados</tspan></text>
+    <text
+       id="text5321"
+       y="66.025543"
+       x="-513.13043"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         id="tspan5319"
+         style="font-size:22.57777786px;line-height:0;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="66.025543"
+         x="-513.13043"
+         sodipodi:role="line">Cliente</tspan></text>
+    <g
+       id="g5351"
+       transform="translate(266.7,7.4083364)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/redis_overview.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         transform="rotate(-90)"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#ff2a2a;stroke-width:4.19534349;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect11686"
+         width="111.83762"
+         height="156.32999"
+         x="-266.33948"
+         y="212.19662"
+         ry="27.999083"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <text
+         id="text5343"
+         y="192.03212"
+         x="290.60416"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           id="tspan5341"
+           style="font-size:22.57777786px;line-height:0;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           y="192.03212"
+           x="290.60416"
+           sodipodi:role="line">Armazena</tspan><tspan
+           id="tspan5345"
+           style="font-size:22.57777786px;line-height:0;text-align:center;text-anchor:middle;stroke-width:0.26458332"
+           y="244.94879"
+           x="290.60416"
+           sodipodi:role="line">Dados</tspan></text>
+    </g>
+  </g>
+</svg>

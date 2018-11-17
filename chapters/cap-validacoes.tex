@@ -122,7 +122,7 @@ enquanto o segundo é conhecido pela sua enorme estabilidade e extensões. Ambos
 são extremamente configuráveis, confiáveis e suportam grandes cargas de
 requisições.
 
-\subsection{Servidor Apache HTTP}
+\subsection{Servidor Apache HTTPD}
 \label{sec:architecture}
 
 O servidor Apache HTTP, também conhecido como \textit{HTTP Daemon (HTTPD)} é
@@ -191,22 +191,33 @@ e também entrega uma estrutura de dados pronta para ser utilizadas.
   \label{fig:content_generator} 
 \end{figure}
 
-O último aspecto importante da arquitetura do Apache é o \textbf{Content
-Generator} (Gerador de Conteúdo), este funciona como uma linha de produção da
-resposta HTTP \citep{apache_module_book}. Para cada requisição feita para o
-HTTPD, ele cria um \textit{Content Generator}; esse pode ser customizado com
-algum outro módulo que faz operações intermediárias (e.g.: adicionar um campo
-extra na construção do resposta). A Figura \ref{fig:content_generator} mostra
-as fases padrão, repare que depois que uma requisição é aceita o HTTPD realiza
-diversos passos até que a resposta seja construída. Embora a maioria dos casos
-se encaixam no caso padrão outras situações podem demandar fases adicionais,
-princípalmente para testes em novas abstrações de processos.
+Outros dois importantes aspectos da arquitetura do Apache são o \textbf{Content
+Generator} (Gerador de Conteúdo) e as fases de processamento das requisições. O
+\textit{Content Generator} pode ser visto como o núcleo do Apache uma vez que
+ele é responsável pelas operação de escutar por requisições e retornar
+respostas; existe exatamente um gerador de conteúdo por requisição. No Apache
+um módulo pode registrar um \textit{content generator} de forma simples (basta
+ajustar o \texttt{httpd.conf}) e se nenhum estiver disponível o Apache utiliza
+o gerador padrão que simplesmente mapeia um arquivo para uma requisição
+\citep{apache_module_book}. O \textit{content generator} pode processar toda a
+requisição sozinho, contudo o Apache divide a \textit{request} em várias fases
+como pode ser visto na Figura \ref{fig:content_generator}. Alterações nessa
+fases podem ser extremamente proveitosas para testar novas abstrações de
+processos.
 
 \subsubsection{MPM}
 
-O módulo \textit{Multi-Processing (MPM)} é um elemento especial dentro do HTTPD. Com a Seção \ref{sec:architecture} introduziu, ela funciona como uma interface entre o HTTPD e o SO. O MPM tem três características princípais para qualquer instância do Apache: único, obrigatório e tem uma implementação específica. O HTTPD fornece pelo menos um módulo MPM por SO (segurança e desempenho), por exemplo, o Window utiliza \texttt{mpm\_winnt} e o Linux tem três opções diferentes.
-
-Cada uma das três opções podem ser classificadas como baseada em processos ou em threads, mais epecificamente são elas: \textit{Prefork}, \textit{Worker} e \textit{Event}. Esses módulos podem ser grandes elementos para comparar thread e processos usando as novas abstrações.
+O módulo \textit{Multi-Processing (MPM)} é um elemento especial dentro do
+Apache. Como a Seção \ref{sec:architecture} introduziu, o MPM funciona como uma
+interface entre o HTTPD e o SO. O MPM tem três características principais para
+qualquer instância do Apache: deve ser único, é obrigatório e tem uma
+implementação específica para o SO alvo. O HTTPD fornece pelo menos um módulo
+MPM por SO, por exemplo, o Window utiliza \texttt{mpm\_winnt} e o Linux tem
+três opções diferentes que serão tratadas em detalhes nesse trabalho. Cada uma
+das três opções podem ser classificadas como baseada em processos ou em
+threads, mais especificamente são elas: \textit{Prefork}, \textit{Worker} e
+\textit{Event}. Esses módulos constituem bons pontos para comparar thread e
+processos usando as novas abstrações, uma vez que o ambiente se conserva.
 
 \subsubsection{MPM: Prefork}
 \label{sec:prefork}
@@ -218,13 +229,40 @@ Cada uma das três opções podem ser classificadas como baseada em processos ou
   \label{fig:prefork} 
 \end{figure}
 
-O \textit{Prefork} foi a primeira estratégia adotada pelo HTTPD que é totalmente baseado em processos. O HTTPD inicia com um processo responsável por gerir processos filhos que serão manipulados por uma única requisição. A Figura \ref{fig:prefork} ilustra os três passos realizados pelo \textit{Prefork}. Primeiramente o HTTPD incia com um único processo responsável por realizar o controle das tarefas e alguns processos filhos prontos para atender a qualquer requisição. Em seguida, se alguma requisição chegar o controle é passado para o processo responsável por passar a tarefa de manipular a solicitação para um processo que esteja sem fazer nada. Por fim, se não existir nenhum processo filho disponível, o processo de controle cria vários processos filhos novos.
+O \textit{Prefork} foi a primeira estratégia adotada pelo HTTPD e é totalmente
+baseada em processos. A Figura \ref{fig:prefork} ilustra os três passos
+realizados pelo \textit{Prefork}. O Apache inicia com um processo responsável
+por gerir processos filhos que serão responsáveis de manipular uma requisição
+por vez.  Em seguida, ao receber uma requisição, o processo de controle
+identifica um processo que esteja sem fazer nada e repassa a mesma para um
+processo filho que se encarrega da tarefa de manipular a solicitação. Caso não
+exista nenhum processo filho disponível para manipular a requisição, então o
+processo de controle cria novos processos filhos. Repare que a processo de
+controle comporta-se como um \textit{load balancing}.
 
-O \textit{Prefork} é uma boa opção para servidores web que não são compatíveis com threads (e.g. aplicações legadas em PHP) e é a melhor opção de MPM para isolar uma única requisição. Contudo, o \textit{Prefork} consome muita memória e CPU o que não é desejável em um servidor sob forte demanda.
+O \textit{Prefork} é uma boa opção para servidores web que não são compatíveis
+com threads (e.g. aplicações legadas escritas em PHP) e é a melhor opção de MPM
+para isolar uma única requisição. Contudo, o \textit{Prefork} consome muita
+memória e CPU o que não é desejável em um servidor sob forte demanda.
 
 \subsubsection{MPM: Worker}
 
-O \textit{Worker} é uma solução híbrida uma vez que o seu design é baseado em processos e threads. Esse módulo tem um processo de control que é responsável por crear um processo filho e balancear a carga. Ao contrário do \textit{Prefork} o Worker não cria instâncias de processos filhos para manipular requisições dos clientes. Ele cria diversas processos novos com várias threads para realizar essa tarefa, ocasionalmente, o HTTPD tem que manipular um grande número de requsições e nesse caso o controle de processo atua criando um grande número de filhos (cada um com um grande conjunto de threads) para suportar a carga. Repare que o \textit{Worker} utiliza threads para manipular requisições que decressem o total de processos filhos (comparado com o \textit{Prefork}) e o consumo de memória. O HTTPD tem um arquivo de configuração que permite um controle fino de todos os parametros relacionados ao número máximo de processos filhos, o total de threads por filhos, o número de reposição de processos fihos e threads, dentre outros.
+O \textit{Worker} é uma solução híbrida uma vez que o seu design é baseado em
+processos e threads. Esse módulo tem um processo de controle que é responsável
+por criar um processos filhos e controlar o balanceamento da carga entre os
+filhos. Ao contrário do \textit{Prefork} o \textit{Worker} não cria instâncias
+de processos filhos para manipular requisições feitas pelos clientes. Ele cria
+diversos processos novos na qual cada um possuí várias threads para realizar a
+tarefa de tratamento das requisições; comumente, o HTTPD tem que manipular um
+grande carga de requisições e nesses casos o processo de controle age criando
+novos de filhos (cada um com um conjunto de threads) para suportar a carga.
+Repare que o \textit{Worker} utiliza threads para manipular as requisições,
+isso faz com que o total de processos filhos criado seja relativamente pequeno
+(comparado com o \textit{Prefork}) e consequentemente o consumo de memória
+reduz. O HTTPD tem um arquivo de configuração que permite um controle fino de
+todos os parâmetros relacionados ao número máximo de processos filhos, o total
+de threads por filhos, o número de reposição de processos filhos e threads,
+dentre outros.
 
 \begin{figure}[!h]
   \centering
@@ -233,7 +271,14 @@ O \textit{Worker} é uma solução híbrida uma vez que o seu design é baseado 
   \label{fig:worker} 
 \end{figure}
 
-A Figura \ref{fig:worker} é um exemplo de como o \textit{Worker} funciona. Quando o HTTPD inicia, ele tem um processo de controle em adição a alguns processos filhos que mantém um grupo de threads paradas. A segunda parte da figura representa o cado em que o HTTPD recebe um grande número de requisições e o processo de controle cria mais filhos para suportar a carga. O \textit{Worker} consome muito menos memória que o \textit{Prefork} e consequentemente ele é melhor em casos no qual o servidor está sobrecarregado. A mistura de processo e thread adiciona estabilitade para todo o sistema.
+A Figura \ref{fig:worker} é um exemplo de como o \textit{Worker} funciona.
+Quando o Apache inicia, ele tem um processo de controle e alguns processos
+filhos que mantém um grupo de threads paradas. A segunda parte da figura
+representa o caso em que o HTTPD recebe um grande número de requisições e o
+processo de controle cria mais filhos para suportar a carga. O \textit{Worker}
+consome menos memória que o \textit{Prefork} e consequentemente ele é melhor em
+casos no qual o servidor está sobrecarregado.  A mistura de processo e thread
+adiciona estabilidade para todo o sistema.
 
 \subsubsection{MPM: Event}
 
@@ -244,28 +289,69 @@ A Figura \ref{fig:worker} é um exemplo de como o \textit{Worker} funciona. Quan
   \label{fig:event} 
 \end{figure}
 
-O módulo \textit{Event} é baseado em threads e é o padrão na última versão do Apache. O comportamento básico do \textit{Event} é similar ao do \textit{Worker} com duas características princípais: \textit{keep-alive} e separação de responsábilidade para enviar dados para o cliente. A Figura \ref{fig:event} ilustra o comportamento básico do \textit{Event}. Os passos são similares ao do \textit{Worker} com um processo extra manipulando o transmissão dos dados. Então a requisição processada passa o resultado final para a thread responsável por enviar o resultado para o cliente.
+O módulo \textit{Event} é baseado em threads e é o padrão na última versão do
+Apache. O comportamento básico do \textit{Event} é similar ao do
+\textit{Worker} com duas características a mais: \textit{keep-alive} e
+separação de responsabilidade de enviar dados para o cliente. A Figura
+\ref{fig:event} ilustra o comportamento básico do \textit{Event}. Os passos são
+similares ao do \textit{Worker} com um processo extra manipulando a transmissão
+dos dados. Quando uma thread acaba o processamento útil da requisição, passa o
+resultado final para a thread responsável por enviar o resultado para o
+cliente.
 
 \subsection{Nginx}
 
-Assim ocmo o Apache Httpdd o Nginx é um servidor web, contudo esse diferencia-se de muitas formas dos servidores web tradicionais. A sua princípal característica é o seu elevado desempenho para atender requisições, principlamente aquelas relacionadas a arquivos estáticos. Além disso o Nginx comporta-se como um reverse-proxy; ele recebe uma requisição do usuário, por sua vez ele repassa para uma aplicação especifica. Quando o dado é processado pela aplicação, essa retorna o resultado para o Nginx que repassa os dados para o usuário \citep{soni}. A Figura X ilustra o caso explicado e uma segunda variação na qual uma operação intermediária pode ser inserida (no exemplo, o SSL).
+Assim como o Apache HTTPD o Nginx é um servidor web, contudo esse diferencia-se
+de muitas formas dos servidores web tradicionais. A sua principal
+característica é o seu excelente desempenho para atender requisições,
+principalmente aquelas relacionadas a arquivos estáticos. Além disso o Nginx
+comporta-se como um \textit{reverse-proxy}; ele recebe uma requisição do
+usuário, por sua vez ele repassa para uma aplicação especifica responsável por
+realizar o processamento (e.g. puma, phpfpm, etc). Quando o dado é processado
+pela aplicação, essa retorna o resultado para o Nginx que repassa os dados para
+o usuário \citep{soni}. A Figura \ref{fig:nginx_basico} ilustra o funcionamento
+geral do Nginx, note que mais a direita é mostrado uma variação na qual uma
+operação intermediária pode ser inserida (no exemplo, o SSL).
 
-% TODO: Figura X
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{nginx_load_balancer_ex} 
+  \caption{Nginx comportando-se como reverse-proxy \citep{soni}}
+  \label{fig:nginx_basico} 
+\end{figure}
 
-A grande maioria dos servidores web buscam tirar o máximo proveito dos recursos de hardware utilizando um elevado número de threads e processos. Essa abordagem é relativamente simles de ser implementada e traz bons resultados, contudo ela também tem alguns problemas. Dentre as desvantagens, temos que o modelo baseado em threads/processos geram uma grande quantidade de operações que bloqueiam e consequentemente geram trocas de contexto. Além disto, a abordagem baseada em threads/processos consome uma elevada quantidade de recursos o que por sua vez degrada o desempenho da aplicação.
+A grande maioria dos servidores web buscam tirar o máximo proveito dos recursos
+de hardware utilizando um elevado número de threads e processos. Essa abordagem
+é relativamente simples de ser implementada e traz bons resultados, contudo ela
+também tem alguns problemas. Dentre as desvantagens, temos que o modelo baseado
+em threads/processos geram uma grande quantidade de operações que bloqueiam e
+consequentemente geram trocas de contexto. Além disto, a abordagem baseada em
+threads/processos consome uma elevada quantidade de recursos o que por sua vez
+degrada o desempenho da aplicação em situações de elevada demanda.
 
-O Nginx sugere uma abordagem nova para os problemas referentes ao servidor web, que se baseia em evento. A estratégia aborda parte do princípio que deve-se evitar ao máximo a troca de contexto e deve-se utilizar ao máxmo a CPU com processamento útil. Por esse motivo o Nginx cria três tipos de processos \citep{nginx_architecture}:
+O Nginx sugere uma abordagem nova para os problemas referentes ao servidor web,
+que se baseia em evento. A estratégia de eventos parte do princípio que deve-se
+evitar ao máximo a troca de contexto e assim tirar o máximo de proveito da CPU
+com processamento útil. Por esse motivo o Nginx cria apenas três tipos de
+processos \citep{nginx_architecture}:
 
 \begin{itemize}
-  \item Processo master, faz operações privilégiadas como ler arquivos de configuração e acessar portas;
-  \item Processo que faz cache carregando dados do disco fazendo cache na memória;
+  \item Processo mestre, faz operações privilégiadas como ler arquivos de configuração e acessar portas;
+  \item Processo de cache de disco, carrega dados do disco fazendo cache na memória;
   \item Processo que gerencia o cache verificando o mesmo periodicamente;
   \item Processos \textit{Worker} são os processos que fazem o trabalho de manipular conexões, ler e escrever em disco e comunicar-se com os servidores.
 \end{itemize}
 
-O Nginx recomenda um \textit{Worker} por núcleo da CPU, isso permite tirar grande proveito dos eventos.
+O Nginx recomenda um \textit{Worker} por núcleo da CPU, isso permite tirar
+grande proveito dos eventos.
 
-Na prática o sistema de eventos é eficiênte pois nã gera bloqueios uma vez que esse não espera a aplicação terminar o que está fazendo. Por exemplo, se o \textit{worker} estiver atendendo uma requisição e em determinado momento precisar recuperar uma informação do disco o \textit{worker} não bloqueia, ele simplesmente vai fazer outra tarefa. O sistema de eventos faz com que um único \textit{worker} execute multiplas tarefas de forma sequêncial sem bloqueio e consequentemente com poucas trocas de contexto.
+Na prática o sistema de eventos é eficiente pois não gera bloqueios uma vez que
+esse não espera a aplicação terminar o que está fazendo. Por exemplo, se o
+\textit{worker} estiver atendendo uma requisição e em um determinado momento
+precisar recuperar uma informação do disco, o \textit{worker} não bloqueia, ele
+simplesmente vai fazer outra tarefa. O sistema de eventos faz com que um único
+\textit{worker} execute múltiplas tarefas de forma sequencial sem bloqueio e
+consequentemente com poucas trocas de contexto.
 
 \section{Ferramentas de comunicação encriptada}
 
@@ -273,9 +359,33 @@ Na prática o sistema de eventos é eficiênte pois nã gera bloqueios uma vez q
 
 \subsection{OpenSSL}
 
-Antes de tratar sobre o OpenSSL é imortante apresentar de forma geral o protocolo \textit{Secure Sockets Layers (SSL)}. O princípal objetivo do SSL é fornecer um conjunto de protocolos criptográficos que permita a comunicação segura na rede. Basicamente, esse constituí uma ferramenta de uso codiano, tendo diversas aplicações de missão crítica dependendo de tal protocolo o que faz dele um constante alvo de ataques.
+Antes de tratar sobre o OpenSSL é importante apresentar de forma geral o
+protocolo \textit{Secure Sockets Layers (SSL)}. O princípal objetivo do SSL é
+fornecer um conjunto de protocolos criptográficos que permita a comunicação
+segura na rede. Basicamente, esse constituí uma ferramenta de uso cotidiano,
+tendo diversas aplicações de missão crítica dependendo de tal protocolo o que
+faz dele um constante alvo de ataques.
 
-O SSL e outros possuem um mecanismo chamado de \textit{handshake} que nada mais é do que um processo de negóciação entre cliente e servidor de forma a criar a conexão segura entre ambos, a Figura \ref{fig:openssl_handshake} descrever de forma geral os passos da negóciação. O processo de negociação começa com o cliente mandando uma mensagem de "Oi, do cliente" para o servidor, nela o cliente informa a versão do SSL que está usando, os algoritmos de criptografia e os métodos de compressão. O servidor por sua vez manda um "Oi, vindo do servidor" dizendo qual algoritmo usar (selecionado da lista que o cliente mandou), um ID da seção, um certificado digital e a sua chave pública.Com o certificado, o cliente consulta uma "Certificate Authority (CA)" que valiad se o servidor é valido ou não, isso serve para estabelecer a confiança. Depois que o cliente acredita no seridor, começa a etapa de troca de chaves na qual o cliente envia a chave secreta compartilhável com a chave pública do servidor (o cliente termina enviando uma mensagem de fim). O servidor descripta a mensagem do cliente e utiliza a chave enviada para criptografar uma mensagem de fim e envia para o cliente. Quando o \textit{handshake} termina, o servidor e o cliente podem enviar mensagens que são siméticamente encriptadas \citep{openssl}.
+O SSL e outros possuem um mecanismo chamado de \boldAndIndex{handshake} que
+nada mais é do que um processo de negociação entre o cliente e servidor de
+forma a criar uma conexão segura entre ambos, a Figura
+\ref{fig:openssl_handshake} descrever de forma geral os passos da negociação. O
+processo de \textit{handshake} começa com o cliente mandando uma mensagem do
+tipo "Oi, sou o cliente" para o servidor; nessa mensagem o cliente informa a
+versão do SSL que está usando, os algoritmos de criptografia e os métodos de
+compressão que ele sabe utilizar. O servidor por sua vez manda um "Oi, sou o
+servidor" dizendo qual algoritmo usar (selecionado da lista que o cliente
+mandou), um ID da seção, um certificado digital e a sua chave pública. Com o
+certificado, o cliente consulta uma \textit{Certificate Authority (CA)}
+(Autoridade Certificadora) que valida se o servidor é valido ou não, isso serve
+para estabelecer a confiança sobre o servidor. Depois que o cliente recebe a
+validação da CA, ele começa a etapa de troca de chaves na qual o cliente envia
+a chave secreta compartilhável. O cliente criptografa tal chave com a chave
+pública fornecidade pelo servidor e o cliente termina enviando uma mensagem de
+fim. O servidor desencripta a mensagem do cliente e utiliza a chave enviada
+para criptografar uma mensagem de fim para ser enviada para o o cliente. Quando
+o \textit{handshake} termina, o servidor e o cliente podem enviar mensagens que
+são simetricamente encriptadas \citep{openssl}.
 
 \begin{figure}[!h]
   \centering
@@ -284,8 +394,14 @@ O SSL e outros possuem um mecanismo chamado de \textit{handshake} que nada mais 
   \label{fig:openssl_handshake}
 \end{figure}
 
-O OpenSSL é uma implementação livre do protocolo SSL, ele contém a implementação de várias funções criptográficas e funçõs utilitárias. A Figura \ref{fig:openssl_arch} mostra uma visão geral da arquitetura do OpenSSL. O \textit{EVP crypto API} são funções de alto nível que fornecem recursos para derivação de chaves, hash seguro, código de autenticação de mensagens, encriptação/decriptação de algoritmos simétricos/assimétricos, dentre outros. A arquitutra também fornece uma pilha de manipulação de erros e uma interface abstrada para lidar com I/O.
-
+O OpenSSL é uma implementação livre do protocolo SSL, ele contém a
+implementação de várias funções criptográficas e utilitárias. A Figura
+\ref{fig:openssl_arch} mostra uma visão geral da arquitetura do OpenSSL. O
+\textit{EVP crypto API} são funções de alto nível que fornecem recursos para
+derivação de chaves, hash seguro, código de autenticação de mensagens,
+encriptação/decriptação de algoritmos simétricos/assimétricos, dentre outros. A
+arquitetura também fornece uma pilha de manipulação de erros e uma interface
+abstrata para lidar com I/O.
 
 \begin{figure}[!h]
   \centering
@@ -294,13 +410,26 @@ O OpenSSL é uma implementação livre do protocolo SSL, ele contém a implement
   \label{fig:openssl_arch}
 \end{figure}
 
-
 \subsection{OpenSSH}
 
-Hoje em dia, uma das tarefas mais comuns do dia-a-dia de muitos desenvolvedores consiste em acessar servidores em diversos locais do mundo e configurar uma determinada aplicação. Na prática, boa parte dos profissionais de TI faz uso de conexões seguras na Internet por meio do protocolo \textit{Secure Shell (SSH)}. Existem diversas implementações deste protocolo, discutiremos aqui de forma breve o OpenSSH.
+Uma das tarefas mais comuns do dia-a-dia de muitos desenvolvedores consiste em
+acessar servidores em diversos locais do mundo e configurar uma determinada
+aplicação. Na prática, boa parte dos profissionais de TI faz uso de conexões
+seguras na Internet por meio do protocolo \textit{Secure Shell (SSH)}. Existem
+diversas implementações desse protocolo, discutiremos aqui de forma breve o
+OpenSSH.
 
-A Figura \ref{fig:openssh_layer} apresenta uma visão geral da arquitetura do OpenSSH. Primeiramente repare que as três camadas correspondentes as camadas SSH encontram-se sobre a camada TCP/IP que consistem em uma conexão nã segura. Aprimeira camada se chama \textit{ssh-transport} e ela é responsável por realizar operações criptográficas, proteção contra atques e reverificar chaves de temos em tempos. Logo após a primeira camada temos o \textit{ssh-userauth} que é responsável pela autenticação, se tudo der certo durante a autenticação então a troca de chaves acontece e a conexão segura é estabelecida. Por fim a camada \textit{ssh-connection} estabelece um canal seguro e fica responsável por gerir a multiplexação de multiplas conexões e redirecionamentos \citep{proopenssh, opensshhood}.
-
+A Figura \ref{fig:openssh_layer} apresenta uma visão geral da arquitetura do
+OpenSSH. Primeiramente repare que as três camadas correspondentes as camadas
+SSH encontram-se sobre a camada TCP/IP que consistem em uma conexão não segura.
+A primeira camada se chama \textit{ssh-transport} e ela é responsável por
+realizar operações criptográficas, proteção contra ataques e reverificar chaves
+de temos em tempos. Logo após a primeira camada temos o \textit{ssh-userauth}
+que é responsável pela autenticação, se tudo der certo durante a autenticação,
+então a troca de chaves acontece e a conexão segura é estabelecida. Por fim a
+camada \textit{ssh-connection} estabelece um canal seguro e fica responsável
+por gerir a multiplexação de múltiplas conexões e redirecionamentos
+\citep{proopenssh, opensshhood}.
 
 %TODO: CVE
 \begin{figure}[!h]
@@ -310,13 +439,90 @@ A Figura \ref{fig:openssh_layer} apresenta uma visão geral da arquitetura do Op
   \label{fig:openssh_layer}
 \end{figure}
 
-Dado a enorme importância do OpenSSH, esse passa a ser alvo de constantes atques e também de aprimoramentos. Como resultado, algumas CVEs foram criadas e resolvidas no OpenSSH. Dentre as CVEs destacamos:
+Dado a enorme importância do OpenSSH, esse é alvo de constantes ataques e
+consequemente recebe diversos aprimoramentos. Como resultado, algumas CVEs
+foram criadas e resolvidas no OpenSSH. Dentre as CVEs destacamos:
 
+% TODO: Destacar
 
-Do ponto de vista do uso de tal aplicação para validar propostas de abstrações de processos, destacamos que essa pode ser usada para demonstrar ganhos de segurança e controle de acesso a memória. Uma abordagem é partir de uma versão antiga do OpenSSH que não tem a correção para alguma vulnerabilidade e demonstrar que essa consegue resolver o problema. Note que os pontos mais fracos do OpenSSH podem ser destacados:
+Do ponto de vista do uso de tal aplicação para validar propostas de abstrações
+de processos, destacamos que essa pode ser usada para demonstrar ganhos de
+segurança e controle de acesso a memória. Uma abordagem é partir de uma versão
+antiga do OpenSSH que não tem a correção para alguma vulnerabilidade e
+demonstrar que a nova abstração sugerida consegue resolver o problema. Note que
+os pontos mais fracos do OpenSSH podem ser destacados:
 
 \begin{itemize}
-  \item Acesso a chave é uma região crítica e que deve ter o seu acesso restrito;
-  \item Potêncial vazamento de dados
-  \item Escalada de privilégios
+  \item Acesso a chave é uma região crítica e deve ter o seu acesso restrito;
+  \item Potencial vazamento de dados;
+  \item Escalada de privilégios.
 \end{itemize}
+
+\section{Outras Aplicações para Avaliar Diferentes Aspectos}
+
+%TODO: Textinho
+
+\subsection{Redis}
+
+Escalar alguns sistemas não é uma tarefa trivial e exige constantes
+customizações. Como resultado dessa necessidade, surgiu o sistema Redis que
+consiste da ideia de utilizar um sistema que pode ser um cache e ao mesmo tempo
+um sistema de armazenamento utilizando a memória principal (RAM) para conseguir
+um bom desempenho. Contudo, o Redis também salva os dados da memória para o
+disco para que os mesmo possa ser utilizado posteriormente para reconstruir o
+sistema na memória.
+
+O Redis é famoso por utilizar como forma de armazenamento o esquema de
+chave-valor (\textit{key-value}). Essa técnica permite o armazenamento dos dados na
+forma de um par que consiste de uma chave identificadora e um valor associado a
+chave. Quando um valor-chave é salvo, isso significa que o par está presente na
+RAM, no Redis, uma chave tem que ser uma string mas seus valores podem ser de
+vários tipos diferentes, dentre as abstrações de dados suportadas destacam-se:
+
+\begin{itemize}
+  \item Lista de strings
+  \item Conjunto de strings
+  \item Conjunto de strings ordenadas
+  \item Tabelas de hash na qual a chave e valor são strings
+  \item HperLogLogs
+  \item Stream de entradas com grupos de consumidores
+  \item Dados Geoespaciais
+\end{itemize}
+
+O tipo utilizado no valor determina qual operação é possível de se utilizar. De
+forma geral o Redis permite realizar operações de alto nível, operações do lado
+do servidor, uniões e diferenças.
+
+A Figura \ref{fig:redis} apresenta uma visão de alto-nível da organização do
+Redis. Repare que o Redis fornece uma interface de interação do lado do cliente
+(via linha de comando ou API) e possui um servidor que é responsável por lidar
+com os dados.  O servidor é responsável por gerir os dados na memória e em
+disco, por isso a sua implementação faz constante uso da criação de processos
+(via chamada de sistema \texttt{fork()}). Basicamente, toda vez que um
+armazenamento é necessário, o Redis faz um \texttt{fork()} do processo pai, em
+seguida o processo filho da início ao processo de escrita em disco enquanto o
+processo pai continua realizando as suas tarefas. 
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{redis_overview}
+  \caption{Visão geral do funcionalmento do Redis}
+  \label{fig:redis}
+\end{figure}
+
+Um dos aspectos mais interessante do Redis, da perspectiva das novas abstrações
+de processo, é a persistência dos dados. O Redis fornece três formas
+\citep{redisio}: \textit{Relational Database (RDB)}, \textit{Append-Only-File
+(AOF)} e comando SAVE. O RDB faz uma cópia de todos os dados presentes na
+memória para o disco, por padrão, o Redis escreve os dados a cada dois
+segundos. Repare que o RDB pode causar perda de dados em caso de mal funcionar,
+uma alternativa seria configurar o Redis para fazer mais escritas, contudo isso
+eleva consideravelmente o consumo de memória pela natureza do uso de
+\texttt{fork()}. O AOF registra todas as operações de escritas feitas pelo
+servidor, logo tudo é persistido. O AOF tem o problema de que pode ser mais
+lento do que o RDB a depender da política de sincronização adotada e também
+consumir mais memória.  Por fim o comando SAVE força o servidor a criar um
+\textit{dump} dos dados no momento em que foi solicitado.
+
+% TODO: Vale a pena dar um certo nível de detalhes do código? Não é tão complicado fazer isso, mas preciso ter certeza antes se vale a pena
+% Além da referencia do "Redis: under the hood" tem esse artigo aqui: http://robertlehmann.de/img/redis.pdf

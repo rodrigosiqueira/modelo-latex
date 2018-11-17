@@ -285,11 +285,11 @@ Apesar deste princípio ter sido apresentado em 1975 e ser amplamente aceito,
 nota-se que várias aplicações que tem acesso a Internet (um ponto de acesso
 para o mundo) não buscam atender a este fundamento e acabam abrindo
 potencias pontes de vazamento de dados ou falhas de segurança. Alguns
-pesquisadores defendem que esse problema surge do fado de que os SO atuais
+pesquisadores defendem que esse problema surge do fato de que os SO atuais
 garantem privilégios por padrão. Isto significa que impor limites requer mais
 esforço por parte do programador e também é propenso a erros.
 
-A chamada de sistema \texttt{fork} ilustra a característica de garantir
+A chamada de sistema \texttt{fork()} ilustra a característica de garantir
 privilégios por padrão. Quando o processo pai cria um filho, este recebe uma
 cópia praticamente exata do pai. Se o programador desejar restringir o nível de
 acesso do processo filho é preciso realizar uma série de operações manuais que
@@ -299,13 +299,13 @@ não garantem que nenhum aspecto tenha sido ignorado.
 garantir privilégio por padrão, para negar privilégios por padrão. Nessa
 abordagem o programador deve indicar explicitamente que deseja garantir
 permissões adicionais. Os autores alteraram o GNU/Linux para que este
-suportasse a remoção de permissões por patrão e chamaram o modelo proposto por
+suportasse a remoção de permissões por padrão e chamaram o modelo proposto por
 eles de \emph{Wedge}. O \emph{Wedge} fornece um conjunto de primitivas de
 programação para permitir criar componentes com semântica de negar permissão
 por padrão tornando o acesso mais restrito. Para isto, o \emph{Wedge} oferece
-um esquema simples e flexível de marcação (\emph{tagging}) da memória o que
-permite ao programador alocar objetos de memória distintas com a mesma
-marcação.
+um esquema simples e flexível de marcação (\emph{tagging}) das permissões de
+acesso a memória permitindo que o programador aloque objetos na memória de
+acordo com essa informação.
 
 O \emph{Wedge} permite que o programador crie um número arbitrário de
 componentes, cada um sem privilégios por padrão, mas existem mecanismos que
@@ -315,10 +315,11 @@ introdução delas em aplicações legadas. A proposta é constituída de três
 primitivas: \emph{Sthread}, \emph{Tagged Memory}, and \emph{callgates}. O
 acesso a todas essas primitivas é feito via chamada de sistemas.
 
-Uma \emph{Sthread} define um compartimento dentro de uma aplicação, o
-programador pode atribuir permissão de acesso para a memória e outros recursos
-por meio das \emph{sthreads}. Estas consistem de uma thread de controle e
-políticas de segurança associado a si, que especificam:
+Uma \emph{Sthread} pode ser comparada com uma thread fornecida pela biblioteca
+\textit{pthread}, uma \textit{sthread} define um compartimento dentro de uma
+aplicação. O programador pode então atribuir permissão de acesso para a memória
+e outros recursos por meio dessas \emph{sthreads}. Estas consistem de uma
+thread de controle e políticas de segurança associado a si, que especificam:
 
 \begin{itemize}
 	\item As marcações de memória que o \emph{sthread} pode acessar e a permissão
@@ -332,8 +333,8 @@ políticas de segurança associado a si, que especificam:
 Uma nova \emph{sthread} não mantém as permissões de acesso por padrão, a não
 ser pelo \emph{snapshot} intocado do \emph{copy-on-write} acessado. Note que o
 novo componente não tem permissão para acessar qualquer outra memória ou mesmo
-descritor de arquivo do pai. Contudo o pai pode anexar permissões de acesso no
-filho durante a sua criação. O \emph{sthread} só pode criar um filho com
+descritor de arquivo do pai, contudo o pai pode anexar permissões de acesso no
+filho durante a sua criação. Uma \emph{sthread} só pode criar um filho com
 permissão igual ou menor do que a sua. Para a implementação os autores criaram
 o \emph{sthread} como uma variante dos processos do GNU/Linux, só que ao invés
 de herdar as informações do pai ela apenas herda as regiões de memória e tabela
@@ -355,9 +356,40 @@ Um \emph{callgate} é uma porção de código que executa em um nível de privil
 (normalmente) diferente de quem o chamou. Como um \emph{sthread} sempre roda
 com o menor privilégio possível, sempre que for preciso executar algo em um
 nível de permissão maior, será preciso chamar um \emph{callgate} para executar
-a operação. Note que instalar um \emph{callgate} com acesso para dados
-sensíveis funciona como um isolamento. Um \emph{callgate} define um conjunto de
-permissões, um ponto de entrada e argumentos definidos pelo criador.
+a operação. Para criar e usar um \emph{callgate} é necessário indicar um ponto
+de entrada, um conjunto de permissões e argumentos confiáveis fornecido pelo
+responsável em criar o \emph{callgate}. O \emph{Wedge} garante que os
+argumentos passados e criados não podem ser adulterados pelo processo que o
+utilizará, além disso o \emph{callgate} herda o sistema de arquivos e o id do
+usuário que o criou. As permissões do \emph{callgate} precisam ser um
+subconjunto de quem os criou. Depois que um \emph{callgate} foi criado, a
+\emph{sthread} privilégiada pode criar um filho com menos privilégios mas com
+acesso ao \emph{callgate} criado. Quando o filho tenta acessar o
+\emph{callgate} uma nova sthread é criada e a execução e levada para o ponto de
+entrada que foi registrado.
+
+Para a implementação dos \emph{callgates} a função \texttt{sc\_cgate\_add()}
+adiciona permissões para o ponto de entrada \texttt{cgate} com as permissões e
+os argumentos confiáveis, todos esses dados são salvos no Kernel para evitar
+acessos indevidos. Um \emph{callgate} é invocado por meio da função
+\texttt{cgate()} que faz com que o Kernel verifique as permissões. De forma
+geral a API do \emph{Wedge} é definida pelas seguintes funções:
+
+\begin{itemize}
+  \item \texttt{sthread\_create(sthread\_t, sc\_t, cb\_t, void *arg)}
+  \item \texttt{sthread\_join(sthread\_t, void **ret)}:
+  \item \texttt{tag\_t tag\_new()}
+  \item \texttt{tag\_delete(tag\_t)}
+  \item \texttt{smalloc(int sz, tag\_t tag)}
+  \item \texttt{sfree(void *x)}
+  \item \texttt{smalloc\_on(tag\_t tag}
+  \item \texttt{smalloc\_off()}
+  \item \texttt{sc\_mem\_add(sc\_t *sc, tag\_t t, unsigned long prot)}:
+  \item \texttt{sc\_fd\_add(sc\_t, char *sid)}
+  \item \texttt{sc\_cgate\_add(sc\_t sc, cg\_t cgate, sc\_t *cgsc, void *arg)}
+  \item \texttt{cgate(cg\_t cb, sc\_t *perms, void *args)}
+\end{itemize}
+
 
 \subsection{Resource Container}
 
@@ -873,7 +905,13 @@ fornecem um sofisticado modelo de programação que permite novas capacidades
 tais quais rápido \emph{roll-back}, isolamento de seções e compartimentos de
 proteção. A API do lwC é composta das seguintes funções:
 
-%TODO: Funcoes
+\begin{itemize}
+  \item \texttt{lwCreate(resource-spec,options)}
+  \item \texttt{lwSwitch(target, args)}
+  \item \texttt{lwRestrict(l, resource-spec)}
+  \item \texttt{lwOverlay(l, resource-spec)}
+  \item \texttt{lwSyscall(target, mask, syscall, syscall-args)}
+\end{itemize}
 
 Os autores demonstram os conceitos do lwC em uma implementação no FreeBSD. As
 modificações principais foram feita na memória e estruturas de dados do
@@ -994,6 +1032,6 @@ armazenadas em um vetor de recuperação.
 
 %TODO: Falta dar o fechamento com a parte dos processos e talz
 
-\subsection{Singularity}
-
-\subsection{Corey}
+% \subsection{Singularity}
+% 
+% \subsection{Corey}
