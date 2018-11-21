@@ -526,3 +526,167 @@ consumir mais memória.  Por fim o comando SAVE força o servidor a criar um
 
 % TODO: Vale a pena dar um certo nível de detalhes do código? Não é tão complicado fazer isso, mas preciso ter certeza antes se vale a pena
 % Além da referencia do "Redis: under the hood" tem esse artigo aqui: http://robertlehmann.de/img/redis.pdf
+
+\subsection{Garbage Collection}
+
+Várias linguagens de alto nível possuem mecanismos de gerenciamento recursos
+(e.g. memória, processamento paralelo, datas, etc) que garantem a portabilidade
+da aplicação e removem a complexidade de ter que gerenciar recursos de baixo
+nível. Dentre as vantagens de tais tecnologias, destacam-se o fato de que o
+programador pode manter o foco nas características da aplicação e também reduz
+a chances de erros graves. O Java é o principal representante desse tipo
+linguagem, fornecendo mecanismos de gerenciamento automático da memória e é
+portável para múltiplas plataformas. Por uma questão de simplicidade, iremos
+adotar o Java para as discussões desta seção. Todas as flexibilidades
+oferecidas pelo Java deve-se ao uso da Java Virtual Machine (JVM) que fornece
+elementos para a manipulação dos recursos do SO. Um dos principais elementos da
+JVM é o Garbage Collection (GC), cujo a principal tarefa consiste em abstrair o
+gerenciamento de memória da aplicação de forma que ela não tenha que lidar com
+tal aspecto (alocar e desalocar). Dado o seu impacto, o GC tem sido alvo de
+constantes otimizações ao longo dos anos e esse é um elemento que pode se
+beneficiar de novas abstrações de processos.
+
+O GC é uma aplicação que executa com a JVM e demais a própria aplicação, por
+isso ela pode impactar diretamente no desempenho geral. Independentemente do
+algoritmo de gerenciamento de memória implementado pelo GC, todos eles definem
+o termo “Stop the World (STW)” ou “Parar tudo” \citep{gc_pauseless}. O STW é
+uma operação realizada pela JVM  na qual todas as threads da aplicação são
+suspensas para que o GC execute, em outras palavras, a única thread executando
+será a do coletor. Note que o GC é um mecanismo que requer pausa para
+funcionar, isso é preciso pois seus algoritmos precisam que aplicação não faça
+nenhuma atualização da memória durante uma das fases do processo de limpeza da
+memória.
+
+Existem diversos algoritmos que podem ser adotados pelo GC, contudo podemos
+generalizar três etapas gerais: Marking, Sweep e Compact. A etapa de Marking,
+também conhecida por pintura, consiste em inspecionar os objetivos na memória
+para verificar quais ainda são considerados vivos. Para determinar se um objeto
+está vivo o GC começa dos chamados objetos raiz ou Garbage Collection Roots, os
+seguintes elementos são considerados como um GC root: variáveis locais, entrada
+de parâmetros, threads ativas, campos estáticos e referências JNI
+\citep{gc_basics}. Partindo de um GC root, o GC atravessa o grafo dos objetos
+alcançáveis e para cada elemento que consegue acessar ele “pinta” a referência
+como viva. A Figura \ref{fig:gc_alg} ilustra o algoritmo descrito. No contexto
+do GC, o processo de parar as threads para que a JVM possa executar a etapa de
+Marking recebe o nome de safe point (ponto seguro) e essa gera um STW. O
+tamanho da pausa é definido pela quantidade de objetos alcançável e o seu
+tamanho no heap.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{gc_algoritmo.png}
+  \caption{Algoritmo de pintura da memória\citep{gc_basics}}
+  \label{fig:gc_alg}
+\end{figure}
+
+Depois da etapa de pintar os objetos na memória, entra em ação a etapa de
+remover os objetos que não foram pintados; note que essa etapa pode acontecer
+em paralelo ou não, depende do algoritmo adotado. O processo de remoção pode
+gerar fragmentação na memória, o que pode representar um problema uma vez que o
+GC pode não encontrar espaços de memória grande o suficiente para outros
+objetos. Por isso também existe uma fase de compactação na qual o GC realoca os
+objetos pintados para liberar espaço contíguo. Contudo, para que a compactação
+aconteça corretamente as referências dos objetos tem que ser atualizadas uma
+vez que a posição física dos objetos mudou. O processo de atualizar as
+referência chama-se remapeamento e ele precisa examinar toda a memória para
+realizar os ajustes, note que a etapa de compactação eleva o tempo de STW. A
+Figura \ref{fig:gc_mem} apresenta uma visão da memória durante as três etapas
+descritas.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{gc_memory.png}
+  \caption{Visão da memória durante a aplicação do algoritmo de GC\citep{gc_basics}}
+  \label{fig:gc_mem}
+\end{figure}
+
+Vale salientar que existem diversos algoritmos de GC, cada um com suas
+vantagens e desvantagens; nosso objetivo nessa seção é apenas ilustrar o
+potencial de uso de tal aplicação para validar novas abstrações de processos.
+
+\section{Discussão sobre as aplicações}
+
+Desde o começo deste capítulo até está seção apresentamos algumas aplicações
+destacando o seu funcionamento, estruturas básicas e os recursos exigidos por
+elas. Contudo, o nosso principal objetivo é verificar quais tipos de benefícios
+e validações que tais aplicações podem fornecer para o avanço das pesquisas em
+novas abstrações de processos. Cada tipo de aplicação pode ser útil para
+demonstrar algum aspecto da nova abstração, mas idealmente é interessante
+evidenciar que as demais aplicações não sofrem com a nova abstração.
+
+O Apache e o Nginx são aplicações cujo o objetivo é servir requisições feitas
+pelos usuários, ou seja, são servidores web. Esse tipo de aplicação normalmente
+oferece opções para que sejam amplamente configuradas de forma a atender os
+requisitos do usuário da melhor maneira possível. Tais aplicações são
+especializadas para tirar o melhor proveito possível dos recursos de hardware,
+uma vez que servidores web podem lidar com enormes cargas de requisições
+levando a um ostensivo uso do hardware. Nesse tipo de aplicação é comum que
+ocorra um amplo consumo da memória e que a CPU esteja próxima do 100\% de
+consumo em situações estresse (muitos usuários acessando).  Note que quanto
+mais tempo uma requisição vive, mais memória é consumida, por isso é desejável
+que as requisições sejam atendidas o mais rapidamente possível. Por sua vez o
+SO tem que manipular diversos aspectos relacionados a memória, processos e
+arquivos. Por esse motivo, utilizar esse tipo de software como prova de
+conceito para demonstrar a eficácia de uma nova abstração de processos é algo
+extremamente desejável. Essas aplicações podem ser utilizadas para mostrar que
+o comportamento da alteração na abstração de processos em uma situação de alta
+demanda.  Contudo é importante ressaltar que os testes realizados em tais
+ferramentas devem gerar uma carga substancial para que a configuração padrão
+tenha que ser alterada. Esse aspecto é fundamental uma vez que não existe
+grande valor em demonstrar algo usando tais ferramentas com uma carga pequena,
+pois isso pouca ajuda na verificação dos reais impactos gerados pela nova
+extensão do processo.
+
+O Apache também possuí um ambiente que permite testar processos e threads de
+forma equivalente. Tal característica é interessante para comparar novas
+abstrações diante de dois modos de execução amplamente utilizados. De forma
+similar o Nginx usa outro modelo chamado de \textit{event} que também
+representa outra contexto para validação. Da forma como o Apache e o Nginx
+manipulam requisições, podemos dizer que o primeiro fornece um isolamento
+horizontal enquanto o segundo proporciona isolamento vertical. O isolamento
+horizontal vem do fato de que um processo cria vários outros e o vertical vem
+da criação de um único processo por núcleo do processador durante a
+inicialização. Esses dois níveis de isolamento podem ser úteis para demonstrar
+que uma nova abstração pode melhorar o isolamento sem degradar o desempenho.
+
+O Apache trabalha com diversos \textit{plugins} que são acoplados ao código
+principal dinamicamente. Essa junção tem uma boa relação desempenho e
+flexibilidade, mas também elevam as chances de quebrar o Apache.  Portanto o
+sistema de \textit{plugins} do Apache fornece um bom elemento de validação para
+aquelas abstrações que visam trazer isolamento e recuperação.
+
+Várias propostas de extensão da abstração de processos sugerem algum ganho de
+segurança por meio do controle fino ou isolamento de pedaços da memória. Nesse
+sentido o OpenSSH e OpenSSL são ferramentas interessantes, já que possuí os
+requisitos de segurança adequado para a validação das novas abstrações. Em
+especial, ambas as aplicações tem diversas CVEs associadas a si com correções
+disponíveis a partir de uma versão especifica. Portanto uma proposta de
+melhoria na abração de processo que eleva a segurança pode demonstrar o seu
+real valor em uma dessas aplicações.
+
+O Redis por sua vez é uma aplicação que trabalha com grandes quantidade de
+dados na memória e que tem um excelente desempenho em situações de forte
+demanda. Essas características fazem do Redis uma excelente ferramenta para
+demonstrar novas técnicas de compartilhamento da memória. Além disso, um dos
+objetivos do Redis é auxiliar na escalabilidade das aplicações por isso é
+desejável que o mesmo reaja rapidamente a qualquer problema. Nesse contexto,
+abstrações de processos novas que tragam melhorias no tempo recuperação de uma
+aplicação em caso de falha podem usar o Redis com instrumento de validações.
+
+Novas abstrações de processos podem entregar ganhos de desempenho para as
+aplicações por utilizar algum recurso de hardware ou mesmo fornecer uma nova
+estrutura de dados para a aplicação. Tal otimização pode ser demonstrada em um
+GC uma vez que esse tipo de aplicação faz uso de vários algoritmos que dependem
+de certos dados fornecidos pelo SO. Como exemplo disto, a fase de compactação
+pode ser otimizada se o endereço virtual for mantido e apenas o endereço físico
+alterado \citep{pauseless}.
+
+A Tabela \ref{tab:app_alvos} busca resumir quais aplicações podem ser usadas
+para demonstrar algum aspecto da nova abstração de processos. Além disso essa
+seção inteira responde a pergunta RQ3 uma vez que apresenta e discute diversas
+aplicações. Por fim repare da Tabela \ref{tab:app_alvos} que o Apache é uma das
+ferramentas que melhor pode ser usada para demonstrar os aspectos de uma nova
+abstração de processos. No Capítulo \ref{cap:estudo-de-caso} aprofundamos a
+validação utilizando o Apache para testar o MVAS. 
+
+\input{tables/app_alvo}

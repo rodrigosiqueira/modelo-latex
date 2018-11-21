@@ -2,8 +2,99 @@
 \chapter{Conclusões}
 \label{cap:conclusoes}
 
+Ao longo desse trabalho investigamos diversos aspectos referentes as abstrações
+de processos, começamos revisitando conceitos já consolidados (Capítulo
+\ref{cap:fundamentacao}) para que em seguida pudéssemos expandir a visão sobre
+os processos, finalmente apresentamos diferentes perspectivas sob tal conceito.
+Buscamos o estado da arte e suas intersecções com o estado da prática
+utilizando a implementação do MVAS como estudo de caso (Capítulo
+\ref{cap:estudo-de-caso}). Durante esse trabalho interagimos com a indústria
+por meio do Kernel Linux e com uma parceria com a HPe (tal parceria durou
+apenas alguns meses). Por várias vezes tentamos consertar o MVAS não atingindo
+exito em tal tarefa, contudo, extraímos dessa experiência diversas ideias na
+qual buscamos refina-las realizando uma análise crítica sobre o estado da arte.
+
+Ao nós aprofundarmos na pesquisa sobre novas abstrações de processos percebemos
+que por vários anos a academia vem buscando inovações nesse campo, mas tais
+progressos não chegam ao estado da prática. Como o Capítulo
+\ref{cap:estudo-de-caso} discute, parte disso vem do fato de que algumas
+propostas negligenciam aspectos importantes que precisam ser considerados para
+avançar o estado da prática. Por exemplo, é fundamental que as novas gerações
+de abstração de processos levem em consideração aplicações amplamente adotadas.
+No Capítulo \ref{cap:validacoes} evidenciamos um subconjunto de aplicações que
+podem servir como alicerce para demonstrar o uso e potencial de adoção de uma
+nova abstração. Além disto, não basta levar ganhos em uma área ao custo de
+fazer com que outras partes da aplicação tenha o seu comportamento afetado
+negativamente.
+
+As validações de novas abstrações também devem passar por um rigoroso processo
+de validação para se provar útil. Como exemplo, os estudos de caso revelaram
+como uma determinada proposta pode comprometer todo o sistema. Muitos dos
+trabalhos analisados não realizam testes de estresse consistentes, o que não
+revela a real natureza dos impactos.
+
+Por outro lado, notamos da análise dos diversos trabalhos que não há uma
+tentativa de unificar as propostas, normalmente cada trabalho busca
+apresentar-se como diferentes de todos os outros já feito. Após o estudo das
+diversas propostas, notamos que a melhor forma de levar os avanços sugeridos
+pelos pesquisadores para os SOs de uso cotidiano é buscando unificar as
+pesquisas e adaptando elas para as necessidades atuais. No Capítulo
+\ref{cap:analise-sobre-abstracoes-de-processos} buscamos mostrar tal aspecto
+apontando um caminho para a próxima geração de abstrações de processos.
+Qualquer tentativa de avançar o estado da prática também deve buscar o menor
+impacto possível nos SOs. O conjunto de experimentos realizado, em junção com
+os diversos trabalhos apresentados ilustram um potencial avanço nos SOs atuais.
+
 \section{Trabalhos Futuros}
 
 % <chaws> acho que um ponto de partida seria pegar as CVEs existentes de kernel e tentar prioriza-las pra iniciar os testes
 
-\section{Outras Constribuições do Mestrado}
+Esse trabalho teve como objetivo estudar e por em evidencia um campo de
+pesquisa com pouca visibilidade. Dentre os trabalhos futuros que identificamos,
+nós destacamos: escrever um \textit{survey} sobre o estado da arte das
+abstrações de processos e outro criando uma taxonomia das aplicações, a criação
+de um sistema de validações de abstrações de processos que funcione de forma
+automatizada e a implementação da abstração de processos da próxima geração
+proposta nesse trabalho.
+
+Como podemos observar no Capítulo \ref{cap:trabalhos-analisados}, diversos
+pesquisadores veem colocando esforços para fazer com que as abstrações de
+processo evoluam. Além disto, as abstrações de processos adotadas na prática
+também distinguem-se daquelas apresentadas na bibliografia padrão. Por esse
+motivo, faz-se necessário um levantamento profundo e detalhado das pesquisas e
+desenvolvimento referentes as abstrações de processos. Acreditamos que um
+\textit{survey} com tal temática traria novas perspectivas de pesquisa para a
+área de SO. Além deste trabalho, o Capítulo \ref{cap:validacoes} apontou a
+falta de um trabalho que gere uma taxonomia das aplicações de forma similar ao
+que é feito na biologia.  Tal taxonomia pode ser útil para generalizar certas
+características das aplicações e assim facilitar a seleção de subgrupos para
+serem utilizadas em outros trabalho (e.g., o Capítulo \ref{cap:validacoes}
+poderia ter feito uso de tal taxonomia);
+
+O Capítulo \ref{cap:validacoes} em conjunto com a experiência adquirida sobre o
+Kernel Linux e os experimentos realizados (Capítulo \ref{cap:estudo-de-caso}),
+revelaram a necessidade de uma ferramenta automatizada para testar falhas de
+segurança. Seria interessante construir uma ferramenta que de forma sistemática
+tente explorar as falhas de segurança já catalogadas e assim verificar se
+alguma regressão aconteceu. Por exemplo, o openSSL apresentou a vulnerabilidade
+\textit{Heartbleed} nas versões 1.0.1 e que foram corrigidas, nesse contexto
+seria interessante ter um teste que verifique se tal ataque ainda é possível.
+Note que tal ferramenta seria extremamente valiosa na demonstração da utilidade
+de novas abstrações de processos. Uma determinada proposta poderia utilizar uma
+versão comprometida de uma determinada aplicação junto com o teste que explora
+uma falha e assim demonstrar que a sua proposta de extensão da abstração de
+processos resolve algum problema de segurança.
+
+Por fim, o trabalho futuro mais interessante consiste em implementar a nova
+geração de abstrações de processos apresentada no Capítulo
+\ref{vap:analise-sobre-abstracoes-de-processos} no GNU/Linux. Tal implementação
+em um Kernel monolítico pode significar um avanço de como os SO modernos são
+organizados e abrir caminhos para uma nova geração de SOs. Além disso, novos
+paradigmas, técnicas e padrões de projetos podem torna-se possíveis com a nova
+geração de abstrações de processos.
+
+\section{Outras Contribuições do Mestrado}
+
+Durante esse mestrado, busquei investir na minha formação passando pelas
+seguintes áreas: ensino, pesquisa, orientação e desenvolvimento. Nesse sentido,
+segue o resumo de outras contribuições que tive durante o mestrado: TODO

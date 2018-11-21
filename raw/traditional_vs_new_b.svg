@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg7529"
+   version="1.1"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="traditional_vs_new_b.svg"
+   inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/traditional_vs_mvas.png"
+   inkscape:export-xdpi="293.84"
+   inkscape:export-ydpi="293.84">
+  <defs
+     id="defs7531">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker13430"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#1a1a1a;fill-opacity:1;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path13428"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker12596"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path12594"
+         style="fill:#1a1a1a;fill-opacity:1;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker5728"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5726"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path4329"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker29811"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path29809"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="561.36693"
+     inkscape:cy="789.07299"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:object-nodes="false" />
+  <metadata
+     id="metadata7534">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.74999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect969"
+       width="224.00229"
+       height="47.050888"
+       x="588.84912"
+       y="429.14618" />
+    <rect
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.74999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect971"
+       width="224.00229"
+       height="36.447205"
+       x="588.84912"
+       y="475.93738" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect17466"
+       width="223.125"
+       height="139.6875"
+       x="834.10669"
+       y="244.09552"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="240.00916"
+       x="588.42004"
+       height="139.91245"
+       width="225"
+       id="rect17460"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75000024;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75000024;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect17458"
+       width="225"
+       height="139.91245"
+       x="343.55975"
+       y="243.29042"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="375.06406"
+       x="834.10193"
+       height="47.050888"
+       width="223.125"
+       id="rect17456"
+       style="opacity:1;fill:#37abc8;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:#37abc8;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect17454"
+       width="225"
+       height="47.050888"
+       x="343.55975"
+       y="375.48007"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="372.72031"
+       x="588.42004"
+       height="47.050888"
+       width="225"
+       id="rect4697"
+       style="opacity:1;fill:#37abc8;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:0.65499998;fill:none;fill-opacity:1;stroke:none;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8077"
+       width="1067"
+       height="548.79901"
+       x="0"
+       y="85.362206"
+       rx="0"
+       ry="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       id="text16550"
+       y="555.88916"
+       x="0.47955701"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35px;line-height:100.99999905%;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle"
+         y="555.88916"
+         x="0.47955701"
+         sodipodi:role="line"
+         id="tspan16556">Abstração</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35px;line-height:100.99999905%;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle"
+         y="591.23914"
+         x="0.47955701"
+         sodipodi:role="line"
+         id="tspan1011">Tradicional</tspan></text>
+    <text
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="699.75775"
+       y="555.88916"
+       id="text16873"><tspan
+         id="tspan16879"
+         sodipodi:role="line"
+         x="699.75775"
+         y="555.88916"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35px;line-height:100.99999905%;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle">MVAS</tspan></text>
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect16889"
+       width="225"
+       height="35.474934"
+       x="343.55975"
+       y="224.22789"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="280.08932"
+       x="343.55975"
+       height="35.474934"
+       width="225"
+       id="rect16891"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="429.14618"
+       x="343.57147"
+       height="47.050888"
+       width="224.00229"
+       id="rect16895"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.74999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="475.93738"
+       x="343.57147"
+       height="36.447205"
+       width="224.00229"
+       id="rect16897"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.74999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="442.39148"
+       y="255.96927"
+       id="text16903"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan16905"
+         x="442.39148"
+         y="255.96927"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">A</tspan></text>
+    <text
+       id="text16907"
+       y="311.83069"
+       x="442.47937"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+         y="311.83069"
+         x="442.47937"
+         id="tspan16909"
+         sodipodi:role="line">B</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="401.99841"
+       y="409.00943"
+       id="text16911"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan16913"
+         x="401.99841"
+         y="409.00943"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">Heap<tspan
+   id="tspan17119"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:64.99999762%;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';baseline-shift:sub;fill:#000000;stroke:none">1</tspan></tspan></text>
+    <rect
+       y="-13.776859"
+       x="802.70959"
+       height="40.842793"
+       width="54.3801"
+       id="rect17011"
+       style="opacity:1;fill:#c83737;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect17013"
+       width="218.2758"
+       height="40.842793"
+       x="580.72266"
+       y="-13.776859" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect17082"
+       width="50.812714"
+       height="40.842793"
+       x="527.34778"
+       y="-13.776859" />
+    <text
+       transform="scale(1.1062296,0.90397147)"
+       id="text17015"
+       y="17.41634"
+       x="477.3837"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28.75186539px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000"
+         y="17.41634"
+         x="477.3837"
+         id="tspan17017"
+         sodipodi:role="line">PC</tspan></text>
+    <text
+       transform="scale(1.1062296,0.90397147)"
+       id="text17019"
+       y="14.594501"
+       x="526.74518"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28.75186539px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000"
+         y="14.594501"
+         x="526.74518"
+         id="tspan17021"
+         sodipodi:role="line">Registrador</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="729.7157"
+       y="17.816456"
+       id="text17084"
+       transform="scale(1.1062296,0.90397147)"><tspan
+         sodipodi:role="line"
+         id="tspan17086"
+         x="729.7157"
+         y="17.816456"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28.75186539px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000">AS</tspan></text>
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.74999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4695"
+       width="225.19652"
+       height="51.738388"
+       x="343.53497"
+       y="151.39587"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       id="text4707"
+       y="406.24966"
+       x="644.36902"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+         y="406.24966"
+         x="644.36902"
+         id="tspan4705"
+         sodipodi:role="line">Heap<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:64.99999762%;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';baseline-shift:sub;fill:#000000;stroke:none"
+   id="tspan4703">2</tspan></tspan></text>
+    <text
+       id="text4711"
+       y="507.84262"
+       x="661.16492"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+         y="507.84262"
+         x="661.16492"
+         id="tspan4709"
+         sodipodi:role="line">Text</tspan></text>
+    <rect
+       y="274.22791"
+       x="588.50464"
+       height="71.474937"
+       width="225"
+       id="rect16931"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75000024;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.74999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect16933"
+       width="225"
+       height="35.474934"
+       x="588.50464"
+       y="214.08932"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="686.66272"
+       y="323.96927"
+       id="text4687"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan4685"
+         x="686.66272"
+         y="323.96927"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">C</tspan></text>
+    <text
+       id="text4691"
+       y="245.8307"
+       x="685.56201"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+         y="245.8307"
+         x="685.56201"
+         id="tspan4689"
+         sodipodi:role="line">D</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="391.64105"
+       y="192.17717"
+       id="text4719"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan4717"
+         x="391.64105"
+         y="192.17717"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">Stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="888.86609"
+       y="408.37759"
+       id="text4739"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan4737"
+         x="888.86609"
+         y="408.37759"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">Heap<tspan
+   id="tspan4735"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:64.99999762%;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';baseline-shift:sub;fill:#000000;stroke:none">3</tspan></tspan></text>
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect16973"
+       width="223.125"
+       height="35.474934"
+       x="834.10669"
+       y="224.22789"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="260.08932"
+       x="834.10669"
+       height="35.474934"
+       width="223.125"
+       id="rect16975"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect17146"
+       width="223.125"
+       height="35.474934"
+       x="834.10669"
+       y="296.08932"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="931.16418"
+       y="255.96927"
+       id="text4751"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan4749"
+         x="931.16418"
+         y="255.96927"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">E</tspan></text>
+    <text
+       id="text4755"
+       y="291.83069"
+       x="932.13098"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+         y="291.83069"
+         x="932.13098"
+         id="tspan4753"
+         sodipodi:role="line">F</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="929.94348"
+       y="327.83069"
+       id="text4759"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan4757"
+         x="929.94348"
+         y="327.83069"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">G</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:7.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 337.85796,429.22435 H 299.6365 v 84.85282 h 38.69021"
+       id="path5606"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:7.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 297.53402,475.62824 H 263.06257 V 178.64339 h 34.47145"
+       id="path5608"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:7.50000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 338.74834,150.80106 h -43.08932 v 50.38136 h 43.08932"
+       id="path5610"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:7.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1067.9522,215.38747 h 31.1569 V 418.7693 h -31.1569"
+       id="path5604-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       id="text5631"
+       y="-1110.3124"
+       x="316.86478"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"
+       transform="rotate(90)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35px;line-height:100.99999905%;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle"
+         y="-1110.3124"
+         x="316.86478"
+         sodipodi:role="line"
+         id="tspan5629">Muda</tspan></text>
+    <text
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       transform="rotate(-90)"
+       id="text5637"
+       y="253.39062"
+       x="-493.26712"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold'"
+         y="253.39062"
+         x="-493.26712"
+         id="tspan5635"
+         sodipodi:role="line">Compartilhado</tspan></text>
+    <g
+       id="g5679"
+       transform="translate(-456.5769)"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84">
+      <rect
+         y="149.38684"
+         x="343.62595"
+         height="364.97519"
+         width="225.56706"
+         id="rect5639"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         y="151.39587"
+         x="344.73163"
+         height="51.738388"
+         width="223.41161"
+         id="rect5641"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect5643"
+         width="223.41161"
+         height="35.474934"
+         x="344.73163"
+         y="224.22789" />
+      <rect
+         y="280.08932"
+         x="344.73163"
+         height="35.474934"
+         width="223.41161"
+         id="rect5645"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         style="opacity:1;fill:#37abc8;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect5647"
+         width="223.41161"
+         height="51.738388"
+         x="344.73163"
+         y="372.72031" />
+      <rect
+         y="424.45868"
+         x="344.73163"
+         height="51.738388"
+         width="223.41161"
+         id="rect5649"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         y="475.93738"
+         x="344.73163"
+         height="36.447205"
+         width="223.41161"
+         id="rect5651"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.75;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text5655"
+         y="191.34709"
+         x="402.50623"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+           y="191.34709"
+           x="402.50623"
+           id="tspan5653"
+           sodipodi:role="line">Stack</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="442.39148"
+         y="255.96927"
+         id="text5659"><tspan
+           sodipodi:role="line"
+           id="tspan5657"
+           x="442.39148"
+           y="255.96927"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">A</tspan></text>
+      <text
+         id="text5663"
+         y="311.83069"
+         x="442.47937"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+           y="311.83069"
+           x="442.47937"
+           id="tspan5661"
+           sodipodi:role="line">B</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="401.99841"
+         y="409.00943"
+         id="text5669"><tspan
+           sodipodi:role="line"
+           id="tspan5667"
+           x="401.99841"
+           y="409.00943"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">Heap<tspan
+   id="tspan5665"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:64.99999762%;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';baseline-shift:sub;fill:#000000;stroke:none" /></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="417.13913"
+         y="507.84262"
+         id="text5673"><tspan
+           sodipodi:role="line"
+           id="tspan5671"
+           x="417.13913"
+           y="507.84262"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">Text</tspan></text>
+      <text
+         id="text5677"
+         y="464.00952"
+         x="412.32312"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+           y="464.00952"
+           x="412.32312"
+           id="tspan5675"
+           sodipodi:role="line">Data</tspan></text>
+    </g>
+    <rect
+       y="-13.776859"
+       x="-61.496185"
+       height="40.842793"
+       width="229.52582"
+       id="rect5683"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       y="-13.776859"
+       x="-112.05856"
+       height="40.842793"
+       width="50.812714"
+       id="rect5685"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-99.810783"
+       y="17.41634"
+       id="text5689"
+       transform="scale(1.1062296,0.90397147)"><tspan
+         sodipodi:role="line"
+         id="tspan5687"
+         x="-99.810783"
+         y="17.41634"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28.75186539px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000">PC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-51.259903"
+       y="14.594501"
+       id="text5693"
+       transform="scale(1.1062296,0.90397147)"><tspan
+         sodipodi:role="line"
+         id="tspan5691"
+         x="-51.259903"
+         y="14.594501"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28.75186539px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000">Registrador</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:connector-curvature="0"
+       id="path5724"
+       d="M 181.1481,-17.783922 V 691.3585"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.50000048;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.5000006, 15.00000116;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="656.34894"
+       y="466.35327"
+       id="text12248"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan12246"
+         x="656.34894"
+         y="466.35327"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">Data</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:connector-curvature="0"
+       id="path12592"
+       d="m 814.77321,35.558407 70.98267,90.504083"
+       style="fill:none;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.50000002, 15.00000003999999976;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12596);paint-order:normal" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.50000002, 15.00000004;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker13430);paint-order:normal"
+       d="m 769.38751,107.06045 c 28.60553,34.43898 57.21105,27.91727 85.81658,0"
+       id="path13426"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"
+       sodipodi:nodetypes="cc" />
+    <text
+       id="text17396"
+       y="78.70166"
+       x="922.88275"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35px;line-height:100.99999905%;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle"
+         y="78.70166"
+         x="922.88275"
+         sodipodi:role="line"
+         id="tspan17394">Switch</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker29811);paint-order:normal"
+       d="M 812.3911,34.386924 743.34254,126.3751"
+       id="path27867"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"
+       sodipodi:nodetypes="cc" />
+    <rect
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       y="151.39587"
+       x="589.47552"
+       height="51.738388"
+       width="225.19652"
+       id="rect957"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.74999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.74999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect959"
+       width="225.19652"
+       height="51.738388"
+       x="831.4386"
+       y="151.39587"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       id="text963"
+       y="192.17717"
+       x="637.5816"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+         y="192.17717"
+         x="637.5816"
+         id="tspan961"
+         sodipodi:role="line">Stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="879.54468"
+       y="192.17719"
+       id="text967"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan965"
+         x="879.54468"
+         y="192.17719"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">Stack</tspan></text>
+    <rect
+       y="429.14618"
+       x="834.12677"
+       height="47.050888"
+       width="224.00229"
+       id="rect973"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.74999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="475.93738"
+       x="834.12677"
+       height="36.447205"
+       width="224.00229"
+       id="rect975"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#4d4d4d;stroke-width:3.74999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="409.25812"
+       y="507.84262"
+       id="text979"><tspan
+         sodipodi:role="line"
+         id="tspan977"
+         x="409.25812"
+         y="507.84262"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">Text</tspan></text>
+    <text
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       id="text983"
+       y="466.35327"
+       x="404.44214"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+         y="466.35327"
+         x="404.44214"
+         id="tspan981"
+         sodipodi:role="line">Data</tspan></text>
+    <text
+       id="text987"
+       y="507.84262"
+       x="896.4989"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+         y="507.84262"
+         x="896.4989"
+         id="tspan985"
+         sodipodi:role="line">Text</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="891.68292"
+       y="466.35327"
+       id="text991"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/traditional_vs_mvas.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan989"
+         x="891.68292"
+         y="466.35327"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">Data</tspan></text>
+  </g>
+</svg>
