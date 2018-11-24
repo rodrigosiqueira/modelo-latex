@@ -9,7 +9,7 @@
 
 void * thread_kernel( void * message_pointer )
 {
-  char * message = 0;
+  char * message = NULL;
   message = (char *) message_pointer;
   printf("%s \n", message);
   return NULL;

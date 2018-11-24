@@ -67,11 +67,11 @@ chamada de sistema. Para auxiliar a aplicação no espaço de usuário a interag
 com tais recursos, os autores criaram uma biblioteca chamada \emph{libDune} que
 na utilização das novas funcionalidades.
 
-Dentre as vantagens que o Dune promete, destacam-se o fato de que no modo Dune
-o processo comporta-se como um processo normal com a diferença de que este
-utiliza a instrução VMCALL para fazer chamadas de sistema. Além disto, devido
-ao fato de que o Dune não tem por objetivo fornecer máquinas virtuais este
-consequentemente consegue ser mais simples e rápido. As aplicações que se
+Dentre as vantagens que o essa pesquisa promete, destacam-se o fato de que no
+modo Dune o processo comporta-se como um processo normal com a diferença de que
+este utiliza a instrução VMCALL para fazer chamadas de sistema. Além disto,
+devido ao fato de que o Dune não tem por objetivo fornecer máquinas virtuais
+este consequentemente consegue ser mais simples e rápido. As aplicações que se
 adequam ao uso desse modelo podem obter melhorias de desempenho e isolamento.
 
 Para implementar o Dune, os pesquisadores utilizaram os processadores Intel com
@@ -121,7 +121,7 @@ contudo pode reentrar caso queira.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.6\textwidth]{dune_architecture} 
-  \caption{A arquitetura do Dune, imagem baseada em \citep{belay}}
+  \caption{A arquitetura do Dune~\citep{belay}}
   \label{fig:dune_architecture}
 \end{figure}
 
@@ -159,7 +159,7 @@ informações.
 \cite{shreds} defendem que o problema de segurança referente aos ataques
 intra-processos decorrem da falta de controle-fino e eficiente do conteúdo de
 sensível da memória; além disto, eles argumentam que séria benéfico se tais
-funcionalidades fossem disponibilizadas para os programados.  Para resolver tal
+funcionalidades fossem disponibilizadas para os programadores.  Para resolver tal
 problema os autores apresentam uma nova abstração de processos que cria uma
 nova unidade de execução chamada de \emph{shreds}, esta tem associado a si um
 fragmento de memória protegida denominada de \emph{shred-private pool
@@ -185,7 +185,7 @@ segurança, são elas:
         alterado para fora do \emph{shreds}.
 \end{itemize}
 
-Para melhor entender como o \emph{shreds} se comporta, veja a Figura
+Para melhor entender o comportamento do \emph{shreds}, veja a Figura
 \ref{fig:shreds} ilustrando uma aplicação que lida com uma senha (dado
 sensível) e o código que manipula tal dado. A aplicação possui uma thread que
 comporta-se da forma padrão, contudo, ao ter que lidar com um dado sensível ela
@@ -395,10 +395,10 @@ geral a API do \emph{Wedge} é definida pelas seguintes funções:
 
 \cite{resourcecontainers} argumentam que as abstrações de SO tem recebido
 grandes contribuições para melhorar questões de desempenho, mas argumentam que
-pouca atenção tem sido dado para o gerenciamento de recursos. Ataques como o
-\emph{Denial Attack} consiste em fazer com que todos os recursos da máquina
-sejam consumidos, ataques como esses ainda são comuns e ilustram como a
-gerência de recursos é um elemento crítico nos SOs. Neste sentido,
+pouca atenção tem sido dado para o gerenciamento de recursos. Como exemplo, os
+autores mostram como a gerência de recursos é um elemento crítico para conter
+ataques como o \emph{Denial Attack} que basicamente consiste em fazer
+com que todos os recursos da máquina sejam consumidos. Neste sentido,
 \cite{resourcecontainers} assumem que a raiz dos problemas de gestão de
 recursos encontra-se no modelo atual dos SOs de propósito geral; isto significa
 que primitivas de escalonamento e de gerência de recursos estendem-se por todo
@@ -422,7 +422,7 @@ terminar alguma de suas tarefas (e.g., um software que usa recursos de rede),
 note que parte da aplicação consome recursos dentro do \textit{user space};
 contudo, a outra parte da aplicação expande para o Kernel. O terceiro cenário
 mostra múltiplos processos cooperando para concluir uma tarefa sem precisar de
-do Kernel. Por fim, tem uma aplicação com um único processo que dispõe de
+do Kernel. Por fim, uma aplicação com um único processo que dispõe de
 múltiplas threads que além de utilizar recursos no \textit{user space} também
 demandam recursos oriundos do Kernel. Repare como sistemas tradicionais tem
 pouco ou nenhum controle sobre os recursos consumidos, veja que esses casos
@@ -444,9 +444,9 @@ recursos, além de fornecer um controle fino sobre os recursos. O RC fornece um
 mecanismo para ligar os recursos a uma thread, isto pode ser feito de forma
 dinâmica e sob controle da aplicação (isto também é chamado de \emph{resource
 binding}). Note que isto permite que múltiplas threads sejam associadas a
-inúmeros RC ao mesmo tempo, mas por padrão, uma thread começa com um RC herdado
-do processo pai. A aplicação poder religar-se para qualquer outro RC caso
-exista a necessidade.
+inúmeros RC simultaneamente, mas por padrão, uma thread começa com um RC
+herdado do processo pai. A aplicação poder religar-se para qualquer outro RC
+caso exista a necessidade.
 
 Uma das implicações diretas do RC é que uma aplicação associe informações com
 uma atividade ao invés de associar a uma thread ou processo, isto permite que
@@ -455,12 +455,12 @@ o \emph{scheduler} forneça informações diretas para a atividade.
 % TODO: Voltar no artigo e elaborar mais essa questão dos atributos
 A alocação de atributos está diretamente associada com um modelo de
 escalonamento relacionada com cada RC em um sistema. Uma thread é normalmente
-escalonada de acordo com os atributos do RC na qual é limitada. Contudo,
-se uma thread é multiplexada entre vários containers, pode custar muito o
-reescalonamento, para cada mudança de binging. Na prática a thread deve ser
-escalonada baseado na combinação entre alocação de recursos e uso de
-RC. Para isto, o modelo define um \emph{scheduler binging} entre cada
-thread e um conjunto de container sob o atual sendo multiplexado. 
+escalonada de acordo com os atributos do RC na qual é limitada. Contudo, se uma
+thread é multiplexada entre vários containers, o escalonamento torna-se custoso
+para cada mudança de binging. Na prática a thread deve ser escalonada baseado
+na combinação entre alocação de recursos e uso de RC. Para isto, o modelo
+define um \emph{scheduler binging} entre cada thread e um conjunto de container
+sob o atual sendo multiplexado. 
 
 É interessante observar que os containers formam hierarquias, ou seja, o uso de
 um recurso usado por um container filho é restringido pelos parâmetros do
@@ -600,9 +600,9 @@ ele tem uma de se integrar com o SO de forma a causar o menor impacto possível
 nas extensões. Por isto, o \emph{Nooks} isola as extensões com o XPC e também
 implementa um mecanismo de rastreamento de estruturas de dados chamado
 \emph{object-tracking} (parte do \emph{NIM}). O \emph{object-tracking} tem três
-recursos básicos: manter uma lista de estruturas de dados do Kernel que são
-manipulados por uma extensão, controlar todas as modificações para estas
-extensões e fornecer informações de objetos para limpeza de dados quando a
+recursos básicos: (1) manter uma lista de estruturas de dados do Kernel que são
+manipulados por uma extensão, (2) controlar todas as modificações para estas
+extensões e (3) fornecer informações de objetos para limpeza de dados quando a
 extensão falhar. O rastreamento dos objetos começa com o armazenamento de todos
 os objetos em uso por uma extensão e em seguida é feita uma associação entre o
 Kernel e as versões das extensões.
@@ -635,7 +635,7 @@ tamanho fixado, logo, o menor compartilhamento possível é o de uma página que
 tem o mesmo nível de permissão para todos os elementos contido nela. Os autores
 argumentam que apesar das vantagem oferecidas pelo modelo atual, muitos
 problemas de segurança e estabilidade do sistema são comprometidos. Dois
-exemplos são apontados pelos autores, o primeiro ilustra o caso do Servido
+exemplos são apontados pelos autores, o primeiro ilustra o caso do servidor
 Apache que pode carregar vários \textit{plugins} externos, contudo, se algum
 código malicioso ou defeituoso for carregado este comprometerá toda a
 estabilidade do servidor (em alguns casos quebrando a aplicação). Outro exemplo
@@ -670,17 +670,16 @@ O projeto do MMP é guiado por três requisitos:
 \end{enumerate}
 
 % TODO: FIGURA K
-% TODO: FALAR DA SEGMENTAÇÃO NA FUNDAMENTAÇÃO
-Os autores afirmam que o MMP tem a semântica da segmentação sem os problemas. O
-MMP fornece controle fino sobre a proteção dos dados compartilhados, utiliza
-endereçamento linear, é compatível com a \emph{ISA} existentes, não necessita de
-registradores de segmentos, possui um mecanismo simples de revogação de
-permissões e não tem ponteiros marcados. A Figura K mostra o comparativo entre
-a abordagem utilizando segmentos e o MMP. Para que o MMP possa garantir o
-controle de acesso à memória este precisa verificar as permissões de acesso
-feitas por cada operação de \emph{load/store}, isto claramente consome mais
-recursos computacionais. Por isto o MMP é uma solução que também depende da
-utilização de um hardware personalizado.
+Os autores afirmam que o MMP tem a semântica da segmentação sem os problemas
+associados a essa. O MMP fornece controle fino sobre a proteção dos dados
+compartilhados, utiliza endereçamento linear, é compatível com a \emph{ISA}
+existentes, não necessita de registradores de segmentos, possui um mecanismo
+simples de revogação de permissões e não tem ponteiros marcados. A Figura K
+mostra o comparativo entre a abordagem utilizando segmentos e o MMP. Para que o
+MMP possa garantir o controle de acesso à memória este precisa verificar as
+permissões de acesso feitas por cada operação de \emph{load/store}, isto
+claramente consome mais recursos computacionais. Por isto o MMP é uma solução
+que também depende da utilização de um hardware personalizado.
 
 % TODO: FIGURA G
 
@@ -768,17 +767,17 @@ problema de bits insuficientes. Hoje em dia, este problema está sob controle
 uma vez que os processadores atuais possuem um grande espaço de endereçamento.
 Contudo, estamos no inicio de uma geração conhecida por \emph{data-centric} na
 qual será dominada por grandes memórias não-voláteis \citep{outlook}, assim,
-simplesmente incrementar o total de bits para a VAS nas CPUs não vai funcionar.
-Elevar o número de bits na VAS tem impactos na produção, desempenho e consumo
-de energia \citep{spacejmp}.
+simplesmente incrementar o total de bits para a VAS nas CPUs não sanará mais
+este problema.  Elevar o número de bits na VAS tem impactos na produção,
+desempenho e consumo de energia \citep{spacejmp}.
 
 Um dos problemas do modelo de processos atuais está relacionado a representação
-de como estruturas de dados baseadas em ponteiros fora dos limites dos
-processos. A serialização de dados ou ponteiros especiais podem ser empregados
-para resolver este problema, contudo, ambos os métodos são um incomodo,
-ineficiente e em muitos casos confusos \cite{spacejmp}. O segundo problema está
-associado com a tarefa de coordenar o compartilhamento de memória entre
-vários processos, uma vez que está é uma tarefa complicada e tediosa.
+de como as estruturas de dados baseadas em ponteiros são representadas fora dos
+limites dos processos. A serialização de dados ou ponteiros especiais podem ser
+empregados para resolver este problema, contudo, ambos os métodos são um
+incomodo, ineficiente e em muitos casos confusos \citep{spacejmp}. O segundo
+problema está associado com a tarefa de coordenar o compartilhamento de memória
+entre vários processos, uma vez que está é uma tarefa complicada e tediosa.
 
 Para tentar resolver os problemas citados, \cite{spacejmp} propuseram uma
 técnica chamada \emph{SpaceJMP}. Os autores propõem desacoplar a VAS dos
