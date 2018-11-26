@@ -205,7 +205,7 @@ também apresentam estrategias de cache, o que gera um cenário completamente
 novo. Com essas questões em mente, é preciso decidir qual tipo de experimentos
 queremos conduzir. Essa seção descreve os cenário adotados.
 
-\subsection{Cenário selecionado} \label{sec:scenarios}
+\subsection{Cenário Selecionado} \label{sec:scenarios}
 
 \begin{table}[!h] \centering \begin{tabular}{|c|c|c|} \hline & \textbf{Pequeno}
 & \textbf{Grande}\\ \hline Static & 70Kb & 120Kb\\ \hline Dynamic & 80Kb &
@@ -250,10 +250,8 @@ passamos a ter um cenário base para comparações com novos cenários que utili
 alterações nas abstrações de processos. Por fim, vale observar que estamos
 ignorando os casos com \emph{keep-alive}.
 
-\section{MVAS dentro do GNU/Linux e Apache HTTP Server}
+\section{MVAS Dentro do GNU/Linux e Apache HTTP Server}
 \label{sec:mvas_inside_httpd}
-
-\subsection{MVAS inside GNU/Linux}
 
 O SpaceJMP \citep{spacejmp} foi a primeira implementação do conceito de MVAS e
 está disponível para os SOs DragonFlyBSD e Barrelfish. Em 2016 os pesquisadores
@@ -280,7 +278,7 @@ pesquisa foi conduzida em conjunto com Till Smejkal, Ranjan Sarpangala e o
 laboratório da HPe (responsáveis pela pesquisa). Contudo, tal implementação foi
 abandonada temporariamente por alguns meses.
  
-\subsection{MVAS dentro do Apache HTTP Server}
+\subsection{MVAS Dentro do Apache HTTP Server}
 
 Uma requisição tem um ciclo de vida curto dentro do HTTPD uma vez que é criado
 e destruído frequentemente. As informações sobre um cliente e as suas conexões
@@ -355,8 +353,8 @@ deixa claro a diferença entre as estratégias de MPM, para que em seguida, com
 os resultados e a estrutura utilizada, possamos expandir os experimentos para a
 versão do Apache que utiliza MVAS.
 
-\subsection{Existe alguma diferença significativa de desempenho entre o Apache
-HTTP trabalhando com processos e threads?}
+\subsection{Existe Alguma Diferença Significativa de Desempenho Entre o Apache
+HTTP Trabalhando com Processos e Threads?}
 
 Nesse primeiro cenário, nos temos o HTTPD com as alterações explicadas na Seção
 \ref{sec:customization}, mas sem as modificações do MVAS. Responder essa
@@ -435,8 +433,8 @@ para servir como critério para mostrar a diferença entre os MPMs. O atual
 resultado fornece informações básicas necessária para o restante dos
 experimentos.
 
-\subsection{Qual a diferença de desempenho do Apache utilizando MVAS quando
-comparado com as estratégias baseadas em processos e \emph{threads}?}
+\subsection{Qual a Diferença de Desempenho do Apache Utilizando MVAS Quando
+Comparado com as Estratégias Baseadas em Processos e \emph{Threads}?}
 
 A segunda parte das validações tiveram como principais objetivo estudar o
 comportamento do kernel Linux com MVAS e com o Apache fazendo uso dos seus
@@ -473,7 +471,7 @@ para a memória física.
 
 %TODO: Tem que melhorar a discussão dos problemas 
 
-\section{Discussão sobre os experimentos}
+\section{Discussão Sobre os Experimentos}
 
 Durante a análise das diversas propostas de extensão das abstrações de
 processos, notamos que os dois principais métodos de validação consistem em
