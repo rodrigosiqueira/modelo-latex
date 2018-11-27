@@ -1,0 +1,31 @@
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+    \textit{Parameter} & \textbf{Event} & \textbf{Worker} & \textbf{Prefork} \\
+      \hline\hline
+    \textbf{ServerLimit} & 6000 & 6000 & 5000\\
+      \hline
+    \textbf{StartServer} & 10 & 10 & 1000\\
+      \hline
+    \textbf{MinSpareThreads} & 512 & 512 & --\\
+      \hline
+    \textbf{MaxSpareThreads} & 1024 & 1024 & --\\
+      \hline
+    \textbf{ThreadLimit} & 64 & 64 & --\\
+      \hline
+    \textbf{ThreadPerChild} & 64 & 64 & --\\
+      \hline
+    \textbf{MaxRequestWorkers} & 5120 & 5120 & 5000\\
+      \hline
+    \textbf{MinSpareServers} & -- & -- & 500\\
+      \hline
+    \textbf{MaxSpareServers} & -- & -- & 1500\\
+      \hline
+  \end{tabular}
+
+  \caption{Configuração adota para o MPM}
+  \label{tab:configuration}
+
+\end{table}
+

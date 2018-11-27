@@ -1,22 +1,23 @@
 \chapter{Estudo de Caso} \label{cap:estudo-de-caso}
 
-Nesse estudo de caso, nos buscamos atingir três objetivos: (1) garantir a
+Nesse estudo de caso, nós buscamos atingir três objetivos: (1) garantir a
 replicabilidade dos resultados, (2) construir uma estrutura que possa ser
 estendida para outros cenários e (3) validar os problemas associados com novas
 abstrações de processos. Utilizamos uma estrutura para preparar o ambiente
 (\emph{deploy}) que é responsável por configurar todas as máquinas alvos
-envolvidas nos experimentos, para automatizar tal passo, decidimos utilizar a
-ferramenta \emph{Ansible} para controlar o \emph{deploy} uma vez que esta é
-amplamente utilizada e é relativamente simples de se utilizar. Adicionalmente,
-temos um grupo de scripts projetados para estressar diferentes cenários, esses
-scripts são baseados em uma ferramenta chamada \emph{Apache Benchmark Tool}
-(ab) que por sua vez tem configurações específicas para testar diferentes
-aspectos do SO e do servidor de HTTP. Temos uma coleção de programas para
-processar todos os dados gerados durante a execução do experimento e produzir
-os gráficos. Nesse capitulo, nos apresentamos alguns experimentos e buscamos
-validar os benefícios da abordagem utilizando Múltiplos Endereços Virtuais
-(MVAS); ou seja, esse Capítulo tem como objetivo testar parte do que foi
-apresentado no Capitulo \label{cap:validacoes}.
+envolvidas nos experimentos. Para automatizar tal passo, decidimos utilizar a
+ferramenta \emph{Ansible}\footnote{\url{https://www.ansible.com/}} para
+controlar o \emph{deploy} uma vez que esta é amplamente utilizada e é
+relativamente simples de se utilizar. Adicionalmente, temos um grupo de scripts
+projetados para estressar diferentes cenários, esses scripts são baseados em
+uma ferramenta chamada \emph{Apache Benchmark Tool} (ab) que por sua vez tem
+configurações específicas para testar diferentes aspectos do SO e do servidor
+de HTTP. Temos uma coleção de programas para processar todos os dados gerados
+durante a execução do experimento e produzir os gráficos. Nesse capítulo, nós
+apresentamos alguns experimentos e buscamos validar os benefícios da abordagem
+utilizando Múltiplos Endereços Virtuais (MVAS); ou seja, esse Capítulo tem como
+objetivo testar parte do que foi apresentado no Capítulo
+\label{cap:validacoes}.
 
 \section{Metodologia} \label{sec:metodologia}
 
@@ -53,20 +54,20 @@ clientes concorrentes. Ambas as máquinas são conectadas via conexão Gigabit
 Ethernet, uma vez que queremos simular múltiplos cliente fazendo requisições
 sem ter que se preocupar com questões de sobrecarga da rede.
 
-Nos experimentos, nos queremos simular uma situação na qual o HTTPD terá que
+Nos experimentos, nós queremos simular uma situação na qual o HTTPD terá que
 lidar com grande carga que gere grande pressão na aplicação e assim eleve a
-utilização de recursos de hardware. Com essa ideia em mente, nos conduzimos
+utilização de recursos de hardware. Com essa ideia em mente, nós conduzimos
 dois experimentos empíricos com o objetivo de determinar qual seria a
-configuração ideal para o Host 1. Primeiro, nos investigamos as principais
+configuração ideal para o Host 1. Primeiro, nós investigamos as principais
 características das diferentes estrategias de MPM e notamos que o
 \emph{Prefork} tem um grande consumo de memória; por isso, a quantidade de
 memória foi escolhida com base no \emph{Prefork} uma vez que se espera que as
 estratégias de \emph{Worker} e \emph{Event} consumam menos memória. Em segundo
-lugar, nos conduzimos um pequeno conjunto de experimentos com diferentes cargas
+lugar, nós conduzimos um pequeno conjunto de experimentos com diferentes cargas
 de trabalho (\emph{workload}) e monitoramos a utilização de recursos. Nos
 analisamos os logs e concluímos que a forma mais rápida de tornar evidente a
 diferença entre as estratégias é a de utilizar poucos núcleos e ter um bom
-tamanho de memória. Consequentemente, nos decidimos utilizar uma máquina de
+tamanho de memória. Consequentemente, nós decidimos utilizar uma máquina de
 13GB de memória RAM e 2 núcleos. Note que 13GB é um tamanho selecionado visando
 dar suporte para um grande número de requisições quando o HTTPD é configurado
 para utilizar o \emph{Prefork}. Finalmente, é importante ressaltar que o Host 1
@@ -86,7 +87,7 @@ recuperadas e processadas.
 
 Uma das principais características do HTTPD é a sua habilidade de ser
 facilmente ajustado por meio de arquivos de configuração. Da perspectiva de um
-usuário avançado, o Apache HTTP pode ser mais flexível e adaptável para
+usuário avançado, o Apache HTTPD pode ser mais flexível e adaptável para
 diferentes contextos. Apesar de toda a flexibilidade e capacidade do HTTPD,
 esse vem com uma configuração conservadora por padrão para evitar que os
 usuários não experientes causem algum tipo de dano ao seu próprio ambiente.
@@ -96,65 +97,76 @@ conservadora e esse também possibilita um elevado grau de personalização.
 Portanto, um usuário avançado que desejar fazer com que o Linux entregue o
 melhor desempenho possível para cada hardware, precisa personalizar vários
 arquivos internos (em alguns caso, até recompilar o Kernel). Nesse trabalho,
-nos queremos simular uma situação que se assemelhe a de um servidor web que
+nós queremos simular uma situação que se assemelhe a de um servidor web que
 manipule uma elevada carga de requisições, por isso, fizemos diversas
 otimizações no servidor Apache e no Linux.
 
-Nos nossos experimentos, nos utilizamos e comparamos: \emph{Prefork},
+Nos nossos experimentos, nós utilizamos e comparamos: \emph{Prefork},
 \emph{Worker} e \emph{Event}. Todas as estratégias de MPM tem um arquivo de
 configuração especifico associado a si, na qual cada um permite algum tipo de
 ajuste fino. Seguem os principais parâmetros disponíveis para configurar esse
 tipo de MPM:
 
-\begin{itemize} \item \textbf{StartServers}: Este parâmetro espera um inteiro
-positivo que representa o total de processos que serão iniciados junto com o
-HTTPD.  O valor padrão varia de acordo com o MPMs adotado
-\cite{mpm_start_server}; \item \textbf{MinSpareServers}: Este parâmetro espera
-um inteiro positivo e ajusta o número mínimo de processos ociosos. É importante
-ter um conjunto de processos ociosos para o caso em que o HTTPD receba uma
-grande carga de requisições em um curto intervalo de tempo, os filhos ociosos
-podem ser usados para tentar tratar as novas requisições. O processo pai
-compara o total de filhos com o valor contido em \textit{MinSpareServers}. Se
-tiver apenas alguns filhos ociosos, então o processo pai cria novos filhos
-\cite{mpm_min_spare}; \item \textbf{MaxSpareServers}: Esse parâmetro espera um
-valor positivo inteiro e configura o número máximo de processos ociosos. Repare
-que \textit{MinSpareServers} e \textit{MaxSpareServers} trabalham juntos
-controlando o total de recursos sendo utilizado pelos filhos
-\cite{mpm_max_spare}; \item \textbf{MaxRequestWorkers}: Este parâmetro ajusta o
-número total de requisições servidas pelo HTTPD. Se o número total de
+\begin{itemize}
+  \item \textbf{StartServers}:
+Espera um inteiro positivo que representa o total de processos que serão
+iniciados junto com o HTTPD.  O valor padrão varia de acordo com o MPMs adotado
+\citep{mpm_start_server};
+
+  \item \textbf{MinSpareServers}:
+Espera um inteiro positivo e ajusta o número mínimo de processos ociosos. É
+importante ter um conjunto de processos ociosos para o caso em que o HTTPD
+receba uma grande carga de requisições em um curto intervalo de tempo, os
+filhos ociosos podem ser usados para tentar tratar as novas requisições. O
+processo pai compara o total de filhos com o valor contido em
+\textit{MinSpareServers}. Se tiver apenas alguns filhos ociosos, então o
+processo pai cria novos filhos \citep{mpm_min_spare};
+
+  \item \textbf{MaxSpareServers}:
+Espera um valor positivo inteiro e configura o número máximo de processos
+ociosos. Repare que \textit{MinSpareServers} e \textit{MaxSpareServers}
+trabalham juntos controlando o total de recursos sendo utilizado pelos filhos
+\citep{mpm_max_spare};
+
+  \item \textbf{MaxRequestWorkers}:
+Ajusta o número total de requisições servidas pelo HTTPD. Se o número total de
 requisições é maior que o \textit{MaxRequestWorkers}, então toda nova
 requisição será enfileirada. O tamanho da fila no Apache HTTPD é configurada no
-parâmetro \textit{ListenBacklog} \cite{mpm_max_request}; \item
-\textbf{ListenBacklog}: Este parâmetro indica o tamanho máximo da fila.  Esse
-valor tem relação com o tamanho da fila TCP definida pleo GNU/Linux
-\cite{mpm_listen}; \item \textbf{ServerLimit}: Eleva o número máximo de
-processos permitidos pelo HTTPDS \cite{mpm_server_limit}.  \item
-\textbf{MinSpareThreads}: Este parâmetro espera um inteiro positivo que
-representa o número mínimo de threads ociosas. Se tem muitas requisições para o
-servidor e não tem threads ociosas o suficiente para manipular toda a carga, o
-processo filho cria mais threads até que alcance um número de threads maior do
-que o valor especificado nesse parâmetro.  Por padrão, o HTTPD ajusta um valor
-de 75 para esse parâmetro.\cite{mpm_minsparethreads}.  \item
-\textbf{MaxSpareThreads}: Este parâmetro espera um inteiro positivo que
-representa o número máximo de threads que podem ficar ociosas. Se o HTTPD tem
-mais threads ociosas do que o valor especificado nesse parâmetro, então o
-processo pai mata os filhos excedentes. Por padrão, esse valor é ajustado para
-100 \cite{mpm_maxsparethreads}.  \item \textbf{ThreadLimit}: Este parâmetro
-espera um inteiro positivo que representa um limite superior de threads por
-processo \cite{mpm_threadlimits}.  \item \textbf{ThreadPerChild}: Este
-parâmetro espera um inteiro positivo que represente o total de thread por
-processo filho \cite{mpm_threadperchild}.  \end{itemize}
+parâmetro \textit{ListenBacklog} \citep{mpm_max_request};
 
-\begin{table} \centering \begin{tabular}{|c|c|c|c|} \hline \textit{Parameter} &
-\textbf{Event} & \textbf{Worker} & \textbf{Prefork} \\ \hline
-\textbf{ServerLimit} & 6000 & 6000 & 5000\\ \hline \textbf{StartServer} & 10 &
-10 & 1000\\ \hline \textbf{MinSpareThreads} & 512 & 512 & --\\ \hline
-\textbf{MaxSpareThreads} & 1024 & 1024 & --\\ \hline \textbf{ThreadLimit} & 64
-& 64 & --\\ \hline \textbf{ThreadPerChild} & 64 & 64 & --\\ \hline
-\textbf{MaxRequestWorkers} & 5120 & 5120 & 5000\\ \hline
-\textbf{MinSpareServers} & -- & -- & 500\\ \hline \textbf{MaxSpareServers} & --
-& -- & 1500\\ \hline \end{tabular} \caption{Configuração adota para o MPM}
-\label{tab:configuration} \end{table}
+  \item \textbf{ListenBacklog}:
+Indica o tamanho máximo da fila.  Esse valor tem relação com o
+tamanho da fila TCP definida pleo GNU/Linux \citep{mpm_listen};
+
+  \item \textbf{ServerLimit}:
+Eleva o número máximo de processos permitidos pelo HTTPDS
+\citep{mpm_server_limit};
+
+  \item \textbf{MinSpareThreads}:
+Espera um inteiro positivo que representa o número mínimo de threads ociosas.
+Se tem muitas requisições para o servidor e não tem threads ociosas o
+suficiente para manipular toda a carga, o processo filho cria mais threads até
+que alcance um número de threads maior do que o valor especificado nesse
+parâmetro.  Por padrão, o HTTPD ajusta um valor de 75 para esse
+parâmetro~\citep{mpm_minsparethreads};
+
+  \item \textbf{MaxSpareThreads}:
+Espera um inteiro positivo que representa o número máximo de threads que podem
+ficar ociosas. Se o HTTPD tem mais threads ociosas do que o valor especificado
+nesse parâmetro, então o processo pai mata os filhos excedentes. Por padrão,
+esse valor é ajustado para 100 \citep{mpm_maxsparethreads};
+
+  \item \textbf{ThreadLimit}:
+Espera um inteiro positivo que representa um limite superior de threads por
+processo \citep{mpm_threadlimits};
+
+  \item \textbf{ThreadPerChild}:
+Espera um inteiro positivo que represente o total de thread por processo filho
+\citep{mpm_threadperchild};
+
+\end{itemize}
+
+\input{tables/mpm_config.tex}
 
 A Tabela \ref{tab:configuration}, ilustra as customizações que utilizamos para
 configurar o HTTPD para os experimentos. Nossa configuração permite que o
@@ -162,12 +174,7 @@ Apache responda uma elevada quantidade de requisições o que torna o
 experimentos próximo de uma situação realista. Nossas customizações no
 GNU/Linux e HTTPD permite que boa parte do hardware seja utilizado.
 
-\begin{table} \centering \begin{tabular}{|c|c|} \hline \textit{parameter} &
-\textbf{value}\\ \hline Max queue events & 1048576\\ \hline Max user instances
-& 1048576\\ \hline Max user watches & 1048576\\ \hline Max map count & 262144\\
-\hline TCP max syn backlog & 8096\\ \hline TCP syncookies & 0\\ \hline
-\end{tabular} \caption{Configurações feitas no Kernel}
-\label{tab:kernel_config} \end{table}
+\input{tables/kernel_config.tex}
 
 Também é necessário customizar o GNU/Linux uma vez que as configurações padrão
 deste são feita para evitar o consumo de todos os recursos de hardware (e.g.; o
@@ -181,15 +188,15 @@ total de FDs suportados pelo Linux (Na Tabela \ref{tab:kernel_config}, o
 parâmetro \emph{Max map count}), tal alteração permite que o HTTPD manipule um
 maior número de requisições. Além disto, o GNU/Linux tem uma coleção de
 arquivos de configuração que previnem alguns ataques de rede bem conhecidos. No
-nosso caso, nos precisamos desabilitar o \emph{SYN Flood Protection} (Tabela
+nosso caso, nós precisamos desabilitar o \emph{SYN Flood Protection} (Tabela
 \ref{tab:kernel_config}, TCP syncookies) uma vez que essa configuração evita
 que o SO manipule uma quantidade gigantesca de requisições feitas de uma mesma
 máquina. Por fim, o tamanho padrão da fila TCP é pequena para esse estudo de
-caso, portanto, nos elevamos consideravelmente o tamanho dessa (A Tabela
+caso, portanto, nós elevamos consideravelmente o tamanho dessa (A Tabela
 \ref{tab:kernel_config}, TCP max syn backlog, Max queue events, e Max user
 instances).
 
-Para concluir, nos fizemos ajustes finos no HTTPD e GNU/Linux para que esses
+Para concluir, nós fizemos ajustes finos no HTTPD e GNU/Linux para que esses
 suportassem uma cargas de requisições elevadas. Essas configurações são
 importantes para o contexto desses experimentos uma vez que desejamos por o
 HTTPD sobre pressão para mostrar o comportamento do MVAS em tal situação.
@@ -197,7 +204,7 @@ HTTPD sobre pressão para mostrar o comportamento do MVAS em tal situação.
 \section{Cenários}
 
 É comum encontrar aplicações rodando no HTTPD que também trabalhem com banco de
-dados. Normalmente, esse tipo de aplicação tem que esperar para que uma
+dado. Normalmente, esse tipo de aplicação tem que esperar para que uma
 operação retorne algum tipo de dados. Esse cenário pode ser facilmente
 expandido para uma situação na qual grandes quantidades de requisições são
 feitas e o banco de dados fica ocupado. As vezes, os servidores de aplicações
@@ -207,10 +214,7 @@ queremos conduzir. Essa seção descreve os cenário adotados.
 
 \subsection{Cenário Selecionado} \label{sec:scenarios}
 
-\begin{table}[!h] \centering \begin{tabular}{|c|c|c|} \hline & \textbf{Pequeno}
-& \textbf{Grande}\\ \hline Static & 70Kb & 120Kb\\ \hline Dynamic & 80Kb &
-120Kb \\ \hline \end{tabular} \caption{Tamanho dos arquivos para serem
-transferidos} \label{tab:file_size} \end{table}
+\input{tables/files_size.tex}
 
 Nosso experimento foi composto por dois cenários diferentes, separados por dois
 tipos de arquivos: estático e dinâmico. Nos utilizamos dois arquivos estáticos
@@ -234,15 +238,12 @@ uma requisição tem que esperar por processamento. Essa situação gera sobreca
 na CPU e consequentemente consome uma enorme quantidade de memória uma vez que
 os processos vivem por mais tempo (até o fim do processamento).
 
-\begin{table}[h!] \centering \begin{tabular}{|c|c|c|} \hline Casos &
-\textbf{Requisições} & \textbf{Concorrência}\\ \hline Arquivos estáticos &
-60000 & 20000\\ \hline Arquivos dinâmicos & 5000 & 600 \\ \hline \end{tabular}
-\caption{Carga principal aplicada} \label{tab:loads} \end{table}
+\input{tables/cargas.tex}
 
 A Tabela \ref{tab:loads} ilustra a carga aplicada nos experimentos. Para os
-arquivos estáticos, nos aplicamos a maior carga de requisições com o maior
-nível de concorrência; já para os arquivos dinâmicos, nos aplicamos uma carga
-de requisições menor com um poucas concorrência. Nosso objetivo com essas
+arquivos estáticos, nós aplicamos a maior carga de requisições com o maior
+nível de concorrência; já para os arquivos dinâmicos, nós aplicamos uma carga
+de requisições menor com pouca concorrência. Nosso objetivo com essas
 configurações foi examinar em um ambiente sem alteração nas abstrações de
 processos qual a diferença em utilizar uma abordagem baseada em processos e
 outras usando threads. Tendo essa clara distinção entre as estratégias,
@@ -259,20 +260,19 @@ envolvidos com o SpaceJMP decidiram implementar o MVAS no Kernel Linux com a
 intenção de estender o trabalho original e enviar a modificação como uma
 sequência de \emph{patches} para os mantenedores do Kernel. Como resultado, em
 Agosto de 2016, foi lançado a primeira versão do MVAS para o Linux
-\footnote{https://github.com/l3nkz/linux/tree/mvas Accessed at 2017/07/03} por
+\footnote{\url{https://github.com/l3nkz/linux/tree/mvas} Accessed at 2017/07/03} por
 um dos pesquisadores.
  
-Para utilizar a atual implementação do MVAS no Linux, nos trabalhamos em um
+Para utilizar a atual implementação do MVAS no Linux, nós trabalhamos em um
 \emph{fork} feito da \emph{branch} original mantida pelo Till Smejkal (o
-criador da implementação do MVAS no Linux). Durante nossos trabalhos, nos
+criador da implementação do MVAS no Linux). Durante nossos trabalhos, nós
 tivemos que aprender como compilar, customizar e instalar a versão do Kernel
-com MVAS. Para essas atividades, nos utilizamos o Debian com o Kernel fornecido
-pelo Till. Nos aprendemos o processo de atualização e a cada nova versão gerada
-pelo mantenedor.
+com MVAS. Para essas atividades, nós utilizamos o Debian com o Kernel fornecido
+pelo Till.
 
-MVAS é acessível por meio de chamadas de sistema e também possuí algumas
+MVAS é acessível por meio de chamadas de sistema e também possui algumas
 informações que permitem auxiliar na depuração de problemas. Adicionalmente,
-nos estudamos parte da implementação da MVAS para conseguir melhorar os
+nós estudamos parte da implementação da MVAS para conseguir melhorar os
 experimentos e também colaborar com o mantenedor. Durante muito tempo, a
 pesquisa foi conduzida em conjunto com Till Smejkal, Ranjan Sarpangala e o
 laboratório da HPe (responsáveis pela pesquisa). Contudo, tal implementação foi
@@ -280,48 +280,57 @@ abandonada temporariamente por alguns meses.
  
 \subsection{MVAS Dentro do Apache HTTP Server}
 
-Uma requisição tem um ciclo de vida curto dentro do HTTPD uma vez que é criado
-e destruído frequentemente. As informações sobre um cliente e as suas conexões
+Uma requisição tem um ciclo de vida curto dentro do HTTPD uma vez que é criada
+e destruída frequentemente. As informações sobre um cliente e as suas conexões
 são armazenadas dentro de uma estrutura de dados para manter as informações
-sobre as requisições. Essas informações sobre os clientes e as suas conexões
-são armazenadas dentro da estrutura de dados. Note, que da perspectiva da
-segurança, é desejável adicionar o maior nível de isolamento possível para cada
-requisição. A forma como as requisições devem ser tratadas devem ser leves, do
-contrário não poderá ser utilizado em uma aplicação como o HTTPD. Embora o
-modelo baseado em processos isole todas as requisições mantendo um desempenho
-aceitável, esse gera um grande consumo de memória (Seção \ref{sec:prefork}).
-Por outro lado, a estratégia baseada em \emph{thread} é a que tem melhor
-desempenho mas não proporciona um isolamento completo uma vez que parte da
-memória é compartilhada com outras \emph{threads}.
+sobre as requisições. Note, que da perspectiva da segurança, é desejável
+adicionar o maior nível de isolamento possível para cada requisição. A forma
+como as requisições devem ser tratadas devem ser leves, do contrário não poderá
+ser utilizado em uma aplicação como o HTTPD. Embora o modelo baseado em
+processos isole todas as requisições mantendo um desempenho aceitável, esse
+gera um grande consumo de memória (Seção \ref{sec:prefork}).  Por outro lado, a
+estratégia baseada em \emph{thread} é a que tem melhor desempenho mas não
+proporciona um isolamento completo uma vez que parte da memória é compartilhada
+com outras \emph{threads}.
 
 O modelo da MVAS tem um mecanismo para criar múltiplos espaços de endereçamento
 virtual, todos inteiramente isolados e com um comportamento que gera
 persistência de dados (Seção \ref{sec:mvas}). Nossa hipótese sobre a utilização
 do MVAS era a de que esse poderia ser utilizado como uma solução híbrida na
 qual fornecesse o mesmo nível de isolamento de um processo com um desempenho
-aproximado ao das \emph{threads}. Com tal ideia em mente, nos alteramos o ciclo
+aproximado ao das \emph{threads}. Com tal ideia em mente, nós alteramos o ciclo
 de vida das requisições do Apache com a intenção de verificar a nossa hipótese.
 
-\begin{figure}[!h] \centering \includegraphics[width=\textwidth]{mvas_httpd}
-\caption{HTTPD com MVAS} \label{fig:httpd_mvas} \end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{mvas_httpd}
+  
+  \caption{HTTPD com MVAS}
+  \label{fig:httpd_mvas}
+\end{figure}
 
 A Figura \ref{fig:httpd_mvas} mostra a nossa abordagem para adicionar o MVAS
 dentro do HTTPD. Antes da estrutura de dados da requisição ser construída no
-Apache HTTPD nos temos que criar uma nova VAS, anexar ela na \emph{thread}
+Apache HTTPD nós temos que criar uma nova VAS, anexar ela na \emph{thread}
 atual e mudar para a nova VAS. Depois, todo o ciclo de vida da requisição vai
 ser realizada da forma usual, mas dentro de uma nova VAS (totalmente isolada).
 Quando uma requisição termina, no procedemos com a limpeza das informações
 relacionadas a VAS. Essa abordagem garante o total isolamento de qualquer
 requisição.
 
-Nos identificamos as exatas funções que mantém todo o ciclo de vida de um
+Nós identificamos as exatas funções que mantém todo o ciclo de vida de um
 requisição e aplicamos MVAS para isolar. Essas funções são:
-\texttt{process\_http\_async\_connection} e
-\texttt{ap\_process\_http\_sync\_connection} (ambas localizadas no arquivo
-\texttt{modules/http/http\_core.c}). Os módulos MPM invocam uma dessas funções
-para manipular um ciclo de vida de uma requisição, por esse motivo, adicionar
-MVAS nessas funções elimina a complexidade relacionada ao código. Contudo,
-adicionar o MVAS eleva a sobrecarga geral para atender as requisições.
+
+\begin{quote}
+  \texttt{process\_http\_async\_connection} e\\
+  \texttt{ap\_process\_http\_sync\_connection} (ambas localizadas no arquivo
+  \texttt{modules/http/http\_core.c})
+\end{quote}
+
+Os módulos MPM invocam uma dessas funções para manipular um ciclo de vida de
+uma requisição, por esse motivo, adicionar MVAS nessas funções elimina a
+complexidade relacionada ao código. Contudo, adicionar o MVAS eleva a
+sobrecarga geral para atender as requisições.
 
 O Código \ref{lst:http_core} é um pedaço extraído de uma implementação da MVAS
 dentro do Apache HTTPD. Repare que a função \texttt{create\_isolate\_vas()} é
@@ -331,20 +340,24 @@ HTTP. O código também chama as funções
 \texttt{ap\_process\_http\_sync\_connection}, ambas isoladas dentro de uma nova
 VAS. No começo de cada uma dessas funções é criado uma nova VAS, anexada ao
 processo atual e finalmente mudada para uma nova VAS depois que o HTTPD cria a
-requisição. No fim do ciclo de vida, nos removemos a VAS. Nossa implementação
+requisição. No fim do ciclo de vida, nós removemos a VAS. Nossa implementação
 ainda precisa de melhorias, mas já é funcional. Finalmente, todo o código fonte
 das nossas modificações está disponível no Github em
 \url{https://github.com/LSS-USP/httpd-experiment/tree/mvas\_worker}.
 
-\lstinputlisting[ language=C, caption={Alteração no Apache Server},
-label={lst:http_core} ]{code/http_core.c}
+\lstinputlisting[
+    language=C,
+    caption={Alteração no Apache Server},
+    label={lst:http_core}
+    ] {code/http_core.c}
 
-Nos esperamos que o MVAS adicione mais latência, contudo, nos queremos
+Nós esperamos que o MVAS adicione mais latência, contudo, nós queremos
 investigar se a sobrecarga extra é tolerável ou não. O objetivo principal desse
 experimento é verificar se o MVAS pode ser utilizado como uma substituição a
 estratégia baseada em processos.
 
-\section{Resultados} \label{sec:preliminary}
+\section{Resultados}
+\label{sec:preliminary}
 
 O método proposto na Seção \ref{sec:metodologia} busca evidência de forma
 clara, sistemática e replicável as diferenças entre as estratégias baseadas em
@@ -356,25 +369,27 @@ versão do Apache que utiliza MVAS.
 \subsection{Existe Alguma Diferença Significativa de Desempenho Entre o Apache
 HTTP Trabalhando com Processos e Threads?}
 
-Nesse primeiro cenário, nos temos o HTTPD com as alterações explicadas na Seção
+Nesse primeiro cenário, nós temos o HTTPD com as alterações explicadas na Seção
 \ref{sec:customization}, mas sem as modificações do MVAS. Responder essa
 pergunta traz vantagens: (1) deixa claro a diferença entre processos e threads
 no Apache, (2) temos o comportamento base para comparar com o MVAS e (3)
 validamos a nossa metodologia.
 
-\begin{table}[h!] \centering \begin{tabular}{|c|c|c|} \hline Nome &
-\textbf{Núcleo} & \textbf{Memória}\\ \hline M1 & 2 & 13Gb \\ \hline M2 & 2 &
-4Gb \\ \hline \end{tabular} \caption{Hardware} \label{tab:machines} \end{table}
+
+\input{tables/hardware.tex}
 
 Na Seção \ref{sec:metodologia} e Seção \ref{sec:scenarios}, detalhamos a nossa
 metologia e a configuração básica que seguimos. Duas máquinas foram utilizadas,
 uma chamada de M1 e a outra de M2 como a Tabela \ref{tab:machines} mostra.
-Repare que nos decidimos utilizar apenas alguns núcleos e memórias grandes uma
+Repare que nós decidimos utilizar apenas alguns núcleos e memórias grandes uma
 vez que essas condições são melhores para revelar o comportamento do HTTPD.
 
-\begin{figure}[!h] \centering
-\includegraphics[width=.90\textwidth]{static_file} \caption{Arquivos estáticos:
-tempo gasto para servir o percentual de requisições} \label{fig:static_file}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.90\textwidth]{static_file}
+
+  \caption{Arquivos estáticos: tempo gasto para servir o percentual de requisições}
+  \label{fig:static_file}
 \end{figure}
 
 O gráfico na Figura \ref{fig:static_file} mostra o percentual de requisições no
@@ -385,10 +400,13 @@ requisições em paralelo. Além disso, o gráfico ilustra o \emph{Prefork},
 \emph{Worker} e \emph{Event} juntos para tornar mais simples de visualizar a
 diferença.
 
-\begin{figure}[!h] \centering
-\includegraphics[width=.90\textwidth]{static_file_memory_usage}
-\caption{Arquivos estáticos: O consumo de memória necessário para atender todas
-as requisições} \label{fig:static_file_memory} \end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.90\textwidth]{static_file_memory_usage}
+
+  \caption{Arquivos estáticos: O consumo de memória necessário para atender todas as requisições}
+  \label{fig:static_file_memory}
+\end{figure}
  
 Analisando a Figura \ref{fig:static_file}, é possível perceber que o tempo de
 resposta foi praticamente o mesmo para todas as estratégias. Em uma primeira
@@ -403,15 +421,21 @@ mesmo tempo de resposta nesse cenário vem do fato de que a troca de contexto
 para \emph{threads} e processos é o mesmo no GNU/Linux
 \citep{linux_kernel_development}.
 
-\begin{figure}[!h] \centering
-\includegraphics[width=.90\textwidth]{dynamic_file_request_time}
-\caption{Arquivos Dinâmicos: Tempo gasto por percentual de requisições}
-\label{fig:dynamic_file} \end{figure}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.90\textwidth]{dynamic_file_request_time}
 
-\begin{figure}[!h] \centering
-\includegraphics[width=.90\textwidth]{dynamic_file_memory_usage}
-\caption{Arquivos Dinâmicos: Consumo de memória necessário para servir as
-requisições} \label{fig:dynamic_file_memory} \end{figure}
+  \caption{Arquivos Dinâmicos: Tempo gasto por percentual de requisições}
+  \label{fig:dynamic_file}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.90\textwidth]{dynamic_file_memory_usage}
+
+  \caption{Arquivos Dinâmicos: Consumo de memória necessário para servir as requisições}
+  \label{fig:dynamic_file_memory}
+\end{figure}
 
 A Figura \ref{fig:dynamic_file} mostra um cenário com arquivos dinâmicos. Nesse
 caso, a diferença entre processos e \emph{threads} são muito mais claras. O
@@ -438,14 +462,14 @@ Comparado com as Estratégias Baseadas em Processos e \emph{Threads}?}
 
 A segunda parte das validações tiveram como principais objetivo estudar o
 comportamento do kernel Linux com MVAS e com o Apache fazendo uso dos seus
-recursos. Como explicado na Seção \ref{sec:mvas_inside_httpd}, nos já temos a
+recursos. Como explicado na Seção \ref{sec:mvas_inside_httpd}, nós já temos a
 versão modificada do HTTPD utilizando MVAS. Nos instalamos a versão do HTTPD e
 executamos o \emph{benchmark} novamente. Contudo, nossos experimento apontaram
 três problemas: (1) MVAS não funciona bem com múltiplas \emph{threads}, (2)
 existem problemas de alocação de memória e (3) existe uma enorme sobrecarga nas
 operações do MVAS.
 
-Para o primeiro problema, nos conversamos diretamente com o autor do MVAS para
+Para o primeiro problema, nós conversamos diretamente com o autor do MVAS para
 tentar identificar o problema. Depois de várias verificações na implementação,
 o autor detectou problemas nas heurísticas de manipulação dos segmentos de
 memória.  Basicamente, MVAS tem problemas relacionados a alocação de
@@ -504,7 +528,7 @@ resultados com as aplicações pois parte do código não estava mais presente. 
 Dune é uma das propostas com maior potencial de ser incorporada nós SOs
 modernos, contudo a sua implementação é insegura e não escalável. O principal
 motivo para isso está no fato do Dune interceptar os endereços das chamadas de
-sistemas. Tal abordagem não funciona desde de o momento que o Kernel adotou o
+sistemas. Tal abordagem não funciona desde o momento que o Kernel adotou o
 sistema de randomização dos endereços de chamadas conhecido por
 KASLR~\citep{kaslr}.
 

@@ -1,4 +1,4 @@
-\chapter{Formas de Validações das Novas Abstrações de Processos}
+\chapter{Validação de Novas Abstrações de Processos}
 \label{cap:validacoes}
 
 O Capítulo \ref{cap:trabalhos-analisados} mostrou algumas pesquisas que buscam
@@ -8,7 +8,7 @@ suas propostas. Por exemplo, uma abordagem que visa isolar dados para evitar
 vazamento de informações faz testes que buscam por esses tipos de falhas, mas
 não valida se a alteração é viável em um contexto global com alta demanda.
 Adicionalmente, alguns desses trabalhos baseiam-se fortemente em
-\textit{microbenchmarks} o que pode evidenciar um resultado desejado e não
+\textit{microbenchmarks} o que podem evidenciar um resultado desejado e não
 explicitar um efeito colateral da alteração. Em busca de encontrar propostas de
 abstrações que podem ser levada para os SO atuais e também beneficiar
 aplicações no espaço do usuário, levantamos e respondemos as seguintes
@@ -21,25 +21,25 @@ perguntas:
 
 Defendemos que uma das formas mais eficientes para validar uma nova extensão da
 abstração é por meio de aplicações já consagradas, amplamente adotadas por
-diversos sistemas e que exercitam uma ou mais parte do SO. Por esses motivos
-buscamos por aplicações que auxiliam a demonstrar que uma proposta é
-valida ou não. Basicamente buscamos três características: estresse que a
-aplicação pode gerar, possíveis falhas de segurança e mecanismos periféricos.
-Aplicações que consomem muitos recursos de hardware são ideais para comprovar
-que uma nova extensão é escalável. Por outro lado, várias propostas de novos
-mecanismos no processo prometem melhorias de segurança, por esse motivo
-software reais que já apresentaram alguma falha de segurança são desejáveis
-para esse tipo de validações. Por fim, algumas pesquisas propõem novos
-mecanismos nós quais alguns tipos de aplicações podem se beneficiar, como por
-exemplo, novas formas de compartilhamento de memória e otimizações.
+diversos sistemas e que exercitam uma ou mais partes do SO. Por esses motivos,
+buscamos por software que auxiliam a demonstrar que uma nova proposta de
+abstração de processos é valida ou não. Buscamos três características: estresse
+que a aplicação pode gerar, possíveis falhas de segurança e mecanismos
+periféricos.  Aplicações que consomem muitos recursos de hardware são ideais
+para comprovar que uma nova extensão é escalável. Por outro lado, várias
+propostas de novos mecanismos no processo prometem melhorias de segurança, por
+esse motivo software reais que já apresentaram alguma falha de segurança são
+desejáveis para esse tipo de validação. Por fim, algumas pesquisas propõem
+novos mecanismos nos quais alguns tipos de aplicações podem se beneficiar, como
+por exemplo, novas formas de compartilhamento de memória e otimizações.
 
-Outra perspectivas sobre a validação é representada pelos 
+Outra perspectivas sobre a validação é representada pelos
 \textit{microbenchmarks} que auxiliam no estudo dos impactos das alterações.
-Tais testes, são vantajosos durante as etapas iniciais da nova abstração uma
+Esses testes são vantajosos durante as etapas iniciais da nova abstração, uma
 vez que são rápidos e ajudam durante o desenvolvimento. O conjunto de
-\textit{microbenchmarks} pode ser usado para indicar de que a nova abstração
-traz vantagens, contudo, dado o seu alto de especialização esse não consegue
-revelar a real natureza de uma alteração.
+\textit{microbenchmarks} pode ser usado para indicar que a nova abstração
+traz vantagens, contudo, dado o seu alto nível de especialização esse não
+consegue revelar a real natureza de uma alteração.
 
 A análise feita sobre as aplicações e \textit{microbenchmarks} foram originadas
 dos diversos experimentos realizados pelos pesquisadores que mostramos no
