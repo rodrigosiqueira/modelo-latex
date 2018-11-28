@@ -6,13 +6,13 @@ estender a abstração de processos atual. Apesar dos vários trabalhos
 demonstrarem algum tipo de benefício, muitos deles ignoram outros aspectos das
 suas propostas. Por exemplo, uma abordagem que visa isolar dados para evitar
 vazamento de informações faz testes que buscam por esses tipos de falhas, mas
-não valida se a alteração é viável em um contexto global com alta demanda.
-Adicionalmente, alguns desses trabalhos baseiam-se fortemente em
-\textit{microbenchmarks} o que podem evidenciar um resultado desejado e não
-explicitar um efeito colateral da alteração. Em busca de encontrar propostas de
-abstrações que podem ser levada para os SO atuais e também beneficiar
-aplicações no espaço do usuário, levantamos e respondemos as seguintes
-perguntas:
+esquecem de validar se a alteração é viável em um contexto global com uma
+demanda realista.  Adicionalmente, alguns desses trabalhos baseiam-se
+fortemente em \textit{microbenchmarks} o que podem evidenciar um resultado
+desejado e não explicitar um efeito colateral da alteração. Em busca de
+encontrar propostas de abstrações que podem ser levada para os SO atuais e
+também beneficiar aplicações no espaço do usuário, levantamos e respondemos as
+seguintes perguntas:
 
 \begin{quote}
  \item \textit{RQ3:.} "Quais aplicações podem ser utilizadas para avaliar as nova abstração adicionadas ao SO?"
@@ -44,7 +44,20 @@ consegue revelar a real natureza de uma alteração.
 A análise feita sobre as aplicações e \textit{microbenchmarks} foram originadas
 dos diversos experimentos realizados pelos pesquisadores que mostramos no
 Capítulo \ref{cap:trabalhos-analisados}. Além disso, durante esse trabalho,
-foram conduzidos experimentos que auxiliaram na construção desse capítulo.
+foram conduzidos experimentos que auxiliaram na elaboração das ideias
+apresentadas nesse capítulo. Esse capítulo pode ser dividido em duar partes:
+software e \textit{microbenchmark}. Primeiramente apresentamos os softwares que
+são alvos ideais para serem adaptados de forma a utilizar as novas abstrações
+de processos e assim servirem como mecanismo de validação para as propostas.
+Tentamos ilustrar as características gerais das aplicações de forma a fornecer
+ideias de possíveis adaptações (discutimos algumas dessas possíveis alterações
+no Capítulo~\ref{cap:analise-sobre-abstracoes-de-processos}) e também prover
+ferramentas para o leitor avaliar os trabalhos desse campo. Por fim,
+apresentamos uma discussão sobre os potenciais \emph{microbenchmarks} que podem
+ser utilizados para validar novas extensões nos processos. Em resumo, esse
+capítulo tem a intenção de fornecer um conjunto de instrumentos para o
+pesquisador interessado em obter formas de validação das abstrações de
+processos.
 
 \section{Servidores Web}
 \label{sec:web_server}
@@ -55,57 +68,42 @@ disponível. Muitos sistemas possuem máquinas dedicadas com o objetivo de
 entregar estabilidade, velocidade e estabilidade. Nesses casos, é desejável que
 a CPU esteja ocupada a maior parte do tempo e use a memória de forma eficiente
 para evitar desperdício de recursos. \boldAndIndex{Servidores web (\textit{Web
-Servers)}} são um tipo de aplicação que tenta operar com um desempenho próximo
+Servers)}} são aplicações que operam com um desempenho próximo
 do ótimo utilizando ostensivamente os recursos das máquinas para servir páginas
 webs. A principal responsabilidade do servidor web é entregar arquivos contendo
-dados, por sua vez essa tarefa pode ser divida em três: esperar por uma
-requisição (\textit{request}) do usuário, processar a requisição e responder ao
-usuário.
+dados, essa pode ser divida em três etapas: esperar por uma requisição
+(\textit{request}) do usuário, processar a requisição e responder ao usuário.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=.50\textwidth]{request_a_page.png}
-  \caption{Do cliente para o servidor Web}
+  \caption{Do cliente para o servidor Web. Note que o navegador solicita em paralelo os damais arquivos necessários para a construção da página}
   \label{fig:client_to_web_server}
 \end{figure}
 
 A Figura \ref{fig:client_to_web_server} busca exemplificar uma situação simples
-na qual o cliente solicita uma página web para um servidor. Primeiramente, o
-cliente faz uma solicitação de alguma página por meio de algum software, para
-esse exemplo vamos considerar o navegador. Em seguida o navegador comunica-se
-com o servidor utilizando o protocolo HTTP; por sua vez o servidor responde
-devolvendo o arquivo solicitado que contém todas as instruções básicas
-necessárias para construir a página (HTML). O navegador abre o
-arquivo HTML retornado, converte o conteúdo e verifica se precisa de mais
-informações para construir a página solicitada; é comum que a página precise de
-outros arquivos como CSS, imagens, javascript, etc. Se mais arquivos forem
-necessários, então o navegador solicita os mesmos para o servidor de forma
-paralela ou serial. O exemplo ilustra de forma simplificado como uma requisição
-acontece e como múltiplas requisições podem ser geradas para construir uma
-simples telas. Com um exemplo real, uma caracterização da carga gerada sobre o
-site da copa do mundo de 1998 mostra que 10796 requisições/min foram
-feitas~\citep{worldcup}. Um servidor web tem que responder milhares de usuários
-e a estrategia utilizada para lidar com tal problema são as mais variáveis
-possível.
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=\textwidth]{no_keep_alive.png}
-  \caption{Sem keep alive}
-  \label{fig:no_keep_alive}
-\end{figure}
-
-\begin{figure}[!h]
-  \includegraphics[width=\textwidth]{keep_alive.png}
-  \caption{Com keep alive}
-  \label{fig:keep_alive}
-\end{figure}
+na qual o cliente solicita uma página web para um servidor. Inicialmente, o
+cliente faz uma solicitação de alguma página por meio de algum software, vamos
+considerar o navegador nesse exemplo. Em seguida, o navegador comunica-se com o
+servidor através do protocolo HTTP; por sua vez o servidor responde devolvendo
+o arquivo solicitado que contém todas as instruções básicas necessárias para
+construir a página (HTML). O navegador abre o arquivo HTML retornado, converte
+o conteúdo e verifica se precisa de mais informações para construir a página
+solicitada; é comum que a página precise de outros arquivos como CSS, imagens,
+javascript, etc. Se mais arquivos forem necessários, então o navegador solicita
+os mesmos para o servidor de forma paralela ou serial. O exemplo ilustra de
+forma simplificado como uma requisição acontece e como múltiplas requisições
+podem ser geradas para construir uma simples tela. Um exemplo real pode ser
+considerado da caracterização da carga gerada sobre o site da copa do mundo de
+1998, na qual foi gerado uma média de 10796 requisições/min~\citep{worldcup}.
+Um servidor web tem que responder milhares de usuários e a estrategia utilizada
+para lidar com tal problema são as mais variáveis possível.
 
 Normalmente, cada requisição feita por um cliente abre muitas conexões com o
 servidor web e ao final elas são encerradas. Esse mecanismo impacta no
 desempenho por duas razões: a latência aumenta e o consumo de CPU com operações
 não uteis se eleva. Uma possibilidade para minimizar esses impactos é utilizar
-um mecanismo chamado de \boldAndIndex{keep-alive} que fornece uma conexão
+o mecanismo de \boldAndIndex{keep-alive}, que fornece uma conexão
 aberta durante as atividades dos usuários. Por exemplo, a Figura
 \ref{fig:no_keep_alive} e a Figura \ref{fig:keep_alive} mostram um caso
 utilizando \textit{keep-alive} e outra sem utilizar. O primeiro caso ilustra
@@ -119,33 +117,45 @@ servidor esteja recebendo um elevado número de requisições. Contudo, outro
 aspecto do \textit{keep-alive} é que esse pode elevar o consumo de memória
 gerando outro tipo de problema em um servidor sobrecarregado.
 
-Existem muitos servidores web disponíveis no mercado, contudo dois deles são
-especialmente relevantes para o contexto desse trabalho: Nginx e Apache Httpd.
-O primeiro é conhecido pelo seu desempenho para entregar arquivos estáticos,
-enquanto o segundo é conhecido pela sua enorme estabilidade e comodidade. Ambos
-são extremamente configuráveis, confiáveis e suportam grandes cargas de
-requisições.
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{no_keep_alive.png}
+  \caption{Sem keep alive}
+  \label{fig:no_keep_alive}
+\end{figure}
+
+\begin{figure}[!h]
+  \includegraphics[width=0.8\textwidth]{keep_alive.png}
+  \caption{Com keep alive}
+  \label{fig:keep_alive}
+\end{figure}
+
+Existem muitos servidores web disponíveis no mercado, contudo, dois deles são
+especialmente relevantes para o contexto deste trabalho:
+Nginx\footnote{\url{https://www.nginx.com/}} e Apache
+Httpd\footnote{\url{https://httpd.apache.org/}}.  O primeiro é conhecido pelo
+seu desempenho para entregar arquivos estáticos, enquanto o segundo é conhecido
+pela sua enorme estabilidade e comodidade. Ambos são extremamente
+configuráveis, confiáveis e suportam grandes cargas de requisições.
 
 \subsection{Servidor Apache HTTPD}
 \label{sec:architecture}
 
-O servidor Apache HTTP, também conhecido como \textit{HTTP Daemon (HTTPD)} é
+O servidor Apache HTTPD, também conhecido como \textit{HTTP Daemon (HTTPD)} é
 licenciado com a licença Apache 2.0 e mantido pela fundação Apache.  O Apache
-HTTP (usaremos HTTPD e Apache como sinônimos nesse texto) foi projetado para
-executar em vários SOs, essa restrição fez com que fosse necessário adotar
-estratégias para fazer o HTTPD multiplataforma e mantendo um bom desempenho.
-Por esse motivo, o Apache é fortemente modularizado, utiliza bibliotecas
-portáveis e separa os módulos de manipulação de processos/threads; esse três
-elementos constituem os pilares arquiteturais do projeto. O núcleo do HTTPD tem
-apenas alguns elementos, contudo o conjunto de todos os módulos usados pelo
-servidor faz com que ele seja modularizado e flexível. O Apache também utiliza
-a biblioteca \textit{Apache Portable Runtime (APR)} cujo a intenção é ser
-utilizado como uma interface portável para as tarefas comuns de programação
+HTTPD\footnote{Usaremos HTTPD e Apache como sinônimos nesse texto} foi
+projetado para executar em vários SOs, essa restrição fez com que fosse
+necessário adotar estratégias para fazer o HTTPD multiplataforma e mantendo um
+bom desempenho.  Uma característica importante do HTTPD é a divisão de módulos
+que manipulam processos, threads e bibliotecas portáveis utilizadas; esses
+três, em conjunto, constituem a arquitetura do projeto. O Apache utiliza
+a biblioteca \textit{Apache Portable Runtime (APR)} cuja a intenção é ser
+utilizada como uma interface portável para as tarefas comuns de programação
 (e.g.: alocação de memória, manipulação de tempo, etc). Por fim, o HTTPD
-implementa um módulo especial chamado de \textit{Multi-Processing Module (MPM)}
-que é responsável por manter o processamento das requisições e a lógica de
-manipulação de processos/threads. O MPM representa uma rica fonte para comparar
-modificações nas abstrações de processos.
+implementa um módulo especial chamado \textit{Multi-Processing Module (MPM)}
+responsável por manter o processamento das requisições e a lógica de
+manipulação de processos/threads. O MPM é uma boa fonte de comparação entre
+diferentes modelos de processos.
 
 \begin{figure}[!h]
   \centering
@@ -155,19 +165,18 @@ modificações nas abstrações de processos.
 \end{figure}
 
 A Figura \ref{fig:apache_architecture} é uma visão de alto nível da arquitetura
-do Apache. O topo da imagem representa os elementos do núcleo do Apache que
-são responsáveis por juntar os demais componentes necessários para o seu
+do Apache. O topo da imagem representa os elementos do núcleo do Apache
+responsáveis por juntar os demais componentes necessários para o seu
 funcionamento. Ao redor do núcleo, existe um grande número de módulos anexados
 que podem ser conectados ao projeto. Esses módulos facilitam o processo de
-adicionar e remover elementos do núcleo, normalmente esses componentes são
-ligado como bibliotecas dinâmicas (também podem ser estáticas). Módulos na
-forma de bibliotecas dinamicamente ligadas fornecem flexibilidade, um bom
-desempenho e portabilidade entre diferentes SOs (e.g.; o Window e Linux podem
-ter diferentes implementações para o mesmo módulo). A Figura
-\ref{fig:apache_architecture} também ilustra o MPM como um componente
+adicionar e remover elementos do núcleo, normalmente como bibliotecas
+dinâmicas. Módulos na forma de bibliotecas dinamicamente ligadas fornecem
+flexibilidade, um bom desempenho e portabilidade entre diferentes SOs (e.g.; o
+Window e Linux podem ter diferentes implementações para o mesmo módulo). A
+Figura \ref{fig:apache_architecture} também ilustra o MPM como um componente
 diretamente conectado ao SO, porque o MPM manipula os elementos de
 paralelização e cada SO precisa implementar essa parte de acordo com as suas
-próprias particularidades. A última parte da imagem, mostra a biblioteca APR
+próprias particularidades. A última parte da imagem mostra a biblioteca APR,
 que se posiciona entre o núcleo do HTTPD e o SO.
 
 \begin{figure}[!h]
@@ -185,7 +194,7 @@ dados para a requisição toda vez que o HTTPD aceita uma nova conexão. O módu
 HTTP é encarregado de preencher uma estrutura de dados de requisição e o
 módulo de conexão TCP constrói a estrutura de dados que mantém as informações
 da conexão. Normalmente, não é preciso se preocupar com módulos relacionados
-aos detalhes do HTTP uma vez que o Apache ajusta todos os elementos necessários
+aos detalhes do HTTP, uma vez que o Apache ajusta todos os elementos necessários
 e também entrega uma estrutura de dados pronta para ser utilizadas.
 
 \begin{figure}[!h]
@@ -210,6 +219,7 @@ fases podem ser extremamente proveitosas para testar novas abstrações de
 processos.
 
 \subsubsection{MPM}
+\label{sec:prefork}
 
 O módulo \textit{Multi-Processing (MPM)} é um elemento especial dentro do
 Apache. Como a Seção \ref{sec:architecture} introduziu, o MPM funciona como uma
@@ -223,15 +233,9 @@ threads, mais especificamente são elas: \textit{Prefork}, \textit{Worker} e
 \textit{Event}. Esses módulos constituem bons pontos para comparar thread e
 processos usando as novas abstrações, uma vez que o ambiente se conserva.
 
-\subsubsection{MPM: Prefork}
-\label{sec:prefork}
+\begin{description}
 
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=\textwidth]{prefork} 
-  \caption{Prefork}
-  \label{fig:prefork} 
-\end{figure}
+	\item[Prefork:]
 
 O \textit{Prefork} foi a primeira estratégia adotada pelo HTTPD e é totalmente
 baseada em processos. A Figura \ref{fig:prefork} ilustra os três passos
@@ -244,14 +248,19 @@ processo filho disponível para manipular a requisição, então o processo de
 controle cria novos processos filhos. Repare que a processo de controle
 comporta-se como um \textit{load balancing}.
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=\textwidth]{prefork} 
+  \caption{Prefork}
+  \label{fig:prefork} 
+\end{figure}
+
 O \textit{Prefork} é uma boa opção para servidores web que não são compatíveis
 com threads (e.g., aplicações legadas escritas em PHP) e é a melhor opção de MPM
 para isolar uma única requisição. Contudo, o \textit{Prefork} consome muita
 memória e CPU o que não é desejável em um servidor sob forte demanda.
 
-\subsubsection{MPM: Worker}
-
-O \textit{Worker} é uma solução híbrida uma vez que o seu design é baseado em
+	\item [Worker]: O \textit{Worker} é uma solução híbrida uma vez que o seu design é baseado em
 processos e threads. Esse módulo tem um processo de controle que é responsável
 por criar um processos filhos e controlar o balanceamento da carga entre os
 filhos. Ao contrário do \textit{Prefork}, o \textit{Worker} não cria instâncias
@@ -284,7 +293,14 @@ consome menos memória que o \textit{Prefork} e consequentemente ele é melhor e
 casos no qual o servidor está sobrecarregado.  A mistura de processo e thread
 adiciona estabilidade para todo o sistema.
 
-\subsubsection{MPM: Event}
+	\item [Event:] O módulo \textit{Event} é baseado em threads e é o padrão na
+última versão do Apache. O comportamento básico do \textit{Event} é similar ao
+do \textit{Worker} com duas características a mais: \textit{keep-alive} e
+separação de responsabilidade de enviar dados para o cliente. A Figura
+\ref{fig:event} ilustra o comportamento básico do \textit{Event}. A forma na
+qual o \textit{event} opera é similar ao \textit{worker}, com a diferença de
+que ele cria um processo a mais só para manipular o envio dos dados para o
+cliente.
 
 \begin{figure}[!h]
   \centering
@@ -293,14 +309,7 @@ adiciona estabilidade para todo o sistema.
   \label{fig:event} 
 \end{figure}
 
-O módulo \textit{Event} é baseado em threads e é o padrão na última versão do
-Apache. O comportamento básico do \textit{Event} é similar ao do
-\textit{Worker} com duas características a mais: \textit{keep-alive} e
-separação de responsabilidade de enviar dados para o cliente. A Figura
-\ref{fig:event} ilustra o comportamento básico do \textit{Event}. A forma na
-qual o \textit{event} opera é similar ao \textit{worker}, com a diferença de
-que ele cria um processo a mais só para manipular o envio dos dados para o
-cliente. 
+\end{description}
 
 \subsection{Nginx}
 
