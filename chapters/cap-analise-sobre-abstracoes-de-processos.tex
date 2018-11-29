@@ -69,17 +69,71 @@ isso traz vantagens para as tecnologias em desenvolvimento, por outro reduz a
 chance de uma nova abstração de processos ser adotada por um SO de produção
 devido a dependência em tecnologias instáveis.
 
-% TODO: Verificar a explicação da tabela uma vez que essa sofrerá alterações
-Uma nova proposta de mudança em abstrações de processos devem analisar
-cuidadosamente as limitações citadas para que possam atender aos requisitos de
-qualidade exigidas pelos SO de uso cotidiano. Nesse sentido, é preciso encontrar
-um equilíbrio entre a pesquisa e desenvolvimento, ou seja, um balanceamento
-entre academia e a indústria de forma a encontrar soluções que levem benefícios
-para os usuários. A Tabela \ref{tab:adocao} qualifica o potencial de adoção de
-cada uma das propostas citadas no Capítulo \ref{cap:trabalhos-analisados} de
-acordo com as considerações feitas nessa seção. A tabela marca em uma escala de
-zero até cinco a possibilidade de uma determinada proposta ser adotada por SOs
-de produção.
+%TODO
+Encontrar um bom balanceamento entre academia e a indústria de forma a levar
+benefícios para os usuários não é uma tarefa trivial. Nesse sentido, novas
+propostas de mudanças na abstração de processos deve considerar as limitações
+citadas nessa seção para que possam atender aos requisitos de qualidade
+exigidas pelos SOs de uso cotidiano. Infelizmente, afirmar se uma proposta da
+academia pode ser adotada ou não pela indústria é uma tarefa impossível de ser
+determinar dado a enorme quantidade de variáveis envolvidas em tal análise.
+Mesmo assim, para posicionar o leitor em termos do estado da arte e da prática, nós
+buscamos estabelecer um "potencial de adoção" de uma nova proposta. Com base
+nos critérios apresentados nessa seção buscamos definir um conjunto de
+variáveis que auxilie na definição das chances de uma pesquisa ser adotada pela
+indústria, segue:
+
+\begin{enumerate}
+  \item
+\textbf{Dependência Técnica}: essa variável indica se o trabalho é construído
+levando-se em consideração outras tecnologias não estabilizadas. Consideramos
+tal aspecto um problema para a adoção da nova técnica por parte de um SO de uso
+cotidiano.
+
+  \item
+\textbf{Dependência de Compatibilidade}: refere-se as propostas que exigem
+alterações na semântica das aplicações em espaço de usuário para que essas
+possam tirar proveito de alguma melhoria. Para esses casos desconsideramos
+propostas que simplesmente chamam uma única função que não alteram em nada na
+semântica.
+
+  \item
+\textbf{Dependência de Compilador}: propostas que dependem de alterações no
+compilador. Nesses casos, consideramos que a adoção torna-se um pouco mais
+complicado uma vez que dois projetos precisam ser alterados.
+
+  \item
+\textbf{Implementação Pesada}: consideramos as implementações pesadas mais
+complicadas já que necessitam que mudanças no núcleo sejam feitas, isso pode
+dificultar a adoção.
+
+  \item
+\textbf{Implementação Independente}: essa refere-se a propostas de novas
+implementações, claramente essa é de difícil adoção.
+
+  \item
+\textbf{Hardware Novo}: essa variável indica que a proposta depende de um
+hardware novo que só existe em algum contexto específico ou mesmo que ainda não
+foi implementado.
+
+  \item
+\textbf{Característica Específica de Hardware}: refere-se a propostas que
+propõem a utilização de algum hardware bem consolidado para algum outro
+proposito diferente do originalmente proposto.
+
+\end{enumerate}
+
+A Tabela \ref{tab:adocao} tenta apresentar o potencial de adoção de cada uma
+das propostas citadas no Capítulo \ref{cap:trabalhos-analisados} de acordo com
+as variáveis discutidas nessa seção. Na tabela, temos uma marcação indicada
+pelo simbolo \ding{52} que significa que uma determinada proposta possui a
+limitação indicada na coluna. Se a proposta não contém tal restrição, então ela
+é marcada com o simbolo \ding{54}. Por uma questão de simplicidade, para
+definir o potencial de adoção atribuímos um para cada \ding{54} e zero para
+\ding{52}. Por fim, toda vez que a opção "Hardware Novo" é marcada nós
+consideramos que a proposta contém todos os empecilhos para a adoção; para as
+variáveis referentes a implementação, consideramos que quando uma proposta
+parte de uma implementação independente ela também é considerada pesada.
 
 \input{tables/potencial_adocao}
 
@@ -382,28 +436,3 @@ Chamada baseada no Dune.
 
 \input{algorithm/syscall.tex}
 \input{algorithm/snapshot.tex}
-
-\subsection{Atomize como Subsistema no GNU/Linux}
-
-Uma alternativa para implementar o atomize em um sistema GNU/Linux é fazê-lo
-como um novo subsistema na forma de um driver (Veja Seção \ref{sec:dd}). Para
-isto seria necessário ter uma API de chamadas via IOCTL que executa operações
-de acordo com o código passado. Normalmente, quando existe um grande número de
-operações definidas via IOCTL é desejável a criação de uma biblioteca no espaço
-do usuário que facilite a manipulação das operações e que forneça mecanismos
-para facilitar o seu uso. Dessa forma, inspirado na Tabela X apresentamos a
-Tabela \ref{tab:ops_atomize} ilustrando as operações de IOCTL e a função que
-manipula a mesma no espaço de usuário.
-
-\input{tables/atomize_ops_linux}
-
-Um dos problemas na implementação da abstração de processos no GNU/Linux
-deve-se ao seu elevado acoplamento. Nesse sentido, só implementar o novo
-subsistema no Kernel Linux não resolveria o problema. Seria preciso implementar
-funções intermediarias nos processos do Linux de forma a fornecer os devidos
-mecanismos para que o driver possa executar as ações solicitadas pelo espaço de
-usuário. Uma abordagem, pode ser a de atualizar a estrutura de dados referentes
-aos processos e inserir funções que interceptem a execução do processo durante
-a sua criação.
-
-% TODO: Discutir aplicações
