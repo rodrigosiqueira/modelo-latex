@@ -115,14 +115,39 @@ current OSes.
 
 \end{resumo}
 
+% Como as listas que se seguem podem não incluir uma quebra de página
+% obrigatória, inserimos uma quebra manualmente aqui.
+\makeatletter
+\if@openright\cleardoublepage\else\clearpage\fi
+\makeatother
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%% LISTAS DE FIGURAS ETC. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Todas as listas são opcionais; Usando "\chapter*" elas não são incluídas
 % no sumário. As listas geradas automaticamente também não são incluídas
 % por conta das opções "notlot" e "notlof" que usamos mais acima.
 
-% Listas criadas manualmente
-\chapter*{Lista de Abreviaturas}
+% Normalmente, "\chapter*" faz o novo capítulo iniciar em uma nova página, e as
+% listas geradas automaticamente também por padrão ficam em páginas separadas.
+% Como cada uma destas listas é muito curta, não faz muito sentido fazer isso
+% aqui, então usamos este comando para desabilitar essas quebras de página.
+% Se você preferir, comente as linhas com esse comando e des-comente as linhas
+% sem ele para criar as listas em páginas separadas. Observe que você também
+% pode inserir quebras de página manualmente (com \clearpage, veja o exemplo
+% mais abaixo).
+\newcommand\disablenewpage[1]{{\let\clearpage\relax\let\cleardoublepage\relax#1}}
+
+% Nestas listas, é melhor usar "raggedbottom" (veja basics.tex). Colocamos
+% a opção correspondente e as listas dentro de um par de chaves para ativar
+% raggedbottom apenas temporariamente.
+{
+\raggedbottom
+
+%%%%% Listas criadas manualmente
+
+%\chapter*{Lista de Abreviaturas}
+\disablenewpage{\chapter*{Lista de Abreviaturas}}
+
 \begin{tabular}{rl}
   MMP      & Mondrian Memory Protection\\
   PD       & Protection Domain\\
@@ -138,11 +163,6 @@ current OSes.
   USP      & Universidade de São Paulo
 \end{tabular}
 
-% Normalmente, "\chapter*" faz o novo capítulo iniciar em uma nova página.
-% Como cada uma destas listas é muito curta, não faz muito sentido fazer
-% isso aqui. "\let\clearpage\relax" é um "truque sujo" para temporariamente
-% desabilitar a quebra de página.
-
 %\chapter*{Lista de Símbolos}
 %{\let\cleardoublepage\relax \addvspace{55pt plus 15pt minus 15pt} \chapter*{Lista de Símbolos} }
 %\begin{tabular}{rl}
@@ -151,12 +171,23 @@ current OSes.
 %        $\Psi$      & Transformada de Fourier de $\psi$\\
 %\end{tabular}
 
-% Listas criadas automaticamente
+% Quebra de página manual
+\clearpage
+
+%%%%% Listas criadas automaticamente
+
 %\listoffigures
-{\let\cleardoublepage\relax \addvspace{55pt plus 15pt minus 15pt} \listoffigures }
+\disablenewpage{\listoffigures}
 
 %\listoftables
-{\let\cleardoublepage\relax \addvspace{55pt plus 15pt minus 15pt} \listoftables }
+\disablenewpage{\listoftables}
+
+% Esta lista é criada "automaticamente" pela package float quando
+% definimos o novo tipo de float "program" (em utils.tex)
+%\listof{program}{\proglistname}
+\disablenewpage{\listof{program}{\proglistname}}
+
+} % Final de "raggedbottom"
 
 % Sumário (obrigatório)
 \tableofcontents
