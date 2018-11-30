@@ -264,7 +264,7 @@ hardware e do SO de forma a controlar todo acesso com a menor granularidade
 possível. Indiretamente, o shreds e o mondrix são propostas de
 \textbf{desacoplamento do controle de memória}.
 
-\section{Atomize: Um Modelo Teórico Para a Próxima Geração de Abstrações de Processos}
+\section{Bead: Um Modelo Teórico Para a Próxima Geração de Abstrações de Processos}
 
 Este trabalho consiste em analisar os impactos do desacoplamento das abstrações
 de processos em SOs modernos e em destacar as características mais relevantes
@@ -294,7 +294,9 @@ processo não é mais um bloco sólido e indivisível, essa possui um leve grau 
 desacoplamento uma vez que no passado notou-se a vantagem em se desacoplar o PC
 e a Stack possibilitando múltiplos fluxos de execução no mesmo processo
 (threads). Seguindo esse raciocínio e buscando avançar o modelo atual,
-apresentamos o \textbf{atomize} que consiste em um modelo que busca um elevado
+apresentamos o modelo \textbf{bead}\footnote{\emph{Bead} em português,
+refere-se as pequenas bolas que compõem um colar ou pulseira. Normalmente,
+existe uma ampla variedade de tais objetos} que consiste em buscar um elevado
 grau de desacoplamento dos elementos da abstração de processos.
 
 Como apresentado na Seção \ref{sec:potenciais}, para que os desacoplamentos
@@ -325,7 +327,8 @@ modernas.
   \label{fig:decomposicao_proc}
 \end{figure}
 
-\subsection{A API Atomize}
+\subsection{A API Bead}
+\label{sec:api}
 
 Em termos de API e implementação, queremos manter os critérios para adoção
 descritos na Seção \ref{sec:potenciais} e ao mesmo tempo fornecer uma poderosa
@@ -342,7 +345,7 @@ também facilitar futuras expansões no modelo.
 Como mostrado no Capítulo \ref{cap:trabalhos-analisados}, cada proposta de
 extensão na abstração de processo sugere uma API para o seu contexto
 específico. Nesse sentido, buscamos aprender as técnicas utilizadas pelos
-trabalhos anteriores e combinamos as principais chamadas dentro do atomize. A
+trabalhos anteriores e combinamos as principais chamadas dentro do bead. A
 seguir apresentamos as operações fornecidas, uma breve descrição sobre o seu
 comportamento  e o trabalho na qual foi derivada.  Note que o conjunto dessas
 operações pode ser abstraída para uma biblioteca no espaço do usuário e que a
@@ -350,7 +353,59 @@ combinação das várias operações possibilita de modelos de programação
 (discutiremos padrões de utilização na próxima seção). 
 
 \begin{description}
-  \item [\texttt{NEW\_CONTEXT\_INSTANCE}:]
+  \item [\texttt{BEAD\_SET\_CONFIG}:]
+
+Essa operação atua diretamente nas configurações referentes as abstrações de
+processos. Ela espera que o programa indique explicitamente quais
+desacoplamentos utilizar, se nenhuma informação for passada assumi-se um
+conjunto de configurações padrão que é compatível com a maioria das aplicações
+atuais.
+
+  \begin{itemize}
+    \item \textbf{Parâmetros:}
+
+Espera uma estrutura de dados padrão que encapsule todas as informações
+referentes aos desacoplamentos desejados.
+
+    \item \textbf{Retorno:}
+
+Se todas as configurações solicitadas pelo usuário forem suportadas, então a
+função retorna o status 0. Se alguma das operações falhar, o status é um valor
+positivo construído por meio de manipulações binárias na qual cada bit
+significa uma falha que ocorreu\footnote{Definir o significado para cada bit,
+representa um nível de detalhe que pode varia de SO para SO. Por isso, não
+especificamos tais valores.}. 
+
+    \item \textbf{Referência:}
+
+Essa operação surge da necessidade de unificar as diversas propostas, por isso
+não tem uma referência direta a nenhum trabalho.
+
+	\end{itemize}
+
+  \item [\texttt{BEAD\_GET\_CONFIG}:]
+
+Essa operação atua recuperando as configurações referentes as abstrações de
+processos. 
+
+  \begin{itemize}
+    \item \textbf{Parâmetros:}
+
+Espera uma estrutura de dados padrão na qual utilizará para preencher as
+informações.
+
+    \item \textbf{Retorno:}
+
+Retorna 0 se tudo ocorrer como esperado, ou um valor negativo de status de
+erro.
+
+    \item \textbf{Referência:}
+
+Operação criada no contexto deste trabalho.
+
+	\end{itemize}
+
+  \item [\texttt{BEAD\_NEW\_CONTEXT\_INSTANCE}:]
 
 Essa chamada comporta-se de forma similar ao \texttt{fork()}, uma vez que essa
 faz uma cópia idêntica dos elementos do processo pai. Essa diferencia-se da
@@ -373,7 +428,7 @@ Chamada baseada no \texttt{lwCreate()} proposto pelo LwC.
 
   \end{itemize}
 
-  \item [\texttt{CONTEXT\_SWITCH}:]
+  \item [\texttt{BEAD\_CONTEXT\_SWITCH}:]
 
 Essa operação espera um descritor que referencie uma instância de um contexto
 que seja válida. Com base no descritor recebido, essa chamada transfere a
@@ -397,7 +452,7 @@ Chamada baseada no \texttt{lwSwitch()} proposto pelo LwC.
 
   \end{itemize}
 
-  \item [\texttt{VIRTUALIZATION\_MODE}:]
+  \item [\texttt{BEAD\_VIRTUALIZATION\_MODE}:]
 
 A chamada para essa operação faz com que o processo entre em modo de
 virtualização, i.e., faz uso dos recursos de virtualização disponíveis. Note
@@ -422,17 +477,102 @@ Chamada baseada no Dune.
 
   \end{itemize}
 
-  \item [\texttt{ALLOC\_COMPARTMENT\_MEMORY}:]
-  \item [\texttt{FREE\_COMPARTMENT\_MEMORY}:]
-  \item [\texttt{REGISTER\_TRANSFER\_CONTROL}:]
-  \item [\texttt{REGISTER\_TRANSFER\_ENTRY}:]
-  \item [\texttt{ENTER\_COMPARTMENT}:]
-  \item [\texttt{EXIT\_COMPARTMENT}:]
-  \item [\texttt{NEW\_EXECUTION\_CONTEXT}:]
-  \item [\texttt{SET\_GLOBAL\_CONFIG}:]
+  \item [\texttt{BEAD\_ALLOC\_COMPARTMENT\_MEMORY}:]
+  \item [\texttt{BEAD\_FREE\_COMPARTMENT\_MEMORY}:]
+  \item [\texttt{BEAD\_REGISTER\_TRANSFER\_CONTROL}:]
+  \item [\texttt{BEAD\_REGISTER\_TRANSFER\_ENTRY}:]
+  \item [\texttt{BEAD\_ENTER\_COMPARTMENT}:]
+  \item [\texttt{BEAD\_EXIT\_COMPARTMENT}:]
+  \item [\texttt{BEAD\_NEW\_EXECUTION\_CONTEXT}:]
 \end{description}
 
 \subsection{Padrões de Utilização}
+% TODO: ADEUS ATOMIZE, HELLO BEAD! Será que da para achar um significado legal
+% para cada letra de BEAD?
+As operações indicadas na Seção~\ref{sec:api} podem ser entendidas como funções
+ou constantes utilizadas para determinar o procedimento que deve ser
+feito\footnote{Entendemos que tal decisão deve ser tomada pelo próprio
+desenvolvedor}. Adotaremos uma abordagem na qual uma função chamada de
+\texttt{beadctl()} é responsável por receber uma constante que representa a
+operação solicitada pelo usuário. Por sua vez, tal função realiza o
+procedimento indicado. O Pseudocódigo~\ref{alg:ctlbead} ilustra uma possível
+implementação da função \texttt{beadctl()}, ao longo deste capítulo adotaremos
+tal função como padrão. Note que essa função comporta-se como um adaptador,
+chamado no espaço de usuário e que por sua vez faz o pedido direto para o
+Kernel (essa função é análoga ao IOCTL presente no Linux).
 
-\input{algorithm/syscall.tex}
+\input{algorithm/beadctl.tex}
+
+Para passar dados do espaço de usuário para o kernel (vice-versa), definimos
+uma estrutura de dados para realizar a troca de informações de forma
+padronizada.  Note que essa estrutura de dados nasce com o objetivo de
+simplificar as chamadas de função, unificar as diferentes propostas e a
+facilitar a comunicação.  O Pseudocódigo~\ref{alg:beadata} ilustra uma
+potencial estrutura de dados para realizar a troca informação do espaço de
+usuário para o kernel.
+
+\input{algorithm/bead_data.tex}
+
+Introduzimos nessa seção alguns dos possíveis padrões de utilização do
+\emph{bead}, nosso objetivo é ilustrar como tal API pode levar benefícios para
+as aplicações (principalmente em termos de novos modelos de programação).
+Apresentamos alguns usos elementares, mas que servirão de apoio para outros
+padrões mais sofisticados. Além de mostrar o pseudocódigo também discutimos o
+potência uso de determinado padrão em aplicações reais\footnote{vale observar
+que nem todos os padrões apresentado nesta seção tem aplicação direta nas
+aplicações atuais}.
+
+\subsubsection{Padrão Configuração}
+
+Uma das operações mais comuns presente nos trabalhos discutidos no
+Capítulo~\ref{cap:trabalhos-analisados} é a possibilidade de configurar certas
+funcionalidades, a maioria dos projetos realiza tal procedimento por meio de
+parâmetros passados para as funções. Dado que o \emph{bead} busca unificar as
+diversas propostas e ampliar a decomposição das abstrações de processos
+torna-se necessário um mecanismo simplificado para ajustes de configuração. O
+Pseudocódigo~\ref{alg:ctlbead} mostra a manipulação das operações
+\texttt{BEAD\_SET\_CONFIG} e \texttt{BEAD\_GET\_CONFIG}, essas tem por objetivo
+lidar com as diferentes opções de desacoplamentos do processo.
+
+A operação \texttt{BEAD\_SET\_CONFIG}, recebe uma estrutura de dados do tipo
+\texttt{bead\_data}. Por sua vez, tal estrutura deve ser preenchida no espaço
+de usuário de forma a conter as propriedades que o programador deseja explorar
+do desacoplamento de processos. Por exemplo, se o programador deseja utilizar
+recursos de virtualização e de desacoplamento da VAS ele pode preencher os
+campos \texttt{VITUALIZATION\_FLAGS} e \texttt{VAS\_FLAGS} da estrutura
+\texttt{bead\_data}, para em seguida chamar a função \texttt{beadctl()}
+passando tal informação como parâmetro. A opção \texttt{BEAD\_SET\_CONFIG} é
+uma operação de baixo nível, que vai preencher estruturas internas do Kernel
+referentes aos processos. Note que essa função pode ser chamada a qualquer
+momento durante a execução do processo tornando flexível o ajuste de algumas
+configurações.
+
+A operação \texttt{BEAD\_GET\_CONFIG} permite recuperar as configurações feitas
+nos processos. Se o programador não tiver feito nenhuma alteração, então o
+Kernel utiliza uma configuração padrão que é compatível com a abstração atual
+de processos\footnote{Isso permite manter a compatibilidade com as
+aplicações.}. Essa operação é de baixo nível e retorna uma estrutura de dados
+do tipo \texttt{bead\_data} preenchida pelo Kernel com as configurações atuais.
+
+\input{algorithm/ex_bead_config.tex}
+
+O Pseudocódigo~\ref{alg:exconfig} ilustra de forma geral o processo de
+utilização das operações de ajuste e recuperação da configuração. Repare que a
+estrutura \texttt{bead\_data} padroniza a comunicação entre o espaço de usuário
+o Kernel. Vale acrescentar, que esse tipo de operação pode ser facilmente
+encapsulada e explorada em bibliotecas no espaço do usuário (e.g.,
+\texttt{libead}).
+
+\subsubsection{Padrão Fotografia}
+
+O \emph{lwC} introduz a funcionalidade \emph{snapshot} (utilizaremos o termo
+fotografia como sinônimo), ela duplica as informações do processo de forma
+similar ao \texttt{fork()}. A principal diferença consiste no fato de que não é
+criado uma nova thread e nem um novo PID (para mais detalhes, veja
+Seção~\ref{sec:lwc}). Inspirado por tal funcionalidade, o \emph{bead} busca
+oferecer tal recurso com mais controle sobre a operação de fotografar o
+processo. O Pseudocódigo~\ref{alg:fotografia} ilustra o uso dessa operação.
+
 \input{algorithm/snapshot.tex}
+
+

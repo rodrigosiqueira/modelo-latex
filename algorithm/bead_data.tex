@@ -1,0 +1,17 @@
+\begin{pseudocode}
+
+\begin{lstlisting}[language=pseudocode, style=pseudocode]
+struct bead_data {
+  ENABLE_RECURSIVE_SNAPSHOT, // Total de fotografias recursivas, falso por padrão
+  MAX_SNAPSHOT_LEVEL, // Total de fotografias recursivas
+  TOTAL_OF_SNAPSHOT, // Total de fotografias tiradas
+  CTX_IDS[], // Estrutura de dados contendo as referências para os ids
+  VITUALIZATION_FLAGS, // Conjunto de flags de controle sobre quais recursos oferecer para o processo
+  VAS_FLAGS, // Conjunto de flags utilizada para controlar o desacoplamento da VAS
+}
+
+\end{lstlisting}
+
+  \label{alg:beadata}
+  \caption{Estrutura de dados utilizada pelo bead para troca de dados do espaço de usuário com o de kernel (vice-versa)}
+\end{pseudocode}

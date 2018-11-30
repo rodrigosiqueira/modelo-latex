@@ -143,3 +143,30 @@
   \renewcommand*\proglistname{List of Programs}
   \gdef\lstlistlistingname{List of Programs}
 }
+
+% Pseudocódigo
+\floatstyle{ruled}
+\ifcsdef{chapter}
+    {\newfloat{pseudocode}{htbp}{lop}[chapter]}
+    {\newfloat{pseudocode}{htbp}{lop}}
+\floatstyle{plain}
+\addto\extrasbrazil{
+  \floatname{pseudocode}{Pseudocódigo}
+  \gdef\lstlistingname{pseudocode}
+}
+\addto\extrasenglish{
+  \floatname{pseudocode}{Pseudocode}
+  \gdef\lstlistingname{Pseudocódigo}
+}
+
+% A lista de programas é criada automaticamente pela package float,
+% mas precisamos definir o nome da lista em cada língua
+\newcommand*\pseudocodelistname{List of Pseudocode}
+\addto\extrasbrazil{
+  \renewcommand*\pseudocodelistname{Lista de Pseudocódigo}
+  \gdef\lstlistlistingname{Lista de Pseudocódigo}
+}
+\addto\extrasenglish{
+  \renewcommand*\pseudocodelistname{List of Pseudocode}
+  \gdef\lstlistlistingname{List of Pseudocode}
+}
