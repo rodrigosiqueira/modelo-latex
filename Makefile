@@ -54,7 +54,7 @@ IMGFILES      := $(wildcard figuras/*)
 MISCFILES     := $(wildcard chapters/*) $(wildcard tables/*) $(wildcard algorithm/*)
 
 # Arquivos de nomes "$(ALL_TARGETS).$(TMP_EXTENSIONS)" sao apagados por "make clean"
-TMP_EXTENSIONS := bbl aux log toc cb out blg brf ilg ind lof lot idx bcf fls run.xml synctex.gz fdb_latexmk nav snm tdo vrb lop
+TMP_EXTENSIONS := bbl aux log toc cb out blg brf ilg ind lof lot idx bcf fls run.xml synctex.gz fdb_latexmk nav snm tdo vrb lop xpto
 
 
 ###############################################################################

@@ -1,28 +1,30 @@
 \begin{pseudocode}
 \begin{lstlisting}[language=pseudocode, style=pseudocode]
-function context_instance()
-  id $\gets$ beadctl(BEAD_NEW_CONTEXT_INSTANCE, NULL)
+function context_instance(value) // \label{line:fotografiaContextIntance}
+  id $\gets$ beadctl(BEAD_NEW_CONTEXT_INSTANCE, value) // \label{line:fotografiaNewCtx}
 
   if $id != -1$ then // Significa que está no processo que instânciou o novo contexto
     return id
-
+  // \label{line:fotografiaPosSwitch}
   struct bead_data bead
   beadctl(BEAD_GET_CONFIG, &bead)
 
-  if bead.enable_recursive_snapshot or $bead.total_of_snapshot < bead.max_snapshot_level$ then
+  // \label{line:fotografiaCheck}
+  if bead.enable_recursive_snapshot or
+     bead.total_of_snapshot < bead.max_snapshot_level then
     id_parent $\gets$ bead[0]
     close(id_parent)
     return context_instance()
 
   return NO_SWITCH
 
-function MAIN()
-  // ... código ...
+function MAIN() // \label{line:fotografiaMAIN}
+  // ... qualquer código ...
   struct bead_data bead;
   bead.enable_recursive_snapshot $\gets$ true
-  bead.ctx_ids[0] $\gets$ context_instace() // Ponto no código no qual é feito uma cópia
   beadctl(BEAD_SET_CONFIG, &bead)
-  // ... código ...
+  bead.ctx_ids[0] $\gets$ context_instace(NULL) // Ponto no código no qual é feito uma cópia
+  // ... qualquer código ...
   beadctl(BEAD_CONTEXT_SWITCH, &bead) // Troca o contexto de executação atual
   
 \end{lstlisting}

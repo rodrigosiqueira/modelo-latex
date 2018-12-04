@@ -1,0 +1,26 @@
+\begin{pseudocode}
+\begin{lstlisting}[language=pseudocode, style=pseudocode]
+function replace_segment(id, segment)
+  struct bead_data bead
+  bead.switch_option $\gets$ segment
+  beadctl(BEAD_SET_CONFIG, &bead)
+
+  beadctl(BEAD_SWITCH, id)
+
+function live_patch_handler(signal)
+  // Se estiver no processo de amostragem, cria um novo contexto persistente
+  if signal == SIG_SAMPLE then
+    id $\gets$ persistent_context()
+    exit
+  else // O processo que será atualizado
+    id $\gets$ open("PATH/FILE")
+    replace_segment(id, VAS_CODE)
+
+function MAIN() // \label{line:livePatch}
+  // ... qualquer código ...
+  sample_live_patch()
+\end{lstlisting}
+
+  \label{alg:livePatch}
+  \caption{Padrão Live Patch}
+\end{pseudocode}

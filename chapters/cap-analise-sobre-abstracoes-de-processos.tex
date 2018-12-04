@@ -528,8 +528,8 @@ Uma das operações mais comuns presente nos trabalhos discutidos no
 Capítulo~\ref{cap:trabalhos-analisados} é a possibilidade de configurar certas
 funcionalidades, a maioria dos projetos realiza tal procedimento por meio de
 parâmetros passados para as funções. Dado que o \emph{bead} busca unificar as
-diversas propostas e ampliar a decomposição das abstrações de processos
-torna-se necessário um mecanismo simplificado para ajustes de configuração. O
+diversas propostas e ampliar a decomposição das abstrações de processos,
+faz-se necessário um mecanismo simplificado para ajustes de configuração. O
 Pseudocódigo~\ref{alg:ctlbead} mostra a manipulação das operações
 \texttt{BEAD\_SET\_CONFIG} e \texttt{BEAD\_GET\_CONFIG}, essas tem por objetivo
 lidar com as diferentes opções de desacoplamentos do processo.
@@ -567,12 +567,81 @@ encapsulada e explorada em bibliotecas no espaço do usuário (e.g.,
 
 O \emph{lwC} introduz a funcionalidade \emph{snapshot} (utilizaremos o termo
 fotografia como sinônimo), ela duplica as informações do processo de forma
-similar ao \texttt{fork()}. A principal diferença consiste no fato de que não é
-criado uma nova thread e nem um novo PID (para mais detalhes, veja
-Seção~\ref{sec:lwc}). Inspirado por tal funcionalidade, o \emph{bead} busca
-oferecer tal recurso com mais controle sobre a operação de fotografar o
-processo. O Pseudocódigo~\ref{alg:fotografia} ilustra o uso dessa operação.
+similar ao \texttt{fork()}. O \texttt{snapshot()} diferencia-se do
+\texttt{fork()} uma vez que ele não cria uma nova thread e nem um novo PID
+(para mais detalhes, veja Seção~\ref{sec:lwc}). Inspirado por tal
+funcionalidade, o \emph{bead} busca oferecer esse recurso mas com a
+possibilidade de ter maior controle sobre a operação de fotografar o processo.
+O Pseudocódigo~\ref{alg:fotografia} ilustra o uso dessa operação.
 
 \input{algorithm/snapshot.tex}
 
+A Linha~\ref{line:fotografiaMAIN} do Pseudocódigo~\ref{alg:fotografia}
+representa o ponto de início de um programa qualquer. Como indicado no
+comentário, várias operações podem ser realizadas antes de tirar uma fotografia
+do estado do processo, i.e., o processo atinge um estado qualquer sem a
+influencia do \emph{bead}. O programador deve decidir em qual momento do
+processo ele quer tirar uma fotografia do estado, então ele da início a tal
+tarefa seguindo a semântica introduzida pelo \emph{bead}. Ainda na função
+\texttt{MAIN()}, repare que o desenvolvedor pode configurar detalhes da
+operação de fotografar o estado para que essa seja recursiva ou não\footnote{O
+programador pode definir quantas vezes ele quer repetir o processo de
+fotografar de forma similar a um \emph{loop}.}. A operação de fazer uma cópia
+do processo começa no momento que a função \texttt{context\_instance()} é
+chamada.
 
+A função \texttt{context\_instance()} na
+Linha~\ref{line:fotografiaContextIntance} é responsável pela operação de criar
+e salvar a cópia do estado. Ela começa realizando uma chamada para a função
+\texttt{beadctl()} passando a solicitação da operação de
+\texttt{BEAD\_NEW\_CONTEXT\_INSTANCE}, no momento que essa chamada termina uma
+cópia do estado atual do processo é feita. Note que o valor do \texttt{id} muda
+de acordo com o processo a thread principal do processo. Se a thread do processo estiver no
+processo pai (aquele que chamou \texttt{context\_instance()}) então o
+\texttt{id} será um identificador da fotografia do processo; do contrário, ele
+receberá -1. Na primeira execução a função vai retornar o \texttt{id} para a
+função \texttt{MAIN()} que por sua vez vai prosseguir com a sua execução
+normalmente. Contudo, quando a Linha~\ref{line:fotografiaPosSwitch} for
+atingida ocorrerá a troca do estado atual do processo para o estado
+anteriormente fotografado. Logo que a troca de estados acontecer, a
+Linha~\ref{line:fotografiaNewCtx} retornará -1 uma vez que a execução do
+processo acontecerá dentro do estado anterior; o código da
+Linha~\ref{line:fotografiaPosSwitch} em diante passa a executar.
+
+A Linha~\ref{line:fotografiaCheck} ilustra como a troca de contexto pode ser
+feita de forma recursiva ou limitada por um determinado número de chamadas. Se
+as condições do \texttt{if} forem atendidas, então recupera-se o \texttt{id} do
+pai para em seguida remover as informações do estado por meio da função
+\texttt{close()}. Por fim a função \texttt{context\_instance()} é chamada
+recursivamente e uma nova fotografia do processo é tirada. Se a condição do
+\texttt{if} falhar, então a troca de contexto encerra retornando
+\texttt{NO\_SWITCH} para o espaço de usuário, por sua vez, a aplicação pode
+realizar o tramamento que julgar necessário com base no retorno.
+
+\subsubsection{Padrão Virtualização Controlada}
+
+O padrão virtualização controlada nasce do projeto Dune como uma forma especializada do chamado \emph{Dune Mode}.Nesse contexto, quando um processo em execução desejava entrar em \emph{modo Dune} ele fazia uma chamada de sistemas e o processo irreversivelmente passava a executar utilizando os recursos de virtualização (para mais detalhes, veja~\ref{sec:dune}). Inspirado por tal funcionalidade e buscando levar o maior desacoplamento possível para a abstração de processos, o \emph{bead} implementa o modo similiar ao do Dune mas que é passível de controle fino. Veja o Pseudocódigo~\ref{alg:virtMode} ilustrando tal forma de utilização.
+
+\input{algorithm/virt_mode.tex}
+
+O Pseudocódigo~\ref{alg:virtMode} começa a sua execução na Linha~\ref{line:virtMAIN}, repare que qualquer tipo de código pode ser executado até que o processo decida executar em mode de virtualização. A Linha~\ref{line:virtModeCall} ilustra uma chamada para a função \texttt{virtualization\_mode()}, essa espera um ponteiro para a função que será executada em modo de virtualização ou NULO. Na Linha~\ref{line:exFuncHook} temos uma ilustração de como poderia ser o protótipo da função; esse é apenas um exemplo para a demonstração de uso, em uma implementação real tal protótipo de função pode conter diversos parâmetros ou formas. Quando a função \texttt{virtualization\_mode()} começa a executar, a primeira tarefa dela consiste em configurar os parâmetros de virtualização como pode ser visto da Linha~\ref{line:confBegin} até a linha~\ref{line:confEnd}. Os parâmetros de virtualização podem ser o mais variado possível, dependendo de qual recurso que se quer compartilhar (não definimos esse nível de compartilhamento, pois pode haver diversas formas de implementar tal recurso). Por padrão, vamos supor que o processo quer compartilhar todos os recursos.
+
+Na Linha~\ref{line:instance} é feita uma cópia do estado atual do processo, se tudo ocorrer bem o \emph{bead} entra em modo de virtualização nas linhas subsequentes. Repare na Linha~\ref{line:funcParam} que é feito uma verificação no ponteiro da função passada por parâmetro, isso faz com que essa função assuma duas formas de execução diferente. Se um ponteiro para função for passado, ela executará em modo virtualização e ao final da execução ocorrerá um retorno para o estado anterior da aplicação~\ref{line:backState}. Em seguida, no estado restaurado, o \emph{else} da Linha~\ref{line:virtModeElse} será executado de forma a desabilitar as funcionalidade de virtualização e retornar um código de fim da operação (\texttt{VM\_OPERATION\_END}). Se \texttt{virtualization\_mode()} receber um ponteiro nulo para a função, significa que o programador quer que todo o processo execute em modo de virtualização (similar ao modo Dune).
+
+\subsubsection{Padrão Persistência}
+
+Parte do padrão persistência nasce indiretamente da proposta do MVAS, na qual permite que um processo tenha múltiplas VAS que por sua vez persistem além do tempo de execução padrão do processo. Nesse contexto, o \emph{bead} fornece um mecanismo similar na qual o contexto do processo pode ser salvo como somente para leitura e assim ser usado como base por outros processos do mesmo tipo. O Pseudocódigo~\ref{alg:persistencia} ilustra de maneira geral o comportamento desse padrão, note que por questão de simplicidade nos representamos duas execuções diferentes de processos no mesmo lugar (ilustrado na Linha~\ref{line:persistenciaMain1} e \ref{line:persistenciaMain2}).
+
+\input{algorithm/persistencia.tex}
+
+Na Linha~\ref{line:persistenciaMain1} do Pseudocódigo~\ref{alg:persistencia}, temos o processo que criará um novo contexto persistente, isto é, o contexto do processo viverá além do tempo de execução do processo que o criou. O primeiro passo da função consiste em realizar a configuração sobre o contexto que será criado, pr isso é preciso passar duas flags especificas: \texttt{SHARED} e \texttt{PERSISTENT}. A combinação dessas duas flags, faz com que o bead crie um contexto persistente gerenciado pelo núcleo do SO que pode ser utilizado por outras aplicações. Note que o SO deve armazenar diversas informações para garantir a consistência na execução de outro processo que execute utilizando o contexto persistente. Na Linha~\ref{line:persistenciaCxtInstance}, notamos que foi passado uma variável \texttt{data} para a função \texttt{context\_instance()}, isso é feito uma vez que um identificador especial é criado e salvo em \texttt{data}. O processo pode passar o identificador da maneira que achar melhor, no exemplo, simplesmente salvamos em um arquivo.
+
+Quando o novo processo indicado na Linha~\ref{line:persistenciaMain2} inicia, ele abre o arquivo contendo o identificador e recupera o valor. Em seguida, a operação de troca de contexto é feita utilizando o valor carregado.
+
+\subsubsection{Padrão Atualização em Tempo Real}
+
+O padrão de atualização em tempo real, ou simplesmente \emph{live-patch}, nasce da combinação da técnica de criação de contexto persistente e das ideias de desacoplamento da VAS. A ideia do \emph{live patching} já existe e consite em aplicar patches sem desligar/reiniciar o sistema; o Kernel Linux já tem suporte a tal funcionalidade, mas o desafio de aplicar esse tipo de atualização em aplicações no espaço do usuário ainda é um desafio. Dado que o desacoplamento dos processos oferecem diversos recursos e novos modelos de programação, introduzimo uma possível alternativa para implementar \emph{live-patching} no espaço de usuário. Para isso, o \emph{bead} faz uso de algumas das ideias já apresentadas em conjunto com o conceito de desacoplamento da VAS apresentado pelo MVAS. Contudo,o \emph{bead} leva o nível de controle do desacoplamento da VAS para outro nível uma vez que permite o controle fino sobre cada elemento da VAS.
+
+\subsubsection{Padrão Recuperação}
+
+% TODO: ACESSOS A MEMÓRIA
