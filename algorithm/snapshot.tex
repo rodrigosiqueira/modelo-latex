@@ -8,7 +8,6 @@ function context_instance(value) /// \label{line:fotografiaContextIntance}
   /// \label{line:fotografiaPosSwitch}
   struct bead_data bead
   beadctl(BEAD_GET_CONFIG, &bead)
-
   /// \label{line:fotografiaCheck}
   if bead.enable_recursive_snapshot or
      bead.total_of_snapshot < bead.max_snapshot_level then

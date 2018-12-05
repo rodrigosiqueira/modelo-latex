@@ -181,12 +181,11 @@ comportamento básico das \emph{threads} por meio de uma biblioteca chamada de
 recebe um ponteiro genérico, converte esse para um tipo \texttt{char *} e
 mostra o valor no final.
 
+\begin{ruledcaption}{Exemplo simples de threads\label{lst:simplethreads}}
 \lstinputlisting[
                  language=C,
-                 caption={Exemplo simples de threads},
-                 label={lst:simplethreads}
                 ]{code/simpleThread.c}
-
+\end{ruledcaption}
 
 A função \texttt{main()} declara duas variáveis do tipo \texttt{pthread\_t},
 que são responsáveis por manter as informações referentes as \emph{threads}.
@@ -208,17 +207,11 @@ duas \emph{threads} executam em paralelo, evidenciada pela sequência não
 determinística da saída. A diferença na sequência é explicada pela variação
 imposta pelo escalonador.
 
-\begin{lstlisting}[frame=single,
-                   language=bash,
-                   caption={Saída do exemplo de threads},
-                   label={lst:simpleThreadOutput}]
-$ ./example 
-Thread 1 
-Thread 2
-$ ./example
-Thread 2 
-Thread 1
-\end{lstlisting}
+\begin{ruledcaption}{Saída do exemplo de threads\label{lst:simpleThreadOutput}}
+\lstinputlisting[
+    language=bash,
+    ] {code/output.sh}
+\end{ruledcaption}
 
 Vamos analisar com um pouco mais de detalhes como o SO trata o
 Código~\ref{lst:simplethreads} durante a sua execução, veja a
