@@ -3,49 +3,47 @@
 \label{cap:introducao}
 
 Sistemas Operacionais (SO) são projetos de software considerados grandes e
-complexos, cada uma das suas partes é perfeitamente definida baseada nas
-entradas, saídas e funcionalidades \citep{silberschatz}. Coletivamente, essas
+complexos em que cada uma das suas partes é \hltodo[perfeitamente]{prefiro ``estritamente''; nada é perfeito} definida baseada nas
+entradas, saídas e funcionalidades esperadas \citep{silberschatz}. Coletivamente, essas
 partes representam um conjunto de abstrações construídas sobre o hardware
 (e.g., processadores, memórias e dispositivos de armazenamento) para fornecer
-recursos para os usuários. Dentre os conceitos empregados pelos SOs modernos
-destacam-se os processos, escalonadores, gerenciadores de memória, sistemas de
-arquivo, dentre outros, esses oferecem mecanismos para que as aplicações de
-usuários utilizem os recursos de hardware~\citep{tanenbaum}.
+recursos para os usuários --- tanto desenvolvedores de aplicações quanto usuários finais. Dentre os conceitos empregados pelos SOs modernos
+destacam-se processos, escalonadores, gerenciadores de memória, sistemas de
+arquivo, \hltodo[oferecem mecanismos para que as aplicações de
+usuários utilizem os recursos de hardware]{meio repetido com o que veio antes}~\citep{tanenbaum}.
+
+\todo[inline]{Aqui acho que é importante frisar \emph{por que} vale a pena melhorar a abstração de processos; não precisa ser algo longo, mas o próximo parágrafo está resumido demais}
 
 Uma das abstrações mais antigas fornecida pelos SOs é o conceito de
-\textit{processos}. Este dá a noção de virtualização do processador, pois
-oferecendo a ilusão de múltiplos programas executando
+\textit{processos}. Estes dão a noção de virtualização do processador, pois
+oferecem a ilusão de múltiplos programas executando
 simultaneamente~\citep{love, tanenbaum}. Essa abstração evolui continuamente
-para atender as demandas de hardware, segurança, escalabilidade, modelos de
+para atender às demandas de \hltodo[hardware]{``novos'' hardwares, precisa explicar melhor; esta frase inteira, na verdade, podia aumentar um pouco}, segurança, escalabilidade, modelos de
 programação e desempenho.
-
-Uma das abstrações mais antigas fornecida pelos SOs é o conceito de
-\textit{processos}. Este dá a noção de virtualização do processador, pois
-oferecendo a ilusão de múltiplos programas executando
-simultaneamente~\citep{love, tanenbaum}. Essa abstração evolui continuamente
-para atender as novas demandas de hardware, segurança, escalabilidade, modelos
-de programação e desempenho.
 
 Infelizmente, melhorar a abstração de processos para atender novos requisitos é
 uma tarefa delicada. Em um SO voltado para produção (e.g., GNU/Linux e
 FreeBSD), uma mudança incorreta na abstração de processos pode comprometer
-completamente a estabilidade SO e consequentemente afetar diversos sistemas em
-todo o mundo. Portanto, identificar e implementar novos atributos dentro dos
-processos normalmente demanda muito esforço; portanto, raramente esses  são
-adotados fora de alguns poucos contextos da comunidade científica. Dessa
+completamente a estabilidade do SO e, consequentemente, afetar diversos sistemas em
+todo o mundo. Assim, identificar e implementar novos atributos dentro dos
+processos normalmente demanda muito esforço e, portanto, raramente esses são
+adotados fora de alguns poucos contextos na comunidade científica. Dessa
 maneira, para tornar as pesquisas nessa área mais robustas e com maior
-potencial de adoção por parte dos principais SOs, novas propostas tipicamente
-precisarão/precisam abordar três aspectos: apresentar uma implementação viável,
+potencial de adoção por parte dos SOs mais amplamente utilizados, novas propostas tipicamente
+precisam abordar três aspectos: apresentar uma implementação viável,
 medir o desempenho e demonstrar benefícios para as aplicações.
 
-Inspirado pelas diversas propostas de novas extensões nas abstrações de
+Inspirados pelas diversas propostas de novas extensões nas abstrações de
 processos sugeridas pela academia nas últimas décadas, nós buscamos
-investiga-las com objetivo de compilar o estado da arte verificando
-características interessantes para os SOs usados em produção. Além disso,
-examinamos as diferentes pesquisas sob a perspectiva das abstrações de
-processos excluindo outros aspectos eventualmente introduzido pelos
-pesquisadores. Para facilitar a compreensão dos diversos trabalhos, nós
-classificamos as abordagens utilizadas em uma das três categorias:
+investigá-las com o objetivo de compilar o estado da arte verificando
+características interessantes para os SOs usados em produção. Dado
+o foco pretendido nas abstrações relativas a processos, examinamos
+as diferentes pesquisas excluindo outros aspectos eventualmente introduzido pelos
+pesquisadores.
+
+\todo[inline]{Até aqui foi um assunto (``sistemas operacionais são importantes, processos são uma abstração importante então vamos investigar as novidades nessa área''). Agora vem outra coisa: ``há três tipos de trabalhos por aí que normalmente se auto-avaliam em duas fases: (1) com microbenchmarks e (2) com uma aplicação de exemplo''. Acho que cai bem criar uma subseção aqui explicando essa ideia}
+
+Nós classificamos as abordagens utilizadas em três categorias:
 
 \begin{description}
 \item [Implementação Estrutural Pesada]
@@ -59,10 +57,10 @@ mas \textbf{evitando mudanças diretas no núcleo};
 
 \item [Implementação Independente]
 
-consiste na criação de um SO totalmente novo e sem qualquer dependência.
+consiste na criação de um SO totalmente novo \hltodo[e sem qualquer dependência]{Não entendi}.
 Normalmente este tipo de trabalho introduz inovações em diferentes áreas,
-contudo, neste texto estamos interessados nas propostas relacionadas as
-abstrações de processos;
+contudo, neste texto estamos interessados nas propostas relacionadas às
+abstrações de processos.
 
 \end{description}
 
@@ -74,26 +72,29 @@ integrar com SOs de uso cotidiano.
 
 Depois que uma implementação se torna funcional, os pesquisadores comumente
 utilizam um conjunto de \emph{microbenchmarks}\footnote{Medições feitas em
-pequenos pedaços da aplicação} para avaliar o desempenho das suas propostas. A
+pequenos pedaços da aplicação} \todo{Acho que não concordo com essa definição de microbenchmark!} para avaliar o desempenho das suas propostas. A
 peculiaridade de cada trabalho é evidenciada na grande pluralidade de
 estratégias de \emph{microbenchmarks} encontrada em diversos artigos.
 De forma geral, os cientistas selecionam um conjunto de procedimentos para mostrar
 os prós e contras da sua abordagem. Contudo, identificar um bom conjunto de
 \emph{microbenchmarks} que comprove um comportamento particular é uma tarefa
-que requer certa experiência por parte do pesquisador. Todavia, o uso de
-\textit{microbenchmarks} como forma de comprovação de algum resultado é
-perigoso uma vez que pode induzir o pesquisador a acreditar em um resultado
-positivo negligenciando outros potenciais impactos.
+que requer certa experiência por parte do pesquisador.
 
-Por fim, para validar as propostas e verificar o impacto delas em um cenário
+O uso de
+\textit{microbenchmarks} como forma de comprovação de algum resultado serve
+como indicador parcial de bons resultados mas pode ser perigoso, uma vez que pode induzir o pesquisador a acreditar em um resultado
+positivo negligenciando outros potenciais impactos. Assim,
+para validar as propostas e verificar o impacto delas em um cenário
 minimamente realista, os pesquisadores comumente selecionam uma aplicação
 utilizada em certos contextos para testar as modificações feitas. No entanto,
 selecionar um software para realização de testes representa uma tarefa
-complicada devido a característica singular de cada aplicação. Por exemplo, um
+complicada devido às características singulares de cada aplicação. Por exemplo, um
 software pode utilizar muita memória e consumir boa parte dos recursos da CPU,
 o que é desejável para demonstrar o uso de novas abstrações de processos em uma
-situação de estresse. Ainda assim, pode não revelar nada de útil relacionada a
+situação de estresse. Ainda assim, pode não revelar nada de útil relacionado a
 melhorias de segurança.
+
+\todo[inline]{Aqui temos uma nova subseção, que é ``objetivos'' ou algo assim: ``dado que processos são legais e que temos um entendimento de como as pesquisas na área são feitas, perguntamos e respondemos isto aqui''.}
 
 No cenário atual notamos uma falta de unificação e validação das diferentes
 propostas de mudanças nas abstrações dos processos, aspectos esses que são
@@ -104,31 +105,29 @@ proposta visa resolver e os impactos gerais no SO. Fizemos essa avaliação por
 meio da análise de 15 trabalhos, onde buscamos responder as seguintes
 perguntas:
 
-Dos 15 trabalhos que analisamos, a maior parte faz uso de SOs baseados no Kernel do Linux. Por isso, no Capítulo 2 descreveremos conceitos mais aplicáveis ao Linux que aos outros SOs disponíveis.
-
 \begin{quote}
- \item \textit{RQ1:.} "Quais são as características desejáveis para a próxima geração de abstrações de processos?"
- \item \textit{RQ2:.} "Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?"
- \item \textit{RQ3:.} "Quais aplicações podem ser utilizadas para avaliar as nova abstração adicionadas ao SO?"
- \item \textit{RQ4:.} "Qual conjunto de \emph{microbenchmark} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada para as abstrações de processos?"
+ \item \textit{RQ1:.} ``Quais são as características desejáveis para a próxima geração de abstrações de processos?''
+ \item \textit{RQ2:.} ``Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?''
+ \item \textit{RQ3:.} ``Quais aplicações podem ser utilizadas para avaliar as nova abstração adicionadas ao SO?''
+ \item \textit{RQ4:.} ``Qual conjunto de \emph{microbenchmark} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada para as abstrações de processos?''
 \end{quote}
 
-Dos 15 trabalhos que analisamos, a maior parte faz uso de SOs baseados em
-Kernel Linux. Por isso, no Capítulo~\ref{cap:fundamentacao} descreveremos
-conceitos mais aplicáveis ao Linux que aos outros SOs disponíveis. Para
+Dos 15 trabalhos que analisamos, a maior parte faz uso de SOs baseados no
+Kernel Linux. Por isso, no Capítulo~\ref{cap:fundamentacao} \hltodo[descreveremos
+conceitos mais aplicáveis ao Linux que aos outros SOs disponíveis]{Não entendi e não sei se parece boa ideia}. Para
 responder a questão RQ1, identificamos as principais características propostas
-por vários pesquisadores e extraímos o conceito central dos vários trabalhos,
+por vários pesquisadores e extraímos o conceito central desses vários trabalhos,
 descritos no Capítulo \ref{cap:trabalhos-analisados} e
 \ref{cap:analise-sobre-abstracoes-de-processos}. Para responder a RQ2,
-investigamos diferentes técnicas de implementação, descritas no Capítulo
-\ref{cap:trabalhos-analisados}. Para responder RQ3, extraímos dos trabalhos uma
+investigamos \hltodo[diferentes técnicas de implementação]{acho que aqui poderia citar novamente o lance da divisão em três categorias}, descritas no Capítulo
+\ref{cap:trabalhos-analisados}. Para responder a RQ3, extraímos dos trabalhos uma
 coleção de programas que podem se beneficiar das modificações, levando
-vantagens para o usuário final (Capítulo \ref{cap:validacoes}). Para responder
+vantagens para o usuário final (Capítulo \ref{cap:validacoes}). Para responder a
 RQ4, nós analisamos diversos \emph{microbenchmarks} utilizados pelos
 pesquisadores e selecionamos um subconjuntos de características uteis para
 avaliar uma proposta (Capítulo \ref{cap:validacoes}). Combinando o resultado
-das quatro perguntas de pesquisa, derivamos um conjunto de propriedades
-desejáveis para a próxima geração de abstrações de processos. Por fim, no
+das quatro perguntas de pesquisa, \hltodo[derivamos um conjunto de propriedades
+desejáveis para a próxima geração de abstrações de processos]{Mas isso é exatamente a RQ1!}. Por fim, no
 Capítulo \ref{cap:analise-sobre-abstracoes-de-processos}, discutimos um novo
 horizonte para a próxima geração de abstrações de processos com o objetivo de
-tentar auxiliar na construção de um novo modelo.
+auxiliar na construção de um novo modelo.
