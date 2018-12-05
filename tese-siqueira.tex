@@ -215,6 +215,12 @@
 %
 % Um anexo é um documento que não é de sua autoria mas que é relevante para
 % a tese; por exemplo, a especificação do padrão que o trabalho discute.
+% Os comandos appendix e annex reiniciam a numeração de capítulos e passam
+% a numerá-los com letras. Como os anteriores, eles não existem na classe
+% "article". Além disso, "annex" não faz parte de nenhuma classe padrão,
+% ele foi definido em miolo-preambulo.tex. Se o trabalho não tiver apêndices
+% ou anexos, remova.
+
 % Apêndices
 %\appendix
 %
@@ -230,6 +236,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SEÇÕES FINAIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Aqui vão a bibliografia, índice remissivo e outras seções similares.
+
+% Espaço adicional no sumário antes das referências / índice remissivo
+\addtocontents{toc}{\vspace{2\baselineskip plus .5\baselineskip minus .5\baselineskip}}
+
 % O comando backmatter desabilita a numeração de capítulos e também não existe
 % na classe "article".
 \backmatter

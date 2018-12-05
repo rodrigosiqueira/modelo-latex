@@ -1,15 +1,15 @@
 \begin{pseudocode}
 \begin{lstlisting}[language=pseudocode, style=pseudocode]
-function context_instance(value) // \label{line:fotografiaContextIntance}
-  id $\gets$ beadctl(BEAD_NEW_CONTEXT_INSTANCE, value) // \label{line:fotografiaNewCtx}
+function context_instance(value) /// \label{line:fotografiaContextIntance}
+  id $\gets$ beadctl(BEAD_NEW_CONTEXT_INSTANCE, value) /// \label{line:fotografiaNewCtx}
 
   if $id != -1$ then // Significa que está no processo que instânciou o novo contexto
     return id
-  // \label{line:fotografiaPosSwitch}
+  /// \label{line:fotografiaPosSwitch}
   struct bead_data bead
   beadctl(BEAD_GET_CONFIG, &bead)
 
-  // \label{line:fotografiaCheck}
+  /// \label{line:fotografiaCheck}
   if bead.enable_recursive_snapshot or
      bead.total_of_snapshot < bead.max_snapshot_level then
     id_parent $\gets$ bead[0]
@@ -18,7 +18,7 @@ function context_instance(value) // \label{line:fotografiaContextIntance}
 
   return NO_SWITCH
 
-function MAIN() // \label{line:fotografiaMAIN}
+function MAIN() /// \label{line:fotografiaMAIN}
   // ... qualquer código ...
   struct bead_data bead;
   bead.enable_recursive_snapshot $\gets$ true
@@ -29,6 +29,6 @@ function MAIN() // \label{line:fotografiaMAIN}
   
 \end{lstlisting}
 
-  \label{alg:fotografia}
   \caption{Padrão fotografia}
+  \label{alg:fotografia}
 \end{pseudocode}

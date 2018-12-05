@@ -9,25 +9,25 @@ function persistent_context()
   bead.enable_recursive_snapshot $\gets$ false
   beadctl(BEAD_SET_CONFIG, &bead)
 
-  id $\gets$ context_instance(&data) // \label{line:persistenciaCxtInstance}
+  id $\gets$ context_instance(&data) /// \label{line:persistenciaCxtInstance}
   save("PATH/FILE", id)
 
   return id
 
 // Primeira execução da função principal
-function MAIN() // \label{line:persistenciaMain1}
+function MAIN() /// \label{line:persistenciaMain1}
   // .. qualquer código ...
   persistent_context()
   // .. qualquer código ...
   exit 0
 
 // Execução de outra função principal
-function MAIN() // \label{line:persistenciaMain2}
+function MAIN() /// \label{line:persistenciaMain2}
   open("PATH/FILEID", value)
   beadctl(BEAD_SWITCH, value)
   
 \end{lstlisting}
 
-  \label{alg:persistencia}
   \caption{Padrão Persistência}
+  \label{alg:persistencia}
 \end{pseudocode}
