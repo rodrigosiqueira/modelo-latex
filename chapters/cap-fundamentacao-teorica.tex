@@ -1,19 +1,23 @@
 \chapter{Fundamentação Teórica}
 \label{cap:fundamentacao}
 
-Neste capítulo apresentamos uma breve introdução sobre as abstrações de
-processos e os vários temas que orbitam o conceito (threads, \emph{fork},
-representação na memória, virtualização, dentre outros). Introduzimos conceitos
+Neste capítulo apresentamos uma breve revisão sobre as \hltodo[principais]{Será que faz sentido?} abstrações de
+processos e outras indiretamente relacionadas (threads, \emph{fork},
+representação na memória, virtualização, dentre outros). \hltodo[Introduzimos conceitos
 que são \textbf{indiretamente} ligados as abstrações de processos, portanto não
 habitualmente explicitados na bibliografia padrão. Adicionalmente,
 procuramos evidenciar as relações entre alguns conceitos referentes aos SOs
-modernos que consideramos útil para a o contexto deste trabalho. Vale observar
-que a maioria dos conceitos apresentados nessa seção baseiam-se em sistemas
+modernos que consideramos útil para a o contexto deste trabalho.]{Acho que a primeira frase já disse tudo, não precisa disto}
+A maioria dos conceitos apresentados nessa seção são descritos com base em suas implementações em sistemas
 Unix (especialmente GNU/Linux) e no padrão POSIX.
+\todo{... no padrão POSIX \textbf{porque POSIX é o bicho, bem documentado, muito usado, blah blah}.}
 
-As informações apresentadas aqui são amplamente conhecidas e abordadas por
-diversas bibliografias já consagradas, dentre as quais utilizamos como base os
-seguintes livros:
+As informações apresentadas aqui representam a prática tradicional de sistemas
+operacionais e, portanto, são bem conhecidas, sendo objeto de estudo básico na
+formação em ciência da computação. Consequentemente, não nos aprofundamos nos
+aspectos discutidos para além do necessário para a compreensão das seções
+posteriores, pois há bastante material didático e de referência sobre o tema.
+Em particular, utilizamos como fundamentos para esta seção os seguintes livros:
 
 \begin{itemize}
   \item \textit{Operating system concepts}~\citep{silberschatz};
@@ -23,9 +27,9 @@ seguintes livros:
   \item \textit{Linux Kernel Development}~\citep{love}.
 \end{itemize}
 
-Por fim, tenha em mente que por uma questão prática apresentamos alguns
-conceitos teóricos sem nos aprofundarmos neles. O objetivo é alertar o leitor
-sobre alguns conceitos que facilitam a leitura deste trabalho.
+\todo[inline]{Aqui acho que merece uma introdução pra valer do conteúdo, tipo ``queremos melhorar a abstração de processos, então vamos descrever as principais abstrações que podem ser modificadas. Começamos com a descrição do processo de carga, representação na memória e controle de execução de um processo e, em seguida, falamos sobre as diferentes técnicas de gestão de memória, um tema muito importante por conta de blah (caches, memória compartilhada, não-volátil etc.). Discutimos também como o processo em execução interage com o SO, que é importante por causa de segurança, desempenho, blah. A seguir, observamos o papel do SO em fornecer a infraestrutura para diferentes modelos de programação, o que é importante por conta das buzzwords como sistemas distribuídos, IA, IoT, big data etc. Finalmente, abordamos dois temas tradicionalmente independentes de processos (controladores de dispositivos e virtualização) que, no entanto, possibilitam uns lances muito lokos aí tipo usar virtualização para separação de processos etc.''
+
+Também mudaria as subdivisões: você criou várias sub-seções para a parte de memória e, por isso, criou uma outra seção para ``o resto''. Mas na real acho que ``gerenciamento de memória'', ``chamadas de sistema'', ``trocas de contexto'' etc. são todas coisas que existem no mesmo nível, ou seja, ``gerenciamento de memória'' deveria estar dentro de ``aspectos gerais...'' junto com o resto. Eu criaria uma sub-seção separada para device drivers + virtualização, tipo ``outros babados fortes''.}
 
 \section{Uma Breve Jornada Sobre os Processos}
 \label{sec:processos-e-threads}
@@ -34,20 +38,19 @@ sobre alguns conceitos que facilitam a leitura deste trabalho.
 % carrega o executável, na etapa 2 o SO realiza a leitura e na tapa 3 ele utiliza
 % as informações para criar blabla
 
-Geralmente, programas são escritos em uma linguagem de programação específica
+\hltodo[Geralmente, programas são escritos em uma linguagem de programação específica
 (e.g., C/C++, Java, Python, Ruby, etc) e posteriormente convertidos para um
 conjunto de instruções que uma máquina é capaz de executar. O código fonte de
 uma aplicação é representado como um ou mais arquivos que são armazenados em um
 memória \emph{não-volátil} (e.g., disco rígido) e por sua vez podem ter relação
 com um ou mais arquivos executáveis (binários) gerados a partir do código
-fonte. O arquivo binário tem um conjunto de metadados \footnote{Descrição ou
-conjunto de características de um dado ou de um item.} presente logo no
-início do arquivo que auxilia o SO a executá-lo de forma correta, esses são
-inseridos pelo compilador e recebem o nome de cabeçalho (ou \textit{header}).
-Dado esse contexto, o SO carrega o executável do disco para a memória com o
-objetivo de criar um novo processo; em seguida o SO realiza a leitura dos
-metadados dentro do binário e utiliza tais informações para criar os segmentos
-de memórias pertencentes aos processos. Cada pedaço da memória tem um propósito
+fonte.]{Tudo isto não é relevante para explicar processos, então eu cortaria
+e começaria com ``O arquivo binário de um programa tem um conjunto de metadados...''} O arquivo binário tem um conjunto de metadados inseridos pelo compilador logo no
+início do arquivo (chamado cabeçalho (ou \textit{header}) que auxilia o SO a executá-lo de forma correta.
+Quando o SO carrega o executável do disco para a memória com o
+objetivo de criar um novo processo, ele realiza a leitura desses
+metadados e utiliza tais informações para criar os segmentos
+de memória pertencentes ao processo. Cada um desses segmentos tem um propósito
 específico que habilita o SO a gerir o processo.
 
 \begin{figure}[!h]
@@ -58,37 +61,38 @@ específico que habilita o SO a gerir o processo.
 \end{figure}
 
 A Figura~\ref{fig:memory_segment} ilustra seis segmentos de memória diferentes
-representando o layout de um processo após a criação dele por parte do SO (essa
-estrutura pode variar de acordo com a arquitetura). O \boldAndIndex{segmento de
-texto} (\emph{text segment}) representa a região da memória que mantém o código
-executável (compartilhável e apenas para leitura). Já o \boldAndIndex{segmento
-de dados inicializáveis} (\emph{initialized data segment}) é responsável por
-manter variáveis estáticas, enquanto o \boldAndIndex{segmento de dados não
-inicializados} (\emph{uninitialized data segment}) mantém variáveis estáticas
-não inicializadas\footnote{Vale observar que o segmento de dados não
+representando o layout típico de um processo após sua criação (essa
+estrutura \hltodo[pode variar]{Arquitetura de hardware ou do SO? Seria bom dizer qual é essa que está descrita} de acordo com a arquitetura). O \boldAndIndex{segmento de
+texto} (\emph{text segment}) representa a região da memória que mantém a
+cópia em memória do código
+executável (compartilhável e apenas para leitura). O \boldAndIndex{segmento
+de dados inicializados} (\emph{initialized data segment})
+e o \boldAndIndex{segmento de dados não
+inicializados} (\emph{uninitialized data segment})\footnote{O segmento de dados não
 inicializável também é comumente conhecido como \emph{block started by symbol
-(BSS)} por causa de um antigo operador usado pelos montadores \citep{gdb}.}.O
+(BSS)} por causa de um antigo operador usado pelos montadores \citep{gdb}.}
+são responsáveis pelas variáveis estáticas. O
 \boldAndIndex{segmento de mapeamento de memória} (\emph{memory mapping
 segment}) é a região na qual o SO mapeia arquivos diretamente na memória (e.g.,
 bibliotecas dinâmicas ou arquivos especificados pelo programador). O
-\boldAndIndex{segmento de pilha} (\emph{stack segment}) compreende aos dados
+\boldAndIndex{segmento de pilha} (\emph{stack segment}) compreende os dados
 usados pelo programa durante a execução, como por exemplo, valores de
-parâmetros de função, endereço de retorno e variáveis locais (dados
-temporários) \citep{silberschatz}.  Por fim, o \boldAndIndex{segmento do heap}
+parâmetros de função, endereços de retorno e variáveis locais (dados
+temporários) \citep{silberschatz}. Por fim, o \boldAndIndex{segmento do monte}
 mantém a memória dinamicamente alocada durante a execução do programa; repare
-que o \emph{stack} e o \emph{heap} estão em lados oposto da memória.
+que a \emph{stack} e o \emph{heap} estão em lados opostos da memória.
 
 O primeiro passo realizado pelo SO quando ele lê o arquivo executável é olhar
-para o \emph{header} e obter as informações sobre o tamanho do segmento de
-texto e dados. Em seguida, com base nas informações obtidas do \emph{header}, o
-SO cria um novo espaço de endereçamento (\emph{address space}) com tamanho de
-memória suficiente para os segmentos de texto e dados. Após alocar memória, o
-próximo passo consiste em copiar toda a região de código e dados lidas do
-arquivo binário para a memória recém alocada; em seguida é feita a
-inicialização de todos os registradores e os devidos ajustes no \emph{stack
+para o \emph{header}, obtendo as informações sobre o tamanho dos segmentos de
+texto e dados, e criar
+um novo espaço de endereçamento (\emph{address space}) com \hltodo[tamanho de
+memória suficiente para eles]{na verdade, é maior, não? Tem que ter o espaço da stack, do heap etc.}. O próximo passo consiste em alocar a memória inicialmente necessária
+e copiar toda a região de código e dados lidas do
+arquivo binário para essa memória recém alocada. Em seguida é feita a
+inicialização de todos os \hltodo[registradores]{Hmmm... ele não inicializa os registradores, mas sim uma estrutura de dados que corresponde aos registradores, não é isso? Provavelmente o melhor é mencionar o PCB, ``como veremos mais adiante''} e os devidos ajustes no \emph{stack
 pointer}\footnote{Um \emph{stack pointer} é um registrador que armazena o
-endereço da última requisição feita pelo programa para a \emph{stack}.}. O
-processo tem o seu \emph{program counter} (PC) ajustado para a função
+endereço da última requisição feita pelo programa para a \emph{stack}.} e no
+\emph{program counter} (PC), que é ajustado para a função
 \emph{main} do programa \citep{patterson}. Por fim, quando o SO termina de
 inicializar todos os elementos necessários para que o processo possa executar,
 ele insere o novo processo na fila do escalonador.
@@ -102,64 +106,59 @@ ele insere o novo processo na fila do escalonador.
 
 % TODO: Fazer uma ponte melhor do PC com a execução
 
-A \emph{stack} é organizada em uma coleção de \boldAndIndex{stack frames}, por
-sua vez, esses \emph{frames} são estruturas de dados inseridas no topo da
-\emph{stack} e que contém informações como o endereço de retorno da função,
+A \emph{stack} é organizada em uma coleção de \boldAndIndex{stack frames}, que
+são estruturas de dados inseridas no topo da
+\emph{stack} e que contêm informações como o endereço de retorno da função,
 argumentos recebidos, variáveis locais, dentre outros. Toda vez que uma função
 é chamada, uma nova estrutura de dados \emph{frame} é criada e preenchida com
-as informações relacionado a função. Um processo pode invocar um grande número
-de funções durante a sua execução e cada chamada cria um novo \emph{stack
-frame}. A Figura~\ref{fig:stack_frames} ilustra a alocação e desalocação de
-\textit{frames} em um simples programa~\citep{gdb}. No começo, só existe um
-\emph{stack frame} associado no topo da função \texttt{main}.  Quando uma
-função local é chamada, o SO vai alocar um novo \emph{stack frame} que é
-inserido logo após o \emph{frame} da \texttt{main}, esse procedimento permite
-que a execução do processo ocorra de forma consistente uma vez que basta
-desempilhar o \emph{frame} para retomar o contexto da função anterior. No fim
-da execução da função, ela retorna para o ponto na qual a função foi invocada e
+as informações relacionadas à função.
+A Figura~\ref{fig:stack_frames} ilustra a alocação e desalocação de
+\textit{frames} em um simples programa \citep{gdb}. No começo, só existe um
+\emph{stack frame} associado à função \texttt{main}. Conforme cada
+função local é chamada, o SO aloca um novo \emph{stack frame}, que é
+inserido logo após o \emph{frame} da função anterior. Esse procedimento permite
+que a execução do processo ocorra de forma consistente, uma vez que basta
+desempilhar o \emph{frame} para retomar ao contexto da função anterior. No fim
+da execução da função, a execução retorna para o ponto na qual a função foi invocada e
 o processo de preencher e esvaziar a \emph{stack} continua.
 
 Todos os processos são descritos por meio de uma estrutura de dados chamada
 \boldAndIndex{Process Control Block (PCB)}, responsável por manter
 informações referentes ao status do processo, \emph{program counter} (PC),
 registradores da CPU, informações sobre escalonamento, dados sobre contas de
-usuários, status de operações de I/O, dentre outros~\citep{silberschatz}.
-Uma dos principais motivos para a PCB existir é o conceito de \textbf{troca de
-contexto}, responsável por colocar e tirar processos para executar em uma CPU.
-Por exemplo, se o usuário dispõe de vários processos rodando ao mesmo tempo, o
-SO deve alternar entre todos eles para que cada processo tenha a oportunidade
-de executar por um intervalo de tempo. O SO realiza o processo de troca em duas
-etapas: (1) salva a PCB atual do processo e (2) carrega a PCB do outro
-processo. Em poucas palavras, a troca de contexto deve ser rápida por não
+usuários, status de operações de I/O, dentre outros \citep{silberschatz}.
+Uma dos principais motivos para a PCB existir é permitir a \textbf{troca de
+contexto}, o mecanismo pelo qual processos se alternam no uso da CPU.
+Por exemplo, se o usuário possui vários processos rodando ao mesmo tempo, o
+SO deve alternar entre todos eles para que cada um tenha a oportunidade
+de executar por um intervalo de tempo. O SO realiza esse processo de troca em duas
+etapas: (1) salvamento do estado atual do processo em sua PCB e (2) carregamento dos dados da PCB do outro
+processo. A troca de contexto deve ser rápida por não
 realizar nenhum processamento útil.
 
 O conceito apresentado acima revela uma característica de isolamento associada
-com a forma na qual os processos funcionam; normalmente, segurança e
-estabilidade são positivamente afetadas pelo isolamento de processos. Por outro
-lado, existem situações que demandam que os processos cooperem entre si. Para
-esses casos é possível notar algumas das desvantagens inerentes da estratégia
+com a forma na qual os processos funcionam, promovendo segurança e estabilidade.
+Por outro
+lado, existem situações que demandam que os processos cooperem entre si e,
+nesses casosm é possível notar algumas das desvantagens inerentes da estratégia
 de processos atual. Para resolver parte desse problema, algumas bibliotecas ou
-chamadas de sistemas são fornecidas como uma interface para coordenar a
-interação entre processos executando simultaneamente, esses são conhecidos pelo
-nome de \boldAndIndex{Interprocess Communication} ou simplesmente
-\boldAndIndex{IPC}. Por exemplo, desenvolvedores podem utilizar IPC para
+chamadas de sistema são fornecidas como interfaces para coordenar a
+interação entre processos executando simultaneamente, oferecendo mecanismos
+de \boldAndIndex{Comunicação entre processos} (\boldAndIndex{Interprocess
+Communication}) ou simplesmente \boldAndIndex{IPC}. \hltodo[Por exemplo,]{Não é um exemplo, então melhor começar a frase com ``Desenvolvedores podem...''} desenvolvedores podem utilizar IPC para
 compartilhar dados, melhorar o desempenho das aplicações, refinar a
-modularidade da aplicação, ou por alguma questão de conveniência da sua
-aplicação. O IPC tem três limitações principais: eleva o consumo de memória,
-adiciona sobrecargas extras de comunicação e tem uma certa complexidade para
-serem implementadas. Essas limitações são proibitivas em aplicações com grande
+modularidade da aplicação ou por alguma questão de conveniência da sua
+aplicação. Os mecanismos de IPC têm três limitações principais: elevam o consumo de memória,
+adicionam custos extras de comunicação e apresentam uma certa complexidade para
+serem implementados. Essas limitações são proibitivas em aplicações com grande
 demanda computacional.
 
-Processos são abstrações poderosas com algumas
-limitações, principalmente ao que se refere ao desempenho e complexidade. Além
-disso, processos têm apenas um fluxo de execução (\textit{thread}) para
-realizar todo o trabalho. Naturalmente os desenvolvedores buscam atingir mais
-paralelismo ou concorrência por meio de IPC, contudo os programadores precisam
-lidar com as sobrecargas extras impostas por essa estratégia. Por esse
-motivo, buscou-se por muito tempo formas de elevar o desempenho das
-aplicações por meio de melhorias no grau de paralelismo. Como resultado direto,
-surgiu o conceito de um processo ter múltiplas \emph{threads}
-compartilhando praticamente todos os elementos básicos com exceção da
+Por muito tempo, buscou-se formas de elevar o desempenho das
+aplicações por meio de melhorias no grau de paralelismo. No entanto, como
+mencionado, o paralelismo tem seus próprios custos. Como resultado direto
+do esforço em minimizá-los,
+surgiu o conceito de um único processo com múltiplas \emph{threads}
+compartilhando praticamente todos os elementos básicos de sua estrutura com exceção da
 \emph{stack} e do PC. A Figura~\ref{fig:single_thread_multi_thread} mostra um
 processo com uma \emph{thread} e outro com múltiplas \emph{threads}.
 
@@ -171,15 +170,15 @@ processo com uma \emph{thread} e outro com múltiplas \emph{threads}.
 \end{figure}
 
 Com o objetivo de ilustrar o comportamento descrito até agora sobre a execução
-de múltiplas \emph{threads} em um mesmo processos, apresentamos um código
-simples que tem por objetivo criar duas novas \emph{threads} na qual cada uma
-mostra uma mensagem diferente. O Código~\ref{lst:simplethreads} ilustra o
+de múltiplas \emph{threads} em um mesmo processo, apresentamos um código
+simples que tem por objetivo criar duas novas \emph{threads}, cada uma mostrando
+uma mensagem diferente. O Código~\ref{lst:simplethreads} ilustra o
 comportamento básico das \emph{threads} por meio de uma biblioteca chamada de
-\emph{POSIX Thread Library (Pthread)}. Veja no código a função
-\texttt{thread\_kernel()}, ela tem as operações que são executadas por cada nova
+\emph{POSIX Thread Library (Pthread)}. A função
+\texttt{thread\_kernel()} tem as operações que são executadas por cada nova
 \emph{thread} criada na função principal. Note que \texttt{thread\_kernel()}
-recebe um ponteiro genérico, converte esse para um tipo \texttt{char *} e
-mostra o valor no final.
+recebe um ponteiro genérico, converte-o para um tipo \texttt{char *} e
+mostra o seu valor no final.
 
 \begin{ruledcaption}{Exemplo simples de threads\label{lst:simplethreads}}
 \lstinputlisting[
@@ -188,10 +187,10 @@ mostra o valor no final.
 \end{ruledcaption}
 
 A função \texttt{main()} declara duas variáveis do tipo \texttt{pthread\_t},
-que são responsáveis por manter as informações referentes as \emph{threads}.
+que são responsáveis por manter as informações referentes às \emph{threads}.
 Adicionalmente, são declaradas duas \emph{strings} diferentes para serem
-mostradas posteriormente dentro das \emph{threads} criadas, isto é feito como
-uma forma de tornar claro o paralelismo. Quando o PC atinge a função
+mostradas posteriormente dentro das \emph{threads} criadas de forma a
+tornar claro o paralelismo. Quando o PC atinge a função
 \texttt{pthread\_create()}, a biblioteca solicita ao SO a criação de uma nova
 \emph{thread} que executa a função \texttt{thread\_kernel()} em paralelo. Em
 seguida, \texttt{pthread\_create()} é chamada novamente e cria uma segunda
@@ -202,9 +201,9 @@ processo e outras duas \emph{threads} criadas por meio da função
 \texttt{pthread\_create()}. O código termina com a função
 \texttt{pthread\_join()}, que mantém a \emph{thread} principal esperando que as
 duas \emph{threads} terminem a sua execução. Uma das possíveis saídas desse
-programa é ilustrada na Figura~\ref{lst:simpleThreadOutput}, essa mostra que as
-duas \emph{threads} executam em paralelo, evidenciada pela sequência não
-determinística da saída. A diferença na sequência é explicada pela variação
+programa é ilustrada na Figura~\ref{lst:simpleThreadOutput}. Ela mostra que as
+duas \emph{threads} executam em paralelo, o que é evidenciado pela sequência não
+determinística da saída: A diferença na sequência é explicada pela variação
 imposta pelo escalonador.
 
 \begin{ruledcaption}{Saída do exemplo de threads\label{lst:simpleThreadOutput}}
@@ -214,15 +213,16 @@ imposta pelo escalonador.
 \end{ruledcaption}
 
 Vamos analisar com um pouco mais de detalhes como o SO trata o
-Código~\ref{lst:simplethreads} durante a sua execução, veja a
-Figura~\ref{fig:stack_threads} ilustrando o que acontece internamente quando
+Código~\ref{lst:simplethreads} durante a sua execução. A
+Figura~\ref{fig:stack_threads} ilustra o que acontece internamente quando
 novas \emph{threads} são criadas. Como esperado, o segmento de texto e dados
-são compartilhados entre as \emph{threads} como ilustrado na parte inferior da
-figura. A principal mudança pode ser observada no segmento da \emph{stack},
-pois toda vez que uma nova \emph{thread} é criada um novo segmento de
+são compartilhados entre as \emph{threads}, como ilustrado na parte inferior da
+figura. A principal mudança na organização de memória pode ser observada no segmento da \emph{stack},
+pois toda vez que uma nova \emph{thread} é criada um \hltodo[novo segmento]{Cada thread tem um espaço de endereçamento bem grande separado só para a sua stack, né? Ou seja, dentro de cada ``substack'' tudo funciona como na stack de um processo ``normal'' porque há um espaço entre as stacks de uma thread e outra} de
 \emph{stack} é gerado; a independência entre \emph{threads} é assegurada pelas
-múltiplas \emph{stacks} isoladas. Toda vez que a \emph{thread} é mudada, o
-\emph{stack pointer} e os registradores são atualizados.
+múltiplas \emph{stacks} isoladas. Finalmente, cada thread tem seu próprio
+\emph{stack pointer} e demais registradores; toda vez que a \emph{thread} em execução muda, o
+\emph{stack pointer} e os registradores são \hltodo[atualizados]{acho que vale explicar aqui em algum lugar uma frasezinha dizendo que o ganho de desempenho vem do fato de que a troca de contexto não afeta o cache da MMU etc., mas bem curtinho, só tipo ``rola isso aí, que vamos explicar depois''}.
 
 \begin{figure}[!h]
   \centering
