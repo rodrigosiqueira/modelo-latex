@@ -158,14 +158,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="-700.03526"
-     inkscape:cy="672.09271"
+     inkscape:cx="575.96474"
+     inkscape:cy="674.09271"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="1920"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="false"
@@ -195,8 +195,8 @@
        id="rect997"
        width="1158.5121"
        height="109.57221"
-       x="-1312.2374"
-       y="419.41861"
+       x="259.01257"
+       y="625.66864"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_memory.png"
        inkscape:export-xdpi="293.84"
        inkscape:export-ydpi="293.84" />
@@ -204,8 +204,8 @@
        inkscape:export-ydpi="293.84"
        inkscape:export-xdpi="293.84"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_memory.png"
-       y="253.59641"
-       x="-1312.2374"
+       y="459.84641"
+       x="259.01257"
        height="109.57221"
        width="1158.5121"
        id="rect995"
@@ -215,8 +215,8 @@
        id="rect16584"
        width="1158.5121"
        height="109.57221"
-       x="-1314.7042"
-       y="87.7742"
+       x="256.54578"
+       y="294.0242"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_memory.png"
        inkscape:export-xdpi="293.84"
        inkscape:export-ydpi="293.84" />
@@ -225,28 +225,28 @@
        id="rect16586"
        width="772.28662"
        height="109.5722"
-       x="-1314.7042"
-       y="87.7742"
+       x="256.54578"
+       y="294.0242"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_memory.png"
        inkscape:export-xdpi="293.84"
        inkscape:export-ydpi="293.84" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-1434.8875"
-       y="128.59546"
+       x="136.36255"
+       y="334.84546"
        id="text16588"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_memory.png"
        inkscape:export-xdpi="293.84"
        inkscape:export-ydpi="293.84"><tspan
          sodipodi:role="line"
-         x="-1434.8875"
-         y="128.59546"
+         x="136.36255"
+         y="334.84546"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
          id="tspan2683">Antes de</tspan><tspan
          sodipodi:role="line"
-         x="-1434.8875"
-         y="178.59546"
+         x="136.36255"
+         y="384.84546"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
          id="tspan1013">limpar</tspan></text>
     <text
@@ -254,37 +254,37 @@
        inkscape:export-xdpi="293.84"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_memory.png"
        id="text1003"
-       y="294.41766"
-       x="-1436.5671"
+       y="500.66766"
+       x="134.68286"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan1001"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
-         y="294.41766"
-         x="-1436.5671"
+         y="500.66766"
+         x="134.68286"
          sodipodi:role="line">Depois</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
-         y="344.41766"
-         x="-1436.5671"
+         y="550.66766"
+         x="134.68286"
          sodipodi:role="line"
          id="tspan1017">de limpar</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-1436.5281"
-       y="460.2399"
+       x="134.72192"
+       y="666.48993"
        id="text1009"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_memory.png"
        inkscape:export-xdpi="293.84"
        inkscape:export-ydpi="293.84"><tspan
          sodipodi:role="line"
-         x="-1436.5281"
-         y="460.2399"
+         x="134.72192"
+         y="666.48993"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
          id="tspan1007">Depois de</tspan><tspan
          sodipodi:role="line"
-         x="-1436.5281"
-         y="510.2399"
+         x="134.72192"
+         y="716.48993"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
          id="tspan1021">compactar</tspan></text>
     <rect
@@ -295,11 +295,11 @@
        id="rect1023"
        width="41.099106"
        height="109.57219"
-       x="-830.36243"
-       y="253.59642" />
+       x="740.88757"
+       y="459.84644" />
     <rect
-       y="253.59642"
-       x="-733.01331"
+       y="459.84644"
+       x="838.23669"
        height="109.57219"
        width="181.72411"
        id="rect1025"
@@ -308,8 +308,8 @@
        inkscape:export-xdpi="293.84"
        inkscape:export-ydpi="293.84" />
     <rect
-       y="253.59642"
-       x="-1000.9874"
+       y="459.84644"
+       x="570.26257"
        height="109.57219"
        width="41.099106"
        id="rect1027"
@@ -325,11 +325,11 @@
        id="rect1029"
        width="95.474106"
        height="109.57219"
-       x="-1222.2374"
-       y="253.59642" />
+       x="349.01257"
+       y="459.84644" />
     <rect
-       y="253.59642"
-       x="-1092.8624"
+       y="459.84644"
+       x="478.38757"
        height="109.57219"
        width="52.349106"
        id="rect1031"
@@ -338,8 +338,8 @@
        inkscape:export-xdpi="293.84"
        inkscape:export-ydpi="293.84" />
     <rect
-       y="419.41867"
-       x="-1123.3151"
+       y="625.6687"
+       x="447.93494"
        height="109.57219"
        width="41.099106"
        id="rect1033"
@@ -355,8 +355,8 @@
        id="rect1035"
        width="181.72411"
        height="109.57219"
-       x="-1082.2159"
-       y="419.41867" />
+       x="489.03406"
+       y="625.6687" />
     <rect
        inkscape:export-ydpi="293.84"
        inkscape:export-xdpi="293.84"
@@ -365,11 +365,11 @@
        id="rect1037"
        width="41.099106"
        height="109.57219"
-       x="-1164.4142"
-       y="419.41867" />
+       x="406.83582"
+       y="625.6687" />
     <rect
-       y="419.41867"
-       x="-1312.2374"
+       y="625.6687"
+       x="259.01257"
        height="109.57219"
        width="95.474106"
        id="rect1039"
@@ -385,21 +385,21 @@
        id="rect1041"
        width="52.349106"
        height="109.57219"
-       x="-1216.7633"
-       y="419.41867" />
+       x="354.48669"
+       y="625.6687" />
     <text
        inkscape:export-ydpi="293.84"
        inkscape:export-xdpi="293.84"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_memory.png"
        id="text1047"
-       y="66.720459"
-       x="-735.69232"
+       y="272.97046"
+       x="835.55768"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan1045"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
-         y="66.720459"
-         x="-735.69232"
+         y="272.97046"
+         x="835.55768"
          sodipodi:role="line">Memória</tspan></text>
   </g>
 </svg>

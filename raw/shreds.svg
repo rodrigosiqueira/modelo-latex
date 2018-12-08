@@ -72,14 +72,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="-135.71429"
-     inkscape:cy="560"
+     inkscape:cx="277.59757"
+     inkscape:cy="548.57143"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="1920"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
   <metadata
@@ -90,7 +90,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -100,7 +100,7 @@
      id="layer1">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker6036)"
-       d="M 194.0521,16.916627 C 204.49656,0.72290712 220.99087,-8.7061919 242.90878,-6.7615919"
+       d="M 93.510433,116.70234 C 103.95489,100.50862 120.4492,91.079522 142.36711,93.024122"
        id="path100332"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
@@ -110,7 +110,7 @@
     <path
        id="path3628"
        style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 104.12302,50.365958 c 0,0 -11.089706,12.921033 -24.010736,0 -12.92103,-12.92103 -25.02814,0 -25.02814,0 m 98.077736,0 c 0,0 -11.0897,12.921033 -24.01072,0 -12.92104,-12.92103 -25.02814,0 -25.02814,0"
+       d="m 3.5813533,150.15167 c 0,0 -11.089706,12.92104 -24.0107363,0 -12.92103,-12.92103 -25.02814,0 -25.02814,0 m 98.077736,0 c 0,0 -11.0897,12.92104 -24.01072,0 -12.92104,-12.92103 -25.0281397,0 -25.0281397,0"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
        inkscape:export-xdpi="144.75999"
@@ -120,13 +120,13 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
        inkscape:connector-curvature="0"
-       d="m 207.24846,47.190937 c 0,0 -11.08971,12.921034 -24.01074,0 -12.92103,-12.92103 -25.02814,0 -25.02814,0 m 98.07773,0 c 0,0 -11.08969,12.921034 -24.0107,0 -12.92105,-12.92103 -25.02815,0 -25.02815,0"
+       d="m 106.70679,146.97665 c 0,0 -11.089707,12.92104 -24.010737,0 -12.92103,-12.92103 -25.02814,0 -25.02814,0 m 98.077727,0 c 0,0 -11.08969,12.92104 -24.0107,0 -12.92105,-12.92103 -25.02815,0 -25.02815,0"
        style="fill:none;stroke:#c83737;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4728" />
     <path
        id="path4730"
        style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 310.37391,44.015919 c 0,0 -11.08972,12.921032 -24.01075,0 -12.92104,-12.921031 -25.02813,0 -25.02813,0 m 98.07773,0 c 0,0 -11.08969,12.921032 -24.01072,0 -12.92104,-12.921031 -25.02813,0 -25.02813,0"
+       d="m 209.83224,143.80163 c 0,0 -11.08972,12.92104 -24.01075,0 -12.92104,-12.92103 -25.02813,0 -25.02813,0 m 98.07773,0 c 0,0 -11.08969,12.92104 -24.01072,0 -12.92104,-12.92103 -25.02813,0 -25.02813,0"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
        inkscape:export-xdpi="144.75999"
@@ -136,8 +136,8 @@
        id="rect100358"
        width="102.50258"
        height="59.989983"
-       x="155.91913"
-       y="13.039477"
+       x="55.37746"
+       y="112.8252"
        ry="0.024667773"
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
        inkscape:export-xdpi="144.75999"
@@ -145,13 +145,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="-34.554672"
-       y="58.780704"
+       x="-135.09634"
+       y="158.56642"
        id="text5970"><tspan
          sodipodi:role="line"
          id="tspan5968"
-         x="-34.554672"
-         y="58.780704"
+         x="-135.09634"
+         y="158.56642"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;font-family:Hack;-inkscape-font-specification:'Hack Bold';stroke-width:0.26458332">Thread</tspan></text>
     <path
        sodipodi:nodetypes="cc"
@@ -160,7 +160,7 @@
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
        inkscape:connector-curvature="0"
        id="path78250"
-       d="M 156.42734,9.5109871 V -23.089909"
+       d="M 55.885673,109.2967 V 76.695805"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000017, 8.00000036;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker78254-3);paint-order:normal" />
     <path
        sodipodi:nodetypes="cc"
@@ -169,50 +169,50 @@
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/apache_arhitecture.png"
        inkscape:connector-curvature="0"
        id="path110857"
-       d="M 258.45168,76.557951 V 115.98959"
+       d="M 157.91001,176.34367 V 215.7753"
        style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000008, 8.00000019;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker110861-7);paint-order:normal" />
     <text
        id="text6028"
-       y="-33.66769"
-       x="110.30542"
+       y="66.118027"
+       x="9.7637529"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        xml:space="preserve"><tspan
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';stroke-width:0.26458332"
-         y="-33.66769"
-         x="110.30542"
+         y="66.118027"
+         x="9.7637529"
          id="tspan6026"
          sodipodi:role="line">shred_enter</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="210.79877"
-       y="133.10849"
+       x="110.2571"
+       y="232.89421"
        id="text6032"><tspan
          sodipodi:role="line"
          id="tspan6030"
-         x="210.79877"
-         y="133.10849"
+         x="110.2571"
+         y="232.89421"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';stroke-width:0.26458332">shred_exit</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="312.40948"
-       y="-14.768882"
+       x="219.42734"
+       y="85.01683"
        id="text6040"><tspan
          sodipodi:role="line"
-         id="tspan6038"
-         x="312.40948"
-         y="-14.768882"
-         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332">Executes private</tspan><tspan
-         sodipodi:role="line"
-         x="312.40948"
-         y="2.8700058"
+         x="219.42734"
+         y="85.01683"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332"
-         id="tspan6042">code and access</tspan><tspan
+         id="tspan859">Executa código</tspan><tspan
          sodipodi:role="line"
-         x="312.40948"
-         y="20.508892"
+         x="219.42734"
+         y="102.65572"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332"
-         id="tspan6044">s-pool</tspan></text>
+         id="tspan863">privado e</tspan><tspan
+         sodipodi:role="line"
+         x="219.42734"
+         y="120.29461"
+         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan6044">acessa s-pool</tspan></text>
   </g>
 </svg>

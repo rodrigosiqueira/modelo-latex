@@ -15,7 +15,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.1 r"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="understand_client_request.svg"
    inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/request_a_page.png"
    inkscape:export-xdpi="144.75999"
@@ -163,13 +163,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="326.1821"
-     inkscape:cy="788.18348"
+     inkscape:cx="192.1655"
+     inkscape:cy="784.14287"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="727"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
@@ -253,7 +253,7 @@
          id="tspan12512-7"
          x="191.86829"
          y="71.655205"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Image</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Imagem</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -301,15 +301,15 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         id="tspan12512-8"
          x="69.419792"
          y="77.267876"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:7.9375px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Request</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:7.9375px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan13341">Solicita</tspan><tspan
          sodipodi:role="line"
          x="69.419792"
          y="85.205376"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:7.9375px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         id="tspan13341">a page</tspan></text>
+         id="tspan914">página</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#71c837;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Send-3-0-4)"
        d="m 133.32678,18.576395 c -16.4762,0.02908 -20.70416,9.771221 -19.41029,26.658756"
@@ -332,11 +332,11 @@
          id="tspan12512-3"
          x="134.44334"
          y="21.943085"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Simple page</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Página simples</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="11.266282"
+       x="-0.14261134"
        y="101.5894"
        id="text12514-1-8"
        inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
@@ -344,9 +344,9 @@
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          id="tspan12512-3-0"
-         x="11.266282"
+         x="-0.14261134"
          y="101.5894"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">User</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Usuário</tspan></text>
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#71c837;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect14924"

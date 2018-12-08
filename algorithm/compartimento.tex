@@ -1,0 +1,40 @@
+\begin{pseudocode}
+\begin{lstlisting}[language=pseudocode, style=pseudocode]
+function special_function() /// \label{line:compartimentoFuncaoEsp}
+  struct bead_data bead
+
+  bead.compartment_size $\gets 300$
+  beadctl(BEAD_SET_CONFIG, &bead)
+  // ... qualquer código que precisa de um bom isolamento ...
+  // Aloca memória dentro do compartimento
+  beadctl(BEAD_ALLOC_COMPARTMENT_MEMORY, &bead) /// \label{line:compartimentoAlloc}
+  // Libera a memória do compartimento
+  beadctl(BEAD_FREE_COMPARTMENT_MEMORY, &bead) /// \label{line:compartimentoFree}
+
+function enter_compartment()
+  struct bead_data bead
+
+  bead.compartments $\gets$ BEAD_ENTER_COMPARTMENT /// \label{line:compartimentoConfig}
+  beadctl(BEAD_SET_CONFIG, &bead)
+  beadctl(BEAD_SWITCH, &bead) // Troca o contexto de executação atual
+
+function exit_compartment() /// \label{line:compartimentoExit}
+  struct bead_data bead
+
+  bead.compartments $\gets$ BEAD_EXIT_COMPARTMENT
+  beadctl(BEAD_SET_CONFIG, &bead)
+  beadctl(BEAD_SWITCH, &bead) // Troca o contexto de executação atual
+
+function MAIN() /// \label{line:compartimentoMAIN}
+  // ... qualquer código ...
+  // Função crítica
+  enter_compartment() /// \label{line:compartimentoEnter}
+  special_function()
+  exit_compartment()
+  // ... qualquer código ...
+  
+\end{lstlisting}
+
+  \caption{Padrão compartimento}
+  \label{alg:compartimento}
+\end{pseudocode}

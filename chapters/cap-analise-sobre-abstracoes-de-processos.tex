@@ -477,13 +477,94 @@ Chamada baseada no Dune.
 
   \end{itemize}
 
-  \item [\texttt{BEAD\_ALLOC\_COMPARTMENT\_MEMORY}:]
-  \item [\texttt{BEAD\_FREE\_COMPARTMENT\_MEMORY}:]
-  \item [\texttt{BEAD\_REGISTER\_TRANSFER\_CONTROL}:]
-  \item [\texttt{BEAD\_REGISTER\_TRANSFER\_ENTRY}:]
-  \item [\texttt{BEAD\_ENTER\_COMPARTMENT}:]
+	\item [\texttt{BEAD\_ENTER\_COMPARTMENT}:]
+
+Essa operação faz com que a thread em execução tenha associado a si um
+compartimento, no qual apenas ela tem acesso. Isso é importante para dificultar
+ataques intra-processos. Nenhuma outra thread do processo tem acesso a qualquer
+dado do compartimento, o mesmo vale para os dados dentro do compartemento
+(i.e., o compartimento é isolado). Devido ao isolamento oferecido por essa
+técnica, torna-se necessário uma função especial para realizar a alocação
+dentro do compartimento.
+
+  \begin{itemize}
+    \item \textbf{Retorno:}
+
+Retorna 0 se tudo ocorrer bem, ou um código de erro se algo der errado.
+
+    \item \textbf{Referência:}
+
+Chamada baseada no Shred.
+
+\end{itemize}
+
   \item [\texttt{BEAD\_EXIT\_COMPARTMENT}:]
-  \item [\texttt{BEAD\_NEW\_EXECUTION\_CONTEXT}:]
+
+Essa função sai do compartimento atual.
+
+  \begin{itemize}
+
+    \item \textbf{Retorno:}
+
+Retorna 0 se tudo ocorrer bem, ou um código de erro se algo der errado.
+
+    \item \textbf{Referência:}
+
+Chamada baseada no Shred.
+
+	\end{itemize}
+
+  \item [\texttt{BEAD\_ALLOC\_COMPARTMENT\_MEMORY}:]
+
+Essa operação é responsável por alocar memória dentro de um compartimento e tem
+o seu funcionamento similar ao da função \texttt{malloc()}. Uma vez que a
+memória é alocada utilizando essa operação, significa dizer que ela é acessível
+apenas dentro da thread que solicitou entrar no compartimento. Esse mecanismo
+de isolamento de memória faz com que as páginas do próprio processo tenham o
+seu acesso restrito a uma thread.
+
+  \begin{itemize}
+    \item \textbf{Parâmetros:}
+
+    \begin{itemize}
+      \item \texttt{tamanho}: Tamanho em bytes que se deseja alocar.
+    \end{itemize}
+
+    \item \textbf{Retorno:}
+
+Retorna um ponteiro para a região de memória alocada. Em caso de erro, o valor
+NULL é retornado.
+
+    \item \textbf{Referência:}
+
+Chamada baseada no Shred.
+
+	\end{itemize}
+
+  \item [\texttt{BEAD\_FREE\_COMPARTMENT\_MEMORY}:]
+
+A operação de liberar o compartimento alocado simplesmente reverte a operação
+feita por \texttt{BEAD\_ALLOC\_COMPARTMENT\_MEMORY}.
+
+  \begin{itemize}
+    \item \textbf{Parâmetros:}
+
+    \begin{itemize}
+      \item \texttt{Ref}: Ponteiro para a memória previamente alocada.
+    \end{itemize}
+
+    \item \textbf{Retorno:}
+
+Não tem retorno.
+
+    \item \textbf{Referência:}
+
+Chamada baseada no Shred.
+
+	\end{itemize}
+%  \item [\texttt{BEAD\_REGISTER\_TRANSFER\_CONTROL}:]
+%  \item [\texttt{BEAD\_REGISTER\_TRANSFER\_ENTRY}:]
+%  \item [\texttt{BEAD\_NEW\_EXECUTION\_CONTEXT}:]
 \end{description}
 
 \subsection{Padrões de Utilização}
@@ -633,24 +714,132 @@ utilização.
 
 \input{algorithm/virt_mode.tex}
 
-O Pseudocódigo~\ref{alg:virtMode} começa a execução na Linha~\ref{line:virtMAIN}, repare que qualquer tipo de código pode executar normalmente até que o processo entre em modo virtualização. A Linha~\ref{line:virtModeCall} ilustra uma chamada para a função \texttt{virtualization\_mode()}, essa espera um ponteiro para uma função que será executada em modo de virtualização ou nulo indicando que todo . Na Linha~\ref{line:exFuncHook} temos uma ilustração de como poderia ser o protótipo da função; esse é apenas um exemplo para a demonstração de uso, em uma implementação real tal protótipo de função pode conter diversos parâmetros ou formas. Quando a função \texttt{virtualization\_mode()} começa a executar, a primeira tarefa dela consiste em configurar os parâmetros de virtualização como pode ser visto da Linha~\ref{line:confBegin} até a linha~\ref{line:confEnd}. Os parâmetros de virtualização podem ser o mais variado possível, dependendo de qual recurso que se quer compartilhar (não definimos esse nível de compartilhamento, pois pode haver diversas formas de implementar tal recurso). Por padrão, vamos supor que o processo quer compartilhar todos os recursos.
+O Pseudocódigo~\ref{alg:virtMode} começa a execução na
+Linha~\ref{line:virtMAIN}. Como indicado no comentário logo após a função
+\texttt{MAIN}, notamos que a semântica do programa não sofre alteração. A
+Linha~\ref{line:virtModeCall} ilustra uma chamada para a função
+\texttt{virtualization\_mode()}, essa espera um ponteiro para uma função que
+será executada em modo de virtualização; se uma referência nula for passada no
+parâmetro significa que todo o processo vai executar em modo virtualização. Na
+Linha~\ref{line:exFuncHook} temos uma ilustração de como poderia ser o
+protótipo da função\footnote{Note que esse é apenas um exemplo para a
+demonstração de uso, em uma implementação real tal protótipo de função pode
+conter diversos parâmetros ou outra assinatura.}. Quando a função
+\texttt{virtualization\_mode()} começa a executar, a primeira tarefa dela
+consiste em configurar os parâmetros de virtualização como pode ser visto da
+Linha~\ref{line:confBegin} até a linha~\ref{line:confEnd} (seguindo o padrão
+configuração). Os parâmetros de virtualização podem aceitar diversos parâmetros
+permitindo o controle fino dos recursos de virtualização (não definimos esse
+nível de compartilhamento, pois pode haver diversas formas de implementar tal
+recurso). Por padrão, vamos supor que o processo quer utilizar todos os
+recursos de virtualização disponíveis.
 
-Na Linha~\ref{line:instance} é feita uma cópia do estado atual do processo, se tudo ocorrer bem o \emph{bead} entra em modo de virtualização nas linhas subsequentes. Repare na Linha~\ref{line:funcParam} que é feito uma verificação no ponteiro da função passada por parâmetro, isso faz com que essa função assuma duas formas de execução diferente. Se um ponteiro para função for passado, ela executará em modo virtualização e ao final da execução ocorrerá um retorno para o estado anterior da aplicação~\ref{line:backState}. Em seguida, no estado restaurado, o \emph{else} da Linha~\ref{line:virtModeElse} será executado de forma a desabilitar as funcionalidade de virtualização e retornar um código de fim da operação (\texttt{VM\_OPERATION\_END}). Se \texttt{virtualization\_mode()} receber um ponteiro nulo para a função, significa que o programador quer que todo o processo execute em modo de virtualização (similar ao modo Dune).
+Na Linha~\ref{line:instance} é feita uma cópia do estado atual do processo, se
+tudo ocorrer bem o \emph{bead} entra em modo de virtualização nas linhas
+subsequentes. Repare na Linha~\ref{line:funcParam} que é feito uma verificação
+no ponteiro da função passada por parâmetro, isso faz com que essa função
+assuma duas formas de execução diferente. Se um ponteiro para função for
+passado, ela executará em modo virtualização e ao final da execução ocorrerá um
+retorno para o estado anterior da aplicação~\ref{line:backState}. Em seguida,
+no estado restaurado, o \emph{else} da Linha~\ref{line:virtModeElse} será
+executado de forma a desabilitar as funcionalidade de virtualização e retornará
+um código de fim da operação (\texttt{VM\_OPERATION\_END}). Se
+\texttt{virtualization\_mode()} receber um ponteiro nulo para a função,
+significa que o programador quer que todo o processo execute em modo de
+virtualização (similar ao modo Dune).
 
 \subsubsection{Padrão Persistência}
 
-Parte do padrão persistência nasce indiretamente da proposta do MVAS, na qual permite que um processo tenha múltiplas VAS que por sua vez persistem além do tempo de execução padrão do processo. Nesse contexto, o \emph{bead} fornece um mecanismo similar na qual o contexto do processo pode ser salvo como somente para leitura e assim ser usado como base por outros processos do mesmo tipo. O Pseudocódigo~\ref{alg:persistencia} ilustra de maneira geral o comportamento desse padrão, note que por questão de simplicidade nos representamos duas execuções diferentes de processos no mesmo lugar (ilustrado na Linha~\ref{line:persistenciaMain1} e \ref{line:persistenciaMain2}).
+Parte do padrão persistência nasce indiretamente da proposta do MVAS, na qual
+permite que um processo tenha múltiplas VASes que por sua vez persistem além do
+tempo de execução padrão do processo. Nesse contexto, o \emph{bead} fornece um
+mecanismo similar na qual o contexto do processo pode ser salvo como somente
+para leitura e assim ser usado como base por outros processos do mesmo tipo. O
+Pseudocódigo~\ref{alg:persistencia} ilustra de maneira geral na qual esse
+padrão trabalha, por questão de simplicidade nos representamos duas execuções
+diferentes de processos no mesmo lugar (ilustrado na
+Linha~\ref{line:persistenciaMain1} e \ref{line:persistenciaMain2}).
 
 \input{algorithm/persistencia.tex}
 
-Na Linha~\ref{line:persistenciaMain1} do Pseudocódigo~\ref{alg:persistencia}, temos o processo que criará um novo contexto persistente, isto é, o contexto do processo viverá além do tempo de execução do processo que o criou. O primeiro passo da função consiste em realizar a configuração sobre o contexto que será criado, pr isso é preciso passar duas flags especificas: \texttt{SHARED} e \texttt{PERSISTENT}. A combinação dessas duas flags, faz com que o bead crie um contexto persistente gerenciado pelo núcleo do SO que pode ser utilizado por outras aplicações. Note que o SO deve armazenar diversas informações para garantir a consistência na execução de outro processo que execute utilizando o contexto persistente. Na Linha~\ref{line:persistenciaCxtInstance}, notamos que foi passado uma variável \texttt{data} para a função \texttt{context\_instance()}, isso é feito uma vez que um identificador especial é criado e salvo em \texttt{data}. O processo pode passar o identificador da maneira que achar melhor, no exemplo, simplesmente salvamos em um arquivo.
+Na Linha~\ref{line:persistenciaMain1} do Pseudocódigo~\ref{alg:persistencia},
+temos o processo que criará um novo contexto persistente, isto é, o contexto do
+processo viverá além do tempo de execução do processo que o criou. O primeiro
+passo da função consiste em realizar a configuração sobre o contexto que será
+criado, por isso é preciso passar duas \emph{flags} especificas:
+\texttt{SHARED} e \texttt{PERSISTENT}. A combinação dessas duas \emph{flags},
+faz com que o \emph{bead} crie um contexto persistente gerenciado pelo núcleo
+do SO que pode ser utilizado por outras aplicações. Idealmente, para que o
+padrão persistência funcione corretamente, o SO deve armazenar diversos
+metadados sobre os processos para garantir a consistência entre os processos.
+Na Linha~\ref{line:persistenciaCxtInstance}, notamos que foi passado uma
+variável \texttt{data} para a função \texttt{context\_instance()}, isso é feito
+uma vez que um identificador especial é criado e salvo em \texttt{data}. O
+processo pode passar o identificador da maneira que achar melhor, no exemplo,
+simplesmente salvamos em um arquivo.
 
-Quando o novo processo indicado na Linha~\ref{line:persistenciaMain2} inicia, ele abre o arquivo contendo o identificador e recupera o valor. Em seguida, a operação de troca de contexto é feita utilizando o valor carregado.
+Quando o novo processo indicado na Linha~\ref{line:persistenciaMain2} inicia,
+ele abre o arquivo contendo o identificador e recupera o valor. Em seguida, a
+operação de troca de contexto é feita utilizando o valor carregado.
 
 \subsubsection{Padrão Atualização em Tempo Real}
+% TODO: Incompleto
+O padrão de atualização em tempo real, ou simplesmente \emph{live-patch}, nasce
+da combinação da técnica de criação de contexto persistente e das ideias de
+desacoplamento da VAS. A ideia do \emph{live patching} já existe e consiste em
+aplicar patches sem desligar/reiniciar o sistema; o Kernel Linux já tem suporte
+a tal funcionalidade, mas o desafio de aplicar esse tipo de atualização em
+aplicações no espaço do usuário ainda é um desafio. Dado que o desacoplamento
+dos processos oferecem diversos recursos e novos modelos de programação,
+introduzimos uma possível alternativa para implementar \emph{live-patching} no
+espaço de usuário. Para isso, o \emph{bead} faz uso de algumas das ideias já
+apresentadas nessa subseção e em conjunto com o conceito de desacoplamento da
+VAS apresentado pelo SpaceJMP. Contudo, o \emph{bead} leva o nível de controle
+do desacoplamento da VAS para outro nível uma vez que permite o controle fino
+sobre cada elemento da VAS.
 
-O padrão de atualização em tempo real, ou simplesmente \emph{live-patch}, nasce da combinação da técnica de criação de contexto persistente e das ideias de desacoplamento da VAS. A ideia do \emph{live patching} já existe e consite em aplicar patches sem desligar/reiniciar o sistema; o Kernel Linux já tem suporte a tal funcionalidade, mas o desafio de aplicar esse tipo de atualização em aplicações no espaço do usuário ainda é um desafio. Dado que o desacoplamento dos processos oferecem diversos recursos e novos modelos de programação, introduzimo uma possível alternativa para implementar \emph{live-patching} no espaço de usuário. Para isso, o \emph{bead} faz uso de algumas das ideias já apresentadas em conjunto com o conceito de desacoplamento da VAS apresentado pelo MVAS. Contudo,o \emph{bead} leva o nível de controle do desacoplamento da VAS para outro nível uma vez que permite o controle fino sobre cada elemento da VAS.
+\input{algorithm/live_patch.tex}
 
-\subsubsection{Padrão Recuperação}
+\subsubsection{Padrão Compartimento}
+%TODO: Atualizar o switch para ele aceitar os compartimentos. BEAD_CONTEXT_SWITCH -> BEAD_SWITCH
 
-% TODO: ACESSOS A MEMÓRIA
+O padrão Compartimento nasce dos conceitos apresentados pelo shred, por sua
+vez, esse busca apresentar uma técnica para evitar ataques intra-processos
+baseado em um recuso de hardware. Essa ideia é fundamentada em um novo recurso
+fornecido por várias CPUs que permite definir domínios de acesso dentro da
+memória do processo (Seção~\ref{sec:outros_mecanismos_memoria}). O principal
+objetivo do compartimento dentro do próprio processo, consiste em adicionar
+maior nível de isolamento e dificulta/impedir ataques que ocorram dentro do
+processo.
+
+\input{algorithm/compartimento.tex}
+
+O Pseudocódigo~\ref{alg:compartimento} ilustra como esse padrão se comporta. O
+exemplo começa na Linha~\ref{line:compartimentoMAIN}, repare que a semântica do
+código original não sofre alteração. Em um determinado trecho de uma aplicação
+pode ser necessário executar uma operação sobre dados sensíveis (e.g., senhas),
+portanto, é desejável que o acesso a tal informação seja o mais restrito
+possível. Nesse contexto, a Linha~\ref{line:compartimentoEnter} ilustra a
+operação \texttt{enter\_compartment()} que é responsável por mudar o fluxo de
+execução do processo para o compartimento. Na
+Linha~\ref{line:compartimentoConfig} podemos acompanhar o processo de
+configuração necessário para criar o compartimento. A Seção~\ref{sec:api}
+introduziu a operação \texttt{BEAD\_ENTER\_COMPARTMENT}, note que essa foi
+utilizado no processo de configurar compartimento e que a operação de troca foi
+utilizada para entra em tal modo (repare, que esse é um uso diferente da
+operação de troca). Se tudo ocorrer bem, o processo passa a executar dentro de
+um compartimento isolado das demais threads.
+
+Dentro do compartimento, não é possível utilizar as operações de alocação
+padrão uma vez que é preciso utilizar o recurso de controle de acesso fornecido
+pelo hardware. Nesse sentido, o \emph{bead} fornece a operação
+\texttt{BEAD\_ALLOC\_COMPARTMENT\_MEMORY} responsável por alocar memória de tal
+forma que qualquer thread externa tem o seu acesso proibido a região de memória
+alocada. A Linha~\ref{line:compartimentoAlloc} é responsável por alocar memória
+dentro do próprio compartimento. Por fim, para remover a memória alocado basta
+chamar a função \texttt{BEAD\_FREE\_COMPARTMENT\_MEMORY}.
+
+Quando todas as operações sobre dados sensíveis tiver acabado, o programador
+pode solicitar ao \emph{bead} para sair do compartimento. A
+Linha~\ref{line:compartimentoExit} ilustra a função que faz a operação de sair
+do compartimento.
