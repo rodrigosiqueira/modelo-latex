@@ -134,8 +134,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="-1045.3109"
-     inkscape:cy="727.47647"
+     inkscape:cx="-510.3109"
+     inkscape:cy="775.47647"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -152,7 +152,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -166,8 +166,8 @@
        id="rect4641"
        width="136.50945"
        height="340.92496"
-       x="-7.7562842"
-       y="-405.01285"
+       x="-138.46045"
+       y="-51.000347"
        ry="0.14018771"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:export-xdpi="144.75999"
@@ -177,8 +177,8 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        ry="0.070189156"
-       y="-405.15521"
-       x="-145.99687"
+       y="-51.142712"
+       x="-276.70105"
        height="170.69423"
        width="137.19955"
        id="rect4569"
@@ -187,35 +187,35 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-485.26028"
-       y="56.975945"
+       x="-131.24779"
+       y="187.68011"
        id="text4508-9"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         x="-485.26028"
-         y="56.975945"
+         x="-131.24779"
+         y="187.68011"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4643">Ext. 1: R/W</tspan><tspan
          sodipodi:role="line"
-         x="-485.26028"
-         y="70.205109"
+         x="-131.24779"
+         y="200.90927"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4820">Ext. 2: R</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-357.36298"
-       y="27.792957"
+       x="-3.350476"
+       y="158.49713"
        id="text4508"
        inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          id="tspan4506"
-         x="-357.36298"
-         y="27.792957"
+         x="-3.350476"
+         y="158.49713"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.34722233px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px">Extensão 1</tspan></text>
     <text
        inkscape:export-ydpi="144.75999"
@@ -223,17 +223,17 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-234.95137"
-       y="-54.024414"
+       x="119.06113"
+       y="76.679756"
        id="text4639"><tspan
          id="tspan4637"
          sodipodi:role="line"
-         x="-234.95137"
-         y="-54.024414"
+         x="119.06113"
+         y="76.679756"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Linux Kernel</tspan></text>
     <g
        id="g4768"
-       transform="translate(0,-146.05)">
+       transform="translate(354.0125,-15.345833)">
       <g
          transform="translate(0,-0.52915955)"
          id="g4743">
@@ -370,8 +370,8 @@
        id="rect4770"
        width="137.19955"
        height="170.69423"
-       x="-145.99687"
-       y="-234.46098"
+       x="-276.70105"
+       y="119.55151"
        ry="0.070189156"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:export-xdpi="144.75999"
@@ -381,17 +381,17 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
        id="text4774"
-       y="27.792957"
-       x="-186.66875"
+       y="158.49713"
+       x="167.34375"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.34722233px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px"
-         y="27.792957"
-         x="-186.66875"
+         y="158.49713"
+         x="167.34375"
          id="tspan4772"
          sodipodi:role="line">Extensão 2</tspan></text>
     <g
-       transform="translate(170.69423,-146.05)"
+       transform="translate(524.70673,-15.345833)"
        id="g4812">
       <g
          id="g4782"
@@ -528,46 +528,46 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        id="text4826"
-       y="101.95511"
-       x="-485.08459"
+       y="232.65927"
+       x="-131.0721"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan4824"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="101.95511"
-         x="-485.08459"
+         y="232.65927"
+         x="-131.0721"
          sodipodi:role="line">Kernel: R/W</tspan></text>
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        id="text4834"
-       y="56.975945"
-       x="22.739716"
+       y="187.68011"
+       x="376.75223"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan4830"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="56.975945"
-         x="22.739717"
+         y="187.68011"
+         x="376.75223"
          sodipodi:role="line">Ext. 1: R</tspan><tspan
          id="tspan4832"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="70.205109"
-         x="22.739717"
+         y="200.90927"
+         x="376.75223"
          sodipodi:role="line">Ext. 2: R/W</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="22.915405"
-       y="101.95511"
+       x="376.92792"
+       y="232.65927"
        id="text4838"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         x="22.915405"
-         y="101.95511"
+         x="376.92792"
+         y="232.65927"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4836">Kernel: R/W</tspan></text>
     <text
@@ -575,37 +575,37 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        id="text4844"
-       y="-63.674057"
-       x="-485.26028"
+       y="67.030113"
+       x="-131.24779"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan4840"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="-63.674057"
-         x="-485.26028"
+         y="67.030113"
+         x="-131.24779"
          sodipodi:role="line">Ext. 1: R</tspan><tspan
          id="tspan4842"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="-50.444889"
-         x="-485.26028"
+         y="80.259277"
+         x="-131.24779"
          sodipodi:role="line">Ext. 2: R</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-485.08459"
-       y="-28.219891"
+       x="-131.0721"
+       y="102.48428"
        id="text4848"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nooks_nim.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         x="-485.08459"
-         y="-28.219891"
+         x="-131.0721"
+         y="102.48428"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4846">Kernel: R/W</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-3-3)"
-       d="m -426.25843,74.274451 h 13.2201"
+       d="m -72.24593,204.97862 h 13.2201"
        id="path4566-6"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
@@ -617,11 +617,11 @@
        inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"
        inkscape:connector-curvature="0"
        id="path5992"
-       d="m -426.25843,-55.371382 h 13.2201"
+       d="m -72.24593,75.332785 h 13.2201"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker5996)" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker6410)"
-       d="m -38.917497,81.682785 h -13.2201"
+       d="M 315.095,212.38695 H 301.8749"
        id="path6406"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/memory_segment.png"

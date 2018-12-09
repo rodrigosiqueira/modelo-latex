@@ -309,14 +309,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35355339"
-     inkscape:cx="-337.51559"
-     inkscape:cy="1205.6976"
+     inkscape:cx="-867.84568"
+     inkscape:cy="1194.3839"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="1920"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:object-nodes="false" />
@@ -338,11 +338,11 @@
      id="layer1">
     <g
        id="g3736"
-       transform="matrix(0.13888396,0,0,0.13888396,-466.37233,-159.02522)"
+       transform="matrix(0.13888396,0,0,0.13888396,-199.95806,149.29691)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
-       style="stroke-width:7.20025539;stroke:#d45500;fill:#d45500">
+       style="fill:#d45500;stroke:#d45500;stroke-width:7.20025539">
       <circle
          transform="matrix(1.8950228,0,0,1.8950228,573.89469,164.26552)"
          style="opacity:1;fill:#d45500;fill-opacity:1;stroke:#d45500;stroke-width:11.39868355;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter886)"
@@ -358,11 +358,11 @@
          style="opacity:1;fill:#d45500;fill-opacity:1;stroke:#d45500;stroke-width:21.60076714;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
     <g
-       style="stroke-width:7.20025539;stroke:#d45500;fill:#d45500"
+       style="fill:#d45500;stroke:#d45500;stroke-width:7.20025539"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
-       transform="matrix(0.13888396,0,0,0.13888396,-240.36921,-191.95283)"
+       transform="matrix(0.13888396,0,0,0.13888396,26.045055,116.3693)"
        id="g1084">
       <circle
          r="82.776787"
@@ -380,11 +380,11 @@
     </g>
     <g
        id="g1384"
-       transform="matrix(0.13888396,0,0,0.13888396,-4.6374901,-169.50219)"
+       transform="matrix(0.13888396,0,0,0.13888396,261.77678,138.81994)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
-       style="stroke-width:7.20025539;stroke:#d45500;fill:#d45500">
+       style="fill:#d45500;stroke:#d45500;stroke-width:7.20025539">
       <circle
          transform="matrix(1.8950228,0,0,1.8950228,573.89469,164.26552)"
          style="opacity:1;fill:#d45500;fill-opacity:1;stroke:#d45500;stroke-width:11.39868355;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter886)"
@@ -404,7 +404,7 @@
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
-       transform="matrix(0.13888396,0,0,0.13888396,-96.722721,-86.9108)"
+       transform="matrix(0.13888396,0,0,0.13888396,169.69154,221.41133)"
        id="g1390">
       <circle
          r="82.776787"
@@ -422,11 +422,11 @@
     </g>
     <g
        id="g1910"
-       transform="matrix(0.13888396,0,0,0.13888396,58.224302,-93.170012)"
+       transform="matrix(0.13888396,0,0,0.13888396,324.63857,215.15212)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"
-       style="stroke-width:7.20025539;fill:#d45500;stroke:#d45500">
+       style="fill:#d45500;stroke:#d45500;stroke-width:7.20025539">
       <circle
          transform="matrix(1.8950228,0,0,1.8950228,573.89469,164.26552)"
          style="opacity:1;fill:#d45500;fill-opacity:1;stroke:#d45500;stroke-width:11.39868355;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter886)"
@@ -446,7 +446,7 @@
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
-       transform="matrix(0.13888396,0,0,0.13888396,128.56964,-165.76042)"
+       transform="matrix(0.13888396,0,0,0.13888396,394.98391,142.56171)"
        id="g1916">
       <circle
          r="82.776787"
@@ -463,11 +463,11 @@
          r="156.86389" />
     </g>
     <g
-       style="stroke-width:7.20025539;fill:#d45500;stroke:#d45500"
+       style="fill:#d45500;stroke:#d45500;stroke-width:7.20025539"
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
-       transform="matrix(0.13888396,0,0,0.13888396,258.035,-180.72751)"
+       transform="matrix(0.13888396,0,0,0.13888396,524.44927,127.59462)"
        id="g1928">
       <circle
          r="82.776787"
@@ -490,13 +490,14 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:connector-curvature="0"
        id="path3344"
-       d="m -167.96824,-134.40308 11.5173,27.68912"
+       d="m 98.446025,173.91905 11.517305,27.68912"
        style="fill:none;fill-rule:evenodd;stroke:#d45500;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker3348);paint-order:normal" />
     <g
        id="g5801"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-ydpi="144.75999">
+       inkscape:export-ydpi="144.75999"
+       transform="translate(266.41427,308.32213)">
       <rect
          transform="rotate(-90)"
          style="opacity:1;fill:none;fill-opacity:1;stroke:#ff2a2a;stroke-width:4.19534349;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -523,21 +524,21 @@
     </g>
     <text
        id="text4732"
-       y="-222.60754"
-       x="-423.94019"
+       y="85.714584"
+       x="-157.52592"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        xml:space="preserve"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          style="font-size:19.75555611px;letter-spacing:-0.02645833px;stroke-width:0.26458332"
-         y="-222.60754"
-         x="-423.94019"
+         y="85.714584"
+         x="-157.52592"
          id="tspan4730"
          sodipodi:role="line">Objetos Alcançáveis</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#d45500;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5873);paint-order:normal"
-       d="m -174.31824,-87.307247 -93.2577,-73.381713"
+       d="M 92.096025,221.01488 -1.1616746,147.63317"
        id="path5869"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -551,11 +552,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:connector-curvature="0"
        id="path6895"
-       d="m -319.3099,-168.79891 -166.81187,25.57245"
+       d="M -52.895635,139.52322 -219.7075,165.09567"
        style="fill:none;fill-rule:evenodd;stroke:#d45500;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6899);paint-order:normal" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#d45500;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8015);paint-order:normal"
-       d="m -488.71489,-161.91975 163.63687,-22.58171"
+       d="M -222.30062,146.40238 -58.663755,123.82067"
        id="path8011"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -564,7 +565,7 @@
        sodipodi:nodetypes="cc" />
     <g
        id="g8731"
-       transform="translate(417.5125,67.733333)"
+       transform="translate(683.92677,376.05546)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999">
@@ -594,7 +595,7 @@
     </g>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#d45500;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8743);paint-order:normal"
-       d="m 244.2526,-122.76142 -18.11604,-22.58171"
+       d="M 510.66687,185.56071 492.55083,162.979"
        id="path8739"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -608,11 +609,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:connector-curvature="0"
        id="path10635"
-       d="m 178.10676,-169.32809 -68.38687,13.40163"
+       d="m 444.52103,138.99404 -68.38687,13.40163"
        style="fill:none;fill-rule:evenodd;stroke:#d45500;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker10639);paint-order:normal" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#d45500;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker11173);paint-order:normal"
-       d="M 58.515097,-137.04892 33.51989,-103.53896"
+       d="m 324.92936,171.27321 -24.9952,33.50996"
        id="path11169"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -626,11 +627,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:connector-curvature="0"
        id="path11499"
-       d="m -28.797403,-161.91976 72.900626,1.75997"
+       d="m 237.61686,146.40237 72.90063,1.75997"
        style="fill:none;fill-rule:evenodd;stroke:#d45500;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker11503);paint-order:normal" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#d45500;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12181);paint-order:normal"
-       d="m -11.86407,-102.12392 -26.05354,-34.75254"
+       d="M 254.5502,206.19821 228.49666,171.44567"
        id="path12177"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -644,20 +645,20 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:connector-curvature="0"
        id="path14463"
-       d="m -538.93252,-228.6071 h 95.90354"
+       d="m -272.51825,79.715027 h 95.90354"
        style="fill:none;fill-rule:evenodd;stroke:#d45500;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker14467);paint-order:normal" />
     <circle
        r="21.785879"
-       cy="-56.597603"
-       cx="-69.222809"
+       cy="251.72452"
+       cx="197.19145"
        id="circle14927"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.00000008, 3.00000008;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525302;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302,5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker15067);paint-order:normal"
-       d="m -75.700974,-228.6071 h 95.90354"
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302, 5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker15067);paint-order:normal"
+       d="m 190.71329,79.715027 h 95.90354"
        id="path15063"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -667,16 +668,16 @@
     <circle
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.00000008, 3.00000008;stroke-dashoffset:0;stroke-opacity:1"
        id="circle15581"
-       cx="-111.13066"
-       cy="-216.7455"
+       cx="155.2836"
+       cy="91.57663"
        r="21.785879"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <circle
        r="21.785879"
-       cy="-43.875568"
-       cx="57.997494"
+       cy="264.44656"
+       cx="324.41177"
        id="circle15583"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.00000008, 3.00000008;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -685,16 +686,16 @@
     <circle
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.00000008, 3.00000008;stroke-dashoffset:0;stroke-opacity:1"
        id="circle15585"
-       cx="134.32968"
-       cy="-120.20775"
+       cx="400.74396"
+       cy="188.11438"
        r="21.785879"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <circle
        r="21.785879"
-       cy="-42.37886"
-       cx="194.19804"
+       cy="265.94327"
+       cx="460.6123"
        id="circle15587"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.00000008, 3.00000008;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -703,16 +704,16 @@
     <circle
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.00000008, 3.00000008;stroke-dashoffset:0;stroke-opacity:1"
        id="circle15589"
-       cx="-237.60262"
-       cy="-73.061409"
+       cx="28.811649"
+       cy="235.26071"
        r="21.785879"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <circle
        r="21.785879"
-       cy="-25.915062"
-       cx="-335.63708"
+       cy="282.40707"
+       cx="-69.222816"
        id="circle15591"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.00000008, 3.00000008;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -721,16 +722,16 @@
     <circle
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.00000008, 3.00000008;stroke-dashoffset:0;stroke-opacity:1"
        id="circle15593"
-       cx="-322.91507"
-       cy="-102.24724"
+       cx="-56.500805"
+       cy="206.07489"
        r="21.785879"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <circle
        r="21.785879"
-       cy="-111.22749"
-       cx="-426.93637"
+       cy="197.09464"
+       cx="-160.52211"
        id="circle15595"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.00000008, 3.00000008;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -739,16 +740,16 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="37.046299"
-       y="-222.60754"
+       x="303.46057"
+       y="85.714584"
        id="text15611"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          id="tspan15609"
-         x="37.046299"
-         y="-222.60754"
+         x="303.46057"
+         y="85.714584"
          style="font-size:19.75555611px;letter-spacing:-0.02645833px;stroke-width:0.26458332">Objetos Não Alcançáveis</tspan></text>
     <path
        sodipodi:nodetypes="cc"
@@ -757,11 +758,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:connector-curvature="0"
        id="path16147"
-       d="m -400.4869,-109.6187 46.51213,4.49013"
-       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525302;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302,5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker16151);paint-order:normal" />
+       d="m -134.07263,198.70343 46.512125,4.49013"
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302, 5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker16151);paint-order:normal" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525302;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302,5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker16619);paint-order:normal"
-       d="m -263.538,-83.426289 -29.07169,-13.470384"
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302, 5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker16619);paint-order:normal"
+       d="M 2.8762654,224.89584 -26.195425,211.42545"
        id="path16615"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -775,11 +776,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
        inkscape:connector-curvature="0"
        id="path16969"
-       d="m -41.276659,-51.995393 68.214417,2.993419"
-       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525302;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302,5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker16973);paint-order:normal" />
+       d="m 225.13761,256.32673 68.21441,2.99342"
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302, 5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker16973);paint-order:normal" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525302;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302,5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker17171);paint-order:normal"
-       d="M 78.460089,-60.227294 114.49526,-96.896673"
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302, 5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker17171);paint-order:normal"
+       d="m 344.87435,248.09483 36.03518,-36.66938"
        id="path17167"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"
@@ -787,8 +788,8 @@
        inkscape:export-ydpi="144.75999"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525302;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302,5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker17825);paint-order:normal"
-       d="M -75.700979,-82.677932 -104.02431,-184.45417"
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:5.10525322;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525302, 5.10525302;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker17825);paint-order:normal"
+       d="M 190.71329,225.6442 162.38996,123.86796"
        id="path17821"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/gc_algoritmo.png"

@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg4568"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="stack_frame.svg">
+  <defs
+     id="defs4562">
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4595"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4595-5"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-2"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4595-9"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-3-1"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4595-5-2"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="844.85665"
+     inkscape:cy="316.85726"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4565">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-309.1572"
+       y="93.52565"
+       id="text5451"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan5449"
+         x="-309.1572"
+         y="93.52565"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5539">void</tspan> f1(<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5577">void</tspan>);</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="105.4319"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5455"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5543">void</tspan> f2(<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5581">int</tspan>);</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="113.42767"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5597" /><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="123.42357"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5459"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5523">int</tspan> main(<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5547">void</tspan>) {</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="135.32982"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5463"> f1();</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="147.23607"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5469"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#d45500"
+   id="tspan5573"> return</tspan> 0;</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="159.14232"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5471">}</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="167.13808"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5475" /><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="177.13399"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5517"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5527">void</tspan> f1(<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5551">void</tspan>) {</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="189.04024"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5483"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5559"> int</tspan> imidate = 3;</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="200.94649"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5487"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5561"> char</tspan> broiled = 'c';</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="212.85274"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5489"> f2(imidate);</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="224.75899"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5491"> imidate = 10;</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="236.66524"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5493">}</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="244.661"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5499" /><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="254.65689"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5501"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5603">void</tspan> f2(<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5555">int</tspan> a) {</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="266.56314"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5503"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;fill:#800080"
+   id="tspan5535"> int</tspan> b = a;</tspan><tspan
+         sodipodi:role="line"
+         x="-309.1572"
+         y="278.46939"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:11.90625px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5505">}</tspan></text>
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4504-3-9-0"
+       width="146.61099"
+       height="229.80952"
+       x="201.18854"
+       y="66.634804"
+       ry="0.094497256" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="202.55356"
+       y="86.07225"
+       id="text4508-7-2-5-7-3-6"><tspan
+         sodipodi:role="line"
+         id="tspan4506-5-7-3-0-6-2"
+         x="202.55356"
+         y="86.07225"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px">Frame para main()</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="203.68637"
+       y="221.62169"
+       id="text4508-7-2-5-7-3-7-23"><tspan
+         sodipodi:role="line"
+         id="tspan4506-5-7-3-0-6-9-7"
+         x="203.68637"
+         y="221.62169"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.875px;font-family:Hack;-inkscape-font-specification:Hack;fill:#1a1a1a;stroke-width:0.26458332px">Frame para f2()</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="207.79393"
+       y="240.36943"
+       id="text4508-7-2-5-7-3-7-9-2"><tspan
+         sodipodi:role="line"
+         id="tspan4506-5-7-3-0-6-9-2-8"
+         x="207.79393"
+         y="240.36943"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px">Retorno para f1()</tspan><tspan
+         sodipodi:role="line"
+         x="207.79393"
+         y="256.24442"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5624-9">Espaço para: int</tspan><tspan
+         sodipodi:role="line"
+         x="207.79393"
+         y="272.11942"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5628-3">Armazena</tspan><tspan
+         sodipodi:role="line"
+         x="207.79393"
+         y="287.99442"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.69999981px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan985">     parâmetros</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 201.09976,97.504082 H 345.95984"
+       id="path4572-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 200.56522,200.13558 H 345.4253"
+       id="path4572-1-2"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4504-3-9-0-5"
+       width="147.70157"
+       height="229.80952"
+       x="-138.77829"
+       y="66.634804"
+       ry="0.094497256"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-136.86798"
+       y="86.07225"
+       id="text4508-7-2-5-7-3-6-4"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan4506-5-7-3-0-6-2-7"
+         x="-136.86798"
+         y="86.07225"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px">Frame para main()</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -138.85579,97.504082 H 9.0595906"
+       id="path4572-1-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -139.40161,200.13558 H 8.5137764"
+       id="path4572-1-2-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3.99999976;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4504-3-9-0-7"
+       width="149.21347"
+       height="229.80952"
+       x="31.205112"
+       y="66.634804"
+       ry="0.094497256"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111111px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="35.850239"
+       y="86.07225"
+       id="text4508-7-2-5-7-3-6-8"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan4506-5-7-3-0-6-2-6"
+         x="35.850239"
+         y="86.07225"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111111px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px;">Frame para main()</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="33.702946"
+       y="124.57854"
+       id="text4508-7-2-5-7-3-7-8"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan4506-5-7-3-0-6-9-8"
+         x="33.702946"
+         y="124.57854"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.875px;font-family:Hack;-inkscape-font-specification:Hack;fill:#1a1a1a;stroke-width:0.26458332px">Frame para f1()</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="47.103958"
+       y="141.55789"
+       id="text4508-7-2-5-7-3-7-9-1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan4506-5-7-3-0-6-9-2-4"
+         x="47.103958"
+         y="141.55789"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px">Retorno para main()</tspan><tspan
+         sodipodi:role="line"
+         x="47.103958"
+         y="157.43289"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5624-92">Espaço para: int</tspan><tspan
+         sodipodi:role="line"
+         x="47.103958"
+         y="173.30789"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5626-0">Espaço para: char</tspan><tspan
+         sodipodi:role="line"
+         x="47.103958"
+         y="189.18289"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan5628-6">Espaço para: void*</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 31.133006,97.504082 H 180.51213"
+       id="path4572-1-6"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 30.58179,200.13558 H 179.96091"
+       id="path4572-1-2-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4504-3-9-0-50"
+       width="146.61099"
+       height="229.80952"
+       x="374.34808"
+       y="66.634804"
+       ry="0.094497256"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="375.7131"
+       y="86.07225"
+       id="text4508-7-2-5-7-3-6-48"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan4506-5-7-3-0-6-2-71"
+         x="375.7131"
+         y="86.07225"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px">Frame para main()</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 371.10005,97.504082 H 520.54309"
+       id="path4572-1-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 370.5486,200.13558 H 519.99163"
+       id="path4572-1-2-7"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4504-3-9-0-5-7"
+       width="146.61099"
+       height="229.80952"
+       x="549.1413"
+       y="66.634811"
+       ry="0.094497256" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="550.50629"
+       y="86.07225"
+       id="text4508-7-2-5-7-3-6-4-1"><tspan
+         sodipodi:role="line"
+         id="tspan4506-5-7-3-0-6-2-7-1"
+         x="550.50629"
+         y="86.07225"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px">Frame para main()</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 550.98571,97.50408 H 695.84579"
+       id="path4572-1-4-5"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 550.45117,200.13559 H 695.31125"
+       id="path4572-1-2-3-9"
+       inkscape:connector-curvature="0" />
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       id="text959"
+       y="124.57854"
+       x="203.03629"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.875px;font-family:Hack;-inkscape-font-specification:Hack;fill:#1a1a1a;stroke-width:0.26458332px"
+         y="124.57854"
+         x="203.03629"
+         id="tspan957"
+         sodipodi:role="line">Frame para f1()</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       id="text969"
+       y="141.55789"
+       x="216.43729"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         y="141.55789"
+         x="216.43729"
+         id="tspan961"
+         sodipodi:role="line">Retorno para main()</tspan><tspan
+         id="tspan963"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         y="157.43289"
+         x="216.43729"
+         sodipodi:role="line">Espaço para: int</tspan><tspan
+         id="tspan965"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         y="173.30789"
+         x="216.43729"
+         sodipodi:role="line">Espaço para: char</tspan><tspan
+         id="tspan967"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         y="189.18289"
+         x="216.43729"
+         sodipodi:role="line">Espaço para: void*</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="376.14938"
+       y="124.57854"
+       id="text973"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan971"
+         x="376.14938"
+         y="124.57854"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.875px;font-family:Hack;-inkscape-font-specification:Hack;fill:#1a1a1a;stroke-width:0.26458332px">Frame para f1()</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="389.55038"
+       y="141.55789"
+       id="text983"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/stack_frame.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan975"
+         x="389.55038"
+         y="141.55789"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px">Retorno para main()</tspan><tspan
+         sodipodi:role="line"
+         x="389.55038"
+         y="157.43289"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan977">Espaço para: int</tspan><tspan
+         sodipodi:role="line"
+         x="389.55038"
+         y="173.30789"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan979">Espaço para: char</tspan><tspan
+         sodipodi:role="line"
+         x="389.55038"
+         y="189.18289"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.28888893px;line-height:15.875px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.26458332px"
+         id="tspan981">Espaço para: void*</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,1374 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="lwc.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker12273"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#008066;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path12271"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker9097"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path9095"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker8209"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8207"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7729"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path7727"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker5659"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path5657"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker100380"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path100378" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker101792"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path101790"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker78254"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path78252"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker86594"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path86592"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker2154"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path2152"
+         style="fill:#008066;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.1767767"
+     inkscape:cx="1780.0257"
+     inkscape:cy="530.66267"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:5.26964998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.26965015, 10.53930029;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker78254);paint-order:normal"
+       d="m -91.630613,144.80447 h 56.58133"
+       id="path78250"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="327.3833"
+       y="151.62473"
+       id="text78966"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="327.3833"
+         y="151.62473"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.79999924px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan78964">...</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:connector-curvature="0"
+       id="path101788"
+       d="M -239.91052,284.65102 H 1111.2807"
+       style="opacity:0.7;fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:8.06538773;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker101792);paint-order:normal" />
+    <g
+       id="g3498"
+       transform="translate(41.4514,2.2450636)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <circle
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="circle3471"
+         cy="142.54019"
+         cx="-3.9147825"
+         r="62.2738" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="10.924209"
+         y="129.81509"
+         id="text3477"><tspan
+           sodipodi:role="line"
+           x="10.924208"
+           y="129.81509"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke-width:0.26458332px"
+           id="tspan3475">P<tspan
+   style="font-size:14.11111069px;line-height:21.16666603px;baseline-shift:sub;fill:#c83737;fill-opacity:1"
+   id="tspan3473">0</tspan></tspan></text>
+      <path
+         id="path3479"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -27.966724,142.53961 c 0,0 12.921038,11.08971 0,24.01074 -12.92103,12.92103 0,25.02814 0,25.02814 m 0,-98.077745 c 0,0 12.921038,11.089705 0,24.010725 -12.92103,12.92104 0,25.02814 0,25.02814"
+         inkscape:connector-curvature="0" />
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:3.60614705;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect3481"
+         width="48.676666"
+         height="31.28178"
+         x="-12.582479"
+         y="153.97885" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="11.243224"
+         y="169.26505"
+         id="text3487"><tspan
+           sodipodi:role="line"
+           x="11.243224"
+           y="169.26505"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan3483">lwC</tspan><tspan
+           sodipodi:role="line"
+           x="11.243226"
+           y="182.60005"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan3485">root</tspan></text>
+    </g>
+    <g
+       id="g3518"
+       transform="translate(236.36114,2.2450636)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <circle
+         r="62.2738"
+         cx="-3.9147825"
+         cy="142.54019"
+         id="circle3500"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text3506"
+         y="129.81509"
+         x="10.924209"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan3504"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke-width:0.26458332px"
+           y="129.81509"
+           x="10.924208"
+           sodipodi:role="line">P<tspan
+   id="tspan3502"
+   style="font-size:14.11111069px;line-height:21.16666603px;baseline-shift:sub;fill:#c83737;fill-opacity:1">0</tspan></tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         d="m -27.966724,142.53961 c 0,0 12.921038,11.08971 0,24.01074 -12.92103,12.92103 0,25.02814 0,25.02814 m 0,-98.077745 c 0,0 12.921038,11.089705 0,24.010725 -12.92103,12.92104 0,25.02814 0,25.02814"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path3508" />
+      <rect
+         y="153.97885"
+         x="-12.582479"
+         height="31.28178"
+         width="48.676666"
+         id="rect3510"
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:3.60614705;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text3516"
+         y="169.26505"
+         x="11.243224"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan3512"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="169.26505"
+           x="11.243224"
+           sodipodi:role="line">lwC</tspan><tspan
+           id="tspan3514"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="182.60005"
+           x="11.243226"
+           sodipodi:role="line">root</tspan></text>
+    </g>
+    <g
+       transform="translate(429.90138,2.2450636)"
+       id="g3538"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <circle
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="circle3520"
+         cy="142.54019"
+         cx="-3.9147825"
+         r="62.2738" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="10.924209"
+         y="129.81509"
+         id="text3526"><tspan
+           sodipodi:role="line"
+           x="10.924208"
+           y="129.81509"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke-width:0.26458332px"
+           id="tspan3524">P<tspan
+   style="font-size:14.11111069px;line-height:21.16666603px;baseline-shift:sub;fill:#c83737;fill-opacity:1"
+   id="tspan3522">0</tspan></tspan></text>
+      <path
+         id="path3528"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -27.966724,142.53961 c 0,0 12.921038,11.08971 0,24.01074 -12.92103,12.92103 0,25.02814 0,25.02814 m 0,-98.077745 c 0,0 12.921038,11.089705 0,24.010725 -12.92103,12.92104 0,25.02814 0,25.02814"
+         inkscape:connector-curvature="0" />
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:3.60614705;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect3530"
+         width="48.676666"
+         height="31.28178"
+         x="-12.582479"
+         y="153.97885" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="11.243224"
+         y="169.26505"
+         id="text3536"><tspan
+           sodipodi:role="line"
+           x="11.243224"
+           y="169.26505"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan3532">lwC</tspan><tspan
+           sodipodi:role="line"
+           x="11.243226"
+           y="182.60005"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan3534">root</tspan></text>
+    </g>
+    <g
+       transform="translate(626.93518,2.2450636)"
+       id="g3578"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <circle
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="circle3560"
+         cy="142.54019"
+         cx="-3.9147825"
+         r="62.2738" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="10.924209"
+         y="129.81509"
+         id="text3566"><tspan
+           sodipodi:role="line"
+           x="10.924208"
+           y="129.81509"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke-width:0.26458332px"
+           id="tspan3564">P<tspan
+   style="font-size:14.11111069px;line-height:21.16666603px;baseline-shift:sub;fill:#c83737;fill-opacity:1"
+   id="tspan3562">0</tspan></tspan></text>
+      <path
+         id="path3568"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -27.966724,142.53961 c 0,0 12.921038,11.08971 0,24.01074 -12.92103,12.92103 0,25.02814 0,25.02814 m 0,-98.077745 c 0,0 12.921038,11.089705 0,24.010725 -12.92103,12.92104 0,25.02814 0,25.02814"
+         inkscape:connector-curvature="0" />
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:3.60614705;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect3570"
+         width="48.676666"
+         height="31.28178"
+         x="-12.582479"
+         y="153.97885" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="11.243224"
+         y="169.26505"
+         id="text3576"><tspan
+           sodipodi:role="line"
+           x="11.243224"
+           y="169.26505"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan3572">lwC</tspan><tspan
+           sodipodi:role="line"
+           x="11.243226"
+           y="182.60005"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan3574">root</tspan></text>
+    </g>
+    <circle
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="circle3580"
+       cy="144.78525"
+       cx="817.17548"
+       r="62.2738"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="832.01447"
+       y="132.06015"
+       id="text3586"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="832.01447"
+         y="132.06015"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke-width:0.26458332px"
+         id="tspan3584">P<tspan
+   style="font-size:14.11111069px;line-height:21.16666603px;baseline-shift:sub;fill:#c83737;fill-opacity:1"
+   id="tspan3582">0</tspan></tspan></text>
+    <path
+       id="path3588"
+       style="fill:none;stroke:#000000;stroke-width:5.00000014;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.00000014,10.00000028;stroke-opacity:1;stroke-dashoffset:0"
+       d="m 793.12355,144.78467 c 0,0 12.92103,11.08971 0,24.01074 -12.92103,12.92103 0,25.02814 0,25.02814 m 0,-98.077741 c 0,0 12.92103,11.089701 0,24.010721 -12.92103,12.92104 0,25.02814 0,25.02814"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <rect
+       style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:3.60614705;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3590"
+       width="48.676666"
+       height="31.28178"
+       x="808.50781"
+       y="156.22391"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <circle
+       r="62.2738"
+       cx="1014.4099"
+       cy="144.78525"
+       id="circle3600"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       id="text3606"
+       y="132.06015"
+       x="1029.2489"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         id="tspan3604"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke-width:0.26458332px"
+         y="132.06015"
+         x="1029.2489"
+         sodipodi:role="line">P<tspan
+   id="tspan3602"
+   style="font-size:14.11111069px;line-height:21.16666603px;baseline-shift:sub;fill:#c83737;fill-opacity:1">0</tspan></tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       d="m 990.35798,144.78467 c 0,0 12.92102,11.08971 0,24.01074 -12.92103,12.92103 0,25.02814 0,25.02814 m 0,-98.077741 c 0,0 12.92102,11.089701 0,24.010721 -12.92103,12.92104 0,25.02814 0,25.02814"
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3608"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <rect
+       y="156.22391"
+       x="1005.7422"
+       height="31.28178"
+       width="48.676666"
+       id="rect3610"
+       style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:3.60614705;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <circle
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="circle3620"
+       cy="144.78525"
+       cx="-157.37312"
+       r="62.2738"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-142.53413"
+       y="132.06015"
+       id="text3626"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="-142.53413"
+         y="132.06015"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke-width:0.26458332px"
+         id="tspan3624">P<tspan
+   style="font-size:14.11111069px;line-height:21.16666603px;baseline-shift:sub;fill:#c83737;fill-opacity:1"
+   id="tspan3622">0</tspan></tspan></text>
+    <path
+       id="path3628"
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -181.42506,144.78467 c 0,0 12.92103,11.08971 0,24.01074 -12.92103,12.92103 0,25.02814 0,25.02814 m 0,-98.077741 c 0,0 12.92103,11.089701 0,24.010721 -12.92103,12.92104 0,25.02814 0,25.02814"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <rect
+       style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:3.60614705;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3630"
+       width="48.676666"
+       height="31.28178"
+       x="-166.04082"
+       y="156.22391"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-142.21512"
+       y="171.5101"
+       id="text3636"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="-142.21512"
+         y="171.5101"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan3632">lwC</tspan><tspan
+         sodipodi:role="line"
+         x="-142.21512"
+         y="184.84511"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan3634">root</tspan></text>
+    <text
+       id="text5015"
+       y="86.31459"
+       x="-61.30899"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         id="tspan5013"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555556px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="86.31459"
+         x="-61.308994"
+         sodipodi:role="line">lwCreate<tspan
+   style="font-size:14.11111111px;baseline-shift:sub"
+   id="tspan8983">1</tspan></tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:connector-curvature="0"
+       id="path5655"
+       d="m 104.16105,144.80447 h 56.58133"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:5.26964998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.26965015, 10.53930029;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5659);paint-order:normal" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:5.15617466;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.15617457, 10.31234916;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7729);paint-order:normal"
+       d="m 688.39908,144.80447 h 59.56223"
+       id="path7725"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:connector-curvature="0"
+       id="path8205"
+       d="m 884.19075,144.80447 h 59.56223"
+       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:5.15617466;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.15617457, 10.31234916;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8209);paint-order:normal" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="133.20496"
+       y="86.31459"
+       id="text8989"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="133.20496"
+         y="86.31459"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan8987">lwCreate<tspan
+   id="tspan8985"
+   style="font-size:14.11111069px;baseline-shift:sub">2</tspan></tspan></text>
+    <text
+       id="text8995"
+       y="86.31459"
+       x="521.70911"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         id="tspan8993"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="86.31459"
+         x="521.70911"
+         sodipodi:role="line">lwCreate<tspan
+   style="font-size:14.11111069px;baseline-shift:sub"
+   id="tspan8991">n</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="715.97498"
+       y="86.31459"
+       id="text9001"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="715.97498"
+         y="86.31459"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan8999">lwSwitch<tspan
+   id="tspan8997"
+   style="font-size:14.11111069px;baseline-shift:sub">2</tspan></tspan></text>
+    <text
+       id="text9007"
+       y="86.31459"
+       x="910.24097"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         id="tspan9005"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="86.31459"
+         x="910.24097"
+         sodipodi:role="line">lwSwitch<tspan
+   style="font-size:14.11111069px;baseline-shift:sub"
+   id="tspan9003">2</tspan></tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:connector-curvature="0"
+       id="path9093"
+       d="m 496.80271,144.80447 h 56.58133"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:5.26964998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.26965015, 10.53930029;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker9097);paint-order:normal" />
+    <text
+       id="text9665"
+       y="174.90807"
+       x="327.3833"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         id="tspan9663"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="174.90807"
+         x="327.3833"
+         sodipodi:role="line">n</tspan></text>
+    <g
+       id="g9803"
+       transform="translate(32.130768,35.921024)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect9785"
+         width="37.350632"
+         height="27.439291"
+         x="-13.269466"
+         y="212.12016" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="4.9076886"
+         y="233.57225"
+         id="text9791"><tspan
+           sodipodi:role="line"
+           x="4.9076881"
+           y="233.57225"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan9787"><tspan
+             id="tspan9795"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'">C</tspan><tspan
+             id="tspan9793"
+             style="font-size:64.99999762%;baseline-shift:sub">1</tspan></tspan><tspan
+           sodipodi:role="line"
+           x="4.9076886"
+           y="243.43707"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan9789" /></text>
+    </g>
+    <g
+       id="g9861"
+       transform="translate(-2.6223503,35.921024)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <g
+         id="g9817"
+         transform="translate(210.98754)">
+        <rect
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect9805"
+           width="37.350632"
+           height="27.439291"
+           x="-13.269466"
+           y="212.12016" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="4.9076886"
+           y="233.57225"
+           id="text9815"><tspan
+             sodipodi:role="line"
+             x="4.9076881"
+             y="233.57225"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan9811"><tspan
+               id="tspan9807"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'">C</tspan><tspan
+               id="tspan9809"
+               style="font-size:64.99999762%;baseline-shift:sub">1</tspan></tspan><tspan
+             sodipodi:role="line"
+             x="4.9076886"
+             y="243.43707"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan9813" /></text>
+      </g>
+      <g
+         id="g9845">
+        <rect
+           y="212.12016"
+           x="235.06871"
+           height="27.439291"
+           width="37.350632"
+           id="rect9819"
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <text
+           id="text9829"
+           y="233.57225"
+           x="253.24586"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan9825"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="233.57225"
+             x="253.24586"
+             sodipodi:role="line"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'"
+               id="tspan9821">C</tspan><tspan
+               style="font-size:64.99999762%;baseline-shift:sub"
+               id="tspan9823">2</tspan></tspan><tspan
+             id="tspan9827"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="243.43707"
+             x="253.24586"
+             sodipodi:role="line" /></text>
+      </g>
+    </g>
+    <g
+       id="g10161"
+       transform="translate(22.948921,35.921024)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <g
+         transform="translate(360.28119)"
+         id="g9875">
+        <rect
+           y="212.12016"
+           x="-13.269466"
+           height="27.439291"
+           width="37.350632"
+           id="rect9863"
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <text
+           id="text9873"
+           y="233.57225"
+           x="4.9076886"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan9869"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="233.57225"
+             x="4.9076881"
+             sodipodi:role="line"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'"
+               id="tspan9865">C</tspan><tspan
+               style="font-size:64.99999762%;baseline-shift:sub"
+               id="tspan9867">1</tspan></tspan><tspan
+             id="tspan9871"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="243.43707"
+             x="4.9076886"
+             sodipodi:role="line" /></text>
+      </g>
+      <g
+         transform="translate(149.29365)"
+         id="g9889">
+        <rect
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect9877"
+           width="37.350632"
+           height="27.439291"
+           x="235.06871"
+           y="212.12016" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="253.24586"
+           y="233.57225"
+           id="text9887"><tspan
+             sodipodi:role="line"
+             x="253.24586"
+             y="233.57225"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan9883"><tspan
+               id="tspan9879"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'">C</tspan><tspan
+               id="tspan9881"
+               style="font-size:64.99999762%;baseline-shift:sub">2</tspan></tspan><tspan
+             sodipodi:role="line"
+             x="253.24586"
+             y="243.43707"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan9885" /></text>
+      </g>
+      <g
+         id="g9919"
+         transform="translate(186.64428)">
+        <rect
+           y="212.12016"
+           x="235.06871"
+           height="27.439291"
+           width="37.350632"
+           id="rect9907"
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <text
+           id="text9917"
+           y="233.57225"
+           x="253.24586"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan9913"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="233.57225"
+             x="253.24586"
+             sodipodi:role="line">...</tspan><tspan
+             id="tspan9915"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="241.89754"
+             x="253.24586"
+             sodipodi:role="line" /></text>
+      </g>
+    </g>
+    <g
+       transform="translate(190.08209,35.921024)"
+       id="g10060"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <g
+         id="g10020"
+         transform="translate(371.50651)">
+        <rect
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect10008"
+           width="37.350632"
+           height="27.439291"
+           x="-13.269466"
+           y="212.12016" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="4.9076886"
+           y="233.57225"
+           id="text10018"><tspan
+             sodipodi:role="line"
+             x="4.9076881"
+             y="233.57225"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan10014"><tspan
+               id="tspan10010"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'">C</tspan><tspan
+               id="tspan10012"
+               style="font-size:64.99999762%;baseline-shift:sub">1</tspan></tspan><tspan
+             sodipodi:role="line"
+             x="4.9076886"
+             y="243.43707"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan10016" /></text>
+      </g>
+      <g
+         id="g10034"
+         transform="translate(160.51897)">
+        <rect
+           y="212.12016"
+           x="235.06871"
+           height="27.439291"
+           width="37.350632"
+           id="rect10022"
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <text
+           id="text10032"
+           y="233.57225"
+           x="253.24586"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan10028"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="233.57225"
+             x="253.24586"
+             sodipodi:role="line"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'"
+               id="tspan10024">C</tspan><tspan
+               style="font-size:64.99999762%;baseline-shift:sub"
+               id="tspan10026">2</tspan></tspan><tspan
+             id="tspan10030"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="243.43707"
+             x="253.24586"
+             sodipodi:role="line" /></text>
+      </g>
+      <g
+         transform="translate(197.8696)"
+         id="g10044">
+        <rect
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect10036"
+           width="37.350632"
+           height="27.439291"
+           x="235.06871"
+           y="212.12016" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="253.24586"
+           y="233.57225"
+           id="text10042"><tspan
+             sodipodi:role="line"
+             x="253.24586"
+             y="233.57225"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan10038">...</tspan><tspan
+             sodipodi:role="line"
+             x="253.24586"
+             y="241.89754"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan10040" /></text>
+      </g>
+      <g
+         id="g10058"
+         transform="translate(235.22023)">
+        <rect
+           y="212.12016"
+           x="235.06871"
+           height="27.439291"
+           width="37.350632"
+           id="rect10046"
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <text
+           id="text10056"
+           y="233.57225"
+           x="253.24586"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan10052"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="233.57225"
+             x="253.24586"
+             sodipodi:role="line"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'"
+               id="tspan10048">C</tspan><tspan
+               style="font-size:64.99999762%;baseline-shift:sub"
+               id="tspan10050">n</tspan></tspan><tspan
+             id="tspan10054"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="243.43707"
+             x="253.24586"
+             sodipodi:role="line" /></text>
+      </g>
+    </g>
+    <g
+       id="g10114"
+       transform="translate(393.63456,35.921024)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <g
+         transform="translate(371.50651)"
+         id="g10074">
+        <rect
+           y="212.12016"
+           x="-13.269466"
+           height="27.439291"
+           width="37.350632"
+           id="rect10062"
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <text
+           id="text10072"
+           y="233.57225"
+           x="4.9076886"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan10068"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="233.57225"
+             x="4.9076881"
+             sodipodi:role="line"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'"
+               id="tspan10064">C</tspan><tspan
+               style="font-size:64.99999762%;baseline-shift:sub"
+               id="tspan10066">1</tspan></tspan><tspan
+             id="tspan10070"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="243.43707"
+             x="4.9076886"
+             sodipodi:role="line" /></text>
+      </g>
+      <g
+         transform="translate(160.51897)"
+         id="g10088">
+        <rect
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect10076"
+           width="37.350632"
+           height="27.439291"
+           x="235.06871"
+           y="212.12016" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="253.24586"
+           y="233.57225"
+           id="text10086"><tspan
+             sodipodi:role="line"
+             x="253.24586"
+             y="233.57225"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan10082"><tspan
+               id="tspan10078"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'">C</tspan><tspan
+               id="tspan10080"
+               style="font-size:64.99999762%;baseline-shift:sub">2</tspan></tspan><tspan
+             sodipodi:role="line"
+             x="253.24586"
+             y="243.43707"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan10084" /></text>
+      </g>
+      <g
+         id="g10098"
+         transform="translate(197.8696)">
+        <rect
+           y="212.12016"
+           x="235.06871"
+           height="27.439291"
+           width="37.350632"
+           id="rect10090"
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <text
+           id="text10096"
+           y="233.57225"
+           x="253.24586"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan10092"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="233.57225"
+             x="253.24586"
+             sodipodi:role="line">...</tspan><tspan
+             id="tspan10094"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             y="241.89754"
+             x="253.24586"
+             sodipodi:role="line" /></text>
+      </g>
+      <g
+         transform="translate(235.22023)"
+         id="g10112">
+        <rect
+           style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect10100"
+           width="37.350632"
+           height="27.439291"
+           x="235.06871"
+           y="212.12016" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="253.24586"
+           y="233.57225"
+           id="text10110"><tspan
+             sodipodi:role="line"
+             x="253.24586"
+             y="233.57225"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan10106"><tspan
+               id="tspan10102"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'">C</tspan><tspan
+               id="tspan10104"
+               style="font-size:64.99999762%;baseline-shift:sub">n</tspan></tspan><tspan
+             sodipodi:role="line"
+             x="253.24586"
+             y="243.43707"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+             id="tspan10108" /></text>
+      </g>
+    </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:connector-curvature="0"
+       id="path64261"
+       d="m 813.74628,191.24747 c -12.14395,7.37393 -20.5752,34.26887 -12.50822,53.91676"
+       style="fill:none;fill-rule:evenodd;stroke:#008066;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2154)" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#008066;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker12273)"
+       d="m 813.85084,258.89233 c 21.30988,-17.71217 34.38158,-37.37429 35.47588,-64.65145"
+       id="path12269"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <g
+       transform="translate(952.9781,35.921024)"
+       id="g15061"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         y="212.12016"
+         x="-13.269466"
+         height="27.439291"
+         width="37.350632"
+         id="rect15049"
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text15059"
+         y="233.57225"
+         x="4.9076886"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan15055"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="233.57225"
+           x="4.9076881"
+           sodipodi:role="line"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'"
+             id="tspan15051">C</tspan><tspan
+             style="font-size:64.99999762%;baseline-shift:sub"
+             id="tspan15053">1</tspan></tspan><tspan
+           id="tspan15057"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="243.43707"
+           x="4.9076886"
+           sodipodi:role="line" /></text>
+    </g>
+    <rect
+       y="248.04118"
+       x="977.05927"
+       height="27.439291"
+       width="37.350632"
+       id="rect15063"
+       style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       id="text15073"
+       y="179.59724"
+       x="1029.6818"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         id="tspan15069"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="179.59724"
+         x="1029.6818"
+         sodipodi:role="line"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'"
+           id="tspan15065">C</tspan><tspan
+           style="font-size:64.99999762%;baseline-shift:sub"
+           id="tspan15067">2</tspan></tspan><tspan
+         id="tspan15071"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="189.46207"
+         x="1029.6818"
+         sodipodi:role="line" /></text>
+    <g
+       id="g15085"
+       transform="translate(779.34119,35.921024)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         y="212.12016"
+         x="235.06871"
+         height="27.439291"
+         width="37.350632"
+         id="rect15077"
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text15083"
+         y="233.57225"
+         x="253.24586"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan15079"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="233.57225"
+           x="253.24586"
+           sodipodi:role="line">...</tspan><tspan
+           id="tspan15081"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="241.89754"
+           x="253.24586"
+           sodipodi:role="line" /></text>
+    </g>
+    <g
+       transform="translate(816.69182,35.921024)"
+       id="g15099"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999">
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect15087"
+         width="37.350632"
+         height="27.439291"
+         x="235.06871"
+         y="212.12016" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="253.24586"
+         y="233.57225"
+         id="text15097"><tspan
+           sodipodi:role="line"
+           x="253.24586"
+           y="233.57225"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan15093"><tspan
+             id="tspan15089"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;font-family:hack;-inkscape-font-specification:'hack Bold'">C</tspan><tspan
+             id="tspan15091"
+             style="font-size:64.99999762%;baseline-shift:sub">n</tspan></tspan><tspan
+           sodipodi:role="line"
+           x="253.24586"
+           y="243.43707"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan15095" /></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="995.45209"
+       y="260.354"
+       id="text3596"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="995.45209"
+         y="260.354"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan3592">lwC</tspan><tspan
+         sodipodi:role="line"
+         x="995.45209"
+         y="273.689"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan3594">root</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-212.29105"
+       y="276.39667"
+       id="text15454"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="-212.29105"
+         y="276.39667"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.79999924px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan15452">Δt</tspan></text>
+  </g>
+</svg>

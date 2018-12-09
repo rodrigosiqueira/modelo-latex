@@ -759,8 +759,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35355339"
-     inkscape:cx="-1213.8207"
-     inkscape:cy="985.54605"
+     inkscape:cx="-434.58903"
+     inkscape:cy="643.30637"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -791,7 +791,8 @@
        id="g5926"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
+       inkscape:export-ydpi="90"
+       transform="translate(1598.9452,450.78057)">
       <path
          inkscape:connector-curvature="0"
          id="path5043-7"
@@ -913,7 +914,8 @@
        id="g6116"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
+       inkscape:export-ydpi="90"
+       transform="translate(1598.9452,450.78057)">
       <rect
          style="opacity:1;fill:#5252ad;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4810)"
          id="rect4804"
@@ -967,10 +969,10 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:connector-curvature="0"
        id="path7622"
-       d="m -1125.7447,381.11171 628.61024,0 v -142.5"
+       d="m 473.20052,831.89228 h 628.61028 v -142.5"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322826;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7628);paint-order:normal" />
     <g
-       transform="matrix(0.92519681,0,0,0.92519681,-303.80683,58.379394)"
+       transform="matrix(0.92519681,0,0,0.92519681,1295.1384,509.15997)"
        id="g911"
        style="stroke-width:3.82978749"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
@@ -1002,7 +1004,7 @@
     </g>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker3203);paint-order:normal"
-       d="M -1272.168,521.51095 V 641.97627"
+       d="M 326.77722,972.29152 V 1092.7568"
        id="path3199"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
@@ -1016,11 +1018,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:connector-curvature="0"
        id="path5545"
-       d="M -1851.2053,89.485615 V -384.03665 h 450.93"
+       d="M -252.26008,540.26619 V 66.743925 h 450.93"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5549);paint-order:normal" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7271);paint-order:normal"
-       d="m -1603.7672,200.56032 0,178.88071 h 176.3347"
+       d="M -4.8219842,651.34089 V 830.2216 H 171.51272"
        id="path7267"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
@@ -1029,7 +1031,7 @@
        sodipodi:nodetypes="ccc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker9813);paint-order:normal"
-       d="m -708.57263,-289.7514 206.41757,0 V 48.3798"
+       d="m 890.37259,161.02917 h 206.41761 v 338.1312"
        id="path9809"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
@@ -1038,7 +1040,7 @@
        sodipodi:nodetypes="ccc" />
     <path
        style="opacity:1;fill:#71c837;fill-opacity:1;stroke:#00840f;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -163.12799,-351.52372 v 107.16434 h 408.756 v -107.16434 z m 0,110.74178 v 107.16439 h 408.756 v -107.16439 z m 0,110.74179 v 107.162607 h 408.756 V -130.04015 Z m 0,110.740007 v 107.1644 h 408.756 v -107.1644 z m 0,110.7418 V 198.60605 h 408.756 V 91.441657 Z m 0,110.741793 v 107.1626 h 408.756 v -107.1626 z m 0,110.74 v 107.1644 h 408.756 v -107.1644 z m 0,110.7418 v 107.1627 h 408.756 v -107.1627 z m 0,110.7401 v 107.1643 h 408.756 v -107.1643 z"
+       d="M 1435.8172,99.256855 V 206.42119 h 408.756 V 99.256855 Z m 0,110.741775 v 107.16439 h 408.756 V 209.99863 Z m 0,110.74179 v 107.16261 h 408.756 V 320.74042 Z m 0,110.74001 v 107.1644 h 408.756 v -107.1644 z m 0,110.7418 v 107.16439 h 408.756 V 542.22223 Z m 0,110.74179 v 107.1626 h 408.756 v -107.1626 z m 0,110.74 v 107.1644 h 408.756 v -107.1644 z m 0,110.7418 v 107.1627 h 408.756 v -107.1627 z m 0,110.7401 v 107.16428 h 408.756 V 985.18592 Z"
        id="rect7078"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
@@ -1046,7 +1048,7 @@
        inkscape:export-ydpi="90" />
     <g
        id="g6577"
-       transform="translate(-143.18912,7.954951)"
+       transform="translate(1455.7561,458.73553)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90">
@@ -1114,8 +1116,8 @@
        id="rect3901"
        width="167.30708"
        height="167.30708"
-       x="-716.36713"
-       y="1082.6338"
+       x="733.00787"
+       y="270.75879"
        transform="rotate(45)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
@@ -1127,20 +1129,20 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:connector-curvature="0"
        id="path3934"
-       d="m -2104.8819,145.09106 h 99.7106"
+       d="m -505.93668,595.87163 h 99.7106"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker3938);paint-order:normal" />
     <text
        id="text1637"
-       y="-196.79517"
-       x="-1135.5763"
+       y="253.98541"
+       x="463.36893"
        style="font-style:normal;font-weight:normal;font-size:8.97957134px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:59.86380768px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';stroke-width:0.99999994px"
-         y="-196.79517"
-         x="-1135.5763"
+         y="253.98541"
+         x="463.36893"
          id="tspan1635"
          sodipodi:role="line">limit</tspan></text>
     <path
@@ -1150,35 +1152,35 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:connector-curvature="0"
        id="path8571"
-       d="m -409.90066,145.09106 h 210.46532"
+       d="m 1189.0446,595.87163 h 210.4653"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8575);paint-order:normal" />
     <text
        id="text4405"
-       y="430.46426"
-       x="-1323.1047"
+       y="881.24481"
+       x="275.84048"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.30917358px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.9375"
        xml:space="preserve"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:169.48402405px;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#ffffff;stroke-width:0.9375"
-         y="430.46426"
-         x="-1323.1047"
+         y="881.24481"
+         x="275.84048"
          id="tspan4403"
          sodipodi:role="line">&lt;</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.97957134px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-911.40808"
-       y="-197.61362"
+       x="687.53711"
+       y="253.16696"
        id="text11421"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan11419"
-         x="-911.40808"
-         y="-197.61362"
+         x="687.53711"
+         y="253.16696"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:59.86380768px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';stroke-width:0.99999994px">base</tspan></text>
     <path
        sodipodi:nodetypes="ccc"
@@ -1187,12 +1189,12 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:connector-curvature="0"
        id="path11777"
-       d="m -1182.2076,-220.36133 -88.7246,0 v 443.60491"
+       d="m 416.73762,230.41924 h -88.7246 v 443.60491"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker11781);paint-order:normal" />
     <path
        style="fill:#444444;stroke:#444444;stroke-width:0.9374997"
        id="use8"
-       d="m -1222.626,-251.43728 h -7.3008 c -8.7612,0 -14.6017,0 -20.4429,-1.46827 -5.8405,-1.46826 -11.6811,-5.87311 -16.0619,-11.74628 -4.3803,-5.87312 -5.8406,-11.74621 -7.3009,-19.08766 -1.4603,-7.34145 -1.4603,-20.55595 -1.4603,-38.17542 0,-13.2145 0,-22.0242 -1.4602,-29.36557 -1.4603,-7.34145 -4.3803,-14.6829 -8.7611,-19.08779 -4.3804,-4.4048 -10.2214,-7.34137 -18.9826,-7.34137 v -23.49252 c 8.7612,0 14.6022,-2.93656 18.9826,-7.34137 4.3808,-4.40488 7.3008,-11.74633 8.7611,-19.08779 1.4602,-7.34137 1.4602,-16.15106 1.4602,-29.36556 0,-17.61947 0,-30.83397 1.4603,-38.17542 1.4603,-7.34145 2.9206,-13.21458 7.3009,-19.08771 4.3808,-5.87313 10.2214,-10.27802 16.0619,-11.74626 5.8412,-1.46824 11.6817,-1.46824 20.4429,-1.46824 h 7.3008 v 22.02419 h -4.3803 c -10.2214,0 -16.0625,1.46832 -18.9825,4.40489 -4.3809,4.40481 -5.8411,5.87313 -5.8411,10.27793 v 36.7071 c 0,22.02428 -2.92,36.7071 -7.3008,45.51687 -4.3804,8.8097 -13.1415,14.68275 -21.9026,19.08763 8.7611,4.40481 17.5222,10.27794 21.9026,19.08763 4.3808,8.80978 7.3008,23.4926 7.3008,45.51687 v 36.70702 c 0,4.40489 1.4602,5.87313 5.8411,10.27802 2.92,2.93656 8.7611,4.40481 18.9825,4.40481 h 4.3803 z"
+       d="m 376.31922,199.34329 h -7.3008 c -8.7612,0 -14.6017,0 -20.4429,-1.46827 -5.8405,-1.46826 -11.6811,-5.87311 -16.0619,-11.74628 -4.3803,-5.87312 -5.8406,-11.74621 -7.3009,-19.08766 -1.4603,-7.34145 -1.4603,-20.55595 -1.4603,-38.17542 0,-13.2145 0,-22.0242 -1.4602,-29.365565 -1.4603,-7.34145 -4.3803,-14.6829 -8.7611,-19.08779 -4.3804,-4.4048 -10.2214,-7.34137 -18.9826,-7.34137 v -23.49252 c 8.7612,0 14.6022,-2.93656 18.9826,-7.34137 4.3808,-4.40488 7.3008,-11.74633 8.7611,-19.08779 1.4602,-7.34137 1.4602,-16.1510601 1.4602,-29.3655601 0,-17.6194699 0,-30.8339699 1.4603,-38.1754199 1.4603,-7.34145 2.9206,-13.21458 7.3009,-19.08771 4.3808,-5.87313 10.2214,-10.27802 16.0619,-11.74626 5.8412,-1.46824 11.6817,-1.46824 20.4429,-1.46824 h 7.3008 v 22.02419 h -4.3803 c -10.2214,0 -16.0625,1.46832 -18.9825,4.40489 -4.3809,4.40481 -5.8411,5.87313 -5.8411,10.27793 v 36.7070999 c 0,22.0242801 -2.92,36.7071001 -7.3008,45.5168701 -4.3804,8.8097 -13.1415,14.68275 -21.9026,19.08763 8.7611,4.40481 17.5222,10.27794 21.9026,19.08763 4.3808,8.80978 7.3008,23.492595 7.3008,45.516865 v 36.70702 c 0,4.40489 1.4602,5.87313 5.8411,10.27802 2.92,2.93656 8.7611,4.40481 18.9825,4.40481 h 4.3803 z"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
@@ -1200,91 +1202,91 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.97957134px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-1135.5763"
-       y="360.05142"
+       x="463.36893"
+       y="810.83197"
        id="text13741"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan13739"
-         x="-1135.5763"
-         y="360.05142"
+         x="463.36893"
+         y="810.83197"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:59.86380768px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';stroke-width:0.99999994px">sim</tspan></text>
     <text
        id="text13745"
-       y="558.92523"
-       x="-1254.9006"
+       y="1009.7058"
+       x="344.04459"
        style="font-style:normal;font-weight:normal;font-size:8.97957134px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:59.86380768px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';stroke-width:0.99999994px"
-         y="558.92523"
-         x="-1254.9006"
+         y="1009.7058"
+         x="344.04459"
          id="tspan13743"
          sodipodi:role="line">não</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.97957134px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-942.47009"
-       y="153.22272"
+       x="656.4751"
+       y="604.0033"
        id="text13749"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan13747"
-         x="-942.47009"
-         y="153.22272"
+         x="656.4751"
+         y="604.0033"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:59.86380768px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.99999994px">Tabela de</tspan><tspan
          sodipodi:role="line"
-         x="-942.47009"
-         y="228.05247"
+         x="656.4751"
+         y="678.83307"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:59.86380768px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.99999994px"
          id="tspan13759">segmentos</tspan></text>
     <text
        id="text13753"
-       y="-366.50076"
-       x="-1374.203"
+       y="84.279816"
+       x="224.74222"
        style="font-style:normal;font-weight:normal;font-size:8.97957134px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:59.86380768px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';stroke-width:0.99999994px"
-         y="-366.50076"
-         x="-1374.203"
+         y="84.279816"
+         x="224.74222"
          id="tspan13751"
          sodipodi:role="line">s</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.97957134px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-210.96428"
-       y="712.72101"
+       x="1387.981"
+       y="1163.5016"
        id="text13757"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan13755"
-         x="-210.96428"
-         y="712.72101"
+         x="1387.981"
+         y="1163.5016"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:59.86380768px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';stroke-width:0.99999994px">Memória Física</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:8.97957134px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-1344.4451"
-       y="712.72095"
+       x="254.50015"
+       y="1163.5015"
        id="text13763"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/segmentacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan13761"
-         x="-1344.4451"
-         y="712.72095"
+         x="254.50015"
+         y="1163.5015"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:59.86380768px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';stroke-width:0.99999994px">trap</tspan></text>
   </g>
 </svg>

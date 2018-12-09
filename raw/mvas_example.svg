@@ -1,0 +1,1292 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="mvas_example.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker9110"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path9108"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker9014"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path9012"
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker8278"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path8276"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker8146"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path8144"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7562"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path7560"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7094"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path7092"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6266"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6264"
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker5672"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path5670"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker5618"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5616"
+         style="fill:#b3b3b3;fill-opacity:1;fill-rule:evenodd;stroke:#b3b3b3;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker13515"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path13517" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path10841"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="Arrow1Mend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path4329" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="Arrow1Mend-7"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="scale(0.4) rotate(180) translate(10,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path4329-5" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker29811"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path29809"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="-69.077046"
+     inkscape:cy="784.97616"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:guide-bbox="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:object-nodes="false" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8060"
+       width="221.55151"
+       height="40.842793"
+       x="-481.84189"
+       y="545.30444" />
+    <rect
+       style="opacity:0.65499998;fill:none;fill-opacity:1;stroke:none;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8077"
+       width="1067"
+       height="548.79901"
+       x="-391.3772"
+       y="-44.213932"
+       rx="0"
+       ry="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.49968743;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect10692"
+       width="762.39825"
+       height="55.506054"
+       x="-70.099091"
+       y="45.785294"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.79999995;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect11368"
+       width="1245.155"
+       height="162"
+       x="-546.90503"
+       y="9.3622046"
+       ry="14.875001"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.49968732;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect12380"
+       width="762.39825"
+       height="55.506054"
+       x="-71.974091"
+       y="108.78529"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.68750001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker29811);paint-order:normal"
+       d="m -184.22883,73.560837 h 104.1757"
+       id="path27867"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"
+       sodipodi:nodetypes="cc" />
+    <rect
+       y="53.11692"
+       x="-251.85291"
+       height="40.842793"
+       width="68.442596"
+       id="rect17011-3"
+       style="opacity:1;fill:#c83737;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3.99999952;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect17013-6"
+       width="238.86195"
+       height="40.842793"
+       x="-490.71481"
+       y="53.11692" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect17082-7"
+       width="45.187714"
+       height="40.842793"
+       x="-538.46472"
+       y="53.11692" />
+    <text
+       transform="scale(1.1062296,0.90397147)"
+       id="text17015-5"
+       y="91.416222"
+       x="-482.90237"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.5px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000"
+         y="91.416222"
+         x="-482.90237"
+         id="tspan17017-3"
+         sodipodi:role="line">PC</tspan></text>
+    <text
+       transform="scale(1.1062296,0.90397147)"
+       id="text17019-5"
+       y="89.570099"
+       x="-442.94446"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.5px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000"
+         y="89.570099"
+         x="-442.94446"
+         id="tspan17021-6"
+         sodipodi:role="line">Registradores</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-223.70518"
+       y="91.816338"
+       id="text17084-2"
+       transform="scale(1.1062296,0.90397147)"><tspan
+         sodipodi:role="line"
+         id="tspan17086-9"
+         x="-223.70518"
+         y="91.816338"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.5px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000">VAS</tspan></text>
+    <text
+       id="text16550"
+       y="-2.6740723"
+       x="-353.75598"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:Hack;font-stretch:normal;font-variant:normal;"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:100.99999905%;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;text-anchor:middle;stroke-width:1px;"
+         y="-2.6740723"
+         x="-353.75598"
+         sodipodi:role="line"
+         id="tspan16556">vas_create</tspan></text>
+    <g
+       id="g1168">
+      <rect
+         y="54.654667"
+         x="432.37405"
+         height="37.767307"
+         width="132.90193"
+         id="rect16576"
+         style="opacity:1;fill:#ff2a2a;fill-opacity:1;stroke:none;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text16588"
+         y="87.620354"
+         x="437.74103"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none"
+           y="87.620354"
+           x="437.74103"
+           id="tspan16590"
+           sodipodi:role="line">Stack</tspan></text>
+      <rect
+         style="opacity:1;fill:#37c8ab;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect16582"
+         width="155.47411"
+         height="36.531284"
+         x="49.686287"
+         y="55.272678" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         x="78.82959"
+         y="83.635979"
+         id="text16600"><tspan
+           sodipodi:role="line"
+           id="tspan16602"
+           x="78.82959"
+           y="83.635979"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none">Heap</tspan></text>
+      <rect
+         y="55.31472"
+         x="-64.006577"
+         height="36.447205"
+         width="110.41161"
+         id="rect16586"
+         style="opacity:1;fill:#d45500;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-56.251942"
+         y="87.219963"
+         id="text16608"><tspan
+           sodipodi:role="line"
+           id="tspan16610"
+           x="-56.251942"
+           y="87.219963"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none">Text</tspan></text>
+      <rect
+         y="54.677692"
+         x="576.15735"
+         height="37.721256"
+         width="108.01096"
+         id="rect16584"
+         style="opacity:1;fill:#ffd42a;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text16612"
+         y="87.219963"
+         x="581.4519"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none"
+           y="87.219963"
+           x="581.4519"
+           id="tspan16614"
+           sodipodi:role="line">Data</tspan></text>
+      <g
+         style=""
+         inkscape:export-ydpi="293.84"
+         inkscape:export-xdpi="293.84"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+         transform="translate(30.9375)"
+         id="g5477">
+        <rect
+           style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000037;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect5457"
+           width="97.349106"
+           height="36.531284"
+           x="183.74878"
+           y="55.272678" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           x="205.82178"
+           y="87.425041"
+           id="text5461"><tspan
+             sodipodi:role="line"
+             id="tspan5459"
+             x="205.82178"
+             y="87.425041"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none">D0</tspan></text>
+      </g>
+      <g
+         style=""
+         inkscape:export-ydpi="293.84"
+         inkscape:export-xdpi="293.84"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+         transform="translate(30.9375)"
+         id="g5482">
+        <rect
+           y="55.272678"
+           x="286.87378"
+           height="36.531284"
+           width="109.53661"
+           id="rect5468"
+           style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000037;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           id="text5472"
+           y="87.600822"
+           x="318.62451"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none"
+             y="87.600822"
+             x="318.62451"
+             id="tspan5470"
+             sodipodi:role="line">D1</tspan></text>
+      </g>
+    </g>
+    <text
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:0%;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="308.45599"
+       y="145.49339"
+       id="text5486"><tspan
+         id="tspan5484"
+         sodipodi:role="line"
+         x="308.45599"
+         y="145.49339"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.00000381px;line-height:100.99999905%;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;text-anchor:middle;stroke-width:1px">Nova VAS vázia</tspan></text>
+    <rect
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       y="273.59781"
+       x="-70.099091"
+       height="55.506054"
+       width="762.39825"
+       id="rect5520"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.49968743;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       ry="10.802355"
+       y="237.1747"
+       x="-550.65497"
+       height="189.1875"
+       width="1248.905"
+       id="rect5522"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.79999995;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       y="362.84781"
+       x="-71.974091"
+       height="55.506054"
+       width="762.39825"
+       id="rect5524"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.50000024;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:connector-curvature="0"
+       id="path5550"
+       d="m -184.22883,301.37334 h 104.1757"
+       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.68750001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8146);paint-order:normal" />
+    <rect
+       style="opacity:1;fill:#c83737;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5526"
+       width="68.442596"
+       height="40.842793"
+       x="-252.79041"
+       y="280.92941" />
+    <rect
+       y="280.92941"
+       x="-495.40231"
+       height="40.842793"
+       width="243.54945"
+       id="rect5528"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       y="280.92941"
+       x="-540.33972"
+       height="40.842793"
+       width="45.187714"
+       id="rect5530"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-484.59732"
+       y="343.42914"
+       id="text5534"
+       transform="scale(1.1062296,0.90397147)"><tspan
+         sodipodi:role="line"
+         id="tspan5532"
+         x="-484.59732"
+         y="343.42914"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.5px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000">PC</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-445.06314"
+       y="340.6073"
+       id="text5538"
+       transform="scale(1.1062296,0.90397147)"><tspan
+         sodipodi:role="line"
+         id="tspan5536"
+         x="-445.06314"
+         y="340.6073"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.5px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000">Registradores</tspan></text>
+    <text
+       transform="scale(1.1062296,0.90397147)"
+       id="text5542"
+       y="343.82925"
+       x="-224.55266"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.5px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000"
+         y="343.82925"
+         x="-224.55266"
+         id="tspan5540"
+         sodipodi:role="line">VAS</tspan></text>
+    <text
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:Hack;font-stretch:normal;font-variant:normal;"
+       x="-353.75598"
+       y="225.13843"
+       id="text5548"><tspan
+         id="tspan5546"
+         sodipodi:role="line"
+         x="-353.75598"
+         y="225.13843"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:100.99999905%;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;text-anchor:middle;stroke-width:1px;">vas_attach</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5572"
+       width="132.90193"
+       height="37.767307"
+       x="432.37405"
+       y="371.52966"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="437.70197"
+       y="404.49536"
+       id="text5576"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan5574"
+         x="437.70197"
+         y="404.49536"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;fill:#000000;stroke:none">Stack</tspan></text>
+    <rect
+       y="372.14767"
+       x="49.686287"
+       height="36.531284"
+       width="155.47411"
+       id="rect5580"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       id="text5584"
+       y="400.51099"
+       x="79.171387"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none"
+         y="400.51099"
+         x="79.171387"
+         id="tspan5582"
+         sodipodi:role="line">Heap</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5588"
+       width="110.41161"
+       height="36.447205"
+       x="-64.006577"
+       y="372.18973"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       id="text5592"
+       y="404.09497"
+       x="-55.431629"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;fill:#000000;stroke:none"
+         y="404.09497"
+         x="-55.431629"
+         id="tspan5590"
+         sodipodi:role="line">Text</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5596"
+       width="108.01096"
+       height="37.721256"
+       x="576.15735"
+       y="371.5527"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="581.78394"
+       y="404.09497"
+       id="text5600"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan5598"
+         x="581.78394"
+         y="404.09497"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;fill:#000000;stroke:none">Data</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 4.68750000999999994;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5672);paint-order:normal"
+       d="m -8.8232896,326.94443 v 44.19414"
+       id="path5668"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:connector-curvature="0"
+       id="path6262"
+       d="m 498.8025,326.94443 v 44.19414"
+       style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 4.68750000999999994;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6266);paint-order:normal" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 4.68750000999999994;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7094);paint-order:normal"
+       d="m 630.14031,326.94443 v 44.19414"
+       id="path7090"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 4.68750000999999994;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7562);paint-order:normal"
+       d="m 127.40082,326.94443 v 44.19414"
+       id="path7558"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.49968743;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8052"
+       width="762.39825"
+       height="55.506054"
+       x="-70.099091"
+       y="537.97284"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:3.79999995;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8054"
+       width="1244.2175"
+       height="189.1875"
+       x="-545.96747"
+       y="501.54971"
+       ry="10.802355"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:3.50000024;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8056"
+       width="762.39825"
+       height="55.506054"
+       x="-71.974091"
+       y="627.22284"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="545.30444"
+       x="-258.41541"
+       height="40.842793"
+       width="68.442596"
+       id="rect8058"
+       style="opacity:1;fill:#c83737;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8062"
+       width="45.187714"
+       height="40.842793"
+       x="-527.21472"
+       y="545.30444" />
+    <text
+       transform="scale(1.1062296,0.90397147)"
+       id="text8066"
+       y="635.88861"
+       x="-472.7327"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.5px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000"
+         y="635.88861"
+         x="-472.7327"
+         id="tspan8064"
+         sodipodi:role="line">PC</tspan></text>
+    <text
+       transform="scale(1.1062296,0.90397147)"
+       id="text8070"
+       y="633.06677"
+       x="-432.72946"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000"
+         y="633.06677"
+         x="-432.72946"
+         id="tspan8068"
+         sodipodi:role="line">Registradores</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-229.6375"
+       y="636.2887"
+       id="text8074"
+       transform="scale(1.1062296,0.90397147)"><tspan
+         sodipodi:role="line"
+         id="tspan8072"
+         x="-229.6375"
+         y="636.2887"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.5px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000">VAS</tspan></text>
+    <text
+       id="text8080"
+       y="489.51343"
+       x="-353.75598"
+       style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:Hack;font-stretch:normal;font-variant:normal;"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:100.99999905%;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;text-anchor:middle;stroke-width:1px;"
+         y="489.51343"
+         x="-353.75598"
+         sodipodi:role="line"
+         id="tspan8078">vas_switch</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#b3b3b3;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 9.37500001999999988;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5618);paint-order:normal"
+       d="m -184.22883,565.74834 h 104.1757"
+       id="path8082"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"
+       sodipodi:nodetypes="cc" />
+    <rect
+       y="635.90466"
+       x="432.37405"
+       height="37.767307"
+       width="132.90193"
+       id="rect8100"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       id="text8104"
+       y="668.87036"
+       x="437.70197"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;fill:#000000;stroke:none"
+         y="668.87036"
+         x="437.70197"
+         id="tspan8102"
+         sodipodi:role="line">Stack</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8106"
+       width="155.47411"
+       height="36.531284"
+       x="49.686287"
+       y="636.52271"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="79.171387"
+       y="664.88599"
+       id="text8110"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan8108"
+         x="79.171387"
+         y="664.88599"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none">Heap</tspan></text>
+    <rect
+       y="636.56476"
+       x="-64.006577"
+       height="36.447205"
+       width="110.41161"
+       id="rect8112"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-55.431629"
+       y="668.46997"
+       id="text8116"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan8114"
+         x="-55.431629"
+         y="668.46997"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;fill:#000000;stroke:none">Text</tspan></text>
+    <rect
+       y="635.92773"
+       x="576.15735"
+       height="37.721256"
+       width="108.01096"
+       id="rect8118"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#4d3737;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       id="text8122"
+       y="668.46997"
+       x="581.78394"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:Hack;fill:#000000;stroke:none"
+         y="668.46997"
+         x="581.78394"
+         id="tspan8120"
+         sodipodi:role="line">Data</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:connector-curvature="0"
+       id="path8124"
+       d="m -8.8232896,591.31943 v 44.19414"
+       style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 4.68750000999999994;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker9014);paint-order:normal" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 4.68750000999999994;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6266);paint-order:normal"
+       d="m 498.8025,591.31943 v 44.19414"
+       id="path8126"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:connector-curvature="0"
+       id="path8128"
+       d="m 630.14031,591.31943 v 44.19414"
+       style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 4.68750000999999994;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7094);paint-order:normal" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:connector-curvature="0"
+       id="path8130"
+       d="m 127.40082,591.31943 v 44.19414"
+       style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 4.68750000999999994;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7562);paint-order:normal" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:connector-curvature="0"
+       id="path8274"
+       d="m -184.28162,568.60422 104.600843,84.91334"
+       style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.68750001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8278);paint-order:normal" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 4.68750000999999994;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker9110);paint-order:normal"
+       d="m -80.07329,571.63193 c -1.609767,16.28338 -6.17954,31.90897 -30,43.25664"
+       id="path9106"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g1210"
+       transform="translate(0,227.8125)">
+      <rect
+         style="opacity:1;fill:#ff2a2a;fill-opacity:1;stroke:none;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect1170"
+         width="132.90193"
+         height="37.767307"
+         x="432.37405"
+         y="54.654667" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="437.74103"
+         y="87.620354"
+         id="text1174"><tspan
+           sodipodi:role="line"
+           id="tspan1172"
+           x="437.74103"
+           y="87.620354"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none">Stack</tspan></text>
+      <rect
+         y="55.272678"
+         x="49.686287"
+         height="36.531284"
+         width="155.47411"
+         id="rect1176"
+         style="opacity:1;fill:#37c8ab;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text1180"
+         y="83.635979"
+         x="78.82959"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none"
+           y="83.635979"
+           x="78.82959"
+           id="tspan1178"
+           sodipodi:role="line">Heap</tspan></text>
+      <rect
+         style="opacity:1;fill:#d45500;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect1182"
+         width="110.41161"
+         height="36.447205"
+         x="-64.006577"
+         y="55.31472" />
+      <text
+         id="text1186"
+         y="87.219963"
+         x="-56.251942"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none"
+           y="87.219963"
+           x="-56.251942"
+           id="tspan1184"
+           sodipodi:role="line">Text</tspan></text>
+      <rect
+         style="opacity:1;fill:#ffd42a;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect1188"
+         width="108.01096"
+         height="37.721256"
+         x="576.15735"
+         y="54.677692" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="581.4519"
+         y="87.219963"
+         id="text1192"><tspan
+           sodipodi:role="line"
+           id="tspan1190"
+           x="581.4519"
+           y="87.219963"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none">Data</tspan></text>
+      <g
+         id="g1200"
+         transform="translate(30.9375)"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+         inkscape:export-xdpi="293.84"
+         inkscape:export-ydpi="293.84">
+        <rect
+           y="55.272678"
+           x="183.74878"
+           height="36.531284"
+           width="97.349106"
+           id="rect1194"
+           style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000037;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           id="text1198"
+           y="87.425041"
+           x="205.82178"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none"
+             y="87.425041"
+             x="205.82178"
+             id="tspan1196"
+             sodipodi:role="line">D0</tspan></text>
+      </g>
+      <g
+         id="g1208"
+         transform="translate(30.9375)"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+         inkscape:export-xdpi="293.84"
+         inkscape:export-ydpi="293.84">
+        <rect
+           style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000037;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect1202"
+           width="109.53661"
+           height="36.531284"
+           x="286.87378"
+           y="55.272678" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           x="318.62451"
+           y="87.600822"
+           id="text1206"><tspan
+             sodipodi:role="line"
+             id="tspan1204"
+             x="318.62451"
+             y="87.600822"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none">D1</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(0,490.3125)"
+       id="g1252">
+      <rect
+         y="54.654667"
+         x="432.37405"
+         height="37.767307"
+         width="132.90193"
+         id="rect1212"
+         style="opacity:1;fill:#ff2a2a;fill-opacity:1;stroke:none;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text1216"
+         y="87.620354"
+         x="437.74103"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none"
+           y="87.620354"
+           x="437.74103"
+           id="tspan1214"
+           sodipodi:role="line">Stack</tspan></text>
+      <rect
+         style="opacity:1;fill:#37c8ab;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect1218"
+         width="155.47411"
+         height="36.531284"
+         x="49.686287"
+         y="55.272678" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         x="78.82959"
+         y="83.635979"
+         id="text1222"><tspan
+           sodipodi:role="line"
+           id="tspan1220"
+           x="78.82959"
+           y="83.635979"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none">Heap</tspan></text>
+      <rect
+         y="55.31472"
+         x="-64.006577"
+         height="36.447205"
+         width="110.41161"
+         id="rect1224"
+         style="opacity:1;fill:#d45500;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-56.251942"
+         y="87.219963"
+         id="text1228"><tspan
+           sodipodi:role="line"
+           id="tspan1226"
+           x="-56.251942"
+           y="87.219963"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none">Text</tspan></text>
+      <rect
+         y="54.677692"
+         x="576.15735"
+         height="37.721256"
+         width="108.01096"
+         id="rect1230"
+         style="opacity:1;fill:#ffd42a;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text1234"
+         y="87.219963"
+         x="581.4519"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none"
+           y="87.219963"
+           x="581.4519"
+           id="tspan1232"
+           sodipodi:role="line">Data</tspan></text>
+      <g
+         inkscape:export-ydpi="293.84"
+         inkscape:export-xdpi="293.84"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+         transform="translate(30.9375)"
+         id="g1242">
+        <rect
+           style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000037;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect1236"
+           width="97.349106"
+           height="36.531284"
+           x="183.74878"
+           y="55.272678" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           x="205.82178"
+           y="87.425041"
+           id="text1240"><tspan
+             sodipodi:role="line"
+             id="tspan1238"
+             x="205.82178"
+             y="87.425041"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none">D0</tspan></text>
+      </g>
+      <g
+         inkscape:export-ydpi="293.84"
+         inkscape:export-xdpi="293.84"
+         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/mvas_example.png"
+         transform="translate(30.9375)"
+         id="g1250">
+        <rect
+           y="55.272678"
+           x="286.87378"
+           height="36.531284"
+           width="109.53661"
+           id="rect1244"
+           style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#000037;stroke-width:2.8125;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           id="text1248"
+           y="87.600822"
+           x="318.62451"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none"
+             y="87.600822"
+             x="318.62451"
+             id="tspan1246"
+             sodipodi:role="line">D1</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

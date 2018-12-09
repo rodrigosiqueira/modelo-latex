@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="VT-x_flow.svg">
+   sodipodi:docname="vt-x_flow.svg">
   <defs
      id="defs2">
     <marker
@@ -224,8 +224,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.24748737"
-     inkscape:cx="2765.5871"
-     inkscape:cy="1603.2669"
+     inkscape:cx="605.88093"
+     inkscape:cy="799.18546"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -255,7 +255,8 @@
        id="g25265"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
-       inkscape:export-ydpi="144.75999">
+       inkscape:export-ydpi="144.75999"
+       transform="translate(-346.38131,186.01959)">
       <rect
          transform="rotate(-90)"
          style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534349;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -285,7 +286,7 @@
            id="tspan7223"
            sodipodi:role="line"
            x="159.26039"
-           y="4.6792459"
+           y="4.679245"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.27777863px;line-height:52.91666794px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">non-root</tspan></text>
     </g>
     <ellipse
@@ -293,28 +294,28 @@
        id="ellipse75130"
        ry="123.71067"
        rx="157.53661"
-       cy="-34.475998"
-       cx="461.30615"
+       cy="151.54359"
+       cx="114.92484"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="463.0549"
-       y="-15.984103"
+       x="116.67359"
+       y="170.03549"
        id="text75134"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          id="tspan75132"
          sodipodi:role="line"
-         x="463.0549"
-         y="-15.984103"
+         x="116.67359"
+         y="170.03549"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.79999924px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">VMCS</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker72292);paint-order:normal"
-       d="m 441.82422,-106.11093 h 34.76122"
+       d="M 95.442908,79.908664 H 130.20413"
        id="path75198"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
@@ -328,11 +329,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:connector-curvature="0"
        id="path75200"
-       d="M 480.88282,36.085011 H 445.03723"
+       d="M 134.50151,222.1046 H 98.655918"
        style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker73282);paint-order:normal" />
     <g
        id="g25259"
-       transform="translate(31.296436,-11.411804)"
+       transform="translate(-315.08488,174.60779)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999">
@@ -370,7 +371,7 @@
     </g>
     <g
        id="g9315"
-       transform="translate(322.79167,-239.52527)"
+       transform="translate(-23.589642,-53.505676)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999">
@@ -404,7 +405,7 @@
     </g>
     <g
        id="g9321"
-       transform="translate(295.59806,-239.6369)"
+       transform="translate(-50.783252,-53.617306)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999">
@@ -443,11 +444,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:connector-curvature="0"
        id="path21697"
-       d="m 251.61414,-106.07954 h 91.54694"
+       d="M -94.767172,79.940054 H -3.2202323"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker21701);paint-order:normal" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker22769);paint-order:normal"
-       d="M 343.58252,36.058723 H 258.70309"
+       d="M -2.7987923,222.07832 H -87.678222"
        id="path22765"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
@@ -461,11 +462,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:connector-curvature="0"
        id="path23609"
-       d="M 564.78836,-106.08291 H 668.29033"
+       d="M 218.40705,79.936684 H 321.90902"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:3.99999976;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker23613);paint-order:normal" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker24297);paint-order:normal"
-       d="M 674.72795,36.058323 H 568.84501"
+       d="M 328.34664,222.07792 H 222.4637"
        id="path24293"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
@@ -475,36 +476,36 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="298.68643"
-       y="-111.53476"
+       x="-47.694881"
+       y="74.484833"
        id="text25185"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          id="tspan25183"
          sodipodi:role="line"
-         x="298.68643"
-         y="-111.53476"
+         x="-47.694881"
+         y="74.484833"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px">VM exit</tspan></text>
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        id="text25191"
-       y="53.623707"
-       x="631.17944"
+       y="239.6433"
+       x="284.79813"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="53.623707"
-         x="631.17944"
+         y="239.6433"
+         x="284.79813"
          sodipodi:role="line"
          id="tspan25189">VM entry</tspan></text>
     <ellipse
-       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3.00000008;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3.00000008,3.00000008;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3.00000008, 3.00000008;stroke-dashoffset:0;stroke-opacity:1"
        id="path5162-5-7"
-       cx="767.39325"
-       cy="-201.20311"
+       cx="421.01193"
+       cy="-15.183517"
        rx="44.366741"
        ry="17.372519"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
@@ -513,26 +514,26 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="767.07904"
-       y="-195.10115"
+       x="420.69772"
+       y="-9.0815573"
        id="text4508-35-3-3-0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         x="767.07904"
-         y="-195.10115"
+         x="420.69772"
+         y="-9.0815573"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4570-6-5-9">VMM</tspan></text>
     <g
        id="g33535"
-       transform="translate(81.50927,43.845238)"
-       style="stroke-width:4.00000011;stroke-miterlimit:4;stroke-dasharray:4.00000011,4.00000011;stroke-dashoffset:0"
+       transform="translate(-264.87204,229.86483)"
+       style="stroke-width:4;stroke-miterlimit:4;stroke-dasharray:4.00000011, 4.00000011;stroke-dashoffset:0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999">
       <ellipse
-         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.00000011;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000011,4.00000011;stroke-dashoffset:0;stroke-opacity:1"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000011, 4.00000011;stroke-dashoffset:0;stroke-opacity:1"
          id="ellipse100324"
          cx="77.863091"
          cy="-245.04836"
@@ -540,19 +541,19 @@
          ry="17.372519" />
       <text
          xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.00000011;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:4.00000011,4.00000011;stroke-dashoffset:0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000011, 4.00000011;stroke-dashoffset:0;stroke-opacity:1"
          x="77.548897"
          y="-238.94641"
          id="text100328"><tspan
            sodipodi:role="line"
            x="77.548897"
            y="-238.94641"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:4.00000011;stroke-miterlimit:4;stroke-dasharray:4.00000011,4.00000011;stroke-dashoffset:0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:4.00000011, 4.00000011;stroke-dashoffset:0"
            id="tspan100326">Guests</tspan></text>
     </g>
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#008066;stroke-width:4.00000011;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000011,4.00000011;stroke-opacity:1;paint-order:normal;stroke-dashoffset:0"
-       d="m 159.37236,-153.08606 v -25.07516"
+       style="fill:none;fill-rule:evenodd;stroke:#008066;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000011, 4.00000011;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="M -187.00895,32.933534 V 7.8583736"
        id="path102790"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
@@ -566,10 +567,10 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:connector-curvature="0"
        id="path34592"
-       d="m 767.39324,-153.08606 v -25.07516"
+       d="M 421.01193,32.933534 V 7.8583736"
        style="fill:none;fill-rule:evenodd;stroke:#008066;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000011, 4.00000011;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     <g
-       transform="translate(322.79167,-101.18598)"
+       transform="translate(-23.589642,84.833614)"
        id="g34605"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
@@ -603,7 +604,7 @@
            id="tspan34601">State</tspan></text>
     </g>
     <g
-       transform="translate(295.59806,-101.29761)"
+       transform="translate(-50.783252,84.721984)"
        id="g34615"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
@@ -641,55 +642,55 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        id="text34619"
-       y="-65.421669"
-       x="383.71448"
+       y="120.59792"
+       x="37.333164"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="-65.421669"
-         x="383.71448"
+         y="120.59792"
+         x="37.333164"
          sodipodi:role="line"
          id="tspan34617">salva</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="504.25699"
-       y="-62.397861"
+       x="157.87567"
+       y="123.62173"
        id="text34623"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          id="tspan34621"
          sodipodi:role="line"
-         x="504.25699"
-         y="-62.397861"
+         x="157.87567"
+         y="123.62173"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px">carrega</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="538.29846"
-       y="4.8819022"
+       x="191.91714"
+       y="190.90149"
        id="text34627"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          id="tspan34625"
          sodipodi:role="line"
-         x="538.29846"
-         y="4.8819022"
+         x="191.91714"
+         y="190.90149"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px">salva</tspan></text>
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/vt-x_flow.png"
        id="text34631"
-       y="3.3699944"
-       x="415.62274"
+       y="189.38959"
+       x="69.241432"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="3.3699944"
-         x="415.62274"
+         y="189.38959"
+         x="69.241432"
          sodipodi:role="line"
          id="tspan34629">carrega</tspan></text>
   </g>

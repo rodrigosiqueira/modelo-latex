@@ -14,7 +14,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
    sodipodi:docname="open_file_table.svg">
   <defs
      id="defs2">
@@ -116,14 +116,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35355339"
-     inkscape:cx="-103.44378"
-     inkscape:cy="1040.2497"
+     inkscape:cx="-633.77387"
+     inkscape:cy="1028.936"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="1920"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:object-nodes="false" />
@@ -135,7 +135,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -145,7 +145,7 @@
      id="layer1">
     <g
        id="g3736"
-       transform="translate(27.689123,-18.708867)"
+       transform="translate(264.91756,84.564079)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999">
@@ -165,7 +165,7 @@
     </g>
     <g
        id="g944"
-       transform="translate(0,10.060227)"
+       transform="translate(237.22843,113.33317)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999">
@@ -240,7 +240,7 @@
     </g>
     <g
        id="g1001"
-       transform="translate(0,10.060227)"
+       transform="translate(237.22843,113.33317)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999">
@@ -318,8 +318,8 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        ry="7.2241001"
-       y="119.25629"
-       x="-82.244186"
+       y="356.48471"
+       x="-185.51714"
        height="40.335014"
        width="45.982418"
        id="rect11686"
@@ -331,8 +331,8 @@
        id="rect1020"
        width="45.982418"
        height="40.335014"
-       x="-82.244186"
-       y="176.70866"
+       x="-185.51714"
+       y="413.9371"
        ry="7.2241001"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
@@ -342,8 +342,8 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        ry="7.2241001"
-       y="222.82176"
-       x="-82.244186"
+       y="460.0502"
+       x="-185.51714"
        height="40.335014"
        width="45.982418"
        id="rect1022"
@@ -355,15 +355,15 @@
        id="rect1024"
        width="45.982418"
        height="40.335014"
-       x="-157.83943"
-       y="119.25629"
+       x="-261.11237"
+       y="356.48471"
        ry="7.2241001"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:5.10525274;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12311);paint-order:normal"
-       d="m -251.50022,-5.3564257 55.33058,0 0,49.5148807 64.14491,0"
+       d="m -14.271787,97.91652 h 55.33058 V 147.4314 H 105.2037"
        id="path12307"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
@@ -377,11 +377,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:connector-curvature="0"
        id="path1274"
-       d="m -249.98832,66.45905 114.18383,0"
+       d="M -12.759887,169.732 H 101.42394"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:5.10525274;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker1278);paint-order:normal" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:5.10525274;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker2724);paint-order:normal"
-       d="M 10.036506,61.968922 109.12408,60.411431"
+       d="m 247.26494,165.24187 99.08757,-1.55749"
        id="path2720"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
@@ -395,12 +395,12 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:connector-curvature="0"
        id="path3110"
-       d="M 114.65449,134.73543 14.070215,74.927838"
+       d="M 351.88292,238.00838 251.29865,178.20078"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:5.10525274;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker3114);paint-order:normal" />
     <path
        id="path3628"
        style="fill:none;stroke:#808080;stroke-width:4.99999952;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -422.82544,53.037308 c 0,0 -41.21894,-20.877297 0,-45.2022186 41.21893,-24.3249144 0,-47.1175644 0,-47.1175644 m 0,184.639545 c 0,0 -41.21894,-20.87727 0,-45.20221 41.21893,-24.324916 0,-47.117552 0,-47.117552"
+       d="m -185.59701,156.31025 c 0,0 -41.21894,-20.87729 0,-45.20222 41.21893,-24.324909 0,-47.117559 0,-47.117559 m 0,184.639549 c 0,0 -41.21894,-20.87727 0,-45.20221 41.21893,-24.32492 0,-47.11756 0,-47.11756"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
@@ -408,20 +408,20 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-322.7269"
-       y="-47.877758"
+       x="-85.498466"
+       y="55.395187"
        id="text25863"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         x="-322.7269"
-         y="-47.877758"
+         x="-85.498466"
+         y="55.395187"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan3674">Tabela LOCAL</tspan><tspan
          sodipodi:role="line"
-         x="-322.7269"
-         y="-28.880671"
+         x="-85.498466"
+         y="74.392273"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan3678">de arquivos</tspan></text>
     <text
@@ -429,46 +429,46 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        id="text3742"
-       y="-47.877758"
-       x="-62.299469"
+       y="55.395187"
+       x="174.92897"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan3738"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="-47.877758"
-         x="-62.299469"
+         y="55.395187"
+         x="174.92897"
          sodipodi:role="line">Tabela GLOBAL</tspan><tspan
          id="tspan3740"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="-28.880671"
-         x="-62.299469"
+         y="74.392273"
+         x="174.92897"
          sodipodi:role="line">de arquivos</tspan></text>
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        id="text3748"
-       y="1.5136482"
-       x="-362.70923"
+       y="104.78659"
+       x="-125.4808"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan3746"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="1.5136482"
-         x="-362.70923"
+         y="104.78659"
+         x="-125.4808"
          sodipodi:role="line">0</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-361.75839"
-       y="25.12545"
+       x="-124.52996"
+       y="128.39839"
        id="text3754"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         x="-361.75839"
-         y="25.12545"
+         x="-124.52996"
+         y="128.39839"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan3752">1</tspan></text>
     <text
@@ -476,55 +476,55 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        id="text3758"
-       y="48.840618"
-       x="-361.93616"
+       y="152.11357"
+       x="-124.70773"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan3756"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="48.840618"
-         x="-361.93616"
+         y="152.11357"
+         x="-124.70773"
          sodipodi:role="line">2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-361.86588"
-       y="72.32428"
+       x="-124.63744"
+       y="175.59723"
        id="text3762"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         x="-361.86588"
-         y="72.32428"
+         x="-124.63744"
+         y="175.59723"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan3760">3</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-46.903561"
-       y="70.362282"
+       x="190.32487"
+       y="173.63522"
        id="text3766"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         x="-46.903561"
-         y="70.362282"
+         x="190.32487"
+         y="173.63522"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11.28888893px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan3764">PATH/FILE</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="201.12138"
-       y="26.209354"
+       x="438.34982"
+       y="129.4823"
        id="text3772"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         x="201.12138"
-         y="26.209354"
+         x="438.34982"
+         y="129.4823"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan3770">Blocos de dados</tspan></text>
     <text
@@ -532,28 +532,28 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        id="text3778"
-       y="175.13193"
-       x="148.73656"
+       y="278.40488"
+       x="385.965"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan3776"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="175.13193"
-         x="148.73656"
+         y="278.40488"
+         x="385.965"
          sodipodi:role="line">inode</tspan></text>
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/descritores.png"
        id="text3784"
-       y="201.32436"
-       x="-342.93246"
+       y="304.59729"
+       x="-105.70403"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan3782"
          style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:18.99708748px;font-family:hack;-inkscape-font-specification:'hack Bold Oblique';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="201.32436"
-         x="-342.93246"
+         y="304.59729"
+         x="-105.70403"
          sodipodi:role="line">Processo</tspan></text>
   </g>
 </svg>

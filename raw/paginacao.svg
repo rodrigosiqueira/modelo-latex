@@ -781,15 +781,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="-529.49592"
-     inkscape:cy="-121.69729"
+     inkscape:zoom="0.1767767"
+     inkscape:cx="-323.30223"
+     inkscape:cy="84.438898"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="1920"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-global="false"
@@ -812,7 +812,7 @@
      id="layer1">
     <g
        id="g1656"
-       transform="matrix(0.7482976,0,0,0.7482976,-763.86137,234.1607)"
+       transform="matrix(0.7482976,0,0,0.7482976,429.38133,-678.00705)"
        style="stroke-width:1.33636665"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:export-xdpi="90"
@@ -943,7 +943,7 @@
     <g
        id="layer1-29"
        inkscape:label="Layer 1"
-       transform="matrix(0.27516479,0,0,0.23836973,-1157.762,673.3391)"
+       transform="matrix(0.27516479,0,0,0.23836973,35.480698,-238.82865)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90">
@@ -999,12 +999,12 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:connector-curvature="0"
        id="path7622"
-       d="m -1524.5313,764.23792 0,1034.17398 776.93358,0"
+       d="M -331.2886,-147.92983 V 886.24415 h 776.93358"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322826;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7628);paint-order:normal" />
     <g
        id="layer1-291"
        inkscape:label="Layer 1"
-       transform="translate(-758.05184,1089.3434)"
+       transform="translate(435.19086,177.17565)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90">
@@ -1040,15 +1040,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-578.19464"
-       y="2167.0288"
+       x="615.04803"
+       y="1254.8611"
        id="text5800"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
-         x="-578.19464"
-         y="2167.0288"
+         x="615.04803"
+         y="1254.8611"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
          id="tspan11095">Tabela de página</tspan></text>
     <path
@@ -1058,10 +1058,10 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:connector-curvature="0"
        id="path5545"
-       d="M -1289.0119,655.59708 V 548.31087 l 1171.52146,0 0,631.09283"
+       d="M -95.769202,-256.57067 V -363.85688 H 1075.7523 v 631.09283"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5549);paint-order:normal" />
     <g
-       transform="matrix(0,1.368034,1.3739811,0,-252.42131,678.2296)"
+       transform="matrix(0,1.368034,1.3739811,0,940.82139,-233.93815)"
        id="g1453-3"
        style="stroke-width:0.72939229"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
@@ -1656,7 +1656,7 @@
        inkscape:export-ydpi="90"
        inkscape:export-xdpi="90"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
-       transform="matrix(0.27516479,0,0,0.23836973,4.7379996,1212.5624)"
+       transform="matrix(0.27516479,0,0,0.23836973,1197.9807,300.39465)"
        inkscape:label="Layer 1"
        id="g2843">
       <g
@@ -1706,7 +1706,7 @@
     </g>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:18.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker2855);paint-order:normal"
-       d="m -1744.6805,704.63979 h 126.3044"
+       d="m -551.4378,-207.52796 h 126.3044"
        id="path2851"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
@@ -1715,7 +1715,7 @@
        sodipodi:nodetypes="cc" />
     <g
        id="g4278"
-       transform="translate(-24.807089,45)"
+       transform="translate(1168.4356,-867.16775)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90">
@@ -1760,42 +1760,42 @@
        inkscape:export-xdpi="90"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        id="text4285"
-       y="893.27649"
-       x="-1176.6863"
+       y="-18.891262"
+       x="16.556419"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan4282"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
-         y="893.27649"
-         x="-1176.6863"
+         y="-18.891262"
+         x="16.556419"
          sodipodi:role="line">Número</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
-         y="949.52649"
-         x="-1176.6863"
+         y="37.358738"
+         x="16.556419"
          sodipodi:role="line"
          id="tspan4289">da Página</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-918.15033"
-       y="893.27649"
+       x="275.09238"
+       y="-18.891262"
        id="text4295"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
-         x="-918.15033"
-         y="893.27649"
+         x="275.09238"
+         y="-18.891262"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
          id="tspan4291">Número</tspan><tspan
          id="tspan4293"
          sodipodi:role="line"
-         x="-918.15033"
-         y="949.52649"
+         x="275.09238"
+         y="37.358738"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle">do Frame</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322826;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5953);paint-order:normal"
-       d="m -441.34726,1799.7226 116.70295,0 0,-490.5554"
+       d="M 751.89544,887.55485 H 868.59839 V 396.99945"
        id="path5949"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
@@ -1809,7 +1809,7 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:connector-curvature="0"
        id="path7401"
-       d="M 21.762139,1240.3025 H 189.17961"
+       d="m 1215.0048,328.13475 h 167.4175"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:18.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7405);paint-order:normal" />
     <path
        sodipodi:nodetypes="ccc"
@@ -1818,11 +1818,11 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:connector-curvature="0"
        id="path9693"
-       d="m -775.45522,1105.5397 h 450.81091 l 0,74.2463"
+       d="m 417.78748,193.37195 h 450.81091 v 74.2463"
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322826;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker9697);paint-order:normal" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322731;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker11215);paint-order:normal"
-       d="m -1471.535,767.35909 v 503.32811 l 138.7758,0"
+       d="m -278.2923,-144.80866 v 503.32811 h 138.7758"
        id="path11211"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
@@ -1830,8 +1830,8 @@
        inkscape:export-ydpi="90"
        sodipodi:nodetypes="ccc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322826;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12157);paint-order:normal;marker-start:url(#Arrow2Sstart)"
-       d="m -1337.5899,1539.0199 h -66.2913 l 0,-518.3481 h 74.2463"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322826;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#Arrow2Sstart);marker-end:url(#marker12157);paint-order:normal"
+       d="m -144.3472,626.85215 h -66.2913 v -518.3481 h 74.2463"
        id="path12153"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
@@ -1843,27 +1843,27 @@
        inkscape:export-xdpi="90"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        id="text13895"
-       y="1652.6086"
-       x="-1045.0146"
+       y="740.44092"
+       x="148.22804"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan13893"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
-         y="1652.6086"
-         x="-1045.0146"
+         y="740.44092"
+         x="148.22804"
          sodipodi:role="line">TLB</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-580.97583"
-       y="1085.1554"
+       x="612.26685"
+       y="172.98764"
        id="text13899"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
-         x="-580.97583"
-         y="1085.1554"
+         x="612.26685"
+         y="172.98764"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
          id="tspan13897">TLB hit</tspan></text>
     <text
@@ -1871,32 +1871,32 @@
        inkscape:export-xdpi="90"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        id="text13909"
-       y="1766.6295"
-       x="-1156.384"
+       y="854.46179"
+       x="36.858665"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan13907"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
-         y="1766.6295"
-         x="-1156.384"
+         y="854.46179"
+         x="36.858665"
          sodipodi:role="line">TLB miss</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-1633.6812"
-       y="562.78021"
+       x="-440.43845"
+       y="-349.38754"
        id="text14207"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
-         x="-1633.6812"
-         y="562.78021"
+         x="-440.43845"
+         y="-349.38754"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
          id="tspan14205">Endereço</tspan><tspan
          sodipodi:role="line"
-         x="-1633.6812"
-         y="625.28021"
+         x="-440.43845"
+         y="-286.88754"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
          id="tspan14209">Lógico</tspan></text>
     <text
@@ -1904,51 +1904,51 @@
        inkscape:export-xdpi="90"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        id="text14215"
-       y="1132.885"
-       x="108.45319"
+       y="220.71725"
+       x="1301.6959"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan14211"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
-         y="1132.885"
-         x="108.45319"
+         y="220.71725"
+         x="1301.6959"
          sodipodi:role="line">Endereço</tspan><tspan
          id="tspan14213"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
-         y="1195.385"
-         x="108.45319"
+         y="283.21725"
+         x="1301.6959"
          sodipodi:role="line">Físico</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-578.32428"
-       y="1803.7526"
+       x="614.9184"
+       y="891.58484"
        id="text14221"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
-         x="-578.32428"
-         y="1803.7526"
+         x="614.9184"
+         y="891.58484"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
          id="tspan14219">Frame</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="330.772"
-       y="1777.2361"
+       x="1524.0146"
+       y="865.06836"
        id="text14229"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
-         x="330.772"
-         y="1777.2361"
+         x="1524.0146"
+         y="865.06836"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
          id="tspan14227">Memória</tspan><tspan
          sodipodi:role="line"
-         x="330.772"
-         y="1839.7361"
+         x="1524.0146"
+         y="927.56836"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle"
          id="tspan14233">Física</tspan></text>
   </g>
