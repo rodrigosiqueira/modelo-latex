@@ -19,7 +19,7 @@ function virtualization_mode(void *func_pointer, options)
   if !func_pointer then /// \label{line:funcParam}
     if $id != -1$ then
       func_pointer()
-      beadctl(BEAD_CONTEXT_SWITCH, &bead) /// \label{line:backState}
+      beadctl(BEAD_SWITCH, &bead) /// \label{line:backState}
     else /// \label{line:virtModeElse}
       beadctl(BEAD_VIRTUALIZATION_EXIT, &bead)
       return VM_OPERATION_END // Avisa que a operação executou com sucesso

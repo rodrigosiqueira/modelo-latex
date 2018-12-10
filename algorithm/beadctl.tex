@@ -12,25 +12,19 @@ function beadctl(code, data)
     case BEAD_NEW_CONTEXT_INSTANCE:
       ret $\gets$ bead_ctx_instance(data)
       break
-    case BEAD_CONTEXT_SWITCH:
+    case BEAD_SWITCH:
       ret $\gets$ bead_ctx_switch(data)
       break
     case BEAD_VIRTUALIZATION_MODE:
       ret $\gets$ bead_virtualization(data)
       break
-    case BEAD_ALLOC_COMPARTMENT_MEMORY:
+    case BEAD_ALLOC_COMPARTMENT:
       break
-    case BEAD_FREE_COMPARTMENT_MEMORY:
-      break
-    case BEAD_REGISTER_TRANSFER_CONTROL:
-      break
-    case BEAD_REGISTER_TRANSFER_ENTRY:
+    case BEAD_FREE_COMPARTMENT:
       break
     case BEAD_ENTER_COMPARTMENT:
       break
     case BEAD_EXIT_COMPARTMENT:
-      break
-    case BEAD_NEW_EXECUTION_CONTEXT:
       break
     default:
       break

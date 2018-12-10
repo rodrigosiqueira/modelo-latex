@@ -5,8 +5,8 @@ function context_instance(value) /// \label{line:fotografiaContextIntance}
 
   if $id != -1$ then // Significa que está no processo que instânciou o novo contexto
     return id
-  /// \label{line:fotografiaPosSwitch}
-  struct bead_data bead
+
+  struct bead_data bead /// \label{line:fotografiaPosSwitch}
   beadctl(BEAD_GET_CONFIG, &bead)
   /// \label{line:fotografiaCheck}
   if bead.enable_recursive_snapshot or
@@ -24,7 +24,7 @@ function MAIN() /// \label{line:fotografiaMAIN}
   beadctl(BEAD_SET_CONFIG, &bead)
   bead.ctx_ids[0] $\gets$ context_instace(NULL) // Ponto no código no qual é feito uma cópia
   // ... qualquer código ...
-  beadctl(BEAD_CONTEXT_SWITCH, &bead) // Troca o contexto de executação atual
+  beadctl(BEAD_SWITCH, &bead) // Troca o contexto de executação atual
   
 \end{lstlisting}
 
