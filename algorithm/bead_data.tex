@@ -2,15 +2,15 @@
 
 \begin{lstlisting}[language=pseudocode, style=pseudocode]
 struct bead_data {
-  ENABLE_RECURSIVE_SNAPSHOT, // Total de fotografias recursivas, falso por padrão
-  MAX_SNAPSHOT_LEVEL, // Total de fotografias recursivas
-  TOTAL_OF_SNAPSHOT, // Total de fotografias tiradas
-  CTX_IDS[], // Estrutura de dados contendo as referências para os ids
-  VITUALIZATION_FLAGS, // Conjunto de flags de controle sobre quais recursos oferecer para o processo
-  VAS_FLAGS, // Conjunto de flags utilizada para controlar o desacoplamento da VAS
-  SWITCH_OPTION, // 
-  COMPARTMENTS, // 
-  COMPARTMENTs_SIZE, // 
+  enable_recursive_snapshot, // Total de fotografias recursivas, falso por padrão
+  max_snapshot_level, // Total de fotografias recursivas
+  total_of_snapshot, // Total de fotografias tiradas
+  ctx_ids[], // Estrutura de dados contendo as referências para os ids
+  vitualization_flags, // Conjunto de flags de controle sobre quais recursos oferecer para o processo
+  vas_flags, // Conjunto de flags utilizada para controlar o desacoplamento da VAS
+  switch_option, // Flags de configuração feita sobre a troca
+  compartments, // Flags de configuração do compartimento
+  compartmentS_size, // Tamanho de um compartimento
 }
 
 \end{lstlisting}
