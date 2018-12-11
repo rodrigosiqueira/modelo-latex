@@ -493,27 +493,26 @@ oferece novos recursos aos desenvolvedores.
 \subsection{Uma Visão Prática do Programa na Memória}
 \label{sec:visao_pratica_mem}
 
-A maioria dos conceitos apresentados até agora representam o ponto de vista
-teórico dos SOs. Nessa seção revisitamos e expandimos alguns dos conceitos da
-perspectiva do Kernel Linux. Essa visão é relevante para o presente texto uma
-vez que a maioria dos trabalhos analisados faz uso de SOs baseados no Kernel
-Linux. Por fim, por uma questão de simplicidades usaremos os seguintes termos
+Nessa seção revisitamos e expandimos alguns dos conceitos discutidos da
+perspectiva do Kernel Linux, já que
+a maioria dos trabalhos analisados faz uso de SOs baseados nele.
+Por uma questão de simplicidade, usaremos os seguintes termos
 como sinônimos de Linux nessa seção: kernel e núcleo.
 
 Iniciamos a nossa análise por um fato interessante sobre VAS no Linux em uma
-arquitetura x86: uma vez que a VAS é habilitada todo sistema é afetado,
+arquitetura x86: uma vez que a VAS é habilitada, todo sistema é afetado,
 incluindo o próprio Kernel. Por esse motivo, uma porção da VAS é reservada para
-o Linux, contudo essa recebe um tratamento especial uma vez que o seu acesso é
-restrito e o kernel está presente na memória física. Por outro lado, a VAS dos
+o Linux, contudo essa recebe um tratamento especial, uma vez que o acesso a ela é
+restrito e o kernel está presente na memória física. Por outro lado, as VASes dos
 processos comportam-se como o esperado, ou seja, são movidas constantemente de
-acordo com a troca de contexto e podem ser acessados pela aplicação. A
+acordo com a troca de contexto e podem ser acessadas pela aplicação. A
 Figura~\ref{fig:vas_contexto} busca ilustrar o mapeamento da VAS levando-se em
-consideração o espaço reservado para Kernel (destacado no topo da figura) e os
+consideração o espaço reservado para o Kernel (destacado no topo da figura) e os
 processos. O lado esquerdo da figura mostra de forma genérica como o Kernel e
-uma aplicação coexistem na memória, repare que o processo tem todos os seus
-segmentos alocados da memória e a ilusão de quem tem total domínio sobre a ela,
+uma aplicação coexistem na memória. Repare que o processo tem todos os seus
+segmentos alocados da memória e a ilusão de que tem total domínio sobre ela,
 i.e., comporta-se como descrito na Seção~\ref{sec:processos-e-threads}. Por
-outro lado, o a processo não tem acesso ao intervalo de endereços reservados
+outro lado, o processo não tem acesso ao intervalo de endereços reservados
 para o Kernel. Por fim, do lado direito da figura, é mostrado como a troca de
 contexto ocorre entre dois processos; repare que a VAS dos processos são
 substituídas mas o kernel permanece constante.
@@ -525,55 +524,54 @@ substituídas mas o kernel permanece constante.
   \label{fig:vas_contexto}
 \end{figure}
 
-Note, que até esse momento temos uma visão de uma sequência padrão para os
-segmentos do processo descrito pelas ordem: \emph{text}, \emph{dados
+Note que, até esse momento, temos uma visão de uma sequência padrão para os
+segmentos do processo descrita pela ordem: \emph{text}, \emph{dados
 inicializados}, \emph{BSS}, \emph{heap}, \emph{mapeamento de memória} e
 \emph{stack}. Esse tipo de informação torna o sistema mais vulnerável, uma vez
 que um atacante que conheça tal sequência terá uma forma de encontrar dados na
-memória explorando uma eventual falha. Como uma resposta a essa situação
+memória explorando uma eventual falha. Como uma resposta a essa situação,
 o Kernel implementa uma série de mecanismos de embaralhamento
 conhecidos como ASLR\footnote{\url{https://lwn.net/Articles/330866/}}, KASLR e
-KARL~\citep{kaslr}. Dentre uma das área que o Linux aplica a randomização,
-desta-se os segmentos dos processos. Portanto, toda vez que um processo é
-inicializado o seu layout na memória randomizado dificultando um eventual
+KARL~\citep{kaslr}. Dentre as áreas a que o Linux aplica a randomização,
+destacam-se os segmentos dos processos. Portanto, toda vez que um processo é
+inicializado o seu layout na memória é randomizado, dificultando um eventual
 ataque.
 
 Ainda na Figura~\ref{fig:vas_contexto}, tenha em mente que o programa em
 execução faz alocações na \emph{stack} durante a sua execução, como explicado
 na Seção~\ref{sec:processos-e-threads}. No Linux, essa \textit{stack} começa
 com um tamanho pré-definido (8 Mb) que normalmente é o suficiente para a
-maioria das aplicações; contudo, esse limite pode ser ultrapassado. Para isso o
+maioria das aplicações; contudo, esse limite pode ser ultrapassado. Para isso, o
 Kernel fornece meios para expandir o tamanho da \emph{stack}. Se o tamanho
 máximo da \textit{stack} for atingido, então um \boldAndIndex{stack overflow}
-ocorre. Vale observar que depois que a \textit{stack} é aumentada ela não pode
+\hltodo[ocorre.]{Vc não explicou como o stack overflow tem a ver com o aumento da stack} Vale observar que depois que a \textit{stack} é aumentada ela não pode
 ser encolhida. Por fim, na Figura~\ref{fig:vas_contexto}, repare que o processo
-possuí um conjunto de segmentos que mapeia arquivos diretamente na memória para
-o rápido acesso; esse segmento recebe o nome de \boldAndIndex{segmento de
+possui um conjunto de segmentos que mapeia arquivos diretamente na memória para
+rápido acesso; esse segmento recebe o nome de \boldAndIndex{segmento de
 memória mapeada}. O Kernel define esse segmento como uma área de
-\boldAndIndex{mapeamento anônimo}, basicamente esse é utilizado pelos programas
-para obter mais espaço para dados. Contudo o seu principal uso é para fazer o
+\boldAndIndex{mapeamento anônimo}, que é utilizado pelos programas
+para obter mais espaço para dados. Contudo, o seu principal uso é para fazer o
 mapeamento de bibliotecas dinâmicas\footnote{A biblioteca C (\textit{libc})
 utiliza esse recurso como uma forma de otimizar grandes alocações solicitadas
-via \texttt{malloc()}, basicamente a libc cria um mapeamento anonimo para tais
-casos}.
+via \texttt{malloc()}: ela cria um mapeamento anonimo para tais
+casos.}.
 
-Olhando mais de perto o gerenciamento da memória sob a perspectiva dos
-processos no Linux, temos a Figura~\ref{fig:kernel_manages_memory} detalhando
+A Figura~\ref{fig:kernel_manages_memory} detalha
 como o Kernel manipula as estruturas de dados da PCB. Vamos explorar essa
-imagem de duas perspectivas, primeiramente observando os segmentos do processo
-e depois examinando a implementação. Começamos nosso estudo pelo \textit{heap}
-\footnote{O \emph{heap} é comumente manipulado via função \texttt{malloc()} e
-\texttt{free()} na maior parte do tempo}; por uma questão de otimização todo
-processo inicia com um pequeno espaço de memória alocado para o \textit{heap}
-(esse pode ser manipulado via libc), isso nasce da observação que a maioria dos
-processos vão alocar memória mas que não vão precisar de muito espaço.
+imagem de duas perspectivas: primeiramente, observando os segmentos do processo
+e, depois, examinando a implementação. Começamos nosso estudo pelo \textit{heap}
+\footnote{O \emph{heap} é comumente manipulado através das funções \texttt{malloc()} e
+\texttt{free()} na maior parte do tempo}; por uma questão de otimização, todo
+processo inicia com um pequeno espaço de memória previamente alocado para o \textit{heap}
+(esse pode ser manipulado via libc), já que a maioria dos
+processos vai alocar memória mas que não vai precisar de muito espaço.
 Contudo, se o programa demandar mais memória, então uma chamada de sistema para
 \texttt{brk()}\footnote{A libc encapsula essa chamada} é feita com o intuito de
 que expandir o tamanho do \textit{heap}. Note na
-Figura~\ref{fig:kernel_manages_memory} que é o BSS é um segmento anonimo, uma
-vez que esse armazena variáveis estáticas não inicializadas (valores não
+Figura~\ref{fig:kernel_manages_memory} que o BSS é um segmento anônimo, uma
+vez que ele armazena variáveis estáticas não inicializadas (valores não
 disponíveis no código fonte). Ao contrário do BSS, a região \emph{Data} (dados
-inicializados) mapeia um arquivo uma vez que esse mantém o conteúdo das
+inicializados) \hltodo[mapeia um arquivo]{não entendi; ele mapeia um trecho específico do arquivo binário e o segmento de texto mapeia outro trecho?}, uma vez que esse mantém o conteúdo das
 variáveis estáticas (i.e., pode ser mapeado do código fonte). A mesma ideia é
 valida para a região do \textit{text}.
 
@@ -584,21 +582,21 @@ valida para a região do \textit{text}.
   \label{fig:kernel_manages_memory}
 \end{figure}
 
-Agora observando a Figura~\ref{fig:kernel_manages_memory} sob a ótica
-da implementação, temos as estruturas de dados usadas pelo Linux e as
-suas ligações. No Kernel a estrutura responsável por manter todas as
-informações do processo (i.e., PCB) chama-se \texttt{task\_struct}, essa tem um
-ponteiro para outra estrutura de dados chamada de \texttt{mm\_struct} que
+Observando a Figura~\ref{fig:kernel_manages_memory} sob a ótica
+da implementação, temos as estruturas de dados usadas pelo Linux e
+suas ligações. No Kernel, a estrutura responsável por manter todas as
+informações do processo (i.e., PCB) chama-se \texttt{task\_struct}. Ela tem um
+ponteiro para outra estrutura de dados chamada de \texttt{mm\_struct}, que
 mantém uma lista ligada para estruturas do tipo \texttt{vm\_area\_struct} (ou
-\boldAndIndex{virtual memory area - VMA}). Uma VMA consiste de um intervalo de
-endereços virtuais contíguos e sem sobreposição; essas também possuem algumas
-\textit{flags} de controle de acesso associado a si. A informação se a VMA é
-anonima ou não, vem do campo \texttt{vm\_file} (se esse estiver vazio, então a
-área é anonima). Repare na figura que cada segmento corresponde a uma VMA, a
-única exceção são os segmentos de mapeamento de memóra que pode ter mais de um
+\boldAndIndex{virtual memory area --- VMA}). Uma VMA consiste em um intervalo de
+endereços virtuais contíguos e sem sobreposição; elas também possuem algumas
+\textit{flags} de controle de acesso associadas. A informação se a VMA é
+anônima ou não vem do campo \texttt{vm\_file} (se ele estiver vazio, então a
+área é anônima). Repare na figura que cada segmento corresponde a uma VMA; a
+única exceção são os segmentos de mapeamento de memória, que podem ter mais de um
 VMA. Lembre-se que a VAS é dividida em páginas, por isso o tamanho de uma VMA
-deve ser um múltiplo de uma página. De forma geral, a VMA em conjunto com a
-tabela de páginas orquestram o gerenciamento do programa na memória no Linux.
+deve ser múltiplo do tamanho de uma página. De forma geral, a VMA, em conjunto com a
+tabela de páginas, orquestra o gerenciamento do programa na memória no Linux.
 
 \begin{figure}[!h]
   \centering
@@ -607,38 +605,37 @@ tabela de páginas orquestram o gerenciamento do programa na memória no Linux.
   \label{fig:pte}
 \end{figure}
 
-Toda vez que um acesso na memória é feito, a tabela de páginas do processo é
-consultada e cada entrada dessa tabela é descrita por uma série de metadados
-que descreve a região de memória. Cada entrada recebe o nome de
+Toda vez que um acesso à memória é feito, a tabela de páginas do processo é
+consultada. Cada entrada dessa tabela é descrita por uma série de metadados
+que descreve a região de memória e recebe o nome de
 \boldAndIndex{entrada da tabela de páginas} (\textit{Page Table Entry}) ou
 simplesmente PTE. A Figura~\ref{fig:pte} ilustra como a entrada pode ser
-representada\footnote{Cada arquitetura implementa a PTE da sua maneira.}. Sem
+representada\footnote{Cada arquitetura implementa a PTE à sua maneira.}. Sem
 entrar em detalhes referentes aos campos (a figura é autoexplicativa), podemos
-concluir que uma página virtual é a unidade de proteção da memória por que
+concluir que uma página virtual é a unidade mínima de proteção da memória, por que
 todos os bytes dela compartilham os bits User/Root e Leitura/Escrita.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{malloc}
-  \caption{Alocação de memória com \texttt{malloc()}, imagem baseada em \citep{anatomy_program_mem}}
+  \caption{Passos envolvidos na alocação de memória com \texttt{malloc()} (imagem baseada em \cite{anatomy_program_mem})}
   \label{fig:malloc_linux}
 \end{figure}
 
-Por fim para exemplificar como esses mecanismos estão relacionados do kernel ao
-espaço do usuário, veja a Figura~\ref{fig:malloc_linux} ilustrando uma
-sequência de passos (veja a numeração). Na figura, temos um programa com
-algumas paginas já mapeada para uma memória física. A aplicação decide alocar
-mais memória por meio da função \texttt{malloc()}, por sua vez, uma chamada
+Por fim, para exemplificar como esses mecanismos estão relacionados do kernel ao
+espaço do usuário, veja a Figura~\ref{fig:malloc_linux}. Na figura, temos um programa com
+algumas paginas já mapeadas para uma memória física. A aplicação decide alocar
+mais memória por meio da função \texttt{malloc()}, e por sua vez, uma chamada
 para \texttt{brk()} é feita. O kernel atualiza o VMA do \textit{heap} com o
 tamanho solicitado e retorna o ponteiro para a aplicação. Na prática, nenhum
-endereço físico foi alocado e enquanto o programa não acessar a região alocada
-nenhum \emph{frame} é criado. Na primeira tentativa de acesso ocorre uma falha
+endereço físico foi alocado e, enquanto o programa não acessar a região alocada,
+nenhum \emph{frame} é criado. Na primeira tentativa de acesso, ocorre uma falha
 de página e a função \texttt{do\_page\_fault()} é chamada. Se o processo
 atender as permissões indicadas na PTE, então o kernel aloca e associa o
 \emph{frame} a página.
 
 % TODO: PENSAR: talvez puxar essa seção para vir antes da seção de memória
-\section{Aspectos Gerais Relativos a Abstração de Processos}
+\section{Aspectos Gerais Relativos à Abstração de Processos}
 
 \subsection{Chamadas de Sistema}
 % TODO: Fazer a distinção entre user space e kernel space
