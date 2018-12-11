@@ -641,30 +641,30 @@ atender as permissões indicadas na PTE, então o kernel aloca e associa o
 % TODO: Fazer a distinção entre user space e kernel space
 % TODO: Falar do SYSCALL e VMSYSCALL - Atualizar o Dune
 
-\citet{silberschatz} apresenta diversas perspectivas sobre os SOs, dentre elas
+\citet{silberschatz} apresenta diversas perspectivas sobre SOs. Dentre elas,
 destaca-se a ideia de que um SO fornece serviços para tornar as tarefas de
-programação mais simples para os desenvolvedores. Partindo de tal concepção
+programação mais simples para os desenvolvedores. Partindo de tal concepção,
 podemos notar os seguintes serviços: controle sobre a execução de um programa,
-operações de I/O, manipulação de sistemas de arquivos, comunicação via rede,
-detecção de erros, alocação de recursos, dentre outros. Dado a vasta quantidade
+operações de E/S, manipulação de sistemas de arquivos, comunicação via rede,
+detecção de erros, alocação de recursos, dentre outros. Dada a vasta quantidade
 de serviços oferecidos, levantamos a questão de qual mecanismo é utilizado pelo
-SO para dar acesso para todos os serviços? A resposta é simples: chamadas de
-sistema (também conhecidas por \emph{system call} ou \emph{syscall}).
+SO para fornecer acesso a eles? A resposta é simples: chamadas de
+sistema (também conhecidas por \emph{system calls} ou \emph{syscalls}).
 
-De forma geral, podemos dizer que uma \boldAndIndex{chamada de sistema}
+Uma \boldAndIndex{chamada de sistema}
 consiste em uma API de baixo nível que permite que uma aplicação executando no
-espaço de usuário (\emph{user space}) faça uma requisição de baixo nível para o
-SO. Por sua vez, esse pedido é rigorosamente validada pelo SO que pode permitir
-executar a operação até o fim, retornando o que a aplicação solicitou; ou pode
-negar caso encontre uma inconsistência. Na prática, esse tipo de operação
+espaço de usuário (\emph{user space}) faça uma requisição \hltodo[de baixo nível]{tem outro ``de baixo nível'' logo antes, acho que pode deixar só aquele} para o
+SO. Por sua vez, esse pedido é rigorosamente validado pelo SO, que pode
+executar a operação até o fim, devolvendo o que a aplicação solicitou, ou pode
+se negar a executá-la, caso encontre uma inconsistência. Na prática, esse tipo de operação
 consiste em uma simples chamada de função que é tratada pelo SO. Normalmente,
-cada \emph{syscall} tem um número associado a si, com isso o SO consulta uma
-tabela que identifica a função que deve ser chamada. Além disso, passar
+cada \emph{syscall} tem um número associado a si, através do qual o SO consulta uma
+tabela que identifica a função que deve ser executada. Além disso, passar
 parâmetros para esse tipo de função pode depender da arquitetura e de outros
 detalhes. Para tentar esconder toda a complexidade por trás desse tipo de
 operação, muitas vezes são escritas bibliotecas que encapsulam esse tipo de
 chamada. O exemplo mais emblemático é a \emph{libc} que oculta vários detalhes
-de baixo nível como a leitura e escrita de um arquivo.
+de baixo nível, como a leitura e escrita de um arquivo.
 
 \begin{figure}[!h]
   \centering
@@ -674,86 +674,88 @@ de baixo nível como a leitura e escrita de um arquivo.
 \end{figure}
 
 Para ilustrar como esse conceito funciona na prática, veja a
-Figura~\ref{fig:userspace_kernelspace} mostra um simples programa que pede o
+Figura~\ref{fig:userspace_kernelspace}. Nela, um programa pede o
 seu PID para o SO (exemplo baseado em \cite{syscallex}). O programa executado
-está na memória e esse tem o seu \emph{Address Space} devidamente inicializado;
+está na memória e tem o seu \emph{Address Space} devidamente inicializado;
 ao invocar a função \texttt{getpid()}, o seu fluxo de execução é levado para a
-\emph{libc}. Por sua vez a \emph{libc} faz algumas operações, tal qual alocar
-espaço na memória para fazer cache do PID. Quando a \emph{libc} estiver pronta
+\emph{libc}. Por sua vez, a \emph{libc} faz algumas operações, tal como alocar
+espaço na memória para fazer cache do PID. Quando a \emph{libc} está pronta,
 ela finalmente faz a chamada para o sistema. Note que nessa etapa ocorre uma
 mudança de um modo de execução menos privilegiado (\emph{ring 3}) para um modo
 privilegiado (\emph{ring 0}). Nesse momento o SO tem total controle sobre o
-pedido feito e faz a verificação dos parâmetros e permissões. Se tudo ocorrer
+pedido feito e faz a verificação dos parâmetros e permissões. Se tudo correr
 bem, o SO se encarrega de copiar a informação pós-processada do espaço do
 Kernel para o espaço do usuário. Por fim, a \emph{libc} salva o valor do seu
-cache evitando a necessidade do SO intervir no futuro e a aplicação finalmente
+cache, evitando a necessidade do SO intervir no futuro e a aplicação finalmente
 recebe o seu PID.
 
 \subsection{Troca de Contexto}
 
-Em um SO de proposito geral é comum que tenhamos múltiplos processos em
-execução por um intervalo de tempo e após o intervalo os processos são
-trocados. A troca tem início quando uma interrupção ocorrer, seja ela porque o
+Em um SO de propósito geral, é comum que tenhamos \hltodo[múltiplos processos em
+execução por um intervalo de tempo]{Está meio zoneada essa explicação; melhor falar em um processo que troca por outro, e não no plural} e após o intervalo os processos são
+trocados. A troca tem início quando uma interrupção \hltodo[vinda do hardware]{é isso, certo?} ocorrer, seja ela porque o
 tempo de CPU do processo terminou ou por qualquer outro motivo. O primeiro
 passo necessário consiste em salvar o estado do processo em execução e em
 seguida carregar o estado do novo processo na CPU. Repare que o tempo gasto na
-troca de processo não produz nenhum trabalho útil sendo um mecanismo de
+troca de processo não produz nenhum trabalho útil, ou seja, é um
 \textit{overhead}~\citep{silberschatz}.
 
-Na prática a troca de contexto é bem mais complexa, por exemplo, vamos olhar de
+Na prática, a troca de contexto é bem mais complexa. Por exemplo, vamos olhar de
 perto e de forma breve a troca de contexto no GNU/Linux em uma arquitetura x86.
 Primeiramente, todos os processos precisam compartilhar os registradores da
-CPU, por esse motivo o kernel deve assegurar que todos os registradores sejam
+CPU. Por esse motivo, o kernel deve assegurar que todos os registradores sejam
 carregados com os valores de quando o processo foi suspenso. O conjunto de
-todos os dados dos registradores que devem ser carregado recebem o nome de
+todos os dados dos registradores que devem ser carregados recebe o nome de
 \boldAndIndex{contexto de hardware}~\citep{entendendo_kernel}, que pode ser
-visto como subconjunto do contexto do processo. No Linux o contexto do hardware
-é armazenado na própria estrutura do processo e as demais partes são salvas na
-stack do kernel mode. Toda troca de processo precisa armazenar o contexto de
-hardware, por isso a \texttt{task\_struct} inclui um campo chamado de
-\texttt{thread\_struct} que armazena o contexto do hardware (dependente da
+visto como um subconjunto do contexto do processo. No Linux, o contexto de hardware
+é armazenado na própria estrutura do processo, enquanto as demais partes são salvas na
+\hltodo[stack do kernel mode]{WTF?}. Toda troca de processo precisa armazenar o contexto de
+hardware, por isso a \texttt{task\_struct} inclui um campo chamado
+\texttt{thread\_struct}, que armazena o contexto do hardware (dependente da
 arquitetura de hardware).
 
 Para realizar a troca de processos, o Kernel Linux realiza duas
-operações~\citep{entendendo_kernel}: (1) Instalar o novo espaço de endereço e
-(2) Mudar o \emph{stack} do domínio do Kernel e o contexto de hardware
+operações~\citep{entendendo_kernel}: (1) Instala o novo espaço de endereço e
+(2) Muda o \emph{stack} do domínio do Kernel e o contexto de hardware
+
+\todo[inline]{Acho que o que você quer dizer no próximo parágrafo é que a \emph{implementação} do mecanismo de troca de contexto é dependente da arquitetura, porque é codificado em assembler e com todas as ``manhas'' possíveis para ganhar desempenho, então precisa escrever melhor}
 
 A operação de troca é extremamente dependente da arquitetura de hardware, pois
 precisa ser executada de forma rápida e por isso o Linux tenta tirar proveito
 de todo recurso disponibilizado pela CPU\footnote{Note que é preciso levar em
-consideração os registradores que lidam com pontos flutuantes o que faz a troca
+consideração os registradores que lidam com pontos flutuantes, o que faz a troca
 de contexto ainda mais complexa}.
 
 % Falar de PCID?
 \subsection{Descritores de Arquivo}
 
-Quando falamos de abstrações de processos é preciso levar em consideração
+\hltodo[Quando falamos de abstrações de processos é preciso levar em consideração
 diversos aspectos interligado a eles, dentre eles as interações de escrita e
-leitura de aquivos. Normalmente, quando um processo deseja ler ou escrever um
-dado em um arquivo, ele precisa passar por algumas camadas. De forma geral o
-processo interage com o \boldAndIndex{sistema de arquivos} que é responsável
+leitura de aquivos.]{Kaboom!!!} Normalmente, quando um processo deseja ler ou escrever um
+dado em um arquivo, ele precisa passar por algumas camadas. O
+processo interage com o \boldAndIndex{sistema de arquivos}, que é responsável
 por fornecer um mecanismo simplificado para o processo localizar, escrever e
 recuperar dados. Por sua vez, os sistemas de arquivos atuam com outras camadas
 responsáveis por manter a organização e meta-dados dos aquivos. Por fim,
 as operações de alto nível são convertidas para instruções de baixo nível
 passadas para os discos que de fato realizam as operações solicitadas.
 
-Existe uma estrutura de dados utilizada para controlar o bloco de dados e que é
-usada para leitura ou escrita, \boldAndIndex{inode}. Um inode contém diversas
+\hl{Em GNU/Linux e outros sistemas POSIX,} existe uma estrutura de dados utilizada para controlar o bloco de dados em disco e que é
+usada para leitura ou escrita, o \boldAndIndex{inode}. Um inode contém diversas
 informações, dentre elas: permissão, datas, dono do arquivo, tamanho, dentre
 outros. Quando um arquivo é criado, uma estrutura de dados como o inode é
 criada e então o arquivo é salvo.
 
-Quando um processo abre um arquivo, ele faz uma chamada para \texttt{open()}, em
-seguida, o sistema de arquivos é acionado para encontrar o arquivo solicitado.
-Para isso o \texttt{open()} primeiro procura em uma \boldAndIndex{tabela global
+Quando um processo abre um arquivo, ele faz uma chamada para \texttt{open()},
+acionando o sistema de arquivos para encontrar o arquivo solicitado.
+Para isso, \texttt{open()} primeiro procura em uma \boldAndIndex{tabela global
 de arquivos} para verificar se o arquivo solicitado já está aberto. Se o
 arquivo estiver presente na tabela global, uma nova entrada em uma
 \boldAndIndex{tabela local de arquivos dos processos} é feita e nela é
 armazenada uma nova entrada com a posição referente ao arquivo na tabela
 global. A tabela global é atualizada com a informação de que um novo processo
-abriu o arquivo, basicamente um contador é incrementado para representar a
-informação. Por outro lado, se não existe uma entrada para o arquivo solicitado
+abriu o arquivo (basicamente, um contador é incrementado para representar a
+informação). Por outro lado, se não existe uma entrada para o arquivo solicitado
 na tabela global, ele é carregado e a tabela global atualizada. A
 Figura~\ref{fig:descritores} ilustra a operação descrita.
  
@@ -764,12 +766,12 @@ Figura~\ref{fig:descritores} ilustra a operação descrita.
   \label{fig:descritores} 
 \end{figure}
 
-Quando um arquivo é aberto por meio da função \texttt{open()}, ele retorna um
-número chamado de \boldAndIndex{descritor de arquivo (file descriptor - fd)},
+Quando um arquivo é aberto por meio da função \texttt{open()}, ela devolve um
+número chamado de \boldAndIndex{descritor de arquivo (file descriptor --- fd)},
 que nada mais é do que a posição da entrada na tabela local de processos.
 Quando o processo fecha um arquivo, a entrada na tabela local é removida e o
 contador de processos presente na tabela global é decrementado. Quando o
-contador zera, o bloco é atualizado.
+contador zera, o \hltodo[bloco é atualizado.]{Hmmm? Qual bloco?}
 
 \subsection{Modelos de Programação}
 
