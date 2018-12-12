@@ -778,18 +778,18 @@ contador zera, o \hltodo[bloco é atualizado.]{Hmmm? Qual bloco?}
 Além da manipulação de dispositivos de hardware, os SOs fornecem vários
 recursos adicionais para o espaço de usuário, tal qual \emph{file locking} e
 primitivas de segurança. Para fazer uso de tais recursos, a aplicação precisa
-ser capaz de acessar por meio de um modelo de programação coerente, i.e., um
-conjunto bem estabelecido de abstrações interligadas. Um dado SO implementa o
-seu modelo de programação dentro da sua própria API. Por exemplo, tanto o
+ser capaz de acessá-los por meio de um modelo de programação coerente, i.e., um
+conjunto bem estabelecido de abstrações interligadas. Um dado SO implementa um
+dado modelo de programação \hltodo[dentro da sua própria API]{Melhor ``através de uma API própria'', não?}. Por exemplo, tanto o
 GNU/Linux quanto Windows fornecem diferentes APIs de \emph{threading}
-(\emph{pthread} e \emph{WindowsThreads}), mas ambos correspondem ao modelo de
+(\emph{pthreads} e \emph{WindowsThreads}), mas ambos correspondem ao modelo de
 programação de paralelismo.
 
-Atualmente, a maioria dos SOs dão suporte para um grande número de modelos de
+Atualmente, a maioria dos SOs dá suporte a um grande número de modelos de
 programação e suas respectivas APIs. Contudo, as aplicações mudam ao longo dos
 anos e criam demandas para melhorias em áreas como camadas de segurança, opções
-de otimizações e simplificação de código; esses aspectos são problemas reais.
-Nesse sentido, propostas para expandir as abstrações de processos visando
+de otimização e simplificação de código; esses aspectos são problemas reais.
+Consequentemente, propostas para expandir as abstrações de processos visando
 introduzir novos modelos de programação são recorrentes e representam uma
 interessante área para inovações.
 
@@ -797,7 +797,7 @@ interessante área para inovações.
 \subsection{Aspectos de Implementação}
 
 As abstrações de processos são o ponto central no projeto de um SO moderno,
-mapeando outras abstrações para ele; assim, outros serviços são suportados pelo
+mapeando outras abstrações para ele. Assim, outros serviços são oferecidos pelo
 SO com a intenção de fornecer os mecanismos necessários para orquestrar todas
 as operações dos processos (e.g., escalonador e gerenciamento de memória). Toda
 estrutura necessária para gerir processos tem o lado negativo de utilizar CPU
@@ -808,7 +808,7 @@ Mudanças em uma abstração de processos normalmente têm impactos no desempenh
 as consequências podem variar de acordo com a proposta de modificação. Por
 exemplo, uma verificação adicional em uma camada pode elevar a sobrecarga no
 sistema devido a uma nova característica implementada. Contudo, enquanto
-extensões de processos podem degradar o desempenho, mas também podem trazer
+extensões de processos podem degradar o desempenho, elas também podem trazer
 benefícios de desempenho explorando alguma característica do hardware.
 
 \subsection{Gerenciamento de Recursos}
@@ -817,42 +817,45 @@ Toda aplicação em execução em um SO consome recursos do sistema.
 Frequentemente, eles realizam boa parte do trabalho no espaço de usuário, o que
 requer pouca intervenção do SO. Por exemplo, uma aplicação que faz cálculos
 complexos não precisa de muita intervenção do SO. Contudo, existe uma grande
-quantidade de software que demanda significante participação do SO para
+quantidade de software que demanda significativa participação do SO para
 atingir os seus objetivos, estendendo assim o seu consumo de recursos para o
 sistema. Por exemplo, uma aplicação que utiliza recursos de rede tem várias
-partes das suas atividades conduzidas pelo SO quando um pacote chega. Essa
+partes das suas atividades conduzidas pelo SO quando um pacote chega. \hltodo[Essa
 situação pode gerar problemas devido ao controle indireto e descontrolado do
-uso de recursos por atividades não confiáveis ao Kernel. Ataques do tipo
-\emph{Denial-of-service} representam um exemplo da vida real que elevam o
+uso de recursos por atividades não confiáveis ao Kernel.]{Esta frase está estranha, só entendi quando li o exemplo de DoS} Ataques do tipo
+\emph{Denial-of-service} representam um exemplo da vida real que eleva o
 consumo do uso de recursos por parte do SO.
+
+\todo[inline]{Como conversamos, é bom colocar os próximos itens em uma seção
+e explicar por que eles estão aqui na ``introdução'' dessa nova seção}
 
 \section{Device Drivers}
 \label{sec:dd}
 
-Um SO é repleto de elementos que buscam manipular e oculta a complexidade de
+Um SO é repleto de elementos que buscam manipular e ocultar a complexidade de
 lidar com o hardware, portanto, esse é um dos motivos pelos quais esse tipo de
 software é consideravelmente grande e complicado. Para tornar esse cenário
-ainda mais desafiador é preciso levar em consideração que um SO deve fornecer
-suporte para uma infinidade de dispositivos; a forma como os \emph{drivers}
+ainda mais desafiador, é preciso levar em consideração que um SO deve fornecer
+suporte para uma infinidade de dispositivos. A forma como os \emph{drivers}
 interagem com o Kernel deve ser projetada com muito cuidado visando reduzir a
-complexidade e acoplamento.  O design adotado na maioria dos SOs, é uma
+complexidade e o acoplamento. O design adotado na maioria dos SOs é uma
 abordagem flexível na qual o código para um dispositivo é mantido isolado em um
 \emph{driver}.
 
 O isolamento fornecido por um \emph{device driver} é interessante, uma vez que
-esse fornece um mecanismo e não uma política \citep{ddbook}. Entenda por
-mecanismo como a capacidade que deve ser fornecido e por política como a forma
+ele fornece um mecanismo e não uma política \citep{ddbook}. Entenda por
+mecanismo a capacidade que deve ser fornecida e, por política, a forma com
 que a capacidade deve ser usada. Esse separação é interessante pois limita o
-que um \emph{driver} deve fazer e por sua vez simplifica a implementação. Um
-exemplo disto é o \emph{Direct Rendering Managemente} do Kernel Linux, esse
+que um \emph{driver} deve fazer e, por sua vez, simplifica a implementação. Um
+exemplo disso é o \emph{Direct Rendering Managemente} do Kernel Linux, que
 fornece várias capacidades, dentre elas, a operação de trocar
-\emph{framebuffers} primários com secundários; contudo é a aplicação que deve
+\emph{framebuffers} primários com secundários; contudo, é a aplicação que deve
 controlar tal operação.
 
 Por fim, é interessante ressaltar que alguns sistemas fornecem a ideia de
-\boldAndIndex{módulos carregáveis} (\textbf{loadable modules}) que significa
+\boldAndIndex{módulos carregáveis} (\textbf{loadable modules}), que significa
 que em tempo de execução é possível carregar um novo \emph{device driver}. Esse
-tipo de funcionalidade torna o SO mais leve e configurável. Por fim, os módulos
+tipo de funcionalidade torna o SO mais leve e configurável. Os módulos
 são extremamente flexíveis do ponto de vista da implementação uma vez que são
 um código separado do núcleo do SO e respeitam a interface definida pelo mesmo.
 
@@ -863,33 +866,33 @@ um código separado do núcleo do SO e respeitam a interface definida pelo mesmo
 % contar um pouco como funciona e acertar a fluídez do texto
 % TODO: Falar brevemente do KVM - Atualizar o Dune
 
-A ideia de oferecer a abstrações de máquinas virtuais dentro de uma mesma
-máquina é um aspiração de longa data como o emblemático trabalho de Popek e
-Goldberg demonstra~\citep{popek}. Este foi publicado em 1974 indicando os
-requisitos necessários para a terceira geração processadores fornecessem
-virtualização completa. Neste período se tinha noção de algumas das vantagens
+A ideia de oferecer a abstração de máquinas virtuais dentro de uma mesma
+máquina é um aspiração de longa data, como o emblemático trabalho de Popek e
+Goldberg demonstra~\citep{popek}. Ele foi publicado em 1974 e indicava os
+requisitos necessários para que a terceira geração processadores fornecessem
+virtualização completa. Nesse período se tinha noção de algumas das vantagens
 que a virtualização por software e hardware poderia entregar. Dentre as
-inúmeras vantagens da virtualização destacam-se a possibilidade de executar
+inúmeras vantagens da virtualização, destacam-se a possibilidade de executar
 aplicações legadas de um SO antigo, recursos que facilitam o processo de
 desenvolvimento de software, serviços de nuvem, \emph{checkpoints}, migração de
 processos, isolamento, dentre outras.
 
 O elemento central da virtualização é o \boldAndIndex{hypervisor} (também
-conhecido como \boldAndIndex{Virtual Machine Monitor (VMM)}) que é responsável por
+conhecido como \boldAndIndex{Virtual Machine Monitor (VMM)}), que é responsável por
 criar a ilusão de múltiplas máquinas em um mesmo hardware
 físico~\citep{tanenbaum}. Essas máquinas virtuais rodam sobre o mesmo hardware
 e tem a capacidade de executar diferentes SOs. Existe a ideia de máquina
 convidada (\boldAndIndex{guest}) e máquina hóspede (\boldAndIndex{host}). O
 primeiro refere-se ao SO que está executando sobre o VMM e o segundo refere-se
-a máquina que está executando sobre o hardware com privilégios.
+à máquina que está executando sobre o hardware com privilégios.
 
 Um dos objetivos da virtualização consiste em permitir que um SO inicialize
-como se estivesse em uma máquina real. Para que isso seja possível é preciso
+como se estivesse em uma máquina real. Para que isso seja possível, é preciso
 emular o hardware de forma que o \emph{guest} não perceba que está em um
-mecanismo simulado; ao mesmo tempo este processo deve ocorrer de forma
+ambiente simulado e, ao mesmo tempo, de forma
 eficiente. Em 1974, \citet{popek} sugeriram alguns requisitos para que os
-hardware modernos dessem suporte completo para virtualização, esses conceitos
-são amplamente implementados nos processadores modernos. Basicamente os autores
+hardwares pudessem oferecer suporte completo para virtualização,
+amplamente implementados nos processadores modernos. Os autores também
 destacam três dimensões que devem ser consideradas para fornecer a
 virtualização completa no nível dos processadores: segurança, fidelidade e
 eficiência.
@@ -903,39 +906,39 @@ a máquina \citep{tanenbaum}. Para contornar tal situação, o SO \emph{guest}
 deve ter a ilusão de que as interrupções estão desativadas.
 
 Do ponto de vista da fidelidade, o comportamento do programa em execução na
-máquina virtual deve comportar-se de forma idêntica a se estivesse executando
-diretamente no hardware. Na prática existem várias complicações associadas a
-este requisito que levam a categorização das instruções utilizadas pela CPU em
+máquina virtual deve ser idêntico ao seu comportamento se ele estivesse executando
+diretamente no hardware. Na prática, existem várias complicações associadas a
+esse requisito que levam à categorização das instruções utilizadas pela CPU em
 três grupos de diferentes:
 
 \begin{itemize}
   \item \boldAndIndex{Instruções sensíveis}: CPUs que fornecem \emph{user mode} e
         \emph{kernel mode} apresentam instruções comuns para ambos os modos de
-        operação, mas que tem comportamentos diferentes dependendo de cada modo
+        operação, mas que têm comportamentos diferentes dependendo de cada modo
         de operação no qual a instrução é executada;
-  \item \boldAndIndex{Instruções privilégiadas}: São instruções que geram uma
-        \emph{trap} quando executado no modo usuário, mas que não geram
+  \item \boldAndIndex{Instruções privilegiadas}: São instruções que geram uma
+        \emph{trap} quando executadas no modo usuário, mas que não geram
         \emph{trap} em modo Kernel;
   \item \boldAndIndex{Instruções de controle de fluxo sensíveis}: São aquelas que
         tentam mudar a configuração de algum recurso do sistema.
 \end{itemize}
 
-Se você tentar fazer algo em modo usuário que você não deveria ser capaz de
+Se você tentar fazer algo em modo usuário que não deveria ser capaz de
 fazer, o hardware deve capturar essa ação; em outras palavras, Popek e Goldberg
 mostraram que uma máquina é virtualizavel se o conjunto de instruções sensíveis
-é um subconjunto das instruções privilégiadas. Apesar de parecer um conceito
-simples, levaram-se vários anos para que as CPUs incorporassem tais definições
+é um subconjunto das instruções privilegiadas. Apesar de parecer um conceito
+simples, foram necessários vários anos para que as CPUs incorporassem tais definições
 e assim oferecessem um adequado suporte de hardware para a virtualização.
 
 O suporte completo para a virtualização em hardware foi resolvido apenas em
-2005 pela Intel \citep{uhlig} com uma tecnologia chamada
-\boldAndIndex{Virtualization Technology (VT-x)}. A AMD tem uma solução parecida
+\hltodo[2005 pela Intel]{Acho que isso só é verdade em se tratando da própria plataforma intel e outras plataformas ``pobres''; os mainframes tinham isso desde os tempos de Cabral} \citep{uhlig} com uma tecnologia chamada
+\boldAndIndex{Virtualization Technology (VT-x)\todo{acho que o nome deveria ser só ``VT-x'' e colocar um comando index manualmente}. A AMD tem uma solução parecida
 chamada \boldAndIndex{Secure Virtual Machine (SVM)}. A ideia básica é criar um
-invólucro no qual a máquina virtual pode executar um SO \emph{guest} iniciado
-dentro deste recipiente, o SO contínua lá até que provoque uma \emph{trap} que
-faz com que o VMM tenha que lidar com a situação. O conjunto de instruções que
-provocam uma \emph{trap} são controlados por um conjunto de bits na qual o VMM
-tem acesso, essa extensão torna possível a execução clássica de uma máquina
+invólucro no qual a máquina virtual pode executar um SO \emph{guest} \hltodo[iniciado
+dentro deste recipiente]{Aaaaahhhh!!!}. O SO continua em execução até que provoque uma \emph{trap} que
+faça o VMM ter que lidar com a situação. O conjunto de instruções que
+provocam uma \emph{trap} é controlado por um conjunto de bits ao qual o VMM
+tem acesso. A extensão VT-x torna possível a execução clássica de uma máquina
 virtual baseada em interrupção-e-emulação \citep{tanenbaum}.
 
 Do ponto de vista da eficiência, a virtualização deve fazer com que a maior
@@ -944,7 +947,7 @@ Uma das abordagens utilizadas antes de se ter o hardware de virtualização foi 
 adoção de técnicas na qual o \textit{hypervisor} interceptava as instruções e
 as reescrevia em tempo de execução com uma sequência de código considerada
 segura. Esse mecanismo permitia substituir instruções sensíveis, mas não
-privilégiadas; tal técnica ficou conhecida como \boldAndIndex{tradução binária}
+privilegiadas. Tal técnica ficou conhecida como \boldAndIndex{tradução binária}
 e demostrou-se extremamente eficiente devido ao seu sofisticado mecanismo de
 \emph{cache}.
 
@@ -956,20 +959,20 @@ e demostrou-se extremamente eficiente devido ao seu sofisticado mecanismo de
 
 \cite{uhlig} apresentaram a tecnologia de virtualização adotada pela Intel para
 fornecer a virtualização completa no nível do processador. A
-Figura~\ref{fig:vt-x_flow} ilustra os elementos que compõem tecnologia VT-x e a
+Figura~\ref{fig:vt-x_flow} ilustra os elementos que compõem a tecnologia VT-x e a
 forma como eles interagem. Dentre as inovações apresentadas, dois novos modos
-de operações introduzidos nas CPUs merecem destaque: \emph{VMX non-root} e
-	\emph{VMX root}.
+de operação introduzidos nas CPUs merecem destaque: \emph{VMX non-root} e
+\emph{VMX root}.
 
-O \boldAndIndex{VMX non-root} é o modo de operação na qual a máquina
+O \boldAndIndex{VMX non-root} é o modo de operação no qual a máquina
 \emph{guest} executa, enquanto o \boldAndIndex{VMX root} é o modo de operação utilizado
-pelo VMM. É interessante observar que os dois modos tem suporte para os quatro
-níveis de privilégios fornecidos pelos processadores Intel, isto permite que a
-máquina \emph{guest} que tente executar uma instrução privilégiada em algum
-desses níveis forneçam informação para o VMM. Os software em execução como
-\emph{VMX non-root} (e.g., uma máquina com Debian) podem tentar acessar um dos
-modos privilégiados, contudo o modo \emph{non-root} não tem privilégios reais
-para executar instruções que exigem permissões maiores que a sua; nesses casos
+pelo VMM. É interessante observar que os dois modos têm suporte para os quatro
+níveis de privilégios fornecidos pelos processadores Intel; isto permite que a
+máquina \emph{guest}, ao tentar executar uma instrução privilegiada em algum
+desses níveis, forneça informações para o VMM. Os software em execução como
+\emph{VMX non-root} (e.g., uma máquina com Debian) pode tentar acessar um dos
+modos privilegiados, contudo o modo \emph{non-root} não tem privilégios reais
+para executar instruções que exigem permissões maiores que a sua; nesses casos,
 o VMM entra em ação para intermediar a situação.
 
 \begin{figure}[!h]
@@ -981,13 +984,12 @@ o VMM entra em ação para intermediar a situação.
 
 A Figura~\ref{fig:vt-x_flow} mostra as transições \boldAndIndex{VM exit} e
 \boldAndIndex{VM entry}. A transição \emph{VM exit} ocorre quando o controle é
-transferido do \emph{guest} para o VMM, isto faz com que o estado da máquina
+transferido do \emph{guest} para o VMM, fazendo com que o estado da máquina
 \emph{guest} seja salvo e o estado do \emph{host} seja carregado para que o VMM
 decida como tratar a interrupção. No sentido oposto, ocorre a transição
-\emph{VM entry}, nesse caso o VMM transfere o controle para a máquina
-\emph{guest}, para isto ela salva o estado do \emph{host} e carrega o estado
-anterior do \emph{guest}. Todas as informações referentes a virtualização são
-mantidas em uma estrutura de dados chamadas de \boldAndIndex{virtual-machine
+\emph{VM entry}: nesse caso, o VMM transfere o controle para a máquina
+\emph{guest}, salvando o estado do \emph{host} e carregando o estado
+anterior do \emph{guest}. Todas as informações referentes à virtualização são
+mantidas em uma estrutura de dados chamada \boldAndIndex{virtual-machine
 control structure (VMCS)} que tem por função gerenciar as transições entre a
 \emph{VM entry} e \emph{VM exit}.
-
