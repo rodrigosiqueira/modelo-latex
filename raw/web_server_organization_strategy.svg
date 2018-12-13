@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="716.66901mm"
+   height="190.67708mm"
+   viewBox="0 0 716.66901 190.67708"
    version="1.1"
    id="svg6610"
    inkscape:version="0.92.2 2405546, 2018-03-11"
@@ -184,8 +184,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="202.35579"
-     inkscape:cy="818.11027"
+     inkscape:cx="993.311"
+     inkscape:cy="352.35094"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -194,7 +194,11 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:object-nodes="false" />
+     inkscape:object-nodes="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata6607">
     <rdf:RDF>
@@ -203,14 +207,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(351.01464,13.885424)">
     <g
        id="g4560"
        transform="translate(43.089286,-1.201528)">
@@ -439,7 +444,7 @@
          width="34.0481"
          style="stroke-width:3.22024846" />
       <path
-         style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000004, 8.00000011000000022;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4982);paint-order:normal"
+         style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.00000004, 8.00000011;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4982);paint-order:normal"
          d="M 80.686054,79.651414 H 44.840464"
          id="path4749"
          inkscape:connector-curvature="0"

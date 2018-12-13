@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="600.5766mm"
+   height="278.33575mm"
+   viewBox="0 0 600.5766 278.33575"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="nooks_memoria.svg">
+   sodipodi:docname="nooks_mem.svg">
   <defs
      id="defs2">
     <marker
@@ -134,8 +134,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="-510.3109"
-     inkscape:cy="775.47647"
+     inkscape:cx="-216.50884"
+     inkscape:cy="696.38009"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -143,7 +143,11 @@
      inkscape:window-height="1039"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -152,14 +156,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(176.95388,0.14666796)">
     <rect
        transform="rotate(-90)"
        style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.19534397;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -200,7 +205,7 @@
          id="tspan4643">Ext. 1: R/W</tspan><tspan
          sodipodi:role="line"
          x="-131.24779"
-         y="200.90927"
+         y="200.90929"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4820">Ext. 2: R</tspan></text>
     <text
@@ -553,7 +558,7 @@
          sodipodi:role="line">Ext. 1: R</tspan><tspan
          id="tspan4832"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="200.90927"
+         y="200.90929"
          x="376.75223"
          sodipodi:role="line">Ext. 2: R/W</tspan></text>
     <text

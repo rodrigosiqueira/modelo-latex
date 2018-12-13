@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="540.51532mm"
+   height="69.88382mm"
+   viewBox="0 0 1915.2118 247.61984"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="pte_domain.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker2665"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path2663"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker2481"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path2479"
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker9110"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path9108"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker8278"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path8276"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker8146"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path8144"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7094"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path7092"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker13515"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend">
+      <path
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path13517"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path10841"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path4329"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="Arrow1Mend-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path4329-5"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2885"
+       x="-0.13061088"
+       width="1.2612218"
+       y="-0.21661651"
+       height="1.433233">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="9.8896441"
+         id="feGaussianBlur2887" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2889"
+       x="-0.03848974"
+       width="1.0769795"
+       y="-0.2166165"
+       height="1.433233">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="9.8896441"
+         id="feGaussianBlur2891" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2893"
+       x="-0.092072383"
+       width="1.1841449"
+       y="-0.21661647"
+       height="1.4332329">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="9.8896441"
+         id="feGaussianBlur2895" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2897"
+       x="-0.092072368"
+       width="1.1841447"
+       y="-0.21661665"
+       height="1.4332333">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="9.8896441"
+         id="feGaussianBlur2899" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2901"
+       x="-0.16311587"
+       width="1.3262317"
+       y="-0.21661647"
+       height="1.4332329">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="9.8896441"
+         id="feGaussianBlur2903" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2905"
+       x="-0.11955629"
+       width="1.2391126"
+       y="-0.21661665"
+       height="1.4332333">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="9.8896441"
+         id="feGaussianBlur2907" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter2909"
+       x="-0.11342367"
+       width="1.2268473"
+       y="-0.21661647"
+       height="1.4332329">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="9.8896441"
+         id="feGaussianBlur2911" />
+    </filter>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker7628"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7626"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="1083.5484"
+     inkscape:cy="37.337641"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:guide-bbox="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:object-nodes="false"
+     inkscape:object-paths="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(659.6168,-442.95531)">
+    <rect
+       style="opacity:1;fill:#37c8ab;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2885)"
+       id="rect2787"
+       width="181.72411"
+       height="109.57219"
+       x="-19.220032"
+       y="507.18976"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="507.18973"
+       x="-635.88165"
+       height="109.5722"
+       width="616.66162"
+       id="rect2789"
+       style="opacity:1;fill:#d45500;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2889)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="507.18976"
+       x="162.50407"
+       height="109.57221"
+       width="257.7879"
+       id="rect2791"
+       style="opacity:1;fill:#ffd42a;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2893)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:#ff2a2a;fill-opacity:1;stroke:none;stroke-width:1.99999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2897)"
+       id="rect2793"
+       width="257.78793"
+       height="109.57213"
+       x="420.29196"
+       y="507.18976"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="507.18976"
+       x="678.0799"
+       height="109.57221"
+       width="145.51096"
+       id="rect2795"
+       style="opacity:1;fill:#ffd42a;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2901)"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:#ff2a2a;fill-opacity:1;stroke:none;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2905)"
+       id="rect2797"
+       width="198.52695"
+       height="109.57213"
+       x="824.0719"
+       y="506.57458"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:#ffd42a;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter2909)"
+       id="rect2799"
+       width="209.26096"
+       height="109.57221"
+       x="1022.5988"
+       y="507.18976"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="507.18976"
+       x="-19.220032"
+       height="109.57219"
+       width="181.72411"
+       id="rect16582"
+       style="opacity:1;fill:#37c8ab;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:#d45500;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect16586"
+       width="616.66162"
+       height="109.5722"
+       x="-635.88165"
+       y="507.18973"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:#ffd42a;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect16584"
+       width="257.7879"
+       height="109.57221"
+       x="162.50407"
+       y="507.18976"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="507.18976"
+       x="420.29196"
+       height="109.57213"
+       width="257.78793"
+       id="rect2663"
+       style="opacity:1;fill:#ff2a2a;fill-opacity:1;stroke:none;stroke-width:1.99999976;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       style="opacity:1;fill:#ffd42a;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2669"
+       width="145.51096"
+       height="109.57221"
+       x="678.0799"
+       y="507.18976"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="506.57458"
+       x="824.0719"
+       height="109.57213"
+       width="198.52695"
+       id="rect2671"
+       style="opacity:1;fill:#ff2a2a;fill-opacity:1;stroke:none;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <rect
+       y="507.18976"
+       x="1022.5988"
+       height="109.57221"
+       width="209.26096"
+       id="rect2673"
+       style="opacity:1;fill:#ffd42a;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="292.89218"
+       y="552.68878"
+       id="text16588"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan16590"
+         x="292.89218"
+         y="552.68878"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none">Página</tspan><tspan
+         sodipodi:role="line"
+         x="292.89218"
+         y="602.68878"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
+         id="tspan2683">alterada</tspan></text>
+    <text
+       id="text16600"
+       y="572.2395"
+       x="-11.405387"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none"
+         y="572.2395"
+         x="-11.405387"
+         id="tspan16602"
+         sodipodi:role="line">Vago</tspan></text>
+    <text
+       id="text16608"
+       y="548.65552"
+       x="-328.42975"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
+         y="548.65552"
+         x="-328.42975"
+         sodipodi:role="line"
+         id="tspan2677">Endereço Físico Base</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
+         y="598.65552"
+         x="-328.42975"
+         sodipodi:role="line"
+         id="tspan2681">da página</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1052.3855"
+       y="501.41632"
+       id="text16612"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan16614"
+         x="1052.3855"
+         y="501.41632"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">bits(1)</tspan></text>
+    <text
+       id="text2689"
+       y="552.68872"
+       x="549.91833"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
+         y="552.68872"
+         x="549.91833"
+         id="tspan2685"
+         sodipodi:role="line">Página</tspan><tspan
+         id="tspan2687"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
+         y="602.68872"
+         x="549.91833"
+         sodipodi:role="line">acessada</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="748.99945"
+       y="551.27277"
+       id="text2695"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan2691"
+         x="748.99945"
+         y="551.27277"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none">User/</tspan><tspan
+         sodipodi:role="line"
+         x="748.99945"
+         y="601.27277"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
+         id="tspan2693">root</tspan></text>
+    <text
+       id="text2701"
+       y="551.27277"
+       x="921.49945"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
+         y="551.27277"
+         x="921.49945"
+         id="tspan2697"
+         sodipodi:role="line">Leitura/</tspan><tspan
+         id="tspan2699"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
+         y="601.27277"
+         x="921.49945"
+         sodipodi:role="line">escrita</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="1126.3503"
+       y="576.27277"
+       id="text2707"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         x="1126.3503"
+         y="576.27277"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none"
+         id="tspan2705">Presente</tspan></text>
+    <text
+       id="text2773"
+       y="501.41632"
+       x="848.49164"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+         y="501.41632"
+         x="848.49164"
+         id="tspan2771"
+         sodipodi:role="line">bits(1)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="675.99164"
+       y="501.41632"
+       id="text2777"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan2775"
+         x="675.99164"
+         y="501.41632"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">bits(2)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="474.34219"
+       y="501.41632"
+       id="text2781"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         sodipodi:role="line"
+         id="tspan2779"
+         x="474.34219"
+         y="501.41632"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">bits(1)</tspan></text>
+    <text
+       id="text2785"
+       y="501.41632"
+       x="216.55428"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-ydpi="293.84"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none"
+         y="501.41632"
+         x="216.55428"
+         id="tspan2783"
+         sodipodi:role="line">bits(1)</tspan></text>
+    <text
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.00031245;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="226.06389"
+       y="681.7547"
+       id="text1003"><tspan
+         sodipodi:role="line"
+         id="tspan1001"
+         x="226.06389"
+         y="681.7547"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none;stroke-width:1.00031245;stroke-miterlimit:4;stroke-dasharray:none">Chave de Proteção da Memória - 16 domínios</tspan></text>
+    <rect
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       style="opacity:1;fill:#800000;fill-opacity:1;stroke:none;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1005"
+       width="57.096531"
+       height="109.57219"
+       x="105.40755"
+       y="507.18976" />
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
+       inkscape:connector-curvature="0"
+       id="path7622"
+       d="m 135.66026,623.34072 v 48.89069 h 57.4928"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7628);paint-order:normal" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:14.17322922;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker2665);paint-order:normal"
+       d="M 133.67311,499.40871 V 461.29904 H 76.180313"
+       id="path2531"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/paginacao.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       sodipodi:nodetypes="ccc" />
+    <text
+       inkscape:export-ydpi="293.84"
+       inkscape:export-xdpi="293.84"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/pte.png"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-95.014656"
+       y="473.84595"
+       id="text4233"><tspan
+         sodipodi:role="line"
+         id="tspan4231"
+         x="-95.014656"
+         y="473.84595"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none">bits(4)</tspan></text>
+  </g>
+</svg>

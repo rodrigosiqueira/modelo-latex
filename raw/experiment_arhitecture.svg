@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="894.26776mm"
+   height="416.97543mm"
+   viewBox="0 0 894.26776 416.97543"
    version="1.1"
    id="svg6610"
    inkscape:version="0.92.2 2405546, 2018-03-11"
@@ -151,8 +151,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="555.42615"
-     inkscape:cy="749.4371"
+     inkscape:cx="1281.0954"
+     inkscape:cy="992.67221"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -161,7 +161,11 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:object-nodes="false" />
+     inkscape:object-nodes="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata6607">
     <rdf:RDF>
@@ -170,14 +174,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(333.74106,52.595676)">
     <rect
        y="-28.570803"
        x="-332.24106"
@@ -443,18 +448,18 @@
          id="tspan5298" /><tspan
          sodipodi:role="line"
          x="217.53728"
-         y="45.689156"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333333px;line-height:21.3545208px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:start;text-anchor:start;stroke-width:0.26458332px"
+         y="44.08012"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:21.3545208px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:start;text-anchor:start;stroke-width:0.26458332px"
          id="tspan5321">Requisição para arquivo estático</tspan><tspan
          sodipodi:role="line"
          x="217.53728"
-         y="67.043678"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333333px;line-height:21.3545208px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:start;text-anchor:start;stroke-width:0.26458332px"
+         y="65.434639"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:21.3545208px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:start;text-anchor:start;stroke-width:0.26458332px"
          id="tspan924">Requisição para arquivo dinâmico</tspan><tspan
          sodipodi:role="line"
          x="217.53728"
-         y="88.398201"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333333px;line-height:21.3545208px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:start;text-anchor:start;stroke-width:0.26458332px"
+         y="86.789162"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:21.3545208px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:start;text-anchor:start;stroke-width:0.26458332px"
          id="tspan5323">Monitora as requisições</tspan></text>
     <text
        xml:space="preserve"
@@ -512,7 +517,7 @@
          id="tspan5423">Computador Pessoal</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#ffcc00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5441);paint-order:normal"
-       d="m -64.399956,176.74781 v 55.18453 H 68.569966 l 0,40.82143"
+       d="m -64.399956,176.74781 v 55.18453 H 68.569966 v 40.82143"
        id="path5437"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/experiment_arhitecture.png"
@@ -526,7 +531,7 @@
        inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/experiment_arhitecture.png"
        inkscape:connector-curvature="0"
        id="path5443"
-       d="m 249.43402,176.74781 0,56.69644 H 116.4641 l 0,36.28571"
+       d="m 249.43402,176.74781 v 56.69644 H 116.4641 v 36.28571"
        style="fill:none;fill-rule:evenodd;stroke:#ffcc00;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker5447);paint-order:normal" />
   </g>
 </svg>

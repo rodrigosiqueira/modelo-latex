@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="malloc (copy 1).svg"
+   sodipodi:docname="malloc.svg"
    inkscape:version="0.92.2 2405546, 2018-03-11"
    version="1.1"
    id="svg4979"
-   viewBox="0 0 744.09448819 1052.3622047"
-   height="297mm"
-   width="210mm"
+   viewBox="0 0 2076.2382 354.77249"
+   height="100.12468mm"
+   width="585.96057mm"
    inkscape:export-filename="/home/siqueira/Documents/Code/TA/fso/slides/vas_vs_spacejmp/images/cpu_centric.png"
    inkscape:export-xdpi="293.84"
    inkscape:export-ydpi="293.84">
@@ -28,8 +28,8 @@
      showgrid="false"
      inkscape:current-layer="svg4979"
      inkscape:document-units="px"
-     inkscape:cy="212.8443"
-     inkscape:cx="969.72585"
+     inkscape:cy="-158.34707"
+     inkscape:cx="595.80174"
      inkscape:zoom="0.5"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -39,7 +39,11 @@
      id="base"
      inkscape:snap-text-baseline="false"
      inkscape:object-nodes="false"
-     showguides="false" />
+     showguides="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
      id="defs4981">
     <marker
@@ -217,9 +221,9 @@
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
        inkscape:vp_x="0 : 526.1811 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="744.09449 : 526.1811 : 1"
-       inkscape:persp3d-origin="372.04724 : 350.7874 : 1"
+       inkscape:vp_y="0 : 999.99999 : 0"
+       inkscape:vp_z="744.09452 : 526.1811 : 1"
+       inkscape:persp3d-origin="372.04725 : 350.7874 : 1"
        id="perspective12605" />
     <marker
        inkscape:isstock="true"
@@ -245,61 +249,62 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      id="layer1"
      inkscape:groupmode="layer"
-     inkscape:label="Layer 1" />
-  <ellipse
-     r="161.7"
-     transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)"
+     inkscape:label="Layer 1"
+     transform="translate(1.0086506,-357.0978)" />
+  <circle
+     r="0"
+     transform="rotate(15)"
      id="path10456"
      style="fill:none;stroke:#000000;stroke-width:1"
-     cx="548.38416"
-     cy="132.96046"
+     cx="456.93472"
+     cy="-212.23058"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="273.40076"
-     y="648.86737"
+     x="274.40939"
+     y="291.76956"
      id="text4587"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="273.40076"
-       y="648.86737"
+       x="274.40939"
+       y="291.76956"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:33.75px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan4589">Memória</tspan><tspan
        sodipodi:role="line"
-       x="273.40076"
-       y="682.61737"
+       x="274.40939"
+       y="325.51956"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:33.75px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan1000">Física</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="45.742249"
-     y="662.54535"
+     x="46.7509"
+     y="305.44754"
      id="text4587-3"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="45.742249"
-       y="662.54535"
+       x="46.7509"
+       y="305.44754"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan4616">Heap</tspan></text>
   <path
      inkscape:connector-curvature="0"
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 192.90196,384.07326 v 34.42702 h 160.53977 v -34.42702 z m 0,35.27741 v 34.42703 h 160.53977 v -34.42703 z m 0,35.27821 v 34.42703 h 160.53977 v -34.42703 z m 0,35.27742 v 34.42702 H 353.44173 V 489.9063 Z m 0,35.27742 v 34.42703 h 160.53977 v -34.42703 z m 0,35.27742 v 34.42702 h 160.53977 v -34.42702 z"
+     d="m 193.91061,26.975459 v 34.42702 h 160.53977 v -34.42702 z m 0,35.27741 v 34.42703 h 160.53977 v -34.42703 z m 0,35.27821 V 131.95811 H 354.45038 V 97.531079 Z m 0,35.277421 v 34.42702 H 354.45038 V 132.8085 Z m 0,35.27742 v 34.42703 h 160.53977 v -34.42703 z m 0,35.27742 v 34.42702 h 160.53977 v -34.42702 z"
      id="rect6385"
      sodipodi:nodetypes="cccccccccccccccccccccccccccccc"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -308,20 +313,20 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#37abc8;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="219.8331"
-     y="408.14868"
+     x="220.84175"
+     y="51.05088"
      id="text4494"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
        id="tspan4496"
-       x="219.8331"
-       y="408.14868"
+       x="220.84175"
+       y="51.05088"
        style="font-size:90px;line-height:1.25;fill:#37abc8;fill-opacity:1;stroke:none;stroke-opacity:1">...</tspan></text>
   <path
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#c83737;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 1.3350994,509.48852 v 41.99846 H 90.397599 v -41.99846 z m 0,43.40051 v 41.99913 H 90.397599 v -41.99913 z"
+     d="m 2.34375,152.39072 v 41.99846 h 89.0625 v -41.99846 z m 0,43.40051 v 41.99913 h 89.0625 v -41.99913 z"
      id="rect7078"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccccccccc"
@@ -330,7 +335,7 @@
      inkscape:export-ydpi="293.82352" />
   <path
      style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 9.37500002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8198);paint-order:normal"
-     d="M 95.485089,524.99129 183.05819,473.13576"
+     d="m 96.49374,167.89349 87.5731,-51.85553"
      id="path8167"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -344,12 +349,12 @@
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:connector-curvature="0"
      id="path8169"
-     d="m 97.594459,579.13192 86.015621,-0.74041"
+     d="m 98.60311,222.03412 86.01562,-0.74041"
      style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 9.37500002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6615);paint-order:normal" />
   <text
      id="text5094"
-     y="450.67035"
-     x="272.6134"
+     y="93.572548"
+     x="273.62204"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -357,41 +362,41 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan5092"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="450.67035"
-       x="272.6134"
+       y="93.572548"
+       x="273.62204"
        sodipodi:role="line">livre</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="272.94299"
-     y="485.35785"
+     x="273.95163"
+     y="128.26006"
      id="text5098"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="272.94299"
-       y="485.35785"
+       x="273.95163"
+       y="128.26006"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan5096">alocada</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="272.6134"
-     y="520.5141"
+     x="273.62204"
+     y="163.41631"
      id="text5102"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="272.6134"
-       y="520.5141"
+       x="273.62204"
+       y="163.41631"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan5100">livre</tspan></text>
   <text
      id="text5106"
-     y="591.7641"
-     x="272.94299"
+     y="234.66631"
+     x="273.95163"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -399,13 +404,13 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan5104"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="591.7641"
-       x="272.94299"
+       y="234.66631"
+       x="273.95163"
        sodipodi:role="line">alocada</tspan></text>
   <text
      id="text5110"
-     y="557.0766"
-     x="272.6134"
+     y="199.97881"
+     x="273.62204"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -413,13 +418,13 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan5108"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="557.0766"
-       x="272.6134"
+       y="199.97881"
+       x="273.62204"
        sodipodi:role="line">livre</tspan></text>
   <text
      id="text6218"
-     y="662.54535"
-     x="556.617"
+     y="305.44754"
+     x="557.62567"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -427,28 +432,28 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan6216"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="662.54535"
-       x="556.617"
+       y="305.44754"
+       x="557.62567"
        sodipodi:role="line">Heap</tspan></text>
   <text
      transform="scale(-1.0316979,0.96927598)"
      id="text8173"
-     y="526.26685"
-     x="-494.86328"
+     y="157.84979"
+     x="-495.84094"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.34784698px;line-height:20.90001297px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:87.5px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';stroke-width:0.9375px"
-       y="526.26685"
-       x="-494.86328"
+       y="157.84979"
+       x="-495.84094"
        id="tspan8171"
        sodipodi:role="line">]</tspan></text>
   <path
      inkscape:connector-curvature="0"
      id="path5087"
-     d="m 512.81819,452.5179 v 34.72291 h 89.0625 V 452.5179 Z m 0,35.88208 v 34.72348 h 89.0625 v -34.72348 z m 0,35.88264 v 34.72291 h 89.0625 v -34.72291 z m 0,35.88208 v 34.72347 h 89.0625 V 560.1647 Z"
+     d="m 513.82684,95.420099 v 34.722911 h 89.0625 V 95.420099 Z m 0,35.882081 v 34.72348 h 89.0625 v -34.72348 z m 0,35.88264 v 34.72291 h 89.0625 v -34.72291 z m 0,35.88208 v 34.72347 h 89.0625 V 203.0669 Z"
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#c83737;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      sodipodi:nodetypes="cccccccccccccccccccc"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -457,7 +462,7 @@
   <path
      sodipodi:nodetypes="cccccccccccccccccccccccccccccc"
      id="path6204"
-     d="m 718.9442,384.07326 v 34.42702 h 174.7351 v -34.42702 z m 0,35.27741 v 34.42703 h 174.7351 v -34.42703 z m 0,35.27821 v 34.42703 h 174.7351 v -34.42703 z m 0,35.27742 v 34.42702 H 893.6793 V 489.9063 Z m 0,35.27742 v 34.42703 h 174.7351 v -34.42703 z m 0,35.27742 v 34.42702 h 174.7351 v -34.42702 z"
+     d="m 719.95285,26.975459 v 34.42702 h 174.7351 v -34.42702 z m 0,35.27741 v 34.42703 h 174.7351 v -34.42703 z m 0,35.27821 v 34.427031 h 174.7351 V 97.531079 Z m 0,35.277421 v 34.42702 h 174.7351 V 132.8085 Z m 0,35.27742 v 34.42703 h 174.7351 v -34.42703 z m 0,35.27742 v 34.42702 h 174.7351 v -34.42702 z"
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -465,16 +470,16 @@
      inkscape:export-ydpi="293.82352" />
   <text
      id="text6208"
-     y="408.14868"
-     x="745.87537"
+     y="51.05088"
+     x="746.88403"
      style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#37abc8;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        style="font-size:90px;line-height:1.25;fill:#37abc8;fill-opacity:1;stroke:none;stroke-opacity:1"
-       y="408.14868"
-       x="745.87537"
+       y="51.05088"
+       x="746.88403"
        id="tspan6206"
        sodipodi:role="line">...</tspan></text>
   <path
@@ -484,11 +489,11 @@
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:connector-curvature="0"
      id="path6222"
-     d="M 610.92083,536.92372 709.1005,473.13576"
+     d="m 611.92948,179.82592 98.17967,-63.78796"
      style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 9.37500002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6258);paint-order:normal" />
   <path
      style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 9.37500002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6400);paint-order:normal"
-     d="M 608.38981,579.13192 709.6524,578.39151"
+     d="m 609.39846,222.03412 101.26259,-0.74041"
      id="path6224"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -498,21 +503,21 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="805.54272"
-     y="450.67035"
+     x="806.55139"
+     y="93.572548"
      id="text6228"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="805.54272"
-       y="450.67035"
+       x="806.55139"
+       y="93.572548"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan6226">livre</tspan></text>
   <text
      id="text6232"
-     y="485.35785"
-     x="806.89771"
+     y="128.26006"
+     x="807.90637"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -520,13 +525,13 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan6230"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="485.35785"
-       x="806.89771"
+       y="128.26006"
+       x="807.90637"
        sodipodi:role="line">alocada</tspan></text>
   <text
      id="text6236"
-     y="520.5141"
-     x="805.54272"
+     y="163.41631"
+     x="806.55139"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -534,41 +539,41 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan6234"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="520.5141"
-       x="805.54272"
+       y="163.41631"
+       x="806.55139"
        sodipodi:role="line">livre</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="806.89771"
-     y="591.7641"
+     x="807.90637"
+     y="234.66631"
      id="text6240"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="806.89771"
-       y="591.7641"
+       x="807.90637"
+       y="234.66631"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan6238">alocada</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="805.54272"
-     y="557.0766"
+     x="806.55139"
+     y="199.97881"
      id="text6244"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="805.54272"
-       y="557.0766"
+       x="806.55139"
+       y="199.97881"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan6242">livre</tspan></text>
   <text
      id="text1076"
-     y="648.86737"
-     x="806.54065"
+     y="291.76956"
+     x="807.54932"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -576,18 +581,18 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan1072"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:33.75px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="648.86737"
-       x="806.54065"
+       y="291.76956"
+       x="807.54932"
        sodipodi:role="line">Memória</tspan><tspan
        id="tspan1074"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:33.75px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="682.61737"
-       x="806.54065"
+       y="325.51956"
+       x="807.54932"
        sodipodi:role="line">Física</tspan></text>
   <text
      id="text1204"
-     y="413.17035"
-     x="76.679749"
+     y="56.072548"
+     x="77.6884"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -595,27 +600,27 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan1202"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="413.17035"
-       x="76.679749"
+       y="56.072548"
+       x="77.6884"
        sodipodi:role="line">(1)</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="610.11725"
-     y="413.17035"
+     x="611.12592"
+     y="56.072548"
      id="text1280"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="610.11725"
-       y="413.17035"
+       x="611.12592"
+       y="56.072548"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan1278">(2)</tspan></text>
   <path
      sodipodi:nodetypes="cccccccccccccccccccc"
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#c83737;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 1096.9607,482.17727 v 34.72291 h 89.0625 v -34.72291 z m 0,35.88208 v 34.72348 h 89.0625 v -34.72348 z m 0,35.88264 v 34.72291 h 89.0625 v -34.72291 z m 0,35.88208 v 34.72347 h 89.0625 v -34.72347 z"
+     d="m 1097.9694,125.07947 v 34.72291 h 89.0625 v -34.72291 z m 0,35.88208 v 34.72348 h 89.0625 v -34.72348 z m 0,35.88264 v 34.72291 h 89.0625 v -34.72291 z m 0,35.88208 v 34.72347 h 89.0625 v -34.72347 z"
      id="path6658"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -624,7 +629,7 @@
   <path
      inkscape:connector-curvature="0"
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 1306.6096,413.73263 v 34.42702 h 160.5398 v -34.42702 z m 0,35.27741 v 34.42703 h 160.5398 v -34.42703 z m 0,35.27821 v 34.42703 h 160.5398 v -34.42703 z m 0,35.27742 v 34.42702 h 160.5398 v -34.42702 z m 0,35.27742 v 34.42703 h 160.5398 v -34.42703 z m 0,35.27742 v 34.42702 h 160.5398 v -34.42702 z"
+     d="m 1307.6183,56.634829 v 34.42702 h 160.5398 v -34.42702 z m 0,35.27741 v 34.427031 h 160.5398 V 91.912239 Z m 0,35.278211 v 34.42703 h 160.5398 v -34.42703 z m 0,35.27742 v 34.42702 h 160.5398 v -34.42702 z m 0,35.27742 v 34.42703 h 160.5398 v -34.42703 z m 0,35.27742 v 34.42702 h 160.5398 v -34.42702 z"
      id="path6660"
      sodipodi:nodetypes="cccccccccccccccccccccccccccccc"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -633,39 +638,39 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:32.8125px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1377.6552"
-     y="678.52679"
+     x="1378.6638"
+     y="321.42899"
      id="text6670"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="1377.6552"
-       y="678.52679"
+       x="1378.6638"
+       y="321.42899"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:32.8125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan6668">Memória</tspan><tspan
        sodipodi:role="line"
-       x="1377.6552"
-       y="711.33929"
+       x="1378.6638"
+       y="354.24149"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:32.8125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan1004">Física</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1140.7595"
-     y="692.20477"
+     x="1141.7682"
+     y="335.10696"
      id="text6674"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="1140.7595"
-       y="692.20477"
+       x="1141.7682"
+       y="335.10696"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan6672">Heap</tspan></text>
   <path
      style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 9.37500002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6258);paint-order:normal"
-     d="m 1195.0634,566.58309 98.1797,-63.78796"
+     d="m 1196.0721,209.48529 98.1797,-63.78796"
      id="path6676"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -679,12 +684,12 @@
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:connector-curvature="0"
      id="path6678"
-     d="m 1192.5324,608.79129 101.2626,-0.74041"
+     d="m 1193.5411,251.69349 101.2626,-0.74041"
      style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 9.37500002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6702);paint-order:normal" />
   <text
      id="text6682"
-     y="480.32971"
-     x="1386.3209"
+     y="123.23191"
+     x="1387.3296"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -692,41 +697,41 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan6680"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="480.32971"
-       x="1386.3209"
+       y="123.23191"
+       x="1387.3296"
        sodipodi:role="line">livre</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1386.6505"
-     y="515.01721"
+     x="1387.6592"
+     y="157.91942"
      id="text6686"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="1386.6505"
-       y="515.01721"
+       x="1387.6592"
+       y="157.91942"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan6684">alocada</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1386.3209"
-     y="550.17352"
+     x="1387.3296"
+     y="193.07573"
      id="text6690"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="1386.3209"
-       y="550.17352"
+       x="1387.3296"
+       y="193.07573"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan6688">livre</tspan></text>
   <text
      id="text6694"
-     y="621.42352"
-     x="1386.6505"
+     y="264.32571"
+     x="1387.6592"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -734,13 +739,13 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan6692"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="621.42352"
-       x="1386.6505"
+       y="264.32571"
+       x="1387.6592"
        sodipodi:role="line">alocada</tspan></text>
   <text
      id="text6698"
-     y="586.73602"
-     x="1386.3209"
+     y="229.63823"
+     x="1387.3296"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -748,12 +753,12 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan6696"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="586.73602"
-       x="1386.3209"
+       y="229.63823"
+       x="1387.3296"
        sodipodi:role="line">livre</tspan></text>
   <path
      style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:4.68749952;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker1120);paint-order:normal"
-     d="m 940.65387,537.19673 138.75853,-0.74041"
+     d="m 941.66252,180.09893 138.75858,-0.74041"
      id="path6764"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -762,8 +767,8 @@
      sodipodi:nodetypes="cc" />
   <text
      id="text7342"
-     y="525.15076"
-     x="1009.6752"
+     y="168.05296"
+     x="1010.6838"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -771,41 +776,41 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan7340"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="525.15076"
-       x="1009.6752"
+       y="168.05296"
+       x="1010.6838"
        sodipodi:role="line">escreve</tspan></text>
   <text
      id="text1574"
-     y="435.33618"
-     x="1343.9669"
+     y="78.23838"
+     x="1344.9756"
      style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#37abc8;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        style="font-size:90px;line-height:1.25;fill:#37abc8;fill-opacity:1;stroke:none;stroke-opacity:1"
-       y="435.33618"
-       x="1343.9669"
+       y="78.23838"
+       x="1344.9756"
        id="tspan1572"
        sodipodi:role="line">...</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1146.3912"
-     y="413.17035"
+     x="1147.3999"
+     y="56.072548"
      id="text1284"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="1146.3912"
-       y="413.17035"
+       x="1147.3999"
+       y="56.072548"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan1282">(3)</tspan></text>
   <path
      inkscape:connector-curvature="0"
      id="path7470"
-     d="m 1689.5723,482.17726 v 34.72291 h 89.0625 v -34.72291 z m 0,35.88208 v 34.72348 h 89.0625 v -34.72348 z m 0,35.88264 v 34.72291 h 89.0625 v -34.72291 z m 0,35.88208 v 34.72347 h 89.0625 v -34.72347 z"
+     d="m 1690.581,125.07946 v 34.72291 h 89.0625 v -34.72291 z m 0,35.88208 v 34.72348 h 89.0625 v -34.72348 z m 0,35.88264 v 34.72291 h 89.0625 v -34.72291 z m 0,35.88208 v 34.72347 h 89.0625 v -34.72347 z"
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#c83737;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      sodipodi:nodetypes="cccccccccccccccccccc"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -814,7 +819,7 @@
   <path
      sodipodi:nodetypes="cccccccccccccccccccccccccccccc"
      id="path7472"
-     d="m 1898.1508,413.73262 v 34.42702 h 174.7351 v -34.42702 z m 0,35.27741 v 34.42703 h 174.7351 v -34.42703 z m 0,35.27821 v 34.42703 h 174.7351 v -34.42703 z m 0,35.27742 v 34.42702 h 174.7351 v -34.42702 z m 0,35.27742 v 34.42703 h 174.7351 v -34.42703 z m 0,35.27742 v 34.42702 h 174.7351 V 590.1205 Z"
+     d="m 1899.1595,56.634819 v 34.42702 h 174.7351 v -34.42702 z m 0,35.27741 v 34.427031 h 174.7351 V 91.912229 Z m 0,35.278211 v 34.42703 h 174.7351 v -34.42703 z m 0,35.27742 v 34.42702 h 174.7351 v -34.42702 z m 0,35.27742 v 34.42703 h 174.7351 v -34.42703 z m 0,35.27742 v 34.42702 h 174.7351 V 233.0227 Z"
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -822,8 +827,8 @@
      inkscape:export-ydpi="293.82352" />
   <text
      id="text7486"
-     y="692.20471"
-     x="1733.3711"
+     y="335.1069"
+     x="1734.3798"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -831,8 +836,8 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan7484"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="692.20471"
-       x="1733.3711"
+       y="335.1069"
+       x="1734.3798"
        sodipodi:role="line">Heap</tspan></text>
   <path
      sodipodi:nodetypes="cc"
@@ -841,11 +846,11 @@
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:connector-curvature="0"
      id="path7488"
-     d="m 1787.6749,566.58308 98.1797,-63.78796"
+     d="m 1788.6836,209.48528 98.1797,-63.78796"
      style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 9.37500002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7520);paint-order:normal" />
   <path
      style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 9.37500002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6702);paint-order:normal"
-     d="m 1785.1439,608.79128 101.2626,-0.74041"
+     d="m 1786.1526,251.69348 101.2626,-0.74041"
      id="path7490"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -855,21 +860,21 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1985.2896"
-     y="480.32971"
+     x="1986.2982"
+     y="123.23191"
      id="text7494"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="1985.2896"
-       y="480.32971"
+       x="1986.2982"
+       y="123.23191"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan7492">alocada</tspan></text>
   <text
      id="text7498"
-     y="515.01721"
-     x="1985.2896"
+     y="157.91942"
+     x="1986.2982"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -877,13 +882,13 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan7496"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="515.01721"
-       x="1985.2896"
+       y="157.91942"
+       x="1986.2982"
        sodipodi:role="line">alocada</tspan></text>
   <text
      id="text7502"
-     y="550.17346"
-     x="1984.96"
+     y="193.07567"
+     x="1985.9686"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -891,35 +896,35 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan7500"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="550.17346"
-       x="1984.96"
+       y="193.07567"
+       x="1985.9686"
        sodipodi:role="line">livre</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1985.2896"
-     y="621.42346"
+     x="1986.2982"
+     y="264.32565"
      id="text7506"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="1985.2896"
-       y="621.42346"
+       x="1986.2982"
+       y="264.32565"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan7504">alocada</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1984.96"
-     y="586.73596"
+     x="1985.9686"
+     y="229.63817"
      id="text7510"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="1984.96"
-       y="586.73596"
+       x="1985.9686"
+       y="229.63817"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan7508">livre</tspan></text>
   <path
@@ -929,25 +934,25 @@
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:connector-curvature="0"
      id="path7512"
-     d="m 1535.3166,537.19672 143.9143,-0.74041"
+     d="m 1536.3253,180.09892 143.9143,-0.74041"
      style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker6768);paint-order:normal" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1604.7661"
-     y="525.15076"
+     x="1605.7748"
+     y="168.05296"
      id="text7516"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
-       x="1604.7661"
-       y="525.15076"
+       x="1605.7748"
+       y="168.05296"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan7514">escreve</tspan></text>
   <path
      style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.68750001, 9.37500002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7598);paint-order:normal"
-     d="m 1786.3491,534.10036 98.8425,-63.12504"
+     d="m 1787.3578,177.00256 98.8425,-63.12504"
      id="path7594"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -956,8 +961,8 @@
      sodipodi:nodetypes="cc" />
   <text
      id="text1082"
-     y="678.52673"
-     x="1985.7473"
+     y="321.42892"
+     x="1986.756"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:32.8125px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -965,32 +970,32 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan1078"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:32.8125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="678.52673"
-       x="1985.7473"
+       y="321.42892"
+       x="1986.756"
        sodipodi:role="line">Memória</tspan><tspan
        id="tspan1080"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:32.8125px;font-family:hack;-inkscape-font-specification:hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="711.33923"
-       x="1985.7473"
+       y="354.24142"
+       x="1986.756"
        sodipodi:role="line">Física</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#37abc8;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="1942.6058"
-     y="436.27368"
+     x="1943.6145"
+     y="79.17588"
      id="text1578"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        sodipodi:role="line"
        id="tspan1576"
-       x="1942.6058"
-       y="436.27368"
+       x="1943.6145"
+       y="79.17588"
        style="font-size:90px;line-height:1.25;fill:#37abc8;fill-opacity:1;stroke:none;stroke-opacity:1">...</tspan></text>
   <text
      id="text1288"
-     y="413.17035"
-     x="1681.4716"
+     y="56.072548"
+     x="1682.4802"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:hack;-inkscape-font-specification:hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -998,12 +1003,12 @@
      inkscape:export-ydpi="293.82352"><tspan
        id="tspan1286"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="413.17035"
-       x="1681.4716"
+       y="56.072548"
+       x="1682.4802"
        sodipodi:role="line">(4)</tspan></text>
   <path
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.50000039, 15.00000081;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-     d="M 418.10214,700.43228 V 360.90121"
+     d="M 419.11079,343.33448 V 3.8034093"
      id="path7887"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
@@ -1017,11 +1022,11 @@
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"
      inkscape:connector-curvature="0"
      id="path1415"
-     d="M 911.22714,700.43228 V 360.90121"
+     d="M 912.23579,343.33448 V 3.8034093"
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.50000039, 15.00000081;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
   <path
      style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.50000039, 15.00000081;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
-     d="M 1503.7271,700.43228 V 360.90121"
+     d="M 1504.7358,343.33448 V 3.8034093"
      id="path1417"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/malloc.png"

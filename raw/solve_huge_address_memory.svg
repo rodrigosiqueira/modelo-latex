@@ -13,9 +13,9 @@
    inkscape:version="0.92.2 2405546, 2018-03-11"
    version="1.1"
    id="svg4979"
-   viewBox="0 0 744.09448819 1052.3622047"
-   height="297mm"
-   width="210mm"
+   viewBox="0 0 1304.5662 398.17851"
+   height="112.37482mm"
+   width="368.17758mm"
    inkscape:export-filename="/home/siqueira/Documents/Code/TA/fso/slides/vas_vs_spacejmp/images/cpu_centric.png"
    inkscape:export-xdpi="293.84"
    inkscape:export-ydpi="293.84">
@@ -28,8 +28,8 @@
      showgrid="false"
      inkscape:current-layer="svg4979"
      inkscape:document-units="px"
-     inkscape:cy="608.30235"
-     inkscape:cx="215.94277"
+     inkscape:cy="137.73502"
+     inkscape:cx="8.2180694"
      inkscape:zoom="0.5"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -38,7 +38,11 @@
      pagecolor="#ffffff"
      id="base"
      inkscape:snap-text-baseline="false"
-     inkscape:object-nodes="false" />
+     inkscape:object-nodes="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
      id="defs4981">
     <marker
@@ -104,10 +108,10 @@
     </marker>
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 526.1811 : 1"
+       inkscape:vp_x="0 : 526.18111 : 1"
        inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="744.09449 : 526.1811 : 1"
-       inkscape:persp3d-origin="372.04724 : 350.7874 : 1"
+       inkscape:vp_z="744.09447 : 526.18111 : 1"
+       inkscape:persp3d-origin="372.04723 : 350.78741 : 1"
        id="perspective12605" />
     <marker
        inkscape:isstock="true"
@@ -133,54 +137,55 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      id="layer1"
      inkscape:groupmode="layer"
-     inkscape:label="Layer 1" />
-  <ellipse
-     r="161.7"
-     transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)"
+     inkscape:label="Layer 1"
+     transform="translate(156.82059,-220.52682)" />
+  <circle
+     r="0"
+     transform="rotate(15)"
      id="path10456"
      style="fill:none;stroke:#000000;stroke-width:1"
-     cx="548.38416"
-     cy="132.96046"
+     cx="642.78467"
+     cy="-120.64024"
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352" />
   <text
      id="text8145"
-     y="436.42474"
-     x="399.18195"
+     y="215.89792"
+     x="556.00256"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="436.42474"
-       x="399.18195"
+       y="215.89792"
+       x="556.00256"
        sodipodi:role="line"
        id="tspan17186">Cria uma</tspan><tspan
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
-       y="464.54974"
-       x="399.18195"
+       y="244.02292"
+       x="556.00256"
        sodipodi:role="line"
        id="tspan931">nova VAS</tspan></text>
   <path
      inkscape:connector-curvature="0"
      id="path8157"
-     d="m 182.5894,222.87057 v 41.99915 h 89.0625 v -41.99915 z m 0,43.4012 v 41.99914 h 89.0625 v -41.99914 z m 0,43.40119 v 41.99846 h 89.0625 v -41.99846 z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.4012 v 41.99914 h 89.0625 v -41.99914 z m 0,43.40119 v 41.99845 h 89.0625 v -41.99845 z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.40119 V 568.676 h 89.0625 v -41.99846 z m 0,43.40051 v 41.99913 h 89.0625 v -41.99913 z"
+     d="M 339.40999,2.34375 V 44.3429 h 89.0625 V 2.34375 Z m 0,43.4012 v 41.99914 h 89.0625 V 45.74495 Z m 0,43.40119 v 41.99846 h 89.0625 V 89.14614 Z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.4012 v 41.99914 h 89.0625 v -41.99914 z m 0,43.40119 v 41.99845 h 89.0625 v -41.99845 z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.40119 v 41.99846 h 89.0625 v -41.99846 z m 0,43.40051 v 41.99913 h 89.0625 v -41.99913 z"
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352" />
   <path
-     style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.50000002, 15.00000003999999976;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8198);paint-order:normal"
-     d="m 474.23509,498.27254 97.41685,-57.94928"
+     style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.50000002, 15.00000004;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8198);paint-order:normal"
+     d="m 631.05568,277.74572 97.41685,-57.94928"
      id="path8167"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
@@ -190,21 +195,21 @@
   <text
      transform="scale(-1.0316979,0.96927598)"
      id="text8173"
-     y="604.01398"
-     x="-172.14113"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.34784698px;line-height:20.90001297px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+     y="376.49692"
+     x="-324.14355"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.34784698px;line-height:20.90001297px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:150px;line-height:20.89687538px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.9375px;"
-       y="604.01398"
-       x="-172.14113"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:150px;line-height:20.89687538px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.9375px"
+       y="376.49692"
+       x="-324.14355"
        id="tspan8171"
        sodipodi:role="line">]</tspan></text>
   <path
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 624.1519,222.87057 v 41.99915 h 89.0625 v -41.99915 z m 0,43.4012 v 41.99914 h 89.0625 v -41.99914 z m 0,43.40119 v 41.99846 h 89.0625 v -41.99846 z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.4012 v 41.99914 h 89.0625 v -41.99914 z m 0,43.40119 v 41.99845 h 89.0625 v -41.99845 z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.40119 V 568.676 h 89.0625 v -41.99846 z m 0,43.40051 v 41.99913 h 89.0625 v -41.99913 z"
+     d="M 780.97249,2.34375 V 44.3429 h 89.0625 V 2.34375 Z m 0,43.4012 v 41.99914 h 89.0625 V 45.74495 Z m 0,43.40119 v 41.99846 h 89.0625 V 89.14614 Z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.4012 v 41.99914 h 89.0625 v -41.99914 z m 0,43.40119 v 41.99845 h 89.0625 v -41.99845 z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.40119 v 41.99846 h 89.0625 v -41.99846 z m 0,43.40051 v 41.99913 h 89.0625 v -41.99913 z"
      id="path11335"
      inkscape:connector-curvature="0"
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
@@ -216,46 +221,46 @@
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.34784698px;line-height:20.90001297px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="-627.39795"
-     y="604.01398"
+     x="-779.40039"
+     y="376.49692"
      id="text11345"
      transform="scale(-1.0316979,0.96927598)"><tspan
        sodipodi:role="line"
        id="tspan11343"
-       x="-627.39795"
-       y="604.01398"
+       x="-779.40039"
+       y="376.49692"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:150px;line-height:20.89687538px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.9375px">]</tspan></text>
   <text
      transform="scale(-1.0316979,0.96927598)"
      id="text11349"
-     y="458.93146"
-     x="-627.39795"
+     y="231.4144"
+     x="-779.40039"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.34784698px;line-height:20.90001297px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:150px;line-height:20.89687538px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.9375px"
-       y="458.93146"
-       x="-627.39795"
+       y="231.4144"
+       x="-779.40039"
        id="tspan11347"
        sodipodi:role="line">]</tspan></text>
   <ellipse
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.68750048;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="path5162-5-7"
-     cx="-7.9687524"
-     cy="546.83667"
+     cx="148.85184"
+     cy="326.30984"
      rx="119.23624"
      ry="69.524918" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:23.4375px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.93749994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="-9.1992207"
-     y="562.37134"
+     x="147.62137"
+     y="341.84451"
      id="text4508-35-3-3-0"><tspan
        sodipodi:role="line"
-       x="-9.1992207"
-       y="562.37134"
+       x="147.62137"
+       y="341.84451"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:47.25px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.93749994px"
        id="tspan4570-6-5-9">Processo</tspan></text>
   <path
@@ -265,12 +270,12 @@
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      inkscape:connector-curvature="0"
      id="path17004"
-     d="m 906.42259,498.27254 97.41681,-57.94928"
-     style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:7.50000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker17026);paint-order:normal" />
+     d="M 1063.2432,277.74572 1160.66,219.79644"
+     style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker17026);paint-order:normal" />
   <path
      inkscape:connector-curvature="0"
      id="path17006"
-     d="m 1056.3394,222.87057 v 41.99915 h 89.0625 v -41.99915 z m 0,43.4012 v 41.99914 h 89.0625 v -41.99914 z m 0,43.40119 v 41.99846 h 89.0625 v -41.99846 z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.4012 v 41.99914 h 89.0625 v -41.99914 z m 0,43.40119 v 41.99845 h 89.0625 v -41.99845 z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.40119 V 568.676 h 89.0625 v -41.99846 z m 0,43.40051 v 41.99913 h 89.0625 v -41.99913 z"
+     d="M 1213.16,2.34375 V 44.3429 h 89.0625 V 2.34375 Z m 0,43.4012 v 41.99914 h 89.0625 V 45.74495 Z m 0,43.40119 v 41.99846 h 89.0625 V 89.14614 Z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.4012 v 41.99914 h 89.0625 v -41.99914 z m 0,43.40119 v 41.99845 h 89.0625 v -41.99845 z m 0,43.4005 v 41.99915 h 89.0625 v -41.99915 z m 0,43.40119 v 41.99846 h 89.0625 v -41.99846 z m 0,43.40051 v 41.99913 h 89.0625 v -41.99913 z"
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:4.6875;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      inkscape:export-xdpi="293.82352"
@@ -278,16 +283,16 @@
   <text
      transform="scale(-1.0316979,0.96927598)"
      id="text17010"
-     y="604.01398"
-     x="-1043.5808"
+     y="376.49692"
+     x="-1195.5833"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.34784698px;line-height:20.90001297px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      inkscape:export-xdpi="293.82352"
      inkscape:export-ydpi="293.82352"><tspan
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:150px;line-height:20.89687538px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.9375px"
-       y="604.01398"
-       x="-1043.5808"
+       y="376.49692"
+       x="-1195.5833"
        id="tspan17008"
        sodipodi:role="line">]</tspan></text>
   <text
@@ -296,14 +301,14 @@
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36.34784698px;line-height:20.90001297px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="-1043.5808"
-     y="458.93146"
+     x="-1195.5833"
+     y="231.4144"
      id="text17014"
      transform="scale(-1.0316979,0.96927598)"><tspan
        sodipodi:role="line"
        id="tspan17012"
-       x="-1043.5808"
-       y="458.93146"
+       x="-1195.5833"
+       y="231.4144"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:150px;line-height:20.89687538px;font-family:Hack;-inkscape-font-specification:Hack;stroke-width:0.9375px">]</tspan></text>
   <text
      inkscape:export-ydpi="293.82352"
@@ -311,17 +316,17 @@
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="845.91071"
-     y="436.42474"
+     x="1002.7313"
+     y="215.89792"
      id="text17192"><tspan
        id="tspan17190"
        sodipodi:role="line"
-       x="845.91071"
-       y="436.42474"
+       x="1002.7313"
+       y="215.89792"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;text-anchor:middle;stroke-width:0.9375px">Muda para</tspan><tspan
        sodipodi:role="line"
-       x="845.91071"
-       y="464.54974"
+       x="1002.7313"
+       y="244.02292"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;text-anchor:middle;stroke-width:0.9375px"
        id="tspan947">nova VAS</tspan></text>
   <text
@@ -330,58 +335,58 @@
      inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/solve_huge_address_memory.png"
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:21.5625px;font-family:Hack;-inkscape-font-specification:Hack;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="-8.6305475"
-     y="404.54974"
+     x="148.19005"
+     y="184.02292"
      id="text17198"><tspan
        sodipodi:role="line"
-       x="-9.9055548"
-       y="404.54974"
+       x="146.91504"
+       y="184.02292"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;letter-spacing:-2.549999px;text-anchor:middle;stroke-width:0.9375px"
        id="tspan17202">Precisa de mais</tspan><tspan
        sodipodi:role="line"
-       x="-9.90555"
-       y="432.67474"
+       x="146.91504"
+       y="212.14792"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;letter-spacing:-2.549999px;text-anchor:middle;stroke-width:0.9375px"
        id="tspan892">espaço de</tspan><tspan
        sodipodi:role="line"
-       x="-9.90555"
-       y="460.79974"
+       x="146.91504"
+       y="240.27292"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:28.125px;font-family:Hack;-inkscape-font-specification:Hack;text-align:center;letter-spacing:-2.549999px;text-anchor:middle;stroke-width:0.9375px"
        id="tspan894">endereçamento</tspan></text>
   <ellipse
      ry="69.524918"
      rx="119.23624"
-     cy="546.83667"
-     cx="411.09375"
+     cy="326.30984"
+     cx="567.91437"
      id="ellipse933"
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.68750048;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <text
      id="text937"
-     y="562.37134"
-     x="409.86328"
+     y="341.84451"
+     x="566.6839"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:23.4375px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.93749994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      xml:space="preserve"><tspan
        id="tspan935"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:47.25px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.93749994px"
-       y="562.37134"
-       x="409.86328"
+       y="341.84451"
+       x="566.6839"
        sodipodi:role="line">Processo</tspan></text>
   <ellipse
      style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4.68750048;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="ellipse939"
-     cx="868.59375"
-     cy="546.83667"
+     cx="1025.4143"
+     cy="326.30984"
      rx="119.23624"
      ry="69.524918" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.5px;line-height:23.4375px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.93749994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="867.36328"
-     y="562.37134"
+     x="1024.1838"
+     y="341.84451"
      id="text943"><tspan
        sodipodi:role="line"
-       x="867.36328"
-       y="562.37134"
+       x="1024.1838"
+       y="341.84451"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:45px;line-height:47.25px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.93749994px"
        id="tspan941">Processo</tspan></text>
 </svg>
