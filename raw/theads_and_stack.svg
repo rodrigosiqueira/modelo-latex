@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="memory_segment_multithread.svg">
+   sodipodi:docname="theads_and_stack.svg">
   <defs
      id="defs2">
     <marker
@@ -281,14 +281,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="-44.632042"
-     inkscape:cy="545.03594"
+     inkscape:cx="69.653674"
+     inkscape:cy="813.60737"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="0"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="false"
@@ -313,10 +313,10 @@
        style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3.99999976;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4504"
        width="143.92181"
-       height="328.16467"
+       height="397.71228"
        x="28.726187"
-       y="-36.500881"
-       ry="0.13494073"
+       y="-106.04849"
+       ry="0.16353859"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
@@ -480,14 +480,14 @@
        width="264.72766"
        height="50.204384"
        x="-92.079636"
-       y="-36.500881"
+       y="-53.887783"
        ry="0.020643951"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
     <g
        id="g4739"
-       transform="translate(-3.0561804,4.922672)"
+       transform="translate(-3.0561804,-12.464232)"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999">
@@ -529,7 +529,7 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="47.898495"
-       y="5.2328262"
+       y="-12.154078"
        id="text4629"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
@@ -537,29 +537,29 @@
          sodipodi:role="line"
          id="tspan4625"
          x="47.898495"
-         y="5.2328262"
+         y="-12.154078"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';stroke-width:0.26458332px">mensagem</tspan><tspan
          id="tspan4627"
          sodipodi:role="line"
          x="47.898495"
-         y="11.847409"
+         y="-5.5394955"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px" /></text>
     <text
        inkscape:export-ydpi="144.75999"
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        id="text4655"
-       y="-20.425049"
+       y="-37.811951"
        x="32.396862"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px"
-         y="-20.425049"
+         y="-37.811951"
          x="32.396862"
          id="tspan4651"
          sodipodi:role="line">thread_kernel()</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
-         y="-13.810466"
+         y="-31.197371"
          x="32.396862"
          sodipodi:role="line"
          id="tspan4653" /></text>
@@ -567,7 +567,7 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="47.898495"
-       y="-7.1482706"
+       y="-24.535175"
        id="text4661"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
@@ -575,12 +575,12 @@
          sodipodi:role="line"
          id="tspan4657"
          x="47.898495"
-         y="-7.1482706"
+         y="-24.535175"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.11111069px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web';stroke-width:0.26458332px">message_pointer</tspan><tspan
          id="tspan4659"
          sodipodi:role="line"
          x="47.898495"
-         y="-0.53368771"
+         y="-17.920591"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px" /></text>
     <text
        inkscape:export-ydpi="144.75999"
@@ -741,22 +741,22 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        id="text4822"
-       y="-21.585148"
+       y="-34.436337"
        x="282.90353"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:14.55208302px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px"
-         y="-21.585148"
+         y="-34.436337"
          x="282.90353"
          id="tspan4820"
          sodipodi:role="line">Stack pointer</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:14.55208302px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px"
-         y="-7.0330653"
+         y="-19.884256"
          x="282.90353"
          sodipodi:role="line"
          id="tspan4824">PC</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:14.55208302px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px"
-         y="7.5190172"
+         y="-5.3321733"
          x="282.90353"
          sodipodi:role="line"
          id="tspan4826">Registradores</tspan></text>
@@ -804,7 +804,7 @@
        sodipodi:nodetypes="ccc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#37abc8;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:3, 6;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker7020);paint-order:normal"
-       d="M 261.51252,-25.924134 H 179.20556"
+       d="M 261.51252,-43.311039 H 179.20556"
        id="path7016"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
@@ -864,10 +864,10 @@
        style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4504-3"
        width="143.92181"
-       height="293.95419"
+       height="392.06247"
        x="-322.31393"
-       y="-19.395641"
-       ry="0.12087343"
+       y="-103.07459"
+       ry="0.16121538"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
@@ -875,7 +875,7 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-273.20743"
-       y="-0.20373727"
+       y="-82.98053"
        id="text4508"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
@@ -883,51 +883,51 @@
          sodipodi:role="line"
          id="tspan4506"
          x="-273.20743"
-         y="-0.20373727"
+         y="-82.98053"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px">Stack</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:13.22916698px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-250.4481"
-       y="192.30492"
+       y="211.20372"
        id="text4508-7-1"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          x="-250.4481"
-         y="192.30492"
+         y="211.20372"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4578-9">Segmento de</tspan><tspan
          id="tspan2056"
          sodipodi:role="line"
          x="-250.4481"
-         y="207.61201"
+         y="226.51082"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">dados</tspan><tspan
          id="tspan2058"
          sodipodi:role="line"
          x="-250.4481"
-         y="222.9191"
+         y="241.8179"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">inicializados</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-250.4481"
-       y="161.25252"
+       y="180.15132"
        id="text4508-35-4"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          x="-250.4481"
-         y="161.25252"
+         y="180.15132"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4570">BSS</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-271.08975"
-       y="130.75671"
+       y="149.65552"
        id="text4508-9-7"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
@@ -935,30 +935,30 @@
          sodipodi:role="line"
          id="tspan4506-1-8"
          x="-271.08975"
-         y="130.75671"
+         y="149.65552"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px">Heap</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:12.69999981px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-305.47665"
-       y="250.49562"
+       x="-250.20767"
+       y="269.39444"
        id="text4508-7-2-4"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          id="tspan4506-5-7-5"
-         x="-305.47665"
-         y="250.49562"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:12.69999981px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px">Segmento de</tspan><tspan
+         x="-250.20767"
+         y="269.39444"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:12.69999981px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px">Segmento de</tspan><tspan
          sodipodi:role="line"
-         x="-305.47665"
-         y="265.27356"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:12.69999981px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px"
+         x="-250.20767"
+         y="284.17236"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:12.69999981px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan2091">Texto</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -322.17501,233.87068 h 144.86008"
+       d="m -322.17501,252.76949 h 144.86008"
        id="path4572-0"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
@@ -966,7 +966,7 @@
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -322.97682,171.55512 h 144.86008"
+       d="m -322.97682,190.45393 h 144.86008"
        id="path4572-3-3"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
@@ -974,7 +974,7 @@
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M -322.44228,138.77643 H -177.5822"
+       d="M -322.44228,157.67524 H -177.5822"
        id="path4572-3-6-6"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
@@ -982,7 +982,7 @@
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000011, 4.00000011;stroke-dashoffset:0;stroke-opacity:1"
-       d="m -322.97682,113.11855 h 144.86008"
+       d="m -322.97682,132.01736 h 144.86008"
        id="path4572-3-6-7-1"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
@@ -990,7 +990,7 @@
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000011, 4.00000011;stroke-dashoffset:0;stroke-opacity:1"
-       d="M -322.44228,9.4179993 H -177.5822"
+       d="M -322.44228,-73.358791 H -177.5822"
        id="path4572-3-6-7-5"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
@@ -998,7 +998,7 @@
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999976;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-75)"
-       d="M -201.90811,134.40487 V 121.18451"
+       d="M -201.90811,153.30368 V 140.08332"
        id="path4566"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
@@ -1006,7 +1006,7 @@
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-3-2)"
-       d="M -201.94654,-13.471958 V -0.2518517"
+       d="m -201.94654,-96.248748 v 13.220106"
        id="path4566-6"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
@@ -1014,7 +1014,7 @@
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999976;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-2-9)"
-       d="M -297.567,134.40487 V 121.18451"
+       d="M -297.567,153.30368 V 140.08332"
        id="path4566-7"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
@@ -1022,7 +1022,7 @@
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-3-1-3)"
-       d="M -297.60543,-13.471959 V -0.2518517"
+       d="m -297.60543,-96.248749 v 13.220107"
        id="path4566-6-0"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
@@ -1034,7 +1034,7 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
        inkscape:connector-curvature="0"
        id="path2050"
-       d="M -124.24592,-42.366439 V 297.52935"
+       d="M -124.24592,-84.928754 V 254.96704"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <text
        inkscape:export-ydpi="144.75999"
@@ -1064,5 +1064,43 @@
          y="313.72336"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:12.69999981px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px"
          id="tspan2109">Três Threads</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
+       id="text1085"
+       y="-82.98053"
+       x="78.310432"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458302px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke-width:0.26458332px"
+         y="-82.98053"
+         x="78.310432"
+         id="tspan1083"
+         sodipodi:role="line">Stack</tspan></text>
+    <path
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
+       inkscape:connector-curvature="0"
+       id="path1087"
+       d="M 29.075577,-73.358791 H 173.93566"
+       style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000011, 4.00000011;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
+       inkscape:connector-curvature="0"
+       id="path1089"
+       d="m 149.57132,-96.248748 v 13.220106"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-3-2)" />
+    <path
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/theads_and_stack.png"
+       inkscape:connector-curvature="0"
+       id="path1091"
+       d="m 53.912427,-96.248749 v 13.220107"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Mend-3-1-3)" />
   </g>
 </svg>

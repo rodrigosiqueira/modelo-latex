@@ -1,16 +1,14 @@
 \chapter{Fundamentação Teórica}
 \label{cap:fundamentacao}
 
-Neste capítulo apresentamos uma breve revisão sobre as \hltodo[principais]{Será que faz sentido?} abstrações de
-processos e outras indiretamente relacionadas (threads, \emph{fork},
-representação na memória, virtualização, dentre outros). \hltodo[Introduzimos conceitos
-que são \textbf{indiretamente} ligados as abstrações de processos, portanto não
-habitualmente explicitados na bibliografia padrão. Adicionalmente,
-procuramos evidenciar as relações entre alguns conceitos referentes aos SOs
-modernos que consideramos útil para a o contexto deste trabalho.]{Acho que a primeira frase já disse tudo, não precisa disto}
-A maioria dos conceitos apresentados nessa seção são descritos com base em suas implementações em sistemas
-Unix (especialmente GNU/Linux) e no padrão POSIX.
-\todo{... no padrão POSIX \textbf{porque POSIX é o bicho, bem documentado, muito usado, blah blah}.}
+Neste capítulo visitamos vários conceitos consolidados relativos as abstrações
+de processos e outras indiretamente relacionadas (threads, \emph{fork},
+representação na memória, virtualização, dentre outros). Introduzimos
+conceitos que são \textbf{indiretamente} ligados as abstrações de processos,
+portanto não habitualmente explicitados na bibliografia padrão. A maioria dos
+conceitos apresentados nessa seção são baseadas em sistemas Unix (especialmente
+GNU/Linux) e no padrão POSIX, uma vez que esses são amplamente documentados e
+adotada.
 
 As informações apresentadas aqui representam a prática tradicional de sistemas
 operacionais e, portanto, são bem conhecidas, sendo objeto de estudo básico na
@@ -27,9 +25,25 @@ Em particular, utilizamos como fundamentos para esta seção os seguintes livros
   \item \textit{Linux Kernel Development}~\citep{love}.
 \end{itemize}
 
-\todo[inline]{Aqui acho que merece uma introdução pra valer do conteúdo, tipo ``queremos melhorar a abstração de processos, então vamos descrever as principais abstrações que podem ser modificadas. Começamos com a descrição do processo de carga, representação na memória e controle de execução de um processo e, em seguida, falamos sobre as diferentes técnicas de gestão de memória, um tema muito importante por conta de blah (caches, memória compartilhada, não-volátil etc.). Discutimos também como o processo em execução interage com o SO, que é importante por causa de segurança, desempenho, blah. A seguir, observamos o papel do SO em fornecer a infraestrutura para diferentes modelos de programação, o que é importante por conta das buzzwords como sistemas distribuídos, IA, IoT, big data etc. Finalmente, abordamos dois temas tradicionalmente independentes de processos (controladores de dispositivos e virtualização) que, no entanto, possibilitam uns lances muito lokos aí tipo usar virtualização para separação de processos etc.''
+Neste trabalho queremos elucidar potenciais melhorias nas abstrações de
+processos, consequentemente descrever as principais abstrações agregadas ao
+conceito de processos que podem ser modificadas. Começamos com a descrição do
+processo de carga, representação na memória e controle de execução de um
+processo e, em seguida, falamos sobre as diferentes técnicas de gestão de
+memória, um tema muito importante devido ao elevado acoplamento que os SOs
+modernos tem com a memória. Discutimos também como o processo em execução
+interage com o SO, que é importante por causa de segurança, desempenho,
+estabilidade e confiabilidade. A seguir, observamos o papel do SO em fornecer a
+infraestrutura para diferentes modelos de programação, o que é importante no
+contexto de diversas tecnologias e técnicas que vêm tomando força nos últimos
+anos (e.g., \emph{Machine Learn}, IoT, e \emph{big data}). Finalmente,
+abordamos dois temas tradicionalmente independentes de processos (controladores
+de dispositivos e virtualização) que, no entanto, possibilitam expandir o
+conceito das abstrações de processos de forma a melhorar o desempenho de alguns
+tipos de aplicação, flexibilizar o uso de alguns recursos, melhorar a separação
+de processos, dentre outros.
 
-Também mudaria as subdivisões: você criou várias sub-seções para a parte de memória e, por isso, criou uma outra seção para ``o resto''. Mas na real acho que ``gerenciamento de memória'', ``chamadas de sistema'', ``trocas de contexto'' etc. são todas coisas que existem no mesmo nível, ou seja, ``gerenciamento de memória'' deveria estar dentro de ``aspectos gerais...'' junto com o resto. Eu criaria uma sub-seção separada para device drivers + virtualização, tipo ``outros babados fortes''.}
+\todo[inline]{Também mudaria as subdivisões: você criou várias sub-seções para a parte de memória e, por isso, criou uma outra seção para ``o resto''. Mas na real acho que ``gerenciamento de memória'', ``chamadas de sistema'', ``trocas de contexto'' etc. são todas coisas que existem no mesmo nível, ou seja, ``gerenciamento de memória'' deveria estar dentro de ``aspectos gerais...'' junto com o resto. Eu criaria uma sub-seção separada para device drivers + virtualização, tipo ``outros babados fortes''.}
 
 \section{Uma Breve Jornada Sobre os Processos}
 \label{sec:processos-e-threads}
@@ -38,20 +52,13 @@ Também mudaria as subdivisões: você criou várias sub-seções para a parte d
 % carrega o executável, na etapa 2 o SO realiza a leitura e na tapa 3 ele utiliza
 % as informações para criar blabla
 
-\hltodo[Geralmente, programas são escritos em uma linguagem de programação específica
-(e.g., C/C++, Java, Python, Ruby, etc) e posteriormente convertidos para um
-conjunto de instruções que uma máquina é capaz de executar. O código fonte de
-uma aplicação é representado como um ou mais arquivos que são armazenados em um
-memória \emph{não-volátil} (e.g., disco rígido) e por sua vez podem ter relação
-com um ou mais arquivos executáveis (binários) gerados a partir do código
-fonte.]{Tudo isto não é relevante para explicar processos, então eu cortaria
-e começaria com ``O arquivo binário de um programa tem um conjunto de metadados...''} O arquivo binário tem um conjunto de metadados inseridos pelo compilador logo no
-início do arquivo (chamado cabeçalho (ou \textit{header}) que auxilia o SO a executá-lo de forma correta.
-Quando o SO carrega o executável do disco para a memória com o
-objetivo de criar um novo processo, ele realiza a leitura desses
-metadados e utiliza tais informações para criar os segmentos
-de memória pertencentes ao processo. Cada um desses segmentos tem um propósito
-específico que habilita o SO a gerir o processo.
+O arquivo binário de um programa tem um conjunto de metadados inseridos pelo
+compilador logo no início do arquivo (chamado cabeçalho (ou \textit{header})
+que auxilia o SO a executá-lo de forma correta.  Quando o SO carrega o
+executável do disco para a memória com o objetivo de criar um novo processo,
+ele realiza a leitura desses metadados e utiliza tais informações para criar os
+segmentos de memória pertencentes ao processo. Cada um desses segmentos tem um
+propósito específico que habilita o SO a gerir o processo.
 
 \begin{figure}[!h]
   \centering
@@ -61,17 +68,15 @@ específico que habilita o SO a gerir o processo.
 \end{figure}
 
 A Figura~\ref{fig:memory_segment} ilustra seis segmentos de memória diferentes
-representando o layout típico de um processo após sua criação (essa
-estrutura \hltodo[pode variar]{Arquitetura de hardware ou do SO? Seria bom dizer qual é essa que está descrita} de acordo com a arquitetura). O \boldAndIndex{segmento de
-texto} (\emph{text segment}) representa a região da memória que mantém a
-cópia em memória do código
-executável (compartilhável e apenas para leitura). O \boldAndIndex{segmento
-de dados inicializados} (\emph{initialized data segment})
-e o \boldAndIndex{segmento de dados não
-inicializados} (\emph{uninitialized data segment})\footnote{O segmento de dados não
-inicializável também é comumente conhecido como \emph{block started by symbol
-(BSS)} por causa de um antigo operador usado pelos montadores \citep{gdb}.}
-são responsáveis pelas variáveis estáticas. O
+representando o layout típico de um processo após sua criação (essa estrutura
+pode variar a depender do SO e do compilador utilizado) representa a região da
+memória que mantém a cópia em memória do código executável (compartilhável e
+apenas para leitura). O \boldAndIndex{segmento de dados inicializados}
+(\emph{initialized data segment}) e o \boldAndIndex{segmento de dados não
+inicializados} (\emph{uninitialized data segment})\footnote{O segmento de dados
+não inicializável também é comumente conhecido como \emph{block started by
+symbol (BSS)} por causa de um antigo operador usado pelos montadores
+\citep{gdb}.} são responsáveis pelas variáveis estáticas. O
 \boldAndIndex{segmento de mapeamento de memória} (\emph{memory mapping
 segment}) é a região na qual o SO mapeia arquivos diretamente na memória (e.g.,
 bibliotecas dinâmicas ou arquivos especificados pelo programador). O
@@ -87,15 +92,15 @@ para o \emph{header}, obtendo as informações sobre o tamanho dos segmentos de
 texto e dados, e criar
 um novo espaço de endereçamento (\emph{address space}) com \hltodo[tamanho de
 memória suficiente para eles]{na verdade, é maior, não? Tem que ter o espaço da stack, do heap etc.}. O próximo passo consiste em alocar a memória inicialmente necessária
-e copiar toda a região de código e dados lidas do
-arquivo binário para essa memória recém alocada. Em seguida é feita a
-inicialização de todos os \hltodo[registradores]{Hmmm... ele não inicializa os registradores, mas sim uma estrutura de dados que corresponde aos registradores, não é isso? Provavelmente o melhor é mencionar o PCB, ``como veremos mais adiante''} e os devidos ajustes no \emph{stack
-pointer}\footnote{Um \emph{stack pointer} é um registrador que armazena o
-endereço da última requisição feita pelo programa para a \emph{stack}.} e no
-\emph{program counter} (PC), que é ajustado para a função
-\emph{main} do programa \citep{patterson}. Por fim, quando o SO termina de
-inicializar todos os elementos necessários para que o processo possa executar,
-ele insere o novo processo na fila do escalonador.
+e copiar toda a região de código e dados lidas do arquivo binário para essa
+memória recém alocada. Em seguida é feita a inicialização da PCB (veremos
+mais adiante) e os devidos ajustes no \emph{stack pointer}\footnote{Um
+\emph{stack pointer} é um registrador que armazena o endereço da última
+requisição feita pelo programa para a \emph{stack}.} e no \emph{program
+counter} (PC), que é ajustado para a função \emph{main} do programa
+\citep{patterson}. Por fim, quando o SO termina de inicializar todos os
+elementos necessários para que o processo possa executar, ele insere o novo
+processo na fila do escalonador.
 
 \begin{figure}[!h]
   \centering
@@ -107,51 +112,49 @@ ele insere o novo processo na fila do escalonador.
 % TODO: Fazer uma ponte melhor do PC com a execução
 
 A \emph{stack} é organizada em uma coleção de \boldAndIndex{stack frames}, que
-são estruturas de dados inseridas no topo da
-\emph{stack} e que contêm informações como o endereço de retorno da função,
-argumentos recebidos, variáveis locais, dentre outros. Toda vez que uma função
-é chamada, uma nova estrutura de dados \emph{frame} é criada e preenchida com
-as informações relacionadas à função.
-A Figura~\ref{fig:stack_frames} ilustra a alocação e desalocação de
-\textit{frames} em um simples programa \citep{gdb}. No começo, só existe um
-\emph{stack frame} associado à função \texttt{main}. Conforme cada
-função local é chamada, o SO aloca um novo \emph{stack frame}, que é
-inserido logo após o \emph{frame} da função anterior. Esse procedimento permite
-que a execução do processo ocorra de forma consistente, uma vez que basta
-desempilhar o \emph{frame} para retomar ao contexto da função anterior. No fim
-da execução da função, a execução retorna para o ponto na qual a função foi invocada e
-o processo de preencher e esvaziar a \emph{stack} continua.
+são estruturas de dados inseridas no topo da \emph{stack} e que contêm
+informações como o endereço de retorno da função, argumentos recebidos,
+variáveis locais, dentre outros. Toda vez que uma função é chamada, uma nova
+estrutura de dados \emph{frame} é criada e preenchida com as informações
+relacionadas à função.  A Figura~\ref{fig:stack_frames} ilustra a alocação e
+desalocação de \textit{frames} em um simples programa \citep{gdb}. No começo,
+só existe um \emph{stack frame} associado à função \texttt{main}. Conforme cada
+função local é chamada, o SO aloca um novo \emph{stack frame}, que é inserido
+logo após o \emph{frame} da função anterior. Esse procedimento permite que a
+execução do processo ocorra de forma consistente, uma vez que basta desempilhar
+o \emph{frame} para retomar ao contexto da função anterior. No fim da execução
+da função, a execução retorna para o ponto na qual a função foi invocada e o
+processo de preencher e esvaziar a \emph{stack} continua.
 
 Todos os processos são descritos por meio de uma estrutura de dados chamada
-\boldAndIndex{Process Control Block (PCB)}, responsável por manter
-informações referentes ao status do processo, \emph{program counter} (PC),
-registradores da CPU, informações sobre escalonamento, dados sobre contas de
-usuários, status de operações de I/O, dentre outros \citep{silberschatz}.
-Uma dos principais motivos para a PCB existir é permitir a \textbf{troca de
-contexto}, o mecanismo pelo qual processos se alternam no uso da CPU.
-Por exemplo, se o usuário possui vários processos rodando ao mesmo tempo, o
-SO deve alternar entre todos eles para que cada um tenha a oportunidade
-de executar por um intervalo de tempo. O SO realiza esse processo de troca em duas
-etapas: (1) salvamento do estado atual do processo em sua PCB e (2) carregamento dos dados da PCB do outro
-processo. A troca de contexto deve ser rápida por não
-realizar nenhum processamento útil.
+\boldAndIndex{Process Control Block (PCB)}, responsável por manter informações
+referentes ao status do processo, \emph{program counter} (PC), registradores da
+CPU, informações sobre escalonamento, dados sobre contas de usuários, status de
+operações de I/O, dentre outros \citep{silberschatz}.  Uma dos principais
+motivos para a PCB existir é permitir a \textbf{troca de contexto}, o mecanismo
+pelo qual processos se alternam no uso da CPU.  Por exemplo, se o usuário
+possui vários processos rodando ao mesmo tempo, o SO deve alternar entre todos
+eles para que cada um tenha a oportunidade de executar por um intervalo de
+tempo. O SO realiza esse processo de troca em duas etapas: (1) salvamento do
+estado atual do processo em sua PCB e (2) carregamento dos dados da PCB do
+outro processo. A troca de contexto deve ser rápida por não realizar nenhum
+processamento útil.
 
 O conceito apresentado acima revela uma característica de isolamento associada
-com a forma na qual os processos funcionam, promovendo segurança e estabilidade.
-Por outro
-lado, existem situações que demandam que os processos cooperem entre si e,
-nesses casosm é possível notar algumas das desvantagens inerentes da estratégia
-de processos atual. Para resolver parte desse problema, algumas bibliotecas ou
-chamadas de sistema são fornecidas como interfaces para coordenar a
-interação entre processos executando simultaneamente, oferecendo mecanismos
-de \boldAndIndex{Comunicação entre processos} (\boldAndIndex{Interprocess
-Communication}) ou simplesmente \boldAndIndex{IPC}. \hltodo[Por exemplo,]{Não é um exemplo, então melhor começar a frase com ``Desenvolvedores podem...''} desenvolvedores podem utilizar IPC para
-compartilhar dados, melhorar o desempenho das aplicações, refinar a
-modularidade da aplicação ou por alguma questão de conveniência da sua
-aplicação. Os mecanismos de IPC têm três limitações principais: elevam o consumo de memória,
-adicionam custos extras de comunicação e apresentam uma certa complexidade para
-serem implementados. Essas limitações são proibitivas em aplicações com grande
-demanda computacional.
+com a forma na qual os processos funcionam, promovendo segurança e
+estabilidade.  Por outro lado, existem situações que demandam que os processos
+cooperem entre si e, nesses casos é possível notar algumas das desvantagens
+inerentes da estratégia de processos atual. Para resolver parte desse problema,
+algumas bibliotecas ou chamadas de sistema são fornecidas como interfaces para
+coordenar a interação entre processos executando simultaneamente, oferecendo
+mecanismos de \boldAndIndex{Comunicação entre processos}
+(\boldAndIndex{Interprocess Communication}) ou simplesmente \boldAndIndex{IPC}.
+Desenvolvedores podem utilizar IPC para compartilhar dados, melhorar o
+desempenho das aplicações, refinar a modularidade da aplicação ou por alguma
+questão de conveniência da sua aplicação. Os mecanismos de IPC têm três
+limitações principais: elevam o consumo de memória, adicionam custos extras de
+comunicação e apresentam uma certa complexidade para serem implementados. Essas
+limitações são proibitivas em aplicações com grande demanda computacional.
 
 Por muito tempo, buscou-se formas de elevar o desempenho das
 aplicações por meio de melhorias no grau de paralelismo. No entanto, como
@@ -214,15 +217,19 @@ imposta pelo escalonador.
 
 Vamos analisar com um pouco mais de detalhes como o SO trata o
 Código~\ref{lst:simplethreads} durante a sua execução. A
-Figura~\ref{fig:stack_threads} ilustra o que acontece internamente quando
-novas \emph{threads} são criadas. Como esperado, o segmento de texto e dados
-são compartilhados entre as \emph{threads}, como ilustrado na parte inferior da
-figura. A principal mudança na organização de memória pode ser observada no segmento da \emph{stack},
-pois toda vez que uma nova \emph{thread} é criada um \hltodo[novo segmento]{Cada thread tem um espaço de endereçamento bem grande separado só para a sua stack, né? Ou seja, dentro de cada ``substack'' tudo funciona como na stack de um processo ``normal'' porque há um espaço entre as stacks de uma thread e outra} de
-\emph{stack} é gerado; a independência entre \emph{threads} é assegurada pelas
-múltiplas \emph{stacks} isoladas. Finalmente, cada thread tem seu próprio
-\emph{stack pointer} e demais registradores; toda vez que a \emph{thread} em execução muda, o
-\emph{stack pointer} e os registradores são \hltodo[atualizados]{acho que vale explicar aqui em algum lugar uma frasezinha dizendo que o ganho de desempenho vem do fato de que a troca de contexto não afeta o cache da MMU etc., mas bem curtinho, só tipo ``rola isso aí, que vamos explicar depois''}.
+Figura~\ref{fig:stack_threads} ilustra o que acontece internamente quando novas
+\emph{threads} são criadas. Como esperado, o segmento de texto e dados são
+compartilhados entre as \emph{threads}, como ilustrado na parte inferior da
+figura. A principal mudança na organização de memória pode ser observada no
+segmento da \emph{stack}, pois toda vez que uma nova \emph{thread} é criada um
+novo segmento de \emph{stack} é gerado (a Figura~\ref{fig:stack_threads} mostra
+que a \emph{stack} é preenchida aos poucos); a independência entre
+\emph{threads} é assegurada pelas múltiplas \emph{stacks} isoladas. Cada thread
+tem seu próprio \emph{stack pointer} e demais registradores; toda vez que a
+\emph{thread} em execução muda, o \emph{stack pointer} e os registradores são
+atualizados. Repare que o uso de \emph{threads} melhora o desempenho uma vez
+que reduz os impactos na memória cache (detalharemos mais sobre esse aspectos
+nas próximas seções).
 
 \begin{figure}[!h]
   \centering
@@ -234,74 +241,57 @@ múltiplas \emph{stacks} isoladas. Finalmente, cada thread tem seu próprio
 \section{Gerenciamento da Memória Relacionada aos Processos}
 
 Fazer com que a memória do sistema esteja disponível e utilizável para uma
-aplicação é uma das principais responsabilidade de um SO de propósito
-geral. A maioria dos SOs modernos oferece a ilusão de que toda a memória está acessível
-para cada processo, o que é possível graças ao desacoplamento entre a memória física e
-como o processo a vê. Processos só veem o \emph{Virtual Address Space (VAS)} que,
-por sua vez, é mapeado pelo SO (com auxílio de hardware) para a
-memória física, garantindo um bom isolamento entre processos.
+aplicação é uma das principais responsabilidade de um SO de propósito geral. A
+maioria dos SOs modernos oferece a ilusão de que toda a memória está acessível
+para cada processo, o que é possível graças ao desacoplamento entre a memória
+física e como o processo a vê. Processos só veem o \emph{Virtual Address Space
+(VAS)} que, por sua vez, é mapeado pelo SO (com auxílio de hardware) para a
+memória física, garantindo um bom isolamento entre processos. Além da ilusão de
+que a memória está inteiramente disponível para cada processo, esse mecanismo
+também permite que (1) a memória alocada para um dado processo não seja
+necessariamente contígua, permitindo uma melhor utilização dos recursos, (2)
+trechos de memória iguais em processos diferentes, como o segmento de texto,
+possam ser compartilhados, economizando espaço, e (3) seja possível liberar
+memória temporariamente, associando um trecho de memória virtual com uma área
+de disco.
 
-\todo[inline]{Acho que poderia complementar esse parágrafo dizendo: ``Além da ilusão de que a memória está inteiramente disponível para cada processo, esse mecanismo também permite que (1) a memória alocada para um dado processo não seja necessariamente contígua, permitindo uma melhor utilização dos recursos, (2) trechos de memória iguais em processos diferentes, como o segmento de texto, possam ser compartilhados, economizando espaço, e (3) seja possível liberar memória temporariamente, associando um trecho de memória virtual com uma área de disco.''}
+%Para manipular VASes e oferecê-las para as aplicações do usuário, os SOs adotam
+%um modelo de memória específico.  Atualmente, a maioria dos SOs de produção e
+%hardware suportam amplamente o modelo de gerenciamento de páginas. Esse modelo
+%separa a espaço de endereçamento virtual e físico para cada processo em um
+%conjunto de páginas, cada uma correspondente a um pequeno intervalo contíguo de
+%endereços de tamanho fixo, identificadas pelo endereço de início e com
+%permissões específicas.
 
-\hltodo[inline]{Acho no próximo parágrafo aqui cabe um raciocínio assim: ``Mas como fazer para traduzir um endereço VAS para um endereço físico? Não é viável ter uma tabela de tradução byte-a-byte (ela ocuparia toda a memória) nem assumir que a memória de um processo é contígua. A solução é dividir a memória em blocos e manter, para cada processo, uma tabela mapeando cada bloco dentro do VAS para um bloco correspondente na memória física. Há duas estratégias comuns para isso: o modelo de paginação e o modelo de segmentação.'' O início do que está agora na subseção ``modelo de paginação'' (até a figura ``mmu'') na verdade vale para ambos, então eu subiria aqui e criaria uma seção pequenina para paginação e segmentação explicando cada um.}
-
-Para manipular
-VASes e oferecê-las para as aplicações do usuário, os SOs adotam um
-modelo de memória específico.
-Atualmente, a maioria dos SOs de produção e
-hardware suportam amplamente o modelo de gerenciamento de páginas. Esse modelo
-separa a espaço de endereçamento virtual e físico para cada processo em um
-conjunto de páginas, cada uma correspondente a um pequeno intervalo contíguo de endereços de
-tamanho fixo, identificadas pelo endereço de início e com permissões específicas. \hltodo[O modelo de paginação oferece
-algumas vantagens: controle das permissões no nível da página, mecanismos de
-compartilhamento, rápida verificação de proteção, notificações acuradas sobre
-violações e a possibilidade de mapear memória em disco.]{Acho melhor tirar isto daqui}
+% TODO: Relocar essa informação? Apagar? Eis a questão
+% O modelo de paginação oferece algumas vantagens: controle das permissões no
+% nível da página, mecanismos de compartilhamento, rápida verificação de
+% proteção, notificações acuradas sobre violações e a possibilidade de mapear
+% memória em disco.
 
 % TODO: Introduzir brevemente o modelo de segmentação? NELSON: Sim, uma frase, mais ou menos do mesmo tamanho da que está aí explicando o modelo de paginação
 
 %\subsection{Endereços Lógicos, Físicos e Paginação}
-\subsection{O Modelo de Paginação}
 
 % TODO:  Nessa seção, não temos a intenção de discutir profundamente os mecanismos presentes 
 % TODO: O meu objetivo nesse primeiro parágrafo era introduzir a questão dos
 % endereçamentos, por isso fiz uma pequena volta sobre a questão do binário. Será que da para encurtar? Como?
 
-\hltodo[Suponha um programa escrito em C, em algum momento do código esse faz uma
-alocação de memória para ser lida e/ou escrita posteriormente. Esse programa é
-traduzido para um conjunto de instruções de baixo nível na qual a CPU consegue
-manipular, o binário. Posteriormente esse binário é carregado pelo SO e o
-programa começa a sua execução. Durante a realização das tarefas da aplicação,
-naturalmente ocorrem acessos aos endereços de memória. Da relação entre o
-código de alto nível, o arquivo executável e o acesso a memória, surgem algumas questões,
-dentre elas: como o programa consegue acessar um endereço sem conhecer as
-características da máquina? Como programas diferentes evitam os acessos aos mesmos
-endereços?
-
-Podemos responder as perguntas acima
-com base em três conceitos: \textit{address binding} em tempo de execução,
-espaço de endereçamento e paginação. O processo de construção do endereço nasce
-durante a compilação do código fonte. Nesse momento, o compilador
-identifica diversos tipos de acesso à memória (não entraremos em detalhes, por
-fugir do escopo desse trabalho) e faz uma marcação em certos endereços que
-indicam que eles devem ser definidos em tempo de execução. Com base nessa
-marcação, o SO e o hardware ganham uma ferramenta para definição de endereços
-em tempo de execução.]{Adeus!!!!}
-
 Quando o software começa a sua execução, significa que a CPU está executando as
 instruções descritas no binário, dentre elas as tentativas de acesso a certos
-endereços na memória. Todo endereço \hltodo[gerado]{usado?} pela CPU nesse contexto recebe o nome de
-\boldAndIndex{endereço virtual} ou \boldAndIndex{endereço lógico}; por sua vez,
-o conjunto desses endereços recebe o nome de \boldAndIndex{espaço de
-endereçamento virtual (Virtual Address Space)} ou simplesmente VAS. Esses 
-endereços não são
-válidos da perspectiva da memória física, i.e., são apenas endereços usados pela
-aplicação mas que não correspondem ao endereço real dessa memória física. Os
-endereços reais da memória são chamados de \boldAndIndex{endereços físicos} e o
-conjunto de todos os endereços da memória são chamados de \boldAndIndex{espaço
-de endereçamento físico}. Agora você deve estar se perguntando: qual a relação
-entre esses dois tipos de endereços? Eis que surge um terceiro elemento entre elas, a
-\boldAndIndex{Memory-Management Unit (MMU)}. Veja a Figura~\ref{fig:mmu}
-ilustrando como a MMU se interpõe entre o endereço lógico e o físico.
+endereços na memória. Todo endereço utilizado pela CPU nesse contexto recebe o
+nome de \boldAndIndex{endereço virtual} ou \boldAndIndex{endereço lógico}; por
+sua vez, o conjunto desses endereços recebe o nome de \boldAndIndex{espaço de
+endereçamento virtual (Virtual Address Space)} ou simplesmente VAS. Esses
+endereços não são válidos da perspectiva da memória física, i.e., são apenas
+endereços usados pela aplicação mas que não correspondem ao endereço real dessa
+memória física. Os endereços reais da memória são chamados de
+\boldAndIndex{endereços físicos} e o conjunto de todos os endereços da memória
+são chamados de \boldAndIndex{espaço de endereçamento físico}. Agora você deve
+estar se perguntando: qual a relação entre esses dois tipos de endereços? Eis
+que surge um terceiro elemento entre elas, a \boldAndIndex{Memory-Management
+Unit (MMU)}. Veja a Figura~\ref{fig:mmu} ilustrando como a MMU se interpõe
+entre o endereço lógico e o físico.
 
 \begin{figure}[!h]
   \centering
@@ -314,29 +304,21 @@ A MMU é um hardware usado para fazer o mapeamento do endereço virtual para o
 endereço físico em tempo de execução. A Figura~\ref{fig:mmu} mostra a CPU
 gerando um endereço lógico que é imediatamente entregue para a MMU. Esta
 converte o endereço recebido em um endereço físico e procede com o acesso à
-memória. \hltodo[Dado a importância dos conceitos que orbitam o endereçamento da
-memória, vale a pena fazer uma última reflexão sobre os endereços físicos e
-virtuais.]{Adiós!!!}
+memória.
 
-\todo[inline]{Este parágrafo na verdade se refere, sim, só ao sistema de paginação!}
-
-Qual o tamanho máximo da memória de um sistema?
-\hltodo[Começando com os endereços virtuais, destacamos que esses são fictícios e
-limitados apenas por um limite físico imposto pelo hardware da CPU, surge a
-questão: qual seria o intervalo máximo de valores possíveis?]{bye-bye!!!}
-No caso da memória virtual, o endereçamento
-começa em 0 e vai até um valor máximo definido em um conjunto de bits chamado
-de \boldAndIndex{virtual bits}. Durante muito tempo, o padrão adotado para o
-\emph{virtual bits} era de 32 bits, gerando um limite superior de endereçamento
-de 4 GiB; hoje em dia é relativamente comum encontrar CPUs que fornecem 48
-bits, produzindo uma VAS de 256 TiB.  Na prática, isso significa que um
-software executado em um SO moderno tem a ilusão de que pode acessar todos os
-endereços fornecidos pela VAS. Por enquanto, sabemos que isso não é verdade,
-pois dificilmente conseguimos fornecer tanta memória. Por esse motivo, e como
-ilustrado na Figura~\ref{fig:vas_pas}, notamos que o endereço virtual é várias
-vezes maior do que o endereço físico. Além disso, repare que a memória física
-deve ser compartilhada entre vários processos em execução no SO (todos eles
-acreditam que tem toda a memória disponível).
+Qual o tamanho máximo da memória de um sistema?  No caso da memória virtual, o
+endereçamento começa em 0 e vai até um valor máximo definido em um conjunto de
+bits chamado de \boldAndIndex{virtual bits}. Durante muito tempo, o padrão
+adotado para o \emph{virtual bits} era de 32 bits, gerando um limite superior
+de endereçamento de 4 GiB; hoje em dia é relativamente comum encontrar CPUs que
+fornecem 48 bits, produzindo uma VAS de 256 TiB. Na prática, isso significa
+que um software executado em um SO moderno tem a ilusão de que pode acessar
+todos os endereços fornecidos pela VAS. Por enquanto, sabemos que isso não é
+verdade, pois dificilmente conseguimos fornecer tanta memória. Por esse motivo,
+e como ilustrado na Figura~\ref{fig:vas_pas}, notamos que o endereço virtual
+pode ser várias vezes maior do que o endereço físico. Além disso, repare que a
+memória física deve ser compartilhada entre vários processos em execução no SO
+(todos eles acreditam que tem toda a memória disponível).
 
 \begin{figure}[!h]
   \centering
@@ -345,17 +327,24 @@ acreditam que tem toda a memória disponível).
   \label{fig:vas_pas}
 \end{figure}
 
-\hltodo[Em busca de tentar gerir os diversos aspectos referentes ao endereçamento,
-criou-se um modelo chamado de paginação cujo o objetivo é permitir que os
-endereços físicos do processo possam ser dispostos na memória de forma
-não-contínua. A implicação direta desse modelo é a de que um processo não
-precisa estar totalmente na memória, isso vale tanto para um processo quanto
-para ``n'' processos.]{Repetido com o que está antes; xau!!} Contudo, para que esse modelo possa ser implementado, é
-preciso dividir o espaço de endereçamento virtual e físico em
-\boldAndIndex{páginas} e \boldAndIndex{frames}. Uma vez que ambos os espaços de
-endereçamentos são subdivididos, é necessário ter um mecanismo para saber o que
-está presente ou não na memória. Para ter uma visão de como todo o modelo de
-paginação funciona, veja a Figura~\ref{fig:paginacao}.
+%TODO: AQUI VEM O GANCHO
+
+Não obstante, como fazer para traduzir um endereço VAS para um endereço físico?
+Não é viável ter uma tabela de tradução byte-a-byte (ela ocuparia toda a
+memória) nem assumir que a memória de um processo é contígua. A solução é
+dividir a memória em blocos e manter, para cada processo, uma tabela mapeando
+cada bloco dentro do VAS para um bloco correspondente na memória física. Há
+duas estratégias comuns para isso: o modelo de paginação e o modelo de
+segmentação.
+
+\subsection{O Modelo de Paginação}
+
+Para implementar o modelo de páginação, é preciso dividir o espaço de
+endereçamento virtual em \boldAndIndex{páginas} e o físico em
+\boldAndIndex{frames}. Uma vez que ambos os espaços de endereçamentos são
+subdivididos, é necessário ter um mecanismo para saber o que está presente ou
+não na memória. Para ter uma visão de como todo o modelo de paginação funciona,
+veja a Figura~\ref{fig:paginacao}.
 
 \begin{figure}[!h]
   \centering
@@ -370,7 +359,7 @@ comporta-se como um índice corresponde a uma entrada em uma estrutura de dados
 chamada \boldAndIndex{tabela de paginação}. Essa tabela faz parte da abstração
 de processos e tem uma entrada especificada na PCB, ou seja, todo processo
 possui uma tabela associada a si. Cada entrada na tabela corresponde ao
-endereço de início de um \hltodo[\emph{frame}]{não entendi a diferença entre um frame e uma page} na memória que está associado ao
+endereço de início de um \hltodo[\emph{frame}]{não entendi a diferença entre um frame e uma page} na memória associado ao
 processo.  Para ilustrar melhor esse conceito, imagine um programa que aloca
 espaço na memória. Em termos práticos, o SO cria uma nova entrada na tabela e
 retorna o endereço virtual para a aplicação.  Depois que o valor referente ao
@@ -387,52 +376,50 @@ virtual e finalmente o acesso a memória física ocorre.
 A Figura~\ref{fig:passos_paginacao} exemplifica o processo descrito
 anteriormente. Repare que são necessários vários acessos à memória para
 construir o endereço físico e finalmente conseguir acessar a palavra de dados,
-o que faz com que essa técnica não seja eficiente.
-Nesse sentido, existe um mecanismo que busca reduzir esses acessos por meio de
-uma tabela chamada de \boldAndIndex{translation look-aside buffer (TLB)}. Essa
-tabela salva o último acesso (coluna e valor) feito à tabela de páginas
-evitando que a memória seja consultada inúmeras vezes. Na
-Figura~\ref{fig:paginacao}, é possível ver a TLB sendo usada para acelerar o
-acesso aos dados: se uma consulta for encontrada na TLB, ocorre o chamado
-\boldAndIndex{acerto na TLB (TLB hit)}; do contrário, \boldAndIndex{falha na
-TLB (TLB miss)}. Note que a busca na memória sempre é feita, o que significa que,
-no pior caso (\emph{TLB miss}), a busca na memória já foi iniciada.
-
-\hltodo[Por fim, é importante destacar que os mecanismos descritos nessa seção trazem
-inúmeros benefícios diretos e indiretos. Dentre as vantagens diretas,
-ressaltamos a possibilidade de ter o processo na memória de forma não contígua e
-assim conseguir controlar o que deve ou não estar presente na memória.
-Indiretamente, esses mecanismos isolam cada processo de acordo com a VAS uma
-vez que todo processo tem a ilusão de que tem total controle da memória.]{Repetido com o que veio antes, pode cortar!} Além
-disso, o mecanismo de paginação facilita a operação de realizar o
-compartilhamento de dados entre os processos; o SO orquestra um conjunto de
-páginas com a mesma visibilidade (indicada pelo programa no espaço de usuário)
-para ser compartilhado entre processos.
+o que faz com que essa técnica não seja eficiente.  Nesse sentido, existe um
+mecanismo que busca reduzir esses acessos por meio de uma tabela chamada de
+\boldAndIndex{translation look-aside buffer (TLB)}. Essa tabela salva o último
+acesso (coluna e valor) feito à tabela de páginas evitando que a memória seja
+consultada inúmeras vezes. Na Figura~\ref{fig:paginacao}, é possível ver a TLB
+sendo usada para acelerar o acesso aos dados: se uma consulta for encontrada na
+TLB, ocorre o chamado \boldAndIndex{acerto na TLB (TLB hit)}; do contrário,
+\boldAndIndex{falha na TLB (TLB miss)}. Note que a busca na memória sempre é
+feita, o que significa que, no pior caso (\emph{TLB miss}), a busca na memória
+já foi iniciada. Além disso, o mecanismo de paginação facilita a operação de
+realizar o compartilhamento de dados entre os processos; o SO orquestra um
+conjunto de páginas com a mesma visibilidade (indicada pelo programa no espaço
+de usuário) para ser compartilhado entre processos.
 
 \subsection{Modelo de Segmentação}
 
 Além do mecanismo de gerenciamento de memória fornecido pela paginação, também
 existe uma alternativa chamada de \boldAndIndex{segmentação}. Esse modelo
-decompõe o memória referente ao programa em segmentos de acordo com as suas seções;
-por exemplo, uma
-área para o \textit{text}, outra para os dados, \textit{stack}, etc. Os
-tamanhos de cada segmento podem ser variáveis, o que leva a uma visão
-bidimensional da memória uma vez que os endereços passam a ser construídos como
-uma tupla: \\
-
-\texttt{<número do segmento, offset>}~\citep{silberschatz}.\todo{por que a quebra de linha?}
-
-\hltodo[Apesar dessa visão bidimensional, a memória continua
+decompõe o memória referente ao programa em segmentos de acordo com as suas
+seções; por exemplo, uma área para o \textit{text}, outra para os dados,
+\textit{stack}, etc. Os tamanhos de cada segmento podem ser variáveis, o que
+leva a uma visão bidimensional da memória uma vez que os endereços passam a ser
+construídos como uma tupla: \texttt{<número do segmento, offset>}
+\citep{silberschatz}. Apesar dessa visão bidimensional, a memória continua
 sendo linear e, por isso, é necessário converter os endereços.
-A Figura~\ref{fig:segmentacao} mostra como a segmentação funciona com o suporte de hardware. Repare
-que o endereço gerado pela CPU é dividido em duas partes. A primeira parte do
-endereço corresponde ao número do segmento salvo na tabela de segmentos e
-o valor associado ao índice é um endereço presente na memória física.
-Como ilustrado na figura, a tabela de segmentos tem dois valores: limite e
-base. O limite é o tamanho máximo do segmento e é usado para verificar se o
-\emph{offset} passado é valido. O segundo valor, base, é o começo do segmento na
-memória física. Se tudo estiver certo, o endereço final é acessado utilizando a
-soma do valor base com o \emph{offset}.]{quase, mas está um pouco confuso}
+
+O modelo de segmentação depende de um elemento fundamental chamado
+\boldAndIndex{tabela de segmentos}. A tabela de segmentos é o elemento central
+para a conversão de um endereço lógico em um endereço físico, ela mantém o
+mapeamento das referências para o começo de cada segmento do programa. Cada
+entrada dessa tabela é dividida em dois pedaços chamados de limite e base. O
+limite é um componente com duas responsabilidades, (1) ele é o índice de um
+elemento na tabela e (2) o seu valor indica o tamanho máximo do segmento. Por
+sua vez, o limite está associado a um segundo valor chamado de endereço base
+(ou simplesmente base) que representa o início do segmento na memória física.
+
+A Figura~\ref{fig:segmentacao} mostra como a segmentação funciona com o suporte
+de hardware. Repare que o endereço lógico utilizado pela CPU é dividido em duas
+partes; a primeira parte do endereço corresponde ao limite e a segunda a um
+\emph{offset}. Como ilustrado na figura, o valor do limite é utilizado para
+acessar a tabela de segmentos e recuperar o valor base. O limite é o tamanho
+máximo do segmento e é usado para verificar se o \emph{offset} passado é
+valido. Se a verificação do limite for valida, então o endereço base é lido e
+usado em conjunto com o \emph{offset} para gerar o endereço físico.
 
 \begin{figure}[!h]
   \centering
@@ -441,13 +428,13 @@ soma do valor base com o \emph{offset}.]{quase, mas está um pouco confuso}
   \label{fig:segmentacao} 
 \end{figure}
 
-Tanto o modelo de segmentação quanto o de paginação têm suporte de hardware. O
-Microsoft Windows faz uso do modelo de \hltodo[segmentação]{só em 32 bits! O x86 não tem segmentação em modo 64 bits}, enquanto o MacOS e o
-GNU/Linux usam a paginação. Como a CPU costuma dar suporte para ambos os
-esquemas, os SOs podem utilizar esses mecanismos para executar aplicações de
-outros SOs. Por exemplo, o Wine\footnote{\url{https://www.winehq.org/}} executa
-aplicações Windows no Linux utilizando parte dos recursos de segmentação
-fornecidos pela CPU.
+Tanto o modelo de segmentação quanto o de paginação têm suporte de hardware.
+Tradicionalmente o Microsoft Windows fez uso do modelo de segmentação, enquanto
+o MacOS e o GNU/Linux usam a paginação. Como a CPU costuma dar suporte para
+ambos os esquemas, os SOs podem utilizar esses mecanismos para executar
+aplicações de outros SOs. Por exemplo, o
+Wine\footnote{\url{https://www.winehq.org/}} executa aplicações Windows no
+Linux utilizando parte dos recursos de segmentação fornecidos pela CPU.
 
 \subsection{Outros Mecanismos de Memória}
 \label{sec:outros_mecanismos_memoria}

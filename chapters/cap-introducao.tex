@@ -3,23 +3,25 @@
 \label{cap:introducao}
 
 Sistemas Operacionais (SO) são projetos de software considerados grandes e
-complexos em que cada uma das suas partes é \hltodo[perfeitamente]{prefiro ``estritamente''; nada é perfeito} definida baseada nas
-entradas, saídas e funcionalidades esperadas \citep{silberschatz}. Coletivamente, essas
-partes representam um conjunto de abstrações construídas sobre o hardware
-(e.g., processadores, memórias e dispositivos de armazenamento) para fornecer
-recursos para os usuários --- tanto desenvolvedores de aplicações quanto usuários finais. Dentre os conceitos empregados pelos SOs modernos
-destacam-se processos, escalonadores, gerenciadores de memória, sistemas de
-arquivo, \hltodo[oferecem mecanismos para que as aplicações de
-usuários utilizem os recursos de hardware]{meio repetido com o que veio antes}~\citep{tanenbaum}.
-
-\todo[inline]{Aqui acho que é importante frisar \emph{por que} vale a pena melhorar a abstração de processos; não precisa ser algo longo, mas o próximo parágrafo está resumido demais}
+complexos em que cada uma das suas partes é estritamente definida baseada nas
+entradas, saídas e funcionalidades esperadas \citep{silberschatz}.
+Coletivamente, essas partes representam um conjunto de abstrações construídas
+sobre o hardware (e.g., processadores, memórias e dispositivos de
+armazenamento) para fornecer recursos para os usuários --- tanto
+desenvolvedores de aplicações quanto usuários finais. Dentre os conceitos
+empregados pelos SOs modernos destacam-se processos, escalonadores,
+gerenciadores de memória, sistemas de arquivo~\citep{tanenbaum}.
 
 Uma das abstrações mais antigas fornecida pelos SOs é o conceito de
 \textit{processos}. Estes dão a noção de virtualização do processador, pois
 oferecem a ilusão de múltiplos programas executando
-simultaneamente~\citep{love, tanenbaum}. Essa abstração evolui continuamente
-para atender às demandas de \hltodo[hardware]{``novos'' hardwares, precisa explicar melhor; esta frase inteira, na verdade, podia aumentar um pouco}, segurança, escalabilidade, modelos de
-programação e desempenho.
+simultaneamente~\citep{love, tanenbaum}. Os SOs de proposito geral possuem
+grande dependência sobre o conceito de processos, sendo esse o principal
+mecanismo de interação com os demais recursos oferecidos. Dado o papel central
+de tal abstração nos SOs modernos, fica evidente que alterações nessa área
+reverberam em todo tipo de usuário. Por esse motivo é comum observar que os
+processos evoluem de forma a atender novas demandas de hardware, segurança,
+escalabilidade, modelos de programação e desempenho.
 
 Infelizmente, melhorar a abstração de processos para atender novos requisitos é
 uma tarefa delicada. Em um SO voltado para produção (e.g., GNU/Linux e
@@ -36,19 +38,29 @@ medir o desempenho e demonstrar benefícios para as aplicações.
 Inspirados pelas diversas propostas de novas extensões nas abstrações de
 processos sugeridas pela academia nas últimas décadas, nós buscamos
 investigá-las com o objetivo de compilar o estado da arte verificando
-características interessantes para os SOs usados em produção. Dado
-o foco pretendido nas abstrações relativas a processos, examinamos
-as diferentes pesquisas excluindo outros aspectos eventualmente introduzido pelos
+características interessantes para os SOs usados em produção. Dado o foco
+pretendido nas abstrações relativas a processos, examinamos as diferentes
+pesquisas excluindo outros aspectos eventualmente introduzido pelos
 pesquisadores.
 
-\todo[inline]{Até aqui foi um assunto (``sistemas operacionais são importantes, processos são uma abstração importante então vamos investigar as novidades nessa área''). Agora vem outra coisa: ``há três tipos de trabalhos por aí que normalmente se auto-avaliam em duas fases: (1) com microbenchmarks e (2) com uma aplicação de exemplo''. Acho que cai bem criar uma subseção aqui explicando essa ideia}
+\section{Avaliação de Novas Abstrações de Processos}
 
-Nós classificamos as abordagens utilizadas em três categorias:
+Dentre o conjunto dos diversos trabalhos na área de processos é possível
+realizar a categorização dos mesmos de acordo com a abordagem adotada. Além do
+mais, essas pesquisas normalmente se auto-avaliam em duas fases: (1)
+microbenchmark\footnote{É uma maneira de identificar tarefas da aplicação e
+medir o desempenho delas~\citep{micro}} e (2) utilizando uma aplicação como
+exemplo. Nesse contexto, podemos avaliar de forma direta uma proposta baseada
+na sua categoria e de forma mais profunda verificar como ela se auto-avalia.
+
+De forma a rapidamente explorar as característica de uma abordagem,
+classificamos as pesquisas em três categorias:
 
 \begin{description}
 \item [Implementação Estrutural Pesada]
 
-consiste em melhorar um SO bem estabelecido e amplamente utilizado (e.g., GNU/Linux), \textbf{através de modificações em seu núcleo};
+consiste em melhorar um SO bem estabelecido e amplamente utilizado (e.g.,
+GNU/Linux), \textbf{através de modificações em seu núcleo};
 
 \item [Implementação Estrutural Leve]
 
@@ -57,10 +69,9 @@ mas \textbf{evitando mudanças diretas no núcleo};
 
 \item [Implementação Independente]
 
-consiste na criação de um SO totalmente novo \hltodo[e sem qualquer dependência]{Não entendi}.
-Normalmente este tipo de trabalho introduz inovações em diferentes áreas,
-contudo, neste texto estamos interessados nas propostas relacionadas às
-abstrações de processos.
+consiste na criação de um SO totalmente novo. Normalmente este tipo de
+trabalho introduz inovações em diferentes áreas, contudo, neste texto estamos
+interessados nas propostas relacionadas às abstrações de processos.
 
 \end{description}
 
@@ -71,30 +82,28 @@ modificação, o esforço necessário para o desenvolvimento e a facilidade em
 integrar com SOs de uso cotidiano.
 
 Depois que uma implementação se torna funcional, os pesquisadores comumente
-utilizam um conjunto de \emph{microbenchmarks}\footnote{Medições feitas em
-pequenos pedaços da aplicação} \todo{Acho que não concordo com essa definição de microbenchmark!} para avaliar o desempenho das suas propostas. A
-peculiaridade de cada trabalho é evidenciada na grande pluralidade de
-estratégias de \emph{microbenchmarks} encontrada em diversos artigos.
-De forma geral, os cientistas selecionam um conjunto de procedimentos para mostrar
-os prós e contras da sua abordagem. Contudo, identificar um bom conjunto de
-\emph{microbenchmarks} que comprove um comportamento particular é uma tarefa
-que requer certa experiência por parte do pesquisador.
+utilizam um conjunto de \emph{microbenchmarks} para avaliar o desempenho das
+suas propostas. A peculiaridade de cada trabalho é evidenciada na grande
+pluralidade de estratégias de \emph{microbenchmarks} encontrada em diversos
+artigos.  De forma geral, os cientistas selecionam um conjunto de procedimentos
+para mostrar os prós e contras da sua abordagem. Contudo, identificar um bom
+conjunto de \emph{microbenchmarks} que comprove um comportamento particular é
+uma tarefa que requer certa experiência por parte do pesquisador.
 
-O uso de
-\textit{microbenchmarks} como forma de comprovação de algum resultado serve
-como indicador parcial de bons resultados mas pode ser perigoso, uma vez que pode induzir o pesquisador a acreditar em um resultado
-positivo negligenciando outros potenciais impactos. Assim,
-para validar as propostas e verificar o impacto delas em um cenário
-minimamente realista, os pesquisadores comumente selecionam uma aplicação
-utilizada em certos contextos para testar as modificações feitas. No entanto,
-selecionar um software para realização de testes representa uma tarefa
-complicada devido às características singulares de cada aplicação. Por exemplo, um
-software pode utilizar muita memória e consumir boa parte dos recursos da CPU,
-o que é desejável para demonstrar o uso de novas abstrações de processos em uma
-situação de estresse. Ainda assim, pode não revelar nada de útil relacionado a
-melhorias de segurança.
+O uso de \textit{microbenchmarks} como forma de comprovação de algum resultado
+serve como indicador parcial de bons resultados mas pode ser perigoso, uma vez
+que pode induzir o pesquisador a acreditar em um resultado positivo
+negligenciando outros potenciais impactos. Assim, para validar as propostas e
+verificar o impacto delas em um cenário minimamente realista, os pesquisadores
+comumente selecionam uma aplicação utilizada em certos contextos para testar as
+modificações feitas. No entanto, selecionar um software para realização de
+testes representa uma tarefa complicada devido às características singulares de
+cada aplicação. Por exemplo, um software pode utilizar muita memória e consumir
+boa parte dos recursos da CPU, o que é desejável para demonstrar o uso de novas
+abstrações de processos em uma situação de estresse. Ainda assim, pode não
+revelar nada de útil relacionado a melhorias de segurança.
 
-\todo[inline]{Aqui temos uma nova subseção, que é ``objetivos'' ou algo assim: ``dado que processos são legais e que temos um entendimento de como as pesquisas na área são feitas, perguntamos e respondemos isto aqui''.}
+\section{Objetivos}
 
 No cenário atual notamos uma falta de unificação e validação das diferentes
 propostas de mudanças nas abstrações dos processos, aspectos esses que são
@@ -113,21 +122,21 @@ perguntas:
 \end{quote}
 
 Dos 15 trabalhos que analisamos, a maior parte faz uso de SOs baseados no
-Kernel Linux. Por isso, no Capítulo~\ref{cap:fundamentacao} \hltodo[descreveremos
-conceitos mais aplicáveis ao Linux que aos outros SOs disponíveis]{Não entendi e não sei se parece boa ideia}. Para
-responder a questão RQ1, identificamos as principais características propostas
-por vários pesquisadores e extraímos o conceito central desses vários trabalhos,
-descritos no Capítulo \ref{cap:trabalhos-analisados} e
+Kernel Linux. Por isso, no Capítulo~\ref{cap:fundamentacao} exploramos
+conceitos gerais sobre SO e também descrevemos alguns desse conceitos usando o
+GNU/Linux como exemplo. Para responder a questão RQ1, identificamos as
+principais características propostas por vários pesquisadores e extraímos o
+conceito central desses vários trabalhos, descritos no Capítulo
+\ref{cap:trabalhos-analisados} e
 \ref{cap:analise-sobre-abstracoes-de-processos}. Para responder a RQ2,
-investigamos \hltodo[diferentes técnicas de implementação]{acho que aqui poderia citar novamente o lance da divisão em três categorias}, descritas no Capítulo
-\ref{cap:trabalhos-analisados}. Para responder a RQ3, extraímos dos trabalhos uma
-coleção de programas que podem se beneficiar das modificações, levando
-vantagens para o usuário final (Capítulo \ref{cap:validacoes}). Para responder a
-RQ4, nós analisamos diversos \emph{microbenchmarks} utilizados pelos
+investigamos diferentes técnicas de implementação levando-se em consideração a
+categorização feita sobre as abordagens descritas no Capítulo
+\ref{cap:trabalhos-analisados}. Para responder a RQ3, extraímos dos trabalhos
+uma coleção de programas que podem se beneficiar das modificações, levando
+vantagens para o usuário final (Capítulo \ref{cap:validacoes}). Para responder
+a RQ4, nós analisamos diversos \emph{microbenchmarks} utilizados pelos
 pesquisadores e selecionamos um subconjuntos de características uteis para
-avaliar uma proposta (Capítulo \ref{cap:validacoes}). Combinando o resultado
-das quatro perguntas de pesquisa, \hltodo[derivamos um conjunto de propriedades
-desejáveis para a próxima geração de abstrações de processos]{Mas isso é exatamente a RQ1!}. Por fim, no
-Capítulo \ref{cap:analise-sobre-abstracoes-de-processos}, discutimos um novo
-horizonte para a próxima geração de abstrações de processos com o objetivo de
-auxiliar na construção de um novo modelo.
+avaliar uma proposta (Capítulo \ref{cap:validacoes}). Por fim, no Capítulo
+\ref{cap:analise-sobre-abstracoes-de-processos}, discutimos um novo horizonte
+para a próxima geração de abstrações de processos com o objetivo de auxiliar na
+construção de um novo modelo.
