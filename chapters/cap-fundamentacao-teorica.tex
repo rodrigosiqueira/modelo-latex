@@ -87,18 +87,16 @@ que a \emph{stack} e o \emph{heap} estão em lados opostos da memória.
 
 O primeiro passo realizado pelo SO quando ele lê o arquivo executável é olhar
 para o \emph{header}, obtendo as informações sobre o tamanho dos segmentos de
-texto e dados, e criar
-um novo espaço de endereçamento (\emph{address space}) com \hltodo[tamanho de
-memória suficiente para eles]{na verdade, é maior, não? Tem que ter o espaço da stack, do heap etc.}. O próximo passo consiste em alocar a memória inicialmente necessária
-e copiar toda a região de código e dados lidas do arquivo binário para essa
-memória recém alocada. Em seguida é feita a inicialização da PCB (veremos
-mais adiante) e os devidos ajustes no \emph{stack pointer}\footnote{Um
-\emph{stack pointer} é um registrador que armazena o endereço da última
-requisição feita pelo programa para a \emph{stack}.} e no \emph{program
-counter} (PC), que é ajustado para a função \emph{main} do programa
-\citep{patterson}. Por fim, quando o SO termina de inicializar todos os
-elementos necessários para que o processo possa executar, ele insere o novo
-processo na fila do escalonador.
+texto e dados, e criar um novo espaço de endereçamento (\emph{address space}).
+O próximo passo consiste em alocar a memória inicialmente necessária e copiar
+toda a região de código e dados lidas do arquivo binário para essa memória
+recém alocada. Em seguida é feita a inicialização da PCB (veremos mais adiante)
+e os devidos ajustes no \emph{stack pointer}\footnote{Um \emph{stack pointer} é
+um registrador que armazena o endereço da última requisição feita pelo programa
+para a \emph{stack}.} e no \emph{program counter} (PC), que é ajustado para a
+função \emph{main} do programa \citep{patterson}. Por fim, quando o SO termina
+de inicializar todos os elementos necessários para que o processo possa
+executar, ele insere o novo processo na fila do escalonador.
 
 \begin{figure}[!h]
   \centering
@@ -358,12 +356,12 @@ comporta-se como um índice corresponde a uma entrada em uma estrutura de dados
 chamada \boldAndIndex{tabela de paginação}. Essa tabela faz parte da abstração
 de processos e tem uma entrada especificada na PCB, ou seja, todo processo
 possui uma tabela associada a si. Cada entrada na tabela corresponde ao
-endereço de início de um \hltodo[\emph{frame}]{não entendi a diferença entre um frame e uma page} na memória associado ao
-processo.  Para ilustrar melhor esse conceito, imagine um programa que aloca
-espaço na memória. Em termos práticos, o SO cria uma nova entrada na tabela e
-retorna o endereço virtual para a aplicação.  Depois que o valor referente ao
-índice é recuperado a MMU soma o \textit{offset} da segunda parte do endereço
-virtual e finalmente o acesso a memória física ocorre.
+endereço de início de um \emph{frame} na memória associado ao processo.  Para
+ilustrar melhor esse conceito, imagine um programa que aloca espaço na memória.
+Em termos práticos, o SO cria uma nova entrada na tabela e retorna o endereço
+virtual para a aplicação.  Depois que o valor referente ao índice é recuperado
+a MMU soma o \textit{offset} da segunda parte do endereço virtual e finalmente
+o acesso a memória física ocorre.
 
 \begin{figure}[!h]
   \centering
@@ -680,7 +678,7 @@ de baixo nível, como a leitura e escrita de um arquivo.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=0.8\textwidth]{userspace_to_kernel} 
+  \includegraphics[width=0.5\textwidth]{userspace_to_kernel} 
   \caption{Execução do user space até o kernel space}
   \label{fig:userspace_kernelspace}
 \end{figure}
@@ -703,34 +701,33 @@ recebe o seu PID.
 
 \section{Troca de Contexto}
 
-Em um SO de propósito geral, é comum que tenhamos \hltodo[múltiplos processos em
-execução por um intervalo de tempo]{Está meio zoneada essa explicação; melhor falar em um processo que troca por outro, e não no plural} e após o intervalo os processos são
-trocados. A troca tem início quando uma interrupção \hltodo[vinda do hardware]{é isso, certo?} ocorrer, seja ela porque o
-tempo de CPU do processo terminou ou por qualquer outro motivo. O primeiro
-passo necessário consiste em salvar o estado do processo em execução e em
-seguida carregar o estado do novo processo na CPU. Repare que o tempo gasto na
-troca de processo não produz nenhum trabalho útil, ou seja, é um
+Em um SO de propósito geral, um processo executa por um intervalo de tempo;
+quanto esse tempo acaba outro processo é inserido na CPU, esse procedimento
+ocorre na escala das centenas de processos. A troca tem início quando uma
+interrupção vinda do hardware ocorrer, seja ela porque o tempo de CPU do
+processo terminou ou por qualquer outro motivo. O primeiro passo necessário
+consiste em salvar o estado do processo em execução e em seguida carregar o
+estado do novo processo na CPU. Repare que o tempo gasto na troca de processo
+não produz nenhum trabalho útil, ou seja, é um
 \textit{overhead}~\citep{silberschatz}.
 
-Na prática, a troca de contexto é bem mais complexa. Por exemplo, vamos olhar de
-perto e de forma breve a troca de contexto no GNU/Linux em uma arquitetura x86.
-Primeiramente, todos os processos precisam compartilhar os registradores da
-CPU. Por esse motivo, o kernel deve assegurar que todos os registradores sejam
-carregados com os valores de quando o processo foi suspenso. O conjunto de
-todos os dados dos registradores que devem ser carregados recebe o nome de
+Na prática, a troca de contexto é bem mais complexa. Por exemplo, vamos olhar
+de perto e de forma breve a troca de contexto no GNU/Linux em uma arquitetura
+x86.  Primeiramente, todos os processos precisam compartilhar os registradores
+da CPU. Por esse motivo, o kernel deve assegurar que todos os registradores
+sejam carregados com os valores de quando o processo foi suspenso. O conjunto
+de todos os dados dos registradores que devem ser carregados recebe o nome de
 \boldAndIndex{contexto de hardware}~\citep{entendendo_kernel}, que pode ser
-visto como um subconjunto do contexto do processo. No Linux, o contexto de hardware
-é armazenado na própria estrutura do processo, enquanto as demais partes são salvas na
-\hltodo[stack do kernel mode]{WTF?}. Toda troca de processo precisa armazenar o contexto de
-hardware, por isso a \texttt{task\_struct} inclui um campo chamado
-\texttt{thread\_struct}, que armazena o contexto do hardware (dependente da
-arquitetura de hardware).
+visto como um subconjunto do contexto do processo. No Linux, o contexto de
+hardware é armazenado na própria estrutura do processo, enquanto as demais
+partes são salvas em uma interna \emph{stack} do kernel. Toda troca de processo
+precisa armazenar o contexto de hardware, por isso a \texttt{task\_struct}
+inclui um campo chamado \texttt{thread\_struct}, que armazena o contexto do
+hardware (dependente da arquitetura de hardware).
 
 Para realizar a troca de processos, o Kernel Linux realiza duas
 operações~\citep{entendendo_kernel}: (1) Instala o novo espaço de endereço e
 (2) Muda o \emph{stack} do domínio do Kernel e o contexto de hardware
-
-\todo[inline]{Acho que o que você quer dizer no próximo parágrafo é que a \emph{implementação} do mecanismo de troca de contexto é dependente da arquitetura, porque é codificado em assembler e com todas as ``manhas'' possíveis para ganhar desempenho, então precisa escrever melhor}
 
 A operação de troca é extremamente dependente da arquitetura de hardware, pois
 precisa ser executada de forma rápida e por isso o Linux tenta tirar proveito
@@ -741,22 +738,20 @@ de contexto ainda mais complexa}.
 % Falar de PCID?
 \section{Descritores de Arquivo}
 
-\hltodo[Quando falamos de abstrações de processos é preciso levar em consideração
-diversos aspectos interligado a eles, dentre eles as interações de escrita e
-leitura de aquivos.]{Kaboom!!!} Normalmente, quando um processo deseja ler ou escrever um
-dado em um arquivo, ele precisa passar por algumas camadas. O
-processo interage com o \boldAndIndex{sistema de arquivos}, que é responsável
-por fornecer um mecanismo simplificado para o processo localizar, escrever e
-recuperar dados. Por sua vez, os sistemas de arquivos atuam com outras camadas
-responsáveis por manter a organização e meta-dados dos aquivos. Por fim,
-as operações de alto nível são convertidas para instruções de baixo nível
-passadas para os discos que de fato realizam as operações solicitadas.
+Normalmente, quando um processo deseja ler ou escrever um dado em um arquivo,
+ele precisa passar por algumas camadas. O processo interage com o
+\boldAndIndex{sistema de arquivos}, que é responsável por fornecer um mecanismo
+simplificado para o processo localizar, escrever e recuperar dados. Por sua
+vez, os sistemas de arquivos atuam com outras camadas responsáveis por manter a
+organização e meta-dados dos aquivos. Por fim, as operações de alto nível são
+convertidas para instruções de baixo nível passadas para os discos que de fato
+realizam as operações solicitadas.
 
-\hl{Em GNU/Linux e outros sistemas POSIX,} existe uma estrutura de dados utilizada para controlar o bloco de dados em disco e que é
-usada para leitura ou escrita, o \boldAndIndex{inode}. Um inode contém diversas
-informações, dentre elas: permissão, datas, dono do arquivo, tamanho, dentre
-outros. Quando um arquivo é criado, uma estrutura de dados como o inode é
-criada e então o arquivo é salvo.
+Em GNU/Linux e outros sistemas POSIX, existe uma estrutura de dados utilizada
+para controlar o bloco de dados em disco e que é usada para leitura ou escrita,
+o \boldAndIndex{inode}. Um inode contém diversas informações, dentre elas:
+permissão, datas, dono do arquivo, tamanho, dentre outros. Quando um arquivo é
+criado, uma estrutura de dados como o inode é criada e então o arquivo é salvo.
 
 Quando um processo abre um arquivo, ele faz uma chamada para \texttt{open()},
 acionando o sistema de arquivos para encontrar o arquivo solicitado.
@@ -773,7 +768,7 @@ Figura~\ref{fig:descritores} ilustra a operação descrita.
  
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=.90\textwidth]{descritores} 
+  \includegraphics[width=.70\textwidth]{descritores} 
   \caption{Tabela local e global de arquivos}
   \label{fig:descritores} 
 \end{figure}
@@ -783,7 +778,8 @@ número chamado de \boldAndIndex{descritor de arquivo (file descriptor --- fd)},
 que nada mais é do que a posição da entrada na tabela local de processos.
 Quando o processo fecha um arquivo, a entrada na tabela local é removida e o
 contador de processos presente na tabela global é decrementado. Quando o
-contador zera, o \hltodo[bloco é atualizado.]{Hmmm? Qual bloco?}
+contador zera, o bloco de dados referente ao arquivo aberto é finalmente
+atualizado.
 
 \section{Modelos de Programação}
 
@@ -792,7 +788,7 @@ recursos adicionais para o espaço de usuário, tal qual \emph{file locking} e
 primitivas de segurança. Para fazer uso de tais recursos, a aplicação precisa
 ser capaz de acessá-los por meio de um modelo de programação coerente, i.e., um
 conjunto bem estabelecido de abstrações interligadas. Um dado SO implementa um
-dado modelo de programação \hltodo[dentro da sua própria API]{Melhor ``através de uma API própria'', não?}. Por exemplo, tanto o
+dado modelo de programação através de uma API própria. Por exemplo, tanto o
 GNU/Linux quanto Windows fornecem diferentes APIs de \emph{threading}
 (\emph{pthreads} e \emph{WindowsThreads}), mas ambos correspondem ao modelo de
 programação de paralelismo.
@@ -832,18 +828,22 @@ complexos não precisa de muita intervenção do SO. Contudo, existe uma grande
 quantidade de software que demanda significativa participação do SO para
 atingir os seus objetivos, estendendo assim o seu consumo de recursos para o
 sistema. Por exemplo, uma aplicação que utiliza recursos de rede tem várias
-partes das suas atividades conduzidas pelo SO quando um pacote chega. \hltodo[Essa
-situação pode gerar problemas devido ao controle indireto e descontrolado do
-uso de recursos por atividades não confiáveis ao Kernel.]{Esta frase está estranha, só entendi quando li o exemplo de DoS} Ataques do tipo
+partes das suas atividades conduzidas pelo SO quando um pacote chega.
+
+Esse cenário no qual a aplicação solicita que o SO execute algo em seu favor,
+faz com que o consumo de recursos por parte da aplicação permeie do espaço de
+usuário para o espaço do kernel. Essa situação pode gerar problemas devido ao
+controle indireto e descontrolado do uso de recursos; ataques do tipo
 \emph{Denial-of-service} representam um exemplo da vida real que eleva o
 consumo do uso de recursos por parte do SO.
 
-\todo[inline]{Como conversamos, é bom colocar os próximos itens em uma seção
-e explicar por que eles estão aqui na ``introdução'' dessa nova seção}
-
 \section{Outros Conceitos Indiretamente Relacionados a Abstração de Processos}
 
-%TODO: Escrever um parágrafo introduzindo essa seção
+Nessa seção apresentaremos o tópico de \emph{device drivers} e virtualização.
+Esses são temas indiretamente relacionados as abstrações de processos e que são
+tratados aqui para auxiliar o leitor na leitura dos próximos capítulos. Vale
+observar que esses conceitos representam poderosas ferramentas para expandir as
+abstrações de processos.
 
 \subsection{Device Drivers}
 \label{sec:dd}
@@ -887,8 +887,8 @@ máquina é um aspiração de longa data, como o emblemático trabalho de Popek 
 Goldberg demonstra~\citep{popek}. Ele foi publicado em 1974 e indicava os
 requisitos necessários para que a terceira geração processadores fornecessem
 virtualização completa. Nesse período se tinha noção de algumas das vantagens
-que a virtualização por software e hardware poderia entregar. Dentre as
-inúmeras vantagens da virtualização, destacam-se a possibilidade de executar
+que a virtualização por software e hardware poderia entregar. Dentre os
+inúmeros benefícios da virtualização, destacam-se a possibilidade de executar
 aplicações legadas de um SO antigo, recursos que facilitam o processo de
 desenvolvimento de software, serviços de nuvem, \emph{checkpoints}, migração de
 processos, isolamento, dentre outras.
@@ -946,16 +946,19 @@ mostraram que uma máquina é virtualizavel se o conjunto de instruções sensí
 simples, foram necessários vários anos para que as CPUs incorporassem tais definições
 e assim oferecessem um adequado suporte de hardware para a virtualização.
 
-O suporte completo para a virtualização em hardware foi resolvido apenas em
-\hltodo[2005 pela Intel]{Acho que isso só é verdade em se tratando da própria plataforma intel e outras plataformas ``pobres''; os mainframes tinham isso desde os tempos de Cabral} \citep{uhlig} com uma tecnologia chamada
-\boldAndIndex{Virtualization Technology (VT-x)}\todo{acho que o nome deveria ser só ``VT-x'' e colocar um comando index manualmente}. A AMD tem uma solução parecida
-chamada \boldAndIndex{Secure Virtual Machine (SVM)}. A ideia básica é criar um
-invólucro no qual a máquina virtual pode executar um SO \emph{guest} \hltodo[iniciado
-dentro deste recipiente]{Aaaaahhhh!!!}. O SO continua em execução até que provoque uma \emph{trap} que
-faça o VMM ter que lidar com a situação. O conjunto de instruções que
-provocam uma \emph{trap} é controlado por um conjunto de bits ao qual o VMM
-tem acesso. A extensão VT-x torna possível a execução clássica de uma máquina
-virtual baseada em interrupção-e-emulação \citep{tanenbaum}.
+O uso de técnicas de virtualização já era conhecido muito antes de 1998,
+contudo nenhuma das abordagens utilizadas nesse período tinha total suporte
+para a virtualização em hardware que atendesse os três tipos de instruções
+indicado por \citet{popek}. O suporte completo para a virtualização em hardware
+foi resolvido apenas em 2005 pela Intel~\citep{uhlig} com uma tecnologia
+chamada \textbf{Virtualization Technology (VT-x\index{VT-x})}. A AMD tem uma
+solução parecida chamada \boldAndIndex{Secure Virtual Machine (SVM)}. A ideia
+básica é criar um invólucro no qual a máquina virtual pode executar um SO
+\emph{guest}.  O SO continua em execução até que provoque uma \emph{trap} que
+faça o VMM ter que lidar com a situação. O conjunto de instruções que provocam
+uma \emph{trap} é controlado por um conjunto de bits ao qual o VMM tem acesso.
+A extensão VT-x torna possível a execução clássica de uma máquina virtual
+baseada em interrupção-e-emulação~\citep{tanenbaum}.
 
 Do ponto de vista da eficiência, a virtualização deve fazer com que a maior
 parte do código executado pelo SO \emph{guest} não sofra interferência do VMM.
