@@ -1,14 +1,14 @@
 \chapter{Fundamentação Teórica}
 \label{cap:fundamentacao}
 
-Neste capítulo visitamos vários conceitos consolidados relativos as abstrações
+Neste capítulo, visitamos vários conceitos consolidados relativos à abstrações
 de processos e outras indiretamente relacionadas (threads, \emph{fork},
 representação na memória, virtualização, dentre outros). Introduzimos
-conceitos que são \textbf{indiretamente} ligados as abstrações de processos,
+conceitos que são \textbf{indiretamente} ligados à abstrações de processos,
 portanto não habitualmente explicitados na bibliografia padrão. A maioria dos
-conceitos apresentados nessa seção são baseadas em sistemas Unix (especialmente
+conceitos apresentados nesta seção são baseadas em sistemas Unix (especialmente
 GNU/Linux) e no padrão POSIX, uma vez que esses são amplamente documentados e
-adotada.
+adotados.
 
 As informações apresentadas aqui representam a prática tradicional de sistemas
 operacionais e, portanto, são bem conhecidas, sendo objeto de estudo básico na
@@ -25,7 +25,7 @@ Em particular, utilizamos como fundamentos para esta seção os seguintes livros
   \item \textit{Linux Kernel Development}~\citep{love}.
 \end{itemize}
 
-Neste trabalho queremos elucidar potenciais melhorias nas abstrações de
+Neste trabalho, queremos elucidar potenciais melhorias nas abstrações de
 processos, consequentemente descrever as principais abstrações agregadas ao
 conceito de processos que podem ser modificadas. Começamos com a descrição do
 processo de carga, representação na memória e controle de execução de um
@@ -36,9 +36,9 @@ interage com o SO, que é importante por causa de segurança, desempenho,
 estabilidade e confiabilidade. A seguir, observamos o papel do SO em fornecer a
 infraestrutura para diferentes modelos de programação, o que é importante no
 contexto de diversas tecnologias e técnicas que vêm tomando força nos últimos
-anos (e.g., \emph{Machine Learn}, IoT, e \emph{big data}). Finalmente,
+anos (e.g., \emph{Machine Learning}, IoT, e \emph{big data}). Finalmente,
 abordamos dois temas tradicionalmente independentes de processos (controladores
-de dispositivos e virtualização) que, no entanto, possibilitam expandir o
+de dispositivos e virtualização) que possibilitam expandir o
 conceito das abstrações de processos de forma a melhorar o desempenho de alguns
 tipos de aplicação, flexibilizar o uso de alguns recursos, melhorar a separação
 de processos, dentre outros.
@@ -51,8 +51,8 @@ de processos, dentre outros.
 % as informações para criar blabla
 
 O arquivo binário de um programa tem um conjunto de metadados inseridos pelo
-compilador logo no início do arquivo (chamado cabeçalho (ou \textit{header})
-que auxilia o SO a executá-lo de forma correta.  Quando o SO carrega o
+compilador logo no início do arquivo que recebe o nome de cabeçalho (ou \textit{header}), ele
+auxilia o SO a executá-lo de forma correta.  Quando o SO carrega o
 executável do disco para a memória com o objetivo de criar um novo processo,
 ele realiza a leitura desses metadados e utiliza tais informações para criar os
 segmentos de memória pertencentes ao processo. Cada um desses segmentos tem um
@@ -60,14 +60,14 @@ propósito específico que habilita o SO a gerir o processo.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=.20\textwidth]{memory_segment} 
+  \includegraphics[width=.40\textwidth]{memory_segment} 
   \caption{Segmento de memória}
   \label{fig:memory_segment} 
 \end{figure}
 
 A Figura~\ref{fig:memory_segment} ilustra seis segmentos de memória diferentes
-representando o layout típico de um processo após sua criação (essa estrutura
-pode variar a depender do SO e do compilador utilizado) representa a região da
+representando o leioute típico de um processo após sua criação (essa estrutura
+pode variar a depender do SO e do compilador utilizado). O \boldAndIndex{segmento de texto} (\emph{text segment}) representa a região da
 memória que mantém a cópia em memória do código executável (compartilhável e
 apenas para leitura). O \boldAndIndex{segmento de dados inicializados}
 (\emph{initialized data segment}) e o \boldAndIndex{segmento de dados não
@@ -81,20 +81,19 @@ bibliotecas dinâmicas ou arquivos especificados pelo programador). O
 \boldAndIndex{segmento de pilha} (\emph{stack segment}) compreende os dados
 usados pelo programa durante a execução, como por exemplo, valores de
 parâmetros de função, endereços de retorno e variáveis locais (dados
-temporários) \citep{silberschatz}. Por fim, o \boldAndIndex{segmento do monte}
+temporários) \citep{silberschatz}. Por fim, o \boldAndIndex{segmento do monte (\emph{heap segment}}
 mantém a memória dinamicamente alocada durante a execução do programa; repare
-que a \emph{stack} e o \emph{heap} estão em lados opostos da memória.
+que a \emph{stack} e o \emph{heap} crescem em direções opostadas da memória.
 
-O primeiro passo realizado pelo SO quando ele lê o arquivo executável é olhar
-para o \emph{header}, obtendo as informações sobre o tamanho dos segmentos de
-texto e dados, e criar um novo espaço de endereçamento (\emph{address space}).
+O primeiro passo realizado pelo SO quando ele lê o arquivo executável é processar o \emph{header}, obtendo as informações sobre o tamanho dos segmentos de
+texto e dados e criando um novo espaço de endereçamento (\emph{address space}).
 O próximo passo consiste em alocar a memória inicialmente necessária e copiar
-toda a região de código e dados lidas do arquivo binário para essa memória
-recém alocada. Em seguida é feita a inicialização da PCB (veremos mais adiante)
+toda a região de código e dados lidas do arquivo binário do programa executável ou bibliotecas para essa memória
+recém alocada. Em seguida, é feita a inicialização da PCB (descrita mais adiante)
 e os devidos ajustes no \emph{stack pointer}\footnote{Um \emph{stack pointer} é
-um registrador que armazena o endereço da última requisição feita pelo programa
-para a \emph{stack}.} e no \emph{program counter} (PC), que é ajustado para a
-função \emph{main} do programa \citep{patterson}. Por fim, quando o SO termina
+um registrador que armazena o endereço do último acesso feito pelo programa
+para à pilha.} e no \emph{program counter} (PC), que é ajustado para a
+o ponto de início do programa, por exemplo, a função \texttt{main} em um programa na linguagem C~\citep{patterson}. Por fim, quando o SO termina
 de inicializar todos os elementos necessários para que o processo possa
 executar, ele insere o novo processo na fila do escalonador.
 
@@ -107,8 +106,8 @@ executar, ele insere o novo processo na fila do escalonador.
 
 % TODO: Fazer uma ponte melhor do PC com a execução
 
-A \emph{stack} é organizada em uma coleção de \boldAndIndex{stack frames}, que
-são estruturas de dados inseridas no topo da \emph{stack} e que contêm
+A pilha é organizada em uma coleção de \boldAndIndex{stack frames}, que
+são estruturas de dados inseridas no topo da pilha e que contêm
 informações como o endereço de retorno da função, argumentos recebidos,
 variáveis locais, dentre outros. Toda vez que uma função é chamada, uma nova
 estrutura de dados \emph{frame} é criada e preenchida com as informações
@@ -124,22 +123,21 @@ processo de preencher e esvaziar a \emph{stack} continua.
 
 Todos os processos são descritos por meio de uma estrutura de dados chamada
 \boldAndIndex{Process Control Block (PCB)}, responsável por manter informações
-referentes ao status do processo, \emph{program counter} (PC), registradores da
-CPU, informações sobre escalonamento, dados sobre contas de usuários, status de
-operações de I/O, dentre outros \citep{silberschatz}.  Uma dos principais
+referentes ao estado do processo, \emph{program counter} (PC), registradores da
+CPU, informações sobre escalonamento, dados sobre contas de usuários, estado de
+operações de E/S, dentre outros \citep{silberschatz}.  Uma dos principais
 motivos para a PCB existir é permitir a \textbf{troca de contexto}, o mecanismo
 pelo qual processos se alternam no uso da CPU.  Por exemplo, se o usuário
-possui vários processos rodando ao mesmo tempo, o SO deve alternar entre todos
+possui vários processos executando concorrentemente, o SO deve alternar entre todos
 eles para que cada um tenha a oportunidade de executar por um intervalo de
 tempo. O SO realiza esse processo de troca em duas etapas: (1) salvamento do
 estado atual do processo em sua PCB e (2) carregamento dos dados da PCB do
-outro processo. A troca de contexto deve ser rápida por não realizar nenhum
-processamento útil.
+outro processo. A troca de contexto deve ser rápida para não prejudicar o desempenho das aplicações.
 
 O conceito apresentado acima revela uma característica de isolamento associada
 com a forma na qual os processos funcionam, promovendo segurança e
 estabilidade.  Por outro lado, existem situações que demandam que os processos
-cooperem entre si e, nesses casos é possível notar algumas das desvantagens
+cooperem entre si e, nesses casos, é possível notar algumas das desvantagens
 inerentes da estratégia de processos atual. Para resolver parte desse problema,
 algumas bibliotecas ou chamadas de sistema são fornecidas como interfaces para
 coordenar a interação entre processos executando simultaneamente, oferecendo
@@ -164,7 +162,7 @@ processo com uma \emph{thread} e outro com múltiplas \emph{threads}.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=.7\textwidth]{process_and_threads}
-  \caption{Única thread e multi-thread. Note o isolamento da \emph{stack} e do PC~\citep{silberschatz}}
+  \caption{Única thread e multi-thread. Note o isolamento da \emph{stack} e do registrador (PC) \citep{silberschatz}}
   \label{fig:single_thread_multi_thread}
 \end{figure}
 
@@ -217,10 +215,10 @@ Figura~\ref{fig:stack_threads} ilustra o que acontece internamente quando novas
 \emph{threads} são criadas. Como esperado, o segmento de texto e dados são
 compartilhados entre as \emph{threads}, como ilustrado na parte inferior da
 figura. A principal mudança na organização de memória pode ser observada no
-segmento da \emph{stack}, pois toda vez que uma nova \emph{thread} é criada um
-novo segmento de \emph{stack} é gerado (a Figura~\ref{fig:stack_threads} mostra
-que a \emph{stack} é preenchida aos poucos); a independência entre
-\emph{threads} é assegurada pelas múltiplas \emph{stacks} isoladas. Cada thread
+segmento da pilha, pois toda vez que uma nova \emph{thread} é criada um
+novo segmento de pilha é gerado (a Figura~\ref{fig:stack_threads} mostra
+que a pilha é preenchida aos poucos); a independência entre
+\emph{threads} é assegurada pelas múltiplas pilha isoladas. Cada \emph{thread}
 tem seu próprio \emph{stack pointer} e demais registradores; toda vez que a
 \emph{thread} em execução muda, o \emph{stack pointer} e os registradores são
 atualizados. Repare que o uso de \emph{threads} melhora o desempenho uma vez
@@ -278,7 +276,7 @@ instruções descritas no binário, dentre elas as tentativas de acesso a certos
 endereços na memória. Todo endereço utilizado pela CPU nesse contexto recebe o
 nome de \boldAndIndex{endereço virtual} ou \boldAndIndex{endereço lógico}; por
 sua vez, o conjunto desses endereços recebe o nome de \boldAndIndex{espaço de
-endereçamento virtual (Virtual Address Space)} ou simplesmente VAS. Esses
+endereçamento virtual (Virtual Address Space)} ou simplesmente \boldAndIndex{VAS}. Esses
 endereços não são válidos da perspectiva da memória física, i.e., são apenas
 endereços usados pela aplicação mas que não correspondem ao endereço real dessa
 memória física. Os endereços reais da memória são chamados de
@@ -327,7 +325,7 @@ memória física deve ser compartilhada entre vários processos em execução no
 
 Não obstante, como fazer para traduzir um endereço VAS para um endereço físico?
 Não é viável ter uma tabela de tradução byte-a-byte (ela ocuparia toda a
-memória) nem assumir que a memória de um processo é contígua. A solução é
+memória) nem supor que a memória de um processo é contígua. A solução é
 dividir a memória em blocos e manter, para cada processo, uma tabela mapeando
 cada bloco dentro do VAS para um bloco correspondente na memória física. Há
 duas estratégias comuns para isso: o modelo de paginação e o modelo de
@@ -360,7 +358,7 @@ endereço de início de um \emph{frame} na memória associado ao processo.  Para
 ilustrar melhor esse conceito, imagine um programa que aloca espaço na memória.
 Em termos práticos, o SO cria uma nova entrada na tabela e retorna o endereço
 virtual para a aplicação.  Depois que o valor referente ao índice é recuperado
-a MMU soma o \textit{offset} da segunda parte do endereço virtual e finalmente
+a MMU soma o \textit{offset} da segunda parte do endereço virtual e, finalmente,
 o acesso a memória física ocorre.
 
 \begin{figure}[!h]
@@ -398,7 +396,7 @@ buffer (TLB)}. Essa tabela salva o último acesso (coluna e valor) feito à
 tabela de páginas evitando que a memória seja consultada inúmeras vezes. Na
 Figura~\ref{fig:paginacao}, é possível ver a TLB sendo usada para acelerar o
 acesso aos dados: se uma consulta for encontrada na TLB, ocorre o chamado
-\boldAndIndex{acerto na TLB (TLB hit)}; do contrário, \boldAndIndex{falha na
+\boldAndIndex{acerto na TLB (TLB hit)}; do contrário, \boldAndIndex{falta na
 TLB (TLB miss)}. Note que a busca na memória sempre é feita, o que significa
 que, no pior caso (\emph{TLB miss}), a busca na memória já foi iniciada. Além
 disso, o mecanismo de paginação facilita a operação de realizar o
@@ -410,7 +408,7 @@ para ser compartilhado entre processos.
 
 Além do mecanismo de gerenciamento de memória fornecido pela paginação, também
 existe uma alternativa chamada de \boldAndIndex{segmentação}. Esse modelo
-decompõe o memória referente ao programa em segmentos de acordo com as suas
+decompõe a memória referente ao programa em segmentos de acordo com as suas
 seções; por exemplo, uma área para o \textit{text}, outra para os dados,
 \textit{stack}, etc. Os tamanhos de cada segmento podem ser variáveis, o que
 leva a uma visão bidimensional da memória uma vez que os endereços passam a ser
@@ -434,7 +432,7 @@ partes; a primeira parte do endereço corresponde ao limite e a segunda a um
 \emph{offset}. Como ilustrado na figura, o valor do limite é utilizado para
 acessar a tabela de segmentos e recuperar o valor base. O limite é o tamanho
 máximo do segmento e é usado para verificar se o \emph{offset} passado é
-valido. Se a verificação do limite for valida, então o endereço base é lido e
+valido. Se a verificação do limite for válida, então o endereço base é lido e
 usado em conjunto com o \emph{offset} para gerar o endereço físico.
 
 \begin{figure}[!h]
@@ -456,11 +454,11 @@ Linux utilizando parte dos recursos de segmentação fornecidos pela CPU.
 \label{sec:outros_mecanismos_memoria}
 
 A Seção~\ref{sec:modelopaginacao} descreveu a forma como o mecanismo de
-paginação funcionam, em especial, apresentamos uma ilustração de uma PTE na
+paginação funciona, em especial, apresentamos uma ilustração de uma PTE na
 Figura~\ref{fig:pte}. A PTE define um certo nível de proteção da memória uma
 vez que temos bits que servem para verificar se a página é acessível ou não
 pelo programa. Contudo, as CPUs modernas estão evoluindo de forma a fornecer
-novos recursos de controle de acesso a memória. Em especial as CPUs Intel e ARM
+novos recursos de controle de acesso à memória. Em especial as CPUs Intel e ARM
 já oferecem uma funcionalidade chamada de \boldAndIndex{Chave de Proteção da
 Memória} (\emph{Memory Protection Key}).
 
@@ -470,7 +468,7 @@ certas regiões da memória. Para possibilitar que tal mecanismo seja
 implementado, as CPUs passaram a oferecer um mecanismo que faz uso de quatro
 bits da PTE que não eram utilizados. A Figura~\ref{fig:ptedominio} ilustra uma
 PTE utilizando esses bits, em última instancia esse é mais um recurso atrelado
-a tabela de tradução. No total esses 4 bits representam um conjunto de 16
+à tabela de tradução. No total, esses 4 bits representam um conjunto de 16
 possíveis domínios de acesso. 
 
 \begin{figure}[!h]
@@ -483,7 +481,7 @@ possíveis domínios de acesso.
 Cada região de memória definida na tabela de tradução é controlada por um dos
 16 domínios existentes~\citep{armdeveloperguide}.  O aspecto mais interessante
 em se utilizar domínios está nos possíveis comportamentos que eles apresentam
-caso ocorra alguma tentativa de acesso da memória, dentre eles: o acesso pode
+caso ocorra alguma tentativa de acesso à memória, dentre eles: o acesso pode
 ser permitido se o conjunto de permissões presentes na tabela permitir e gerar
 falta de domínio. A MMU procede com algumas verificações, que consistem em três
 passos:
@@ -507,15 +505,12 @@ oferece novos recursos aos desenvolvedores.
 \subsection{Exemplo Prático Usando o GNU/Linux}
 \label{sec:visao_pratica_mem}
 
-Nessa seção revisitamos e expandimos alguns dos conceitos discutidos da
-perspectiva do Kernel Linux, já que a maioria dos trabalhos analisados faz uso
-de SOs baseados nele.  Por uma questão de simplicidade, usaremos os seguintes
-termos como sinônimos de Linux nessa seção: kernel e núcleo.
-
-Iniciamos a nossa análise por um fato interessante sobre VAS no Linux em uma
+Nesta seção, revisitamos e expandimos alguns dos conceitos discutidos da
+perspectiva do Linux, já que a maioria dos trabalhos analisados faz uso
+de SOs baseados nele. Iniciamos a nossa análise por um fato interessante sobre VAS no Linux em uma
 arquitetura x86: uma vez que a VAS é habilitada, todo sistema é afetado,
-incluindo o próprio Kernel. Por esse motivo, uma porção da VAS é reservada para
-o Linux, contudo essa recebe um tratamento especial, uma vez que o acesso a ela é
+incluindo o próprio kernel. Por esse motivo, uma porção da VAS é reservada para
+o Linux; contudo, ela recebe um tratamento especial, uma vez que o acesso a ela é
 restrito e o kernel está presente na memória física. Por outro lado, as VASes dos
 processos comportam-se como o esperado, ou seja, são movidas constantemente de
 acordo com a troca de contexto e podem ser acessadas pela aplicação. A
@@ -542,16 +537,16 @@ segmentos do processo descrita pela ordem: \emph{text}, \emph{dados
 inicializados}, \emph{BSS}, \emph{heap}, \emph{mapeamento de memória} e
 \emph{stack}. Esse tipo de informação torna o sistema mais vulnerável, uma vez
 que um atacante que conheça tal sequência terá uma forma de encontrar dados na
-memória explorando uma eventual falha. Como uma resposta a essa situação,
+memória explorando uma eventual falha de segurança. Como uma resposta a essa situação,
 o Kernel implementa uma série de mecanismos de embaralhamento
 conhecidos como ASLR\footnote{\url{https://lwn.net/Articles/330866/}}, KASLR e
-KARL~\citep{kaslr}. Dentre as áreas a que o Linux aplica a randomização,
+KARL~\citep{kaslr}. Dentre as áreas a que o Linux aplica a aleatorização,
 destacam-se os segmentos dos processos. Portanto, toda vez que um processo é
-inicializado o seu layout na memória é randomizado, dificultando um eventual
+inicializado o seu leioute na memória é embaralhado aleatoriamente, dificultando um eventual
 ataque.
 
 Ainda na Figura~\ref{fig:vas_contexto}, tenha em mente que o programa em
-execução faz alocações na \emph{stack} durante a sua execução, como explicado
+execução faz alocações na pilha durante a sua execução, como explicado
 na Seção~\ref{sec:processos-e-threads}. No Linux, essa \textit{stack} começa
 com um tamanho pré-definido (8 Mb) que normalmente é o suficiente para a
 maioria das aplicações; contudo, esse limite pode ser ultrapassado. Se o
@@ -636,15 +631,15 @@ tabela de páginas, orquestra o gerenciamento do programa na memória no Linux.
 
 Por fim, para exemplificar como esses mecanismos estão relacionados do kernel ao
 espaço do usuário, veja a Figura~\ref{fig:malloc_linux}. Na figura, temos um programa com
-algumas paginas já mapeadas para uma memória física. A aplicação decide alocar
+algumas páginas já mapeadas para uma memória física. A aplicação decide alocar
 mais memória por meio da função \texttt{malloc()}, e por sua vez, uma chamada
 para \texttt{brk()} é feita. O kernel atualiza o VMA do \textit{heap} com o
-tamanho solicitado e retorna o ponteiro para a aplicação. Na prática, nenhum
+tamanho solicitado e fornece o ponteiro para a aplicação. Na prática, nenhum
 endereço físico foi alocado e, enquanto o programa não acessar a região alocada,
 nenhum \emph{frame} é criado. Na primeira tentativa de acesso, ocorre uma falha
 de página e a função \texttt{do\_page\_fault()} é chamada. Se o processo
-atender as permissões indicadas na PTE, então o kernel aloca e associa o
-\emph{frame} a página.
+atender à permissões indicadas na PTE, então o kernel aloca e associa o
+\emph{frame} à página.
 
 % TODO: PENSAR: talvez puxar essa seção para vir antes da seção de memória
 \section{Chamadas de Sistema}
@@ -662,11 +657,11 @@ SO para fornecer acesso a eles? A resposta é simples: chamadas de
 sistema (também conhecidas por \emph{system calls} ou \emph{syscalls}).
 
 Uma \boldAndIndex{chamada de sistema}
-consiste em uma API de baixo nível que permite que uma aplicação executando no
+consiste em uma operação de API de baixo nível que permite que uma aplicação executando no
 espaço de usuário (\emph{user space}) faça uma requisição para o SO. Por sua
 vez, esse pedido é rigorosamente validado pelo SO, que pode executar a operação
 até o fim, devolvendo o que a aplicação solicitou, ou pode se negar a
-executá-la, caso encontre uma inconsistência. Na prática, esse tipo de operação
+executá-la, caso encontre algum impedimento. Na prática, esse tipo de operação
 consiste em uma simples chamada de função que é tratada pelo SO. Normalmente,
 cada \emph{syscall} tem um número associado a si, através do qual o SO consulta
 uma tabela que identifica a função que deve ser executada. Além disso, passar
@@ -692,7 +687,7 @@ ao invocar a função \texttt{getpid()}, o seu fluxo de execução é levado par
 espaço na memória para fazer cache do PID. Quando a \emph{libc} está pronta,
 ela finalmente faz a chamada para o sistema. Note que nessa etapa ocorre uma
 mudança de um modo de execução menos privilegiado (\emph{ring 3}) para um modo
-privilegiado (\emph{ring 0}). Nesse momento o SO tem total controle sobre o
+privilegiado (\emph{ring 0}). Nesse momento, o SO tem total controle sobre o
 pedido feito e faz a verificação dos parâmetros e permissões. Se tudo correr
 bem, o SO se encarrega de copiar a informação pós-processada do espaço do
 Kernel para o espaço do usuário. Por fim, a \emph{libc} salva o valor do seu
@@ -702,11 +697,11 @@ recebe o seu PID.
 \section{Troca de Contexto}
 
 Em um SO de propósito geral, um processo executa por um intervalo de tempo;
-quanto esse tempo acaba outro processo é inserido na CPU, esse procedimento
+quando esse tempo acaba outro processo é inserido na CPU, esse procedimento
 ocorre na escala das centenas de processos. A troca tem início quando uma
-interrupção vinda do hardware ocorrer, seja ela porque o tempo de CPU do
+interrupção vinda do hardware ocorre, seja ela porque o tempo de CPU do
 processo terminou ou por qualquer outro motivo. O primeiro passo necessário
-consiste em salvar o estado do processo em execução e em seguida carregar o
+consiste em salvar o estado do processo em execução e, em seguida, carregar o
 estado do novo processo na CPU. Repare que o tempo gasto na troca de processo
 não produz nenhum trabalho útil, ou seja, é um
 \textit{overhead}~\citep{silberschatz}.
@@ -730,10 +725,10 @@ operações~\citep{entendendo_kernel}: (1) Instala o novo espaço de endereço e
 (2) Muda o \emph{stack} do domínio do Kernel e o contexto de hardware
 
 A operação de troca é extremamente dependente da arquitetura de hardware, pois
-precisa ser executada de forma rápida e por isso o Linux tenta tirar proveito
+precisa ser executada de forma rápida e, por isso, o Linux tenta tirar proveito
 de todo recurso disponibilizado pela CPU\footnote{Note que é preciso levar em
 consideração os registradores que lidam com pontos flutuantes, o que faz a troca
-de contexto ainda mais complexa}.
+de contexto ainda mais pesada}.
 
 % Falar de PCID?
 \section{Descritores de Arquivo}
@@ -822,7 +817,7 @@ benefícios de desempenho explorando alguma característica do hardware.
 \section{Gerenciamento de Recursos}
 
 Toda aplicação em execução em um SO consome recursos do sistema.
-Frequentemente, eles realizam boa parte do trabalho no espaço de usuário, o que
+Frequentemente, elas realizam boa parte do trabalho no espaço de usuário, o que
 requer pouca intervenção do SO. Por exemplo, uma aplicação que faz cálculos
 complexos não precisa de muita intervenção do SO. Contudo, existe uma grande
 quantidade de software que demanda significativa participação do SO para
@@ -831,16 +826,16 @@ sistema. Por exemplo, uma aplicação que utiliza recursos de rede tem várias
 partes das suas atividades conduzidas pelo SO quando um pacote chega.
 
 Esse cenário no qual a aplicação solicita que o SO execute algo em seu favor,
-faz com que o consumo de recursos por parte da aplicação permeie do espaço de
+faz com que o consumo de recursos por parte da aplicação atravesse do espaço de
 usuário para o espaço do kernel. Essa situação pode gerar problemas devido ao
-controle indireto e descontrolado do uso de recursos; ataques do tipo
-\emph{Denial-of-service} representam um exemplo da vida real que eleva o
+controle indireto e descontrolado do uso de recursos; ataques de negação de serviço
+(\emph{Denial-of-service}) representam um exemplo da vida real que eleva o
 consumo do uso de recursos por parte do SO.
 
 \section{Outros Conceitos Indiretamente Relacionados a Abstração de Processos}
 
-Nessa seção apresentaremos o tópico de \emph{device drivers} e virtualização.
-Esses são temas indiretamente relacionados as abstrações de processos e que são
+Nesta seção, apresentaremos o tópico de \emph{device drivers} e virtualização.
+Esses são temas indiretamente relacionados às abstrações de processos e que são
 tratados aqui para auxiliar o leitor na leitura dos próximos capítulos. Vale
 observar que esses conceitos representam poderosas ferramentas para expandir as
 abstrações de processos.
@@ -863,14 +858,14 @@ ele fornece um mecanismo e não uma política \citep{ddbook}. Entenda por
 mecanismo a capacidade que deve ser fornecida e, por política, a forma com
 que a capacidade deve ser usada. Esse separação é interessante pois limita o
 que um \emph{driver} deve fazer e, por sua vez, simplifica a implementação. Um
-exemplo disso é o \emph{Direct Rendering Managemente} do Kernel Linux, que
+exemplo disso é o \emph{Direct Rendering Managemente} do Linux, que
 fornece várias capacidades, dentre elas, a operação de trocar
-\emph{framebuffers} primários com secundários; contudo, é a aplicação que deve
+\emph{framebuffers} primários e secundários; contudo, é a aplicação que deve
 controlar tal operação.
 
 Por fim, é interessante ressaltar que alguns sistemas fornecem a ideia de
 \boldAndIndex{módulos carregáveis} (\textbf{loadable modules}), que significa
-que em tempo de execução é possível carregar um novo \emph{device driver}. Esse
+que, em tempo de execução, é possível carregar um novo \emph{device driver}. Esse
 tipo de funcionalidade torna o SO mais leve e configurável. Os módulos
 são extremamente flexíveis do ponto de vista da implementação uma vez que são
 um código separado do núcleo do SO e respeitam a interface definida pelo mesmo.
@@ -885,8 +880,8 @@ um código separado do núcleo do SO e respeitam a interface definida pelo mesmo
 A ideia de oferecer a abstração de máquinas virtuais dentro de uma mesma
 máquina é um aspiração de longa data, como o emblemático trabalho de Popek e
 Goldberg demonstra~\citep{popek}. Ele foi publicado em 1974 e indicava os
-requisitos necessários para que a terceira geração processadores fornecessem
-virtualização completa. Nesse período se tinha noção de algumas das vantagens
+requisitos necessários para que a terceira geração de processadores fornecessem
+virtualização completa. Naquele período, se tinha noção de algumas das vantagens
 que a virtualização por software e hardware poderia entregar. Dentre os
 inúmeros benefícios da virtualização, destacam-se a possibilidade de executar
 aplicações legadas de um SO antigo, recursos que facilitam o processo de
@@ -896,10 +891,10 @@ processos, isolamento, dentre outras.
 O elemento central da virtualização é o \boldAndIndex{hypervisor} (também
 conhecido como \boldAndIndex{Virtual Machine Monitor (VMM)}), que é responsável por
 criar a ilusão de múltiplas máquinas em um mesmo hardware
-físico~\citep{tanenbaum}. Essas máquinas virtuais rodam sobre o mesmo hardware
+físico~\citep{tanenbaum}. Essas máquinas virtuais executam sobre o mesmo hardware
 e tem a capacidade de executar diferentes SOs. Existe a ideia de máquina
-convidada (\boldAndIndex{guest}) e máquina hóspede (\boldAndIndex{host}). O
-primeiro refere-se ao SO que está executando sobre o VMM e o segundo refere-se
+convidada (\boldAndIndex{guest}) e máquina hóspede (\boldAndIndex{host}). A
+primeira refere-se ao SO que está executando sobre o VMM e a segunda refere-se
 à máquina que está executando sobre o hardware com privilégios.
 
 Um dos objetivos da virtualização consiste em permitir que um SO inicialize
@@ -939,15 +934,15 @@ três grupos de diferentes:
         tentam mudar a configuração de algum recurso do sistema.
 \end{itemize}
 
-Se você tentar fazer algo em modo usuário que não deveria ser capaz de
+Se um programa tentar fazer algo em modo usuário que não deveria ser capaz de
 fazer, o hardware deve capturar essa ação; em outras palavras, Popek e Goldberg
-mostraram que uma máquina é virtualizavel se o conjunto de instruções sensíveis
+mostraram que uma máquina é virtualizável se o conjunto de instruções sensíveis
 é um subconjunto das instruções privilegiadas. Apesar de parecer um conceito
-simples, foram necessários vários anos para que as CPUs incorporassem tais definições
+simples, foram necessários vários anos para que as CPUs incorporassem tais funcionalidades
 e assim oferecessem um adequado suporte de hardware para a virtualização.
 
 O uso de técnicas de virtualização já era conhecido muito antes de 1998,
-contudo nenhuma das abordagens utilizadas nesse período tinha total suporte
+contudo nenhuma das abordagens utilizadas naquele período tinha total suporte
 para a virtualização em hardware que atendesse os três tipos de instruções
 indicado por \citet{popek}. O suporte completo para a virtualização em hardware
 foi resolvido apenas em 2005 pela Intel~\citep{uhlig} com uma tecnologia

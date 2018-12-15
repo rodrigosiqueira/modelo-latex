@@ -2,24 +2,24 @@
 \chapter{Introdução}
 \label{cap:introducao}
 
-Sistemas Operacionais (SO) são projetos de software considerados grandes e
+Sistemas Operacionais (SO) são projetos de software grandes e
 complexos em que cada uma das suas partes é estritamente definida baseada nas
 entradas, saídas e funcionalidades esperadas \citep{silberschatz}.
 Coletivamente, essas partes representam um conjunto de abstrações construídas
-sobre o hardware (e.g., processadores, memórias e dispositivos de
+sobre o hardware (p.ex., processadores, memórias e dispositivos de
 armazenamento) para fornecer recursos para os usuários --- tanto
 desenvolvedores de aplicações quanto usuários finais. Dentre os conceitos
 empregados pelos SOs modernos destacam-se processos, escalonadores,
-gerenciadores de memória, sistemas de arquivo~\citep{tanenbaum}.
+gerenciadores de memória e sistemas de arquivo~\citep{tanenbaum}.
 
 Uma das abstrações mais antigas fornecida pelos SOs é o conceito de
 \textit{processos}. Estes dão a noção de virtualização do processador, pois
 oferecem a ilusão de múltiplos programas executando
-simultaneamente~\citep{love, tanenbaum}. Os SOs de proposito geral possuem
+simultaneamente~\citep{love, tanenbaum}. Os SOs de propósito geral possuem
 grande dependência sobre o conceito de processos, sendo esse o principal
 mecanismo de interação com os demais recursos oferecidos. Dado o papel central
 de tal abstração nos SOs modernos, fica evidente que alterações nessa área
-reverberam em todo tipo de usuário. Por esse motivo é comum observar que os
+reverberam em todo tipo de usuário. Por esse motivo, é comum observar que os
 processos evoluem de forma a atender novas demandas de hardware, segurança,
 escalabilidade, modelos de programação e desempenho.
 
@@ -28,32 +28,31 @@ uma tarefa delicada. Em um SO voltado para produção (e.g., GNU/Linux e
 FreeBSD), uma mudança incorreta na abstração de processos pode comprometer
 completamente a estabilidade do SO e, consequentemente, afetar diversos sistemas em
 todo o mundo. Assim, identificar e implementar novos atributos dentro dos
-processos normalmente demanda muito esforço e, portanto, raramente esses são
-adotados fora de alguns poucos contextos na comunidade científica. Dessa
+processos normalmente demanda muito esforço e, portanto, raramente isso é feito a não ser em alguns poucos contextos na comunidade científica. Dessa
 maneira, para tornar as pesquisas nessa área mais robustas e com maior
 potencial de adoção por parte dos SOs mais amplamente utilizados, novas propostas tipicamente
 precisam abordar três aspectos: apresentar uma implementação viável,
-medir o desempenho e demonstrar benefícios para as aplicações.
+avaliar o desempenho e demonstrar benefícios para as aplicações.
 
 Inspirados pelas diversas propostas de novas extensões nas abstrações de
 processos sugeridas pela academia nas últimas décadas, nós buscamos
 investigá-las com o objetivo de compilar o estado da arte verificando
 características interessantes para os SOs usados em produção. Dado o foco
 pretendido nas abstrações relativas a processos, examinamos as diferentes
-pesquisas excluindo outros aspectos eventualmente introduzido pelos
+pesquisas excluindo outros aspectos eventualmente introduzidos pelos
 pesquisadores.
 
 \section{Avaliação de Novas Abstrações de Processos}
 
 Dentre o conjunto dos diversos trabalhos na área de processos é possível
-realizar a categorização dos mesmos de acordo com a abordagem adotada. Além do
-mais, essas pesquisas normalmente se auto-avaliam em duas fases: (1)
+realizar sua categorização de acordo com a abordagem adotada. Além do
+mais, essas pesquisas normalmente são avaliadas de duas formas diferentes: (1)
 microbenchmark\footnote{É uma maneira de identificar tarefas da aplicação e
 medir o desempenho delas~\citep{micro}} e (2) utilizando uma aplicação como
 exemplo. Nesse contexto, podemos avaliar de forma direta uma proposta baseada
-na sua categoria e de forma mais profunda verificar como ela se auto-avalia.
+na sua categoria e de forma mais profunda verificar como ela valida os seus resultados.
 
-De forma a rapidamente explorar as característica de uma abordagem,
+De forma a explorar as característica de uma abordagem,
 classificamos as pesquisas em três categorias:
 
 \begin{description}
@@ -69,7 +68,7 @@ mas \textbf{evitando mudanças diretas no núcleo};
 
 \item [Implementação Independente]
 
-consiste na criação de um SO totalmente novo. Normalmente este tipo de
+consiste na criação de um SO totalmente novo. Normalmente, esse tipo de
 trabalho introduz inovações em diferentes áreas, contudo, neste texto estamos
 interessados nas propostas relacionadas às abstrações de processos.
 
@@ -105,25 +104,25 @@ revelar nada de útil relacionado a melhorias de segurança.
 
 \section{Objetivos}
 
-No cenário atual notamos uma falta de unificação e validação das diferentes
+No cenário atual, notamos uma falta de unificação e validação das diferentes
 propostas de mudanças nas abstrações dos processos, aspectos esses que são
-importantes para justificar sua implementação em um SO de produção. Neste
-trabalho, temos como objetivo avaliar iniciativas que melhoram as abstrações de
+importantes para justificar sua implementação em um SO de produção. Nesta
+dissertação, temos como objetivo avaliar iniciativas que melhoram as abstrações de
 processos levando em consideração a implementação, as questões que a nova
 proposta visa resolver e os impactos gerais no SO. Fizemos essa avaliação por
 meio da análise de 15 trabalhos, onde buscamos responder as seguintes
-perguntas:
+questões de pesquisa:
 
 \begin{quote}
- \item \textit{RQ1:.} ``Quais são as características desejáveis para a próxima geração de abstrações de processos?''
- \item \textit{RQ2:.} ``Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?''
- \item \textit{RQ3:.} ``Quais aplicações podem ser utilizadas para avaliar as nova abstração adicionadas ao SO?''
- \item \textit{RQ4:.} ``Qual conjunto de \emph{microbenchmark} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada para as abstrações de processos?''
+ \item \textit{QP1:.} ``Quais são as características desejáveis para a próxima geração de abstrações de processos?''
+ \item \textit{QP2:.} ``Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?''
+ \item \textit{QP3:.} ``Quais aplicações podem ser utilizadas para avaliar as novas abstrações adicionadas ao SO?''
+ \item \textit{QP4:.} ``Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada às abstrações de processos?''
 \end{quote}
 
 Dos 15 trabalhos que analisamos, a maior parte faz uso de SOs baseados no
-Kernel Linux. Por isso, no Capítulo~\ref{cap:fundamentacao} exploramos
-conceitos gerais sobre SO e também descrevemos alguns desse conceitos usando o
+núcleo do Linux. Por isso, no Capítulo~\ref{cap:fundamentacao} exploramos
+conceitos gerais sobre SOs e também descrevemos alguns desse conceitos usando o
 GNU/Linux como exemplo. Para responder a questão RQ1, identificamos as
 principais características propostas por vários pesquisadores e extraímos o
 conceito central desses vários trabalhos, descritos no Capítulo
@@ -135,7 +134,7 @@ categorização feita sobre as abordagens descritas no Capítulo
 uma coleção de programas que podem se beneficiar das modificações, levando
 vantagens para o usuário final (Capítulo \ref{cap:validacoes}). Para responder
 a RQ4, nós analisamos diversos \emph{microbenchmarks} utilizados pelos
-pesquisadores e selecionamos um subconjuntos de características uteis para
+pesquisadores e selecionamos um subconjuntos de características úteis para
 avaliar uma proposta (Capítulo \ref{cap:validacoes}). Por fim, no Capítulo
 \ref{cap:analise-sobre-abstracoes-de-processos}, discutimos um novo horizonte
 para a próxima geração de abstrações de processos com o objetivo de auxiliar na
