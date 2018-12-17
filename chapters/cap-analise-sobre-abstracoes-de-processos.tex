@@ -2,87 +2,86 @@
 \label{cap:analise-sobre-abstracoes-de-processos}
 
 No Capítulo \ref{cap:trabalhos-analisados} introduzimos os principais trabalhos
-que orbitam sobre as novas abstrações de processos para que nesse capítulo seja
-feito uma reflexão sobre as principais características de tais pesquisas. No
-decorrer deste capítulo realizaremos diversas analises sobre o estado da arte
-da pesquisa em processos e apresentamos um modelo teórico que visa apresentar
-uma perspectiva para a nova geração de abstrações de processos.  Esse capítulo
-responde as seguintes perguntas de pesquisa:
+que orbitam sobre as novas abstrações de processos e, a partir de tais
+pesquisas, pretendemos realizar neste capítulo uma reflexão das suas principais
+características. Para isso, realizaremos diversas análises sobre o estado da arte
+da pesquisa em processos e apresentaremos um modelo teórico que visa fornecer
+uma perspectiva para a nova geração de abstrações de processos. Como resultado,
+responderemos as seguintes questões de pesquisa:
 
 \begin{quote}
  \item \textit{RQ1:.} "Quais são as características desejáveis para a próxima geração de abstrações de processos?"
  \item \textit{RQ2:.} "Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?"
 \end{quote}
 
-Um dos diferenciais desse trabalho, consiste em considerar o uso de novas
-extensões nas abstrações de processos levando em consideração SOs de uso
-cotidiano, em especial o GNU/Linux. Esse critério é importante, uma vez que se
-tais abstrações alcançarem os SOs de ampla utilização, novos ramos de pesquisa
-podem surgiram.
+Este trabalho se diferencia dos demais por considerar o uso de novas extensões
+nas abstrações de processos e por levar em conta SOs de uso cotidiano, em
+especial o GNU/Linux. Este último critério torna-se relevante para futuras
+investigações na área, uma vez que, se tais abstrações alcançarem SOs de ampla
+utilização, novos ramos de pesquisa podem surgir.
 
 \section{Potenciais e Dificuldades Para Adotar Novas Abstrações de Processos}
 \label{sec:potenciais}
 
-Pesquisas em SO buscam avançar o estado da arte, contudo, SOs
-usados em produção e em projetos de pesquisa possuem diferentes restrições. Se
-uma nova proposta feita pela academia tem por objetivo ser utilizada em
-aplicações que estão no estado da prática, essas devem considerar questões
-referentes a compatibilidade, melhor uso do hardware disponível, confiabilidade
-e ser genérico o bastante para ser utilizado por múltiplas linguagens de
-programação.
+Quando a academia faz uma nova proposta para aplicações que estão no estado da
+prática, tal proposta deve ser genérica o bastante para ser utilizada por
+múltiplas linguagens de programação e deve também considerar questões
+referentes a compatibilidade, melhor uso do hardware disponível e
+confiabilidade. Assim, apesar dos avanços trazidos pelas pesquisas em SO, eles
+estão limitados às diferentes restrições existentes nos SOs utilizados tanto em
+produção quanto em projetos de pesquisa.
 
 SOs usados em produção demandam rigorosa validação para manter o sistema
 estável em uma variedade de configurações. Espera-se que um SO maduro busque
 prevenir acessos ilegais a memória, impossibilitar a violação de API, evitar
 consumo excessivo de recursos e impedir erros de sincronização ou
-\textit{locking}. Essas características tem que ser garantidas pelo SO
-\citep{mondrix}, como pode-se esperar, tais restrições são complicadas de serem
-atendidas por propostas de pesquisas uma vez que os pesquisadores concentram-se
-em um único problema e por isso podem desconsiderar outros impactos. Por esses
-motivos, para que um novo componente sugerido por meio da pesquisa chegue aos
-SOs atuais, é importante garantir que as aplicações que já existem não sofram
-impactos negativos em termos de desempenho e de uso.
+\textit{locking}. Essas características precisam ser garantidas pelo SO
+\citep{mondrix}, porém, como esperado, tais restrições dificilmente são
+atendidas por propostas de pesquisas devido a centralização dos pesquisadores
+em um único problema, desconsiderando assim outros impactos. Por esses motivos,
+para que um novo componente sugerido a partir de uma pesquisa acadêmica chegue
+aos SOs atuais, é importante garantir que as aplicações que já existem não
+sofram impactos negativos em termos de desempenho e de uso.
 
 Outra perspectiva que deve ser considerada é o contínuo desenvolvimento de novos
-recursos de hardware, por exemplo, é comum observar componentes que
+recursos de hardware. Por exemplo, frequentemente observam-se componentes que
 são especializados em um nicho e que ao longo do tempo chegam ao usuário
 final tornando-se comum. Um caso simples que ilustra tal evolução é o
 uso de hardware especializado para virtualização, uma vez que esses existiam
 apenas para servidores e hoje estão disponíveis para a maioria dos usuários
 comuns. Tais recursos representam um novo leque de opções não exploradas,
-inclusive para trazer melhorias para as atuais abstrações de processos.
-Entretanto, qualquer tentativa de incorporar os novos recursos de hardware para
-a abstração de processos deve levar em consideração que alguns usuários podem
-não ter tal recurso disponível. Por essa razão qualquer mudança nos processos
-que adicionem suporte a novos recursos de hardware devem levar em consideração
-todo tipo de situação. De modo inverso, propostas para melhorar uma abstração de
-processos podem sugerir mudanças no hardware sendo útil para avançar os
-estado da arte dos chips modernos. Claro que a evolução do hardware deve ser
-cuidadosa para evitar quebra de compatibilidade binária com aplicações legadas.
-Infelizmente, é preciso ter em mente que alteração de hardware e suas
-limitações faz com propostas que dependem de tal evolução sejam difíceis de
-serem adotadas e fazem com que a ampla adoção de uma determinada melhoria seja
-impraticável.
+inclusive possíveis melhorias para as atuais abstrações de processos.
 
-Algumas das novas abstrações de processos propostas por alguns pesquisadores
-tem enorme dependência com outras tecnologias experimentais. Se por um lado
-isso traz vantagens para as tecnologias em desenvolvimento, por outro reduz a
-chance de uma nova abstração de processos serem adotada por um SO de produção
-devido a dependência em tecnologias instáveis.
+Entretanto, para incorporar novos recursos de hardware à abstração de processos
+não se deve descartar que tal recurso pode não estar disponível para alguns
+usuários. Por essa razão, qualquer mudança nos processos para adicionar suporte
+a novos recursos de hardware deve levar em consideração todo tipo de situação.
+De modo inverso, propostas para melhorar uma abstração de processos podem
+sugerir mudanças no hardware e promover avanços no estado da arte dos chips
+modernos. Claro que a evolução do hardware necessita de cautela para evitar
+quebra de compatibilidade binária com aplicações legadas. Infelizmente, é
+preciso ter em mente que as alterações de hardware e suas limitações fazem com
+que propostas que dependem de tal evolução sejam difíceis de serem adotadas, e
+tornam a ampla adoção de uma determinada melhoria impraticável.
+
+Algumas das novas abstrações de processos propostas por pesquisadores tem
+enorme dependência com outras tecnologias experimentais. Se por um lado isso
+traz vantagens para as tecnologias em desenvolvimento, por outro, reduz a chance
+de adoção de uma nova abstração de processos por um SO de produção devido a
+dependência dessa abstração em tecnologias instáveis.
 
 %TODO
-Encontrar um bom balanceamento entre academia e a indústria de forma a levar
+Encontrar um bom balanceamento entre academia e indústria de forma a levar
 benefícios para os usuários não é uma tarefa trivial. Nesse sentido, novas
 propostas de mudanças na abstração de processos devem considerar as limitações
 citadas nessa seção para que possam atender aos requisitos de qualidade
-exigidas pelos SOs de uso cotidiano. Infelizmente, afirmar se uma proposta da
-academia pode ser adotada ou não pela indústria é uma tarefa impossível de ser
-determinar dado a enorme quantidade de variáveis envolvidas em tal análise.
-Mesmo assim, para posicionar o leitor em termos do estado da arte e da prática, nós
-buscamos estabelecer um "potencial de adoção" de uma nova proposta. Com base
-nos critérios apresentados nessa seção buscamos definir um conjunto de
-variáveis que auxilie na definição das chances de uma pesquisa ser adotada pela
-indústria, segue:
+exigidos pelos SOs de uso cotidiano. Infelizmente, afirmar que uma proposta da
+academia pode ser adotada ou não pela indústria é uma tarefa impossível dado a
+enorme quantidade de variáveis envolvidas em tal análise. Mesmo assim, para
+posicionar o leitor em termos do estado da arte e da prática, nós buscamos
+estabelecer um "potencial de adoção" de uma nova proposta. Com base nos
+critérios apresentados, buscamos definir um conjunto de variáveis que auxilie
+na definição das chances de uma pesquisa ser adotada pela indústria, segue:
 
 \begin{enumerate}
   \item
@@ -93,9 +92,9 @@ tal aspecto um problema para a adoção da nova técnica.
   \item
 \textbf{Dependência de Compatibilidade}: refere-se as propostas que exigem
 alterações na semântica das aplicações em espaço de usuário para que essas
-possam tirar proveito de alguma melhoria. Para esses casos desconsideramos
-propostas que simplesmente chamam uma única função que não alteram em nada na
-semântica.
+possam tirar proveito de alguma melhoria. Para esses casos, desconsideramos
+propostas que simplesmente chamam uma única função e que não alteram em nada
+na semântica.
 
   \item
 \textbf{Dependência de Compilador}: propostas que dependem de alterações no
@@ -104,11 +103,11 @@ uma vez que dois projetos precisam ser alterados.
 
   \item
 \textbf{Implementação Pesada}: consideramos as implementações pesadas mais
-complicadas uma vez que necessitam realizar mudanças no núcleo do SO,
-isso dificulta a adoção.
+complicadas uma vez que necessitam realizar mudanças no núcleo do SO, o que
+dificulta a adoção.
 
   \item
-\textbf{Implementação Independente}: essa refere-se a propostas de novas
+\textbf{Implementação Independente}: refere-se a propostas de novas
 implementações, claramente essa é de difícil adoção.
 
   \item
@@ -117,9 +116,9 @@ hardware novo que só existe em algum contexto específico ou mesmo que ainda n�
 foi implementado.
 
   \item
-\textbf{Característica Específica de Hardware}: refere-se a propostas que
-propõem a utilização de algum hardware bem consolidado para algum outro
-proposito diferente do originalmente proposto.
+\textbf{Característica Específica de Hardware}: refere-se a propostas de
+utilização de algum hardware bem consolidado para algum propósito diferente do
+original.
 
 \end{enumerate}
 
