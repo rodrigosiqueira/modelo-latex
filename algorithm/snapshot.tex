@@ -11,7 +11,7 @@ function context_instance(value) /// \label{line:fotografiaContextIntance}
   /// \label{line:fotografiaCheck}
   if bead.enable_recursive_snapshot or
      bead.total_of_snapshot < bead.max_snapshot_level then
-    id_parent $\gets$ bead[0]
+    id_parent $\gets$ bead.ctx_index[0]
     close(id_parent)
     return context_instance()
 
@@ -23,6 +23,7 @@ function MAIN() /// \label{line:fotografiaMAIN}
   bead.enable_recursive_snapshot $\gets$ true
   beadctl(BEAD_SET_CONFIG, &bead)
   bead.ctx_ids[0] $\gets$ context_instace(NULL) // Ponto no código no qual é feito uma cópia
+  beadctl(BEAD_SET_CONFIG, &bead)
   // ... qualquer código ...
   beadctl(BEAD_SWITCH, &bead) // Troca o contexto de executação atual
   

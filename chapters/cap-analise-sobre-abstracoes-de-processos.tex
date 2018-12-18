@@ -213,7 +213,7 @@ Isso cria diversas oportunidades para criar novos tipos de manipulações, tal
 como criar \emph{snapshot} do estado atual do processo e depois reverter o
 processo para o estado anterior. Outra possibilidade é mudar para um novo
 contexto de processo com acesso restrito para alguma região da memória antes da
-execução de um código sensível. Isso não é como utilizar threads ou processos
+execução de um código sensível. Isso não é como utilizar \emph{threads} ou processos
 independentes, uma vez que não há dependência do escalonador para mudar o
 contexto do processo (que é razoavelmente caro) a própria aplicação por si
 só pode escolher quando e qual contexto manipular. Assim fornecendo um
@@ -291,7 +291,7 @@ processos estão em um estágio equivalente ao modelo de Thomson. A abstração 
 processo não é mais um bloco sólido e indivisível, essa possui um leve grau de
 desacoplamento uma vez que no passado notou-se a vantagem em se desacoplar o PC
 e a Stack possibilitando múltiplos fluxos de execução no mesmo processo
-(threads). Seguindo esse raciocínio e buscando avançar o modelo atual,
+(\emph{threads}). Seguindo esse raciocínio e buscando avançar o modelo atual,
 apresentamos o modelo \textbf{bead}\footnote{\emph{Bead} em português,
 refere-se as pequenas bolas que compõem um colar ou pulseira. Normalmente,
 existe uma ampla variedade de tais objetos} que consiste em buscar um elevado
@@ -321,7 +321,7 @@ aplicações modernas.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=\textwidth]{decomposicao}
+  \includegraphics[width=\textwidth]{decomposicao_overview}
   \caption{Decomposição do processo}
   \label{fig:decomposicao_proc}
 \end{figure}
@@ -409,7 +409,7 @@ Operação criada no contexto deste trabalho.
 
 Essa chamada comporta-se de forma similar ao \texttt{fork()}, uma vez que essa
 faz uma cópia idêntica dos elementos do processo pai. Essa diferencia-se da
-chamada de sistema \texttt{fork()} uma vez que não criar uma nova thread e
+chamada de sistema \texttt{fork()} uma vez que não criar uma nova \emph{thread} e
 compartilhar o mesmo PID do processo pai. Na prática essa função também pode
 receber alguns parâmetros que alteram o seu comportamento padrão.
 
@@ -434,7 +434,7 @@ operação \texttt{BEAD\_SWITCH} unifica operações de mudanças dentro do
 processo. Destacam-se os casos da troca de contexto e de entrada em regiões
 mais seguras da memória. A operação pode espera um descritor que referencia uma
 instância de um contexto que seja válida. Com base no descritor recebido, essa
-chamada transfere a thread de execução do processo que invocou tal chamada para
+chamada transfere a \emph{thread} de execução do processo que invocou tal chamada para
 a instância de contexto criada anteriormente. Outra utilização dessa operação é
 a troca da execução de uma área menos segura para outra mais segura por meio da
 operação \texttt{BEAD\_ENTER\_CONTEXT}.
@@ -483,9 +483,9 @@ Chamada baseada no \texttt{dune\_entry()} do Dune.
 
 	\item [\texttt{BEAD\_ENTER\_COMPARTMENT}:]
 
-Essa operação faz com que a thread em execução tenha associado a si um
+Essa operação faz com que a \emph{thread} em execução tenha associado a si um
 compartimento, no qual apenas ela tem acesso. Isso auxilia contra
-ataques intra-processos. Nenhuma outra thread do processo tem acesso a qualquer
+ataques intra-processos. Nenhuma outra \emph{thread} do processo tem acesso a qualquer
 dado do compartimento, o mesmo vale para os dados dentro do compartimento
 (i.e., o compartimento é isolado). Devido ao isolamento oferecido por essa
 técnica, torna-se necessário uma função especial para realizar a alocação
@@ -524,9 +524,9 @@ Chamada baseada no \texttt{shred\_exit()} proposto pelo Shred.
 Essa operação é responsável por alocar memória dentro de um compartimento e tem
 o seu funcionamento similar ao da função \texttt{malloc()}. Uma vez que a
 memória é alocada utilizando essa operação, significa dizer que ela é acessível
-apenas dentro da thread que solicitou entrar no compartimento. Esse mecanismo
+apenas dentro da \emph{thread} que solicitou entrar no compartimento. Esse mecanismo
 de isolamento de memória faz com que as páginas do próprio processo tenham o
-seu acesso restrito a uma thread.
+seu acesso restrito a uma \emph{thread}.
 
   \begin{itemize}
     \item \textbf{Parâmetros:}
@@ -604,9 +604,9 @@ Introduzimos nessa seção alguns dos possíveis padrões de utilização do
 as aplicações, principalmente em termos de novos modelos de programação.
 Apresentamos alguns usos elementares, mas que servirão de apoio para outros
 padrões mais sofisticados. Além de mostrar o pseudocódigo também discutimos o
-potência uso de determinado padrão em aplicações reais\footnote{vale observar
+potência uso de determinado padrão em aplicações reais\footnote{Vale observar
 que nem todos os padrões apresentado nesta seção tem aplicação direta nas
-aplicações atuais}.
+aplicações atuais.}.
 
 \subsubsection{Padrão Configuração}
 
@@ -625,7 +625,7 @@ lidar com as diferentes opções de desacoplamentos do processo.
 O Pseudocódigo~\ref{alg:exconfig} ilustra de forma geral o processo de
 utilização das operações de ajuste e recuperação da configuração. Repare que a
 estrutura \texttt{bead\_data} padroniza a comunicação entre o espaço de usuário
-o Kernel. Vale acrescentar, que esse tipo de operação pode ser facilmente
+e o Kernel. Vale acrescentar, que esse tipo de operação pode ser facilmente
 encapsulada e explorada em bibliotecas no espaço do usuário (e.g.,
 \texttt{libead}).
 
@@ -649,12 +649,30 @@ de processos\footnote{Isso permite manter a compatibilidade com as
 aplicações.}. Essa operação é de baixo nível e retorna uma estrutura de dados
 do tipo \texttt{bead\_data} preenchida pelo Kernel com as configurações atuais.
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.6\textwidth]{decomposition_conf}
+  \caption{Ilustração do padrão configuração}
+  \label{fig:decomposicao_conf}
+\end{figure}
+
+A Figura~\ref{fig:decomposicao_conf} da uma visão geral sobre os elementos
+afetados pelo padrão configuração, note que ele representa as fronteiras entre
+os diversos componentes da abstração de processos. Esse padrão também pode ser
+expandido de tal forma a dar suporte a mecanismos sofisticados na qual a
+aplicação em espaço de usuário pode passar informações sobre como o \emph{bead}
+deve proceder em determinadas situações. Uma aplicação poderia fazer uso de
+algum padrão consolidado, por exemplo o \emph{BSD Packet Filter}~\citep{bpf}, e
+assim dizer para o núcleo do SO como agir de forma similar a como o
+\emph{Resource Container} sugere (Seção~\ref{sec:rc}).
+
 \subsubsection{Padrão Fotografia}
+\label{sec:fotografia}
 
 O \emph{lwC} introduz a funcionalidade \emph{snapshot} (utilizaremos o termo
-fotografia como sinônimo), ela duplica as informações do processo de forma
+fotografia), ela duplica as informações do processo de forma
 similar ao \texttt{fork()}. O \texttt{snapshot()} diferencia-se do
-\texttt{fork()} uma vez que ele não cria uma nova thread e nem um novo PID
+\texttt{fork()} uma vez que ele não cria uma nova \emph{thread} e nem um novo PID
 (para mais detalhes, veja Seção~\ref{sec:lwc}). Inspirado por tal
 funcionalidade, o \emph{bead} busca oferecer esse recurso mas com a
 possibilidade de ter maior controle sobre a operação de fotografar o processo.
@@ -666,7 +684,7 @@ A Linha~\ref{line:fotografiaMAIN} do Pseudocódigo~\ref{alg:fotografia}
 representa o ponto de início de um programa qualquer. Como indicado no
 comentário, várias operações podem ser realizadas antes de tirar uma fotografia
 do estado do processo, i.e., o processo atinge um estado qualquer sem a
-influencia do \emph{bead}. O programador deve decidir em qual momento do
+influência do \emph{bead}. O programador deve decidir em qual momento da execução do
 processo ele quer tirar uma fotografia do estado, então ele da início a tal
 tarefa seguindo a semântica introduzida pelo \emph{bead}. Ainda na função
 \texttt{MAIN()}, repare que o desenvolvedor pode configurar detalhes da
@@ -680,18 +698,20 @@ A função \texttt{context\_instance()} na
 Linha~\ref{line:fotografiaContextIntance} é responsável pela operação de criar
 e salvar a cópia do estado. Ela começa realizando uma chamada para a função
 \texttt{beadctl()} passando a solicitação da operação de
-\texttt{BEAD\_NEW\_CONTEXT\_INSTANCE}, no momento que essa chamada termina uma
-cópia do estado atual do processo é feita. Note que o valor do \texttt{id} muda
-de acordo com o processo a thread principal do processo. Se a thread do processo estiver no
-processo pai (aquele que chamou \texttt{context\_instance()}) então o
-\texttt{id} será um identificador da fotografia do processo; do contrário, ele
-receberá -1. Na primeira execução a função vai retornar o \texttt{id} para a
-função \texttt{MAIN()} que por sua vez vai prosseguir com a sua execução
-normalmente. Contudo, quando a Linha~\ref{line:fotografiaPosSwitch} for
-atingida ocorrerá a troca do estado atual do processo para o estado
-anteriormente fotografado. Logo que a troca de estados acontecer, a
-Linha~\ref{line:fotografiaNewCtx} retornará -1 uma vez que a execução do
-processo acontecerá dentro do estado anterior; o código da
+\texttt{BEAD\_NEW\_CONTEXT\_INSTANCE}, no momento que essa chamada termina, uma
+cópia do estado atual do processo foi feita. Note que o valor do \texttt{id}
+pode assumir valores diferentes dependendo do contexto no qual o processo está
+executando. Se a \emph{thread} do processo estiver no processo pai (aquele que
+chamou \texttt{context\_instance()}) então o \texttt{id} será um identificador
+da fotografia do processo; do contrário, ele receberá -1. Na primeira execução
+a função vai retornar o \texttt{id} para a função \texttt{MAIN()} que por sua
+vez vai prosseguir com a sua execução normalmente. Repare que o \texttt{id} é
+armazenado em uma estrutura de dados interna para que seja simples recuperar
+essa informação em outras fotografias do processo. Quando a
+Linha~\ref{line:fotografiaPosSwitch} for atingida, ocorrerá a troca do estado
+atual do processo para o estado anteriormente fotografado. Logo que a troca de
+estados acontecer, a Linha~\ref{line:fotografiaNewCtx} retornará -1 uma vez que
+a execução do processo acontecerá dentro do estado anterior; o código da
 Linha~\ref{line:fotografiaPosSwitch} em diante passa a executar.
 
 A Linha~\ref{line:fotografiaCheck} ilustra como a troca de contexto pode ser
@@ -704,6 +724,35 @@ recursivamente e uma nova fotografia do processo é tirada. Se a condição do
 \texttt{NO\_SWITCH} para o espaço de usuário, por sua vez, a aplicação pode
 realizar o tramamento que julgar necessário com base no retorno.
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.6\textwidth]{decomposition_fotografia}
+  \caption{Ilustração dos principais elemento envolvidos no padrão fotografia}
+  \label{fig:decomposicao_fotografia}
+\end{figure}
+
+A Figura~\ref{fig:decomposicao_fotografia} ilustra os principais elementos
+envolvidos no padrão fotografia, são eles a VAS e o PC. Durante o processo de
+criação do novo contexto, a VAS é fotografada e mantida ao longo do tempo; por
+sua vez, o PC é usado para alternar pelas diferentes fotografias do processo.
+Esse padrão pode ser útil em alguns cenários, dentre eles destaca-se a
+aceleração e isolamento de algumas atividades que necessitam ser inicializadas
+várias vezes.
+
+Para ilustrar a utilização desse padrão em uma aplicação real, recorremos para
+o tratamento de requisições feito pelo servidor Apache Httpd (para mais
+detalhes vide Seção~\ref{sec:architecture}). Para cada requisição, o Apache
+precisa inicializar uma série de estruturas de dados para em seguida proceder
+com o tratamento da solicitação. Essa etapa inicial pode ser otimizada
+utilizando o padrão fotografia, bastaria que ao final do procedimento de
+inicialização o programador explicitamente tirasse uma foto do estado atual do
+processo. O Apache procederia normalmente com o tratando da requisição,
+contudo, quando a requisição finalizasse o processo faria uma troca para o
+contexto anteriormente criado e tiraria uma nova fotografia do estado. Além de
+evitar a repetição do trabalho de inicialização, esse procedimento pode ainda
+melhorar o isolamento entre as requisições. Essa mesma ideia é expansível para
+aplicações menores que tem uma etapa de inicialização que pode ser reutilizada.
+
 \subsubsection{Padrão Virtualização Controlada}
 
 O padrão virtualização controlada nasce do projeto Dune como uma especialização
@@ -711,7 +760,7 @@ do modo de operação na qual o processo faz uso dos recursos de virtualização
 Nesse contexto, quando um processo em execução entra em \emph{modo Dune}, ele
 irreversivelmente passa a executar utilizando os recursos de virtualização e
 não pode mais voltar ao seu estado normal (para mais detalhes,
-veja~\ref{sec:dune}). Inspirado por tal funcionalidade e buscando elevar o grau
+veja~\ref{sec:dune}). Motivado por tal funcionalidade e buscando elevar o grau
 de desacoplamento da virtualização, o \emph{bead} busca dar suporte para
 funcionalidades similares ao do Dune utilizando uma abordagem com maior
 controle. Veja o Pseudocódigo~\ref{alg:virtMode} ilustrando tal forma de
@@ -721,7 +770,7 @@ utilização.
 
 O Pseudocódigo~\ref{alg:virtMode} começa a execução na
 Linha~\ref{line:virtMAIN}. Como indicado no comentário logo após a função
-\texttt{MAIN}, notamos que a semântica do programa não sofre alteração. A
+\texttt{MAIN()}, notamos que a semântica do programa não sofre alteração. A
 Linha~\ref{line:virtModeCall} ilustra uma chamada para a função
 \texttt{virtualization\_mode()}, essa espera um ponteiro para uma função que
 será executada em modo de virtualização; se uma referência nula for passada no
@@ -731,12 +780,12 @@ protótipo da função\footnote{Note que esse é apenas um exemplo para a
 demonstração de uso, em uma implementação real tal protótipo de função pode
 conter diversos parâmetros ou outra assinatura.}. Quando a função
 \texttt{virtualization\_mode()} começa a executar, a primeira tarefa dela
-consiste em configurar os parâmetros de virtualização como pode ser visto da
+consiste em configurar os elementos da virtualização como pode ser visto da
 Linha~\ref{line:confBegin} até a linha~\ref{line:confEnd} (seguindo o padrão
-configuração). Os parâmetros de virtualização podem aceitar diversos parâmetros
+configuração). Os parâmetros de virtualização podem aceitar diversos argumentos
 permitindo o controle fino dos recursos de virtualização (não definimos esse
 nível de compartilhamento, pois pode haver diversas formas de implementar tal
-recurso). Por padrão, vamos supor que o processo quer utilizar todos os
+recurso); por padrão, vamos supor que o processo quer utilizar todos os
 recursos de virtualização disponíveis.
 
 Na Linha~\ref{line:instance} é feita uma cópia do estado atual do processo, se
@@ -745,13 +794,41 @@ subsequentes. Repare na Linha~\ref{line:funcParam} que é feito uma verificaçã
 no ponteiro da função passada por parâmetro, isso faz com que essa função
 assuma duas formas de execução diferente. Se um ponteiro para função for
 passado, ela executará em modo virtualização e ao final da execução ocorrerá um
-retorno para o estado anterior da aplicação~\ref{line:backState}. Em seguida,
-no estado restaurado, o \emph{else} da Linha~\ref{line:virtModeElse} será
-executado de forma a desabilitar as funcionalidade de virtualização e retornará
-um código de fim da operação (\texttt{VM\_OPERATION\_END}). Se
+retorno para o estado anterior da aplicação, Linha~\ref{line:backState}. Em
+seguida, no estado restaurado, o \emph{else} da Linha~\ref{line:virtModeElse}
+será executado de forma a desabilitar as funcionalidade de virtualização e
+retornará um código de fim da operação (\texttt{VM\_OPERATION\_END}). Se
 \texttt{virtualization\_mode()} receber um ponteiro nulo para a função,
 significa que o programador quer que todo o processo execute em modo de
 virtualização (similar ao modo Dune).
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.6\textwidth]{decomposicao_virt_controlada}
+  \caption{Ilustração dos elementos envolvidos no padrão virtualização}
+  \label{fig:decomposicao_virt}
+\end{figure}
+
+A Figura~\ref{fig:decomposicao_virt} mostra os elementos alvos para o
+desacoplamento das características de virtulização de um processo. Repare que o
+padrão virtualização pode comporta-se como uma extensão do padrão fotografia
+(Seção~\ref{sec:fotografia}) ou simplesmente reagir de forma a executar durante
+todo o tempo em modo virtualização. Esse padrão pode ser utilizado em alguns
+contextos, dentre eles em ferramentas de depuração e interceptação de erros. Em
+especial, aplicações como \emph{Garbage Collection (GC)} podem se beneficiar de
+tais recursos uma vez que é possível utilizar as funcionalidades fornecidas
+pela virtualização para otimizar tarefas. Os algoritmos de compactação de
+memória são potenciais alvos de otimização utilizando recursos de
+virtualização; a compactação adotada pelo GC pode fazer uso dos recursos de
+acesso direto as páginas fornecido pelos mecanismos de virtualização. Em poucas
+palavras, quando o GC compacta a memória ele precisa varrer todas as
+referências usadas pelo programa em execução e atualizar os endereços para as
+novas posições pós compactação (Seção~\ref{sec:gc}). Utilizando mecanismos de
+virtualização é possível intervir diretamente nas referencias das aplicações
+mantendo o endereço virtual e alterando apenas o mapeamento para o endereço
+físico novo. Isso é possível uma vez que os recursos de virtualização permitem o
+acesso direto as suas páginas e assim o GC pode atuar diretamente sob tais
+valores. 
 
 \subsubsection{Padrão Persistência}
 
@@ -833,13 +910,13 @@ introduziu a operação \texttt{BEAD\_ENTER\_COMPARTMENT}, note que essa foi
 utilizado no processo de configurar compartimento e que a operação de troca foi
 utilizada para entra em tal modo (repare, que esse é um uso diferente da
 operação de troca). Se tudo ocorrer bem, o processo passa a executar dentro de
-um compartimento isolado das demais threads.
+um compartimento isolado das demais \emph{threads}.
 
 Dentro do compartimento, não é possível utilizar as operações de alocação
 padrão uma vez que é preciso utilizar o recurso de controle de acesso fornecido
 pelo hardware. Nesse sentido, o \emph{bead} fornece a operação
 \texttt{BEAD\_ALLOC\_COMPARTMENT\_MEMORY} responsável por alocar memória de tal
-forma que qualquer thread externa tem o seu acesso proibido a região de memória
+forma que qualquer \emph{thread} externa tem o seu acesso proibido a região de memória
 alocada. A Linha~\ref{line:compartimentoAlloc} é responsável por alocar memória
 dentro do próprio compartimento. Por fim, para remover a memória alocado basta
 chamar a função \texttt{BEAD\_FREE\_COMPARTMENT\_MEMORY}.
