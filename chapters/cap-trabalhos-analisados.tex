@@ -1,13 +1,15 @@
 \chapter{Trabalhos Analisados}
 \label{cap:trabalhos-analisados}
 
-Esse capítulo tem como objetivo destacar as principais pesquisas realizadas com
+\todo[inline]{Eu sei que você gosta dessa divisão sobre a implementação, mas do ponto de vista \emph{teórico} isso não é uma divisão relevante: o trabalho ser ou não implementação leve/pesada/independente não tem nada a ver com o que o trabalho em si é. Se o autor tivesse escolhido outro estilo de implementação, não mudaria nada no conceito. Faz sentido, sim, você selecionar apenas trabalhos que tenham uma implementação (porque mostra que é possível implementar e tem até algum tipo de validação experimental), mas não gosto dessa subdivisão. Acho legal, sim, comentar essa característica dos trabalhos, em especial aqueles em que isso é muito importante, como o exokernel ou aquele que usa um módulo do kernel, mas usar para categorizar os trabalhos é bizarro (até porque ``independente'' só tem um, que é o exokernel}
+
+Esse capítulo tem como objetivo destacar as principais pesquisas \hltodo[recentemente]{Que tal?} realizadas com
 o objetivo de expandir as abstrações de processos. Para a seleção dos trabalhos
 aqui apresentados, o autor levou em consideração os seguintes aspectos:
-quantidade de citações dos trabalhos, implementação da proposta em um SO e
+quantidade de citações dos trabalhos, \hltodo[implementação da proposta em um SO]{Acho esquisito ``em um SO''; acho que seria melhor dizer que tem que ter uma implementação funcional e não só uma proposta teórica} e
 pesquisas que tenham a abstração de processos como objeto de estudo. Por uma
 questão organização, esse trabalho subdivide as pesquisas usando o critério da
-implementação. Sem entrar em detalhes, as três categorias são:
+implementação. \hltodo[Sem entrar em detalhes,]{eu descreveria as três aqui rapidamente e estenderia um pouco a descrição na introdução de cada seção} as três categorias são:
 \textit{Implementação Estrutural Leve, Implementação Estrutural Pesada e
 Implementação Independente}. Por fim, essa seção visa fornecer as bases para a
 discussão apresentada no Capitulo
@@ -16,8 +18,8 @@ discussão apresentada no Capitulo
 \section{Implementação Estrutural Leve}
 
 Chamamos de \textit{Implementação estrutural leve} toda proposta que não altera
-diretamente o núcleo do SO, isso faz com que a proposta tenha uma grande chance
-de ser incorporada em um contexto de um SO de produção e ao mesmo tempo geram
+diretamente o núcleo do SO. Isso faz com que a proposta tenha uma chance maior
+de ser incorporada em um SO de produção e, ao mesmo tempo, gera
 pouco impacto geral no SO. Normalmente, implementações leves utilizam
 artifícios de \emph{device drivers} (Veja \ref{sec:dd}), o que torna simples de
 desenvolver e testar novas propostas.
@@ -26,97 +28,97 @@ desenvolver e testar novas propostas.
 \label{sec:dune}
 
 Como mostrado na Seção \ref{sec:virtualizacao}, o conceito de virtualização já
-é amplamente conhecido e adotado pela indústria; dentre os recentes avanços
-destacam-se a virtualização via hardware proporcionada pelos processadores
-modernos. O mecanismo de virtualização é utilizada com o objetivo de fornecer
+é amplamente conhecido e adotado pela indústria; dentre os recentes avanços,
+destaca-se a virtualização via hardware proporcionada pelos processadores
+modernos. O mecanismo de virtualização é normalmente utilizado fornecendo
 abstrações para a criação de máquinas virtuais. Com esse conceito em mente,
-\cite{belay} decidiram dar outra utilidade para esses recursos de hardware:
-fornecer processos ao invés de máquinas virtuais.
+\citet{belay} decidiram dar outra utilidade para esses recursos de hardware:
+\hltodo[fornecer]{Não seria melhor ``isolar'' processos? Ou ``fornecer recursos adicionais''?} processos ao invés de máquinas virtuais.
 
-Os autores defendem que uma ampla variedade de aplicações podem tirar proveito
+Os autores defendem que uma ampla variedade de aplicações pode tirar proveito
 do acesso a certos recursos que são apenas disponíveis ao kernel. Dentre as
 aplicações que podem comprovadamente ganhar algum desempenho ao obter acesso
 direto ao hardware, destacam-se:
 
 \begin{itemize}
-  \item \textbf{Garbage Collection (GC)}: O GC pode ganhar desempenho caso
+  \item \textbf{Garbage Collection (GC)}\todo{Melhor ``coleta de lixo''}: O GC pode ganhar desempenho caso
         tenha como controlar diretamente o hardware de paginação, como
-        \cite{pauseless} demostraram em seu trabalho;
-  \item \textbf{Process Migration}: Programas no espaço de usuário podem tirar
-        proveito do acesso direto as faltas de páginas e chamadas de sistema.
+        \citet{pauseless} demostraram em seu trabalho;
+  \item \textbf{Process Migration}\todo{Melhor ``migração de processos''}: Programas no espaço de usuário podem tirar
+        proveito do acesso direto às faltas de páginas e chamadas de \hltodo[sistema]{... para fazer sei-lá-o-que com migração}.
 \end{itemize}
 
 Não obstante, fornecer o acesso direto aos recursos de hardware de forma segura
-e gerenciável não é uma tarefa trivial uma vez que requer mudanças na forma
+e gerenciável não é uma tarefa trivial, uma vez que requer mudanças na forma
 como o espaço de usuário e o espaço do Kernel interagem. Além disso, alterações
-no Kernel são consideradas invasivas e perigosas uma vez que uma modificação
+no Kernel são consideradas invasivas e perigosas, uma vez que uma modificação
 feita de forma errada pode comprometer toda a estabilidade do sistema. Outra
-alternativa para dar acesso de hardware para aplicações é por meio de imagens
-de máquina virtual, assim uma aplicação consegue acesso seguro aos recursos de
+alternativa para dar acesso de hardware para aplicações é por meio \hltodo[de imagens
+de máquina virtual,]{Melhor algo tipo ``de execução em uma máquina virtual''} assim uma aplicação consegue acesso seguro aos recursos de
 hardware através da interface de virtualização. Uma desvantagem desta abordagem
-é que ela tem pouca integração com o SO da máquina \emph{host} o que impede um
+é que ela tem pouca integração com o SO da máquina \emph{host}, o que impede o
 processo de obter ganhos de desempenho.
 
-\cite{belay} oferecem uma alternativa que consiste em utilizar a abstração de
+\citet{belay} oferecem uma alternativa que consiste em utilizar a abstração de
 virtualização disponível nos processadores modernos de forma a fornecer um novo
 tipo de processo que executa no chamado \emph{Dune Mode} (modo Dune). Tal modo
 é um estado irreversível no qual o processo indica explicitamente que quer
-entrar; nesse modo o processo passa a ter acesso direto, por meio dos recursos
+entrar; nesse modo, o processo passa a ter acesso direto, por meio dos recursos
 de virtualização, a modos de operação com maior privilégio, registradores de
 memória virtual, tabelas de páginas, interrupções, exceções e vetores de
 chamada de sistema. Para auxiliar a aplicação no espaço de usuário a interagir
 com tais recursos, os autores criaram uma biblioteca chamada \emph{libDune} que
-na utilização das novas funcionalidades.
+dá apoio à utilização das novas funcionalidades.
 
 Dentre as vantagens que o essa pesquisa promete, destacam-se o fato de que no
-modo Dune o processo comporta-se como um processo normal com a diferença de que
-este utiliza a instrução VMCALL para fazer chamadas de sistema. Além disto,
-devido ao fato de que o Dune não tem por objetivo fornecer máquinas virtuais
-este consequentemente consegue ser mais simples e rápido. As aplicações que se
-adequam ao uso desse modelo podem obter melhorias de desempenho e isolamento.
+modo Dune o processo comporta-se como um processo normal, com a diferença de que
+ele utiliza a instrução \hltodo[VMCALL para fazer chamadas de sistema]{E por que isso é uma vantagem?}. Além disso,
+devido ao fato de que o Dune não tem por objetivo fornecer máquinas virtuais,
+ele consegue ser mais simples e rápido. As aplicações que se
+adequam ao uso desse modelo podem obter \hltodo[melhorias de desempenho e isolamento.]{Acho que precisa explicar um pouco mais e melhor qual a vantagem ou dizer tipo ``como veremos adiante'' ou algo assim}
 
-Para implementar o Dune, os pesquisadores utilizaram os processadores Intel com
-suporte para a tecnologia VT-x (Veja \ref{sec:vtx}) e parte do código do KVM já
+Para implementar o Dune, os pesquisadores utilizaram processadores Intel com
+suporte para a tecnologia VT-x (veja a Seção \ref{sec:vtx}) e parte do código do KVM já
 disponível no Kernel Linux. O Dune apresenta três tipos de instruções
-privilégiadas para os processos:
+privilegiadas para os processos:
 
 \begin{itemize}
-  \item \textbf{Exceções}:  As instruções LIDT, LTR, IRET, STI e CLI são
-        expostas diretamente para os processos. Note que emulações, depuração e
-        rastreamento de desempenho são aplicações que podem tirar proveito
-        desta característica uma vez que o Dune pode reduzir consideravelmente
+	\item \textbf{Exceções}:  As instruções \hltodo[LIDT, LTR, IRET, STI e CLI]{Não rola explicar o que elas fazem? Pode ser uma explicação de meia dúzia de palavras sobre cada uma ou uma explicação geral sobre o conjunto delas. Isso vale para os próximos itens também} são
+        expostas diretamente para os processos. Note que emulação, depuração e
+        rastreamento de desempenho são atividades que podem tirar proveito
+        desta característica, uma vez que o Dune pode reduzir consideravelmente
         a sobrecarga em entregar exceções. Isso se deve ao fato que o Dune
-        consegue entregar exceções diretamente para o hardware de forma segura
+        consegue entregar exceções diretamente para o \hltodo[hardware]{Para o software, não?} de forma segura
         (encapsulado pelo hardware de virtualização);
   \item \textbf{Memória Virtual}: As instruções \texttt{MOV CRn, INVLPG} e
-        \texttt{INVPCID} são apresentadas para o processo Dune. O acesso
-        flexível a memória virtual pode ser benéfico para aplicações que fazem
-        \emph{checkpointing}, GC, compressão de dados nas páginas e memória
-        compartilhada distribuída. O Dune traz melhorias para o acesso a
+        \texttt{INVPCID} são oferecidas para o processo Dune. O acesso
+        flexível à memória virtual pode ser benéfico para aplicações que fazem
+        \emph{checkpointing}, GC, compressão de dados nas páginas e utilizam memória
+        compartilhada distribuída. O Dune traz melhorias para o acesso à
         memória virtual expondo as entradas da tabela de páginas para as
-        aplicações, isso permite que elas controlem a tradução de endereços,
-        permissão de acesso, bits globais e modifiquem/acessem as páginas com
-        simples referências. Por fim, o Dune também da a habilidade para
-        controlar as invalidações da TLB manualmente o que pode ser vantajoso
+        aplicações. Isso permite que elas controlem a tradução de endereços,
+        as permissões de acesso, bits globais e que elas modifiquem/acessem as páginas com
+        simples referências. Por fim, o Dune também dá a habilidade de
+        controlar as invalidações da TLB manualmente, o que pode ser vantajoso
         para alguns tipos de aplicações;
-  \item \textbf{Modos privilégiados}: As instruções \texttt{LGDT} e
-        \texttt{LLDT} permitem que o Dune exponha os modos privilégiados de
+  \item \textbf{Modos privilegiados}: As instruções \texttt{LGDT} e
+        \texttt{LLDT} permitem que o Dune exponha os modos privilegiados de
         forma segura. O Dune expõe esse modos de forma eficiente e segura por
-        que o VMX non-root mantém o seu próprio conjunto de anéis privilégiados
+        que o VMX non-root mantém o seu próprio conjunto de anéis privilegiados
         (Veja \ref{sec:vtx}).
 \end{itemize}
 
 A Figura \ref{fig:dune_architecture} ilustra a arquitetura do Dune. O Dune
-estende o Kernel como um modulo que habilita o VT-x, colocando o mesmo em um
-modo VMX root. Assim processos usando Dune tem acesso seguro e garantido para
-hardware privilégiado utilizando o VMX non-root mode. O módule Dune intercepta
-os VM exits, o único motivo para o processo acessar o kernel e realizar
+estende o Kernel como um módulo que habilita o VT-x, colocando-o no
+modo VMX root. Assim, processos usando Dune têm acesso seguro e garantido para
+hardware privilegiado utilizando o modo VMX non-root. O módulo Dune intercepta
+os \hltodo[VM exits]{Seria bom explicar wtf}, o único motivo para o processo acessar o kernel e realizar
 qualquer ação. Repare que o Dune é aplicado de forma seletiva aos processos que
-de fato precisam deles, isto significa que um processo que não usa o Dune não é
+de fato precisam dele, o que significa que um processo que não usa o Dune não é
 afetado. A transição de um processo normal para o modo Dune ocorre por meio de
-uma chamada de \texttt{ioctl} no dispositivo \texttt{/dev/dune}, repare que ao
-entrar em tal modo o processo não pode retornar ao modo anterior. Sempre que um
-processo Dune faz um \texttt{fork()}, o processo filho não incia em modo Dune,
+uma chamada de \texttt{ioctl} no dispositivo \texttt{/dev/dune} e, ao
+entrar nesse modo, o processo não pode retornar ao modo anterior. Sempre que um
+processo Dune faz um \texttt{fork()}, o processo filho não inicia em modo Dune,
 contudo pode reentrar caso queira.
 
 \begin{figure}[!h]
@@ -126,20 +128,20 @@ contudo pode reentrar caso queira.
   \label{fig:dune_architecture}
 \end{figure}
 
-Seção \ref{sec:virtualizacao} apresentamos as principais propriedades dos VMMs,
-com o objetivo de deixar claro as diferenças entre o VMMs e as características
+Na Seção \ref{sec:virtualizacao}, apresentamos as principais propriedades dos VMMs.
+Com o objetivo de deixar claras as diferenças entre o VMM e as características
 de hardware expostas pelo Dune, destacamos as principais diferenças:
 
 \begin{itemize}
-  \item No Dune, o mecanismo de \textit{hypercall} invocam
+  \item No Dune, o mecanismo de \textit{hypercall} invoca
         \textit{system calls} comuns do Linux;
-  \item Apenas características de hardware que podem ser acessadas diretamente
-        sem a intervenção do VMM são disponíveis para a aplicação, nos casos em
-        que não é possível executar dada operação, o Dune retorna o controle
+  \item Apenas características de hardware que podem ser acessadas diretamente,
+        sem a intervenção do VMM, são disponíveis para a aplicação. Nos casos em
+        que não é possível executar uma dada operação, Dune devolve o controle
         para o SO;
-  \item Podemos limitar as diferenças entre \textit{guest} e \textit{host} uma
-        vez que processos usando Dune tem uma interface próxima da de hardware;
-  \item No Dune é preciso configurar o EPT para refletir o endereço do espaço
+  \item Podemos limitar as diferenças entre \textit{guest} e \textit{host}, uma
+        vez que processos usando Dune têm uma interface próxima da de hardware;\todo{não entendi este item}
+  \item No Dune, é preciso configurar o \hltodo[EPT]{dafuq?} para refletir o endereço do espaço
         de usuário.
 \end{itemize}
 
