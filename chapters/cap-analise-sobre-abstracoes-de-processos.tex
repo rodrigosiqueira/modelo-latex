@@ -213,7 +213,7 @@ Isso cria diversas oportunidades para desenvolver novos tipos de manipulações,
 como criar \emph{snapshot} do estado atual do processo e depois reverter o
 processo para o estado anterior. Outra possibilidade é mudar para um novo
 contexto de processo com acesso restrito para alguma região da memória antes da
-execução de um código sensível\todo{ para mudar... para alguma... não entendi essa frase}. Ao contrário do que parece, isso não é como utilizar threads ou processos
+execução de um código sensível\todo{ para mudar... para alguma... não entendi essa frase}. Ao contrário do que parece, isso não é como utilizar \emph{threads} ou processos
 independentes. Por não haver dependência do escalonador para mudar o
 contexto do processo (que é razoavelmente caro), a própria aplicação por si
 só pode escolher quando e qual contexto manipular e fornecer assim um
@@ -578,8 +578,8 @@ desenvolvedor}. Adotaremos uma abordagem na qual uma função chamada de
 \texttt{beadctl()} é responsável por receber uma constante que representa a
 operação solicitada pelo usuário. Por sua vez, tal função seletivamente realiza
 o procedimento indicado. O Pseudocódigo~\ref{alg:ctlbead} ilustra uma possível
-implementação da função \texttt{beadctl()}, ao longo deste capítulo adotaremos
-tal função como padrão. Note que essa função comporta-se como um adaptador
+implementação da função \texttt{beadctl()} -- ao longo deste capítulo, adotaremos
+tal função como padrão. Note que essa função comporta-se como um adaptadorf
 chamado no espaço de usuário e que por sua vez faz o pedido direto para o
 Kernel (essa função é análoga ao IOCTL presente no Linux).
 
@@ -588,7 +588,7 @@ Kernel (essa função é análoga ao IOCTL presente no Linux).
 Para passar dados do espaço de usuário para o kernel (vice-versa), definimos
 uma estrutura de dados para realizar a troca de informações de forma
 padronizada. O Pseudocódigo~\ref{alg:beadata} ilustra uma potencial estrutura
-de dados para realizar a troca informação do espaço de usuário para o kernel.
+de dados para realizar a troca de informação do espaço de usuário para o kernel.
 Note que essa estrutura de dados nasce com o objetivo de simplificar as
 chamadas de função, unificar as diferentes propostas e a facilitar a
 comunicação.
@@ -599,8 +599,8 @@ Introduzimos nessa seção alguns dos possíveis padrões de utilização do
 \emph{bead}. Nosso objetivo é ilustrar como tal API pode levar benefícios para
 as aplicações, principalmente em termos de novos modelos de programação.
 Apresentamos alguns usos elementares, mas que servirão de apoio para outros
-padrões mais sofisticados. Além de mostrar o pseudocódigo também discutimos o
-potência uso de determinado padrão em aplicações reais\footnote{Vale observar
+padrões mais sofisticados. Além de mostrar o pseudocódigo, também discutimos o
+potencial uso de determinado padrão em aplicações reais\footnote{Vale observar
 que nem todos os padrões apresentado nesta seção tem aplicação direta nas
 aplicações atuais.}.
 
@@ -613,15 +613,15 @@ parâmetros passados para as funções. Dado que o \emph{bead} busca unificar as
 diversas propostas e ampliar a decomposição das abstrações de processos, faz-se
 necessário um mecanismo simplificado para ajustes de configuração. O
 Pseudocódigo~\ref{alg:exconfig} mostra a manipulação das operações
-\texttt{BEAD\_SET\_CONFIG} e \texttt{BEAD\_GET\_CONFIG}, essas tem por objetivo
+\texttt{BEAD\_SET\_CONFIG} e \texttt{BEAD\_GET\_CONFIG}, que tem por objetivo
 lidar com as diferentes opções de desacoplamentos do processo.
 
 \input{algorithm/ex_bead_config.tex}
 
 O Pseudocódigo~\ref{alg:exconfig} ilustra de forma geral o processo de
-utilização das operações de ajuste e recuperação da configuração. Repare que a
+utilização das operações de ajuste e recuperação da configuração. A
 estrutura \texttt{bead\_data} padroniza a comunicação entre o espaço de usuário
-e o Kernel. Vale acrescentar, que esse tipo de operação pode ser facilmente
+e o Kernel. Vale acrescentar que esse tipo de operação pode ser facilmente
 encapsulada e explorada em bibliotecas no espaço do usuário (e.g.,
 \texttt{libead}).
 
@@ -629,20 +629,20 @@ A operação \texttt{BEAD\_SET\_CONFIG}, recebe uma estrutura de dados do tipo
 \texttt{bead\_data}. Por sua vez, tal estrutura deve ser preenchida no espaço
 de usuário de forma a conter as propriedades de desacoplamento que o
 programador deseja explorar. Por exemplo, se o programador deseja utilizar
-recursos de virtualização e de desacoplamento da VAS ele pode preencher os
+recursos de virtualização e de desacoplamento da VAS, ele pode preencher os
 campos \texttt{VITUALIZATION\_FLAGS} e \texttt{VAS\_FLAGS} da estrutura
-\texttt{bead\_data}, para em seguida chamar a função \texttt{beadctl()}
+\texttt{bead\_data} para, em seguida, chamar a função \texttt{beadctl()},
 passando tal informação como parâmetro. A opção \texttt{BEAD\_SET\_CONFIG} é
-uma operação de baixo nível, que vai preencher estruturas internas do Kernel
-referentes aos processos. Note que essa função pode ser chamada a qualquer
+uma operação de baixo nível que vai preencher estruturas internas do Kernel
+referentes aos processos. Essa função pode ser chamada a qualquer
 momento durante a execução do processo tornando flexível o ajuste de algumas
 configurações.
 
 A operação \texttt{BEAD\_GET\_CONFIG} permite recuperar as configurações feitas
 nos processos. Se o programador não tiver feito nenhuma alteração, então o
 Kernel utiliza uma configuração padrão que é compatível com a abstração atual
-de processos\footnote{Isso permite manter a compatibilidade com as
-aplicações.}. Essa operação é de baixo nível e retorna uma estrutura de dados
+de processos -- isso permite manter a compatibilidade com as
+aplicações. Essa operação é de baixo nível e retorna uma estrutura de dados
 do tipo \texttt{bead\_data} preenchida pelo Kernel com as configurações atuais.
 
 \begin{figure}[!h]
@@ -652,13 +652,13 @@ do tipo \texttt{bead\_data} preenchida pelo Kernel com as configurações atuais
   \label{fig:decomposicao_conf}
 \end{figure}
 
-A Figura~\ref{fig:decomposicao_conf} da uma visão geral sobre os elementos
-afetados pelo padrão configuração, note que ele representa as fronteiras entre
+A Figura~\ref{fig:decomposicao_conf} fornece uma visão geral sobre os elementos
+afetados pelo padrão configuração. Ele representa as fronteiras entre
 os diversos componentes da abstração de processos. Esse padrão também pode ser
-expandido de tal forma a dar suporte a mecanismos sofisticados na qual a
-aplicação em espaço de usuário pode passar informações sobre como o \emph{bead}
+expandido para dar suporte a mecanismos sofisticados que permite a
+aplicação em espaço de usuário passar informações sobre como o \emph{bead}
 deve proceder em determinadas situações. Uma aplicação poderia fazer uso de
-algum padrão consolidado, por exemplo o \emph{BSD Packet Filter}~\citep{bpf}, e
+algum padrão consolidado, por exemplo, o \emph{BSD Packet Filter}~\citep{bpf}, e
 assim dizer para o núcleo do SO como agir de forma similar a como o
 \emph{Resource Container} sugere (Seção~\ref{sec:rc}).
 
@@ -670,7 +670,7 @@ fotografia), ela duplica as informações do processo de forma
 similar ao \texttt{fork()}. O \texttt{snapshot()} diferencia-se do
 \texttt{fork()} uma vez que ele não cria uma nova \emph{thread} e nem um novo PID
 (para mais detalhes, veja Seção~\ref{sec:lwc}). Inspirado por tal
-funcionalidade, o \emph{bead} busca oferecer esse recurso mas com a
+funcionalidade, o \emph{bead} busca oferecer esse recurso e, adicionalmente, a
 possibilidade de ter maior controle sobre a operação de fotografar o processo.
 O Pseudocódigo~\ref{alg:fotografia} ilustra o uso dessa operação.
 
@@ -679,46 +679,46 @@ O Pseudocódigo~\ref{alg:fotografia} ilustra o uso dessa operação.
 A Linha~\ref{line:fotografiaMAIN} do Pseudocódigo~\ref{alg:fotografia}
 representa o ponto de início de um programa qualquer. Como indicado no
 comentário, várias operações podem ser realizadas antes de tirar uma fotografia
-do estado do processo, i.e., o processo atinge um estado qualquer sem a
+do estado do processo, ou seja, o processo atinge um estado qualquer sem a
 influência do \emph{bead}. O programador deve decidir em qual momento da execução do
-processo ele quer tirar uma fotografia do estado, então ele da início a tal
+processo ele quer tirar uma fotografia do estado, então ele dá início a tal
 tarefa seguindo a semântica introduzida pelo \emph{bead}. Ainda na função
-\texttt{MAIN()}, repare que o desenvolvedor pode configurar detalhes da
+\texttt{MAIN()}, o desenvolvedor pode configurar detalhes da
 operação de fotografar o estado para que essa seja recursiva ou não\footnote{O
 programador pode definir quantas vezes ele quer repetir o processo de
 fotografar de forma similar a um \emph{loop}.}. A operação de fazer uma cópia
-do processo começa no momento que a função \texttt{context\_instance()} é
+do processo começa no momento em que a função \texttt{context\_instance()} é
 chamada.
 
 A função \texttt{context\_instance()} na
 Linha~\ref{line:fotografiaContextIntance} é responsável pela operação de criar
 e salvar a cópia do estado. Ela começa realizando uma chamada para a função
 \texttt{beadctl()} passando a solicitação da operação de
-\texttt{BEAD\_NEW\_CONTEXT\_INSTANCE}, no momento que essa chamada termina, uma
-cópia do estado atual do processo foi feita. Note que o valor do \texttt{id}
+\texttt{BEAD\_NEW\_CONTEXT\_INSTANCE}. No momento que essa chamada termina, uma
+cópia do estado atual do processo foi feita. Note que o atributo \texttt{id}
 pode assumir valores diferentes dependendo do contexto no qual o processo está
 executando. Se a \emph{thread} do processo estiver no processo pai (aquele que
 chamou \texttt{context\_instance()}) então o \texttt{id} será um identificador
 da fotografia do processo; do contrário, ele receberá -1. Na primeira execução
 a função vai retornar o \texttt{id} para a função \texttt{MAIN()} que por sua
-vez vai prosseguir com a sua execução normalmente. Repare que o \texttt{id} é
-armazenado em uma estrutura de dados interna para que seja simples recuperar
-essa informação em outras fotografias do processo. Quando a
+vez vai prosseguir com a sua execução normalmente. Observe que o \texttt{id} é
+armazenado em uma estrutura de dados interna para simplificar a recuperação
+dessa informação em outras fotografias do processo. Quando a
 Linha~\ref{line:fotografiaPosSwitch} for atingida, ocorrerá a troca do estado
 atual do processo para o estado anteriormente fotografado. Logo que a troca de
-estados acontecer, a Linha~\ref{line:fotografiaNewCtx} retornará -1 uma vez que
-a execução do processo acontecerá dentro do estado anterior; o código da
-Linha~\ref{line:fotografiaPosSwitch} em diante passa a executar.
+estados acontece, a Linha~\ref{line:fotografiaNewCtx} retorna -1, pois a
+execução do processo acontecerá dentro do estado anterior; o código da
+Linha~\ref{line:fotografiaPosSwitch} em diante dá seguimento a execução.
 
 A Linha~\ref{line:fotografiaCheck} ilustra como a troca de contexto pode ser
 feita de forma recursiva ou limitada por um determinado número de chamadas. Se
 as condições do \texttt{if} forem atendidas, então recupera-se o \texttt{id} do
-pai para em seguida remover as informações do estado por meio da função
+pai e, em seguida, remove-se as informações do estado por meio da função
 \texttt{close()}. Por fim a função \texttt{context\_instance()} é chamada
 recursivamente e uma nova fotografia do processo é tirada. Se a condição do
 \texttt{if} falhar, então a troca de contexto encerra retornando
-\texttt{NO\_SWITCH} para o espaço de usuário, por sua vez, a aplicação pode
-realizar o tramamento que julgar necessário com base no retorno.
+\texttt{NO\_SWITCH} para o espaço de usuário. A aplicação pode
+realizar o tratamento que julgar necessário com base no retorno.
 
 \begin{figure}[!h]
   \centering
@@ -738,16 +738,16 @@ várias vezes.
 Para ilustrar a utilização desse padrão em uma aplicação real, recorremos para
 o tratamento de requisições feito pelo servidor Apache Httpd (para mais
 detalhes vide Seção~\ref{sec:architecture}). Para cada requisição, o Apache
-precisa inicializar uma série de estruturas de dados para em seguida proceder
+precisa iniciar uma série de estruturas de dados e, em seguida, proceder
 com o tratamento da solicitação. Essa etapa inicial pode ser otimizada
-utilizando o padrão fotografia, bastaria que ao final do procedimento de
-inicialização o programador explicitamente tirasse uma foto do estado atual do
-processo. O Apache procederia normalmente com o tratando da requisição,
-contudo, quando a requisição finalizasse o processo faria uma troca para o
+utilizando o padrão fotografia. Para isso, bastaria que ao final do procedimento de
+iniciação o programador explicitamente tirasse uma foto do estado atual do
+processo. O Apache procederia normalmente com o tratamento da requisição,
+contudo, quando a requisição finalizasse o processo, faria uma troca para o
 contexto anteriormente criado e tiraria uma nova fotografia do estado. Além de
-evitar a repetição do trabalho de inicialização, esse procedimento pode ainda
+evitar a repetição do trabalho de iniciação, esse procedimento pode ainda
 melhorar o isolamento entre as requisições. Essa mesma ideia é expansível para
-aplicações menores que tem uma etapa de inicialização que pode ser reutilizada.
+aplicações menores que tem uma etapa de iniciação reutilizável.
 
 \subsubsection{Padrão Virtualização Controlada}
 
