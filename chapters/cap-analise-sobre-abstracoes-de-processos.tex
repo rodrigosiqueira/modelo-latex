@@ -275,15 +275,14 @@ elevar o grau de desacoplamento dentro das abstrações de processos.
 
 Para exemplificar a proposta de desacoplamento deste trabalho, faremos uma
 analogia com a evolução do modelo atômico. Começamos por um dos primeiros
-modelos atômicos aceito pela comunidade cientifica proposto por Dalton, esse
+modelos atômicos aceitos pela comunidade científica proposto por Dalton que
 afirmava que um átomo era uma esfera maciça e indivisível. Em seguida, Thomson
 propôs outro modelo no qual os átomos eram compostos por partículas positivas e
-negativas indicando a divisibilidade dos átomos.  Posteriormente, Rutherford
+negativas, o que indicava a divisibilidade dos átomos. Posteriormente, Rutherford
 refinou o modelo propondo um esquema em que o átomo possui um núcleo e os
 elétrons giram em torno desse núcleo formando um sistema semelhante ao modelo
-planetário. O modelo atômico continua evoluindo e se sofisticando cada vez
-mais, contudo a principal lição que tiramos disso para o nosso contexto é o
-constante refinamento do modelo e os avanços que veem junto com ele.
+planetário. O modelo atômico continua sendo evoluido e sofisticado, contudo a principal lição que tiramos disso para o nosso contexto é o
+constante refinamento do modelo e os avanços que vêm junto com ele.
 
 Seguindo a analogia do modelo atômico, podemos considerar que as abstrações de
 processos estão em um estágio equivalente ao modelo de Thomson. A abstração de
@@ -291,17 +290,17 @@ processo não é mais um bloco sólido e indivisível, essa possui um leve grau 
 desacoplamento uma vez que no passado notou-se a vantagem em se desacoplar o PC
 e a Stack possibilitando múltiplos fluxos de execução no mesmo processo
 (\emph{threads}). Seguindo esse raciocínio e buscando avançar o modelo atual,
-apresentamos o modelo \textbf{bead}\footnote{\emph{Bead} em português,
+apresentamos o modelo \textbf{bead}\footnote{\emph{Bead} em inglês,
 refere-se as pequenas bolas que compõem um colar ou pulseira. Normalmente,
 existe uma ampla variedade de tais objetos} que consiste em buscar um elevado
 grau de desacoplamento dos elementos da abstração de processos.
 
 Como apresentado na Seção \ref{sec:potenciais}, para que os desacoplamentos
 propostos nas pesquisas sejam absorvidos pelos SOs atuais é preciso considerar
-diversos aspectos. Em especial destacamos que a as abordagens que seguem uma
+diversos aspectos. Em especial, destacamos que as abordagens que seguem uma
 implementação leve e que atendem as propostas de desacoplamento destacadas na
-Tabela \ref{tab:desacoplamento_beneficio} são preferíveis. A tabela mostra as
-propostas de desacoplamento na vertical e os benefícios que essas podem trazer
+Tabela \ref{tab:desacoplamento_beneficio} são preferíveis. Essa tabela mostra as
+propostas de desacoplamento na vertical e os benefícios que elas podem trazer
 aos SOs. Por fim, utilizamos uma escala de zero a três \ding{52} que indica o
 quanto de benefício um determinado desacoplamento pode levar para uma área.
 
@@ -311,11 +310,11 @@ A Figura \ref{fig:decomposicao_proc} busca mostrar de forma visual o modelo de
 abstração de processos proposto por esse trabalho. Na parte central da figura
 temos os três elementos fundamentais para o uso dos processos: PC, Stack e IO
 context. Nas camadas mais externa temos a VAS, que é um elemento importante
-para que os processos em SOs de proposito geral funcionem de forma apropriada
+para que os processos em SOs de propósito geral funcionem de forma apropriada
 (dado a sua importância, esse ocupa boa parte da representação da abstração).
 Em seguida notamos diversos elementos que orbitam a abstração atual de
-processos e que podem ser vistos como elementos menos importantes para o
-correto funcionamento da abstração, mas que são fundamentais para a diversas
+processos. Eles podem ser vistos como elementos menos importantes para o
+correto funcionamento da abstração, mas são fundamentais para as diversas
 aplicações modernas.
 
 \begin{figure}[!h]
@@ -331,21 +330,21 @@ aplicações modernas.
 Em termos de API e implementação, queremos manter os critérios para adoção
 descritos na Seção \ref{sec:potenciais} e ao mesmo tempo fornecer uma API
 unificada que possa ser utilizada no espaço de usuário. Para que tal modelo
-possa ser implementado é preciso usar uma abordagem que caminha entre uma
-implementação estrutural leve e pesada. Implementação pesada, pois será
-necessário inserir código intermediários nas atuais abstrações de processo para
-que esses forneçam mecanismos externos para que extensões possam atuar sobre o
-núcleo do SO.  Note que tal abordagem visa manter a compatibilidade com as
-aplicações já existentes, não queremos forçar mudanças nas aplicações no espaço
-do usuário. Implementação leve, pois queremos o maior grau de desacoplamento
-possível e também facilitar futuras expansões no modelo.
+possa ser implementado, é preciso usar uma abordagem que caminha entre uma
+implementação estrutural leve e pesada. Implementação pesada significa que será
+necessário inserir códigos intermediários nas atuais abstrações de processo para
+que esses forneçam mecanismos externos e permitam as extensões atuarem sobre o
+núcleo do SO. Tal abordagem visa manter a compatibilidade com as
+aplicações já existentes sem forçar mudanças nas aplicações no espaço
+do usuário. Implementação leve é quando queremos o maior grau de desacoplamento
+possível como também facilidade para futuras expansões no modelo.
 
 Como mostrado no Capítulo \ref{cap:trabalhos-analisados}, cada proposta de
 extensão na abstração de processo sugere uma API para o seu contexto
 específico. Nesse sentido, buscamos aprender as técnicas utilizadas pelos
 trabalhos anteriores e combinamos as principais chamadas dentro do bead. A
 seguir apresentamos as operações fornecidas, uma breve descrição sobre o seu
-comportamento  e o trabalho na qual foi derivada.  Note que o conjunto dessas
+comportamento e o trabalho na qual foi derivada. Observe que o conjunto dessas
 operações pode ser abstraída para uma biblioteca no espaço do usuário e que a
 combinação das várias operações possibilita a criação de novos modelos de
 programação (discutiremos padrões de utilização na próxima seção). 
@@ -355,10 +354,9 @@ programação (discutiremos padrões de utilização na próxima seção).
 
 Essa operação atua diretamente nas configurações referentes as abstrações de
 processos. Ela espera que o programa indique explicitamente quais
-desacoplamentos utilizar, se nenhuma informação for passada assumi-se um
-conjunto de configurações padrão que é compatível com a maioria das aplicações
-atuais. Repare que as configurações do que sera desacoplado é feito por meio
-desse comando.
+desacoplamentos utilizar, se nenhuma informação for passada, assumi-se um
+conjunto de configurações padrão compatível com a maioria das aplicações
+atuais. As configurações do que sera desacoplado é feito por meio desse comando.
 
   \begin{itemize}
     \item \textbf{Parâmetros:}
@@ -406,17 +404,17 @@ Operação criada no contexto deste trabalho.
 
   \item [\texttt{BEAD\_NEW\_CONTEXT\_INSTANCE}:]
 
-Essa chamada comporta-se de forma similar ao \texttt{fork()}, uma vez que essa
-faz uma cópia idêntica dos elementos do processo pai. Essa diferencia-se da
+Essa chamada comporta-se de forma similar ao \texttt{fork()}, pois
+faz uma cópia idêntica dos elementos do processo pai, porém diferencia-se da
 chamada de sistema \texttt{fork()} uma vez que não criar uma nova \emph{thread} e
-compartilhar o mesmo PID do processo pai. Na prática essa função também pode
+compartilhar o mesmo PID do processo pai. Na prática, essa função também pode
 receber alguns parâmetros que alteram o seu comportamento padrão.
 
   \begin{itemize}
     \item \textbf{Retorno:}
 
 Se estiver no processo que invocou a operação, então um descritor do novo
-contexto é retornado. Do contrário, se estiver dentro de um contexto criado,
+contexto é retornado. Caso contrário, se estiver dentro de um contexto criado,
 retorna -1.
 
     \item \textbf{Referência:}
@@ -428,7 +426,7 @@ Chamada baseada no \texttt{lwCreate()} proposto pelo LwC.
   \item [\texttt{BEAD\_SWITCH}:]
 
 Dentre as operações mais comuns observada nos diversos trabalhos, destaca-se o
-mecanismo de troca de alguma propriedade dentro do processo. Nesse contexto a
+mecanismo de troca de alguma propriedade dentro do processo. Nesse contexto, a
 operação \texttt{BEAD\_SWITCH} unifica operações de mudanças dentro do
 processo. Destacam-se os casos da troca de contexto e de entrada em regiões
 mais seguras da memória. A operação pode espera um descritor que referencia uma
@@ -439,7 +437,7 @@ a troca da execução de uma área menos segura para outra mais segura por meio 
 operação \texttt{BEAD\_ENTER\_CONTEXT}.
 
   \begin{itemize}
-    \item \textbf{Parâmetros:}
+    \item \textbf{Parâmetros:} 
 
     \begin{itemize}
       \item \texttt{Descriptor}: Descritor do contexto alvo
@@ -458,9 +456,8 @@ Chamada baseada no \texttt{lwSwitch()} proposto pelo LwC.
   \item [\texttt{BEAD\_VIRTUALIZATION\_MODE}:]
 
 A chamada para essa operação faz com que o processo entre em modo de
-virtualização, i.e., faz uso dos recursos de virtualização disponíveis. Note
-que essa função pode ter o seu comportamento alterado via parâmetro ou via
-configurações externas. Dentre as possíveis configurações encontra-se a
+virtualização, i.e., faz uso dos recursos de virtualização disponíveis. Essa função pode ter o seu comportamento alterado via parâmetro ou via
+configurações externas. Dentre as possíveis configurações, encontra-se a
 possibilidade de restringir qual operação de virtualização deseja-se utilizar.
 
   \begin{itemize}
@@ -485,7 +482,7 @@ Chamada baseada no \texttt{dune\_entry()} do Dune.
 Essa operação faz com que a \emph{thread} em execução tenha associado a si um
 compartimento, no qual apenas ela tem acesso. Isso auxilia contra
 ataques intra-processos. Nenhuma outra \emph{thread} do processo tem acesso a qualquer
-dado do compartimento, o mesmo vale para os dados dentro do compartimento
+dado do compartimento e o mesmo vale para os dados dentro do compartimento
 (i.e., o compartimento é isolado). Devido ao isolamento oferecido por essa
 técnica, torna-se necessário uma função especial para realizar a alocação
 dentro do compartimento. Essa operação trabalha em conjunto com a operação
