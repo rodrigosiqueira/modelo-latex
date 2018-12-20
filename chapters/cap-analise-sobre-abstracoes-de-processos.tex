@@ -754,7 +754,7 @@ aplicações menores que tem uma etapa de iniciação reutilizável.
 O padrão virtualização controlada nasce do projeto Dune como uma especialização
 do modo de operação na qual o processo faz uso dos recursos de virtualização.
 Nesse contexto, quando um processo em execução entra em \emph{modo Dune}, ele
-irreversivelmente passa a executar utilizando os recursos de virtualização e
+irreversivelmente passa utilizar os recursos de virtualização em sua execução e
 não pode mais voltar ao seu estado normal (para mais detalhes,
 veja~\ref{sec:dune}). Motivado por tal funcionalidade e buscando elevar o grau
 de desacoplamento da virtualização, o \emph{bead} busca dar suporte para
@@ -765,28 +765,28 @@ utilização.
 \input{algorithm/virt_mode.tex}
 
 O Pseudocódigo~\ref{alg:virtMode} começa a execução na
-Linha~\ref{line:virtMAIN}. Como indicado no comentário logo após a função
+Linha~\ref{line:virtMAIN}. Como indicado no comentário, logo após a função
 \texttt{MAIN()}, notamos que a semântica do programa não sofre alteração. A
 Linha~\ref{line:virtModeCall} ilustra uma chamada para a função
-\texttt{virtualization\_mode()}, essa espera um ponteiro para uma função que
+\texttt{virtualization\_mode()} que espera por um ponteiro para uma função que
 será executada em modo de virtualização; se uma referência nula for passada no
 parâmetro significa que todo o processo vai executar em modo virtualização. Na
 Linha~\ref{line:exFuncHook} temos uma ilustração de como poderia ser o
 protótipo da função\footnote{Note que esse é apenas um exemplo para a
-demonstração de uso, em uma implementação real tal protótipo de função pode
+demonstração de uso. Em uma implementação real tal protótipo de função pode
 conter diversos parâmetros ou outra assinatura.}. Quando a função
 \texttt{virtualization\_mode()} começa a executar, a primeira tarefa dela
 consiste em configurar os elementos da virtualização como pode ser visto da
-Linha~\ref{line:confBegin} até a linha~\ref{line:confEnd} (seguindo o padrão
+Linha~\ref{line:confBegin} até a Linha~\ref{line:confEnd} (seguindo o padrão
 configuração). Os parâmetros de virtualização podem aceitar diversos argumentos
 permitindo o controle fino dos recursos de virtualização (não definimos esse
 nível de compartilhamento, pois pode haver diversas formas de implementar tal
 recurso); por padrão, vamos supor que o processo quer utilizar todos os
 recursos de virtualização disponíveis.
 
-Na Linha~\ref{line:instance} é feita uma cópia do estado atual do processo, se
-tudo ocorrer bem o \emph{bead} entra em modo de virtualização nas linhas
-subsequentes. Repare na Linha~\ref{line:funcParam} que é feito uma verificação
+Na Linha~\ref{line:instance} é feita uma cópia do estado atual do processo. Se
+tudo ocorrer bem, o \emph{bead} entra em modo de virtualização nas linhas
+subsequentes. Note que na Linha~\ref{line:funcParam} é realizada uma verificação
 no ponteiro da função passada por parâmetro, isso faz com que essa função
 assuma duas formas de execução diferente. Se um ponteiro para função for
 passado, ela executará em modo virtualização e ao final da execução ocorrerá um
@@ -806,23 +806,23 @@ virtualização (similar ao modo Dune).
 \end{figure}
 
 A Figura~\ref{fig:decomposicao_virt} mostra os elementos alvos para o
-desacoplamento das características de virtulização de um processo. Repare que o
+desacoplamento das características de virtulização de um processo. O
 padrão virtualização pode comporta-se como uma extensão do padrão fotografia
 (Seção~\ref{sec:fotografia}) ou simplesmente reagir de forma a executar durante
 todo o tempo em modo virtualização. Esse padrão pode ser utilizado em alguns
-contextos, dentre eles em ferramentas de depuração e interceptação de erros. Em
+contextos, dentre eles, em ferramentas de depuração e interceptação de erros. Em
 especial, aplicações como \emph{Garbage Collection (GC)} podem se beneficiar de
-tais recursos uma vez que é possível utilizar as funcionalidades fornecidas
+tais recursos, uma vez que é possível utilizar as funcionalidades fornecidas
 pela virtualização para otimizar tarefas. Os algoritmos de compactação de
 memória são potenciais alvos de otimização utilizando recursos de
 virtualização; a compactação adotada pelo GC pode fazer uso dos recursos de
 acesso direto as páginas fornecido pelos mecanismos de virtualização. Em poucas
-palavras, quando o GC compacta a memória ele precisa varrer todas as
+palavras, quando o GC compacta a memória, ele precisa varrer todas as
 referências usadas pelo programa em execução e atualizar os endereços para as
 novas posições pós compactação (Seção~\ref{sec:gc}). Utilizando mecanismos de
-virtualização é possível intervir diretamente nas referencias das aplicações
+virtualização é possível intervir diretamente nas referências das aplicações,
 mantendo o endereço virtual e alterando apenas o mapeamento para o endereço
-físico novo. Isso é possível uma vez que os recursos de virtualização permitem o
+físico novo. Isso é possível pois os recursos de virtualização permitem o
 acesso direto as suas páginas e assim o GC pode atuar diretamente sob tais
 valores. 
 
@@ -831,10 +831,10 @@ valores.
 Parte do padrão persistência nasce indiretamente da proposta do MVAS, na qual
 permite que um processo tenha múltiplas VASes que por sua vez persistem além do
 tempo de execução padrão do processo. Nesse contexto, o \emph{bead} fornece um
-mecanismo similar na qual o contexto do processo pode ser salvo somente
-para leitura e assim ser usado como base por outros processos do mesmo tipo. O
+mecanismo similar no qual o contexto do processo pode ser salvo somente
+para leitura e, assim, ser usado como base por outros processos do mesmo tipo. O
 Pseudocódigo~\ref{alg:persistencia} ilustra de maneira geral como esse
-padrão trabalha, por questão de simplicidade nos representamos duas execuções
+padrão trabalha. Por questão de simplicidade, nós representamos duas execuções
 diferentes de processos no mesmo pseudocódigo (ilustrado na
 Linha~\ref{line:persistenciaMain1} e \ref{line:persistenciaMain2}).
 
@@ -844,17 +844,17 @@ Na Linha~\ref{line:persistenciaMain1} do Pseudocódigo~\ref{alg:persistencia},
 temos o processo que criará um novo contexto persistente, isto é, o contexto do
 processo viverá além do tempo de execução do processo que o criou. O primeiro
 passo da função consiste em realizar a configuração sobre o contexto que será
-criado, por isso é preciso passar duas \emph{flags} especificas:
+criado, por isso é preciso passar duas \emph{flags} específicas:
 \texttt{SHARED} e \texttt{PERSISTENT}. A combinação dessas duas \emph{flags},
 faz com que o \emph{bead} crie um contexto persistente gerenciado pelo núcleo
 do SO que pode ser utilizado por outras aplicações. Idealmente, para que o
 padrão persistência funcione corretamente, o SO deve armazenar diversos
-metadados sobre os processos para garantir a consistência entre os processos.
+metadados sobre os processos a fim de garantir a consistência entre os processos.
 Na Linha~\ref{line:persistenciaCxtInstance}, notamos que foi passado uma
-variável \texttt{data} para a função \texttt{context\_instance()}, isso é feito
-uma vez que um identificador especial é criado e salvo em \texttt{data}. O
-processo pode passar o identificador da maneira que achar melhor, no exemplo,
-simplesmente salvamos em um arquivo.
+variável \texttt{data} para a função \texttt{context\_instance()}. Isso é feito
+uma vez que um identificador especial é criado e salvo em \texttt{data}. Dessa forma, o
+processo pode passar o identificador da maneira que achar melhor. No exemplo,
+simplesmente salvamos o identificador em um arquivo.
 
 Quando o novo processo indicado na Linha~\ref{line:persistenciaMain2} inicia,
 ele abre o arquivo contendo o identificador e recupera o valor. Em seguida, a
