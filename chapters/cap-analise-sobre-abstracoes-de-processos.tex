@@ -865,54 +865,51 @@ operação de troca de contexto é feita utilizando o valor carregado.
 O padrão de atualização em tempo real, ou simplesmente \emph{live-patch}, nasce
 da combinação da técnica de criação de contexto persistente e das ideias de
 desacoplamento da VAS. A ideia do \emph{live patching} já existe e consiste em
-aplicar patches sem desligar/reiniciar o sistema; o Kernel Linux já tem suporte
-a tal funcionalidade, mas o desafio de aplicar esse tipo de atualização em
+aplicar patches sem desligar/reiniciar o sistema; o Kernel Linux já suporta tal
+funcionalidade, mas empregar esse tipo de atualização em
 aplicações no espaço do usuário ainda é um desafio. Dado que o desacoplamento
 dos processos oferecem diversos recursos e novos modelos de programação,
 introduzimos uma possível alternativa para implementar \emph{live-patching} no
 espaço de usuário. Para isso, o \emph{bead} faz uso de algumas das ideias já
-apresentadas nessa subseção e em conjunto com o conceito de desacoplamento da
-VAS apresentado pelo SpaceJMP. Contudo, o \emph{bead} leva o nível de controle
-do desacoplamento da VAS para outro nível uma vez que permite o controle fino
-sobre cada elemento da VAS.
+apresentadas nessa subseção, em conjunto com o conceito de desacoplamento da
+VAS apresentado pelo SpaceJMP. Entretanto, o \emph{bead} leva a um nível mais avançado o controle
+do desacoplamento da VAS, pois permite o controle fino sobre cada um dos seus elementos.
 
 \input{algorithm/live_patch.tex}
 
 \subsubsection{Padrão Compartimento}
 %TODO: Atualizar o switch para ele aceitar os compartimentos. BEAD_CONTEXT_SWITCH -> BEAD_SWITCH
 
-O padrão Compartimento nasce dos conceitos apresentados pelo shred, por sua
-vez, esse busca apresentar uma técnica para evitar ataques intra-processos
+O padrão Compartimento nasce dos conceitos apresentados pelo shred que busca apresentar uma técnica para evitar ataques intra-processos
 baseado em um recurso de hardware subutilizado. Essa ideia é fundamentada em um
 novo recurso fornecido por várias CPUs que permite definir domínios de acesso
 dentro da memória do processo (Seção~\ref{sec:outros_mecanismos_memoria}). O
-principal objetivo do compartimento dentro do próprio processo, consiste em
+principal objetivo do compartimento dentro do próprio processo consiste em
 adicionar maior nível de isolamento e dificulta/impedir ataques que ocorram
 dentro do processo.
 
 \input{algorithm/compartimento.tex}
 
 O Pseudocódigo~\ref{alg:compartimento} ilustra como esse padrão se comporta. O
-exemplo começa na Linha~\ref{line:compartimentoMAIN}, note que a semântica do
+exemplo começa na Linha~\ref{line:compartimentoMAIN}, onde a semântica do
 código original não sofre alteração. Em um determinado trecho de uma aplicação
 pode ser necessário executar uma operação sobre dados sensíveis (e.g., senhas),
 portanto, é desejável que o acesso a tal informação seja o mais restrito
 possível. Nesse contexto, a Linha~\ref{line:compartimentoEnter} ilustra a
 operação \texttt{enter\_compartment()} que é responsável por mudar o fluxo de
-execução do processo para o compartimento. Na
+execução do processo para o compartimento. Em seguida, na
 Linha~\ref{line:compartimentoConfig} podemos acompanhar o processo de
-configuração necessário para criar o compartimento. A Seção~\ref{sec:api}
-introduziu a operação \texttt{BEAD\_ENTER\_COMPARTMENT}, note que essa foi
-utilizado no processo de configurar compartimento e que a operação de troca foi
-utilizada para entra em tal modo (repare, que esse é um uso diferente da
-operação de troca). Se tudo ocorrer bem, o processo passa a executar dentro de
-um compartimento isolado das demais \emph{threads}.
+configuração necessário para criar o compartimento. Se tudo ocorrer bem, o processo passa a executar dentro de
+um compartimento isolado das demais \emph{threads}. 
 
-Dentro do compartimento, não é possível utilizar as operações de alocação
-padrão uma vez que é preciso utilizar o recurso de controle de acesso fornecido
+A operação \texttt{BEAD\_ENTER\_COMPARTMENT} foi introduzida na Seção~\ref{sec:api}. Ela foi
+utilizada no processo de configurar compartimento e a operação de troca foi
+utilizada para entra em tal modo (vale destacar que esse é um uso diferente da
+operação de troca). Dentro do compartimento, não é possível utilizar as operações de alocação
+padrão, uma vez que é preciso utilizar o recurso de controle de acesso fornecido
 pelo hardware. Nesse sentido, o \emph{bead} fornece a operação
-\texttt{BEAD\_ALLOC\_COMPARTMENT\_MEMORY} responsável por alocar memória de tal
-forma que qualquer \emph{thread} externa tem o seu acesso proibido a região de memória
+\texttt{BEAD\_ALLOC\_COMPARTMENT\_MEMORY}, responsável por alocar memória possibilitando
+a qualquer \emph{thread} externa ter o seu acesso proibido a região de memória
 alocada. A Linha~\ref{line:compartimentoAlloc} é responsável por alocar memória
 dentro do próprio compartimento. Por fim, para remover a memória alocado basta
 chamar a função \texttt{BEAD\_FREE\_COMPARTMENT\_MEMORY}.
