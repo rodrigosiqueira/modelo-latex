@@ -137,128 +137,127 @@ pesada.
 
 \input{tables/potencial_adocao}
 
-\section{Extraído Conceitos Derivados das Pesquisas em Abstrações de Processos}
+\section{Extração de Conceitos Derivados das Pesquisas em Abstrações de Processos}
 
 Todas as pesquisas apresentadas no Capítulo \ref{cap:trabalhos-analisados}
-representam o estado da arte no que se refere as abstrações de processos,
-infelizmente nenhuma delas encontra-se no código principal de qualquer SO de
-uso cotidiano. Parte desse problema vem dos fatos apresentados na Seção
+configuram o estado da arte no que se refere as abstrações de processos.
+Infelizmente, nenhuma delas encontra-se no código principal de qualquer SO de
+uso cotidiano. Parte desse problema vem dos fatos apresentados anteriormente na Seção
 \ref{sec:potenciais}, contudo outros aspectos que contribuem para que tais
 propostas não estejam presentes nos SO modernos vem da falta de unificação e
 sistematização de tais ideias. Ao analisar cada uma das propostas, notamos que
 todas elas propõem direta ou indiretamente algum nível de desacoplamento entre
 os elementos presentes no SO. Tal observação nasce da abordagem radical tomada
 pelos criadores do Exokernel, que levaram o nível de desacoplamento do SO ao
-extremo. Apesar do Exokernel ser um sistema difícil de ser adotado em termos
-práticos, ele nos alerta sobre as vantagens em se reduzir as dependências
+extremo. Apesar do Exokernel ser um sistema de difícil adoção em termos
+práticos, ele nos alerta sobre as vantagens da redução de dependências
 entre os elementos do SO e as possibilidades que isso pode levar ao espaço de
-usuário. Nesse sentido revisitamos de forma breve alguns dos trabalhos
+usuário. Tendo isso mente, revisitamos de forma breve alguns dos trabalhos
 apresentados no Capítulo \ref{cap:trabalhos-analisados} sob a ótica do
 desacoplamento e seus potenciais benefícios.
 
-O projeto Dune traz uma nova perspectiva de uso dos recursos de virtualização
-disponibilizados pelas CPUs modernas, consequentemente esse traz dois
+Iniciamos analisando o projeto Dune. Este projeto traz uma nova perspectiva de uso dos recursos de virtualização
+disponibilizados pelas CPUs modernas que, consequentemente, traz dois
 benefícios diretos: otimização e flexibilidade. Ao utilizar os recursos de
 virtualização para acelerar certas tarefas, o Dune promoveu avanços em um setor
 difícil de ser otimizado. Além disso, tais melhorias facilitam certas
 implementações no espaço de usuário, pois removem a necessidade de códigos com
 técnicas avançadas que visam trazer melhorias de desempenho; em outras
 palavras, a proposta do Dune pode melhorar a legibilidade de alguns códigos.
-Todos esses avanços são factíveis graças ao \textbf{desacoplamento da
-virtualização}, que por sua vez possibilita entregar melhorias de desempenho no
+Os avanços citados foram factíveis graças ao \textbf{desacoplamento da
+virtualização}, que possibilita entregar melhorias de desempenho no
 espaço de usuário de maneira relativamente simples (ponto de vista da
 aplicação) e também fornece ganhos de segurança.
 
-Já o projeto Nooks se distância um pouco da abstração de processos uma vez que
+Já o projeto Nooks se distancia um pouco da abstração de processos uma vez que
 ele busca tornar o núcleo do SO mais resiliente. Contudo, ao criar mecanismos
 que reagem de forma a reduzir as chances do sistema quebrar, tal proposta
 apresenta o \textbf{desacoplamento dos recursos} de forma a fornecer mecanismos
 para que os processos possam se recuperar ou tomar ações em casos de falhas.
-Adicionalmente, tal técnica também cria um interessante mecanismo de
-comunicação entre as extensões do Kernel e os seus drivers permitindo que o SO
-se defenda de problemas que ocorram com um código que foi acoplado ao seu
+Adicionalmente, essa técnica cria um interessante mecanismo de
+comunicação entre as extensões do Kernel e os seus drivers, permitindo que o SO
+se ``defenda'' de problemas que ocorram com um código que foi acoplado ao seu
 núcleo.
 
 De forma mais direta e sistemática o \textit{Resource Container} sugere o
 controle fino do gerenciamento de recursos e consequentemente o desacoplamento
-de tal elemento. De certa maneira, essa proposta já pode ser vista incorporado
-nos SOs atuais, na forma dos containers no Linux, mais especificamente, como o
-\textit{cgroups}. A principal contribuição do trabalho, vem da sua capacidade
+de tal elemento. De certa maneira, essa proposta já pode ser encontrada incorporada
+nos SOs atuais, sob a forma de containers no Linux, mais especificamente, como o
+\textit{cgroups}. A principal contribuição do trabalho vem da sua capacidade
 de permitir que a própria aplicação tome conta da sua execução. Ainda que parte
-das ideias apresentada por essa pesquisa estejam presentes em alguns SOs, as
+das ideias apresentada por esse trabalho estejam presentes em alguns SOs, as
 implementações ainda são relativamente reduzidas em termos do escopo
 apresentado na pesquisa.
 
 Uma abordagem alternativa que visa atender uma nova geração de computadores com
 memórias não voláteis na ordem dos petabytes é o SpaceJMP/MVAS.  Os autores
 sugerem \textbf{desacoplar o VAS dos processos} e permitir que esses tenham
-múltiplas VAS e de forma reativa, a aplicação torne-se capaz de mudar a VAS
+múltiplas VAS e, de forma reativa, a aplicação torne-se capaz de mudar a VAS
 atual. Essa abordagem faz com que um processo consiga acessar regiões muito
 maiores do que aquelas garantidas pelo tamanho de uma VAS. Indiretamente
 desacoplar uma VAS adiciona a possibilidade de criar processos persistentes,
 isto é, que vivem mesmo após o boot ou mesmo após um problema. Desacoplar a VAS
 pode trazer benefícios para aplicações de \textit{checkpoints}, melhorar o
-gerenciamento de bibliotecas, elevar o nível de isolamento e compartilhamento.
+gerenciamento de bibliotecas, e elevar o nível de isolamento e compartilhamento.
 
 O Light-weight Context (lwC) indiretamente propõe o total
 \textbf{desacoplamento do PC}; vale observar que os autores explicitam outros
-desacoplamentos, contudo, para esse trabalho acredita-se que o desacoplamento
+desacoplamentos, contudo, para esse trabalho, acredita-se que o desacoplamento
 do PC é o que melhor descreve as inovações propostas. Desacoplar o PC leva uma
-infinidade de possibilidade para o espaço de usuário uma vez que o processo
-pode fazer operações semelhantes ao do escalonador, sem grandes custos e dentro
+infinidade de possibilidade para o espaço de usuário, uma vez que o processo
+pode fazer operações semelhantes ao do escalonador sem grandes custos e dentro
 do mesmo intervalo de execução do processo. O lwC tem como principal
 característica um robusto e interessante modelo de programação que permite
-aplicações no espaço de usuário utilizarem novos paradigmas de desenvolvimento.
-Isso cria diversas oportunidades para criar novos tipos de manipulações, tal
+às aplicações no espaço de usuário utilizarem novos paradigmas de desenvolvimento.
+Isso cria diversas oportunidades para desenvolver novos tipos de manipulações, tal
 como criar \emph{snapshot} do estado atual do processo e depois reverter o
 processo para o estado anterior. Outra possibilidade é mudar para um novo
 contexto de processo com acesso restrito para alguma região da memória antes da
-execução de um código sensível. Isso não é como utilizar \emph{threads} ou processos
-independentes, uma vez que não há dependência do escalonador para mudar o
-contexto do processo (que é razoavelmente caro) a própria aplicação por si
-só pode escolher quando e qual contexto manipular. Assim fornecendo um
+execução de um código sensível\todo{ para mudar... para alguma... não entendi essa frase}. Ao contrário do que parece, isso não é como utilizar threads ou processos
+independentes. Por não haver dependência do escalonador para mudar o
+contexto do processo (que é razoavelmente caro), a própria aplicação por si
+só pode escolher quando e qual contexto manipular e fornecer assim um
 controle fino para os programadores (que pode melhorar o desempenho e a
 segurança).
 
-Vários dos trabalhos analisados, tem preocupação com o gerenciamento e acesso a
+De modo geral, percebemos que vários dos trabalhos analisados têm preocupação com o gerenciamento e acesso a
 memória; em especial, vários deles questionam o tratamento dado a memória pelos
 SOs atuais.  A abordagem de utilizar um único espaço de endereçamento por
-processo tem se provado eficiente ao longo dos anos, contudo, apesar do seu
-sucesso, essa não é uma abordagem a prova de falhas e ainda precisa receber
-melhorias.  Primeiramente, a abordagem de isolar os processos por meio do
+processo tem se provado eficiente ao longo dos anos, porém, apesar do seu
+sucesso, essa não é uma abordagem a prova de falhas e ainda carece de
+melhorias. Primeiramente, a abordagem de isolar os processos por meio do
 espaço de endereçamento linear melhora a confiabilidade do sistema e a
-segurança.  Contudo, um processo não tem uma forma de restringir o seu próprio
-acesso ao seu segmento de memória que pode ser útil para reduzir os riscos de
+segurança. Entretanto, um processo não tem uma forma de restringir o seu próprio
+acesso ao seu segmento de memória, o que pode ser útil para reduzir os riscos de
 falhas de segurança ocasionados por binários de terceiros. Em segundo lugar, o
 controle do compartilhamento de memória acontece no tamanho de uma página e
 cria a oportunidade para explorar falhas, tais quais \emph{buffer e stack
-overflow} ou mesmo o compartilhamento de bibliotecas comprometidas. Os
-trabalhos Wedge, shreds e mondrix/mondrian buscam trazer melhorias nessa área.
+overflow} ou mesmo o compartilhamento de bibliotecas comprometidas. Com essa preocupação, os
+trabalhos Wedge, shreds e mondrix/mondrian buscam trazer melhorias para estas fragilidades.
 
-Observando as abstrações de processos da perspectiva da segurança, o projeto
+Analisando as abstrações de processos da perspectiva da segurança, o projeto
 Wedge retoma uma antiga premissa que defende o princípio do menor privilégio.
-Esse justifica que precisamos mudar a lógica atual de conceder permissão por
+Ela afirma que precisamos mudar a lógica atual de conceder permissão por
 padrão para uma ideia de negar permissão por padrão. Essa mudança de paradigma
-torna possível, supostamente, reduzir as chances de ataques e vazamento de
-dados uma vez que o programador precisa indicar explicitamente o que será
+torna supostamente possível a redução das chances de ataques e vazamento de
+dados, uma vez que o programador precisa indicar explicitamente o que será
 exposto. Tal pesquisa, indiretamente propõe o \textbf{desacoplamento dos
-privilégios} da abstração de processos . Além disso, ela mantém a
-compatibilidade entre aplicações novas e legadas uma vez que é uma opção que o
-programador pode optar por usar ou não.
+privilégios} da abstração de processos. Além disso, ela mantém a
+compatibilidade entre aplicações novas e legadas, sendo uma opção de uso ao programador.
 
 Entrando um pouco mais nas questões de proteção e controle-fino da memória,
 destacamos o shreds e o mondrix/mondrian. O shreds nasce com a ideia de evitar
-ataques conhecidos como abusos intra-processos de conteúdo da memória.  Os
-autores defendem que o acesso a certas regiões da memória do processo
-executando em espaço de usuário merecem proteção especial. Em tal proposta, os
+ataques conhecidos como abusos intra-processos de conteúdo da memória. Os
+autores defendem que o acesso a certas regiões da memória de um processo
+que esteja executando em espaço de usuário merecem proteção especial. Em tal proposta, os
 autores utilizaram um recurso especifico dos processadores ARM em conjunto com
 um mecanismo de gerenciamento da região de memória (Seção
 \ref{sec:outros_mecanismos_memoria}). Essa proposta entrega mais flexibilidade,
 segurança, e controle ao acesso da memória.
 
-Na mesma linha de fornecer controle fino sobre a memoria, os autores do Mondrix
-propuseram de forma mais radical um mecanismo de controle do acesso a memória
-ao nível das palavras de dados. Para isso, os autores sugeriram alterações no
+Na mesma linha de fornecer controle fino sobre a memória, os autores do Mondrix
+propuseram, de forma mais radical, um mecanismo de controle do acesso a memória
+ao nível das palavras de dados. Para isso, os autores sugerem alterações no
 hardware e no SO de forma a controlar todo acesso com a menor granularidade
 possível. Indiretamente, o shreds e o mondrix são propostas de
 \textbf{desacoplamento do controle de memória}.
