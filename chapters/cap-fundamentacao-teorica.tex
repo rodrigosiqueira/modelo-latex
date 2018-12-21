@@ -100,7 +100,7 @@ executar, ele insere o novo processo na fila do escalonador.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{stack_frame}
-  \caption{Alocação e desalocação de Stack frames considerando o padrão CDECL~\citep{patterson}}
+	\caption[Alocação e desalocação de Stack frames considerando o padrão CDECL]{Alocação e desalocação de Stack frames considerando o padrão CDECL~\citep{patterson}}
   \label{fig:stack_frames} 
 \end{figure}
 
@@ -162,7 +162,7 @@ processo com uma \emph{thread} e outro com múltiplas \emph{threads}.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=.7\textwidth]{process_and_threads}
-  \caption{Única thread e multi-thread. Note o isolamento da \emph{stack} e do registrador (PC) \citep{silberschatz}}
+	\caption[Única thread e multi-thread.]{Única thread e multi-thread. Note o isolamento da \emph{stack} e do PC~\citep{silberschatz}}
   \label{fig:single_thread_multi_thread}
 \end{figure}
 
@@ -228,7 +228,7 @@ nas próximas seções).
 \begin{figure}[!h]
   \centering
   \includegraphics[width=.80\textwidth]{theads_and_stack} 
-  \caption{Um processo com uma thread (esquerda) e um processo com três threads (direita)}
+	\caption[Um processo com uma thread e um processo com três threads]{Um processo com uma thread (esquerda) e um processo com três threads (direita)}
   \label{fig:stack_threads} 
 \end{figure}
 
@@ -344,7 +344,7 @@ veja a Figura~\ref{fig:paginacao}.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.8\textwidth]{paginacao} 
-  \caption{Os elementos básicos presentes no modelo de paginação. Note que a busca na TLB e na tabela de página ocorre em paralelo}
+	\caption[Os elementos básicos presentes no modelo de paginação.]{Os elementos básicos presentes no modelo de paginação. Note que a busca na TLB e na tabela de página ocorre em paralelo}
   \label{fig:paginacao}
 \end{figure}
 
@@ -381,7 +381,7 @@ compartilham os bits User/Root e Leitura/Escrita.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.8\textwidth]{paginacao_passos} 
-  \caption{Passos do acesso a memória usando o modelo de paginação. A figura ilustra o caso simples na qual pelo menos dois acessos a memória são necessários}
+	\caption[Passos do acesso a memória usando o modelo de paginação.]{Passos do acesso a memória usando o modelo de paginação. A figura ilustra o caso simples na qual pelo menos dois acessos a memória são necessários}
   \label{fig:passos_paginacao}
 \end{figure}
 
@@ -438,7 +438,7 @@ usado em conjunto com o \emph{offset} para gerar o endereço físico.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=.80\textwidth]{segmentacao} 
-  \caption{Comportamento do modelo de segmentação. Note que a tabela de segmento é acessada para obter o valor base e esse é sempre verificado para evitar acessos indevidos a outras regiões da memória}
+	\caption[Comportamento do modelo de segmentação.]{Comportamento do modelo de segmentação. Note que a tabela de segmento é acessada para obter o valor base e esse é sempre verificado para evitar acessos indevidos a outras regiões da memória}
   \label{fig:segmentacao} 
 \end{figure}
 
@@ -528,7 +528,7 @@ substituídas mas o kernel permanece constante.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{segmento_troca_contexto}
-  \caption{VAS durante a troca de contexto~\citep{kernel_manage_mem}}
+	\caption[VAS durante a troca de contexto]{VAS durante a troca de contexto~\citep{kernel_manage_mem}}
   \label{fig:vas_contexto}
 \end{figure}
 
@@ -585,7 +585,7 @@ das variáveis estáticas (i.e., pode ser mapeado do código fonte). A mesma ide
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{kernel_manages_memory}
-  \caption{Visão interna do gerenciamento da memória~\citep{kernel_manage_mem}}
+	\caption[Visão interna do gerenciamento da memória]{Visão interna do gerenciamento da memória~\citep{kernel_manage_mem}}
   \label{fig:kernel_manages_memory}
 \end{figure}
 
@@ -625,7 +625,7 @@ tabela de páginas, orquestra o gerenciamento do programa na memória no Linux.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{malloc}
-  \caption{Passos envolvidos na alocação de memória com \texttt{malloc()} (imagem baseada em \cite{anatomy_program_mem})}
+  \caption[Passos envolvidos na alocação de memória com \texttt{malloc()}]{Passos envolvidos na alocação de memória com \texttt{malloc()} (imagem baseada em \cite{anatomy_program_mem})}
   \label{fig:malloc_linux}
 \end{figure}
 

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="3694.2468mm"
+   height="1230.0527mm"
+   viewBox="0 0 3694.2468 1230.0527"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="decomposicao_virt_controlada.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.072607237"
+     inkscape:cx="7673.2006"
+     inkscape:cy="3784.5275"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showborder="false"
+     showguides="true"
+     borderlayer="false"
+     inkscape:object-paths="false"
+     inkscape:object-nodes="false"
+     inkscape:guide-bbox="true"
+     inkscape:showpageshadow="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid902"
+       originx="1024.6585"
+       originy="394.21455" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(1024.6585,538.83821)">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:5.10525274;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525288, 5.10525288;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect888"
+       width="3689.1416"
+       height="1224.9475"
+       x="-1022.1059"
+       y="-536.28558"
+       ry="10.342526"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#a5957b;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 297.48009,104.56623 h 93.34211 c 0.003,-0.62579 0.0238,-1.24737 0.0238,-1.87379 0,-146.46382 -79.166,-277.74501 -194.64564,-351.04796 l -49.43751,75.0329 c 87.69753,56.83261 150.74105,163.289055 150.74105,276.01506 0,0.62653 -0.0202,1.24813 -0.0238,1.87379 z"
+       id="path1275"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsccsc"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       cx="22.775221"
+       cy="92.023003"
+       r="231.39624"
+       id="path1012"
+       style="opacity:1;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1.05833328;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       d=""
+       inkscape:connector-curvature="0" />
+    <path
+       cx="22.775221"
+       cy="92.023003"
+       r="231.39624"
+       id="path1014"
+       style="opacity:1;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1.05833328;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       d=""
+       inkscape:connector-curvature="0" />
+    <path
+       cx="22.775221"
+       cy="92.023003"
+       r="194.04488"
+       id="path1022"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#ff9955;stroke-width:26.45833397;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       d=""
+       inkscape:connector-curvature="0" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#a7b3cd;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m -17.577363,-332.82056 c -100.758277,-0.97754 -201.316757,32.86464 -282.529487,100.23895 l 76.45468,92.15646 c 105.00039,-87.10859 253.382457,-97.06951 369.08197,-24.77423 l 63.45061,-101.54359 C 139.27862,-310.2339 60.790197,-332.06025 -17.577363,-332.82056 Z"
+       id="circle1034"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#008066;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:5.29199934;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m -443.79175,27.694552 c -22.80543,128.269058 14.0394,260.052858 100.06216,357.895218 86.02279,97.84234 212.00358,151.25457 342.1368567,145.06025 l -5.01,-105.25249 C -104.79973,430.0717 -199.6796,389.84254 -264.59134,316.01189 -329.50309,242.18125 -357.25416,142.93027 -340.04545,46.139988 Z"
+       id="circle1038"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 298.71396,102.69256 c 0,172.035 -134.3237,312.57522 -306.1829233,320.35024 l 4.97818,110.04681 C 227.08309,522.70353 408.87745,332.50124 408.87745,102.69256 Z"
+       id="circle1040"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       style="opacity:1;fill:#376dff;fill-opacity:1;stroke:#ffffff;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -21.962063,-222.19122 a 324.88288,324.88288 0 0 0 -324.882487,324.88301 324.88288,324.88288 0 0 0 324.882487,324.883 324.88288,324.88288 0 0 0 324.883023,-324.883 324.88288,324.88288 0 0 0 -324.883023,-324.88301 z m 0,118.739 a 206.14396,206.14396 0 0 1 206.144013,206.14401 206.14396,206.14396 0 0 1 -206.144013,206.144 206.14396,206.14396 0 0 1 -206.143997,-206.144 206.14396,206.14396 0 0 1 206.143997,-206.14401 z"
+       id="circle1046"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#eba804;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m -307.53877,-232.58869 c -78.06278,66.49003 -130.49308,158.171065 -148.21405,259.169516 l 127.37498,22.348783 c 12.52147,-71.364511 49.53547,-136.090731 104.69385,-183.071929 z"
+       id="path1052"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:71.43750763;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m -545.75007,-203.32402 -5.00023,8.65994 195.40617,112.818947 c -9.57265,17.293886 -17.80312,35.338792 -24.60109,53.978616 a 23.94807,23.94807 0 0 0 -2.2996,-0.115237 23.94807,23.94807 0 0 0 -23.94789,23.9484084 23.94807,23.94807 0 0 0 23.94789,23.9478916 23.94807,23.94807 0 0 0 23.94789,-23.9478916 23.94807,23.94807 0 0 0 -11.60238,-20.4866044 c 14.82802,-40.557561 36.63405,-78.21156 64.4312,-111.25832 a 23.94807,23.94807 0 0 0 11.64011,3.02875 23.94807,23.94807 0 0 0 23.94791,-23.94841 23.94807,23.94807 0 0 0 -23.94791,-23.94789 23.94807,23.94807 0 0 0 -23.94789,23.94789 23.94807,23.94807 0 0 0 4.43696,13.83534 c -13.82387,16.40355 -26.21294,33.91295 -37.04942,52.3322 z"
+       id="circle1168"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:connector-curvature="0" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffcc00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10.58333206;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m -394.32469,129.14147 a 23.94807,23.94807 0 0 0 -23.94789,23.94841 23.94807,23.94807 0 0 0 22.56915,23.87916 c 12.41901,62.55429 40.10906,119.91793 79.39825,167.70655 l -160.18711,160.18764 7.06986,7.07038 159.59129,-159.5913 c 39.89178,46.00139 90.82609,82.49748 149.29993,105.31089 a 23.94807,23.94807 0 0 0 -0.18603,2.82824 23.94807,23.94807 0 0 0 23.94839,23.94791 23.94807,23.94807 0 0 0 23.94789,-23.94791 23.94807,23.94807 0 0 0 -23.94789,-23.94789 23.94807,23.94807 0 0 0 -20.20859,11.14867 C -274.47797,401.72925 -360.58193,298.96604 -385.25805,175.23633 a 23.94807,23.94807 0 0 0 14.88125,-22.14645 23.94807,23.94807 0 0 0 -23.94789,-23.94841 z"
+       id="path1166"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:connector-curvature="0" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffcc00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10.58333206;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 194.13912,-81.294779 c -13.22621,1.01e-4 -23.94808,10.722195 -23.94789,23.948409 1e-4,13.226012 10.72187,23.947791 23.94789,23.947892 2.97492,-1.83e-4 5.92378,-0.554659 8.69558,-1.635043 66.15037,107.681335 46.22137,247.739971 -47.34438,332.694421 -4.17288,-3.20963 -9.28712,-4.95482 -14.55158,-4.96559 -13.22602,10e-5 -23.94778,10.72187 -23.94789,23.94789 -1.8e-4,13.22623 10.72166,23.94831 23.94789,23.94841 13.22641,1.9e-4 23.9486,-10.722 23.94841,-23.94841 -1e-4,-3.77518 -0.89273,-7.49684 -2.605,-10.86136 49.17805,-44.52621 78.86092,-103.72928 87.37968,-165.85601 H 461.7311 v -9.99991 H 250.8478 c 5.82217,-58.152794 -6.81158,-118.294374 -39.25652,-170.916699 4.16271,-4.429802 6.48509,-10.27684 6.49625,-16.355591 1.8e-4,-13.226421 -10.722,-23.948596 -23.94841,-23.948409 z"
+       id="circle878"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccc"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       style="opacity:1;fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:71.43750763;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 337.54018,188.07069 a 23.94807,23.94807 0 0 0 -23.94789,23.94789 23.94807,23.94807 0 0 0 11.7104,20.5543 c -35.54182,95.0574 -108.56339,171.43168 -201.9298,211.20364 a 23.94807,23.94807 0 0 0 -19.99205,-10.79675 23.94807,23.94807 0 0 0 -23.948413,23.94842 23.94807,23.94807 0 0 0 23.948413,23.94788 23.94807,23.94807 0 0 0 23.94789,-23.94788 23.94807,23.94807 0 0 0 -0.33589,-3.82355 c 48.5652,-20.63954 91.78205,-50.9225 127.36534,-88.45714 l 159.67656,159.67657 7.07243,-7.07191 L 261.1495,357.29447 c 31.63712,-35.17821 56.76257,-76.29462 73.62909,-121.51765 a 23.94807,23.94807 0 0 0 2.76159,0.18965 23.94807,23.94807 0 0 0 23.94789,-23.94789 23.94807,23.94807 0 0 0 -23.94789,-23.94789 z"
+       id="circle894"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:connector-curvature="0" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffcc00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m -35.199333,-439.45868 v 161.62655 c -56.22663,1.95691 -111.966827,16.36074 -162.958007,42.98497 -4.54009,-5.15852 -11.07742,-8.11814 -17.94931,-8.12612 -13.2262,-1.8e-4 -23.94828,10.72168 -23.94839,23.94789 -1.9e-4,13.22641 10.72197,23.94859 23.94839,23.94841 13.22623,-9e-5 23.9481,-10.72218 23.94791,-23.94841 0,-2.41026 -0.36507,-4.80663 -1.08108,-7.10809 94.94739,-49.47088 206.741732,-55.46142 306.43297,-16.4207 -0.3057,1.51939 -0.46318,3.06487 -0.47024,4.6147 1.1e-4,13.22601 10.72187,23.94779 23.94789,23.94789 13.22601,-1e-4 23.94778,-10.72188 23.94788,-23.94789 1.9e-4,-13.22621 -10.72168,-23.94831 -23.94788,-23.94841 -7.76918,0.0119 -15.04979,3.79185 -19.52956,10.13944 -43.958483,-17.25718 -90.218603,-25.9838 -136.422684,-26.3064 -1.972787,-0.0138 -3.945573,-0.0101 -5.917989,0.007 v -161.41054 z"
+       id="path853"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccc"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffcc00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 225.5987,-203.93587 a 23.94807,23.94807 0 0 0 -23.9479,23.94789 23.94807,23.94807 0 0 0 23.9479,23.94789 23.94807,23.94807 0 0 0 13.70613,-4.32221 c 54.92955,54.55276 91.41092,124.956373 104.30475,201.291584 A 23.94807,23.94807 0 0 0 327.79039,63.423519 23.94807,23.94807 0 0 0 351.7388,87.371927 23.94807,23.94807 0 0 0 375.68669,63.423519 23.94807,23.94807 0 0 0 353.51853,39.545905 C 348.24535,8.1846834 339.09427,-22.203858 326.40546,-50.969497 L 523.0131,-164.4804 l -4.9997,-8.662 -195.77978,113.03496 c -18.81508,-39.77845 -44.49714,-76.23518 -76.11525,-107.58258 a 23.94807,23.94807 0 0 0 3.42822,-12.29796 23.94807,23.94807 0 0 0 -23.94789,-23.94789 z"
+       id="circle869"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:connector-curvature="0" />
+    <text
+       id="text900"
+       y="163.56134"
+       x="460.07614"
+       style="font-style:normal;font-weight:normal;font-size:19.1584568px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';stroke-width:0.26458332"
+         y="163.56134"
+         x="460.07614"
+         sodipodi:role="line"
+         id="tspan902">VAS</tspan></text>
+    <text
+       id="text908"
+       y="476.70419"
+       x="-732.42822"
+       style="font-style:normal;font-weight:normal;font-size:19.1584568px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="476.70419"
+         x="-732.42822"
+         sodipodi:role="line"
+         id="tspan910">Isolamento</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="591.65491"
+         x="-732.42822"
+         sodipodi:role="line"
+         id="tspan894">da memória</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:19.1584568px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-619.75873"
+       y="-174.61537"
+       id="text916"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"><tspan
+         id="tspan914"
+         sodipodi:role="line"
+         x="-619.75873"
+         y="-174.61537"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332">??</tspan></text>
+    <text
+       id="text922"
+       y="429.10083"
+       x="713.13049"
+       style="font-style:normal;font-weight:normal;font-size:19.1584568px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="429.10083"
+         x="713.13049"
+         sodipodi:role="line"
+         id="tspan5739">Controle de</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="544.05157"
+         x="713.13049"
+         sodipodi:role="line"
+         id="tspan901">acesso aos</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="659.00232"
+         x="713.13049"
+         sodipodi:role="line"
+         id="tspan903">recursos</tspan></text>
+    <text
+       id="text928"
+       y="-204.06757"
+       x="799.52777"
+       style="font-style:normal;font-weight:normal;font-size:19.1584568px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="-204.06757"
+         x="799.52777"
+         sodipodi:role="line"
+         id="tspan5660">Controle fino</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="-89.116821"
+         x="799.52777"
+         sodipodi:role="line"
+         id="tspan911">da memória</tspan></text>
+    <text
+       id="text936"
+       y="-450.21732"
+       x="-15.705256"
+       style="font-style:normal;font-weight:normal;font-size:19.1584568px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="-450.21732"
+         x="-15.705256"
+         sodipodi:role="line"
+         id="tspan934">Virtualização</tspan></text>
+    <path
+       style="opacity:1;fill:#5a2ca0;fill-opacity:1;stroke:none;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M -25.422903,308.83463 A 206.2268,206.2268 0 0 1 -228.1887,102.73051 206.2268,206.2268 0 0 1 -200.8031,0.55872 L -25.422903,105.8903 Z"
+       id="path1034"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:connector-curvature="0" />
+    <path
+       style="opacity:1;fill:#803300;fill-opacity:1;stroke:none;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M -18.500803,308.78433 V 105.87619 L 156.2283,-0.69182 a 206.2268,206.2268 0 0 1 28.0368,103.42228 206.2268,206.2268 0 0 1 -202.765903,206.05382 z"
+       id="path1032"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:connector-curvature="0" />
+    <path
+       style="opacity:1;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="M -21.976403,99.88443 -197.3583,-5.4466 A 206.2268,206.2268 0 0 1 -21.961803,-103.49585 206.2268,206.2268 0 0 1 152.6104,-6.59327 Z"
+       id="circle888"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:connector-curvature="0" />
+    <text
+       id="text936-3"
+       y="163.21313"
+       x="-118.36825"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.79999924px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.26458332"
+         y="163.21313"
+         x="-118.36825"
+         sodipodi:role="line"
+         id="tspan934-2">Stack</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-22.011438"
+       y="14.121398"
+       id="text916-5"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"><tspan
+         id="tspan914-4"
+         sodipodi:role="line"
+         x="-22.011438"
+         y="14.121398"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.79999924px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.26458332">PC</tspan></text>
+    <text
+       id="text922-7"
+       y="133.13428"
+       x="74.829475"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.68611145px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.26458332"
+         y="133.13428"
+         x="74.829475"
+         sodipodi:role="line"
+         id="tspan924-5">IO</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.68611145px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.26458332"
+         y="186.49191"
+         x="74.829475"
+         sodipodi:role="line"
+         id="tspan5743">Context</tspan></text>
+    <path
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-xdpi="19.121189"
+       style="opacity:1;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1.05833328;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1038"
+       r="231.39624"
+       cy="92.023003"
+       cx="22.775221"
+       d=""
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-xdpi="19.121189"
+       style="opacity:1;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1.05833328;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1040"
+       r="231.39624"
+       cy="92.023003"
+       cx="22.775221"
+       d=""
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-xdpi="19.121189"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#ff9955;stroke-width:26.45833397;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path1042"
+       r="194.04488"
+       cy="92.023003"
+       cx="22.775221"
+       d=""
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <path
+       style="fill:none;stroke:#ffcc00;stroke-width:7.9375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1423.2712,336.76453 170.0816,245.22575 h 224.463"
+       id="path1388"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <text
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-xdpi="19.121189"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:19.1584568px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="1858.8922"
+       y="452.40128"
+       id="text1392"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"><tspan
+         id="tspan1390"
+         sodipodi:role="line"
+         x="1858.8922"
+         y="452.40128"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332">Virtualização</tspan><tspan
+         sodipodi:role="line"
+         x="1858.8922"
+         y="567.35199"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan916">controlada</tspan></text>
+    <path
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-xdpi="19.121189"
+       sodipodi:nodetypes="ccsccsc"
+       inkscape:connector-curvature="0"
+       id="path906"
+       d="m 1485.015,120.35624 h 53.6884 c 0,-0.36001 0.014,-0.71758 0.014,-1.07794 0,-84.256051 -45.5345,-159.778012 -111.956,-201.946905 l -28.4354,43.16408 c 50.4417,32.6940221 86.703,93.935083 86.703,158.782825 0,0.36042 -0.013,0.71801 -0.014,1.07794 z"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#a5957b;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <path
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-xdpi="19.121189"
+       inkscape:connector-curvature="0"
+       id="path908"
+       d="m 1303.8007,-131.25869 c -57.9539,-0.56236 -115.7929,18.90599 -162.5048,57.664321 l 43.9751,53.014729 c 60.394,-50.110847 145.7401,-55.841053 212.2879,-14.25184 l 36.4955,-58.41485 c -40.0334,-25.01897 -85.1783,-37.57499 -130.2537,-38.01236 z"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#a7b3cd;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <path
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-xdpi="19.121189"
+       inkscape:connector-curvature="0"
+       id="path910"
+       d="M 1301.2788,-67.617102 A 186.86558,186.89496 0 0 0 1114.4134,119.27793 186.86558,186.89496 0 0 0 1301.2788,306.17295 186.86558,186.89496 0 0 0 1488.1445,119.27793 186.86558,186.89496 0 0 0 1301.2788,-67.617102 Z m 0,68.30683096 A 118.56953,118.58817 0 0 1 1419.8484,119.27793 118.56953,118.58817 0 0 1 1301.2788,237.86613 118.56953,118.58817 0 0 1 1182.7093,119.27793 118.56953,118.58817 0 0 1 1301.2788,0.68972896 Z"
+       style="opacity:1;fill:#376dff;fill-opacity:1;stroke:#ffffff;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-xdpi="19.121189"
+       id="path912"
+       d="M 1301.2705,117.66295 1200.3948,57.069296 A 118.61718,118.63583 0 0 1 1301.2789,0.66463065 118.61718,118.63583 0 0 1 1401.6891,56.409653 Z"
+       style="opacity:1;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#a7b3cd;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 1777.5254,-131.25869 c -57.9539,-0.56236 -115.7929,18.90599 -162.5048,57.664321 l 43.9751,53.014729 c 60.394,-50.110847 145.7401,-55.841053 212.2879,-14.25184 l 36.4955,-58.41485 c -40.0334,-25.01897 -85.1783,-37.57499 -130.2537,-38.01236 z"
+       id="path914"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
+    <text
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       id="text923"
+       y="248.3353"
+       x="2296.1765"
+       style="font-style:normal;font-weight:normal;font-size:19.1584568px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"
+       inkscape:export-xdpi="19.121189"
+       inkscape:export-ydpi="19.121189"><tspan
+         id="tspan920"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         y="248.3353"
+         x="2296.1765"
+         sodipodi:role="line">Virtualização</tspan></text>
+    <path
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png"
+       inkscape:export-ydpi="19.121189"
+       inkscape:export-xdpi="19.121189"
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="path927"
+       d="m 1769.4546,23.377499 170.0816,245.225741 h 224.463"
+       style="fill:none;stroke:#ffcc00;stroke-width:7.9375;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>
