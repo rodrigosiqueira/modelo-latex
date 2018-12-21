@@ -3,7 +3,7 @@
 function virtualization_mode(void *func_pointer, options)
   struct bead_data bead
   id $\gets$ 0
-  options $\gets$ (!options ? ALL_VIRT_CAPABILITY : options)
+  options $\gets$ ($\neg$ options ? ALL_VIRT_CAPABILITY : options)
 
   // Configuração básica para o modo de virtualização
   bead.virtualization = options /// \label{line:confBegin}
@@ -13,11 +13,11 @@ function virtualization_mode(void *func_pointer, options)
   beadctl(BEAD_SET_CONFIG, &bead) /// \label{line:confEnd}
 
   id $\gets$ context_instace() /// \label{line:instance}
-  if $id != -1$ then // pai, entra em modo virtualização
+  if $id \neq -1$ then // pai, entra em modo virtualização
     beadctl(BEAD_VIRTUALIZATION_MODE, &bead)
 
-  if !func_pointer then /// \label{line:funcParam}
-    if $id != -1$ then
+  if $\neg$ func_pointer then /// \label{line:funcParam}
+    if $id \neq -1$ then
       func_pointer()
       beadctl(BEAD_SWITCH, &bead) /// \label{line:backState}
     else /// \label{line:virtModeElse}
