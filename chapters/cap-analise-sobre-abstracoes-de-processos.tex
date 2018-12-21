@@ -1,58 +1,60 @@
-\chapter{Analise Sobre Abstrações de Processos}
+\chapter{Análise Sobre Abstrações de Processos}
 \label{cap:analise-sobre-abstracoes-de-processos}
 
-No Capítulo \ref{cap:trabalhos-analisados} introduzimos os principais trabalhos
+No Capítulo \ref{cap:trabalhos-analisados}, introduzimos os principais trabalhos
 que orbitam sobre as novas abstrações de processos e, a partir de tais
-pesquisas, pretendemos realizar neste capítulo uma reflexão das suas principais
+pesquisas, pretendemos desenvolver neste capítulo uma reflexão das suas principais
 características. Para isso, realizaremos diversas análises sobre o estado da arte
 da pesquisa em processos e apresentaremos um modelo teórico que visa fornecer
 uma perspectiva para a nova geração de abstrações de processos. Como resultado,
 responderemos as seguintes questões de pesquisa:
 
 \begin{quote}
- \item \textit{RQ1:.} "Quais são as características desejáveis para a próxima geração de abstrações de processos?"
- \item \textit{RQ2:.} "Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?"
+ \item \textit{RQ1:.} ``Quais são as características desejáveis para a próxima geração de abstrações de processos?''
+ \item \textit{RQ2:.} ``Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?''
 \end{quote}
 
-Este trabalho se diferencia dos demais por considerar o uso de novas extensões
+Este trabalho se diferencia dos \hltodo[demais]{Não entendi, quais? Os que você menciona no cap 3?} por considerar o uso de novas extensões
 nas abstrações de processos e por levar em conta SOs de uso cotidiano, em
 especial o GNU/Linux. Este último critério torna-se relevante para futuras
 investigações na área, uma vez que, se tais abstrações alcançarem SOs de ampla
 utilização, novos ramos de pesquisa podem surgir.
 
-\section{Potenciais e Dificuldades Para Adotar Novas Abstrações de Processos}
+\section{Potenciais e Dificuldades Para a Adoção de Novas Abstrações de Processos}
 \label{sec:potenciais}
 
-Quando a academia faz uma nova proposta para aplicações que estão no estado da
-prática, tal proposta deve ser genérica o bastante para ser utilizada por
+\todo[inline]{Achei um pouco longo e repetitivo, acho que dá para cortar um pouco}
+
+Quando a academia faz uma nova proposta para aplicações que estão no \hltodo[estado da
+prática]{Como a gente viu, essa expressão é bem informal e ``marketeira''; eu colocaria entre aspas ou trocaria por outra coisa}, ela deve ser genérica o bastante para ser utilizada por
 múltiplas linguagens de programação e deve também considerar questões
 referentes a compatibilidade, melhor uso do hardware disponível e
-confiabilidade. Assim, apesar dos avanços trazidos pelas pesquisas em SO, eles
-estão limitados às diferentes restrições existentes nos SOs utilizados tanto em
+confiabilidade. Assim, apesar dos avanços trazidos pelas pesquisas em SO, elas
+estão limitadas às diferentes restrições existentes nos SOs utilizados tanto em
 produção quanto em projetos de pesquisa.
 
 SOs usados em produção demandam rigorosa validação para manter o sistema
 estável em uma variedade de configurações. Espera-se que um SO maduro busque
-prevenir acessos ilegais a memória, impossibilitar a violação de API, evitar
+prevenir acessos ilegais à memória, impossibilitar a violação de APIs, evitar
 consumo excessivo de recursos e impedir erros de sincronização ou
 \textit{locking}. Essas características precisam ser garantidas pelo SO
 \citep{mondrix}, porém, como esperado, tais restrições dificilmente são
-atendidas por propostas de pesquisas devido a centralização dos pesquisadores
-em um único problema, desconsiderando assim outros impactos. Por esses motivos,
+atendidas por propostas de pesquisas devido à centralização dos pesquisadores
+em um único problema, desconsiderando assim outros impactos. Por esse motivo,
 para que um novo componente sugerido a partir de uma pesquisa acadêmica chegue
 aos SOs atuais, é importante garantir que as aplicações que já existem não
 sofram impactos negativos em termos de desempenho e de uso.
 
 Outra perspectiva que deve ser considerada é o contínuo desenvolvimento de novos
 recursos de hardware. Por exemplo, frequentemente observam-se componentes que
-são especializados em um nicho e que ao longo do tempo chegam ao usuário
-final tornando-se comum. Um caso simples que ilustra tal evolução é o
+são especializados em um nicho e que, ao longo do tempo, chegam ao usuário
+final, tornando-se comuns. Um caso simples que ilustra tal evolução é o
 uso de hardware especializado para virtualização, uma vez que esses existiam
 apenas para servidores e hoje estão disponíveis para a maioria dos usuários
 comuns. Tais recursos representam um novo leque de opções não exploradas,
 inclusive possíveis melhorias para as atuais abstrações de processos.
 
-Entretanto, para incorporar novos recursos de hardware à abstração de processos
+Entretanto, para incorporar novos recursos de hardware à abstração de processos,
 não se deve descartar que tal recurso pode não estar disponível para alguns
 usuários. Por essa razão, qualquer mudança nos processos para adicionar suporte
 a novos recursos de hardware deve levar em consideração todo tipo de situação.
@@ -62,13 +64,13 @@ modernos. Claro que a evolução do hardware necessita de cautela para evitar
 quebra de compatibilidade binária com aplicações legadas. Infelizmente, é
 preciso ter em mente que as alterações de hardware e suas limitações fazem com
 que propostas que dependem de tal evolução sejam difíceis de serem adotadas, e
-tornam a ampla adoção de uma determinada melhoria impraticável.
+tornam a ampla adoção de uma determinada melhoria \hltodo[impraticável.]{Melhor ou dizer ``difícil'' ou mudar para ``às vezes impraticável''}
 
-Algumas das novas abstrações de processos propostas por pesquisadores tem
-enorme dependência com outras tecnologias experimentais. Se por um lado isso
+Algumas das novas abstrações de processos propostas por pesquisadores têm
+enorme dependência com outras tecnologias experimentais. Se, por um lado, isso
 traz vantagens para as tecnologias em desenvolvimento, por outro, reduz a chance
-de adoção de uma nova abstração de processos por um SO de produção devido a
-dependência dessa abstração em tecnologias instáveis.
+de adoção de uma nova abstração de processos por um SO de produção devido à
+dependência dessa abstração de tecnologias instáveis.
 
 %TODO
 Encontrar um bom balanceamento entre academia e indústria de forma a levar
@@ -76,12 +78,12 @@ benefícios para os usuários não é uma tarefa trivial. Nesse sentido, novas
 propostas de mudanças na abstração de processos devem considerar as limitações
 citadas nessa seção para que possam atender aos requisitos de qualidade
 exigidos pelos SOs de uso cotidiano. Infelizmente, afirmar que uma proposta da
-academia pode ser adotada ou não pela indústria é uma tarefa impossível dado a
+academia pode ser adotada ou não pela indústria é uma tarefa impossível dada a
 enorme quantidade de variáveis envolvidas em tal análise. Mesmo assim, para
 posicionar o leitor em termos do estado da arte e da prática, nós buscamos
-estabelecer um "potencial de adoção" de uma nova proposta. Com base nos
+estabelecer um ``potencial de adoção'' de uma nova proposta. Com base nos
 critérios apresentados, buscamos definir um conjunto de variáveis que auxilie
-na definição das chances de uma pesquisa ser adotada pela indústria, segue:
+na definição das chances de uma pesquisa ser adotada pela indústria:
 
 \begin{enumerate}
   \item
@@ -91,8 +93,8 @@ tal aspecto um problema para a adoção da nova técnica.
 
   \item
 \textbf{Dependência de Compatibilidade}: refere-se as propostas que exigem
-alterações na semântica das aplicações em espaço de usuário para que essas
-possam tirar proveito de alguma melhoria. Para esses casos, desconsideramos
+alterações na semântica das aplicações em espaço de usuário para que elas
+possam tirar proveito de alguma melhoria. Para esses casos, \hltodo[desconsideramos]{O que significa ``desconsideramos''? Você coloca a proposta que tem isso como inviável? Você considera que se é só uma função não é um problema significativo em termos de compatibilidade? Não entendi}
 propostas que simplesmente chamam uma única função e que não alteram em nada
 na semântica.
 
@@ -103,12 +105,12 @@ uma vez que dois projetos precisam ser alterados.
 
   \item
 \textbf{Implementação Pesada}: consideramos as implementações pesadas mais
-complicadas uma vez que necessitam realizar mudanças no núcleo do SO, o que
+complicadas, uma vez que necessitam realizar mudanças no núcleo do SO, o que
 dificulta a adoção.
 
   \item
 \textbf{Implementação Independente}: refere-se a propostas de novas
-implementações, claramente essa é de difícil adoção.
+implementações, claramente de difícil adoção.
 
   \item
 \textbf{Hardware Novo}: essa variável indica que a proposta depende de um
@@ -126,12 +128,12 @@ A Tabela \ref{tab:adocao} tenta apresentar o potencial de adoção de cada uma
 das propostas citadas no Capítulo \ref{cap:trabalhos-analisados} de acordo com
 as variáveis discutidas nessa seção. Na tabela, temos uma marcação indicada
 pelo simbolo \ding{52} que significa que uma determinada proposta possui a
-limitação indicada na coluna. Se a proposta não contém tal restrição, então ela
+limitação indicada na coluna correspondente. Se a proposta não contém tal restrição, então ela
 é marcada com o simbolo \ding{54}. Por uma questão de simplicidade, para
-definir o potencial de adoção atribuímos zero para cada \ding{54} e um para
-\ding{52}. Por fim, toda vez que a opção "Hardware Novo" é marcada,
+definir o potencial de adoção, atribuímos zero para cada \ding{54} e um para
+\ding{52}. Por fim, toda vez que a opção ``Hardware Novo'' é marcada,
 consideramos que a proposta também requer características específicas de
-hardware; para as variáveis referentes a implementação, consideramos que quando
+hardware; para as variáveis referentes à implementação, consideramos que quando
 uma proposta parte de uma implementação independente ela também é considerada
 pesada.
 
@@ -140,23 +142,23 @@ pesada.
 \section{Extração de Conceitos Derivados das Pesquisas em Abstrações de Processos}
 
 Todas as pesquisas apresentadas no Capítulo \ref{cap:trabalhos-analisados}
-configuram o estado da arte no que se refere as abstrações de processos.
+configuram o estado da arte no que se refere às abstrações de processos.
 Infelizmente, nenhuma delas encontra-se no código principal de qualquer SO de
 uso cotidiano. Parte desse problema vem dos fatos apresentados anteriormente na Seção
 \ref{sec:potenciais}, contudo outros aspectos que contribuem para que tais
-propostas não estejam presentes nos SO modernos vem da falta de unificação e
+propostas não estejam presentes nos SO modernos vêm da falta de unificação e
 sistematização de tais ideias. Ao analisar cada uma das propostas, notamos que
 todas elas propõem direta ou indiretamente algum nível de desacoplamento entre
 os elementos presentes no SO. Tal observação nasce da abordagem radical tomada
 pelos criadores do Exokernel, que levaram o nível de desacoplamento do SO ao
 extremo. Apesar do Exokernel ser um sistema de difícil adoção em termos
 práticos, ele nos alerta sobre as vantagens da redução de dependências
-entre os elementos do SO e as possibilidades que isso pode levar ao espaço de
-usuário. Tendo isso mente, revisitamos de forma breve alguns dos trabalhos
+entre os elementos do SO e as possibilidades que ela pode levar ao espaço de
+usuário. Tendo isso em mente, revisitamos de forma breve alguns dos trabalhos
 apresentados no Capítulo \ref{cap:trabalhos-analisados} sob a ótica do
 desacoplamento e seus potenciais benefícios.
 
-Iniciamos analisando o projeto Dune. Este projeto traz uma nova perspectiva de uso dos recursos de virtualização
+Iniciamos analisando o projeto Dune. Esse projeto traz uma nova perspectiva de uso dos recursos de virtualização
 disponibilizados pelas CPUs modernas que, consequentemente, traz dois
 benefícios diretos: otimização e flexibilidade. Ao utilizar os recursos de
 virtualização para acelerar certas tarefas, o Dune promoveu avanços em um setor
@@ -166,65 +168,65 @@ técnicas avançadas que visam trazer melhorias de desempenho; em outras
 palavras, a proposta do Dune pode melhorar a legibilidade de alguns códigos.
 Os avanços citados foram factíveis graças ao \textbf{desacoplamento da
 virtualização}, que possibilita entregar melhorias de desempenho no
-espaço de usuário de maneira relativamente simples (ponto de vista da
+espaço de usuário de maneira relativamente simples (do ponto de vista da
 aplicação) e também fornece ganhos de segurança.
 
-Já o projeto Nooks se distancia um pouco da abstração de processos uma vez que
-ele busca tornar o núcleo do SO mais resiliente. Contudo, ao criar mecanismos
-que reagem de forma a reduzir as chances do sistema quebrar, tal proposta
-apresenta o \textbf{desacoplamento dos recursos} de forma a fornecer mecanismos
+Já o projeto Nooks se distancia um pouco da abstração de processos, uma vez que
+busca tornar o núcleo do SO mais resiliente. Contudo, ao criar mecanismos
+que reagem de forma a reduzir as chances de o sistema quebrar, tal proposta
+apresenta o \textbf{desacoplamento dos recursos}, de forma a fornecer mecanismos
 para que os processos possam se recuperar ou tomar ações em casos de falhas.
 Adicionalmente, essa técnica cria um interessante mecanismo de
 comunicação entre as extensões do Kernel e os seus drivers, permitindo que o SO
 se ``defenda'' de problemas que ocorram com um código que foi acoplado ao seu
 núcleo.
 
-De forma mais direta e sistemática o \textit{Resource Container} sugere o
-controle fino do gerenciamento de recursos e consequentemente o desacoplamento
+De forma mais direta e sistemática, o \textit{Resource Container} sugere o
+controle fino do gerenciamento de recursos e consequentemente o \hltodo[desacoplamento]{Acho que tem que seguir o modelo dos demais: escrever ``desacoplamento do gerenciamento de recursos'' e colocar em negrito}
 de tal elemento. De certa maneira, essa proposta já pode ser encontrada incorporada
 nos SOs atuais, sob a forma de containers no Linux, mais especificamente, como o
 \textit{cgroups}. A principal contribuição do trabalho vem da sua capacidade
 de permitir que a própria aplicação tome conta da sua execução. Ainda que parte
-das ideias apresentada por esse trabalho estejam presentes em alguns SOs, as
+das ideias apresentadas por esse trabalho estejam presentes em alguns SOs, as
 implementações ainda são relativamente reduzidas em termos do escopo
 apresentado na pesquisa.
 
 Uma abordagem alternativa que visa atender uma nova geração de computadores com
 memórias não voláteis na ordem dos petabytes é o SpaceJMP/MVAS.  Os autores
-sugerem \textbf{desacoplar o VAS dos processos} e permitir que esses tenham
-múltiplas VAS e, de forma reativa, a aplicação torne-se capaz de mudar a VAS
+sugerem \textbf{desacoplar o VAS dos processos}\todo{seria bom ser ``desacoplamento'' ao invés de ``desacoplar''} e permitir que eles tenham
+múltiplas VAS e, de forma reativa, a aplicação torne-se capaz de mudar o VAS
 atual. Essa abordagem faz com que um processo consiga acessar regiões muito
-maiores do que aquelas garantidas pelo tamanho de uma VAS. Indiretamente
-desacoplar uma VAS adiciona a possibilidade de criar processos persistentes,
-isto é, que vivem mesmo após o boot ou mesmo após um problema. Desacoplar a VAS
+maiores do que aquelas garantidas pelo tamanho de um VAS. Indiretamente,
+desacoplar um VAS adiciona a possibilidade de criar processos persistentes,
+isto é, que vivem mesmo após o boot ou mesmo após um problema. Desacoplar o VAS
 pode trazer benefícios para aplicações de \textit{checkpoints}, melhorar o
 gerenciamento de bibliotecas, e elevar o nível de isolamento e compartilhamento.
 
-O Light-weight Context (lwC) indiretamente propõe o total
+Light-weight Context (lwC) indiretamente propõe o total
 \textbf{desacoplamento do PC}; vale observar que os autores explicitam outros
-desacoplamentos, contudo, para esse trabalho, acredita-se que o desacoplamento
+desacoplamentos, contudo, para esse trabalho, acreditamos que o desacoplamento
 do PC é o que melhor descreve as inovações propostas. Desacoplar o PC leva uma
-infinidade de possibilidade para o espaço de usuário, uma vez que o processo
-pode fazer operações semelhantes ao do escalonador sem grandes custos e dentro
-do mesmo intervalo de execução do processo. O lwC tem como principal
+infinidade de possibilidades para o espaço de usuário, uma vez que o processo
+pode fazer operações semelhantes às do escalonador sem grandes custos e dentro
+do mesmo intervalo de execução do processo. lwC tem como principal
 característica um robusto e interessante modelo de programação que permite
 às aplicações no espaço de usuário utilizarem novos paradigmas de desenvolvimento.
 Isso cria diversas oportunidades para desenvolver novos tipos de manipulações, tal
-como criar \emph{snapshot} do estado atual do processo e depois reverter o
+como criar \emph{snapshots} do estado atual do processo e depois reverter o
 processo para o estado anterior. Outra possibilidade é mudar para um novo
 contexto de processo com acesso restrito para alguma região da memória antes da
 execução de um código sensível\todo{ para mudar... para alguma... não entendi essa frase}. Ao contrário do que parece, isso não é como utilizar \emph{threads} ou processos
 independentes. Por não haver dependência do escalonador para mudar o
-contexto do processo (que é razoavelmente caro), a própria aplicação por si
-só pode escolher quando e qual contexto manipular e fornecer assim um
-controle fino para os programadores (que pode melhorar o desempenho e a
+contexto do processo (o que é razoavelmente caro), a própria aplicação
+pode escolher quando e qual contexto manipular e fornecer, assim, um
+controle fino para os programadores (o que pode melhorar o desempenho e a
 segurança).
 
 De modo geral, percebemos que vários dos trabalhos analisados têm preocupação com o gerenciamento e acesso a
-memória; em especial, vários deles questionam o tratamento dado a memória pelos
+memória; em especial, vários deles questionam o tratamento dado à memória pelos
 SOs atuais.  A abordagem de utilizar um único espaço de endereçamento por
 processo tem se provado eficiente ao longo dos anos, porém, apesar do seu
-sucesso, essa não é uma abordagem a prova de falhas e ainda carece de
+sucesso, essa não é uma abordagem à prova de falhas e ainda carece de
 melhorias. Primeiramente, a abordagem de isolar os processos por meio do
 espaço de endereçamento linear melhora a confiabilidade do sistema e a
 segurança. Entretanto, um processo não tem uma forma de restringir o seu próprio
@@ -241,25 +243,25 @@ Ela afirma que precisamos mudar a lógica atual de conceder permissão por
 padrão para uma ideia de negar permissão por padrão. Essa mudança de paradigma
 torna supostamente possível a redução das chances de ataques e vazamento de
 dados, uma vez que o programador precisa indicar explicitamente o que será
-exposto. Tal pesquisa, indiretamente propõe o \textbf{desacoplamento dos
+exposto. Tal pesquisa indiretamente propõe o \textbf{desacoplamento dos
 privilégios} da abstração de processos. Além disso, ela mantém a
 compatibilidade entre aplicações novas e legadas, sendo uma opção de uso ao programador.
 
 Entrando um pouco mais nas questões de proteção e controle-fino da memória,
-destacamos o shreds e o mondrix/mondrian. O shreds nasce com a ideia de evitar
+destacamos o shreds e o mondrix/mondrian. shreds nasce com a ideia de evitar
 ataques conhecidos como abusos intra-processos de conteúdo da memória. Os
 autores defendem que o acesso a certas regiões da memória de um processo
 que esteja executando em espaço de usuário merecem proteção especial. Em tal proposta, os
-autores utilizaram um recurso especifico dos processadores ARM em conjunto com
+autores utilizaram um recurso específico dos processadores ARM em conjunto com
 um mecanismo de gerenciamento da região de memória (Seção
 \ref{sec:outros_mecanismos_memoria}). Essa proposta entrega mais flexibilidade,
-segurança, e controle ao acesso da memória.
+segurança e controle ao acesso da memória.
 
 Na mesma linha de fornecer controle fino sobre a memória, os autores do Mondrix
-propuseram, de forma mais radical, um mecanismo de controle do acesso a memória
-ao nível das palavras de dados. Para isso, os autores sugerem alterações no
+propuseram, de forma mais radical, um mecanismo de controle do acesso à memória
+no nível das palavras de dados. Para isso, os autores sugerem alterações no
 hardware e no SO de forma a controlar todo acesso com a menor granularidade
-possível. Indiretamente, o shreds e o mondrix são propostas de
+possível. Indiretamente, shreds e mondrix são propostas de
 \textbf{desacoplamento do controle de memória}.
 
 \section{Bead: Um Modelo Teórico Para a Próxima Geração de Abstrações de Processos}
