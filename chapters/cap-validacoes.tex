@@ -1,121 +1,162 @@
 \chapter{Validação de Novas Abstrações de Processos}
 \label{cap:validacoes}
 
+\todo[inline]{Olhando por alto, acho que a organização está ok, mas se quiser mudar,
+eu mexeria na introdução e faria uma argumentação nesta linha:
+
+O SO dá a infra para rodar os processos. Ele precisa garantir (1) acesso aos recursos,
+(2) desempenho, (3) segurança/isolamento e (4) funcionalidades adicionais (p.ex.,
+mutexes). Melhorias no SO devem trazer benefício em alguma dessas frentes sem
+trazer muito overhead.
+
+Para testar essa bagaça, microbenchmarks e aplicações ``reais''. Aplicações reais
+podem consumir CPU, podem ler muito do disco, podem escrever muito no disco, podem
+ler muito da memória, podem escrever muito na memória, podem gerar muito tráfego
+de rede, podem gerar muitas trocas de contexto (pela paralelização), podem depender
+de sincronização e podem ferrar com os caches de memória e de disco. Além disso,
+algumas aplicações podem ter necessidades específicas de segurança. Idealmente,
+seria bom testar com aplicações que exercitam todas essas coisas.
+
+Na prática, queremos algo que gere uma carga razoável de CPU, disco, rede e
+paralelismo. Não faz muita diferença para avaliar a qualidade do SO se as
+operações de I/O são de escrita ou leitura, então qualquer caso serve. Se o que
+está sendo testado não interfere com as primitivas de sincronização, também dá
+para deixar de lado esse aspecto. O mesmo vale para caches, e ainda por cima
+eles são muito imprevisíveis então dá para deixar de lado também. Finalmente,
+seria bom algo que é relativamente fácil de gerar carga e medir o desempenho.
+
+O que atende bem esses requisitos são servidores web: são altamente paralelos,
+geram bastante I/O e tráfego de rede, dependem de algum processamento na CPU
+e há ferramentas para gerar carga e medir o desempenho. No caso da segurança,
+faz sentido usar uma aplicação dedicada, como gpg ou openssh, e/ou uma biblioteca,
+como openssl. Não por acaso, quase todos os trabalhos que avaliamos usam alguma
+dessas ferramentas para fazer suas validações.
+
+Não vi a parte de microbenchmarks, mas talvez você também possa argumentar
+algo como ``se é para validar com microbenchmarks, precisamos ter um conjunto
+mínimo desses microbenchmarks que todo mundo usa para minimizar as chances de
+efeitos colaterais indesejados escaparem''. Isso justificaria a existência da
+RQ4.
+}
+
 O Capítulo \ref{cap:trabalhos-analisados} mostrou algumas pesquisas que buscam
 estender a abstração de processos atual. Apesar dos vários trabalhos
 demonstrarem algum tipo de benefício, muitos deles ignoram outros aspectos das
 suas propostas. Por exemplo, uma abordagem que visa isolar dados para evitar
 vazamento de informações faz testes que buscam por esses tipos de falhas, mas
-esquecem de validar se a alteração é viável em um contexto global com uma
-demanda realista.  Adicionalmente, alguns desses trabalhos baseiam-se
-fortemente em \textit{microbenchmarks} o que podem evidenciar um resultado
-desejado e não explicitar um efeito colateral da alteração. Em busca de
-encontrar propostas de abstrações que podem ser levada para os SO atuais e
+deixam de avaliar se a alteração é viável em um contexto global com uma
+demanda realista. Adicionalmente, alguns desses trabalhos baseiam-se
+fortemente em \textit{microbenchmarks}, que podem evidenciar um resultado
+desejado sem revelar um efeito colateral da alteração. Em busca de
+encontrar propostas de abstrações que possam ser levadas para os SO atuais e
 também beneficiar aplicações no espaço do usuário, levantamos e respondemos as
 seguintes perguntas:
 
+\todo[inline]{Tem outra pergunta que precisa ser respondida antes: ``Como faz para avaliar de maneira mais completa uma nova abstração?''. É muito fácil acrescentar uma frase já respondendo que o melhor é usar aplicações reais, aí você pode levantar a pergunta ``quais aplicações''. Você fez ao contrário: pergunta ``quais aplicações podemos usar'' antes de dizer ``o negócio é usar aplicações existentes''.}
 \begin{quote}
- \item \textit{RQ3:.} "Quais aplicações podem ser utilizadas para avaliar as nova abstração adicionadas ao SO?"
- \item \textit{RQ4:.} "Qual conjunto de \emph{microbenchmark} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada para as abstrações de processos?"
+ \item \textit{RQ3:.} ``Quais aplicações podem ser utilizadas para avaliar as nova abstração adicionadas ao SO?''
+ \item \textit{RQ4:.} ``Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada para as abstrações de processos?''
 \end{quote}
 
 Defendemos que uma das formas mais eficientes para validar uma nova extensão da
 abstração é por meio de aplicações já consagradas, amplamente adotadas por
 diversos sistemas e que exercitam uma ou mais partes do SO. Por esses motivos,
-buscamos por software que auxiliam a demonstrar que uma nova proposta de
+\hltodo[buscamos por programas]{Isso não é muito verdade, né? Você está colocando aqui os programas que os autores dos papers usaram. Prefiro deixar claro que os caras é que escolheram e você está explicando o porquê.} que auxiliam a demonstrar que uma nova proposta de
 abstração de processos é valida ou não. Buscamos três características: estresse
-que a aplicação pode gerar, possíveis falhas de segurança e mecanismos
-periféricos.  Aplicações que consomem muitos recursos de hardware são ideais
+que a aplicação pode gerar, possíveis falhas de segurança e \hltodo[mecanismos
+periféricos]{Não captei wtf}.  Aplicações que consomem muitos recursos de hardware são ideais
 para comprovar que uma nova extensão é escalável. Por outro lado, várias
-propostas de novos mecanismos no processo prometem melhorias de segurança, por
-esse motivo software reais que já apresentaram alguma falha de segurança são
+propostas de novos mecanismos no processo prometem melhorias de segurança e, por
+esse motivo, sistemas reais que já apresentaram alguma falha de segurança são
 desejáveis para esse tipo de validação. Por fim, algumas pesquisas propõem
-novos mecanismos nos quais alguns tipos de aplicações podem se beneficiar, como
-por exemplo, novas formas de compartilhamento de memória e otimizações.
+novos mecanismos dos quais alguns tipos de aplicações podem se beneficiar, como
+por exemplo, novas formas de compartilhamento de memória e otimizações.\todo{``Nesses casos, é interessante utilizar alguma aplicação do tipo adequado para a validação''}
 
-Outra perspectivas sobre a validação é representada pelos
+Outra perspectiva sobre a validação é representada pelos
 \textit{microbenchmarks} que auxiliam no estudo dos impactos das alterações.
-Esses testes são vantajosos durante as etapas iniciais da nova abstração, uma
-vez que são rápidos e ajudam durante o desenvolvimento. O conjunto de
+Esses testes são vantajosos durante as etapas iniciais da implementação da nova abstração, uma
+vez que são rápidos e \hltodo[ajudam durante o desenvolvimento]{Está meio jogado isso}. Um conjunto de
 \textit{microbenchmarks} pode ser usado para indicar que a nova abstração
-traz vantagens, contudo, dado o seu alto nível de especialização esse não
-consegue revelar a real natureza de uma alteração.
+traz vantagens, contudo, dado o seu alto nível de especialização, ele não
+consegue revelar \hltodo[a real natureza]{Meio esquisito, prefiro algo como ``não consegue revelar possíveis efeitos colaterais ou interferências com outras funcionalidades''} de uma alteração.
 
 A análise feita sobre as aplicações e \textit{microbenchmarks} foram originadas
 dos diversos experimentos realizados pelos pesquisadores que mostramos no
 Capítulo \ref{cap:trabalhos-analisados}. Além disso, durante esse trabalho,
 foram conduzidos experimentos que auxiliaram na elaboração das ideias
-apresentadas nesse capítulo. Esse capítulo pode ser dividido em duar partes:
-software e \textit{microbenchmark}. Primeiramente apresentamos os softwares que
-são alvos ideais para serem adaptados de forma a utilizar as novas abstrações
-de processos e assim servirem como mecanismo de validação para as propostas.
+apresentadas nesse capítulo. Esse capítulo pode ser dividido em duas partes:
+\hltodo[software]{Microbenchmarks também é software; prefiro ``programas'', ``aplicações'' ou ``programas representativos''etc.} e \textit{microbenchmarks}. Primeiramente apresentamos programas que
+são alvos \hltodo[ideais]{Que tal ``favoráveis''?} para serem adaptados de forma a utilizar as novas abstrações
+de processos e, assim, servirem como mecanismo de validação para as propostas.
 Tentamos ilustrar as características gerais das aplicações de forma a fornecer
-ideias de possíveis adaptações (discutimos algumas dessas possíveis alterações
+ideias de possíveis adaptações (discutimos algumas delas
 no Capítulo~\ref{cap:analise-sobre-abstracoes-de-processos}) e também prover
 ferramentas para o leitor avaliar os trabalhos desse campo. Por fim,
 apresentamos uma discussão sobre os potenciais \emph{microbenchmarks} que podem
-ser utilizados para validar novas extensões nos processos. Em resumo, esse
+ser utilizados para validar novas extensões nos processos. \hltodo[Em resumo, esse
 capítulo tem a intenção de fornecer um conjunto de instrumentos para o
 pesquisador interessado em obter formas de validação das abstrações de
-processos.
+processos.]{Eu cortaria}
 
 \section{Servidores Web}
 \label{sec:web_server}
 
-Normalmente um software faz uso de diversos recursos do SO, contudo, algumas
+\hltodo[Normalmente um software faz uso de diversos recursos do SO, contudo, algumas
 aplicações são projetadas para tirar o maior proveito possível do hardware
-disponível. Muitos sistemas possuem máquinas dedicadas com o objetivo de
+disponível.]{Eu cortaria} Muitos sistemas possuem máquinas \hltodo[dedicadas]{Acho que seria ``dedicadas a uma aplicação específica'', não?} com o objetivo de
 entregar estabilidade, velocidade e estabilidade. Nesses casos, é desejável que
 a CPU esteja ocupada a maior parte do tempo e use a memória de forma eficiente
 para evitar desperdício de recursos. \boldAndIndex{Servidores web (\textit{Web
 Servers})} são aplicações que operam com um desempenho próximo
 do ótimo utilizando ostensivamente os recursos das máquinas para servir páginas
-webs. A principal responsabilidade do servidor web é entregar arquivos contendo
-dados, essa pode ser divida em três etapas: esperar por uma requisição
+web. A principal responsabilidade do servidor web é entregar \hltodo[arquivos contendo
+dados]{Hmmmm, acho que na real seria ``dados solicitados, que podem vir de um arquivo ou ser gerados especificamente para cada requisição''}, essa pode ser divida em três etapas: esperar por uma requisição
 (\textit{request}) do usuário, processar a requisição e responder ao usuário.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=.50\textwidth]{request_a_page}
-  \caption[Do cliente para o servidor Web.]{Do cliente para o servidor Web. Note que o navegador solicita em paralelo os damais arquivos necessários para a construção da página}
+  \caption[Do cliente para o servidor Web.]{Do cliente para o servidor Web. Note que o navegador solicita em paralelo os demais arquivos necessários para a construção da página}
   \label{fig:client_to_web_server}
 \end{figure}
 
 A Figura \ref{fig:client_to_web_server} busca exemplificar uma situação simples
 na qual o cliente solicita uma página web para um servidor. Inicialmente, o
-cliente faz uma solicitação de alguma página por meio de algum software, vamos
-considerar o navegador nesse exemplo. Em seguida, o navegador comunica-se com o
-servidor através do protocolo HTTP; por sua vez o servidor responde devolvendo
-o arquivo solicitado que contém todas as instruções básicas necessárias para
+cliente faz uma solicitação de alguma página por meio de algum software, \hltodo[vamos
+considerar o navegador nesse exemplo]{Que tal mudar para ``Inicialmente, o cliente (digamos, um navegador web) comunica-se com o servidor através do protocolo HTTP para fazer uma solicitação; por sua vez,...''.}. Em seguida, o navegador comunica-se com o
+servidor através do protocolo HTTP; por sua vez, o servidor responde devolvendo
+\hltodo[o arquivo]{os dados} solicitado que contém todas as instruções básicas necessárias para
 construir a página (HTML). O navegador abre o arquivo HTML retornado, converte
 o conteúdo e verifica se precisa de mais informações para construir a página
 solicitada; é comum que a página precise de outros arquivos como CSS, imagens,
-javascript, etc. Se mais arquivos forem necessários, então o navegador solicita
-os mesmos para o servidor de forma paralela ou serial. O exemplo ilustra de
-forma simplificado como uma requisição acontece e como múltiplas requisições
+javascript, etc. Se mais arquivos forem necessários, então o navegador os solicita
+para o servidor de forma paralela ou serial. O exemplo ilustra de
+forma simplificada como uma requisição acontece e como múltiplas requisições
 podem ser geradas para construir uma simples tela. Um exemplo real pode ser
 considerado da caracterização da carga gerada sobre o site da copa do mundo de
 1998, na qual foi gerado uma média de 10796 requisições/min~\citep{worldcup}.
-Um servidor web tem que responder milhares de usuários e a estrategia utilizada
-para lidar com tal problema são as mais variáveis possível.
+Um servidor web tem que responder a milhares de usuários e as estratégias utilizadas
+para lidar com tal volume são as mais variadas.
 
-Normalmente, cada requisição feita por um cliente abre muitas conexões com o
-servidor web e ao final elas são encerradas. Esse mecanismo impacta no
-desempenho por duas razões: a latência aumenta e o consumo de CPU com operações
-não uteis se eleva. Uma possibilidade para minimizar esses impactos é utilizar
-o mecanismo de \boldAndIndex{keep-alive}, que fornece uma conexão
-aberta durante as atividades dos usuários. Por exemplo, a Figura
+Normalmente, \hltodo[cada requisição feita por um cliente abre muitas conexões]{Acho que você colocou ``cliente'' como ``usuário'', mas acho que fica um pouco confuso; as mudanças que sugeri acima colocam ``cliente'' como uma aplicação. Aqui eu mudaria para algo como ``cada página a ser apresentada para o usuário envolve muitas conexões com o servidor para pegar os vários arquivos blah blah''.} com o
+servidor web e ao final elas são encerradas. Esse mecanismo impacta o
+desempenho por duas razões: \hltodo[a latência aumenta]{Por quê?} e o consumo de CPU com \hltodo[operações
+não úteis]{Quais?} se eleva. Uma possibilidade para minimizar esse impacto é utilizar
+o mecanismo de \boldAndIndex{keep-alive}, que mantém uma conexão
+aberta durante as atividades do usuário. Por exemplo, a Figura
 \ref{fig:no_keep_alive} e a Figura \ref{fig:keep_alive} mostram um caso
-utilizando \textit{keep-alive} e outra sem utilizar. O primeiro caso ilustra
-uma situação padrão na qual uma requisição é realizada, por sua vez são abertas
-e fechadas diversas conexões para obter cada um dos arquivos necessários para
-construir a página. O segundo caso ilustra uma técnica chamada de
+utilizando \textit{keep-alive} e outro sem utilizá-lo. O primeiro caso ilustra
+uma situação padrão na qual uma requisição é realizada e, por sua vez, são abertas
+e fechadas diversas outras conexões de rede para obter cada um dos arquivos necessários para
+construir a página. O segundo caso ilustra a técnica de
 \textit{keep-alive}, cujo o objetivo é reduzir a latência e o uso de CPU no
 servidor mantendo a conexão aberta por um intervalo de tempo.  Esse mecanismo
 pode melhorar a experiência do usuário ao acessar o site em casos que um
 servidor esteja recebendo um elevado número de requisições. Contudo, outro
-aspecto do \textit{keep-alive} é que esse pode elevar o consumo de memória
+aspecto do \textit{keep-alive} é que ele pode elevar o consumo de memória no servidor,
 gerando outro tipo de problema em um servidor sobrecarregado.
+
+\todo[inline]{O parágrafo acima, que explica o keep-alive, está meio mal ajambrado. Além disso, seria bom dizer por que você está explicando keep-alive.}
 
 \begin{figure}[!h]
   \centering
@@ -135,7 +176,7 @@ especialmente relevantes para o contexto deste trabalho:
 Nginx\footnote{\url{https://www.nginx.com/}} e Apache
 Httpd\footnote{\url{https://httpd.apache.org/}}.  O primeiro é conhecido pelo
 seu desempenho para entregar arquivos estáticos, enquanto o segundo é conhecido
-pela sua enorme estabilidade e comodidade. Ambos são extremamente
+pela sua enorme estabilidade e comodidade. Ambos são amplamente usados, extremamente
 configuráveis, confiáveis e suportam grandes cargas de requisições.
 
 \subsection{Servidor Apache HTTPD}
@@ -144,15 +185,15 @@ configuráveis, confiáveis e suportam grandes cargas de requisições.
 O servidor Apache HTTPD, também conhecido como \textit{HTTP Daemon (HTTPD)} é
 licenciado com a licença Apache 2.0 e mantido pela fundação Apache.  O Apache
 HTTPD\footnote{Usaremos HTTPD e Apache como sinônimos nesse texto} foi
-projetado para executar em vários SOs, essa restrição fez com que fosse
+projetado para executar em vários SOs; essa restrição fez com que fosse
 necessário adotar estratégias para fazer o HTTPD multiplataforma e mantendo um
 bom desempenho.  Uma característica importante do HTTPD é a divisão de módulos
-que manipulam processos, threads e bibliotecas portáveis utilizadas; esses
+que manipulam \hltodo[processos, threads e bibliotecas portáveis utilizadas]{Não são bibliotecas portáveis que são usadas para criar esses módulos? Enfim, achei essa frase estranha}; esses
 três, em conjunto, constituem a arquitetura do projeto. O Apache utiliza
-a biblioteca \textit{Apache Portable Runtime (APR)} cuja a intenção é ser
+a biblioteca \textit{Apache Portable Runtime (APR)}, cuja a intenção é ser
 utilizada como uma interface portável para as tarefas comuns de programação
 (e.g.: alocação de memória, manipulação de tempo, etc). Por fim, o HTTPD
-implementa um módulo especial chamado \textit{Multi-Processing Module (MPM)}
+implementa um módulo especial chamado \textit{Multi-Processing Module (MPM)},
 responsável por manter o processamento das requisições e a lógica de
 manipulação de processos/threads. O MPM é uma boa fonte de comparação entre
 diferentes modelos de processos.
@@ -171,7 +212,7 @@ funcionamento. Ao redor do núcleo, existe um grande número de módulos anexado
 que podem ser conectados ao projeto. Esses módulos facilitam o processo de
 adicionar e remover elementos do núcleo, normalmente como bibliotecas
 dinâmicas. Módulos na forma de bibliotecas dinamicamente ligadas fornecem
-flexibilidade, um bom desempenho e portabilidade entre diferentes SOs (e.g.; o
+flexibilidade, um bom desempenho e portabilidade entre diferentes SOs (e.g.,
 Window e Linux podem ter diferentes implementações para o mesmo módulo). A
 Figura \ref{fig:apache_architecture} também ilustra o MPM como um componente
 diretamente conectado ao SO, porque o MPM manipula os elementos de
@@ -186,16 +227,16 @@ que se posiciona entre o núcleo do HTTPD e o SO.
   \label{fig:units} 
 \end{figure}
 
-Alguns módulos são essenciais para o funcionamento do HTTPD uma vez que eles
+Alguns módulos são essenciais para o funcionamento do HTTPD, uma vez que eles
 representam os elementos básicos das estruturas de dados que são usadas por
-todo o código. A Figura \ref{fig:units} mostra algumas unidade fundamentais
+todo o código. A Figura \ref{fig:units} mostra algumas unidades fundamentais
 usadas pelo HTTPD. O módulo \textit{server} é responsável por criar uma estrutura de
 dados para a requisição toda vez que o HTTPD aceita uma nova conexão. O módulo
 HTTP é encarregado de preencher uma estrutura de dados de requisição e o
 módulo de conexão TCP constrói a estrutura de dados que mantém as informações
 da conexão. Normalmente, não é preciso se preocupar com módulos relacionados
 aos detalhes do HTTP, uma vez que o Apache ajusta todos os elementos necessários
-e também entrega uma estrutura de dados pronta para ser utilizadas.
+e também entrega uma estrutura de dados pronta para ser utilizada.
 
 \begin{figure}[!h]
   \centering
@@ -206,11 +247,11 @@ e também entrega uma estrutura de dados pronta para ser utilizadas.
 
 Outros dois aspectos da arquitetura do Apache são o \textbf{Content Generator}
 (Gerador de Conteúdo) e as fases de processamento das requisições. O
-\textit{Content Generator} pode ser visto como o núcleo do Apache uma vez que
-ele é responsável pelas operação de escutar por requisições e retornar
-respostas; existe exatamente um gerador de conteúdo por requisição. No Apache
+\textit{Content Generator} pode ser visto como o núcleo do Apache, uma vez que
+ele é responsável pelas operações de escutar por requisições e devolver
+respostas; existe exatamente um gerador de conteúdo por requisição. No Apache,
 um módulo pode registrar um \textit{content generator} de forma simples (basta
-ajustar o \texttt{httpd.conf}) e se nenhum estiver disponível o Apache utiliza
+ajustar o \texttt{httpd.conf}) e, se nenhum estiver disponível, Apache utiliza
 o gerador padrão que simplesmente mapeia um arquivo para uma requisição
 \citep{apache_module_book}. O \textit{content generator} pode processar toda a
 requisição sozinho, contudo o Apache divide a \textit{request} em várias fases
@@ -226,27 +267,27 @@ Apache. Como a Seção \ref{sec:architecture} introduziu, o MPM funciona como um
 interface entre o HTTPD e o SO. O MPM tem três características principais para
 qualquer instância do Apache: deve ser único, é obrigatório e tem uma
 implementação específica para o SO alvo. O HTTPD fornece pelo menos um módulo
-MPM por SO, por exemplo, o Window utiliza \texttt{mpm\_winnt} e o Linux tem
-três opções diferentes que serão tratadas em detalhes nesse trabalho. Cada uma
-das três opções podem ser classificadas como baseada em processos ou em
-threads, mais especificamente são elas: \textit{Prefork}, \textit{Worker} e
-\textit{Event}. Esses módulos constituem bons pontos para comparar thread e
-processos usando as novas abstrações, uma vez que o ambiente se conserva.
+MPM por SO; por exemplo, Windows utiliza \texttt{mpm\_winnt} e Linux tem
+três opções diferentes \hltodo[que serão tratadas em detalhes neste trabalho]{Eu cortaria; isso faz sentido quando você vai mudar de assunto e quer voltar depois, mas aqui você continua falando nisso, então pode cortar esta frase}. Cada uma
+delas pode ser classificada como baseada em processos ou em
+threads. São elas: \textit{Prefork}, \textit{Worker} e
+\textit{Event}. Esses módulos constituem bons pontos para comparar threads e
+processos usando as novas abstrações, uma vez que o \hltodo[ambiente se conserva]{Pow, gasta mais meia dúzia de palavras pra explicar o que é ``ambiente se conserva''}.
 
 \begin{description}
 
 	\item[Prefork:]
 
-O \textit{Prefork} foi a primeira estratégia adotada pelo HTTPD e é totalmente
-baseada em processos. A Figura \ref{fig:prefork} ilustra os três passos
-realizados pelo \textit{Prefork}. O Apache inicia com um processo responsável
+\textit{Prefork} foi a primeira estratégia adotada pelo HTTPD e é totalmente
+baseado em processos. A Figura \ref{fig:prefork} ilustra os três passos
+realizados pelo \textit{Prefork}. Apache inicia com um processo responsável
 por gerir os filhos que serão encarregados de manipular uma requisição por vez.
 Em seguida, ao receber uma requisição, o processo de controle identifica um
-processo que esteja sem fazer nada e repassa a mesma para um processo filho que
+processo filho que esteja sem fazer nada e repassa a requisição para ele, que
 se encarrega da tarefa de manipular a solicitação. Caso não exista nenhum
-processo filho disponível para manipular a requisição, então o processo de
+processo filho disponível para manipular a requisição, o processo de
 controle cria novos processos filhos. Repare que a processo de controle
-comporta-se como um \textit{load balancing}.
+comporta-se como um \textit{load balancer}.
 
 \begin{figure}[!h]
   \centering
@@ -255,26 +296,26 @@ comporta-se como um \textit{load balancing}.
   \label{fig:prefork} 
 \end{figure}
 
-O \textit{Prefork} é uma boa opção para servidores web que não são compatíveis
-com threads (e.g., aplicações legadas escritas em PHP) e é a melhor opção de MPM
-para isolar uma única requisição. Contudo, o \textit{Prefork} consome muita
-memória e CPU o que não é desejável em um servidor sob forte demanda.
+\textit{Prefork} é uma boa opção para servidores web que não são compatíveis
+com threads (e.g., pela utilização de aplicações legadas escritas em PHP) e é a melhor opção de MPM
+para isolar uma única requisição. Contudo, \textit{Prefork} consome muita
+memória e CPU, o que não é desejável em um servidor sob forte demanda.
 
-	\item [Worker]: O \textit{Worker} é uma solução híbrida uma vez que o seu design é baseado em
-processos e threads. Esse módulo tem um processo de controle que é responsável
-por criar um processos filhos e controlar o balanceamento da carga entre os
-filhos. Ao contrário do \textit{Prefork}, o \textit{Worker} não cria instâncias
-de processos filhos para manipular requisições feitas pelos clientes. Ele cria
-diversos processos novos na qual cada um possuí várias threads para realizar a
-tarefa de tratamento das requisições; comumente, o HTTPD tem que manipular uma
-grande carga de requisições e nesses casos o processo de controle age criando
+	\item [Worker]: \textit{Worker} é uma solução híbrida, uma vez que seu design é baseado em
+processos e threads. Esse módulo tem um processo de controle que também é responsável
+por criar processos filhos e controlar o balanceamento da carga entre eles.
+Ao contrário de \textit{Prefork}, \textit{Worker} não cria instâncias
+de processos filhos para manipular requisições feitas pelos clientes: ao
+invés disso, cada filho possui várias threads para realizar
+o tratamento das requisições. Comumente, o HTTPD tem que manipular uma
+grande carga de requisições e, nesses casos, o processo de controle age criando
 novos filhos (cada um com um conjunto de threads) para suportar a carga.
-Repare que o \textit{Worker} utiliza threads para manipular as requisições,
-isso faz com que o total de processos filhos criado seja relativamente pequeno
-(comparado com o \textit{Prefork}) e consequentemente o consumo de memória
-reduz. O HTTPD tem um arquivo de configuração que permite um controle fino de
+Repare que \textit{Worker} utiliza threads para manipular as requisições,
+fazendo com que o total de processos filhos criado seja relativamente pequeno
+(comparado com o \textit{Prefork}) e, consequentemente, o consumo de memória
+seja reduzido. O HTTPD tem um arquivo de configuração que permite um controle fino de
 todos os parâmetros relacionados ao número máximo de processos filhos, o total
-de threads por filhos, o número de reposição de processos filhos e threads,
+de threads por filho, o número de \hltodo[reposição]{Dafuq?} de processos filhos e threads,
 dentre outros.
 
 \begin{figure}[!h]
@@ -284,23 +325,23 @@ dentre outros.
   \label{fig:worker} 
 \end{figure}
 
-A Figura \ref{fig:worker} é um exemplo de como o \textit{Worker} funciona.
+A Figura \ref{fig:worker} é um exemplo de como \textit{Worker} funciona.
 Quando o Apache inicia, ele tem um processo de controle e alguns processos
-filhos que mantém um grupo de threads paradas. A segunda parte da figura
+filhos que mantêm um grupo de threads paradas. A segunda parte da figura
 representa o caso em que o HTTPD recebe um grande número de requisições e o
-processo de controle cria mais filhos para suportar a carga. O \textit{Worker}
-consome menos memória que o \textit{Prefork} e consequentemente ele é melhor em
-casos no qual o servidor está sobrecarregado.  A mistura de processo e thread
+processo de controle cria mais filhos para suportar a carga. \textit{Worker}
+consome menos memória que \textit{Prefork} e, consequentemente, é melhor em
+casos nos quais o servidor está sobrecarregado.  A mistura de processo e thread
 adiciona estabilidade para todo o sistema.
 
 	\item [Event:] O módulo \textit{Event} é baseado em threads e é o padrão na
-última versão do Apache. O comportamento básico do \textit{Event} é similar ao
-do \textit{Worker} com duas características a mais: \textit{keep-alive} e
+última versão do Apache. O comportamento básico de \textit{Event} é similar ao
+de \textit{Worker} com duas características a mais: \textit{keep-alive} e
 separação de responsabilidade de enviar dados para o cliente. A Figura
-\ref{fig:event} ilustra o comportamento básico do \textit{Event}. A forma na
-qual o \textit{event} opera é similar ao \textit{worker}, com a diferença de
+\ref{fig:event} ilustra o comportamento básico de \textit{Event}. A forma na
+qual \textit{Event} opera é similar a \textit{Worker}, \hltodo[com a diferença de
 que ele cria um processo a mais só para manipular o envio dos dados para o
-cliente.
+cliente.]{Em parte, está repetindo o que disse antes, em parte está contradizendo (pois tem também a diferença do keep-alive) e a explicação da thread de envio de dados está muito jogada}
 
 \begin{figure}[!h]
   \centering
@@ -313,20 +354,20 @@ cliente.
 
 \subsection{Nginx}
 
-Assim como o Apache HTTPD o Nginx é um servidor web, contudo esse diferencia-se
+Assim como o Apache HTTPD, Nginx é um servidor web, contudo ele diferencia-se
 de muitas formas dos servidores web tradicionais. A sua principal
 característica é o seu excelente desempenho para atender requisições,
-principalmente aquelas relacionadas a arquivos estáticos. Além disso o Nginx
-comporta-se como um \textit{reverse-proxy}; ele recebe uma requisição do
-usuário, por sua vez ele repassa a requisição para uma aplicação especifica
+principalmente aquelas relacionadas a arquivos estáticos. Além disso, Nginx
+comporta-se como um \hltodo[\textit{reverse-proxy}]{Hmmm, isso é uma configuração, não o modo ``normal'' dele; o apache é exatamente igual nesse quesito. Eu acho que pode remover esse trecho ou, talvez, usá-lo em outro lugar (referindo-se aos dois) para explicar alguma coisa referente ao experimento de carga}; ele recebe uma requisição do
+usuário, por sua vez ele repassa a requisição para uma aplicação específica
 responsável por realizar o processamento (e.g. Puma, PHP-FPM, etc). Quando o
-dado é processado pela aplicação, essa retorna o resultado para o Nginx que
+dado é processado pela aplicação, ela devolve o resultado para o Nginx, que
 repassa os dados para o usuário \citep{soni}. A Figura \ref{fig:nginx_basico}
-ilustra o funcionamento geral do Nginx, note que a requisição do usuário chega
-ao servidor encriptada por meio do protocolo SSL (apresentamos esse protocolo
-na Seção \ref{sec:openssl}), em seguida o Nginx trata a solicitação
-transformando ela em HTTP; por fim, o processo termina repassando a request
-para algum serviço manipular.
+ilustra o funcionamento geral do Nginx; note que a requisição do usuário chega
+ao servidor \hltodo[criptografada]{Isso não é uma necessidade, então eu escreveria tipo ``note que, neste exemplo, a requisição do usuário chega ao servidor criptografada''} por meio do protocolo SSL (apresentamos esse protocolo
+na Seção \ref{sec:openssl}). Em seguida, Nginx trata a solicitação
+transformando-a em HTTP; por fim, o processo termina repassando-a
+para algum serviço.
 
 \begin{figure}[!h]
   \centering
@@ -335,55 +376,55 @@ para algum serviço manipular.
   \label{fig:nginx_basico} 
 \end{figure}
 
-A grande maioria dos servidores web buscam tirar o máximo de proveito dos recursos
+A grande maioria dos servidores web \todo{Inclusive o apache} busca tirar o máximo de proveito dos recursos
 de hardware utilizando um elevado número de threads e processos. Essa abordagem
-é relativamente simples de se implementada e traz bons resultados, contudo ela
-também tem alguns problemas. Dentre as desvantagens, temos que o modelo baseado
-em threads/processos geram uma grande quantidade de operações que bloqueiam e
-consequentemente geram trocas de contexto. Além disto, a abordagem baseada em
-threads/processos consome uma elevada quantidade de recursos degradando o
+é relativamente simples de ser implementada e traz bons resultados, contudo
+também tem alguns problemas. Dentre as desvantagens, o modelo baseado
+em threads/processos gera uma grande quantidade de operações que bloqueiam e,
+consequentemente, geram trocas de contexto. Além disso, a abordagem baseada em
+threads/processos consome uma elevada \hltodo[quantidade de recursos]{Memória, né? E talvez filedescriptors, mas isso é memória também. Fora isso, tem o impacto de cpu por conta das trocas de contexto, mas isso vc já falou}, degradando o
 desempenho da aplicação em situações de elevada demanda.
 
-O Nginx sugere uma abordagem nova de servidor web baseada na ideia de eventos.
-A estratégia de eventos parte do princípio que deve-se evitar ao máximo a troca
-de contexto e assim tirar o máximo de proveito da CPU com processamento útil.
-Por esse motivo o Nginx cria apenas três tipos de processos
+Nginx utiliza uma \hltodo[outra]{Tirei o ``nova'' porque não é nova não, lembro de um servidor em 97 que fazia isso} abordagem de servidor web, baseada na ideia de \hltodo[eventos]{``Eventos'', na verdade, é uma mágica tornada possível por requisições de I/O assíncronas. Acho que vale mencionar que o nginx usa isso e o apache não porque async I/O no linux não funcionava muito bem nas primeiras versões}.
+A estratégia de eventos parte do princípio de que deve-se evitar ao máximo a troca
+de contexto e, assim, tirar o máximo de proveito da CPU com processamento útil.
+Por esse motivo, Nginx cria apenas três tipos de processos
 \citep{nginx_architecture}:
 
 \begin{itemize}
-  \item Processo mestre, faz operações privilégiadas como ler arquivos de configuração e acessar portas;
-  \item Processo de cache de disco, carrega dados do disco fazendo cache na memória;
-  \item Processo que gerencia o cache e que realiza verificações sobre o cache periodicamente;
-  \item Processos \textit{Worker} são os processos que fazem o trabalho de manipular conexões, ler e escrever em disco e comunicar-se com os servidores.
+  \item Processo mestre, que faz operações privilegiadas como ler arquivos de configuração e acessar portas;
+  \item Processo de cache de disco, que carrega dados do disco fazendo cache na memória;
+  \item \hltodo[Processo]{Não tem como inventar um nome para seguir o formato dos demais? Tipo ``Processo gestor de cache, que gerencia...''} que gerencia o cache e que realiza verificações sobre ele periodicamente;
+  \item Processos \textit{Worker}, que fazem o trabalho de manipular conexões, ler e escrever em disco e comunicar-se com os \hltodo[servidores.]{Clientes, não?}
 \end{itemize}
 
-O Nginx recomenda um \textit{Worker} por núcleo da CPU, isso permite tirar
+Nginx recomenda um \textit{Worker} por núcleo da CPU, o que permite tirar
 grande proveito dos eventos.
 
 Na prática o sistema de eventos é eficiente pois gera poucos bloqueios
-(comparado com o modelo que utiliza threads/processos) uma vez que esse não
-espera a aplicação terminar o que está fazendo. Por exemplo, se o
-\textit{worker} estiver atendendo uma requisição e em um determinado momento
-precisar recuperar uma informação do disco, o \textit{worker} não bloqueia, ele
-simplesmente vai fazer outra tarefa e salva o evento referente a busca no disco
-para retornar nele depois (mais precisamente, quando surgir um evento). O
+(comparado com o modelo que utiliza threads/processos), uma vez que não
+espera a aplicação terminar o que está \hltodo[fazendo]{Tá jogado isto. que tal ``... a aplicação terminar o que está fazendo para iniciar outra atividade''.}. Por exemplo, se o
+\textit{worker} estiver atendendo uma requisição e, em um determinado momento,
+precisar recuperar uma informação do disco, ele não bloqueia, mas
+simplesmente vai fazer outra tarefa e salva o evento referente à busca no disco
+para retornar a ele depois (mais precisamente, quando surgir um evento). O
 sistema de eventos faz com que um único \textit{worker} execute múltiplas
-tarefas de forma sequencial sem bloqueio e consequentemente com poucas trocas
+tarefas de forma sequencial sem bloqueio e, consequentemente, com poucas trocas
 de contexto.
 
-\section{Ferramentas de Comunicação Encriptada}
+\section{Ferramentas de Comunicação Criptografada}
 \label{sec:com_enc}
 
 Como mostrado no Capítulo \ref{cap:trabalhos-analisados}, algumas das novas
 propostas de abstrações de processos levam melhorias de segurança para o espaço
-de usuário. Nesse sentido aplicações que envolvem mecanismos de encriptação ou
-que buscam levar algum nível de segurança, representam bons casos de uso para
+de usuário. Nesse sentido, aplicações que envolvem mecanismos de criptografia ou
+que \hltodo[buscam levar algum nível de segurança]{Que tal ``que têm algum requisito especial de segurança''?} representam bons casos de uso para
 validar novas abstrações. Esse tipo de software costuma ser desenvolvido por
 uma comunidade de especialistas na área de segurança, o que significa que levar
-melhorias nesse tipo de ferramenta não é uma tarefa trivial. Essas
+melhorias a esse tipo de ferramenta não é uma tarefa trivial. \hltodo[Essas
 características fazem com que esse tipo de aplicação representem bons caso de
-validação para novas abstrações de processos. Por uma questão de simplicidade e
-abrangência escolhemos duas ferramentas amplamente utilidades: OpenSSH e
+validação para novas abstrações de processos.]{Tá repetido, pode cortar} Por uma questão de simplicidade e
+abrangência \hltodo[escolhemos]{De novo, não foi você quem escolheu, foram os autores, não é?} duas ferramentas amplamente utilizadas: OpenSSH e
 OpenSSL.
 
 \subsection{OpenSSL}
