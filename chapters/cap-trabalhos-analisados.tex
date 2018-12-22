@@ -1,30 +1,47 @@
 \chapter{Trabalhos Analisados}
 \label{cap:trabalhos-analisados}
 
-\todo[inline]{Eu sei que você gosta dessa divisão sobre a implementação, mas do ponto de vista \emph{teórico} isso não é uma divisão relevante: o trabalho ser ou não implementação leve/pesada/independente não tem nada a ver com o que o trabalho em si é. Se o autor tivesse escolhido outro estilo de implementação, não mudaria nada no conceito. Faz sentido, sim, você selecionar apenas trabalhos que tenham uma implementação (porque mostra que é possível implementar e tem até algum tipo de validação experimental), mas não gosto dessa subdivisão. Acho legal, sim, comentar essa característica dos trabalhos, em especial aqueles em que isso é muito importante, como o exokernel ou aquele que usa um módulo do kernel, mas usar para categorizar os trabalhos é bizarro (até porque ``independente'' só tem um, que é o exokernel}
+Esse capítulo tem como objetivo destacar as principais pesquisas recentemente
+realizadas com o objetivo de expandir as abstrações de processos. Para a
+seleção dos trabalhos aqui apresentados, o autor levou em consideração os
+seguintes aspectos: quantidade de citações dos trabalhos, implementação
+funcional e pesquisas que tenham a abstração de processos como objeto de
+estudo. Por uma questão de organização, esse trabalho considerou três tipos de
+implementação funcional: \textit{Implementação Estrutural Leve, Implementação
+Estrutural Pesada e Implementação Independente}.
 
-Esse capítulo tem como objetivo destacar as principais pesquisas \hltodo[recentemente]{Que tal?} realizadas com
-o objetivo de expandir as abstrações de processos. Para a seleção dos trabalhos
-aqui apresentados, o autor levou em consideração os seguintes aspectos:
-quantidade de citações dos trabalhos, \hltodo[implementação da proposta em um SO]{Acho esquisito ``em um SO''; acho que seria melhor dizer que tem que ter uma implementação funcional e não só uma proposta teórica} e
-pesquisas que tenham a abstração de processos como objeto de estudo. Por uma
-questão organização, esse trabalho subdivide as pesquisas usando o critério da
-implementação. \hltodo[Sem entrar em detalhes,]{eu descreveria as três aqui rapidamente e estenderia um pouco a descrição na introdução de cada seção} as três categorias são:
-\textit{Implementação Estrutural Leve, Implementação Estrutural Pesada e
-Implementação Independente}. Por fim, essa seção visa fornecer as bases para a
-discussão apresentada no Capitulo
+Chamamos de \boldAndIndex{Implementação estrutural leve} toda proposta que não
+altera diretamente o núcleo do SO. Isso faz com que a proposta tenha uma chance
+maior de ser incorporada em um SO de produção e, ao mesmo tempo, gera pouco
+impacto geral no SO. Normalmente, implementações leves utilizam artifícios de
+\emph{device drivers} (Veja \ref{sec:dd}), o que torna simples de desenvolver e
+testar novas propostas.
+
+As \boldAndIndex{Implementações Estruturais Pesadas} são aquelas que alteram
+diretamente o núcleo do SO. Essa abordagem traz vantagens e desvantagens que
+devem ser consideradas antes de serem adotadas. Por um lado, alterações diretas
+no núcleo são mais flexíveis em termos de possibilidade de acesso aos recursos
+disponíveis do SO. Por outro lado, alterações no núcleo são arriscadas, uma vez
+que podem afetar toda a estabilidade do sistema, e são extremamente complexas
+de serem feitas, uma vez que demandam profundo conhecimento do SO em questão.
+
+As \boldAndIndex{Implementações Independentes} são aquelas que se propõem a
+criar um SO totalmente novo, visando demonstrar um ou mais conceitos. Essas
+abordagens têm poucas chances de serem adotadas diretamente, contudo apresentam
+conceitos e ideias que podem ser interessantes para serem estendidas para SOs
+atuais. Nessa dissertação trataremos especificamente do Exokernel devido ao seu
+grande impacto (Seção~\ref{sec:exokernel}), contudo, trabalhos como o
+\emph{Singularity}~\citep{aiken} e o \emph{Corey}~\citep{corey} também
+influenciaram essa dissertação.
+
+Em resumo, esse capítulo busca fornecer uma visão geral sobre o estado da arte
+das abstrações de processos. Além disto, essa seção visa proporciona as bases
+para a discussão apresentada no Capítulo
 \ref{cap:analise-sobre-abstracoes-de-processos}, tema central desse trabalho.
+Os trabalhos apresentados adiante, se encaixam em pelo menos uma das
+características de implementação discutidas acima.
 
-\section{Implementação Estrutural Leve}
-
-Chamamos de \textit{Implementação estrutural leve} toda proposta que não altera
-diretamente o núcleo do SO. Isso faz com que a proposta tenha uma chance maior
-de ser incorporada em um SO de produção e, ao mesmo tempo, gera
-pouco impacto geral no SO. Normalmente, implementações leves utilizam
-artifícios de \emph{device drivers} (Veja \ref{sec:dd}), o que torna simples de
-desenvolver e testar novas propostas.
-
-\subsection{Dune}
+\section{Dune}
 \label{sec:dune}
 
 Como mostrado na Seção \ref{sec:virtualizacao}, o conceito de virtualização já
@@ -33,7 +50,8 @@ destaca-se a virtualização via hardware proporcionada pelos processadores
 modernos. O mecanismo de virtualização é normalmente utilizado fornecendo
 abstrações para a criação de máquinas virtuais. Com esse conceito em mente,
 \citet{belay} decidiram dar outra utilidade para esses recursos de hardware:
-\hltodo[fornecer]{Não seria melhor ``isolar'' processos? Ou ``fornecer recursos adicionais''?} processos ao invés de máquinas virtuais.
+fornecer características adicionais para processos ao invés de máquinas
+virtuais.
 
 Os autores defendem que uma ampla variedade de aplicações pode tirar proveito
 do acesso a certos recursos que são apenas disponíveis ao kernel. Dentre as
@@ -41,11 +59,12 @@ aplicações que podem comprovadamente ganhar algum desempenho ao obter acesso
 direto ao hardware, destacam-se:
 
 \begin{itemize}
-  \item \textbf{Garbage Collection (GC)}\todo{Melhor ``coleta de lixo''}: O GC pode ganhar desempenho caso
+  \item \textbf{Coletor de Lixo (\emph{Garbage Collection -- GC})}: O GC pode ganhar desempenho caso
         tenha como controlar diretamente o hardware de paginação, como
         \citet{pauseless} demostraram em seu trabalho;
-  \item \textbf{Process Migration}\todo{Melhor ``migração de processos''}: Programas no espaço de usuário podem tirar
-        proveito do acesso direto às faltas de páginas e chamadas de \hltodo[sistema]{... para fazer sei-lá-o-que com migração}.
+  \item \textbf{Migração de Processos}: Programas no espaço de usuário podem tirar
+        proveito do acesso direto às faltas de páginas e chamadas de sistemas para
+        implementar novas técnicas de migração de processos.
 \end{itemize}
 
 Não obstante, fornecer o acesso direto aos recursos de hardware de forma segura
@@ -53,11 +72,11 @@ e gerenciável não é uma tarefa trivial, uma vez que requer mudanças na forma
 como o espaço de usuário e o espaço do Kernel interagem. Além disso, alterações
 no Kernel são consideradas invasivas e perigosas, uma vez que uma modificação
 feita de forma errada pode comprometer toda a estabilidade do sistema. Outra
-alternativa para dar acesso de hardware para aplicações é por meio \hltodo[de imagens
-de máquina virtual,]{Melhor algo tipo ``de execução em uma máquina virtual''} assim uma aplicação consegue acesso seguro aos recursos de
-hardware através da interface de virtualização. Uma desvantagem desta abordagem
-é que ela tem pouca integração com o SO da máquina \emph{host}, o que impede o
-processo de obter ganhos de desempenho.
+alternativa para dar acesso de hardware para aplicações é por meio de execução
+em uma máquina virtual assim uma aplicação consegue acesso seguro aos recursos
+de hardware através da interface de virtualização. Uma desvantagem desta
+abordagem é que ela tem pouca integração com o SO da máquina \emph{host}, o que
+impede o processo de obter ganhos de desempenho.
 
 \citet{belay} oferecem uma alternativa que consiste em utilizar a abstração de
 virtualização disponível nos processadores modernos de forma a fornecer um novo
@@ -70,25 +89,30 @@ chamada de sistema. Para auxiliar a aplicação no espaço de usuário a interag
 com tais recursos, os autores criaram uma biblioteca chamada \emph{libDune} que
 dá apoio à utilização das novas funcionalidades.
 
-Dentre as vantagens que o essa pesquisa promete, destacam-se o fato de que no
-modo Dune o processo comporta-se como um processo normal, com a diferença de que
-ele utiliza a instrução \hltodo[VMCALL para fazer chamadas de sistema]{E por que isso é uma vantagem?}. Além disso,
-devido ao fato de que o Dune não tem por objetivo fornecer máquinas virtuais,
-ele consegue ser mais simples e rápido. As aplicações que se
-adequam ao uso desse modelo podem obter \hltodo[melhorias de desempenho e isolamento.]{Acho que precisa explicar um pouco mais e melhor qual a vantagem ou dizer tipo ``como veremos adiante'' ou algo assim}
+Dentre as vantagens que essa pesquisa promete, destacam-se o fato de que o modo
+Dune mantém a compatibilidade com os processos, i.e., a aplicação não precisa
+ser fortemente modificada. Quando um processo faz uma chamada de sistema, ele
+dispara uma instrução chamada \texttt{SYSCALL}, contudo, aplicações que
+manipulam recursos de virtualização utilizam a \texttt{VMCALL} para manter o
+isolamento. O Dune utiliza o recurso do \texttt{VMCALL} para tirar o máximo
+de isolamento fornecido pelo hardware de virtualização. Além disso, devido ao
+fato de que o Dune não tem por objetivo fornecer máquinas virtuais, ele
+consegue ser mais simples e rápido. As aplicações que se adequam ao uso desse
+modelo podem obter melhorias de desempenho e isolamento, como veremos adiante.
 
 Para implementar o Dune, os pesquisadores utilizaram processadores Intel com
-suporte para a tecnologia VT-x (veja a Seção \ref{sec:vtx}) e parte do código do KVM já
-disponível no Kernel Linux. O Dune apresenta três tipos de instruções
-privilegiadas para os processos:
+suporte para a tecnologia VT-x e parte do código do KVM já disponível no Kernel
+Linux. Na Seção~\ref{sec:vtx} apresentamos o VT-x e algumas instruções
+importantes para o contexto da virtualização, agora introduzimos os três tipos
+de instruções privilegiadas que o Dune fornece para os processos:
 
 \begin{itemize}
-	\item \textbf{Exceções}:  As instruções \hltodo[LIDT, LTR, IRET, STI e CLI]{Não rola explicar o que elas fazem? Pode ser uma explicação de meia dúzia de palavras sobre cada uma ou uma explicação geral sobre o conjunto delas. Isso vale para os próximos itens também} são
+	\item \textbf{Exceções}:  As instruções \texttt{LIDT, LTR, IRET, STI e CLI} são
         expostas diretamente para os processos. Note que emulação, depuração e
         rastreamento de desempenho são atividades que podem tirar proveito
         desta característica, uma vez que o Dune pode reduzir consideravelmente
         a sobrecarga em entregar exceções. Isso se deve ao fato que o Dune
-        consegue entregar exceções diretamente para o \hltodo[hardware]{Para o software, não?} de forma segura
+        consegue entregar exceções diretamente para o hardware de forma segura
         (encapsulado pelo hardware de virtualização);
   \item \textbf{Memória Virtual}: As instruções \texttt{MOV CRn, INVLPG} e
         \texttt{INVPCID} são oferecidas para o processo Dune. O acesso
@@ -101,8 +125,8 @@ privilegiadas para os processos:
         simples referências. Por fim, o Dune também dá a habilidade de
         controlar as invalidações da TLB manualmente, o que pode ser vantajoso
         para alguns tipos de aplicações;
-  \item \textbf{Modos privilegiados}: As instruções \texttt{LGDT} e
-        \texttt{LLDT} permitem que o Dune exponha os modos privilegiados de
+  \item \textbf{Modos privilegiados}: As instruções \texttt{SYSRET, SYSEXIT, IRET}
+        permitem que o Dune exponha os modos privilegiados de
         forma segura. O Dune expõe esse modos de forma eficiente e segura por
         que o VMX non-root mantém o seu próprio conjunto de anéis privilegiados
         (Veja \ref{sec:vtx}).
@@ -112,14 +136,15 @@ A Figura \ref{fig:dune_architecture} ilustra a arquitetura do Dune. O Dune
 estende o Kernel como um módulo que habilita o VT-x, colocando-o no
 modo VMX root. Assim, processos usando Dune têm acesso seguro e garantido para
 hardware privilegiado utilizando o modo VMX non-root. O módulo Dune intercepta
-os \hltodo[VM exits]{Seria bom explicar wtf}, o único motivo para o processo acessar o kernel e realizar
-qualquer ação. Repare que o Dune é aplicado de forma seletiva aos processos que
-de fato precisam dele, o que significa que um processo que não usa o Dune não é
-afetado. A transição de um processo normal para o modo Dune ocorre por meio de
-uma chamada de \texttt{ioctl} no dispositivo \texttt{/dev/dune} e, ao
-entrar nesse modo, o processo não pode retornar ao modo anterior. Sempre que um
-processo Dune faz um \texttt{fork()}, o processo filho não inicia em modo Dune,
-contudo pode reentrar caso queira.
+transições para o {VM exits} (Seção~\ref{sec:vtx}), o único motivo para o
+processo acessar o kernel e realizar qualquer ação. Repare que o Dune é
+aplicado de forma seletiva aos processos que de fato precisam dele, o que
+significa que um processo que não usa o Dune não é afetado. A transição de um
+processo normal para o modo Dune ocorre por meio de uma chamada de
+\texttt{ioctl} no dispositivo \texttt{/dev/dune} e, ao entrar nesse modo, o
+processo não pode retornar ao modo anterior. Sempre que um processo Dune faz um
+\texttt{fork()}, o processo filho não inicia em modo Dune, contudo pode
+reentrar caso queira.
 
 \begin{figure}[!h]
   \centering
@@ -139,13 +164,13 @@ de hardware expostas pelo Dune, destacamos as principais diferenças:
         sem a intervenção do VMM, são disponíveis para a aplicação. Nos casos em
         que não é possível executar uma dada operação, Dune devolve o controle
         para o SO;
-  \item Podemos limitar as diferenças entre \textit{guest} e \textit{host}, uma
-        vez que processos usando Dune têm uma interface próxima da de hardware;\todo{não entendi este item}
-  \item No Dune, é preciso configurar o \hltodo[EPT]{dafuq?} para refletir o endereço do espaço
+  \item Podemos reduzir as diferenças de estados entre o \textit{guest} e o \textit{host}, uma
+        vez que processos usando Dune têm uma interface próxima da de hardware;
+  \item No Dune, é preciso configurar o EPT para refletir o endereço do espaço
         de usuário.
 \end{itemize}
 
-\subsection{Shreds}
+\section{Shreds}
 
 Existe uma categoria de ataques chamada ``abusos intra-processos de conteúdo
 de memória'', na qual o invasor busca acessar determinado tipo de conteúdo
@@ -162,16 +187,16 @@ informações.
 \citet{shreds} defendem que o problema de segurança referente aos ataques
 intra-processos decorrem da falta de controle fino e eficiente do conteúdo
 sensível da memória; além disso, eles argumentam que seria benéfico se tais
-funcionalidades fossem disponibilizadas para os programadores.  Para resolver tal
+funcionalidades fossem disponibilizadas para os programadores. Para resolver tal
 problema, os autores apresentam uma nova abstração de processos que cria uma
-nova unidade de execução chamada \hltodo[\emph{shreds}]{Não seria só ``shred'' aqui, no singular? Tem várias dessas inconsistências nesta seção, inclusive ``a shred'', ``o shred'' etc.}, que tem associado a si um
+nova unidade de execução chamada \emph{shred}, que tem associado a si um
 fragmento de memória protegida denominado \emph{shred-private pool
 (s-pool)}. O tamanho do segmento de memória criado é variável,
 dependendo da necessidade da aplicação. Além disso ele se comporta de forma a
 existir apenas durante o momento em que é necessário para um pedaço da
-aplicação. A implementação de \emph{shreds} é baseada em três pilares: uma API
+aplicação. A implementação do \emph{shreds} é baseada em três pilares: uma API
 para o usuário conseguir utilizar facilmente as funcionalidade oferecidas, um
-\hltodo[\emph{toolchain} de compilação]{que tal ``um conjunto de ferramentas de compilação'' ou ``um processo de compilação'' ou algo assim?} que verifica a correta utilização dos
+conjunto de ferramentas de compilação que verifica a correta utilização dos
 \emph{shreds} (\emph{S-compiler}) e um módulo Linux que faz o gerenciamento da
 memória (\emph{S-driver}).
 
@@ -180,44 +205,44 @@ segurança:
 
 \begin{itemize}
   \item \textbf{Acesso exclusivo para s-pool:} Um \emph{s-pool} só é acessível
-        para o \hltodo[\emph{shreds}]{De novo, acho que seria singular} associado a ele;
-  \item \hltodo[\textbf{Evitar vazamentos na entrada e saída:}]{Você disse ``três propriedades''; a primeira é um substantivo (``acesso exclusivo''; a terceira é um substantivo (``execuções''; é esquisito que a segunda não seja um substantivo. Melhor seria tipo ``controle de vazamentos na entrada e saída'' ou algo assim} Dados carregados em um
-        \emph{s-pool} não podem ser copiados ou exportado sem ter\todo{meio esquisita essa frase; prefiro algo como ``sem que seja executada uma operação de limpeza'' ou algo assim} uma operação
-        de limpeza antes;
+        para o \emph{shred} associado a ele;
+  \item \textbf{controle de vazamentos na entrada e saída:} Dados carregados em um
+        \emph{s-pool} não podem ser copiados ou exportado sem que seja
+        executada uma operação de limpeza;
   \item \textbf{Execuções não desviáveis:} O fluxo de execução não pode ser
-        alterado para fora do \emph{shreds}.
+        alterado para fora do \emph{shred}.
 \end{itemize}
 
-Para melhor entender o comportamento de \emph{shreds}, veja a Figura
+Para melhor entender o comportamento dos \emph{shreds}, veja a Figura
 \ref{fig:shreds}, ilustrando uma aplicação que lida com uma senha (dado
-sensível) e o código que manipula tal dado. A aplicação possui uma thread que
+sensível) e o código que manipula tal dado. A aplicação possui uma \emph{thread} que
 comporta-se da forma padrão, contudo, ao ter que lidar com um dado sensível, ela
-faz uma chamada para uma função da API fornecida por \emph{shreds},
+faz uma chamada para uma função da API fornecida pelo \emph{shred},
 \texttt{shred\_enter()}. Ao realizar a chamada para essa função, o fluxo de
-execução entra em um modo seguro no qual \emph{shreds} gerencia o acesso à
-memória e garante que os dados são isolados \hltodo[no sistema]{que tal ``... do restante da aplicação''?}. Por fim, após realizar
-a operação na região protegida, a aplicação do usuário chama
+execução entra em um modo seguro em que o \emph{shreds} gerencia o acesso à
+memória e garante que os dados são isolados do restante da aplicação. Por fim,
+após realizar a operação na região protegida, a aplicação do usuário chama
 \texttt{shred\_exit()}. Para utilizar a proposta dos autores, é preciso alterar
 as aplicações alvo.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=0.6\textwidth]{shreds} 
-  \caption{Funcionamento geral de shreds}
+  \caption{Funcionamento geral do shreds}
   \label{fig:shreds}
 \end{figure}
 
-A API fornecida por \emph{shreds} consiste em apenas quatro funções:
+A API fornecida pelo \emph{shreds} consiste em apenas quatro funções:
 
 \begin{itemize}
-  \item \texttt{shred\_enter()}: Inicia a execução na thread atual, faz uma
-        troca para execução em uma stack alocada para um \textit{s-pool} e
-        espera um descritor para um pool;\todo{Está meio jogado isso aqui; que pool? Que descritor?}
-  \item \texttt{shred\_exit()}: Suspende o shred chamado, revoga as permissões
-        de acesso da thread atual sobre o \textit{s-pool} e recupera a stack de execução
+  \item \texttt{shred\_enter()}: Muda o fluxo de execução da \emph{thread} atual e
+        cria uma cópia da pilha atual do processo em uma região de memória
+        segura (\emph{pool});
+  \item \texttt{shred\_exit()}: Suspende o \emph{shred} chamado, revoga as permissões
+        de acesso da \emph{thread} atual sobre o \textit{s-pool} e recupera a pilha de execução
         original;
-  \item \texttt{spool\_alloc()}: Aloca memória para o s-pool associado à
-        thread;
+  \item \texttt{spool\_alloc()}: Aloca memória para o \emph{s-pool} associado à
+        \emph{thread};
   \item \texttt{spool\_free()}: Apaga a memória alocada.
 \end{itemize}
 
@@ -225,12 +250,12 @@ Para garantir que as regras de utilização da API sejam seguidas, o
 \emph{S-compiler} realiza verificações e instrumentações para evitar falhas que
 abram brechas de segurança.
 
-Para este trabalho, a parte mais importante de \emph{shreds} é o \emph{S-driver},
-que consiste em um módulo do Linux responsável por gerir as \emph{shreds} e
+Para este trabalho, a parte mais importante do \emph{shred} é o \emph{S-driver},
+que consiste em um módulo do Linux responsável por gerir os \emph{shreds} e
 \emph{s-pools}. A implementação dessa técnica é baseada em domínios de memória
 do ARM (Seção \ref{sec:outros_mecanismos_memoria}). Contudo, dado que essa
-tecnologia não foi projeta para os propósitos sugeridos pelo \emph{shreds}, ela
-apresenta duas limitações:
+tecnologia não foi projetada para os propósitos sugeridos pelo \emph{shreds},
+ela apresenta duas limitações:
 
 \begin{itemize}
   \item O ARM fornece apenas 16 domínios, o que impede que se crie um domínio
@@ -246,13 +271,14 @@ de forma temporária, rotacionando as identidades de segurança para o
 \emph{s-pool}. Toda vez que uma \emph{shreds} inicia ou retoma a sua execução
 em uma $CPU_i$ o \emph{S-driver} atribui um \emph{s-pool} associado a um
 domínio $Dom_i$. Isso faz com que uma \emph{shred} consiga acessar o seu
-\emph{s-pool} enquanto outras threads concorrentes não. Quando o
+\emph{s-pool} enquanto outras \emph{threads} concorrentes não. Quando o
 \emph{shred} finaliza ou tem a sua execução parada em favor de outro
 processo, o \emph{S-driver} muda o domínio, prevenindo que outro processo
-consiga acessar a região de memória. Note que o driver permite ou rejeita o
-acesso a um \emph{s-pool} baseado na CPU; isso faz com que, mesmo que um código
-malicioso consiga executar em paralelo com o \emph{shred}, ele não consiga ter
-acesso ao \emph{s-pool} sem que seja disparada uma falha de domínio.
+consiga acessar a região de memória. Note que o \emph{driver} permite ou
+rejeita o acesso a um \emph{s-pool} baseado na CPU; isso faz com que, mesmo que
+um código malicioso consiga executar em paralelo com o \emph{shred}, ele não
+consiga ter acesso ao \emph{s-pool} sem que seja disparada uma falha de
+domínio.
 
 Uma das funcionalidades fornecidas pelo \emph{shread} é a habilidade de
 permitir fazer cópias de dados para regiões de memória não protegidas de forma segura
@@ -263,25 +289,16 @@ fornecida pelo \emph{s-compiler} e \emph{S-driver}. Para prevenir que dados
 sejam vazados via stack, o \emph{S-driver} cria uma stack segura para cada
 \emph{shred} alocada partindo do \emph{s-pool} associado a si.
 
-\section{Implementação Estrutural Pesada}
-
-As \textit{Implementações Estruturais Pesadas} são aquelas que alteram
-diretamente o núcleo do SO. Essa abordagem traz vantagens e desvantagens que
-devem ser consideradas antes de serem adotadas. Por um lado, alterações diretas
-no núcleo são mais flexíveis em termos de possibilidade de acesso aos recursos
-disponíveis do SO. Por outro lado, alterações no núcleo são arriscadas, uma vez
-que podem afetar toda a estabilidade do sistema, e são extremamente complexas de
-serem feitas, uma vez que demandam profundo conhecimento do SO em questão.
-
-\subsection{Wedge}
+\section{Wedge}
 
 Existe um princípio chamado de \emph{``Princípio do Menor Privilégio''} que diz:
 
 \begin{quote}
-Divida o código em compartimentos na qual cada um vai executar com o menor
-privilégio para completar a sua tarefa. Essa abordagem previne contra ataques
-e também previne bugs que levam ao vazamento de dados.
-\citep{protectionprinciple}\todo{Este texto está um pouco estranho. Suponho que seja uma tradução sua; qual o texto original?}
+O princípio do menor privilégio implica dividir o código em compartimentos,
+cada um dos quais executa com os privilégios mínimos necessários para completar
+sua tarefa. Essa abordagem não apenas limita o dano que um ataque pode causar,
+mas também pode evitar que os \emph{bugs} vazem acidentalmente informações
+confidenciais.
 \end{quote}
 
 Apesar desse princípio ter sido apresentado em 1975 e ser amplamente aceito,
@@ -318,11 +335,11 @@ introdução delas em aplicações legadas. A proposta é constituída de três
 primitivas: \emph{Sthread}, \emph{Tagged Memory} e \emph{callgates}. O
 acesso a todas essas primitivas é feito via chamadas de sistema.
 
-Uma \emph{Sthread} pode ser comparada com uma thread fornecida pela biblioteca
+Uma \emph{Sthread} pode ser comparada com uma \emph{thread} fornecida pela biblioteca
 \textit{pthread}, definindo um compartimento dentro de uma
 aplicação. O programador pode então atribuir permissão de acesso para a memória
 e outros recursos por meio dessas \emph{sthreads}. Elas consistem de uma
-thread de controle e políticas de segurança associadas, que especificam:
+\emph{thread} de controle e políticas de segurança associadas, que especificam:
 
 \begin{itemize}
 	\item As marcações de memória que a \emph{sthread} pode acessar e a permissão
@@ -330,32 +347,33 @@ thread de controle e políticas de segurança associadas, que especificam:
 	\item Os descritores de arquivo que a \emph{sthread} pode acessar e as
 				permissões sobre cada (leitura, escrita, leitura-escrita);
 	\item Os \emph{callgates} que a \emph{sthread} pode chamar;
-	\item O \emph{Unix user id}, o \hltodo[\emph{root directory}]{Diretório raiz, pô :-p} e o \hltodo[\emph{SELinux}]{Acho que seria ``contexto SELinux'' ou algo assim, não?}.
+	\item O \emph{Unix user id}, o diretório raiz, e o contexto SELinux.
 \end{itemize}
 
-Uma nova \emph{sthread} não mantém as permissões de acesso por padrão, a não
-ser \hltodo[pelo \emph{snapshot} intocado do \emph{copy-on-write} acessado]{dafuq?}. Note que o
-novo componente não tem permissão para acessar qualquer outra memória ou mesmo
+Normalmente, quando uma cópia da memória é feita o SO apenas realiza a
+duplicação quando o recurso é modificado (\emph{copy-on-write}); nesse contexto
+uma nova \emph{sthread} não mantém as permissões de acesso por padrão, a não
+ser pela memória ainda intocado do \emph{copy-on-write}. Note que o novo
+componente não tem permissão para acessar qualquer outra memória ou mesmo
 descritor de arquivo do pai, contudo o pai pode anexar permissões de acesso no
 filho durante a sua criação. Uma \emph{sthread} só pode criar um filho com
 permissão igual ou menor do que a sua. Para a implementação, os autores criaram
 \emph{sthreads} como uma variante dos processos do GNU/Linux, só que, ao invés
-de herdar as informações do pai, ela apenas herda as regiões de memória e tabela
-de descritores asseguradas pela política de segurança.
+de herdar as informações do pai, ela apenas herda as regiões de memória e
+tabela de descritores asseguradas pela política de segurança.
 
-\todo[inline]{No próximo parágrafo, não entendi o funcionamento da criação das tags, alocação, segmento etc.}
-
-Quando alguma alocação de memória ocorre, o programador deve marcar a memória
-com uma única \emph{tag}; as permissões de acesso a esta memória são garantidas
-em termos delas. Por exemplo, pode-se definir leitura e escrita para uma
-memória com a \emph{tag} ``t''. O programador expressa os privilégios de memória
-em termos das \emph{tags} que são atribuídas para a memória em tempo de
-alocação. Vale acrescentar que uma \emph{tag} nunca implica em privilégios de
-outra \emph{tag}. A operação de criação de \emph{tags} começa pela criação delas
-por parte do programador. Essa operação aloca um segmento de memória e armazena
-um mapa da \emph{tag} para o segmento. Em seguida o programador chama a função
-para alocar a memória marcada (\texttt{smalloc()}) especificando a \emph{tag} o
-tamanho solicitado e assim aloca um \emph{buffer} do segmento com a \emph{tag}.
+No \emph{Wedge} é preciso seguir alguns passos para alocar memória. O passo
+inicial consiste em criar uma \emph{tag} que contém as permissões de acesso a
+região de memória que se deseja alocar. Em seguida, o programador deve utilizar
+uma chamada específica do \emph{Wedge} para fazer a alocação, essa função
+espera uma \emph{tag} que contém as permissões. Quando alguma alocação de
+memória ocorre, o programador deve marcar a memória com uma única \emph{tag};
+as permissões de acesso a esta memória são garantidas em termos delas. Essa
+operação aloca um segmento de memória e armazena um mapa da \emph{tag} para o
+segmento. Por exemplo, o programador pode criar uma \emph{tag} ``t'' que define
+que a memória será apenas para leitura. O programador expressa os privilégios
+de memória em termos das \emph{tags} que são atribuídas para a memória em tempo
+de alocação.
 
 Um \emph{callgate} é uma porção de código que executa em um nível de privilégio
 (normalmente) diferente de quem o chamou. Como um \emph{sthread} sempre roda
@@ -365,38 +383,38 @@ a operação. Para criar e usar um \emph{callgate}, é necessário indicar um po
 de entrada, um conjunto de permissões e argumentos confiáveis fornecido pelo
 responsável em criar o \emph{callgate}. \emph{Wedge} garante que os
 argumentos passados e criados não podem ser adulterados pelo processo que o
-utilizará. Além disso o \emph{callgate} herda o \hltodo[sistema de arquivos]{o diretório raiz, não? Ou o diretório atual?} e o id do
-usuário que o criou. As permissões do \emph{callgate} precisam ser um
+utilizará. Além disso o \emph{callgate} herda o sistema de arquivos raiz e o id
+do usuário que o criou. As permissões do \emph{callgate} precisam ser um
 subconjunto de quem o criou. Depois que um \emph{callgate} foi criado, a
 \emph{sthread} privilegiada pode criar um filho com menos privilégios mas com
 acesso ao \emph{callgate} criado. Quando o filho tenta acessar o
-\emph{callgate}, uma nova sthread é criada e a execução é levada para o ponto de
-entrada que foi registrado.
+\emph{callgate}, uma nova \emph{sthread} é criada e a execução é levada para o ponto
+de entrada que foi registrado.
 
 Para a implementação dos \emph{callgates}, a função \texttt{sc\_cgate\_add()}
 adiciona permissões para o ponto de entrada \texttt{cgate} com as permissões e
 os argumentos confiáveis, e todos esses dados são salvos no Kernel para evitar
 acessos indevidos. Um \emph{callgate} é invocado por meio da função
 \texttt{cgate()}, que faz com que o Kernel verifique as permissões. De forma
-geral, a API de \emph{Wedge} é definida pelas seguintes funções:
+geral, a API do \emph{Wedge} é composta por diversas funções; destacamos apenas
+algumas:
 
 \begin{itemize}
-  \item \texttt{sthread\_create(sthread\_t, sc\_t, cb\_t, void *arg)}
-  \item \texttt{sthread\_join(sthread\_t, void **ret)}:
-  \item \texttt{tag\_t tag\_new()}
-  \item \texttt{tag\_delete(tag\_t)}
-  \item \texttt{smalloc(int sz, tag\_t tag)}
-  \item \texttt{sfree(void *x)}
-  \item \texttt{smalloc\_on(tag\_t tag}
-  \item \texttt{smalloc\_off()}
-  \item \texttt{sc\_mem\_add(sc\_t *sc, tag\_t t, unsigned long prot)}:
-  \item \texttt{sc\_fd\_add(sc\_t, char *sid)}
-  \item \texttt{sc\_cgate\_add(sc\_t sc, cg\_t cgate, sc\_t *cgsc, void *arg)}
-  \item \texttt{cgate(cg\_t cb, sc\_t *perms, void *args)}
+  \item \texttt{sthread\_create(sthread\_t, sc\_t, cb\_t, void *arg)}: Cria
+uma nova \emph{sthread};
+  \item \texttt{tag\_t tag\_new()}: Cria uma nova \emph{tag};
+  \item \texttt{tag\_delete(tag\_t)}: Remove uma \emph{tag};
+  \item \texttt{smalloc(int sz, tag\_t tag)}: Aloca memória baseada na
+informação de tamanho e na \emph{tag};
+  \item \texttt{sfree(void *x)}: Libera a memória previamente alocada com o
+\texttt{smalloc()}
+  \item \texttt{sc\_cgate\_add(sc\_t sc, cg\_t cgate, sc\_t *cgsc, void *arg)}:
+Adiciona permissões para chamar um \emph{callgate};
+  \item \texttt{cgate(cg\_t cb, sc\_t *perms, void *args)}: Invoca um
+\emph{callgate}.
 \end{itemize}
 
-
-\subsection{Resource Container}
+\section{Resource Container}
 \label{sec:rc}
 
 \citet{resourcecontainers} argumentam que as abstrações de SO têm recebido
@@ -429,7 +447,7 @@ Note que parte da aplicação consome recursos dentro do \textit{user space};
 contudo, a outra parte da aplicação se expande para o Kernel. O terceiro cenário
 mostra múltiplos processos cooperando para concluir uma tarefa sem precisar
 do Kernel. Por fim, temos uma aplicação com um único processo que dispõe de
-múltiplas threads que, além de utilizar recursos no \textit{user space}, também
+múltiplas \emph{threads} que, além de utilizar recursos no \textit{user space}, também
 demanda recursos oriundos do Kernel. Repare como sistemas tradicionais têm
 pouco ou nenhum controle sobre os recursos consumidos;esses casos
 podem levar o escalonador a fazer contagens imprecisas levando-o a
@@ -447,59 +465,60 @@ utilizá-las para melhorar o processo de escalonamento.
 
 A adição do RC cria uma clara distinção entre o domínio da proteção e o de
 recursos, além de fornecer um controle fino sobre os recursos. O RC fornece um
-mecanismo para ligar os recursos a uma thread, de forma
+mecanismo para ligar os recursos a uma \emph{thread}, de forma
 dinâmica e sob controle da aplicação (isso também é chamado de \emph{resource
-binding}). Note que isso permite que múltiplas threads sejam associadas a
-inúmeros RCs simultaneamente, mas por padrão, uma thread começa com um RC
+binding}). Note que isso permite que múltiplas \emph{threads} sejam associadas a
+inúmeros RCs simultaneamente, mas por padrão, uma \emph{thread} começa com um RC
 herdado do processo pai. A aplicação poder religar-se a qualquer outro RC
 caso exista a necessidade.
 
 Uma das implicações diretas do RC é que uma aplicação pode associar informações a
-uma atividade ao invés de a uma thread ou processo, permitindo que
+uma atividade ao invés de a uma \emph{thread} ou processo, permitindo que
 o \emph{scheduler} forneça informações diretas para a atividade.
 
 % TODO: Voltar no artigo e elaborar mais essa questão dos atributos
 A alocação de atributos está diretamente associada com um modelo de
-escalonamento relacionado com cada RC em um sistema. Uma thread é normalmente
+escalonamento relacionado com cada RC em um sistema. Uma \emph{thread} é normalmente
 escalonada de acordo com os atributos do RC ao qual é limitada. Contudo, se uma
-thread é multiplexada entre vários containers, o escalonamento torna-se custoso
-para cada mudança de \textit{binding}. Na prática, a thread deve ser escalonada com base
+\emph{thread} é multiplexada entre vários \emph{containers}, o escalonamento torna-se custoso
+para cada mudança de \textit{binding}. Na prática, a \emph{thread} deve ser escalonada com base
 na combinação entre alocação de recursos e uso de RC. Para isso, o modelo
-define um \emph{scheduler binding} entre cada thread e um conjunto de containers
+define um \emph{scheduler binding} entre cada \emph{thread} e um conjunto de \emph{containers}
 sob o atual sendo multiplexado. 
 
-É interessante observar que os containers formam hierarquias, ou seja, o uso de
-um recurso usado por um container filho é restringido pelos parâmetros do
-container pai. Por exemplo, se o container pai tem 70\% dos recursos
-garantidos, então os container filhos não podem extrapolar esse limite.
+É interessante observar que os \emph{containers} formam hierarquias, ou seja, o uso de
+um recurso usado por um \emph{container} filho é restringido pelos parâmetros do
+\emph{container} pai. Por exemplo, se o \emph{container} pai tem 70\% dos recursos
+garantidos, então os \emph{container} filhos não podem extrapolar esse limite.
 
-Para se utilizar RCs, os autores sugerem uma API com as
-seguintes características:
+Para se utilizar RCs, os autores sugerem uma API com as seguintes
+características:
 
 \begin{itemize}
-	\item \textbf{Criar um Novo Container:} Por padrão, um container é criado
+	\item \textbf{Criar um Novo Container:} Por padrão, um \emph{container} é criado
 				como parte do \texttt{fork()} e é visível para a aplicação na forma
 				de um descritor de arquivos;
-	\item \textbf{Ajuste do Container \hltodo[API]{Acho que aqui era ``Pai''}:} Um processo pode mudar quem é o seu
-				container pai;
+	\item \textbf{Ajuste do Container Pai:} Um processo pode mudar quem é o seu
+				\emph{container} pai;
 	\item \textbf{Liberar o Container:} Um processo pode liberar a sua referência
-				para um container usando \texttt{close()};
+				para um \emph{container} usando \texttt{close()};
 	\item \textbf{Compartilhar Container entre Processos:} Quando um processo
-				recebe uma referência para um container, ele pode usar o recurso como
+				recebe uma referência para um \emph{container}, ele pode usar o recurso como
 				um \emph{resource context}. Isto permite mover uma aplicação ou
 				computação entre vários domínios de proteção;
 	\item \textbf{Atributos do Container:} Uma aplicação pode ler e ajustar
-				atributos de um container;
-	\item \textbf{Uso de Informações dos Containers}
-	\item \textbf{Binding threads para um container:} Uma thread pode fazer o
-		\emph{binding} para uma \emph{thread} a qualquer momento\todo{Oi?!};
+				atributos de um \emph{container};
+	\item \textbf{Uso de Informações dos Containers:} Uma aplicação tem diversos
+        níveis de acesso às informações do SO;
+	\item \textbf{Binding threads para um container:} Uma \emph{thread} pode fazer o
+		\emph{binding} para uma \emph{container} a qualquer momento;
 	\item \textbf{Restaurar o Scheduler Binding}
 	\item \textbf{Binding de Socket ou Arquivo para um Container:} Um processo
-				pode fazer o \emph{bind} de um socket ou arquivo para um container,
-				assim o consumo subsequente dos recursos do kernel ficam no container.
+				pode fazer o \emph{bind} de um socket ou arquivo para um \emph{container},
+				assim o consumo subsequente dos recursos do kernel ficam no \emph{container}.
 \end{itemize}
 
-\subsection{Nooks}
+\section{Nooks}
 % deixar claro que tudo isso é no nível do kernel
 \citet{nooks} conduziram uma pesquisa motivada pela busca por
 adicionar mais confiabilidade e resiliência aos SOs de produção. O principal
@@ -564,9 +583,8 @@ esse tipo de função pode ser detectado por algum padrão que, por sua vez, pod
 ser abstraído para um \emph{script}. Além disso, esse tipo de modificação precisa ser
 feito uma única vez. Do ponto de vista dos módulos, no geral, são poucos os
 casos que precisam ser alterados diretamente, uma vez que eles fazem uso dos
-recursos fornecidos pelo Kernel. \hltodo[Normalmente, módulos que exportam estruturas de
-dados próprias e que são exportáveis para o Kernel, consequentemente precisam
-ser alteradas.]{Não entendi esta frase}
+recursos fornecidos pelo Kernel. Normalmente, módulos que exportam estruturas
+de dados para o Kernel e o espaço de usuário também precisam ser alterados.
 
 O \emph{Nooks} fornece isolamento por meio do LKPD: toda extensão
 adicionada ao SO executa dentro do seu próprio LKPD que, por sua vez, é chamado
@@ -629,7 +647,7 @@ validar a sua eficácia, conseguindo tratar 99\% dos casos. Além disso, os
 autores também validaram o trabalho da perspectiva do desempenho e notaram que,
 na maioria dos casos, os gastos com a estrutura são compensados pelas vantagens.
 
-\subsection{Mondrian Memory Protection e Mondrix}
+\section{Mondrian Memory Protection e Mondrix}
 
 \citet{mmp} buscaram explorar técnicas para realizar controle fino sobre da
 memória, com o objetivo de adicionar mais confiabilidade e segurança para os
@@ -649,7 +667,12 @@ refere-se ao acesso de ponteiros em outros domínios da memória (por exemplo,
 acesso do espaço de usuário para o do Kernel), que atualmente não são permitidos,
 sendo necessário realizar operações de cópias.
 
-% TODO: Figura Y
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{mondrix_pd}
+	\caption[Representação dos domínios de proteção do Mondrix]{Representação dos domínios de proteção do Mondrix (\cite{mondrix})}
+  \label{fig:mondrixPD} 
+\end{figure}
 
 Os autores defendem que mecanismos de controle fino do acesso à memória podem
 trazer grandes benefícios em termos de segurança, confiabilidade e, em certos
@@ -658,13 +681,13 @@ que permite o controle de acesso à memória no nível do tamanho das palavras d
 dado. Para isso é apresentado um novo tipo de abordagem baseada em hardware e
 software chamado \emph{Mondrian Memory Protection (MMP)}~\citep{mmp}. Além
 disso, uma implementação prática chamada \emph{Mondrix}~\cite{mondrix} foi
-feita no GNU/Linux. \hltodo[A Figura Y]{Precisa fazer ou tirar isto} resume a representação de memória que o MMP
-busca atingir. Repare que não existem porções de memória específica; a
-memória é dividida em diversos compartimentos chamados \emph{Protection
-Domains (PD)}. Um PD é definido como um contexto que determina a permissão para
-executar um código. Cada PD é independente do espaço de endereçamento e
-pode conter múltiplas threads, mas cada thread só pode pertencer a um único PD.
-O projeto do MMP é guiado por três requisitos:
+feita no GNU/Linux. A Figura~\ref{fig:mondrixPD} resume a representação de
+memória que o MMP busca atingir. Repare que não existem porções de memória
+específica; a memória é dividida em diversos compartimentos chamados
+\emph{Protection Domains (PD)}. Um PD é definido como um contexto que determina
+a permissão para executar um código. Cada PD é independente do espaço de
+endereçamento e pode conter múltiplas \emph{threads}, mas cada \emph{thread} só
+pode pertencer a um único PD.  O projeto do MMP é guiado por três requisitos:
 
 \begin{enumerate}
 	\item \textbf{Diferente}: Cada PD diferente pode ter um domínio distinto
@@ -676,21 +699,19 @@ O projeto do MMP é guiado por três requisitos:
 \end{enumerate}
 
 % TODO: FIGURA K
-Os autores afirmam que MMP tem a \hltodo[semântica da segmentação]{Que tal uma ref para a seção em que você explica isso? Além disso, não lembro se tem uma discussão sobre as desvantagens da segmentação} sem os problemas
+Os autores afirmam que MMP tem a semântica da segmentação (Seção ~\ref{sec:segmentacao}) sem os problemas
 associados a ela. MMP fornece controle fino sobre a proteção dos dados
-compartilhados, utiliza endereçamento linear, é compatível com a \hltodo[\emph{ISA}]{Dafuq?}
+compartilhados, utiliza endereçamento linear, é compatível com o conjunto de instruções
 existentes, não necessita de registradores de segmentos, possui um mecanismo
-simples de revogação de permissões e não tem ponteiros marcados. \hltodo[A Figura K]{Oops! Null Pointer Exception...}
-mostra o comparativo entre a abordagem utilizando segmentos e MMP. Para que
+simples de revogação de permissões e não tem ponteiros marcados. Para que
 MMP possa garantir o controle de acesso à memória, ele precisa verificar as
 permissões de acesso feitas por cada operação de \emph{load/store}; isto
 claramente consome mais recursos computacionais. Por isso, MMP é uma solução
 que também depende da utilização de um hardware personalizado.
 
-% TODO: FIGURA G
-
-\hltodo[A Figura G]{Segmentation Fault} ilustra a arquitetura de hardware proposta para a implementação do
-MMP; note que ela introduz muitos elementos novos. %TODO: Descrever o hardware
+% TODO: FIGURA G -> A princípio não me parece que falar do hardware é útil...
+%\hltodo[A Figura G]{Segmentation Fault} ilustra a arquitetura de hardware proposta para a implementação do
+%MMP; note que ela introduz muitos elementos novos. %TODO: Descrever o hardware
 
 Da perspectiva do software, Mondrix \citep{mondrix} sugere a utilização de um
 novo elemento chamado de Supervisor de Memória, dividido em duas partes:
@@ -733,7 +754,7 @@ das \emph{threads} (uma \emph{thread} só pode controlar \emph{stacks} que estã
 no seu domínio), cria e destrói proteções de domínio e também valida as
 políticas de acesso.
 
-\subsection{SpaceJMP}
+\section{SpaceJMP}
 \label{sec:mvas}
 
 Toda vez que um processo é criado, ele inicializa diferentes estruturas de
@@ -770,11 +791,11 @@ novos processadores com bits extras para elevar o tamanho da VAS, os
 desenvolvedores tiveram que utilizar vários artifícios para superar o
 problema de bits insuficientes. Hoje em dia, esse problema está sob controle,
 uma vez que os processadores atuais possuem um grande espaço de endereçamento.
-Contudo, estamos no início de uma geração\todo{``geração de computadores''? ``geração da computação''?} conhecida por \emph{data-centric},
-que será dominada por grandes memórias não-voláteis \citep{outlook}. Assim,
-simplesmente incrementar o total de bits para o VAS nas CPUs \hltodo[não sanará mais]{Na verdade, poderia sanar, mas tem os problemas que você menciona. Eu mudaria para ``não sanará tão facilmente esse problema, pois elevar o número de bits ...}
-esse problema. Elevar o número de bits na VAS tem impactos na produção,
-desempenho e consumo de energia \citep{spacejmp}.
+Contudo, estamos no início de uma geração da computação conhecida por
+\emph{data-centric}, que será dominada por grandes memórias não-voláteis
+\citep{outlook}. Assim, simplesmente incrementar o total de bits para o VAS nas
+CPUs não sanará tão facilmente esse problema, pois elevar o número de bits na
+VAS tem impactos na produção, desempenho e consumo de energia \citep{spacejmp}.
 
 Um dos problemas do modelo de processos atual é a representação
 das estruturas de dados baseadas em ponteiros fora dos
@@ -800,12 +821,11 @@ VAS.
 
 A Figura \ref{fig:large_memory} ilustra como MVAS resolve o problema de
 endereçar memórias físicas maiores do que o VAS. Basicamente, todo processo
-pode criar multiplos VAS e alternar entre eles. Se os processos precisarem de mais
-memória do que o disponível, basta criar um novo address space com o começo
-apontando para uma região de memória não utilizada e, em seguida, anexar o novo
-VAS ao processo. \hltodo[Com isso, torna-se possível que o processo faça trocas entre
-as diferentes VAS]{Eu tiraria, já está dito antes}. O problema da serialização e compartilhamento de dados também pode
-ser simplificado pelo MVAS: basta criar um VAS e permitir que
+pode criar múltiplas VAS e alternar entre eles. Se os processos precisarem de
+mais memória do que o disponível, basta criar um novo espaço de endereçamento
+com o começo apontando para uma região de memória não utilizada e, em seguida,
+anexar o novo VAS ao processo. O problema da serialização e compartilhamento de
+dados também pode ser simplificado pelo MVAS: basta criar um VAS e permitir que
 múltiplos processos se anexem a ele.
 
 \begin{figure}[!h]
@@ -853,7 +873,7 @@ processo por meio da chamada de sistema \texttt{vas\_attach()}. Por fim, o
 processo pode mudar entre os VAS por meio da chamada para
 \texttt{vas\_switch()}.
 
-\subsection{Light-weight Contexts}
+\section{Light-weight Contexts}
 \label{sec:lwc}
 
 O fluxo de execução do processo é controlado pelo \textit{Program Counter (PC)}
@@ -876,23 +896,27 @@ de páginas, \emph{bindings} de descritores de arquivos e conjuntos de
 credenciais; sempre que um novo processo é criado, o sistema cria um novo lwC
 para ele. A aplicação pode acessar todas as funcionalidades do lwC via espaço
 do usuário através de chamadas de sistemas que fazem o controle fino dos
-comportamentos fornecidos. As chamadas mais interessantes são
-\texttt{lwCreate()} e \texttt{lwSwitch()}. \texttt{lwCreate()} tem uma
-semântica similar a \texttt{fork()}: \hltodo[depois que \texttt{lwCreate()} retorna,
-o atual processo tem um novo lwC (filho) associado consigo mesmo que consiste
-em um \emph{snapshot} do processo que foi chamado]{Cumé???? Não entendi nada}. Esse \emph{snapshot}
-difere de \texttt{fork()} uma vez que nenhum PID novo ou thread é criado.
-Depois da criação do processo filho, a aplicação é livre para fazer a troca
-(com o \texttt{lwSwitch()}) para algum de seus \emph{snapshots} a qualquer
-momento.
+comportamentos fornecidos.
+
+As chamadas mais interessantes são \texttt{lwCreate()} e \texttt{lwSwitch()}.
+O \texttt{lwCreate()} tem uma semântica similar ao da chamada de sistema
+\texttt{fork()}; assim que a chamada é feita, o processo pai tem os seus dados
+duplicados no processo filho. Contudo, ao contrário do \texttt{fork()}, o
+\texttt{lwCreate()} não cria uma nova \emph{thread} e nem um novo \emph{PID}.
+Ao final da execução da chamada de sistema, o \texttt{lwCreate()} retorna um
+identificador do novo contexto para o processo pai e se estiver no processo
+filho ele retorna -1. A cópia do estado do processo pai na forma do contexto,
+recebe o nome de \emph{snapshot}. Depois da criação do processo filho, a
+aplicação é livre para fazer a troca (com o \texttt{lwSwitch()}) para algum de
+seus \emph{snapshots} a qualquer momento.
 
 A Figura \ref{fig:lwc} ilustra a operação de troca entre diferentes lwCs. Um
 processo pode criar vários lwCs durante a sua execução e em
 diferentes momentos e pode
 seletivamente escolher transferir o seu fluxo de execução para outro lwC por
-meio de uma chamada para \texttt{lwSwitch()}. A mudança da thread é feita pelo
-SO, que é responsável por mudar automaticamente o mapeamento da memória virtual,
-as entradas das tabelas de arquivos, o \hltodo[stack de instrução]{? Não é o PC?} e o \emph{stack
+meio de uma chamada para \texttt{lwSwitch()}. A mudança da \emph{thread} é
+feita pelo SO, que é responsável por mudar automaticamente o mapeamento da
+memória virtual, as entradas das tabelas de arquivos, o PC e o \emph{stack
 pointer}.
 
 \begin{figure}[!h]
@@ -910,33 +934,21 @@ fornece um sofisticado modelo de programação que permite novas capacidades
 tais quais rápido \emph{roll-back}, isolamento de seções e compartimentos de
 proteção. A API do lwC é composta das seguintes funções:
 
-\todo[inline]{Só jogar assim é sacanagem... tem que explicar um pouquinho cada uma e talvez até tirar as que não forem muito importantes}
-
 \begin{itemize}
-  \item \texttt{lwCreate(resource-spec,options)}
-  \item \texttt{lwSwitch(target, args)}
-  \item \texttt{lwRestrict(l, resource-spec)}
-  \item \texttt{lwOverlay(l, resource-spec)}
-  \item \texttt{lwSyscall(target, mask, syscall, syscall-args)}
+  \item \texttt{lwCreate(resource-spec,options):} Cria um novo contexto de acordo com o estado atual do processo;
+  \item \texttt{lwSwitch(target, args):} Alterna entre os diferentes contextos;
+  \item \texttt{lwRestrict(l, resource-spec):} Permite restringir a forma de acesso ao contexto;
+  \item \texttt{lwSyscall(target, mask, syscall, syscall-args):} Intercepta chamadas de sistema dentro de um contexto permitindo validar permissões de execução.
 \end{itemize}
 
 Os autores demonstram os conceitos do lwC em uma implementação no FreeBSD. As
-modificações principais foram feitas \hltodo[na memória]{Ééééé... no gerenciamento de memória, talvez?} e estruturas de dados do
+modificações principais foram feitas no gerenciador de memória e estruturas de dados do
 processo. Seu uso foi demonstrado em adaptações feitas no Apache, Nginx e
 OpenSSH. Por fim, os autores propõem certos algoritmos que discutiremos no
 Capítulo \ref{cap:analise-sobre-abstracoes-de-processos}.
 
-\section{Implementação Independente}
-
-As \textit{Implementações Independentes} são aquelas que se propõem a criar um
-SO totalmente novo, visando demonstrar um ou mais conceitos. Essas abordagens têm
-poucas chances de serem adotadas diretamente, contudo apresentam conceitos e ideias que
-podem ser interessantes para serem estendidas para SOs atuais. Pode-se dizer
-que é relativamente comum que um SO copie características interessantes de
-outros, por isso apresentamos \hltodo[alguns]{``Alguns'', na real é só um, o exokernel} SO usados apenas em contextos de pesquisa
-mas que podem inspirar os SO de produção em uso hoje.
-
-\subsection{Exokernel}
+\section{Exokernel}
+\label{sec:exokernel}
 
 \citet{exokernel} defendem que os projetos de SOs possuem uma série de
 desvantagens por terem várias abstrações diretamente programadas no núcleo. Os
@@ -1015,7 +1027,7 @@ Essas podem ser implementadas em hardware ou software, por exemplo, a entrada
 da TLB é uma primitiva de hardware. Na prática o SB trabalha com o conceito de
 "baixar o código para o kernel", esse código é chamado para cada acesso ou
 evento do recurso para determinar o dono e a ação que o Kernel deve tomar.
-Baixar o código dentro do kernel permite uma thread da aplicação ter controle
+Baixar o código dentro do kernel permite uma \emph{thread} da aplicação ter controle
 sobre os eventos. Isto melhora o desempenho uma vez que elimina a camada
 intermediaria do Kernel e também propícia limitar a aplicação aos seus
 recursos.
@@ -1037,8 +1049,15 @@ que a biblioteca do SO falha, então o \emph{exokernel} pode simplesmente
 quebrar o SB e informar a biblioteca. Todos as perdas de recursos forçadas são
 armazenadas em um vetor de recuperação.
 
-%TODO: Falta dar o fechamento com a parte dos processos e talz
-
 % \subsection{Singularity}
 % 
 % \subsection{Corey}
+
+\section{Considerações Finais}
+
+Neste capítulo buscamos apresentar diversos trabalhos que representam
+contribuições variadas para a áreas da abstração de processos. Durante essa
+pesquisa, vários trabalhos foram analisados, contudo por uma questão prática
+selecionamos aqueles que trazem propostas diferentes e que podem ser
+combinadas. No próximo capítulo, faremos uma análise sobre validações de tais
+trabalhos.

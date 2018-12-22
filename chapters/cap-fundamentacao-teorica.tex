@@ -162,7 +162,7 @@ processo com uma \emph{thread} e outro com múltiplas \emph{threads}.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=.7\textwidth]{process_and_threads}
-	\caption[Única thread e multi-thread.]{Única thread e multi-thread. Note o isolamento da \emph{stack} e do PC~\citep{silberschatz}}
+	\caption[Única thread e multi-thread.]{Única thread e multi-thread. Note o isolamento da \emph{stack} e dos registrador (PC)~\citep{silberschatz}}
   \label{fig:single_thread_multi_thread}
 \end{figure}
 
@@ -290,7 +290,7 @@ entre o endereço lógico e o físico.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{mmu} 
-  \caption{Do endereço lógico ao físico com o auxilio da MMU}
+  \caption{Do endereço lógico ao físico com o auxílio da MMU}
   \label{fig:mmu}
 \end{figure}
 
@@ -405,6 +405,7 @@ páginas com a mesma visibilidade (indicada pelo programa no espaço de usuário
 para ser compartilhado entre processos.
 
 \subsection{Modelo de Segmentação}
+\label{sec:segmentacao}
 
 Além do mecanismo de gerenciamento de memória fornecido pela paginação, também
 existe uma alternativa chamada de \boldAndIndex{segmentação}. Esse modelo
@@ -971,7 +972,7 @@ e demostrou-se extremamente eficiente devido ao seu sofisticado mecanismo de
 \subsubsection{A Tecnologia VT-x}
 \label{sec:vtx}
 
-\cite{uhlig} apresentaram a tecnologia de virtualização adotada pela Intel para
+\citet{uhlig} apresentaram a tecnologia de virtualização adotada pela Intel para
 fornecer a virtualização completa no nível do processador. A
 Figura~\ref{fig:vt-x_flow} ilustra os elementos que compõem a tecnologia VT-x e a
 forma como eles interagem. Dentre as inovações apresentadas, dois novos modos
@@ -1007,3 +1008,72 @@ anterior do \emph{guest}. Todas as informações referentes à virtualização s
 mantidas em uma estrutura de dados chamada \boldAndIndex{virtual-machine
 control structure (VMCS)} que tem por função gerenciar as transições entre a
 \emph{VM entry} e \emph{VM exit}.
+
+Na prática as CPUs Intel fornecem diversas instruções para utilizar o VT-x. Em
+especial, o \texttt{VMCALL} faz com que \emph{VM Exit} ocorra
+incondicionalmente, transferindo o controle para o VMM; por sua vez, o VMM
+decide o que fazer. Para a melhor compreensão do conteúdo dos próximos
+capítulos desta dissertação, destacamos apenas um pequeno subgrupos de
+instruções que normalmente são expostas para as máquinas \emph{guest} por meio
+do VT-x de forma segura e isolada, são elas~\citep{intelmanual}:
+
+\begin{description}
+	\item [\textbf{Exceções}:] São tipos especiais de transferência de
+controle; elas alteram o fluxo normal de execução do programa para atender
+algum evento externo ou reportar erros para situações excepcionais. Em resumo,
+exceções manipulam condições detectadas pelo processador no decorrer da
+execução de uma instrução;
+		\begin{itemize}
+			\item \texttt{LIDT}: Carrega o valor que indica a localização de um
+endereço base para ser carregado no registrador que mantém a referência para a
+tabela global de descritores ou a tabela de interrupções;
+			\item \texttt{LTR}: Carrega um segmento específico que aponta para o
+segmento de estado de um processo. Essa instrução só pode ser executada em modo
+privilegiado;
+			\item \texttt{IRET}: Devolve o controle para um programa ou procedimentos
+após a manipulação de uma exceção ou interrupção;
+			\item \texttt{STI}: Ajusta a \emph{flag} \texttt{IF} em um registrador
+\texttt{EFLAGS}, depois de ajustado, o processador começa a responder a
+interrupções externas;
+			\item \texttt{CLI}: Limpa a \emph{flag} de interrupção.
+		\end{itemize}
+  \item [\textbf{Memória Virtual}:]
+Máquinas virtuais precisam lidar com o gerenciamento da memória, para isso,
+elas precisam fazer uso de instruções de manipulação da memória em conjunto com
+um recurso chamado de \emph{Extended Page Tables (EPT)} -- discutiremos a seguir;
+		\begin{itemize}
+			\item \texttt{MOV CRn}: Esse tipo de instrução é usada para manipular
+bits dos registradores, no contexto das memórias virtuais, os registradores CR2
+e CR3 são dois importantes elementos. O primeiro é usado para identificar
+faltas de página e o segundo contém o endereço físico base de uma hierarquia de
+página em conjunto com duas \emph{flags} de controle;
+			\item \texttt{INVLPG}: Invalida entradas na TLB;
+			\item \texttt{INVPCID}: Invalida entrada nas TLBs e \emph{caches} de
+página.
+		\end{itemize}
+	\item [\textbf{Modos Privilegiados}:] Operações realizadas em modos
+privilégiados.
+		\begin{itemize}
+			\item \texttt{SYSCALL}: Chamada rápida para o modo privilegiado;
+			\item \texttt{SYSRET}: Trabalha em conjunto com a instrução
+\texttt{SYSCALL} devolvendo a execução do SO para o modo de usuário;
+			\item \texttt{SYSEXIT}: Devolve de forma rápida a execução para a
+aplicação no espaço de usuário.
+		\end{itemize}
+\end{description}
+
+Por fim, o VT-x trabalha com uma tecnologia chamada de Tabelas de Páginas
+Estendidas (EPT) que é uma extensão feita sobre as MMUs. O EPT é um mecanismo
+de paginação aninhada que trata cada endereço físico da máquina \emph{guest}
+como um endereço virtual na máquina \emph{host}, inserindo multiníveis na
+tabela de páginas da máquina \emph{host}. Note que toda a manipulação é feita
+com o auxílio do hardware, o que torna todo o processo de tradução eficiente.
+
+\section{Considerações Finais}
+
+Neste capítulos, buscamos apresentar os diversos temas ligados direta e
+indiretamente às abstrações de processos com o objetivo de tornar a leitura
+desta dissertação mais simples. No próximo capítulo, apresentaremos diversos
+trabalhos na qual acreditamos representar o estado da arte nas abstrações de
+processos e que ainda não atingiram os SOs de produção.
+
