@@ -1,58 +1,60 @@
-\chapter{Analise Sobre Abstrações de Processos}
+\chapter{Análise Sobre Abstrações de Processos}
 \label{cap:analise-sobre-abstracoes-de-processos}
 
-No Capítulo \ref{cap:trabalhos-analisados} introduzimos os principais trabalhos
+No Capítulo \ref{cap:trabalhos-analisados}, introduzimos os principais trabalhos
 que orbitam sobre as novas abstrações de processos e, a partir de tais
-pesquisas, pretendemos realizar neste capítulo uma reflexão das suas principais
+pesquisas, pretendemos desenvolver neste capítulo uma reflexão das suas principais
 características. Para isso, realizaremos diversas análises sobre o estado da arte
 da pesquisa em processos e apresentaremos um modelo teórico que visa fornecer
 uma perspectiva para a nova geração de abstrações de processos. Como resultado,
 responderemos as seguintes questões de pesquisa:
 
 \begin{quote}
- \item \textit{RQ1:.} "Quais são as características desejáveis para a próxima geração de abstrações de processos?"
- \item \textit{RQ2:.} "Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?"
+ \item \textit{RQ1:.} ``Quais são as características desejáveis para a próxima geração de abstrações de processos?''
+ \item \textit{RQ2:.} ``Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?''
 \end{quote}
 
-Este trabalho se diferencia dos demais por considerar o uso de novas extensões
+Este trabalho se diferencia dos \hltodo[demais]{Não entendi, quais? Os que você menciona no cap 3?} por considerar o uso de novas extensões
 nas abstrações de processos e por levar em conta SOs de uso cotidiano, em
 especial o GNU/Linux. Este último critério torna-se relevante para futuras
 investigações na área, uma vez que, se tais abstrações alcançarem SOs de ampla
 utilização, novos ramos de pesquisa podem surgir.
 
-\section{Potenciais e Dificuldades Para Adotar Novas Abstrações de Processos}
+\section{Potenciais e Dificuldades Para a Adoção de Novas Abstrações de Processos}
 \label{sec:potenciais}
 
-Quando a academia faz uma nova proposta para aplicações que estão no estado da
-prática, tal proposta deve ser genérica o bastante para ser utilizada por
+\todo[inline]{Achei um pouco longo e repetitivo, acho que dá para cortar um pouco}
+
+Quando a academia faz uma nova proposta para aplicações que estão no \hltodo[estado da
+prática]{Como a gente viu, essa expressão é bem informal e ``marketeira''; eu colocaria entre aspas ou trocaria por outra coisa}, ela deve ser genérica o bastante para ser utilizada por
 múltiplas linguagens de programação e deve também considerar questões
 referentes a compatibilidade, melhor uso do hardware disponível e
-confiabilidade. Assim, apesar dos avanços trazidos pelas pesquisas em SO, eles
-estão limitados às diferentes restrições existentes nos SOs utilizados tanto em
+confiabilidade. Assim, apesar dos avanços trazidos pelas pesquisas em SO, elas
+estão limitadas às diferentes restrições existentes nos SOs utilizados tanto em
 produção quanto em projetos de pesquisa.
 
 SOs usados em produção demandam rigorosa validação para manter o sistema
 estável em uma variedade de configurações. Espera-se que um SO maduro busque
-prevenir acessos ilegais a memória, impossibilitar a violação de API, evitar
+prevenir acessos ilegais à memória, impossibilitar a violação de APIs, evitar
 consumo excessivo de recursos e impedir erros de sincronização ou
 \textit{locking}. Essas características precisam ser garantidas pelo SO
 \citep{mondrix}, porém, como esperado, tais restrições dificilmente são
-atendidas por propostas de pesquisas devido a centralização dos pesquisadores
-em um único problema, desconsiderando assim outros impactos. Por esses motivos,
+atendidas por propostas de pesquisas devido à centralização dos pesquisadores
+em um único problema, desconsiderando assim outros impactos. Por esse motivo,
 para que um novo componente sugerido a partir de uma pesquisa acadêmica chegue
 aos SOs atuais, é importante garantir que as aplicações que já existem não
 sofram impactos negativos em termos de desempenho e de uso.
 
 Outra perspectiva que deve ser considerada é o contínuo desenvolvimento de novos
 recursos de hardware. Por exemplo, frequentemente observam-se componentes que
-são especializados em um nicho e que ao longo do tempo chegam ao usuário
-final tornando-se comum. Um caso simples que ilustra tal evolução é o
+são especializados em um nicho e que, ao longo do tempo, chegam ao usuário
+final, tornando-se comuns. Um caso simples que ilustra tal evolução é o
 uso de hardware especializado para virtualização, uma vez que esses existiam
 apenas para servidores e hoje estão disponíveis para a maioria dos usuários
 comuns. Tais recursos representam um novo leque de opções não exploradas,
 inclusive possíveis melhorias para as atuais abstrações de processos.
 
-Entretanto, para incorporar novos recursos de hardware à abstração de processos
+Entretanto, para incorporar novos recursos de hardware à abstração de processos,
 não se deve descartar que tal recurso pode não estar disponível para alguns
 usuários. Por essa razão, qualquer mudança nos processos para adicionar suporte
 a novos recursos de hardware deve levar em consideração todo tipo de situação.
@@ -62,13 +64,13 @@ modernos. Claro que a evolução do hardware necessita de cautela para evitar
 quebra de compatibilidade binária com aplicações legadas. Infelizmente, é
 preciso ter em mente que as alterações de hardware e suas limitações fazem com
 que propostas que dependem de tal evolução sejam difíceis de serem adotadas, e
-tornam a ampla adoção de uma determinada melhoria impraticável.
+tornam a ampla adoção de uma determinada melhoria \hltodo[impraticável.]{Melhor ou dizer ``difícil'' ou mudar para ``às vezes impraticável''}
 
-Algumas das novas abstrações de processos propostas por pesquisadores tem
-enorme dependência com outras tecnologias experimentais. Se por um lado isso
+Algumas das novas abstrações de processos propostas por pesquisadores têm
+enorme dependência com outras tecnologias experimentais. Se, por um lado, isso
 traz vantagens para as tecnologias em desenvolvimento, por outro, reduz a chance
-de adoção de uma nova abstração de processos por um SO de produção devido a
-dependência dessa abstração em tecnologias instáveis.
+de adoção de uma nova abstração de processos por um SO de produção devido à
+dependência dessa abstração de tecnologias instáveis.
 
 %TODO
 Encontrar um bom balanceamento entre academia e indústria de forma a levar
@@ -76,12 +78,12 @@ benefícios para os usuários não é uma tarefa trivial. Nesse sentido, novas
 propostas de mudanças na abstração de processos devem considerar as limitações
 citadas nessa seção para que possam atender aos requisitos de qualidade
 exigidos pelos SOs de uso cotidiano. Infelizmente, afirmar que uma proposta da
-academia pode ser adotada ou não pela indústria é uma tarefa impossível dado a
+academia pode ser adotada ou não pela indústria é uma tarefa impossível dada a
 enorme quantidade de variáveis envolvidas em tal análise. Mesmo assim, para
 posicionar o leitor em termos do estado da arte e da prática, nós buscamos
-estabelecer um "potencial de adoção" de uma nova proposta. Com base nos
+estabelecer um ``potencial de adoção'' de uma nova proposta. Com base nos
 critérios apresentados, buscamos definir um conjunto de variáveis que auxilie
-na definição das chances de uma pesquisa ser adotada pela indústria, segue:
+na definição das chances de uma pesquisa ser adotada pela indústria:
 
 \begin{enumerate}
   \item
@@ -91,8 +93,8 @@ tal aspecto um problema para a adoção da nova técnica.
 
   \item
 \textbf{Dependência de Compatibilidade}: refere-se as propostas que exigem
-alterações na semântica das aplicações em espaço de usuário para que essas
-possam tirar proveito de alguma melhoria. Para esses casos, desconsideramos
+alterações na semântica das aplicações em espaço de usuário para que elas
+possam tirar proveito de alguma melhoria. Para esses casos, \hltodo[desconsideramos]{O que significa ``desconsideramos''? Você coloca a proposta que tem isso como inviável? Você considera que se é só uma função não é um problema significativo em termos de compatibilidade? Não entendi}
 propostas que simplesmente chamam uma única função e que não alteram em nada
 na semântica.
 
@@ -103,12 +105,12 @@ uma vez que dois projetos precisam ser alterados.
 
   \item
 \textbf{Implementação Pesada}: consideramos as implementações pesadas mais
-complicadas uma vez que necessitam realizar mudanças no núcleo do SO, o que
+complicadas, uma vez que necessitam realizar mudanças no núcleo do SO, o que
 dificulta a adoção.
 
   \item
 \textbf{Implementação Independente}: refere-se a propostas de novas
-implementações, claramente essa é de difícil adoção.
+implementações, claramente de difícil adoção.
 
   \item
 \textbf{Hardware Novo}: essa variável indica que a proposta depende de um
@@ -126,12 +128,12 @@ A Tabela \ref{tab:adocao} tenta apresentar o potencial de adoção de cada uma
 das propostas citadas no Capítulo \ref{cap:trabalhos-analisados} de acordo com
 as variáveis discutidas nessa seção. Na tabela, temos uma marcação indicada
 pelo simbolo \ding{52} que significa que uma determinada proposta possui a
-limitação indicada na coluna. Se a proposta não contém tal restrição, então ela
+limitação indicada na coluna correspondente. Se a proposta não contém tal restrição, então ela
 é marcada com o simbolo \ding{54}. Por uma questão de simplicidade, para
-definir o potencial de adoção atribuímos zero para cada \ding{54} e um para
-\ding{52}. Por fim, toda vez que a opção "Hardware Novo" é marcada,
+definir o potencial de adoção, atribuímos zero para cada \ding{54} e um para
+\ding{52}. Por fim, toda vez que a opção ``Hardware Novo'' é marcada,
 consideramos que a proposta também requer características específicas de
-hardware; para as variáveis referentes a implementação, consideramos que quando
+hardware; para as variáveis referentes à implementação, consideramos que quando
 uma proposta parte de uma implementação independente ela também é considerada
 pesada.
 
@@ -140,23 +142,23 @@ pesada.
 \section{Extração de Conceitos Derivados das Pesquisas em Abstrações de Processos}
 
 Todas as pesquisas apresentadas no Capítulo \ref{cap:trabalhos-analisados}
-configuram o estado da arte no que se refere as abstrações de processos.
+configuram o estado da arte no que se refere às abstrações de processos.
 Infelizmente, nenhuma delas encontra-se no código principal de qualquer SO de
 uso cotidiano. Parte desse problema vem dos fatos apresentados anteriormente na Seção
 \ref{sec:potenciais}, contudo outros aspectos que contribuem para que tais
-propostas não estejam presentes nos SO modernos vem da falta de unificação e
+propostas não estejam presentes nos SO modernos vêm da falta de unificação e
 sistematização de tais ideias. Ao analisar cada uma das propostas, notamos que
 todas elas propõem direta ou indiretamente algum nível de desacoplamento entre
 os elementos presentes no SO. Tal observação nasce da abordagem radical tomada
 pelos criadores do Exokernel, que levaram o nível de desacoplamento do SO ao
 extremo. Apesar do Exokernel ser um sistema de difícil adoção em termos
 práticos, ele nos alerta sobre as vantagens da redução de dependências
-entre os elementos do SO e as possibilidades que isso pode levar ao espaço de
-usuário. Tendo isso mente, revisitamos de forma breve alguns dos trabalhos
+entre os elementos do SO e as possibilidades que ela pode levar ao espaço de
+usuário. Tendo isso em mente, revisitamos de forma breve alguns dos trabalhos
 apresentados no Capítulo \ref{cap:trabalhos-analisados} sob a ótica do
 desacoplamento e seus potenciais benefícios.
 
-Iniciamos analisando o projeto Dune. Este projeto traz uma nova perspectiva de uso dos recursos de virtualização
+Iniciamos analisando o projeto Dune. Esse projeto traz uma nova perspectiva de uso dos recursos de virtualização
 disponibilizados pelas CPUs modernas que, consequentemente, traz dois
 benefícios diretos: otimização e flexibilidade. Ao utilizar os recursos de
 virtualização para acelerar certas tarefas, o Dune promoveu avanços em um setor
@@ -166,65 +168,65 @@ técnicas avançadas que visam trazer melhorias de desempenho; em outras
 palavras, a proposta do Dune pode melhorar a legibilidade de alguns códigos.
 Os avanços citados foram factíveis graças ao \textbf{desacoplamento da
 virtualização}, que possibilita entregar melhorias de desempenho no
-espaço de usuário de maneira relativamente simples (ponto de vista da
+espaço de usuário de maneira relativamente simples (do ponto de vista da
 aplicação) e também fornece ganhos de segurança.
 
-Já o projeto Nooks se distancia um pouco da abstração de processos uma vez que
-ele busca tornar o núcleo do SO mais resiliente. Contudo, ao criar mecanismos
-que reagem de forma a reduzir as chances do sistema quebrar, tal proposta
-apresenta o \textbf{desacoplamento dos recursos} de forma a fornecer mecanismos
+Já o projeto Nooks se distancia um pouco da abstração de processos, uma vez que
+busca tornar o núcleo do SO mais resiliente. Contudo, ao criar mecanismos
+que reagem de forma a reduzir as chances de o sistema quebrar, tal proposta
+apresenta o \textbf{desacoplamento dos recursos}, de forma a fornecer mecanismos
 para que os processos possam se recuperar ou tomar ações em casos de falhas.
 Adicionalmente, essa técnica cria um interessante mecanismo de
 comunicação entre as extensões do Kernel e os seus drivers, permitindo que o SO
 se ``defenda'' de problemas que ocorram com um código que foi acoplado ao seu
 núcleo.
 
-De forma mais direta e sistemática o \textit{Resource Container} sugere o
-controle fino do gerenciamento de recursos e consequentemente o desacoplamento
+De forma mais direta e sistemática, o \textit{Resource Container} sugere o
+controle fino do gerenciamento de recursos e consequentemente o \hltodo[desacoplamento]{Acho que tem que seguir o modelo dos demais: escrever ``desacoplamento do gerenciamento de recursos'' e colocar em negrito}
 de tal elemento. De certa maneira, essa proposta já pode ser encontrada incorporada
 nos SOs atuais, sob a forma de containers no Linux, mais especificamente, como o
 \textit{cgroups}. A principal contribuição do trabalho vem da sua capacidade
 de permitir que a própria aplicação tome conta da sua execução. Ainda que parte
-das ideias apresentada por esse trabalho estejam presentes em alguns SOs, as
+das ideias apresentadas por esse trabalho estejam presentes em alguns SOs, as
 implementações ainda são relativamente reduzidas em termos do escopo
 apresentado na pesquisa.
 
 Uma abordagem alternativa que visa atender uma nova geração de computadores com
 memórias não voláteis na ordem dos petabytes é o SpaceJMP/MVAS.  Os autores
-sugerem \textbf{desacoplar o VAS dos processos} e permitir que esses tenham
-múltiplas VAS e, de forma reativa, a aplicação torne-se capaz de mudar a VAS
+sugerem \textbf{desacoplar o VAS dos processos}\todo{seria bom ser ``desacoplamento'' ao invés de ``desacoplar''} e permitir que eles tenham
+múltiplas VAS e, de forma reativa, a aplicação torne-se capaz de mudar o VAS
 atual. Essa abordagem faz com que um processo consiga acessar regiões muito
-maiores do que aquelas garantidas pelo tamanho de uma VAS. Indiretamente
-desacoplar uma VAS adiciona a possibilidade de criar processos persistentes,
-isto é, que vivem mesmo após o boot ou mesmo após um problema. Desacoplar a VAS
+maiores do que aquelas garantidas pelo tamanho de um VAS. Indiretamente,
+desacoplar um VAS adiciona a possibilidade de criar processos persistentes,
+isto é, que vivem mesmo após o boot ou mesmo após um problema. Desacoplar o VAS
 pode trazer benefícios para aplicações de \textit{checkpoints}, melhorar o
 gerenciamento de bibliotecas, e elevar o nível de isolamento e compartilhamento.
 
-O Light-weight Context (lwC) indiretamente propõe o total
+Light-weight Context (lwC) indiretamente propõe o total
 \textbf{desacoplamento do PC}; vale observar que os autores explicitam outros
-desacoplamentos, contudo, para esse trabalho, acredita-se que o desacoplamento
+desacoplamentos, contudo, para esse trabalho, acreditamos que o desacoplamento
 do PC é o que melhor descreve as inovações propostas. Desacoplar o PC leva uma
-infinidade de possibilidade para o espaço de usuário, uma vez que o processo
-pode fazer operações semelhantes ao do escalonador sem grandes custos e dentro
-do mesmo intervalo de execução do processo. O lwC tem como principal
+infinidade de possibilidades para o espaço de usuário, uma vez que o processo
+pode fazer operações semelhantes às do escalonador sem grandes custos e dentro
+do mesmo intervalo de execução do processo. lwC tem como principal
 característica um robusto e interessante modelo de programação que permite
 às aplicações no espaço de usuário utilizarem novos paradigmas de desenvolvimento.
 Isso cria diversas oportunidades para desenvolver novos tipos de manipulações, tal
-como criar \emph{snapshot} do estado atual do processo e depois reverter o
+como criar \emph{snapshots} do estado atual do processo e depois reverter o
 processo para o estado anterior. Outra possibilidade é mudar para um novo
 contexto de processo com acesso restrito para alguma região da memória antes da
 execução de um código sensível\todo{ para mudar... para alguma... não entendi essa frase}. Ao contrário do que parece, isso não é como utilizar \emph{threads} ou processos
 independentes. Por não haver dependência do escalonador para mudar o
-contexto do processo (que é razoavelmente caro), a própria aplicação por si
-só pode escolher quando e qual contexto manipular e fornecer assim um
-controle fino para os programadores (que pode melhorar o desempenho e a
+contexto do processo (o que é razoavelmente caro), a própria aplicação
+pode escolher quando e qual contexto manipular e fornecer, assim, um
+controle fino para os programadores (o que pode melhorar o desempenho e a
 segurança).
 
 De modo geral, percebemos que vários dos trabalhos analisados têm preocupação com o gerenciamento e acesso a
-memória; em especial, vários deles questionam o tratamento dado a memória pelos
+memória; em especial, vários deles questionam o tratamento dado à memória pelos
 SOs atuais.  A abordagem de utilizar um único espaço de endereçamento por
 processo tem se provado eficiente ao longo dos anos, porém, apesar do seu
-sucesso, essa não é uma abordagem a prova de falhas e ainda carece de
+sucesso, essa não é uma abordagem à prova de falhas e ainda carece de
 melhorias. Primeiramente, a abordagem de isolar os processos por meio do
 espaço de endereçamento linear melhora a confiabilidade do sistema e a
 segurança. Entretanto, um processo não tem uma forma de restringir o seu próprio
@@ -241,32 +243,34 @@ Ela afirma que precisamos mudar a lógica atual de conceder permissão por
 padrão para uma ideia de negar permissão por padrão. Essa mudança de paradigma
 torna supostamente possível a redução das chances de ataques e vazamento de
 dados, uma vez que o programador precisa indicar explicitamente o que será
-exposto. Tal pesquisa, indiretamente propõe o \textbf{desacoplamento dos
+exposto. Tal pesquisa indiretamente propõe o \textbf{desacoplamento dos
 privilégios} da abstração de processos. Além disso, ela mantém a
 compatibilidade entre aplicações novas e legadas, sendo uma opção de uso ao programador.
 
 Entrando um pouco mais nas questões de proteção e controle-fino da memória,
-destacamos o shreds e o mondrix/mondrian. O shreds nasce com a ideia de evitar
+destacamos o shreds e o mondrix/mondrian. shreds nasce com a ideia de evitar
 ataques conhecidos como abusos intra-processos de conteúdo da memória. Os
 autores defendem que o acesso a certas regiões da memória de um processo
 que esteja executando em espaço de usuário merecem proteção especial. Em tal proposta, os
-autores utilizaram um recurso especifico dos processadores ARM em conjunto com
+autores utilizaram um recurso específico dos processadores ARM em conjunto com
 um mecanismo de gerenciamento da região de memória (Seção
 \ref{sec:outros_mecanismos_memoria}). Essa proposta entrega mais flexibilidade,
-segurança, e controle ao acesso da memória.
+segurança e controle ao acesso da memória.
 
 Na mesma linha de fornecer controle fino sobre a memória, os autores do Mondrix
-propuseram, de forma mais radical, um mecanismo de controle do acesso a memória
-ao nível das palavras de dados. Para isso, os autores sugerem alterações no
+propuseram, de forma mais radical, um mecanismo de controle do acesso à memória
+no nível das palavras de dados. Para isso, os autores sugerem alterações no
 hardware e no SO de forma a controlar todo acesso com a menor granularidade
-possível. Indiretamente, o shreds e o mondrix são propostas de
+possível. Indiretamente, shreds e mondrix são propostas de
 \textbf{desacoplamento do controle de memória}.
 
 \section{Bead: Um Modelo Teórico Para a Próxima Geração de Abstrações de Processos}
 
+\todo[inline]{Acho que vale mudar um pouco esse texto e dizer ``neste trabalho falamos dessa porra toda e percebemos esse lance de desacoplar para todo lado, então resolvemos organizar a bagaça''. Acho que você quis dizer exatamente isso neste parágrafo, mas você já começou dizendo ``este trabalho consiste em analisar os impactos do desacoplamento'', quando na verdade esse é o lugar ao qual você chegou no fim do caminho.}
+
 Este trabalho consiste em analisar os impactos do desacoplamento das abstrações
 de processos em SOs modernos e em destacar as características mais relevantes
-para a próxima geração de abstrações de processos. Nesse sentido observamos e
+para a próxima geração de abstrações de processos. Nesse sentido, observamos e
 analisamos diferentes propostas de desacoplamento que ainda consistem no estado
 da arte, acreditando que várias das ideias apresentadas podem atingir o estado
 da prática e assim pavimentar novos ramos de pesquisas. Como resultado dessa
@@ -275,23 +279,23 @@ elevar o grau de desacoplamento dentro das abstrações de processos.
 
 Para exemplificar a proposta de desacoplamento deste trabalho, faremos uma
 analogia com a evolução do modelo atômico. Começamos por um dos primeiros
-modelos atômicos aceitos pela comunidade científica proposto por Dalton que
+modelos atômicos aceitos pela comunidade científica, proposto por Dalton, que
 afirmava que um átomo era uma esfera maciça e indivisível. Em seguida, Thomson
 propôs outro modelo no qual os átomos eram compostos por partículas positivas e
 negativas, o que indicava a divisibilidade dos átomos. Posteriormente, Rutherford
-refinou o modelo propondo um esquema em que o átomo possui um núcleo e os
+refinou o modelo, propondo um esquema em que o átomo possui um núcleo e os
 elétrons giram em torno desse núcleo formando um sistema semelhante ao modelo
-planetário. O modelo atômico continua sendo evoluido e sofisticado, contudo a principal lição que tiramos disso para o nosso contexto é o
+planetário. O modelo atômico continua sendo evoluído e sofisticado, contudo a principal lição que tiramos disso para o nosso contexto é o
 constante refinamento do modelo e os avanços que vêm junto com ele.
 
 Seguindo a analogia do modelo atômico, podemos considerar que as abstrações de
 processos estão em um estágio equivalente ao modelo de Thomson. A abstração de
-processo não é mais um bloco sólido e indivisível, essa possui um leve grau de
-desacoplamento uma vez que no passado notou-se a vantagem em se desacoplar o PC
-e a Stack possibilitando múltiplos fluxos de execução no mesmo processo
+processo não é mais um bloco sólido e indivisível; ela possui um leve grau de
+desacoplamento, uma vez que no passado notou-se a vantagem em se desacoplar o PC
+e a Stack, possibilitando múltiplos fluxos de execução no mesmo processo
 (\emph{threads}). Seguindo esse raciocínio e buscando avançar o modelo atual,
 apresentamos o modelo \textbf{bead}\footnote{\emph{Bead} em inglês,
-refere-se as pequenas bolas que compõem um colar ou pulseira. Normalmente,
+refere-se às pequenas contas que compõem um colar ou pulseira. Normalmente,
 existe uma ampla variedade de tais objetos} que consiste em buscar um elevado
 grau de desacoplamento dos elementos da abstração de processos.
 
@@ -301,21 +305,23 @@ diversos aspectos. Em especial, destacamos que as abordagens que seguem uma
 implementação leve e que atendem as propostas de desacoplamento destacadas na
 Tabela \ref{tab:desacoplamento_beneficio} são preferíveis. Essa tabela mostra as
 propostas de desacoplamento na vertical e os benefícios que elas podem trazer
-aos SOs. Por fim, utilizamos uma escala de zero a três \ding{52} que indica o
+aos SOs. Por fim, utilizamos uma escala de zero a três \ding{52}, que indica o
 quanto de benefício um determinado desacoplamento pode levar para uma área.
 
 \input{tables/desacoplar_beneficios}
 
 A Figura \ref{fig:decomposicao_proc} busca mostrar de forma visual o modelo de
-abstração de processos proposto por esse trabalho. Na parte central da figura
+abstração de processos proposto por este trabalho. Na parte central da figura
 temos os três elementos fundamentais para o uso dos processos: PC, Stack e IO
-context. Nas camadas mais externa temos a VAS, que é um elemento importante
+context. Nas camadas mais externas temos o VAS, que é um elemento importante
 para que os processos em SOs de propósito geral funcionem de forma apropriada
-(dado a sua importância, esse ocupa boa parte da representação da abstração).
+(dada sua importância, ele ocupa boa parte da representação da abstração).
 Em seguida notamos diversos elementos que orbitam a abstração atual de
 processos. Eles podem ser vistos como elementos menos importantes para o
-correto funcionamento da abstração, mas são fundamentais para as diversas
+correto funcionamento da abstração, mas são fundamentais para diversas
 aplicações modernas.
+
+\todo[inline]{Nesta figura tem um ``??''}
 
 \begin{figure}[!h]
   \centering
@@ -328,12 +334,12 @@ aplicações modernas.
 \label{sec:api}
 
 Em termos de API e implementação, queremos manter os critérios para adoção
-descritos na Seção \ref{sec:potenciais} e ao mesmo tempo fornecer uma API
+descritos na Seção \ref{sec:potenciais} e, ao mesmo tempo, fornecer uma API
 unificada que possa ser utilizada no espaço de usuário. Para que tal modelo
 possa ser implementado, é preciso usar uma abordagem que caminha entre uma
 implementação estrutural leve e pesada. Implementação pesada significa que será
 necessário inserir códigos intermediários nas atuais abstrações de processo para
-que esses forneçam mecanismos externos e permitam as extensões atuarem sobre o
+que esses forneçam mecanismos externos e permitam às extensões atuar sobre o
 núcleo do SO. Tal abordagem visa manter a compatibilidade com as
 aplicações já existentes sem forçar mudanças nas aplicações no espaço
 do usuário. Implementação leve é quando queremos o maior grau de desacoplamento
@@ -343,20 +349,20 @@ Como mostrado no Capítulo \ref{cap:trabalhos-analisados}, cada proposta de
 extensão na abstração de processo sugere uma API para o seu contexto
 específico. Nesse sentido, buscamos aprender as técnicas utilizadas pelos
 trabalhos anteriores e combinamos as principais chamadas dentro do bead. A
-seguir apresentamos as operações fornecidas, uma breve descrição sobre o seu
-comportamento e o trabalho na qual foi derivada. Observe que o conjunto dessas
-operações pode ser abstraída para uma biblioteca no espaço do usuário e que a
+seguir, apresentamos as operações fornecidas, uma breve descrição sobre o seu
+comportamento e o trabalho do qual foi derivada. Observe que o conjunto dessas
+operações pode ser abstraído para uma biblioteca no espaço do usuário e que a
 combinação das várias operações possibilita a criação de novos modelos de
 programação (discutiremos padrões de utilização na próxima seção). 
 
 \begin{description}
   \item [\texttt{BEAD\_SET\_CONFIG}:]
 
-Essa operação atua diretamente nas configurações referentes as abstrações de
+Essa operação atua diretamente nas configurações referentes às abstrações de
 processos. Ela espera que o programa indique explicitamente quais
-desacoplamentos utilizar, se nenhuma informação for passada, assumi-se um
+desacoplamentos utilizar. Se nenhuma informação for passada, assume-se um
 conjunto de configurações padrão compatível com a maioria das aplicações
-atuais. As configurações do que sera desacoplado é feito por meio desse comando.
+atuais. As configurações do que sera desacoplado são feitas por meio desse comando.
 
   \begin{itemize}
     \item \textbf{Parâmetros:}
@@ -367,7 +373,7 @@ referentes aos desacoplamentos desejados.
     \item \textbf{Retorno:}
 
 Se todas as configurações solicitadas pelo usuário forem suportadas, então a
-função retorna o status 0. Se alguma das operações falhar, o status é um valor
+função devolve o status 0. Se alguma das operações falhar, o status é um valor
 positivo construído por meio de manipulações binárias na qual cada bit
 significa uma falha que ocorreu\footnote{Definir o significado para cada bit,
 representa um nível de detalhe que pode varia de SO para SO. Por isso, não
@@ -376,24 +382,24 @@ especificamos tais valores.}.
     \item \textbf{Referência:}
 
 Essa operação surge da necessidade de unificar as diversas propostas, por isso
-não tem uma referência direta a nenhum trabalho.
+não tem referência direta a nenhum trabalho.
 
 	\end{itemize}
 
   \item [\texttt{BEAD\_GET\_CONFIG}:]
 
-Essa operação atua recuperando as configurações referentes as abstrações de
+Essa operação atua recuperando as configurações referentes às abstrações de
 processos. 
 
   \begin{itemize}
     \item \textbf{Parâmetros:}
 
-Espera uma estrutura de dados padrão na qual utilizará para preencher as
+Espera uma estrutura de dados padrão que será utilizada para preencher as
 informações.
 
     \item \textbf{Retorno:}
 
-Retorna 0 se tudo ocorrer como esperado, ou um valor negativo de status de
+Devolve 0 se tudo ocorrer como esperado, ou um valor negativo de status de
 erro.
 
     \item \textbf{Referência:}
@@ -405,8 +411,8 @@ Operação criada no contexto deste trabalho.
   \item [\texttt{BEAD\_NEW\_CONTEXT\_INSTANCE}:]
 
 Essa chamada comporta-se de forma similar ao \texttt{fork()}, pois
-faz uma cópia idêntica dos elementos do processo pai, porém diferencia-se da
-chamada de sistema \texttt{fork()} uma vez que não criar uma nova \emph{thread} e
+faz uma cópia idêntica dos elementos do processo pai, porém diferencia-se dela
+por não criar uma nova \emph{thread} e
 compartilhar o mesmo PID do processo pai. Na prática, essa função também pode
 receber alguns parâmetros que alteram o seu comportamento padrão.
 
@@ -419,17 +425,17 @@ retorna -1.
 
     \item \textbf{Referência:}
 
-Chamada baseada no \texttt{lwCreate()} proposto pelo LwC.
+Chamada baseada em \texttt{lwCreate()}, proposta pelo lwC.
 
   \end{itemize}
 
   \item [\texttt{BEAD\_SWITCH}:]
 
-Dentre as operações mais comuns observada nos diversos trabalhos, destaca-se o
+Dentre as operações mais comuns observadas nos diversos trabalhos, destaca-se o
 mecanismo de troca de alguma propriedade dentro do processo. Nesse contexto, a
 operação \texttt{BEAD\_SWITCH} unifica operações de mudanças dentro do
 processo. Destacam-se os casos da troca de contexto e de entrada em regiões
-mais seguras da memória. A operação pode espera um descritor que referencia uma
+mais seguras da memória. A operação pode esperar um descritor que referencia uma
 instância de um contexto que seja válida. Com base no descritor recebido, essa
 chamada transfere a \emph{thread} de execução do processo que invocou tal chamada para
 a instância de contexto criada anteriormente. Outra utilização dessa operação é
@@ -445,11 +451,11 @@ operação \texttt{BEAD\_ENTER\_CONTEXT}.
 
     \item \textbf{Retorno:}
 
-Se algo der errado, essa função retorna um valor negativo informando o erro.
+Se algo der errado, essa função devolve um valor negativo informando o erro.
 
     \item \textbf{Referência:}
 
-Chamada baseada no \texttt{lwSwitch()} proposto pelo LwC.
+Chamada baseada em \texttt{lwSwitch()}, proposta pelo lwC.
 
   \end{itemize}
 
@@ -464,38 +470,38 @@ possibilidade de restringir qual operação de virtualização deseja-se utiliza
     \item \textbf{Parâmetros:}
 
     \begin{itemize}
-      \item \texttt{Options}: Recebe opções que restringem o modo de virtualização.
+    \item \texttt{Options}: Recebe opções que \hltodo[restringem]{Restringe ou determina?} o modo de virtualização.
     \end{itemize}
 
     \item \textbf{Retorno:}
 
-Se algo der errado, essa função retorna um valor negativo informando o erro.
+Se algo der errado, essa função devolve um valor negativo informando o erro.
 
     \item \textbf{Referência:}
 
-Chamada baseada no \texttt{dune\_entry()} do Dune.
+Chamada baseada em \texttt{dune\_entry()}, do Dune.
 
   \end{itemize}
 
 	\item [\texttt{BEAD\_ENTER\_COMPARTMENT}:]
 
 Essa operação faz com que a \emph{thread} em execução tenha associado a si um
-compartimento, no qual apenas ela tem acesso. Isso auxilia contra
+compartimento ao qual apenas ela tem acesso. Isso auxilia contra
 ataques intra-processos. Nenhuma outra \emph{thread} do processo tem acesso a qualquer
 dado do compartimento e o mesmo vale para os dados dentro do compartimento
 (i.e., o compartimento é isolado). Devido ao isolamento oferecido por essa
-técnica, torna-se necessário uma função especial para realizar a alocação
+técnica, torna-se necessária uma função especial para realizar a \hltodo[alocação]{Alocação de memória?}
 dentro do compartimento. Essa operação trabalha em conjunto com a operação
 \texttt{BEAD\_SWITCH}.
 
   \begin{itemize}
     \item \textbf{Retorno:}
 
-Retorna 0 se tudo ocorrer bem, ou um código de erro se algo der errado.
+Devolve 0 se tudo ocorrer bem, ou um código de erro se algo der errado.
 
     \item \textbf{Referência:}
 
-Chamada baseada no \texttt{shred\_enter()} proposto pelo Shred.
+Chamada baseada em \texttt{shred\_enter()}, proposta pelo Shred.
 
 \end{itemize}
 
@@ -507,11 +513,11 @@ Essa função sai do compartimento atual.
 
     \item \textbf{Retorno:}
 
-Retorna 0 se tudo ocorrer bem, ou um código de erro se algo der errado.
+Devolve 0 se tudo ocorrer bem, ou um código de erro se algo der errado.
 
     \item \textbf{Referência:}
 
-Chamada baseada no \texttt{shred\_exit()} proposto pelo Shred.
+Chamada baseada em \texttt{shred\_exit()}, proposta pelo Shred.
 
 	\end{itemize}
 
@@ -519,7 +525,7 @@ Chamada baseada no \texttt{shred\_exit()} proposto pelo Shred.
 
 Essa operação é responsável por alocar memória dentro de um compartimento e tem
 o seu funcionamento similar ao da função \texttt{malloc()}. Uma vez que a
-memória é alocada utilizando essa operação, significa dizer que ela é acessível
+memória é alocada utilizando essa operação, ela é acessível
 apenas dentro da \emph{thread} que solicitou entrar no compartimento. Esse mecanismo
 de isolamento de memória faz com que as páginas do próprio processo tenham o
 seu acesso restrito a uma \emph{thread}.
@@ -533,8 +539,8 @@ seu acesso restrito a uma \emph{thread}.
 
     \item \textbf{Retorno:}
 
-Retorna um ponteiro para a região de memória alocada. Em caso de erro, o valor
-NULL é retornado.
+Devolve um ponteiro para a região de memória alocada. Em caso de erro, o valor
+NULL é devolvido.
 
     \item \textbf{Referência:}
 
@@ -556,7 +562,7 @@ feita por \texttt{BEAD\_ALLOC\_COMPARTMENT}.
 
     \item \textbf{Retorno:}
 
-Não tem retorno.
+Não devolve nada.
 
     \item \textbf{Referência:}
 
@@ -576,16 +582,16 @@ ou constantes utilizadas para determinar o procedimento que deve ser
 feito\footnote{Entendemos que tal decisão deve ser tomada pelo próprio
 desenvolvedor}. Adotaremos uma abordagem na qual uma função chamada de
 \texttt{beadctl()} é responsável por receber uma constante que representa a
-operação solicitada pelo usuário. Por sua vez, tal função seletivamente realiza
+operação solicitada pelo usuário.\todo{Entendi, mas a explicação está feinha. É só reescrever um pouco mais claro} Por sua vez, tal função seletivamente realiza
 o procedimento indicado. O Pseudocódigo~\ref{alg:ctlbead} ilustra uma possível
 implementação da função \texttt{beadctl()} -- ao longo deste capítulo, adotaremos
-tal função como padrão. Note que essa função comporta-se como um adaptadorf
-chamado no espaço de usuário e que por sua vez faz o pedido direto para o
+essa função como padrão. Note que ela se comporta como um adaptador
+chamado no espaço de usuário e que, por sua vez, faz o pedido direto para o
 Kernel (essa função é análoga ao IOCTL presente no Linux).
 
 \input{algorithm/beadctl.tex}
 
-Para passar dados do espaço de usuário para o kernel (vice-versa), definimos
+Para passar dados do espaço de usuário para o kernel (e vice-versa), definimos
 uma estrutura de dados para realizar a troca de informações de forma
 padronizada. O Pseudocódigo~\ref{alg:beadata} ilustra uma potencial estrutura
 de dados para realizar a troca de informação do espaço de usuário para o kernel.
@@ -595,18 +601,18 @@ comunicação.
 
 \input{algorithm/bead_data.tex}
 
-Introduzimos nessa seção alguns dos possíveis padrões de utilização do
+Introduzimos nesta seção alguns dos possíveis padrões de utilização do
 \emph{bead}. Nosso objetivo é ilustrar como tal API pode levar benefícios para
 as aplicações, principalmente em termos de novos modelos de programação.
 Apresentamos alguns usos elementares, mas que servirão de apoio para outros
 padrões mais sofisticados. Além de mostrar o pseudocódigo, também discutimos o
 potencial uso de determinado padrão em aplicações reais\footnote{Vale observar
-que nem todos os padrões apresentado nesta seção tem aplicação direta nas
+que nem todos os padrões apresentados nesta seção têm aplicação direta nas
 aplicações atuais.}.
 
 \subsubsection{Padrão Configuração}
 
-Uma das operações mais comuns presente nos trabalhos discutidos no
+Uma das operações mais comuns presentes nos trabalhos discutidos no
 Capítulo~\ref{cap:trabalhos-analisados} é a possibilidade de configurar certas
 funcionalidades. A maioria dos projetos realiza tal procedimento por meio de
 parâmetros passados para as funções. Dado que o \emph{bead} busca unificar as
@@ -625,24 +631,24 @@ e o Kernel. Vale acrescentar que esse tipo de operação pode ser facilmente
 encapsulada e explorada em bibliotecas no espaço do usuário (e.g.,
 \texttt{libead}).
 
-A operação \texttt{BEAD\_SET\_CONFIG}, recebe uma estrutura de dados do tipo
-\texttt{bead\_data}. Por sua vez, tal estrutura deve ser preenchida no espaço
+A operação \texttt{BEAD\_SET\_CONFIG} recebe uma estrutura de dados do tipo
+\texttt{bead\_data}. Por sua vez, essa estrutura deve ser preenchida no espaço
 de usuário de forma a conter as propriedades de desacoplamento que o
 programador deseja explorar. Por exemplo, se o programador deseja utilizar
-recursos de virtualização e de desacoplamento da VAS, ele pode preencher os
+recursos de virtualização e de desacoplamento do VAS, ele pode preencher os
 campos \texttt{VITUALIZATION\_FLAGS} e \texttt{VAS\_FLAGS} da estrutura
 \texttt{bead\_data} para, em seguida, chamar a função \texttt{beadctl()},
 passando tal informação como parâmetro. A opção \texttt{BEAD\_SET\_CONFIG} é
 uma operação de baixo nível que vai preencher estruturas internas do Kernel
 referentes aos processos. Essa função pode ser chamada a qualquer
-momento durante a execução do processo tornando flexível o ajuste de algumas
+momento durante a execução do processo, tornando flexível o ajuste de algumas
 configurações.
 
 A operação \texttt{BEAD\_GET\_CONFIG} permite recuperar as configurações feitas
 nos processos. Se o programador não tiver feito nenhuma alteração, então o
 Kernel utiliza uma configuração padrão que é compatível com a abstração atual
 de processos -- isso permite manter a compatibilidade com as
-aplicações. Essa operação é de baixo nível e retorna uma estrutura de dados
+aplicações atuais. Essa operação é de baixo nível e devolve uma estrutura de dados
 do tipo \texttt{bead\_data} preenchida pelo Kernel com as configurações atuais.
 
 \begin{figure}[!h]
@@ -655,7 +661,7 @@ do tipo \texttt{bead\_data} preenchida pelo Kernel com as configurações atuais
 A Figura~\ref{fig:decomposicao_conf} fornece uma visão geral sobre os elementos
 afetados pelo padrão configuração. Ele representa as fronteiras entre
 os diversos componentes da abstração de processos. Esse padrão também pode ser
-expandido para dar suporte a mecanismos sofisticados que permite a
+expandido para dar suporte a mecanismos sofisticados que permitem à
 aplicação em espaço de usuário passar informações sobre como o \emph{bead}
 deve proceder em determinadas situações. Uma aplicação poderia fazer uso de
 algum padrão consolidado, por exemplo, o \emph{BSD Packet Filter}~\citep{bpf}, e
@@ -666,9 +672,9 @@ assim dizer para o núcleo do SO como agir de forma similar a como o
 \label{sec:fotografia}
 
 O \emph{lwC} introduz a funcionalidade \emph{snapshot} (utilizaremos o termo
-fotografia), ela duplica as informações do processo de forma
+fotografia), duplicando as informações do processo de forma
 similar ao \texttt{fork()}. O \texttt{snapshot()} diferencia-se do
-\texttt{fork()} uma vez que ele não cria uma nova \emph{thread} e nem um novo PID
+\texttt{fork()}, uma vez que ele não cria uma nova \emph{thread} e nem um novo PID
 (para mais detalhes, veja Seção~\ref{sec:lwc}). Inspirado por tal
 funcionalidade, o \emph{bead} busca oferecer esse recurso e, adicionalmente, a
 possibilidade de ter maior controle sobre a operação de fotografar o processo.
@@ -684,7 +690,7 @@ influência do \emph{bead}. O programador deve decidir em qual momento da execu�
 processo ele quer tirar uma fotografia do estado, então ele dá início a tal
 tarefa seguindo a semântica introduzida pelo \emph{bead}. Ainda na função
 \texttt{MAIN()}, o desenvolvedor pode configurar detalhes da
-operação de fotografar o estado para que essa seja recursiva ou não\footnote{O
+operação de fotografar o estado para que ela seja \hltodo[recursiva]{?! Recursão em quê?} ou não\footnote{O
 programador pode definir quantas vezes ele quer repetir o processo de
 fotografar de forma similar a um \emph{loop}.}. A operação de fazer uma cópia
 do processo começa no momento em que a função \texttt{context\_instance()} é
@@ -699,9 +705,9 @@ cópia do estado atual do processo foi feita. Note que o atributo \texttt{id}
 pode assumir valores diferentes dependendo do contexto no qual o processo está
 executando. Se a \emph{thread} do processo estiver no processo pai (aquele que
 chamou \texttt{context\_instance()}) então o \texttt{id} será um identificador
-da fotografia do processo; do contrário, ele receberá -1. Na primeira execução
-a função vai retornar o \texttt{id} para a função \texttt{MAIN()} que por sua
-vez vai prosseguir com a sua execução normalmente. Observe que o \texttt{id} é
+da fotografia do processo; do contrário, ela receberá -1. Na primeira execução,
+a função vai devolver o \texttt{id} para a função \texttt{MAIN()} que, por sua
+vez, vai prosseguir com a sua execução normalmente. Observe que o \texttt{id} é
 armazenado em uma estrutura de dados interna para simplificar a recuperação
 dessa informação em outras fotografias do processo. Quando a
 Linha~\ref{line:fotografiaPosSwitch} for atingida, ocorrerá a troca do estado
@@ -714,9 +720,9 @@ A Linha~\ref{line:fotografiaCheck} ilustra como a troca de contexto pode ser
 feita de forma recursiva ou limitada por um determinado número de chamadas. Se
 as condições do \texttt{if} forem atendidas, então recupera-se o \texttt{id} do
 pai e, em seguida, remove-se as informações do estado por meio da função
-\texttt{close()}. Por fim a função \texttt{context\_instance()} é chamada
+\texttt{close()}. Por fim, a função \texttt{context\_instance()} é chamada
 recursivamente e uma nova fotografia do processo é tirada. Se a condição do
-\texttt{if} falhar, então a troca de contexto encerra retornando
+\texttt{if} falhar, então a troca de contexto encerra devolvendo
 \texttt{NO\_SWITCH} para o espaço de usuário. A aplicação pode
 realizar o tratamento que julgar necessário com base no retorno.
 
@@ -728,37 +734,37 @@ realizar o tratamento que julgar necessário com base no retorno.
 \end{figure}
 
 A Figura~\ref{fig:decomposicao_fotografia} ilustra os principais elementos
-envolvidos no padrão fotografia, são eles a VAS e o PC. Durante o processo de
-criação do novo contexto, a VAS é fotografada e mantida ao longo do tempo; por
+envolvidos no padrão fotografia: o VAS e o PC. Durante o processo de
+criação do novo contexto, o VAS é fotografado e mantido ao longo do tempo; por
 sua vez, o PC é usado para alternar pelas diferentes fotografias do processo.
-Esse padrão pode ser útil em alguns cenários, dentre eles destaca-se a
+Esse padrão pode ser útil em alguns cenários; dentre eles, destaca-se a
 aceleração e isolamento de algumas atividades que necessitam ser inicializadas
 várias vezes.
 
-Para ilustrar a utilização desse padrão em uma aplicação real, recorremos para
-o tratamento de requisições feito pelo servidor Apache Httpd (para mais
+Para ilustrar a utilização desse padrão em uma aplicação real, recorremos
+ao tratamento de requisições feito pelo servidor Apache Httpd (para mais
 detalhes vide Seção~\ref{sec:architecture}). Para cada requisição, o Apache
 precisa iniciar uma série de estruturas de dados e, em seguida, proceder
 com o tratamento da solicitação. Essa etapa inicial pode ser otimizada
-utilizando o padrão fotografia. Para isso, bastaria que ao final do procedimento de
-iniciação o programador explicitamente tirasse uma foto do estado atual do
+utilizando o padrão fotografia. Para isso, bastaria que, ao final do procedimento de
+iniciação, o programador explicitamente tirasse uma foto do estado atual do
 processo. O Apache procederia normalmente com o tratamento da requisição,
-contudo, quando a requisição finalizasse o processo, faria uma troca para o
+contudo, quando o processamento da requisição fosse finalizado, faria uma troca para o
 contexto anteriormente criado e tiraria uma nova fotografia do estado. Além de
-evitar a repetição do trabalho de iniciação, esse procedimento pode ainda
+evitar a repetição do trabalho de iniciação, esse procedimento poderia ainda
 melhorar o isolamento entre as requisições. Essa mesma ideia é expansível para
-aplicações menores que tem uma etapa de iniciação reutilizável.
+aplicações menores que têm uma etapa de iniciação reutilizável.
 
 \subsubsection{Padrão Virtualização Controlada}
 
 O padrão virtualização controlada nasce do projeto Dune como uma especialização
-do modo de operação na qual o processo faz uso dos recursos de virtualização.
+do modo de operação no qual o processo faz uso dos recursos de virtualização.
 Nesse contexto, quando um processo em execução entra em \emph{modo Dune}, ele
 irreversivelmente passa utilizar os recursos de virtualização em sua execução e
 não pode mais voltar ao seu estado normal (para mais detalhes,
 veja~\ref{sec:dune}). Motivado por tal funcionalidade e buscando elevar o grau
 de desacoplamento da virtualização, o \emph{bead} busca dar suporte para
-funcionalidades similares ao do Dune utilizando uma abordagem com maior
+funcionalidades similares às do Dune utilizando uma abordagem com maior
 controle. Veja o Pseudocódigo~\ref{alg:virtMode} ilustrando tal forma de
 utilização.
 
@@ -770,15 +776,15 @@ Linha~\ref{line:virtMAIN}. Como indicado no comentário, logo após a função
 Linha~\ref{line:virtModeCall} ilustra uma chamada para a função
 \texttt{virtualization\_mode()} que espera por um ponteiro para uma função que
 será executada em modo de virtualização; se uma referência nula for passada no
-parâmetro significa que todo o processo vai executar em modo virtualização. Na
-Linha~\ref{line:exFuncHook} temos uma ilustração de como poderia ser o
+parâmetro, todo o processo vai executar em modo virtualização. Na
+Linha~\ref{line:exFuncHook}, temos um exemplo de como poderia ser o
 protótipo da função\footnote{Note que esse é apenas um exemplo para a
-demonstração de uso. Em uma implementação real tal protótipo de função pode
+demonstração de uso. Em uma implementação real, tal protótipo de função pode
 conter diversos parâmetros ou outra assinatura.}. Quando a função
 \texttt{virtualization\_mode()} começa a executar, a primeira tarefa dela
-consiste em configurar os elementos da virtualização como pode ser visto da
+consiste em configurar os elementos da virtualização, como pode ser visto da
 Linha~\ref{line:confBegin} até a Linha~\ref{line:confEnd} (seguindo o padrão
-configuração). Os parâmetros de virtualização podem aceitar diversos argumentos
+configuração). Os parâmetros de virtualização podem aceitar diversos argumentos,
 permitindo o controle fino dos recursos de virtualização (não definimos esse
 nível de compartilhamento, pois pode haver diversas formas de implementar tal
 recurso); por padrão, vamos supor que o processo quer utilizar todos os
@@ -786,14 +792,14 @@ recursos de virtualização disponíveis.
 
 Na Linha~\ref{line:instance} é feita uma cópia do estado atual do processo. Se
 tudo ocorrer bem, o \emph{bead} entra em modo de virtualização nas linhas
-subsequentes. Note que na Linha~\ref{line:funcParam} é realizada uma verificação
-no ponteiro da função passada por parâmetro, isso faz com que essa função
-assuma duas formas de execução diferente. Se um ponteiro para função for
+subsequentes. Note que, na Linha~\ref{line:funcParam}, é realizada uma verificação
+no ponteiro da função passada por parâmetro, o que faz com que essa função
+assuma duas formas de execução diferentes. Se um ponteiro para função for
 passado, ela executará em modo virtualização e ao final da execução ocorrerá um
-retorno para o estado anterior da aplicação, Linha~\ref{line:backState}. Em
+retorno para o estado anterior da aplicação, na Linha~\ref{line:backState}. Em
 seguida, no estado restaurado, o \emph{else} da Linha~\ref{line:virtModeElse}
-será executado de forma a desabilitar as funcionalidade de virtualização e
-retornará um código de fim da operação (\texttt{VM\_OPERATION\_END}). Se
+será executado de forma a desabilitar as funcionalidades de virtualização e
+devolverá um código de fim da operação (\texttt{VM\_OPERATION\_END}). Se
 \texttt{virtualization\_mode()} receber um ponteiro nulo para a função,
 significa que o programador quer que todo o processo execute em modo de
 virtualização (similar ao modo Dune).
@@ -806,30 +812,30 @@ virtualização (similar ao modo Dune).
 \end{figure}
 
 A Figura~\ref{fig:decomposicao_virt} mostra os elementos alvos para o
-desacoplamento das características de virtulização de um processo. O
-padrão virtualização pode comporta-se como uma extensão do padrão fotografia
+desacoplamento das características de virtualização de um processo. O
+padrão virtualização pode comportar-se como uma extensão do padrão fotografia
 (Seção~\ref{sec:fotografia}) ou simplesmente reagir de forma a executar durante
 todo o tempo em modo virtualização. Esse padrão pode ser utilizado em alguns
-contextos, dentre eles, em ferramentas de depuração e interceptação de erros. Em
-especial, aplicações como \emph{Garbage Collection (GC)} podem se beneficiar de
+contextos; dentre eles, em ferramentas de depuração e interceptação de erros. Em
+especial, aplicações como \emph{Garbage Collectors (GC)} podem se beneficiar de
 tais recursos, uma vez que é possível utilizar as funcionalidades fornecidas
 pela virtualização para otimizar tarefas. Os algoritmos de compactação de
 memória são potenciais alvos de otimização utilizando recursos de
-virtualização; a compactação adotada pelo GC pode fazer uso dos recursos de
-acesso direto as páginas fornecido pelos mecanismos de virtualização. Em poucas
+virtualização: a compactação adotada pelo GC pode fazer uso dos recursos de
+acesso direto às páginas de memória fornecido pelos mecanismos de virtualização. Em poucas
 palavras, quando o GC compacta a memória, ele precisa varrer todas as
 referências usadas pelo programa em execução e atualizar os endereços para as
 novas posições pós compactação (Seção~\ref{sec:gc}). Utilizando mecanismos de
-virtualização é possível intervir diretamente nas referências das aplicações,
+virtualização, é possível intervir diretamente nas referências das aplicações,
 mantendo o endereço virtual e alterando apenas o mapeamento para o endereço
 físico novo. Isso é possível pois os recursos de virtualização permitem o
-acesso direto as suas páginas e assim o GC pode atuar diretamente sob tais
+acesso direto às suas páginas de memória e, assim, o GC poderia atuar diretamente sob tais
 valores. 
 
 \subsubsection{Padrão Persistência}
 
-Parte do padrão persistência nasce indiretamente da proposta do MVAS, na qual
-permite que um processo tenha múltiplas VASes que por sua vez persistem além do
+Parte do padrão persistência nasce indiretamente da proposta do MVAS, que
+permite que um processo tenha múltiplas VASes que, por sua vez, persistem além do
 tempo de execução padrão do processo. Nesse contexto, o \emph{bead} fornece um
 mecanismo similar no qual o contexto do processo pode ser salvo somente
 para leitura e, assim, ser usado como base por outros processos do mesmo tipo. O
@@ -849,8 +855,8 @@ criado, por isso é preciso passar duas \emph{flags} específicas:
 faz com que o \emph{bead} crie um contexto persistente gerenciado pelo núcleo
 do SO que pode ser utilizado por outras aplicações. Idealmente, para que o
 padrão persistência funcione corretamente, o SO deve armazenar diversos
-metadados sobre os processos a fim de garantir a consistência entre os processos.
-Na Linha~\ref{line:persistenciaCxtInstance}, notamos que foi passado uma
+metadados sobre os \hltodo[processos a fim de garantir a consistência entre os processos.]{Além da repetição da palavra processos, não entendi por que precisa disso (ou melhor, não entendi o que significa ``consistência entre os processos''; quais processos? Os novos? Os novos e o velho? Os novos se houver mais de um?}
+Na Linha~\ref{line:persistenciaCxtInstance}, notamos que foi passada uma
 variável \texttt{data} para a função \texttt{context\_instance()}. Isso é feito
 uma vez que um identificador especial é criado e salvo em \texttt{data}. Dessa forma, o
 processo pode passar o identificador da maneira que achar melhor. No exemplo,
@@ -862,56 +868,59 @@ operação de troca de contexto é feita utilizando o valor carregado.
 
 \subsubsection{Padrão Atualização em Tempo Real}
 % TODO: Incompleto
+
+\todo[inline]{Você marcou um TODO aqui e, de fato, ou você explica como nos demais ou muda um pouco o texto para só fazer um comentário do tipo ``essa mesma bagaça pode ser utilizada, com modificações, para implementar live patching''}
+
 O padrão de atualização em tempo real, ou simplesmente \emph{live-patch}, nasce
 da combinação da técnica de criação de contexto persistente e das ideias de
-desacoplamento da VAS. A ideia do \emph{live patching} já existe e consiste em
+desacoplamento do VAS. A ideia do \emph{live patching} já existe e consiste em
 aplicar patches sem desligar/reiniciar o sistema; o Kernel Linux já suporta tal
 funcionalidade, mas empregar esse tipo de atualização em
 aplicações no espaço do usuário ainda é um desafio. Dado que o desacoplamento
-dos processos oferecem diversos recursos e novos modelos de programação,
+dos processos oferece diversos recursos e novos modelos de programação,
 introduzimos uma possível alternativa para implementar \emph{live-patching} no
 espaço de usuário. Para isso, o \emph{bead} faz uso de algumas das ideias já
-apresentadas nessa subseção, em conjunto com o conceito de desacoplamento da
+apresentadas nesta subseção, em conjunto com o conceito de desacoplamento do
 VAS apresentado pelo SpaceJMP. Entretanto, o \emph{bead} leva a um nível mais avançado o controle
-do desacoplamento da VAS, pois permite o controle fino sobre cada um dos seus elementos.
+do desacoplamento do VAS, pois permite o controle fino sobre cada um dos seus elementos.
 
 \input{algorithm/live_patch.tex}
 
 \subsubsection{Padrão Compartimento}
 %TODO: Atualizar o switch para ele aceitar os compartimentos. BEAD_CONTEXT_SWITCH -> BEAD_SWITCH
 
-O padrão Compartimento nasce dos conceitos apresentados pelo shred que busca apresentar uma técnica para evitar ataques intra-processos
+O padrão Compartimento nasce dos conceitos apresentados pelo shred, que busca apresentar uma técnica para evitar ataques intra-processos
 baseado em um recurso de hardware subutilizado. Essa ideia é fundamentada em um
 novo recurso fornecido por várias CPUs que permite definir domínios de acesso
 dentro da memória do processo (Seção~\ref{sec:outros_mecanismos_memoria}). O
 principal objetivo do compartimento dentro do próprio processo consiste em
-adicionar maior nível de isolamento e dificulta/impedir ataques que ocorram
+adicionar maior nível de isolamento e dificultar/impedir ataques que ocorram
 dentro do processo.
 
 \input{algorithm/compartimento.tex}
 
 O Pseudocódigo~\ref{alg:compartimento} ilustra como esse padrão se comporta. O
 exemplo começa na Linha~\ref{line:compartimentoMAIN}, onde a semântica do
-código original não sofre alteração. Em um determinado trecho de uma aplicação
+código original não sofre alteração. Em um determinado trecho de uma aplicação,
 pode ser necessário executar uma operação sobre dados sensíveis (e.g., senhas),
 portanto, é desejável que o acesso a tal informação seja o mais restrito
 possível. Nesse contexto, a Linha~\ref{line:compartimentoEnter} ilustra a
 operação \texttt{enter\_compartment()} que é responsável por mudar o fluxo de
 execução do processo para o compartimento. Em seguida, na
-Linha~\ref{line:compartimentoConfig} podemos acompanhar o processo de
+Linha~\ref{line:compartimentoConfig}, podemos acompanhar o processo de
 configuração necessário para criar o compartimento. Se tudo ocorrer bem, o processo passa a executar dentro de
 um compartimento isolado das demais \emph{threads}. 
 
 A operação \texttt{BEAD\_ENTER\_COMPARTMENT} foi introduzida na Seção~\ref{sec:api}. Ela foi
-utilizada no processo de configurar compartimento e a operação de troca foi
-utilizada para entra em tal modo (vale destacar que esse é um uso diferente da
-operação de troca). Dentro do compartimento, não é possível utilizar as operações de alocação
+utilizada no processo de configurar o compartimento e a operação de troca foi
+utilizada para entrar em tal modo (vale destacar que esse é um uso diferente da
+operação de troca). Dentro do compartimento, não é possível utilizar as operações de \hltodo[alocação]{Alocação de memória?}
 padrão, uma vez que é preciso utilizar o recurso de controle de acesso fornecido
 pelo hardware. Nesse sentido, o \emph{bead} fornece a operação
-\texttt{BEAD\_ALLOC\_COMPARTMENT\_MEMORY}, responsável por alocar memória possibilitando
-a qualquer \emph{thread} externa ter o seu acesso proibido a região de memória
-alocada. A Linha~\ref{line:compartimentoAlloc} é responsável por alocar memória
-dentro do próprio compartimento. Por fim, para remover a memória alocado basta
+\texttt{BEAD\_ALLOC\_COMPARTMENT\_MEMORY}, responsável por alocar memória e impedindo
+a qualquer \emph{thread} externa ter acesso a ela.
+A Linha~\ref{line:compartimentoAlloc} é responsável por alocar memória
+dentro do próprio compartimento. Por fim, para remover a memória alocada basta
 chamar a função \texttt{BEAD\_FREE\_COMPARTMENT\_MEMORY}.
 
 Quando todas as operações sobre dados sensíveis tiver acabado, o programador

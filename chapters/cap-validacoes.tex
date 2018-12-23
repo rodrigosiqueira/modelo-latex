@@ -430,33 +430,33 @@ OpenSSL.
 \subsection{OpenSSL}
 \label{sec:openssl}
 
-Antes de discutir sobre o OpenSSL é importante apresentar de forma geral o
-protocolo \boldAndIndex{Secure Sockets Layers (SSL)}. O principal objetivo do
+Antes de discutir o pacote OpenSSL, é importante apresentar de forma geral o
+protocolo \boldAndIndex{Secure Sockets Layers (SSL)}. O principal objetivo de
 SSL é fornecer um conjunto de protocolos criptográficos que permita a
-comunicação segura na rede. Basicamente, esse constituí uma ferramenta de uso
-cotidiano, tendo diversas aplicações de missão crítica dependendo de tal
-protocolo o que faz dele um constante alvo de ataques.
+comunicação segura em rede. É uma ferramenta de uso
+cotidiano, e diversas \hltodo[aplicações de missão crítica]{O certo é ``aplicações críticas à missão''}dependendo dele,
+o que o torna um constante alvo de ataques.
 
-O SSL utiliza um mecanismo chamado de \boldAndIndex{handshake} que
-nada mais é do que um processo de negociação entre o cliente e o servidor de
-forma a criar uma conexão segura entre ambos, a Figura
-\ref{fig:openssl_handshake} descrever de forma geral os passos da negociação. O
+O SSL utiliza um mecanismo chamado \boldAndIndex{handshake}, que
+nada mais é do que um processo de negociação entre o cliente e o servidor de uma conexão de rede, de
+forma a criar uma conexão segura entre ambos. A Figura
+\ref{fig:openssl_handshake} descreve de forma geral os passos da negociação. O
 processo de \textit{handshake} começa com o cliente mandando uma mensagem do
-tipo "Oi, sou o cliente" para o servidor; nessa mensagem o cliente informa a
+tipo ``Oi, sou o cliente'' para o servidor; nessa mensagem, o cliente informa a
 versão do SSL que está usando, os algoritmos de criptografia e os métodos de
-compressão que ele sabe manipular. O servidor por sua vez manda um "Oi, sou o
-servidor" dizendo qual algoritmo usar (selecionado da lista que o cliente
+compressão que ele sabe manipular. O servidor, por sua vez, responde com ``Oi, sou o
+servidor'', dizendo qual algoritmo usar (selecionado da lista que o cliente
 mandou), um ID da seção, um certificado digital e a sua chave pública. Com o
 certificado, o cliente consulta uma \textit{Certificate Authority (CA)}
-(Autoridade Certificadora) que valida se o servidor é valido ou não, isso serve
-para estabelecer a confiança sobre o servidor. Depois que o cliente recebe a
-validação da CA, ele começa a etapa de troca de chaves na qual o cliente envia
-a chave secreta compartilhável. O cliente criptografa tal chave com a chave
-pública fornecida pelo servidor e o cliente termina enviando uma mensagem de
-fim. O servidor desencripta a mensagem do cliente e utiliza a chave enviada
-para criptografar uma mensagem de fim para ser enviada para o o cliente. Quando
+(Autoridade Certificadora) que valida se o servidor é valido ou não,
+estabelecendo a confiança sobre o servidor. Depois que o cliente recebe a
+validação da CA, ele começa a etapa de troca de chaves, na qual o cliente envia
+uma chave secreta compartilhável. O cliente criptografa essa chave com a chave
+pública fornecida pelo servidor antes do envio e termina enviando uma mensagem de
+fim. O servidor decriptografa a mensagem do cliente e utiliza a chave enviada
+para criptografar uma mensagem de fim para ser enviada para o cliente. Quando
 o \textit{handshake} termina, o servidor e o cliente podem enviar mensagens que
-são simetricamente encriptadas \citep{openssl}.
+são simetricamente criptografadas com a chave compartilhada \citep{openssl}.
 
 \begin{figure}[!h]
   \centering
@@ -465,12 +465,12 @@ são simetricamente encriptadas \citep{openssl}.
   \label{fig:openssl_handshake}
 \end{figure}
 
-O OpenSSL é uma implementação livre do protocolo SSL, ele contém a
-implementação de várias funções criptográficas e utilitárias. A Figura
+O OpenSSL é uma implementação livre do protocolo SSL que
+inclui várias funções criptográficas e utilitárias. A Figura
 \ref{fig:openssl_arch} mostra uma visão geral da arquitetura do OpenSSL. O
 \textit{EVP crypto API} são funções de alto nível que fornecem recursos para
-derivação de chaves, hash seguro, código de autenticação de mensagens,
-encriptação/decriptação de algoritmos simétricos/assimétricos, dentre outros. A
+derivação de chaves, \textit{hash} seguro, código de autenticação de mensagens,
+criptografia/decriptografia de algoritmos simétricos/assimétricos, dentre outros. A
 arquitetura também fornece uma pilha de manipulação de erros e uma interface
 abstrata para lidar com I/O.
 
@@ -481,9 +481,12 @@ abstrata para lidar com I/O.
   \label{fig:openssl_arch}
 \end{figure}
 
+\todo[inline]{Acho que vale citar alguma/algumas aplicações que usem o OpenSSL;
+o apache usa? nginx? openssh?}
+
 \subsection{OpenSSH}
 
-Uma das tarefas mais comuns do dia-a-dia de muitos desenvolvedores consiste em
+Uma das tarefas mais comuns do dia-a-dia de muitos desenvolvedores\todo{e administradores de sistemas} consiste em
 acessar servidores em diversos locais do mundo e configurar uma determinada
 aplicação. Na prática, boa parte dos profissionais de TI faz uso de conexões
 seguras na Internet por meio do protocolo \textit{Secure Shell (SSH)}. Existem
@@ -491,15 +494,15 @@ diversas implementações desse protocolo, mas para este trabalho discutiremos o
 OpenSSH.
 
 A Figura \ref{fig:openssh_layer} apresenta uma visão geral da arquitetura do
-OpenSSH. Primeiramente repare que as três camadas correspondentes as camadas
-SSH encontram-se sobre a camada TCP/IP que consistem em uma conexão não segura.
-A primeira camada se chama \textit{ssh-transport} e ela é responsável por
-realizar operações criptográficas, proteção contra ataques e reverificar chaves
-de tempos em tempos. Logo após a primeira camada temos o \textit{ssh-userauth}
-que é responsável pela autenticação, se tudo der certo durante a autenticação,
-então a troca de chaves acontece e a conexão segura é estabelecida. Por fim a
+OpenSSH. Primeiramente, repare que as três camadas correspondentes às camadas
+SSH encontram-se sobre a camada TCP/IP, que consiste em uma conexão não segura.
+A primeira camada se chama \textit{ssh-transport} e é responsável por
+realizar operações criptográficas, pela proteção contra ataques e por reverificar chaves
+de tempos em tempos. Logo após a primeira camada temos o \textit{ssh-userauth},
+que é responsável pela autenticação: se tudo der certo durante a autenticação,
+então a troca de chaves acontece e a conexão segura é estabelecida. Por fim, a
 camada \textit{ssh-connection} estabelece um canal seguro e fica responsável
-por gerir a multiplexação de múltiplas conexões e redirecionamentos
+por gerir a multiplexação de múltiplas \hltodo[conexões]{Vale explicar um pouco melhor que dá para ``tunelar'' coisas aqui} e redirecionamentos
 \citep{proopenssh, opensshhood}.
 
 %TODO: CVE
@@ -510,49 +513,51 @@ por gerir a multiplexação de múltiplas conexões e redirecionamentos
   \label{fig:openssh_layer}
 \end{figure}
 
-Dado a enorme importância do OpenSSH, esse é alvo de constantes ataques e
-consequentemente recebe diversos aprimoramentos. Como resultado, algumas CVEs
-foram criadas e resolvidas no OpenSSH. Dentre as CVEs destacamos: TODO :(
+Dada a enorme importância do OpenSSH, ele é alvo de constantes ataques e,
+consequentemente, recebe diversos \hltodo[aprimoramentos]{Aprimoramentos ou só patches consertando? Ou você quis dizer aprimoramentos de projetos de pesquisa?}. Como resultado, algumas \hltodo[CVEs]{Precisa explicar o que é isso}
+foram criadas e resolvidas no OpenSSH. Dentre as CVEs destacamos: \hltodo[TODO :(]{TODO :-p}
 
 % TODO: Destacar
 
-Do ponto de vista do uso de tal aplicação para validar propostas de abstrações
-de processos, destacamos que essa pode ser usada para demonstrar ganhos de
-segurança e controle de acesso a memória. Uma abordagem é partir de uma versão
-antiga do OpenSSH que não tem a correção para alguma vulnerabilidade e
-demonstrar que a nova abstração sugerida consegue resolver o problema. Note que
+\hltodo[Do ponto de vista do uso de tal aplicação para validar propostas de abstrações
+de processos, destacamos que ela pode ser usada para demonstrar ganhos de
+segurança e controle de acesso à memória. Uma abordagem é partir de uma versão
+antiga do OpenSSH, que não tem a correção para alguma vulnerabilidade, e
+demonstrar que a nova abstração sugerida consegue resolver o problema.]{Legal; seria bom ter um comentário nesse estilo sobre o openSSL também} Note que
 os pontos mais fracos do OpenSSH podem ser destacados:
 
 \begin{itemize}
-  \item Acesso a chave é uma região crítica e deve ter o seu acesso restrito;
+  \item \hltodo[Acesso à chave é uma região crítica e deve ter o seu acesso restrito;]{Este item não seque o padrão dos demais; eu trocaria para ``Acesso indevido à chave criptográfica da sessão'' ou algo assim}
   \item Potencial vazamento de dados;
   \item Escalada de privilégios.
 \end{itemize}
 
 \section{Outras Aplicações para Avaliar Diferentes Aspectos}
 
+\todo[inline]{Precisa de um nome melhor isto aqui, ``avaliar diferentes aspectos'' tá bem feinho}
+
 As propostas de novas abstrações de processos podem levar benefícios para
 outras áreas além das mostradas nas Seções \ref{sec:web_server} e
 \ref{sec:com_enc}. Por esse motivo, apresentamos algumas ferramentas que são de
 ampla utilização no mercado e que podem ser utilizadas na validação da
-utilidades de algumas das novas abstrações sugeridas.
+utilidades de algumas das novas abstrações \hltodo[sugeridas.]{Hmmm... acho que seria ``mencionadas no capítulo 3''}
 
 \subsection{Redis}
 
-Escalar alguns sistemas não é uma tarefa trivial e exige constantes
-customizações. Como resultado dessa necessidade, surgiu o sistema Redis que
-consiste da ideia de utilizar um sistema que pode ser um cache e ao mesmo tempo
-um sistema de armazenamento utilizando a memória principal (RAM) com o objetivo
+\hltodo[Escalar]{Não há esse sentido da palavra em português; eu trocaria por ``Fazer alguns sistemas capazes de operar em grande escala não é uma tarefa trivial...''} alguns sistemas não é uma tarefa trivial e exige constantes
+\hltodo[customizações]{Também não existe em português! hahaha que tal só ``ajustes''?}. Como resultado dessa necessidade, surgiu o sistema Redis, que
+implementa a ideia de utilizar um sistema que pode ser um cache e, ao mesmo tempo,
+um mecanismo de armazenamento de dados utilizando a memória principal (RAM) com o objetivo
 de levar ganhos de desempenho para a aplicação. O Redis também salva os dados
-da memória para o disco, isso permite que posteriormente ele consiga
+da memória para o disco, o que permite que, posteriormente, ele consiga
 reconstruir o sistema na memória.
 
 O Redis é famoso por utilizar como forma de armazenamento o esquema de
 chave-valor (\textit{key-value}). Essa técnica permite o armazenamento dos dados na
 forma de um par que consiste de uma chave identificadora e um valor associado a
-chave. Quando um valor-chave é salvo, isso significa que o par está presente na
-RAM, no Redis, uma chave tem que ser uma string mas seus valores podem ser de
-vários tipos diferentes, dentre as abstrações de dados suportadas destacam-se:
+ela. Quando um valor-chave é salvo, o par passa a estar presente na
+RAM. No Redis, uma chave tem que ser uma cadeia de caracteres, mas seus valores podem ser de
+vários tipos diferentes. Dentre as abstrações de dados suportadas por ele, destacam-se:
 
 \begin{itemize}
   \item Lista de strings
@@ -566,16 +571,15 @@ vários tipos diferentes, dentre as abstrações de dados suportadas destacam-se
 
 O tipo utilizado no valor determina qual operação é possível de ser aplicada.
 De forma geral o Redis permite realizar operações de alto nível (e.g.,
-operações do lado do servidor, uniões e diferenças).
+\hltodo[operações do lado do servidor]{Dafuq?}, uniões e diferenças).
 
 A Figura \ref{fig:redis} apresenta uma visão de geral da organização do Redis.
-Repare que o Redis fornece uma interface de interação do lado do cliente (via
-linha de comando ou API) e possui um servidor que é responsável por lidar com
-os dados.  O servidor é responsável por gerir os dados na memória e em disco,
-por isso a sua implementação faz constante uso da criação de processos (via
+Repare que ele fornece uma interface de interação do lado do cliente (via
+linha de comando ou API) e possui um servidor que é responsável por gerir os dados na memória e em disco.
+A implementação faz constante uso da criação de processos (via
 chamada de sistema \texttt{fork()}). Basicamente, toda vez que um armazenamento
-é necessário, o Redis faz um \texttt{fork()} do processo pai, em seguida o
-processo filho da início ao processo de escrita em disco enquanto o processo
+é necessário, o Redis faz um \texttt{fork()} do processo pai; em seguida, o
+processo filho dá início ao processo de escrita em disco enquanto o processo
 pai continua realizando as suas tarefas. 
 
 \begin{figure}[!h]
@@ -585,69 +589,71 @@ pai continua realizando as suas tarefas.
   \label{fig:redis}
 \end{figure}
 
-Um dos aspectos mais interessante do Redis, da perspectiva das novas abstrações
-de processo, é a persistência dos dados. O Redis fornece três formas
+Um dos aspectos mais interessante de Redis, da perspectiva das novas abstrações
+de processo, é a persistência dos dados. Redis fornece três \hltodo[formas]{Acho que aqui seria melhor ``... das novas abstrações de processo é o mecanismo de persistência dos dados. Redis pode utilizar três:...''}
 \citep{redisio}: \textit{Relational Database (RDB)}, \textit{Append-Only-File
-(AOF)} e comando SAVE. O RDB faz uma cópia de todos os dados presentes na
-memória para o disco, por padrão, o Redis escreve os dados a cada dois
-segundos. Repare que o RDB pode causar perda de dados em caso de mal funcionar,
-uma alternativa seria configurar o Redis para fazer mais escritas, contudo isso
-eleva consideravelmente o consumo de memória pela natureza do uso de
-\texttt{fork()}. O AOF registra todas as operações de escritas feitas pelo
-servidor, logo tudo é persistido. O AOF tem o problema de que pode ser mais
-lento do que o RDB a depender da política de sincronização adotada e também
-consumir mais memória.  Por fim o comando SAVE força o servidor a criar um
-\textit{dump} dos dados no momento em que foi solicitado.
+(AOF)} e comando SAVE. RDB faz uma cópia de todos os dados presentes na
+memória para o disco. Por padrão, Redis escreve os dados a cada dois
+segundos. Repare que RDB pode causar perda de dados em caso de mau funcionamento;
+uma alternativa seria configurá-lo para fazer mais escritas, contudo isso
+elevaria consideravelmente o consumo de memória pela natureza do uso de
+\texttt{fork()}. AOF registra todas as operações de escrita feitas pelo
+servidor, logo tudo é persistido. AOF tem o problema de que pode ser mais
+lento do que RDB, a depender da política de sincronização adotada, e também
+consumir mais memória.  Por fim, o comando SAVE força o servidor a criar um
+\textit{dump} dos dados no momento em que foi solicitado.\todo{Parece igual ao RDB mas só quando ``alguém'' pede, é isso mesmo?}
 
 % TODO: Vale a pena dar um certo nível de detalhes do código? Não é tão complicado fazer isso, mas preciso ter certeza antes se vale a pena
 % Além da referencia do "Redis: under the hood" tem esse artigo aqui: http://robertlehmann.de/img/redis.pdf
 
+\todo[inline]{Acho que aqui seria legal mencionar que ``dá para melhorar essa bagaça em tal lugar, que é o que é feito com o sistema XXX}
+
 \subsection{Garbage Collection (GC)}
 \label{sec:gc}
 
-Várias linguagens de alto nível possuem mecanismos de gerenciamento recursos
+Várias linguagens de alto nível possuem mecanismos de gerenciamento automático de recursos
 (e.g., memória, processamento paralelo, datas, etc) que garantem a portabilidade
 da aplicação e removem a complexidade de ter que gerenciar recursos de baixo
 nível. Dentre as vantagens de tais tecnologias, destacam-se o fato de que o
-programador pode manter o foco nas características da aplicação e também reduz
-a chances de erros graves. O Java é o principal representante desse tipo
+programador pode manter o foco nas características da aplicação e também a redução
+nas chances de erros graves. Java é a principal representante desse tipo de
 linguagem, fornecendo mecanismos de gerenciamento automático da memória e sendo
 portável para múltiplas plataformas. Por uma questão de simplicidade, iremos
-adotar o Java para as discussões desta seção. Todas as flexibilidades
-oferecidas pelo Java deve-se ao uso da \textit{Java Virtual Machine} (JVM) que
+adotar Java para as discussões desta seção. Toda a flexibilidade
+oferecida por Java deve-se ao uso da \textit{Java Virtual Machine} (JVM), que
 fornece elementos para a manipulação dos recursos do SO. Um dos principais
-elementos da JVM é o \textit{Garbage Collection} (GC), cujo a principal tarefa
+elementos da JVM é o \textit{Garbage Collector} (GC), cuja principal tarefa
 consiste em abstrair o gerenciamento de memória da aplicação de forma que ela
-não tenha que lidar com tal aspecto (alocar e desalocar). Dado o seu impacto, o
+não tenha que lidar com tal aspecto (alocar e desalocar memória). Dado o seu impacto, o
 GC tem sido alvo de constantes otimizações ao longo dos anos e esse é um
-elemento que pode se beneficiar de novos recursos oferecidos por extensões
+elemento que pode se beneficiar de novos recursos oferecidos por extensões às
 abstrações de processos.
 
-O GC é uma aplicação que é parte da JVM executando junto com a aplicação.
+O GC é uma aplicação que é parte da JVM, executando junto com a aplicação.
 Independentemente do algoritmo de gerenciamento de memória implementado pelo
 GC, todos eles definem o termo \boldAndIndex{Stop the World (STW)} ou
 \textit{Parar tudo} \citep{gc_pauseless}. O STW é uma operação realizada pela
-JVM  na qual todas as threads da aplicação são suspensas para que o GC execute,
-em outras palavras, a única thread executando será a do coletor. Note que o GC
-requer pausa para funcionar, isso é preciso pois seus algoritmos precisam que
+JVM  na qual todas as threads da aplicação são suspensas para que o GC execute.
+Em outras palavras, a única thread executando será a do coletor. Note que o GC
+requer essa pausa para funcionar; isso é preciso pois seus algoritmos precisam que
 aplicação não faça nenhuma atualização da memória durante uma das fases do
 processo de limpeza da memória.
 
 Existem diversos algoritmos que podem ser adotados pelo GC, contudo podemos
 generalizar três etapas gerais: \textit{Marking}, \textit{Sweep} e
 \textit{Compact}. A etapa de \textit{Marking}, também conhecida por pintura,
-consiste em inspecionar os objetivos na memória para verificar quais ainda são
-considerados vivos. Para determinar se um objeto está vivo o GC começa por
-lementos conhecidos como objetos raiz ou \textit{Garbage Collection Roots}, os
-seguintes componentes são considerados como um GC root: variáveis locais,
+consiste em inspecionar os objetos na memória para verificar quais ainda são
+considerados ``vivos''. Para determinar se um objeto está vivo, o GC começa por
+elementos conhecidos como objetos raiz ou \textit{Garbage Collection Roots}. Os
+seguintes componentes são considerados GC roots: variáveis locais,
 entrada de parâmetros, threads ativas, campos estáticos e referências JNI
 \citep{gc_basics}. Partindo de um GC root, o GC atravessa o grafo dos objetos
-alcançáveis e para cada elemento que consegue acessar ele “pinta” a referência
+alcançáveis e, para cada elemento que consegue acessar, ele ``pinta'' a referência
 como viva. A Figura \ref{fig:gc_alg} ilustra o algoritmo descrito. No contexto
 do GC, o processo de parar as threads para que a JVM possa executar a etapa de
 \textit{Marking} recebe o nome de \textit{safe point} (ponto seguro) e essa
-gera um STW. O tamanho da pausa é definido pela quantidade de objetos
-alcançável e o seu tamanho no \textit{heap}.
+gera um evento STW. O tamanho da pausa é definido pela quantidade de objetos
+alcançáveis e seu tamanho no \textit{heap}.
 
 \begin{figure}[!h]
   \centering
@@ -658,15 +664,15 @@ alcançável e o seu tamanho no \textit{heap}.
 
 Depois da etapa de pintar os objetos na memória, entra em ação a etapa de
 remover os objetos que não foram pintados; note que essa etapa pode acontecer
-em paralelo ou não, depende do algoritmo adotado. O processo de remoção pode
-gerar fragmentação na memória, o que pode representar um problema uma vez que o
-GC pode não encontrar espaços de memória grande o suficiente para outros
-objetos. Por isso também existe uma fase de compactação na qual o GC realoca os
+em paralelo ou não, dependendo do algoritmo adotado. O processo de remoção pode
+gerar fragmentação na memória, o que pode representar um problema, uma vez que o
+GC pode não encontrar espaços de memória grandes o suficiente para outros
+objetos. Por isso, também existe uma fase de compactação, na qual o GC realoca os
 objetos pintados para liberar espaço contíguo. Contudo, para que a compactação
-aconteça corretamente as referências dos objetos tem que ser atualizadas uma
+aconteça corretamente, as referências dos objetos têm que ser atualizadas, uma
 vez que a posição física dos objetos mudou. O processo de atualizar as
-referência chama-se remapeamento e ele precisa examinar toda a memória para
-realizar os ajustes, note que a etapa de compactação eleva o tempo de STW. A
+referências chama-se remapeamento e precisa examinar toda a memória para
+realizar os ajustes. Note que a etapa de compactação eleva o tempo de STW. A
 Figura \ref{fig:gc_mem} apresenta uma visão da memória durante as três etapas
 descritas.
 
@@ -684,115 +690,117 @@ potencial de uso de tal aplicação para validar novas abstrações de processos
 \section{Discussão Sobre as Aplicações}
 \label{sec:disc_app}
 
-Desde o começo deste capítulo até está seção apresentamos algumas aplicações
+\todo[inline]{Aqui está a parte que eu disse mais acima que sentia falta em cada uma das seções, o ``por que estou falando nisto''; acho que vale manter esta seção aqui, mas colocar uma menção em cada aplicação dizendo tipo ``serve para tal coisa, como veremos mais adiante''}
+
+Desde o começo deste capítulo até esta seção, apresentamos algumas aplicações
 destacando o seu funcionamento, estruturas básicas e os recursos exigidos por
-elas. Contudo, o nosso principal objetivo é verificar quais tipos de benefícios
+elas. Contudo, o nosso principal objetivo é verificar quais são os tipos de benefícios
 e validações que tais aplicações podem fornecer para o avanço das pesquisas em
 novas abstrações de processos. Cada tipo de aplicação pode ser útil para
 demonstrar algum aspecto da nova abstração, mas idealmente é interessante
 evidenciar que as demais aplicações apresentadas também não sofrem com a nova
 abstração.
 
-O Apache e o Nginx são aplicações cujo o objetivo é servir requisições feitas
+Apache e Nginx são aplicações cujo o objetivo é servir requisições feitas
 pelos usuários, ou seja, são servidores web. Esse tipo de aplicação normalmente
 oferece opções para que sejam amplamente configuradas de forma a atender os
 requisitos do usuário da melhor maneira possível. Tais aplicações são
 especializadas para tirar o máximo de proveito possível dos recursos de hardware,
 uma vez que servidores web podem lidar com enormes cargas de requisições
-levando a um ostensivo uso do hardware. Nesse tipo de aplicação é comum que
+levando a um ostensivo uso do hardware. Nesse tipo de aplicação, é comum que
 ocorra um amplo consumo da memória e que a CPU esteja próxima do 100\% de
-utilização em situações estresse (muitos usuários acessando).  Note que quanto
+utilização em situações de estresse (muitos usuários acessando).  Note que, quanto
 mais tempo uma requisição vive, mais memória é consumida, por isso é desejável
-que as requisições sejam atendidas o mais rapidamente possível. Por sua vez o
-SO tem que manipular diversos aspectos relacionados a memória, processos e
+que as requisições sejam atendidas o mais rapidamente possível. Por sua vez, o
+SO tem que manipular diversos aspectos relacionados à memória, processos e
 arquivos. Por esse motivo, utilizar esse tipo de software como prova de
 conceito para demonstrar a eficácia de uma nova abstração de processos é algo
 extremamente desejável. Essas aplicações podem ser utilizadas para mostrar que
 o comportamento da alteração na abstração de processos em uma situação de alta
-demanda. Contudo é importante ressaltar que os testes realizados em tais
-ferramentas devem gerar uma carga substancial para que a configuração padrão
-tenha que ser alterada. Esse aspecto é fundamental uma vez que não existe
+demanda\todo{esta frase acabou no meio}. Contudo, é importante ressaltar que os testes realizados em tais
+ferramentas devem gerar uma carga substancial \hltodo[para que a configuração padrão
+tenha que ser alterada.]{Hmm? Não vejo por que; no caso do apache precisamos mexer na configuração, mas dependendo do software não precisa de nada para chegar ao máximo que a aplicação e o hardware dão conta} Esse aspecto é fundamental, uma vez que não existe
 grande valor em demonstrar algo usando tais ferramentas com uma carga pequena,
-pois isso pouca ajuda na verificação dos reais impactos gerados pela nova
+pois isso pouco ajuda na verificação dos reais impactos gerados pela nova
 extensão do processo.
 
-O Apache também possuí um ambiente que permite testar processos e threads de
-forma equivalente. Tal característica é interessante para comparar novas
+Apache também possui um ambiente que permite testar processos e threads de
+forma \hltodo[equivalente]{Aqui ficou parecendo que isso é uma ferramenta ou uma coisa padrão dele, e não é bem isso; o apache, por conta dos MPMs, permite fazer uma comparação}. Tal característica é interessante para comparar novas
 abstrações diante de dois modos de execução amplamente utilizados. De forma
-similar o Nginx usa outro modelo chamado de \textit{event} que também
-representa outra contexto para validação. Da forma como o Apache e o Nginx
+similar, o Nginx usa outro modelo chamado de \textit{event}, que também
+representa outro contexto para validação. Da forma como Apache e Nginx
 manipulam requisições, podemos dizer que o primeiro fornece um isolamento
 horizontal enquanto o segundo proporciona isolamento vertical. O isolamento
 horizontal vem do fato de que um processo cria vários outros e o vertical vem
 da criação de um único processo por núcleo do processador durante a
-inicialização. Esses dois níveis de isolamento podem ser úteis para demonstrar
+inicialização. Esses \hltodo[dois níveis de isolamento]{Você não explicou o que está chamando de horizontal e vertical} podem ser úteis para demonstrar
 que uma nova abstração pode melhorar o isolamento sem degradar o desempenho.
 
-O Apache trabalha com diversos \textit{plugins} que são acoplados ao código
-principal dinamicamente. Essa junção tem uma boa relação desempenho e
-flexibilidade, mas também elevam as chances de quebrar o Apache.  Portanto o
+Apache trabalha com diversos \textit{plugins} que são acoplados ao código
+principal dinamicamente. Essa junção tem uma boa relação entre desempenho e
+flexibilidade, mas também eleva as chances de quebrar o Apache.  Portanto, o
 sistema de \textit{plugins} do Apache fornece um bom elemento de validação para
 aquelas abstrações que visam trazer isolamento e recuperação.
 
 Várias propostas de extensão da abstração de processos sugerem algum ganho de
 segurança por meio do controle fino ou isolamento de pedaços da memória. Nesse
-sentido o OpenSSH e OpenSSL são ferramentas interessantes, já que possuí os
-requisitos de segurança adequado para a validação das novas abstrações. Em
+sentido, OpenSSH e OpenSSL são ferramentas interessantes, já que possuem os
+requisitos de segurança adequados para a validação das novas abstrações. Em
 especial, ambas as aplicações tem diversas CVEs associadas a si com correções
-disponíveis a partir de uma versão especifica. Portanto uma proposta de
+disponíveis a partir de uma versão específica. Portanto, uma proposta de
 melhoria na abração de processo que eleva a segurança pode demonstrar o seu
 real valor em uma dessas aplicações.
 
-O Redis por sua vez é uma aplicação que trabalha com grandes quantidade de
-dados na memória e que tem um excelente desempenho em situações de forte
-demanda. Essas características fazem do Redis uma excelente ferramenta para
+Redis, por sua vez, é uma aplicação que trabalha com grandes quantidade de
+dados na memória e que tem excelente desempenho em situações de forte
+demanda. Essas características fazem dele uma excelente ferramenta para
 demonstrar novas técnicas de compartilhamento da memória. Além disso, um dos
-objetivos do Redis é auxiliar na escalabilidade das aplicações por isso é
-desejável que o mesmo reaja rapidamente a qualquer problema. Nesse contexto,
+objetivos de Redis é auxiliar na escalabilidade das aplicações. Por isso, é
+desejável que ele reaja rapidamente a qualquer problema. Nesse contexto,
 abstrações de processos novas que tragam melhorias no tempo recuperação de uma
 aplicação em caso de falha podem usar o Redis com instrumento de validações.
 
 Novas abstrações de processos podem entregar ganhos de desempenho para as
 aplicações por utilizar algum recurso de hardware ou mesmo fornecer uma nova
 estrutura de dados para a aplicação. Tal otimização pode ser demonstrada em um
-GC uma vez que esse tipo de aplicação faz uso de vários algoritmos que dependem
+GC, uma vez que esse tipo de aplicação faz uso de vários algoritmos que dependem
 de certos dados fornecidos pelo SO. Como exemplo disto, a fase de compactação
 pode ser otimizada se o endereço virtual for mantido e apenas o endereço físico
 alterado \citep{pauseless}.
 
 A Tabela \ref{tab:app_alvos} busca resumir quais aplicações podem ser usadas
-para demonstrar algum aspecto da nova abstração de processos. Além disso essa
-seção inteira responde a pergunta RQ3 uma vez que apresenta e discute diversas
-aplicações. Por fim repare da Tabela \ref{tab:app_alvos} que o Apache é uma das
+para demonstrar algum aspecto da nova abstração de processos. Além disso, esta
+seção inteira responde a pergunta RQ3, uma vez que apresenta e discute diversas
+aplicações. Por fim, repare na Tabela \ref{tab:app_alvos} que Apache é uma das
 ferramentas que melhor pode ser usada para demonstrar os aspectos de uma nova
 abstração de processos. No Capítulo \ref{cap:estudo-de-caso} aprofundamos a
-validação utilizando o Apache para testar o MVAS. 
+validação utilizando Apache para testar o MVAS.
 
 \input{tables/app_alvo}
 
-\section{Microbenchmark}
+\section{Microbenchmarks}
 \label{sec:micro}
 
-\textit{Microbenchmarks} tem por objetivo mensurar e fornecer meio para
-analisar uma única característica do objeto de estudo. Essa forma de validação
-traz inúmeras vantagens, dentre elas: facilita o processo de desenvolvimento,
-mostra o impacto em um único elemento de forma a facilitar a análise e são
+\textit{Microbenchmarks} têm por objetivo mensurar e fornecer meios para
+analisar uma única característica do objeto de estudo. Eles
+facilitam o processo de desenvolvimento,
+mostram o impacto em um único elemento de forma a facilitar a análise e são
 relativamente simples de serem implementados. Contudo, a principal desvantagem
 encontra-se no fato de que eles não ajudam a revelar o impacto geral do objeto
-alvo. Por esse motivo é interessante trabalhar com um conjunto de
-\textit{microbenchmark} e também com validações usando aplicações (como
+alvo. Por esse motivo, é interessante trabalhar com um conjunto de
+\textit{microbenchmarks} e também com validações usando aplicações (como
 descrito na Seção \ref{sec:disc_app}). Expandindo o contexto dos
 \textit{microbenchmarks} para o subconjunto da pesquisa sobre abstrações de
 processos, queremos destacar aquelas validações que lidam com a memória,
 sobrecargas extra e impactos na utilização de certos recursos de hardware.
 
-No Capítulo \ref{cap:trabalhos-analisados} apresentamos diversas propostas que
-buscam de alguma maneira lidar com os mecanismos de acesso a memória. Várias
+No Capítulo \ref{cap:trabalhos-analisados}, apresentamos diversas propostas que
+buscam de alguma maneira lidar com os mecanismos de acesso à memória. Várias
 dessas propostas permitem o controle fino da memória ou algum ganho de
-segurança na qual os autores normalmente demonstram por meio da alteração de
+segurança que os autores normalmente demonstram por meio da alteração de
 algumas aplicações (e.g., OpenSSL ou OpenSSH). Contudo, alterações no
 gerenciamento da memória podem incorrer em erros e em problemas de desempenho.
-Nesse sentido alguns \textit{microbenchmarks} podem ser extremamente oportuno
+Nesse sentido, alguns \textit{microbenchmarks} podem ser extremamente oportunos
 para validar o uso de novas abstrações de processos que lidam com a memória.
 Com base em todos os trabalhos analisados no Capítulo
 \ref{cap:trabalhos-analisados}, extraímos os seguintes itens:
@@ -804,61 +812,61 @@ Com base em todos os trabalhos analisados no Capítulo
 Algumas propostas criam mecanismos de alocação de memória contendo
 características novas, por isso é interessante comparar os mecanismos
 propostos pelo pesquisador utilizando como base a forma padrão de alocação
-(e.g., \texttt{malloc()} e \texttt{calloc()}). Tendo os valores base extraído
+(e.g., \texttt{malloc()} e \texttt{calloc()}). Tendo os valores base extraídos
 das operações já consolidadas e os valores coletados do modelo proposto,
 torna-se possível ter um critério para compreender o real impacto da mudança.
 Vale observar que esse tipo de \textit{microbenchmark} precisa ser feito com
-múltiplas cargas de tamanhos variados, no minimo, espera-se cargas na ordem dos
+múltiplas cargas de tamanhos variados; no mínimo, espera-se cargas na ordem dos
 KBs, MBs e GBs.
 
   \item[Medir tempo gasto com operações de litura e escrita:]
 
-Mensurar o tempo de leitura e escrita em uma memória usando os mecanismos
-padrão é importante para ter o custo de acesso base. Tal informação deve ser
+Mensurar o tempo de leitura e escrita em memória usando os mecanismos
+padrão é importante para obter o custo de acesso base. Tal informação deve ser
 utilizada para comparar com novas propostas de abstrações de processos que
 adicionam camadas extras para acessar a memória (e.g., Nooks e Wedge).
-Novamente é importante que várias cargas de trabalho sejam utilizadas.
+Novamente, é importante que várias cargas de trabalho sejam utilizadas.
 
 \end{description}
 
 Algumas propostas sugerem a adição de novas chamadas de sistema que adicionam
-novos modelos de programação (e.g., lwC e MVAS). Apesar das chamadas de sistema
-serem relativamente rápidas, essas adicionam \textit{overhead}. Por isso é
-desejável que o pesquisador identifique alguma \textit{syscall} padrão que tem
-algum nível de similaridade com a nova chamada que ele está propondo; assim ele
-pode realizar medições do tempo total gasto da chamada padrão para ter um valor
+novos modelos de programação (e.g., lwC e MVAS). Apesar de as chamadas de sistema
+serem relativamente rápidas, elas adicionam \textit{overhead}. Por isso, é
+desejável que o pesquisador identifique alguma \textit{syscall} padrão que tenha
+algum nível de similaridade com a nova chamada que ele está propondo; assim, ele
+pode realizar medições do tempo total gasto com a chamada padrão para ter um valor
 base para comparar com a nova chamada. Contudo, existem casos em que a nova
-chamada representa algo totalmente novo e que não faz sentido comparar com
+chamada representa algo totalmente novo e em que não faz sentido comparar com
 qualquer outra chamada já existente. Independentemente de existir ou não uma
-chamada base é desejável que o pesquisador execute \textit{microbenchmarks} que
-validem:
+chamada base, é desejável que o pesquisador execute \textit{microbenchmarks} que
+possam aferir:
 
 \begin{description}
-  \item [Aferir tempo total gasto na chamada:]
+  \item [Tempo total gasto na chamada:]
 
-Espera-se que o tempo total da chamada seja medido considerando-se o cenário em
+Espera-se que o tempo total da chamada seja medido, considerando-se cenários em
 que a chamada é feita dezenas, centenas e milhares de vezes. Esse tipo de
 parametrização é importante na validação do comportamento da chamada sob
 diferentes cargas.
 
-  \item [Aferir tempo total gasto da chamada em um contexto de concorrência:]
+  \item [Tempo total gasto na chamada em um contexto de concorrência:]
 
 Testes realizados no contexto de concorrência auxiliam na validação de como
 novas chamadas se comportam. Novamente, espera-se que tal teste execute
 a nova chamada diversas vezes.
 
-  \item [Quantidade de troca de contexto:]
+  \item [Quantidade de trocas de contexto:]
 
-As novas instruções podem fazer com que o número de troca de contexto aumente,
-por isso é valioso medir tal aspecto referente a nova chamada.
+As novas instruções podem fazer com que o número de trocas de contexto aumente,
+por isso é valioso medir tal aspecto referente à nova chamada.
 
 \end{description}
 
 Várias propostas propõem um novo hardware (e.g., Mondrix) ou uma mudança na
 forma como um dispositivo é usado, o que torna importante validar alguns
 aspectos de uso. Contudo, para a questão do \textit{microbenchmark} vamos
-considerar apenas os aspectos referentes a reutilização do hardware de
-virtualização uma vez que consideramos que tal técnica tem amplas chances de
+considerar apenas os aspectos referentes à reutilização do hardware de
+virtualização, uma vez que consideramos que tal técnica tem amplas chances de
 ser adotada (discutimos esse aspecto com mais detalhes no Capítulo
 \ref{cap:analise-sobre-abstracoes-de-processos}). Nesse contexto, dois
 elementos devem ser medidos:
@@ -867,23 +875,23 @@ elementos devem ser medidos:
 
   \item [Custos de operações que executam \textit{VM Entry} e \textit{Exit}:]
 
-Chamadas que utilizam recursos de virtualização tem o custos para entrar e sair
-do kernel. Mensurar tal custo é útil para analisar quais contextos valem a pena
+Chamadas que utilizam recursos de virtualização têm custos para entrar e sair
+do kernel. Mensurar tal custo é útil para analisar em quais contextos vale a pena
 ou não utilizar os recursos de virtualização.
 
   \item [Medir o uso de EPT:]
 
-Quando se utiliza a EPT, espera-se que o total de \textit{TLB misses} se eleve
-uma vez que em muitos casos é preciso procurar por dois níveis de chamadas
+Quando se utiliza a EPT, espera-se que o total de \textit{TLB misses} se eleve,
+uma vez que, em muitos casos, é preciso procurar por dois níveis de chamadas
 ~\citep{belay}. Portanto, torna-se interessante medir o tempo total gasto
 quando a EPT é usada sob diferentes cargas.
 
 \end{description}
 
-Por fim é importante ressaltar que vários dos \textit{microbenchmark} devem
+Por fim, é importante ressaltar que vários dos \textit{microbenchmarks} devem
 utilizar recursos estatísticos para derivar seus resultados. Por exemplo,
 espera-se que cada experimento execute múltiplas vezes e a sua média ou mediana
-seja calculada. Além disto a combinação de múltiplos \textit{microbenchmarks}
+seja calculada. Além disso, a combinação de múltiplos \textit{microbenchmarks}
 pode auxiliar consideravelmente na validação de uma nova proposta de abstração.
 
 \section{Discussão}
@@ -892,7 +900,7 @@ Recapitulando o objetivo deste Capítulo por meio das perguntas de pesquisa:
 
 \begin{quote}
  \item \textit{RQ3:.} "Quais aplicações podem ser utilizadas para avaliar as nova abstração adicionadas ao SO?"
- \item \textit{RQ4:.} "Qual conjunto de \emph{microbenchmark} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada para as abstrações de processos?"
+ \item \textit{RQ4:.} "Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada para as abstrações de processos?"
 \end{quote}
 
 Para responder a primeira pergunta, fizemos uma jornada da Seção
@@ -900,17 +908,17 @@ Para responder a primeira pergunta, fizemos uma jornada da Seção
 amplamente consolidadas. Em especial, a Seção \ref{sec:disc_app} apresentou uma
 discussão sobre as vantagens em se utilizar as aplicações para validar as novas
 abstrações de processos. A Tabela \ref{tab:app_alvos} buscou relacionar as
-aplicações e a área na qual ela auxilia a validar.
+aplicações e as áreas que elas auxiliam a validar.
 
 Para responder a segunda pergunta, revisitamos todos os trabalhos e buscamos
 compilar um conjunto de \textit{microbenchmarks} que auxiliam no processo de
-validação.  A combinação de múltiplos \textit{microbenchmarks} auxiliam
+validação.  A combinação de múltiplos \textit{microbenchmarks} auxilia
 mostrando o impacto da alteração de forma mais abrangente, contudo, esse tipo
 de validação sozinho não é capaz de revelar os impactos gerais de uma nova
 abstração.
 
 Em um cenário ideal, a combinação das validações utilizando as aplicações
-discutidas em conjunto com os \textit{microbenchmarks} representam uma boa
+discutidas em conjunto com os \textit{microbenchmarks} representa uma boa
 cobertura sobre os impactos de uma nova abstração. Por fim, é importante
 relembrar que tais validações devem buscar utilizar cargas de trabalho
-relevantes para tornar claro os impactos da nova abstração.
+relevantes para tornar claros os impactos da nova abstração.

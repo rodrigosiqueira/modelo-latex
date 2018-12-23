@@ -3,7 +3,7 @@
 function context_instance(value) /// \label{line:fotografiaContextIntance}
   id $\gets$ beadctl(BEAD_NEW_CONTEXT_INSTANCE, value) /// \label{line:fotografiaNewCtx}
 
-  if $id != -1$ then // Significa que está no processo que instânciou o novo contexto
+  if $id \neq -1$ then // Significa que está no processo que instânciou o novo contexto
     return id
 
   struct bead_data bead /// \label{line:fotografiaPosSwitch}
