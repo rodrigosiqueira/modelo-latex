@@ -1,43 +1,29 @@
 \chapter{Validação de Novas Abstrações de Processos}
 \label{cap:validacoes}
 
-\todo[inline]{Olhando por alto, acho que a organização está ok, mas se quiser mudar,
-eu mexeria na introdução e faria uma argumentação nesta linha:
-
-O SO dá a infra para rodar os processos. Ele precisa garantir (1) acesso aos recursos,
-(2) desempenho, (3) segurança/isolamento e (4) funcionalidades adicionais (p.ex.,
-mutexes). Melhorias no SO devem trazer benefício em alguma dessas frentes sem
-trazer muito overhead.
-
-Para testar essa bagaça, microbenchmarks e aplicações ``reais''. Aplicações reais
-podem consumir CPU, podem ler muito do disco, podem escrever muito no disco, podem
-ler muito da memória, podem escrever muito na memória, podem gerar muito tráfego
-de rede, podem gerar muitas trocas de contexto (pela paralelização), podem depender
-de sincronização e podem ferrar com os caches de memória e de disco. Além disso,
-algumas aplicações podem ter necessidades específicas de segurança. Idealmente,
-seria bom testar com aplicações que exercitam todas essas coisas.
+A maioria dos SOs oferecem a infraestrutura necessária para que os processos
+existam. Eles precisam garantir (1) acesso aos recursos, (2) desempenho, (3)
+segurança/isolamento e (4) funcionalidades adicionais (p.ex., mutexes).  Nesse
+contexto, melhorias nos SOs devem trazer benefícios em alguma dessas frentes
+buscando evitar o acréscimo de \emph{overhead}. Para testar as novas propostas de
+abstrações, temos as opções de utilizar \emph{microbenchmarks} e aplicações
+``reais''.  Aplicações reais são capazes de consumir CPU, realizar diversas
+operações de leituras e escrita em disco, demandar muita leitura e escrita da
+memória, gerar intenso tráfego de rede, causar muitas trocas de contexto (pela
+paralelização), e podem comprometer os caches de memória e disco. Além disso,
+algumas aplicações possuem necessidades específicas de segurança. Idealmente,
+qualquer proposta de expandir a abstração de processos deve buscar formas de
+validação que exercitem todas as características apresentadas.
 
 Na prática, queremos algo que gere uma carga razoável de CPU, disco, rede e
-paralelismo. Não faz muita diferença para avaliar a qualidade do SO se as
-operações de I/O são de escrita ou leitura, então qualquer caso serve. Se o que
-está sendo testado não interfere com as primitivas de sincronização, também dá
-para deixar de lado esse aspecto. O mesmo vale para caches, e ainda por cima
-eles são muito imprevisíveis então dá para deixar de lado também. Finalmente,
-seria bom algo que é relativamente fácil de gerar carga e medir o desempenho.
-
-O que atende bem esses requisitos são servidores web: são altamente paralelos,
-geram bastante I/O e tráfego de rede, dependem de algum processamento na CPU
-e há ferramentas para gerar carga e medir o desempenho. No caso da segurança,
-faz sentido usar uma aplicação dedicada, como gpg ou openssh, e/ou uma biblioteca,
-como openssl. Não por acaso, quase todos os trabalhos que avaliamos usam alguma
-dessas ferramentas para fazer suas validações.
-
-Não vi a parte de microbenchmarks, mas talvez você também possa argumentar
-algo como ``se é para validar com microbenchmarks, precisamos ter um conjunto
-mínimo desses microbenchmarks que todo mundo usa para minimizar as chances de
-efeitos colaterais indesejados escaparem''. Isso justificaria a existência da
-RQ4.
-}
+paralelismo; além disso, que seja algo relativamente fácil de gerar carga e
+medir o desempenho. Servidores web, atendem bem esses requisitos: são altamente
+paralelos, geram bastante I/O e tráfego de rede, dependem de algum
+processamento na CPU e há ferramentas para gerar carga e medir o desempenho. No
+caso da segurança, faz sentido utilizar aplicações dedicadas, como
+\emph{gnugpg} ou \emph{openssh}, e/ou uma biblioteca, como \emph{openssl}. Não
+por acaso, quase todos os trabalhos que avaliamos usam alguma dessas
+ferramentas para fazer suas validações.
 
 O Capítulo \ref{cap:trabalhos-analisados} mostrou algumas pesquisas que buscam
 estender a abstração de processos atual. Apesar dos vários trabalhos
@@ -46,57 +32,71 @@ suas propostas. Por exemplo, uma abordagem que visa isolar dados para evitar
 vazamento de informações faz testes que buscam por esses tipos de falhas, mas
 deixam de avaliar se a alteração é viável em um contexto global com uma
 demanda realista. Adicionalmente, alguns desses trabalhos baseiam-se
-fortemente em \textit{microbenchmarks}, que podem evidenciar um resultado
-desejado sem revelar um efeito colateral da alteração. Em busca de
-encontrar propostas de abstrações que possam ser levadas para os SO atuais e
-também beneficiar aplicações no espaço do usuário, levantamos e respondemos as
-seguintes perguntas:
+fortemente em \emph{microbenchmarks}, que podem evidenciar um resultado
+desejado sem revelar um efeito colateral da alteração. Assim, surge a questão:
+como avaliar de maneira mais completa e efetiva uma nova abstração? A resposta
+advém indiretamente dos diversos trabalhos estudados. A ampla maioria das
+propostas apresentadas no Capítulo~\ref{cap:trabalhos-analisados} alteraram uma
+ou mais aplicações de uso cotidiano com o objetivo de demonstrar alguma
+vantagem da alteração na abstração de processo sugerida. Contudo, sistematizar
+quais aplicações e \emph{microbenchmarks} podem ser adotadas ainda é um questão
+pouco discutida; por esse motivos levantamos e respondemos as seguintes
+perguntas:
 
-\todo[inline]{Tem outra pergunta que precisa ser respondida antes: ``Como faz para avaliar de maneira mais completa uma nova abstração?''. É muito fácil acrescentar uma frase já respondendo que o melhor é usar aplicações reais, aí você pode levantar a pergunta ``quais aplicações''. Você fez ao contrário: pergunta ``quais aplicações podemos usar'' antes de dizer ``o negócio é usar aplicações existentes''.}
 \begin{quote}
- \item \textit{RQ3:.} ``Quais aplicações podem ser utilizadas para avaliar as nova abstração adicionadas ao SO?''
- \item \textit{RQ4:.} ``Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada para as abstrações de processos?''
+  \item \emph{QP3:.} ``Quais aplicações podem ser utilizadas para avaliar as novas abstrações adicionadas ao SO?''
+  \item \emph{QP4:.} ``Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada às abstrações de processos?''
 \end{quote}
 
+
+%Não vi a parte de \emph{microbenchmarks}, mas talvez você também possa argumentar
+%algo como ``se é para validar com \emph{microbenchmarks}, precisamos ter um conjunto
+%mínimo desses \emph{microbenchmarks} que todo mundo usa para minimizar as chances de
+%efeitos colaterais indesejados escaparem''. Isso justificaria a existência da
+%RQ4.
+%}
+
+
 Defendemos que uma das formas mais eficientes para validar uma nova extensão da
-abstração é por meio de aplicações já consagradas, amplamente adotadas por
-diversos sistemas e que exercitam uma ou mais partes do SO. Por esses motivos,
-\hltodo[buscamos por programas]{Isso não é muito verdade, né? Você está colocando aqui os programas que os autores dos papers usaram. Prefiro deixar claro que os caras é que escolheram e você está explicando o porquê.} que auxiliam a demonstrar que uma nova proposta de
-abstração de processos é valida ou não. Buscamos três características: estresse
-que a aplicação pode gerar, possíveis falhas de segurança e \hltodo[mecanismos
-periféricos]{Não captei wtf}.  Aplicações que consomem muitos recursos de hardware são ideais
-para comprovar que uma nova extensão é escalável. Por outro lado, várias
-propostas de novos mecanismos no processo prometem melhorias de segurança e, por
-esse motivo, sistemas reais que já apresentaram alguma falha de segurança são
-desejáveis para esse tipo de validação. Por fim, algumas pesquisas propõem
-novos mecanismos dos quais alguns tipos de aplicações podem se beneficiar, como
-por exemplo, novas formas de compartilhamento de memória e otimizações.\todo{``Nesses casos, é interessante utilizar alguma aplicação do tipo adequado para a validação''}
+abstração de processos é por meio de aplicações já consagradas, amplamente adotadas por
+diversos sistemas e que exercitam várias partes do SO. Por esses motivos,
+buscamos extrair tais aplicações, dos trabalhos estudados no
+Capítulo~\ref{cap:trabalhos-analisados}, que auxiliam na demonstração de que uma nova
+proposta de abstração de processos é viável ou não. Buscamos três
+características: estresse que a aplicação pode gerar, possíveis falhas de
+segurança e áreas para otimização. Aplicações que consomem muitos recursos de
+hardware são ideais para comprovar que uma nova extensão é escalável. Por outro
+lado, várias propostas de novos mecanismos no processo prometem melhorias de
+segurança e, por esse motivo, sistemas reais que já apresentaram alguma falha
+de segurança são desejáveis para esse tipo de validação. Algumas pesquisas
+propõem novos mecanismos dos quais alguns tipos de aplicações podem se
+beneficiar, como por exemplo, novas formas de compartilhamento de memória e
+otimizações. Nesses casos, é interessante utilizar alguma aplicação do tipo
+adequado para a validação.
 
-Outra perspectiva sobre a validação é representada pelos
-\textit{microbenchmarks} que auxiliam no estudo dos impactos das alterações.
-Esses testes são vantajosos durante as etapas iniciais da implementação da nova abstração, uma
-vez que são rápidos e \hltodo[ajudam durante o desenvolvimento]{Está meio jogado isso}. Um conjunto de
-\textit{microbenchmarks} pode ser usado para indicar que a nova abstração
-traz vantagens, contudo, dado o seu alto nível de especialização, ele não
-consegue revelar \hltodo[a real natureza]{Meio esquisito, prefiro algo como ``não consegue revelar possíveis efeitos colaterais ou interferências com outras funcionalidades''} de uma alteração.
+Outra perspectiva sobre a validação é representada pelos \emph{microbenchmarks}
+que auxiliam no estudo dos impactos das alterações.  Esses testes são
+vantajosos durante as etapas iniciais da implementação da nova abstração, uma
+vez que são rápidos e podem ajudam durante o processo de desenvolvimento. Um
+conjunto de \emph{microbenchmarks} pode ser usado para indicar que a nova
+abstração traz vantagens, contudo, dado o seu alto nível de especialização, ele
+não consegue revelar possíveis efeitos colaterais ou interferências com outras
+funcionalidades.
 
-A análise feita sobre as aplicações e \textit{microbenchmarks} foram originadas
+A análise feita sobre as aplicações e \emph{microbenchmarks} foram originadas
 dos diversos experimentos realizados pelos pesquisadores que mostramos no
 Capítulo \ref{cap:trabalhos-analisados}. Além disso, durante esse trabalho,
 foram conduzidos experimentos que auxiliaram na elaboração das ideias
 apresentadas nesse capítulo. Esse capítulo pode ser dividido em duas partes:
-\hltodo[software]{Microbenchmarks também é software; prefiro ``programas'', ``aplicações'' ou ``programas representativos''etc.} e \textit{microbenchmarks}. Primeiramente apresentamos programas que
-são alvos \hltodo[ideais]{Que tal ``favoráveis''?} para serem adaptados de forma a utilizar as novas abstrações
+aplicações e \emph{microbenchmarks}. Primeiramente apresentamos programas que
+são favoráveis para serem adaptados de forma a utilizar as novas abstrações
 de processos e, assim, servirem como mecanismo de validação para as propostas.
 Tentamos ilustrar as características gerais das aplicações de forma a fornecer
 ideias de possíveis adaptações (discutimos algumas delas
 no Capítulo~\ref{cap:analise-sobre-abstracoes-de-processos}) e também prover
 ferramentas para o leitor avaliar os trabalhos desse campo. Por fim,
 apresentamos uma discussão sobre os potenciais \emph{microbenchmarks} que podem
-ser utilizados para validar novas extensões nos processos. \hltodo[Em resumo, esse
-capítulo tem a intenção de fornecer um conjunto de instrumentos para o
-pesquisador interessado em obter formas de validação das abstrações de
-processos.]{Eu cortaria}
+ser utilizados para validar novas extensões nos processos.
 
 \section{Servidores Web}
 \label{sec:web_server}
@@ -106,12 +106,12 @@ aplicações são projetadas para tirar o maior proveito possível do hardware
 disponível.]{Eu cortaria} Muitos sistemas possuem máquinas \hltodo[dedicadas]{Acho que seria ``dedicadas a uma aplicação específica'', não?} com o objetivo de
 entregar estabilidade, velocidade e estabilidade. Nesses casos, é desejável que
 a CPU esteja ocupada a maior parte do tempo e use a memória de forma eficiente
-para evitar desperdício de recursos. \boldAndIndex{Servidores web (\textit{Web
+para evitar desperdício de recursos. \boldAndIndex{Servidores web (\emph{Web
 Servers})} são aplicações que operam com um desempenho próximo
 do ótimo utilizando ostensivamente os recursos das máquinas para servir páginas
 web. A principal responsabilidade do servidor web é entregar \hltodo[arquivos contendo
 dados]{Hmmmm, acho que na real seria ``dados solicitados, que podem vir de um arquivo ou ser gerados especificamente para cada requisição''}, essa pode ser divida em três etapas: esperar por uma requisição
-(\textit{request}) do usuário, processar a requisição e responder ao usuário.
+(\emph{request}) do usuário, processar a requisição e responder ao usuário.
 
 \begin{figure}[!h]
   \centering
@@ -145,15 +145,15 @@ não úteis]{Quais?} se eleva. Uma possibilidade para minimizar esse impacto é 
 o mecanismo de \boldAndIndex{keep-alive}, que mantém uma conexão
 aberta durante as atividades do usuário. Por exemplo, a Figura
 \ref{fig:no_keep_alive} e a Figura \ref{fig:keep_alive} mostram um caso
-utilizando \textit{keep-alive} e outro sem utilizá-lo. O primeiro caso ilustra
+utilizando \emph{keep-alive} e outro sem utilizá-lo. O primeiro caso ilustra
 uma situação padrão na qual uma requisição é realizada e, por sua vez, são abertas
 e fechadas diversas outras conexões de rede para obter cada um dos arquivos necessários para
 construir a página. O segundo caso ilustra a técnica de
-\textit{keep-alive}, cujo o objetivo é reduzir a latência e o uso de CPU no
+\emph{keep-alive}, cujo o objetivo é reduzir a latência e o uso de CPU no
 servidor mantendo a conexão aberta por um intervalo de tempo.  Esse mecanismo
 pode melhorar a experiência do usuário ao acessar o site em casos que um
 servidor esteja recebendo um elevado número de requisições. Contudo, outro
-aspecto do \textit{keep-alive} é que ele pode elevar o consumo de memória no servidor,
+aspecto do \emph{keep-alive} é que ele pode elevar o consumo de memória no servidor,
 gerando outro tipo de problema em um servidor sobrecarregado.
 
 \todo[inline]{O parágrafo acima, que explica o keep-alive, está meio mal ajambrado. Além disso, seria bom dizer por que você está explicando keep-alive.}
@@ -182,7 +182,7 @@ configuráveis, confiáveis e suportam grandes cargas de requisições.
 \subsection{Servidor Apache HTTPD}
 \label{sec:architecture}
 
-O servidor Apache HTTPD, também conhecido como \textit{HTTP Daemon (HTTPD)} é
+O servidor Apache HTTPD, também conhecido como \emph{HTTP Daemon (HTTPD)} é
 licenciado com a licença Apache 2.0 e mantido pela fundação Apache.  O Apache
 HTTPD\footnote{Usaremos HTTPD e Apache como sinônimos nesse texto} foi
 projetado para executar em vários SOs; essa restrição fez com que fosse
@@ -190,10 +190,10 @@ necessário adotar estratégias para fazer o HTTPD multiplataforma e mantendo um
 bom desempenho.  Uma característica importante do HTTPD é a divisão de módulos
 que manipulam \hltodo[processos, threads e bibliotecas portáveis utilizadas]{Não são bibliotecas portáveis que são usadas para criar esses módulos? Enfim, achei essa frase estranha}; esses
 três, em conjunto, constituem a arquitetura do projeto. O Apache utiliza
-a biblioteca \textit{Apache Portable Runtime (APR)}, cuja a intenção é ser
+a biblioteca \emph{Apache Portable Runtime (APR)}, cuja a intenção é ser
 utilizada como uma interface portável para as tarefas comuns de programação
 (e.g.: alocação de memória, manipulação de tempo, etc). Por fim, o HTTPD
-implementa um módulo especial chamado \textit{Multi-Processing Module (MPM)},
+implementa um módulo especial chamado \emph{Multi-Processing Module (MPM)},
 responsável por manter o processamento das requisições e a lógica de
 manipulação de processos/threads. O MPM é uma boa fonte de comparação entre
 diferentes modelos de processos.
@@ -230,7 +230,7 @@ que se posiciona entre o núcleo do HTTPD e o SO.
 Alguns módulos são essenciais para o funcionamento do HTTPD, uma vez que eles
 representam os elementos básicos das estruturas de dados que são usadas por
 todo o código. A Figura \ref{fig:units} mostra algumas unidades fundamentais
-usadas pelo HTTPD. O módulo \textit{server} é responsável por criar uma estrutura de
+usadas pelo HTTPD. O módulo \emph{server} é responsável por criar uma estrutura de
 dados para a requisição toda vez que o HTTPD aceita uma nova conexão. O módulo
 HTTP é encarregado de preencher uma estrutura de dados de requisição e o
 módulo de conexão TCP constrói a estrutura de dados que mantém as informações
@@ -247,14 +247,14 @@ e também entrega uma estrutura de dados pronta para ser utilizada.
 
 Outros dois aspectos da arquitetura do Apache são o \textbf{Content Generator}
 (Gerador de Conteúdo) e as fases de processamento das requisições. O
-\textit{Content Generator} pode ser visto como o núcleo do Apache, uma vez que
+\emph{Content Generator} pode ser visto como o núcleo do Apache, uma vez que
 ele é responsável pelas operações de escutar por requisições e devolver
 respostas; existe exatamente um gerador de conteúdo por requisição. No Apache,
-um módulo pode registrar um \textit{content generator} de forma simples (basta
+um módulo pode registrar um \emph{content generator} de forma simples (basta
 ajustar o \texttt{httpd.conf}) e, se nenhum estiver disponível, Apache utiliza
 o gerador padrão que simplesmente mapeia um arquivo para uma requisição
-\citep{apache_module_book}. O \textit{content generator} pode processar toda a
-requisição sozinho, contudo o Apache divide a \textit{request} em várias fases
+\citep{apache_module_book}. O \emph{content generator} pode processar toda a
+requisição sozinho, contudo o Apache divide a \emph{request} em várias fases
 como pode ser visto na Figura \ref{fig:content_generator}. Alterações nessa
 fases podem ser extremamente proveitosas para testar novas abstrações de
 processos.
@@ -262,7 +262,7 @@ processos.
 \subsubsection{MPM}
 \label{sec:prefork}
 
-O módulo \textit{Multi-Processing (MPM)} é um elemento especial dentro do
+O módulo \emph{Multi-Processing (MPM)} é um elemento especial dentro do
 Apache. Como a Seção \ref{sec:architecture} introduziu, o MPM funciona como uma
 interface entre o HTTPD e o SO. O MPM tem três características principais para
 qualquer instância do Apache: deve ser único, é obrigatório e tem uma
@@ -270,24 +270,24 @@ implementação específica para o SO alvo. O HTTPD fornece pelo menos um módul
 MPM por SO; por exemplo, Windows utiliza \texttt{mpm\_winnt} e Linux tem
 três opções diferentes \hltodo[que serão tratadas em detalhes neste trabalho]{Eu cortaria; isso faz sentido quando você vai mudar de assunto e quer voltar depois, mas aqui você continua falando nisso, então pode cortar esta frase}. Cada uma
 delas pode ser classificada como baseada em processos ou em
-threads. São elas: \textit{Prefork}, \textit{Worker} e
-\textit{Event}. Esses módulos constituem bons pontos para comparar threads e
+threads. São elas: \emph{Prefork}, \emph{Worker} e
+\emph{Event}. Esses módulos constituem bons pontos para comparar threads e
 processos usando as novas abstrações, uma vez que o \hltodo[ambiente se conserva]{Pow, gasta mais meia dúzia de palavras pra explicar o que é ``ambiente se conserva''}.
 
 \begin{description}
 
 	\item[Prefork:]
 
-\textit{Prefork} foi a primeira estratégia adotada pelo HTTPD e é totalmente
+\emph{Prefork} foi a primeira estratégia adotada pelo HTTPD e é totalmente
 baseado em processos. A Figura \ref{fig:prefork} ilustra os três passos
-realizados pelo \textit{Prefork}. Apache inicia com um processo responsável
+realizados pelo \emph{Prefork}. Apache inicia com um processo responsável
 por gerir os filhos que serão encarregados de manipular uma requisição por vez.
 Em seguida, ao receber uma requisição, o processo de controle identifica um
 processo filho que esteja sem fazer nada e repassa a requisição para ele, que
 se encarrega da tarefa de manipular a solicitação. Caso não exista nenhum
 processo filho disponível para manipular a requisição, o processo de
 controle cria novos processos filhos. Repare que a processo de controle
-comporta-se como um \textit{load balancer}.
+comporta-se como um \emph{load balancer}.
 
 \begin{figure}[!h]
   \centering
@@ -296,23 +296,23 @@ comporta-se como um \textit{load balancer}.
   \label{fig:prefork} 
 \end{figure}
 
-\textit{Prefork} é uma boa opção para servidores web que não são compatíveis
+\emph{Prefork} é uma boa opção para servidores web que não são compatíveis
 com threads (e.g., pela utilização de aplicações legadas escritas em PHP) e é a melhor opção de MPM
-para isolar uma única requisição. Contudo, \textit{Prefork} consome muita
+para isolar uma única requisição. Contudo, \emph{Prefork} consome muita
 memória e CPU, o que não é desejável em um servidor sob forte demanda.
 
-	\item [Worker]: \textit{Worker} é uma solução híbrida, uma vez que seu design é baseado em
+	\item [Worker]: \emph{Worker} é uma solução híbrida, uma vez que seu design é baseado em
 processos e threads. Esse módulo tem um processo de controle que também é responsável
 por criar processos filhos e controlar o balanceamento da carga entre eles.
-Ao contrário de \textit{Prefork}, \textit{Worker} não cria instâncias
+Ao contrário de \emph{Prefork}, \emph{Worker} não cria instâncias
 de processos filhos para manipular requisições feitas pelos clientes: ao
 invés disso, cada filho possui várias threads para realizar
 o tratamento das requisições. Comumente, o HTTPD tem que manipular uma
 grande carga de requisições e, nesses casos, o processo de controle age criando
 novos filhos (cada um com um conjunto de threads) para suportar a carga.
-Repare que \textit{Worker} utiliza threads para manipular as requisições,
+Repare que \emph{Worker} utiliza threads para manipular as requisições,
 fazendo com que o total de processos filhos criado seja relativamente pequeno
-(comparado com o \textit{Prefork}) e, consequentemente, o consumo de memória
+(comparado com o \emph{Prefork}) e, consequentemente, o consumo de memória
 seja reduzido. O HTTPD tem um arquivo de configuração que permite um controle fino de
 todos os parâmetros relacionados ao número máximo de processos filhos, o total
 de threads por filho, o número de \hltodo[reposição]{Dafuq?} de processos filhos e threads,
@@ -325,21 +325,21 @@ dentre outros.
   \label{fig:worker} 
 \end{figure}
 
-A Figura \ref{fig:worker} é um exemplo de como \textit{Worker} funciona.
+A Figura \ref{fig:worker} é um exemplo de como \emph{Worker} funciona.
 Quando o Apache inicia, ele tem um processo de controle e alguns processos
 filhos que mantêm um grupo de threads paradas. A segunda parte da figura
 representa o caso em que o HTTPD recebe um grande número de requisições e o
-processo de controle cria mais filhos para suportar a carga. \textit{Worker}
-consome menos memória que \textit{Prefork} e, consequentemente, é melhor em
+processo de controle cria mais filhos para suportar a carga. \emph{Worker}
+consome menos memória que \emph{Prefork} e, consequentemente, é melhor em
 casos nos quais o servidor está sobrecarregado.  A mistura de processo e thread
 adiciona estabilidade para todo o sistema.
 
-	\item [Event:] O módulo \textit{Event} é baseado em threads e é o padrão na
-última versão do Apache. O comportamento básico de \textit{Event} é similar ao
-de \textit{Worker} com duas características a mais: \textit{keep-alive} e
+	\item [Event:] O módulo \emph{Event} é baseado em threads e é o padrão na
+última versão do Apache. O comportamento básico de \emph{Event} é similar ao
+de \emph{Worker} com duas características a mais: \emph{keep-alive} e
 separação de responsabilidade de enviar dados para o cliente. A Figura
-\ref{fig:event} ilustra o comportamento básico de \textit{Event}. A forma na
-qual \textit{Event} opera é similar a \textit{Worker}, \hltodo[com a diferença de
+\ref{fig:event} ilustra o comportamento básico de \emph{Event}. A forma na
+qual \emph{Event} opera é similar a \emph{Worker}, \hltodo[com a diferença de
 que ele cria um processo a mais só para manipular o envio dos dados para o
 cliente.]{Em parte, está repetindo o que disse antes, em parte está contradizendo (pois tem também a diferença do keep-alive) e a explicação da thread de envio de dados está muito jogada}
 
@@ -358,7 +358,7 @@ Assim como o Apache HTTPD, Nginx é um servidor web, contudo ele diferencia-se
 de muitas formas dos servidores web tradicionais. A sua principal
 característica é o seu excelente desempenho para atender requisições,
 principalmente aquelas relacionadas a arquivos estáticos. Além disso, Nginx
-comporta-se como um \hltodo[\textit{reverse-proxy}]{Hmmm, isso é uma configuração, não o modo ``normal'' dele; o apache é exatamente igual nesse quesito. Eu acho que pode remover esse trecho ou, talvez, usá-lo em outro lugar (referindo-se aos dois) para explicar alguma coisa referente ao experimento de carga}; ele recebe uma requisição do
+comporta-se como um \hltodo[\emph{reverse-proxy}]{Hmmm, isso é uma configuração, não o modo ``normal'' dele; o apache é exatamente igual nesse quesito. Eu acho que pode remover esse trecho ou, talvez, usá-lo em outro lugar (referindo-se aos dois) para explicar alguma coisa referente ao experimento de carga}; ele recebe uma requisição do
 usuário, por sua vez ele repassa a requisição para uma aplicação específica
 responsável por realizar o processamento (e.g. Puma, PHP-FPM, etc). Quando o
 dado é processado pela aplicação, ela devolve o resultado para o Nginx, que
@@ -395,20 +395,20 @@ Por esse motivo, Nginx cria apenas três tipos de processos
   \item Processo mestre, que faz operações privilegiadas como ler arquivos de configuração e acessar portas;
   \item Processo de cache de disco, que carrega dados do disco fazendo cache na memória;
   \item \hltodo[Processo]{Não tem como inventar um nome para seguir o formato dos demais? Tipo ``Processo gestor de cache, que gerencia...''} que gerencia o cache e que realiza verificações sobre ele periodicamente;
-  \item Processos \textit{Worker}, que fazem o trabalho de manipular conexões, ler e escrever em disco e comunicar-se com os \hltodo[servidores.]{Clientes, não?}
+  \item Processos \emph{Worker}, que fazem o trabalho de manipular conexões, ler e escrever em disco e comunicar-se com os \hltodo[servidores.]{Clientes, não?}
 \end{itemize}
 
-Nginx recomenda um \textit{Worker} por núcleo da CPU, o que permite tirar
+Nginx recomenda um \emph{Worker} por núcleo da CPU, o que permite tirar
 grande proveito dos eventos.
 
 Na prática o sistema de eventos é eficiente pois gera poucos bloqueios
 (comparado com o modelo que utiliza threads/processos), uma vez que não
 espera a aplicação terminar o que está \hltodo[fazendo]{Tá jogado isto. que tal ``... a aplicação terminar o que está fazendo para iniciar outra atividade''.}. Por exemplo, se o
-\textit{worker} estiver atendendo uma requisição e, em um determinado momento,
+\emph{worker} estiver atendendo uma requisição e, em um determinado momento,
 precisar recuperar uma informação do disco, ele não bloqueia, mas
 simplesmente vai fazer outra tarefa e salva o evento referente à busca no disco
 para retornar a ele depois (mais precisamente, quando surgir um evento). O
-sistema de eventos faz com que um único \textit{worker} execute múltiplas
+sistema de eventos faz com que um único \emph{worker} execute múltiplas
 tarefas de forma sequencial sem bloqueio e, consequentemente, com poucas trocas
 de contexto.
 
@@ -441,13 +441,13 @@ O SSL utiliza um mecanismo chamado \boldAndIndex{handshake}, que
 nada mais é do que um processo de negociação entre o cliente e o servidor de uma conexão de rede, de
 forma a criar uma conexão segura entre ambos. A Figura
 \ref{fig:openssl_handshake} descreve de forma geral os passos da negociação. O
-processo de \textit{handshake} começa com o cliente mandando uma mensagem do
+processo de \emph{handshake} começa com o cliente mandando uma mensagem do
 tipo ``Oi, sou o cliente'' para o servidor; nessa mensagem, o cliente informa a
 versão do SSL que está usando, os algoritmos de criptografia e os métodos de
 compressão que ele sabe manipular. O servidor, por sua vez, responde com ``Oi, sou o
 servidor'', dizendo qual algoritmo usar (selecionado da lista que o cliente
 mandou), um ID da seção, um certificado digital e a sua chave pública. Com o
-certificado, o cliente consulta uma \textit{Certificate Authority (CA)}
+certificado, o cliente consulta uma \emph{Certificate Authority (CA)}
 (Autoridade Certificadora) que valida se o servidor é valido ou não,
 estabelecendo a confiança sobre o servidor. Depois que o cliente recebe a
 validação da CA, ele começa a etapa de troca de chaves, na qual o cliente envia
@@ -455,7 +455,7 @@ uma chave secreta compartilhável. O cliente criptografa essa chave com a chave
 pública fornecida pelo servidor antes do envio e termina enviando uma mensagem de
 fim. O servidor decriptografa a mensagem do cliente e utiliza a chave enviada
 para criptografar uma mensagem de fim para ser enviada para o cliente. Quando
-o \textit{handshake} termina, o servidor e o cliente podem enviar mensagens que
+o \emph{handshake} termina, o servidor e o cliente podem enviar mensagens que
 são simetricamente criptografadas com a chave compartilhada \citep{openssl}.
 
 \begin{figure}[!h]
@@ -468,8 +468,8 @@ são simetricamente criptografadas com a chave compartilhada \citep{openssl}.
 O OpenSSL é uma implementação livre do protocolo SSL que
 inclui várias funções criptográficas e utilitárias. A Figura
 \ref{fig:openssl_arch} mostra uma visão geral da arquitetura do OpenSSL. O
-\textit{EVP crypto API} são funções de alto nível que fornecem recursos para
-derivação de chaves, \textit{hash} seguro, código de autenticação de mensagens,
+\emph{EVP crypto API} são funções de alto nível que fornecem recursos para
+derivação de chaves, \emph{hash} seguro, código de autenticação de mensagens,
 criptografia/decriptografia de algoritmos simétricos/assimétricos, dentre outros. A
 arquitetura também fornece uma pilha de manipulação de erros e uma interface
 abstrata para lidar com I/O.
@@ -489,19 +489,19 @@ o apache usa? nginx? openssh?}
 Uma das tarefas mais comuns do dia-a-dia de muitos desenvolvedores\todo{e administradores de sistemas} consiste em
 acessar servidores em diversos locais do mundo e configurar uma determinada
 aplicação. Na prática, boa parte dos profissionais de TI faz uso de conexões
-seguras na Internet por meio do protocolo \textit{Secure Shell (SSH)}. Existem
+seguras na Internet por meio do protocolo \emph{Secure Shell (SSH)}. Existem
 diversas implementações desse protocolo, mas para este trabalho discutiremos o
 OpenSSH.
 
 A Figura \ref{fig:openssh_layer} apresenta uma visão geral da arquitetura do
 OpenSSH. Primeiramente, repare que as três camadas correspondentes às camadas
 SSH encontram-se sobre a camada TCP/IP, que consiste em uma conexão não segura.
-A primeira camada se chama \textit{ssh-transport} e é responsável por
+A primeira camada se chama \emph{ssh-transport} e é responsável por
 realizar operações criptográficas, pela proteção contra ataques e por reverificar chaves
-de tempos em tempos. Logo após a primeira camada temos o \textit{ssh-userauth},
+de tempos em tempos. Logo após a primeira camada temos o \emph{ssh-userauth},
 que é responsável pela autenticação: se tudo der certo durante a autenticação,
 então a troca de chaves acontece e a conexão segura é estabelecida. Por fim, a
-camada \textit{ssh-connection} estabelece um canal seguro e fica responsável
+camada \emph{ssh-connection} estabelece um canal seguro e fica responsável
 por gerir a multiplexação de múltiplas \hltodo[conexões]{Vale explicar um pouco melhor que dá para ``tunelar'' coisas aqui} e redirecionamentos
 \citep{proopenssh, opensshhood}.
 
@@ -553,7 +553,7 @@ da memória para o disco, o que permite que, posteriormente, ele consiga
 reconstruir o sistema na memória.
 
 O Redis é famoso por utilizar como forma de armazenamento o esquema de
-chave-valor (\textit{key-value}). Essa técnica permite o armazenamento dos dados na
+chave-valor (\emph{key-value}). Essa técnica permite o armazenamento dos dados na
 forma de um par que consiste de uma chave identificadora e um valor associado a
 ela. Quando um valor-chave é salvo, o par passa a estar presente na
 RAM. No Redis, uma chave tem que ser uma cadeia de caracteres, mas seus valores podem ser de
@@ -591,7 +591,7 @@ pai continua realizando as suas tarefas.
 
 Um dos aspectos mais interessante de Redis, da perspectiva das novas abstrações
 de processo, é a persistência dos dados. Redis fornece três \hltodo[formas]{Acho que aqui seria melhor ``... das novas abstrações de processo é o mecanismo de persistência dos dados. Redis pode utilizar três:...''}
-\citep{redisio}: \textit{Relational Database (RDB)}, \textit{Append-Only-File
+\citep{redisio}: \emph{Relational Database (RDB)}, \emph{Append-Only-File
 (AOF)} e comando SAVE. RDB faz uma cópia de todos os dados presentes na
 memória para o disco. Por padrão, Redis escreve os dados a cada dois
 segundos. Repare que RDB pode causar perda de dados em caso de mau funcionamento;
@@ -601,7 +601,7 @@ elevaria consideravelmente o consumo de memória pela natureza do uso de
 servidor, logo tudo é persistido. AOF tem o problema de que pode ser mais
 lento do que RDB, a depender da política de sincronização adotada, e também
 consumir mais memória.  Por fim, o comando SAVE força o servidor a criar um
-\textit{dump} dos dados no momento em que foi solicitado.\todo{Parece igual ao RDB mas só quando ``alguém'' pede, é isso mesmo?}
+\emph{dump} dos dados no momento em que foi solicitado.\todo{Parece igual ao RDB mas só quando ``alguém'' pede, é isso mesmo?}
 
 % TODO: Vale a pena dar um certo nível de detalhes do código? Não é tão complicado fazer isso, mas preciso ter certeza antes se vale a pena
 % Além da referencia do "Redis: under the hood" tem esse artigo aqui: http://robertlehmann.de/img/redis.pdf
@@ -620,9 +620,9 @@ nas chances de erros graves. Java é a principal representante desse tipo de
 linguagem, fornecendo mecanismos de gerenciamento automático da memória e sendo
 portável para múltiplas plataformas. Por uma questão de simplicidade, iremos
 adotar Java para as discussões desta seção. Toda a flexibilidade
-oferecida por Java deve-se ao uso da \textit{Java Virtual Machine} (JVM), que
+oferecida por Java deve-se ao uso da \emph{Java Virtual Machine} (JVM), que
 fornece elementos para a manipulação dos recursos do SO. Um dos principais
-elementos da JVM é o \textit{Garbage Collector} (GC), cuja principal tarefa
+elementos da JVM é o \emph{Garbage Collector} (GC), cuja principal tarefa
 consiste em abstrair o gerenciamento de memória da aplicação de forma que ela
 não tenha que lidar com tal aspecto (alocar e desalocar memória). Dado o seu impacto, o
 GC tem sido alvo de constantes otimizações ao longo dos anos e esse é um
@@ -632,7 +632,7 @@ abstrações de processos.
 O GC é uma aplicação que é parte da JVM, executando junto com a aplicação.
 Independentemente do algoritmo de gerenciamento de memória implementado pelo
 GC, todos eles definem o termo \boldAndIndex{Stop the World (STW)} ou
-\textit{Parar tudo} \citep{gc_pauseless}. O STW é uma operação realizada pela
+\emph{Parar tudo} \citep{gc_pauseless}. O STW é uma operação realizada pela
 JVM  na qual todas as threads da aplicação são suspensas para que o GC execute.
 Em outras palavras, a única thread executando será a do coletor. Note que o GC
 requer essa pausa para funcionar; isso é preciso pois seus algoritmos precisam que
@@ -640,20 +640,20 @@ aplicação não faça nenhuma atualização da memória durante uma das fases d
 processo de limpeza da memória.
 
 Existem diversos algoritmos que podem ser adotados pelo GC, contudo podemos
-generalizar três etapas gerais: \textit{Marking}, \textit{Sweep} e
-\textit{Compact}. A etapa de \textit{Marking}, também conhecida por pintura,
+generalizar três etapas gerais: \emph{Marking}, \emph{Sweep} e
+\emph{Compact}. A etapa de \emph{Marking}, também conhecida por pintura,
 consiste em inspecionar os objetos na memória para verificar quais ainda são
 considerados ``vivos''. Para determinar se um objeto está vivo, o GC começa por
-elementos conhecidos como objetos raiz ou \textit{Garbage Collection Roots}. Os
+elementos conhecidos como objetos raiz ou \emph{Garbage Collection Roots}. Os
 seguintes componentes são considerados GC roots: variáveis locais,
 entrada de parâmetros, threads ativas, campos estáticos e referências JNI
 \citep{gc_basics}. Partindo de um GC root, o GC atravessa o grafo dos objetos
 alcançáveis e, para cada elemento que consegue acessar, ele ``pinta'' a referência
 como viva. A Figura \ref{fig:gc_alg} ilustra o algoritmo descrito. No contexto
 do GC, o processo de parar as threads para que a JVM possa executar a etapa de
-\textit{Marking} recebe o nome de \textit{safe point} (ponto seguro) e essa
+\emph{Marking} recebe o nome de \emph{safe point} (ponto seguro) e essa
 gera um evento STW. O tamanho da pausa é definido pela quantidade de objetos
-alcançáveis e seu tamanho no \textit{heap}.
+alcançáveis e seu tamanho no \emph{heap}.
 
 \begin{figure}[!h]
   \centering
@@ -727,7 +727,7 @@ extensão do processo.
 Apache também possui um ambiente que permite testar processos e threads de
 forma \hltodo[equivalente]{Aqui ficou parecendo que isso é uma ferramenta ou uma coisa padrão dele, e não é bem isso; o apache, por conta dos MPMs, permite fazer uma comparação}. Tal característica é interessante para comparar novas
 abstrações diante de dois modos de execução amplamente utilizados. De forma
-similar, o Nginx usa outro modelo chamado de \textit{event}, que também
+similar, o Nginx usa outro modelo chamado de \emph{event}, que também
 representa outro contexto para validação. Da forma como Apache e Nginx
 manipulam requisições, podemos dizer que o primeiro fornece um isolamento
 horizontal enquanto o segundo proporciona isolamento vertical. O isolamento
@@ -736,10 +736,10 @@ da criação de um único processo por núcleo do processador durante a
 inicialização. Esses \hltodo[dois níveis de isolamento]{Você não explicou o que está chamando de horizontal e vertical} podem ser úteis para demonstrar
 que uma nova abstração pode melhorar o isolamento sem degradar o desempenho.
 
-Apache trabalha com diversos \textit{plugins} que são acoplados ao código
+Apache trabalha com diversos \emph{plugins} que são acoplados ao código
 principal dinamicamente. Essa junção tem uma boa relação entre desempenho e
 flexibilidade, mas também eleva as chances de quebrar o Apache.  Portanto, o
-sistema de \textit{plugins} do Apache fornece um bom elemento de validação para
+sistema de \emph{plugins} do Apache fornece um bom elemento de validação para
 aquelas abstrações que visam trazer isolamento e recuperação.
 
 Várias propostas de extensão da abstração de processos sugerem algum ganho de
@@ -781,16 +781,16 @@ validação utilizando Apache para testar o MVAS.
 \section{Microbenchmarks}
 \label{sec:micro}
 
-\textit{Microbenchmarks} têm por objetivo mensurar e fornecer meios para
+\emph{Microbenchmarks} têm por objetivo mensurar e fornecer meios para
 analisar uma única característica do objeto de estudo. Eles
 facilitam o processo de desenvolvimento,
 mostram o impacto em um único elemento de forma a facilitar a análise e são
 relativamente simples de serem implementados. Contudo, a principal desvantagem
 encontra-se no fato de que eles não ajudam a revelar o impacto geral do objeto
 alvo. Por esse motivo, é interessante trabalhar com um conjunto de
-\textit{microbenchmarks} e também com validações usando aplicações (como
+\emph{microbenchmarks} e também com validações usando aplicações (como
 descrito na Seção \ref{sec:disc_app}). Expandindo o contexto dos
-\textit{microbenchmarks} para o subconjunto da pesquisa sobre abstrações de
+\emph{microbenchmarks} para o subconjunto da pesquisa sobre abstrações de
 processos, queremos destacar aquelas validações que lidam com a memória,
 sobrecargas extra e impactos na utilização de certos recursos de hardware.
 
@@ -800,7 +800,7 @@ dessas propostas permitem o controle fino da memória ou algum ganho de
 segurança que os autores normalmente demonstram por meio da alteração de
 algumas aplicações (e.g., OpenSSL ou OpenSSH). Contudo, alterações no
 gerenciamento da memória podem incorrer em erros e em problemas de desempenho.
-Nesse sentido, alguns \textit{microbenchmarks} podem ser extremamente oportunos
+Nesse sentido, alguns \emph{microbenchmarks} podem ser extremamente oportunos
 para validar o uso de novas abstrações de processos que lidam com a memória.
 Com base em todos os trabalhos analisados no Capítulo
 \ref{cap:trabalhos-analisados}, extraímos os seguintes itens:
@@ -815,7 +815,7 @@ propostos pelo pesquisador utilizando como base a forma padrão de alocação
 (e.g., \texttt{malloc()} e \texttt{calloc()}). Tendo os valores base extraídos
 das operações já consolidadas e os valores coletados do modelo proposto,
 torna-se possível ter um critério para compreender o real impacto da mudança.
-Vale observar que esse tipo de \textit{microbenchmark} precisa ser feito com
+Vale observar que esse tipo de \emph{microbenchmark} precisa ser feito com
 múltiplas cargas de tamanhos variados; no mínimo, espera-se cargas na ordem dos
 KBs, MBs e GBs.
 
@@ -831,14 +831,14 @@ Novamente, é importante que várias cargas de trabalho sejam utilizadas.
 
 Algumas propostas sugerem a adição de novas chamadas de sistema que adicionam
 novos modelos de programação (e.g., lwC e MVAS). Apesar de as chamadas de sistema
-serem relativamente rápidas, elas adicionam \textit{overhead}. Por isso, é
-desejável que o pesquisador identifique alguma \textit{syscall} padrão que tenha
+serem relativamente rápidas, elas adicionam \emph{overhead}. Por isso, é
+desejável que o pesquisador identifique alguma \emph{syscall} padrão que tenha
 algum nível de similaridade com a nova chamada que ele está propondo; assim, ele
 pode realizar medições do tempo total gasto com a chamada padrão para ter um valor
 base para comparar com a nova chamada. Contudo, existem casos em que a nova
 chamada representa algo totalmente novo e em que não faz sentido comparar com
 qualquer outra chamada já existente. Independentemente de existir ou não uma
-chamada base, é desejável que o pesquisador execute \textit{microbenchmarks} que
+chamada base, é desejável que o pesquisador execute \emph{microbenchmarks} que
 possam aferir:
 
 \begin{description}
@@ -864,7 +864,7 @@ por isso é valioso medir tal aspecto referente à nova chamada.
 
 Várias propostas propõem um novo hardware (e.g., Mondrix) ou uma mudança na
 forma como um dispositivo é usado, o que torna importante validar alguns
-aspectos de uso. Contudo, para a questão do \textit{microbenchmark} vamos
+aspectos de uso. Contudo, para a questão do \emph{microbenchmark} vamos
 considerar apenas os aspectos referentes à reutilização do hardware de
 virtualização, uma vez que consideramos que tal técnica tem amplas chances de
 ser adotada (discutimos esse aspecto com mais detalhes no Capítulo
@@ -873,7 +873,7 @@ elementos devem ser medidos:
 
 \begin{description}
 
-  \item [Custos de operações que executam \textit{VM Entry} e \textit{Exit}:]
+  \item [Custos de operações que executam \emph{VM Entry} e \emph{Exit}:]
 
 Chamadas que utilizam recursos de virtualização têm custos para entrar e sair
 do kernel. Mensurar tal custo é útil para analisar em quais contextos vale a pena
@@ -881,17 +881,17 @@ ou não utilizar os recursos de virtualização.
 
   \item [Medir o uso de EPT:]
 
-Quando se utiliza a EPT, espera-se que o total de \textit{TLB misses} se eleve,
+Quando se utiliza a EPT, espera-se que o total de \emph{TLB misses} se eleve,
 uma vez que, em muitos casos, é preciso procurar por dois níveis de chamadas
 ~\citep{belay}. Portanto, torna-se interessante medir o tempo total gasto
 quando a EPT é usada sob diferentes cargas.
 
 \end{description}
 
-Por fim, é importante ressaltar que vários dos \textit{microbenchmarks} devem
+Por fim, é importante ressaltar que vários dos \emph{microbenchmarks} devem
 utilizar recursos estatísticos para derivar seus resultados. Por exemplo,
 espera-se que cada experimento execute múltiplas vezes e a sua média ou mediana
-seja calculada. Além disso, a combinação de múltiplos \textit{microbenchmarks}
+seja calculada. Além disso, a combinação de múltiplos \emph{microbenchmarks}
 pode auxiliar consideravelmente na validação de uma nova proposta de abstração.
 
 \section{Discussão}
@@ -899,8 +899,8 @@ pode auxiliar consideravelmente na validação de uma nova proposta de abstraç�
 Recapitulando o objetivo deste Capítulo por meio das perguntas de pesquisa:
 
 \begin{quote}
- \item \textit{RQ3:.} "Quais aplicações podem ser utilizadas para avaliar as nova abstração adicionadas ao SO?"
- \item \textit{RQ4:.} "Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada para as abstrações de processos?"
+  \item \emph{QP3:.} ``Quais aplicações podem ser utilizadas para avaliar as novas abstrações adicionadas ao SO?''
+  \item \emph{QP4:.} ``Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada às abstrações de processos?''
 \end{quote}
 
 Para responder a primeira pergunta, fizemos uma jornada da Seção
@@ -911,14 +911,14 @@ abstrações de processos. A Tabela \ref{tab:app_alvos} buscou relacionar as
 aplicações e as áreas que elas auxiliam a validar.
 
 Para responder a segunda pergunta, revisitamos todos os trabalhos e buscamos
-compilar um conjunto de \textit{microbenchmarks} que auxiliam no processo de
-validação.  A combinação de múltiplos \textit{microbenchmarks} auxilia
+compilar um conjunto de \emph{microbenchmarks} que auxiliam no processo de
+validação.  A combinação de múltiplos \emph{microbenchmarks} auxilia
 mostrando o impacto da alteração de forma mais abrangente, contudo, esse tipo
 de validação sozinho não é capaz de revelar os impactos gerais de uma nova
 abstração.
 
 Em um cenário ideal, a combinação das validações utilizando as aplicações
-discutidas em conjunto com os \textit{microbenchmarks} representa uma boa
+discutidas em conjunto com os \emph{microbenchmarks} representa uma boa
 cobertura sobre os impactos de uma nova abstração. Por fim, é importante
 relembrar que tais validações devem buscar utilizar cargas de trabalho
 relevantes para tornar claros os impactos da nova abstração.
