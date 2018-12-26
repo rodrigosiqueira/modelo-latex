@@ -98,19 +98,22 @@ ferramentas para o leitor avaliar os trabalhos desse campo. Por fim,
 apresentamos uma discussão sobre os potenciais \emph{microbenchmarks} que podem
 ser utilizados para validar novas extensões nos processos.
 
+% TODO: Eu acho que vale a pena fazer um parágrafo final dando uma visão geral
+% sobre o que será discutido, mas especialmente falar que o Apache será mais
+% detalhado devido ao estudo de caso do proxímo cap.
+
 \section{Servidores Web}
 \label{sec:web_server}
 
-\hltodo[Normalmente um software faz uso de diversos recursos do SO, contudo, algumas
-aplicações são projetadas para tirar o maior proveito possível do hardware
-disponível.]{Eu cortaria} Muitos sistemas possuem máquinas \hltodo[dedicadas]{Acho que seria ``dedicadas a uma aplicação específica'', não?} com o objetivo de
-entregar estabilidade, velocidade e estabilidade. Nesses casos, é desejável que
-a CPU esteja ocupada a maior parte do tempo e use a memória de forma eficiente
-para evitar desperdício de recursos. \boldAndIndex{Servidores web (\emph{Web
-Servers})} são aplicações que operam com um desempenho próximo
+Muitos sistemas possuem máquinas dedicadas a uma aplicação específica com o
+objetivo de entregar estabilidade, velocidade e estabilidade. Nesses casos, é
+desejável que a CPU esteja ocupada a maior parte do tempo e use a memória de
+forma eficiente para evitar desperdício de recursos. \boldAndIndex{Servidores
+web (\emph{Web Servers})} são aplicações que operam com um desempenho próximo
 do ótimo utilizando ostensivamente os recursos das máquinas para servir páginas
-web. A principal responsabilidade do servidor web é entregar \hltodo[arquivos contendo
-dados]{Hmmmm, acho que na real seria ``dados solicitados, que podem vir de um arquivo ou ser gerados especificamente para cada requisição''}, essa pode ser divida em três etapas: esperar por uma requisição
+web. A principal responsabilidade do servidor web é entregar dados solicitados,
+que podem vir de um arquivo ou ser gerados especificamente para cada
+requisição, essa pode ser divida em três etapas: esperar por uma requisição
 (\emph{request}) do usuário, processar a requisição e responder ao usuário.
 
 \begin{figure}[!h]
@@ -122,41 +125,53 @@ dados]{Hmmmm, acho que na real seria ``dados solicitados, que podem vir de um ar
 
 A Figura \ref{fig:client_to_web_server} busca exemplificar uma situação simples
 na qual o cliente solicita uma página web para um servidor. Inicialmente, o
-cliente faz uma solicitação de alguma página por meio de algum software, \hltodo[vamos
-considerar o navegador nesse exemplo]{Que tal mudar para ``Inicialmente, o cliente (digamos, um navegador web) comunica-se com o servidor através do protocolo HTTP para fazer uma solicitação; por sua vez,...''.}. Em seguida, o navegador comunica-se com o
-servidor através do protocolo HTTP; por sua vez, o servidor responde devolvendo
-\hltodo[o arquivo]{os dados} solicitado que contém todas as instruções básicas necessárias para
-construir a página (HTML). O navegador abre o arquivo HTML retornado, converte
-o conteúdo e verifica se precisa de mais informações para construir a página
-solicitada; é comum que a página precise de outros arquivos como CSS, imagens,
-javascript, etc. Se mais arquivos forem necessários, então o navegador os solicita
-para o servidor de forma paralela ou serial. O exemplo ilustra de
-forma simplificada como uma requisição acontece e como múltiplas requisições
-podem ser geradas para construir uma simples tela. Um exemplo real pode ser
-considerado da caracterização da carga gerada sobre o site da copa do mundo de
-1998, na qual foi gerado uma média de 10796 requisições/min~\citep{worldcup}.
-Um servidor web tem que responder a milhares de usuários e as estratégias utilizadas
-para lidar com tal volume são as mais variadas.
+cliente (digamos, um navegador web) comunica-se com o servidor através do
+protocolo HTTP para fazer uma solicitação; por sua vez, o servidor responde
+devolvendo os dados solicitado que contém todas as instruções básicas
+necessárias para construir a página (HTML). O navegador abre o arquivo HTML
+retornado, converte o conteúdo e verifica se precisa de mais informações para
+construir a página solicitada; é comum que a página precise de outros arquivos
+como CSS, imagens, javascript, etc. Se mais arquivos forem necessários, então o
+navegador os solicita para o servidor de forma paralela ou serial. O exemplo
+ilustra de forma simplificada como uma requisição acontece e como múltiplas
+requisições podem ser geradas para construir uma simples tela. Um exemplo real
+pode ser considerado da caracterização da carga gerada sobre o site da copa do
+mundo de 1998, na qual foi gerado uma média de 10796
+requisições/min~\citep{worldcup}.  Um servidor web tem que responder a milhares
+de usuários e as estratégias utilizadas para lidar com tal volume são as mais
+variadas.
 
-Normalmente, \hltodo[cada requisição feita por um cliente abre muitas conexões]{Acho que você colocou ``cliente'' como ``usuário'', mas acho que fica um pouco confuso; as mudanças que sugeri acima colocam ``cliente'' como uma aplicação. Aqui eu mudaria para algo como ``cada página a ser apresentada para o usuário envolve muitas conexões com o servidor para pegar os vários arquivos blah blah''.} com o
-servidor web e ao final elas são encerradas. Esse mecanismo impacta o
-desempenho por duas razões: \hltodo[a latência aumenta]{Por quê?} e o consumo de CPU com \hltodo[operações
-não úteis]{Quais?} se eleva. Uma possibilidade para minimizar esse impacto é utilizar
-o mecanismo de \boldAndIndex{keep-alive}, que mantém uma conexão
-aberta durante as atividades do usuário. Por exemplo, a Figura
+Dado a enorme demanda que os servidores web precisam suportar, esses buscam
+diversas técnicas que otimizem a utilização dos recursos. Uma das melhorias
+disponíveis em alguns servidores web nasce da observação de que cada página a
+ser apresentada para o cliente necessita realizar múltiplas conexões para obter
+os vários arquivos que compõem a página. Esse mecanismo de abrir e fechar
+conexões constantemente impacta no desempenho uma vez que eleva a latência,
+tempo gasto abrindo e fechando conexões. Uma possibilidade para minimizar esse
+impacto é utilizar o mecanismo de \boldAndIndex{keep-alive}, que mantém uma
+conexão aberta durante as atividades do usuário. Por exemplo, a Figura
 \ref{fig:no_keep_alive} e a Figura \ref{fig:keep_alive} mostram um caso
 utilizando \emph{keep-alive} e outro sem utilizá-lo. O primeiro caso ilustra
-uma situação padrão na qual uma requisição é realizada e, por sua vez, são abertas
-e fechadas diversas outras conexões de rede para obter cada um dos arquivos necessários para
-construir a página. O segundo caso ilustra a técnica de
-\emph{keep-alive}, cujo o objetivo é reduzir a latência e o uso de CPU no
+uma situação padrão na qual uma requisição é realizada e, por sua vez, são
+abertas e fechadas diversas outras conexões de rede para obter cada um dos
+arquivos necessários para construir a página. O segundo caso ilustra a técnica
+de \emph{keep-alive}, cujo o objetivo é reduzir a latência e o uso de CPU no
 servidor mantendo a conexão aberta por um intervalo de tempo.  Esse mecanismo
 pode melhorar a experiência do usuário ao acessar o site em casos que um
 servidor esteja recebendo um elevado número de requisições. Contudo, outro
-aspecto do \emph{keep-alive} é que ele pode elevar o consumo de memória no servidor,
-gerando outro tipo de problema em um servidor sobrecarregado.
+aspecto do \emph{keep-alive} é que ele pode elevar o consumo de memória no
+servidor, gerando outro tipo de problema em um servidor sobrecarregado. Esses
+dois mecanismos são importantes elementos a serem considerados durante a
+realização de experimentos, uma vez que eles modificam o comportamento geral do
+servidor em certas situações (retomaremos esse tópico no
+Capítulo~\ref{cap:estudo-de-caso}).
 
-\todo[inline]{O parágrafo acima, que explica o keep-alive, está meio mal ajambrado. Além disso, seria bom dizer por que você está explicando keep-alive.}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{keep_alive}
+  \caption{Com keep alive}
+  \label{fig:keep_alive}
+\end{figure}
 
 \begin{figure}[!h]
   \centering
@@ -165,19 +180,14 @@ gerando outro tipo de problema em um servidor sobrecarregado.
   \label{fig:no_keep_alive}
 \end{figure}
 
-\begin{figure}[!h]
-  \includegraphics[width=0.8\textwidth]{keep_alive}
-  \caption{Com keep alive}
-  \label{fig:keep_alive}
-\end{figure}
-
 Existem muitos servidores web disponíveis no mercado, contudo, dois deles são
 especialmente relevantes para o contexto deste trabalho:
 Nginx\footnote{\url{https://www.nginx.com/}} e Apache
 Httpd\footnote{\url{https://httpd.apache.org/}}.  O primeiro é conhecido pelo
 seu desempenho para entregar arquivos estáticos, enquanto o segundo é conhecido
-pela sua enorme estabilidade e comodidade. Ambos são amplamente usados, extremamente
-configuráveis, confiáveis e suportam grandes cargas de requisições.
+pela sua enorme estabilidade e comodidade. Ambos são amplamente usados,
+extremamente configuráveis, confiáveis e suportam grandes cargas de
+requisições.
 
 \subsection{Servidor Apache HTTPD}
 \label{sec:architecture}
@@ -187,15 +197,15 @@ licenciado com a licença Apache 2.0 e mantido pela fundação Apache.  O Apache
 HTTPD\footnote{Usaremos HTTPD e Apache como sinônimos nesse texto} foi
 projetado para executar em vários SOs; essa restrição fez com que fosse
 necessário adotar estratégias para fazer o HTTPD multiplataforma e mantendo um
-bom desempenho.  Uma característica importante do HTTPD é a divisão de módulos
-que manipulam \hltodo[processos, threads e bibliotecas portáveis utilizadas]{Não são bibliotecas portáveis que são usadas para criar esses módulos? Enfim, achei essa frase estranha}; esses
-três, em conjunto, constituem a arquitetura do projeto. O Apache utiliza
-a biblioteca \emph{Apache Portable Runtime (APR)}, cuja a intenção é ser
-utilizada como uma interface portável para as tarefas comuns de programação
-(e.g.: alocação de memória, manipulação de tempo, etc). Por fim, o HTTPD
+bom desempenho. Uma característica importante do HTTPD é a sua forte separação
+em módulos para manipular processos/\emph{threads} e outros elementos; o
+conjunto de todos os módulos constituem a arquitetura do projeto. O Apache
+utiliza a biblioteca \emph{Apache Portable Runtime (APR)}, cuja a intenção é
+ser utilizada como uma interface portável para as tarefas comuns de programação
+(p.ex.: alocação de memória, manipulação de tempo, etc). Por fim, o HTTPD
 implementa um módulo especial chamado \emph{Multi-Processing Module (MPM)},
 responsável por manter o processamento das requisições e a lógica de
-manipulação de processos/threads. O MPM é uma boa fonte de comparação entre
+manipulação de processos/\emph{threads}. O MPM é uma boa fonte de comparação entre
 diferentes modelos de processos.
 
 \begin{figure}[!h]
@@ -212,7 +222,7 @@ funcionamento. Ao redor do núcleo, existe um grande número de módulos anexado
 que podem ser conectados ao projeto. Esses módulos facilitam o processo de
 adicionar e remover elementos do núcleo, normalmente como bibliotecas
 dinâmicas. Módulos na forma de bibliotecas dinamicamente ligadas fornecem
-flexibilidade, um bom desempenho e portabilidade entre diferentes SOs (e.g.,
+flexibilidade, um bom desempenho e portabilidade entre diferentes SOs (p.ex.,
 Window e Linux podem ter diferentes implementações para o mesmo módulo). A
 Figura \ref{fig:apache_architecture} também ilustra o MPM como um componente
 diretamente conectado ao SO, porque o MPM manipula os elementos de
@@ -262,17 +272,20 @@ processos.
 \subsubsection{MPM}
 \label{sec:prefork}
 
-O módulo \emph{Multi-Processing (MPM)} é um elemento especial dentro do
-Apache. Como a Seção \ref{sec:architecture} introduziu, o MPM funciona como uma
+O módulo \emph{Multi-Processing (MPM)} é um elemento especial dentro do Apache.
+Como a Seção \ref{sec:architecture} introduziu, o MPM funciona como uma
 interface entre o HTTPD e o SO. O MPM tem três características principais para
 qualquer instância do Apache: deve ser único, é obrigatório e tem uma
 implementação específica para o SO alvo. O HTTPD fornece pelo menos um módulo
-MPM por SO; por exemplo, Windows utiliza \texttt{mpm\_winnt} e Linux tem
-três opções diferentes \hltodo[que serão tratadas em detalhes neste trabalho]{Eu cortaria; isso faz sentido quando você vai mudar de assunto e quer voltar depois, mas aqui você continua falando nisso, então pode cortar esta frase}. Cada uma
-delas pode ser classificada como baseada em processos ou em
-threads. São elas: \emph{Prefork}, \emph{Worker} e
-\emph{Event}. Esses módulos constituem bons pontos para comparar threads e
-processos usando as novas abstrações, uma vez que o \hltodo[ambiente se conserva]{Pow, gasta mais meia dúzia de palavras pra explicar o que é ``ambiente se conserva''}.
+MPM por SO; por exemplo, Windows utiliza \texttt{mpm\_winnt} e Linux tem três
+opções diferentes. Cada uma delas pode ser classificada como baseada em
+processos ou em \emph{threads}. São elas: \emph{Prefork}, \emph{Worker} e
+\emph{Event}. Esses módulos constituem bons pontos para comparar \emph{threads}
+e processos usando as novas abstrações, uma vez que apenas um ponto isolado do
+Apache é alterado; isso faz com que o comportamento padrão do HTTPD seja
+conservado e assim a comparação entre diferentes abordagens ocorra de forma
+mais justa. Em outras palavras, alterar o módulo de processamento paralelo do
+Apache conserva o ambiente de teste e fornece comparações mais precisas.
 
 \begin{description}
 
@@ -297,26 +310,26 @@ comporta-se como um \emph{load balancer}.
 \end{figure}
 
 \emph{Prefork} é uma boa opção para servidores web que não são compatíveis
-com threads (e.g., pela utilização de aplicações legadas escritas em PHP) e é a melhor opção de MPM
+com \emph{threads} (p.ex., pela utilização de aplicações legadas escritas em PHP) e é a melhor opção de MPM
 para isolar uma única requisição. Contudo, \emph{Prefork} consome muita
 memória e CPU, o que não é desejável em um servidor sob forte demanda.
 
-	\item [Worker]: \emph{Worker} é uma solução híbrida, uma vez que seu design é baseado em
-processos e threads. Esse módulo tem um processo de controle que também é responsável
-por criar processos filhos e controlar o balanceamento da carga entre eles.
-Ao contrário de \emph{Prefork}, \emph{Worker} não cria instâncias
-de processos filhos para manipular requisições feitas pelos clientes: ao
-invés disso, cada filho possui várias threads para realizar
-o tratamento das requisições. Comumente, o HTTPD tem que manipular uma
-grande carga de requisições e, nesses casos, o processo de controle age criando
-novos filhos (cada um com um conjunto de threads) para suportar a carga.
-Repare que \emph{Worker} utiliza threads para manipular as requisições,
-fazendo com que o total de processos filhos criado seja relativamente pequeno
-(comparado com o \emph{Prefork}) e, consequentemente, o consumo de memória
-seja reduzido. O HTTPD tem um arquivo de configuração que permite um controle fino de
-todos os parâmetros relacionados ao número máximo de processos filhos, o total
-de threads por filho, o número de \hltodo[reposição]{Dafuq?} de processos filhos e threads,
-dentre outros.
+  \item [Worker]: \emph{Worker} é uma solução híbrida, uma vez que seu
+\emph{design} é baseado em processos e \emph{threads}. Esse módulo tem um
+processo de controle que também é responsável por criar processos filhos e
+controlar o balanceamento da carga entre eles.  Ao contrário de \emph{Prefork},
+\emph{Worker} não cria instâncias de processos filhos para manipular
+requisições feitas pelos clientes: ao invés disso, cada filho possui várias
+\emph{threads} para realizar o tratamento das requisições. Comumente, o HTTPD
+tem que manipular uma grande carga de requisições e, nesses casos, o processo
+de controle age criando novos filhos (cada um com um conjunto de
+\emph{threads}) para suportar a carga.  Repare que \emph{Worker} utiliza
+\emph{threads} para manipular as requisições, fazendo com que o total de
+processos filhos criado seja relativamente pequeno (comparado com o
+\emph{Prefork}) e, consequentemente, o consumo de memória seja reduzido. O
+HTTPD tem um arquivo de configuração que permite um controle fino de todos os
+parâmetros relacionados ao número máximo de processos filhos, o total de
+\emph{threads} por filho, dentre outros.
 
 \begin{figure}[!h]
   \centering
@@ -327,21 +340,24 @@ dentre outros.
 
 A Figura \ref{fig:worker} é um exemplo de como \emph{Worker} funciona.
 Quando o Apache inicia, ele tem um processo de controle e alguns processos
-filhos que mantêm um grupo de threads paradas. A segunda parte da figura
+filhos que mantêm um grupo de \emph{threads} paradas. A segunda parte da figura
 representa o caso em que o HTTPD recebe um grande número de requisições e o
 processo de controle cria mais filhos para suportar a carga. \emph{Worker}
 consome menos memória que \emph{Prefork} e, consequentemente, é melhor em
-casos nos quais o servidor está sobrecarregado.  A mistura de processo e thread
+casos nos quais o servidor está sobrecarregado.  A mistura de processo e \emph{thread}
 adiciona estabilidade para todo o sistema.
 
-	\item [Event:] O módulo \emph{Event} é baseado em threads e é o padrão na
+	\item [Event:] O módulo \emph{Event} é baseado em \emph{threads} e é o padrão na
 última versão do Apache. O comportamento básico de \emph{Event} é similar ao
 de \emph{Worker} com duas características a mais: \emph{keep-alive} e
 separação de responsabilidade de enviar dados para o cliente. A Figura
-\ref{fig:event} ilustra o comportamento básico de \emph{Event}. A forma na
-qual \emph{Event} opera é similar a \emph{Worker}, \hltodo[com a diferença de
-que ele cria um processo a mais só para manipular o envio dos dados para o
-cliente.]{Em parte, está repetindo o que disse antes, em parte está contradizendo (pois tem também a diferença do keep-alive) e a explicação da thread de envio de dados está muito jogada}
+\ref{fig:event} ilustra o comportamento básico de \emph{Event}. A forma na qual
+\emph{Event} opera é similar a \emph{Worker}, contudo esse mecanismo
+diferencia-se por dois elementos extras: mecanismo de manipulação do \emph{keep-alive}
+e separação da responsabilidade de transmitir os dados para o cliente. O
+processo extra incumbido de enviar as informações para o cliente, comunica-se
+com as diversas \emph{threads} que manipulam as requisições e tomam para si a
+responsabilidade de enviar os dados processados.
 
 \begin{figure}[!h]
   \centering
@@ -357,17 +373,17 @@ cliente.]{Em parte, está repetindo o que disse antes, em parte está contradize
 Assim como o Apache HTTPD, Nginx é um servidor web, contudo ele diferencia-se
 de muitas formas dos servidores web tradicionais. A sua principal
 característica é o seu excelente desempenho para atender requisições,
-principalmente aquelas relacionadas a arquivos estáticos. Além disso, Nginx
-comporta-se como um \hltodo[\emph{reverse-proxy}]{Hmmm, isso é uma configuração, não o modo ``normal'' dele; o apache é exatamente igual nesse quesito. Eu acho que pode remover esse trecho ou, talvez, usá-lo em outro lugar (referindo-se aos dois) para explicar alguma coisa referente ao experimento de carga}; ele recebe uma requisição do
+principalmente aquelas relacionadas a arquivos estáticos. Além disso, o Nginx
+é comumente usado como um \emph{reverse-proxy}; ele recebe uma requisição do
 usuário, por sua vez ele repassa a requisição para uma aplicação específica
-responsável por realizar o processamento (e.g. Puma, PHP-FPM, etc). Quando o
+responsável por realizar o processamento (p.ex. Puma, PHP-FPM, etc). Quando o
 dado é processado pela aplicação, ela devolve o resultado para o Nginx, que
 repassa os dados para o usuário \citep{soni}. A Figura \ref{fig:nginx_basico}
-ilustra o funcionamento geral do Nginx; note que a requisição do usuário chega
-ao servidor \hltodo[criptografada]{Isso não é uma necessidade, então eu escreveria tipo ``note que, neste exemplo, a requisição do usuário chega ao servidor criptografada''} por meio do protocolo SSL (apresentamos esse protocolo
-na Seção \ref{sec:openssl}). Em seguida, Nginx trata a solicitação
-transformando-a em HTTP; por fim, o processo termina repassando-a
-para algum serviço.
+ilustra o funcionamento geral do Nginx; note que, neste exemplo, a requisição
+do usuário chega ao servidor criptografada por meio do protocolo SSL
+(apresentamos esse protocolo na Seção \ref{sec:openssl}). Em seguida, Nginx
+trata a solicitação transformando-a em HTTP; por fim, o processo termina
+repassando-a para algum serviço.
 
 \begin{figure}[!h]
   \centering
@@ -376,56 +392,59 @@ para algum serviço.
   \label{fig:nginx_basico} 
 \end{figure}
 
-A grande maioria dos servidores web \todo{Inclusive o apache} busca tirar o máximo de proveito dos recursos
-de hardware utilizando um elevado número de threads e processos. Essa abordagem
-é relativamente simples de ser implementada e traz bons resultados, contudo
-também tem alguns problemas. Dentre as desvantagens, o modelo baseado
-em threads/processos gera uma grande quantidade de operações que bloqueiam e,
-consequentemente, geram trocas de contexto. Além disso, a abordagem baseada em
-threads/processos consome uma elevada \hltodo[quantidade de recursos]{Memória, né? E talvez filedescriptors, mas isso é memória também. Fora isso, tem o impacto de cpu por conta das trocas de contexto, mas isso vc já falou}, degradando o
-desempenho da aplicação em situações de elevada demanda.
+A grande maioria dos servidores web, inclusive o Apache, busca tirar o máximo
+de proveito dos recursos de hardware utilizando um elevado número de
+\emph{threads} e processos. Essa abordagem é relativamente simples de ser
+implementada e traz bons resultados, contudo também tem alguns problemas.
+Dentre as desvantagens, o modelo baseado em \emph{threads}/processos gera uma
+grande quantidade de operações que bloqueiam e, consequentemente, geram trocas
+de contexto. Além disso, a abordagem baseada em \emph{threads}/processos
+consome uma elevada quantidade de recursos (p.ex. memória, descritores de
+arquivos e CPU), degradando o desempenho da aplicação em situações de elevada
+demanda.
 
-Nginx utiliza uma \hltodo[outra]{Tirei o ``nova'' porque não é nova não, lembro de um servidor em 97 que fazia isso} abordagem de servidor web, baseada na ideia de \hltodo[eventos]{``Eventos'', na verdade, é uma mágica tornada possível por requisições de I/O assíncronas. Acho que vale mencionar que o nginx usa isso e o apache não porque async I/O no linux não funcionava muito bem nas primeiras versões}.
-A estratégia de eventos parte do princípio de que deve-se evitar ao máximo a troca
-de contexto e, assim, tirar o máximo de proveito da CPU com processamento útil.
-Por esse motivo, Nginx cria apenas três tipos de processos
+Nginx utiliza uma outra abordagem de servidor web, baseada na ideia de eventos;
+esse mecanismo, é uma técnica baseada em requisições de I/O assíncronas. Por
+uma questão histórica o Apache não faz uso desse método pois as operações de
+I/O assíncronas não funcionavam bem nas suas primeiras versões no Linux. A
+estratégia de eventos parte do princípio de que deve-se evitar ao máximo a
+troca de contexto e, assim, tirar o máximo de proveito da CPU com processamento
+útil.  Por esse motivo, Nginx cria apenas três tipos de processos
 \citep{nginx_architecture}:
 
 \begin{itemize}
   \item Processo mestre, que faz operações privilegiadas como ler arquivos de configuração e acessar portas;
   \item Processo de cache de disco, que carrega dados do disco fazendo cache na memória;
-  \item \hltodo[Processo]{Não tem como inventar um nome para seguir o formato dos demais? Tipo ``Processo gestor de cache, que gerencia...''} que gerencia o cache e que realiza verificações sobre ele periodicamente;
-  \item Processos \emph{Worker}, que fazem o trabalho de manipular conexões, ler e escrever em disco e comunicar-se com os \hltodo[servidores.]{Clientes, não?}
+  \item Processo gestor de cache, que gerencia o cache e que realiza verificações sobre ele periodicamente;
+  \item Processos \emph{Worker}, que fazem o trabalho de manipular conexões, ler e escrever em disco e comunicar-se com os clientes.
 \end{itemize}
 
 Nginx recomenda um \emph{Worker} por núcleo da CPU, o que permite tirar
 grande proveito dos eventos.
 
 Na prática o sistema de eventos é eficiente pois gera poucos bloqueios
-(comparado com o modelo que utiliza threads/processos), uma vez que não
-espera a aplicação terminar o que está \hltodo[fazendo]{Tá jogado isto. que tal ``... a aplicação terminar o que está fazendo para iniciar outra atividade''.}. Por exemplo, se o
-\emph{worker} estiver atendendo uma requisição e, em um determinado momento,
-precisar recuperar uma informação do disco, ele não bloqueia, mas
-simplesmente vai fazer outra tarefa e salva o evento referente à busca no disco
-para retornar a ele depois (mais precisamente, quando surgir um evento). O
-sistema de eventos faz com que um único \emph{worker} execute múltiplas
-tarefas de forma sequencial sem bloqueio e, consequentemente, com poucas trocas
-de contexto.
+(comparado com o modelo que utiliza \emph{threads}/processos), uma vez que não espera
+a aplicação terminar o que está fazendo para iniciar outra atividade. Por
+exemplo, se o \emph{worker} estiver atendendo uma requisição e, em um
+determinado momento, precisar recuperar uma informação do disco, ele não
+bloqueia, mas simplesmente vai fazer outra tarefa e salva o evento referente à
+busca no disco para retornar a ele depois (mais precisamente, quando surgir um
+evento). O sistema de eventos faz com que um único \emph{worker} execute
+múltiplas tarefas de forma sequencial sem bloqueio e, consequentemente, com
+poucas trocas de contexto.
 
 \section{Ferramentas de Comunicação Criptografada}
 \label{sec:com_enc}
 
 Como mostrado no Capítulo \ref{cap:trabalhos-analisados}, algumas das novas
 propostas de abstrações de processos levam melhorias de segurança para o espaço
-de usuário. Nesse sentido, aplicações que envolvem mecanismos de criptografia ou
-que \hltodo[buscam levar algum nível de segurança]{Que tal ``que têm algum requisito especial de segurança''?} representam bons casos de uso para
-validar novas abstrações. Esse tipo de software costuma ser desenvolvido por
-uma comunidade de especialistas na área de segurança, o que significa que levar
-melhorias a esse tipo de ferramenta não é uma tarefa trivial. \hltodo[Essas
-características fazem com que esse tipo de aplicação representem bons caso de
-validação para novas abstrações de processos.]{Tá repetido, pode cortar} Por uma questão de simplicidade e
-abrangência \hltodo[escolhemos]{De novo, não foi você quem escolheu, foram os autores, não é?} duas ferramentas amplamente utilizadas: OpenSSH e
-OpenSSL.
+de usuário. Nesse sentido, aplicações que envolvem mecanismos de criptografia
+ou que têm algum requisito especial de segurança representam bons casos de uso
+para validar novas abstrações. Esse tipo de software costuma ser desenvolvido
+por uma comunidade de especialistas na área de segurança, o que significa que
+levar melhorias a esse tipo de ferramenta não é uma tarefa trivial. Por uma
+questão de simplicidade e abrangência selecionamos dos diversos trabalhos, duas
+ferramentas amplamente utilizadas: OpenSSH e OpenSSL.
 
 \subsection{OpenSSL}
 \label{sec:openssl}
@@ -433,9 +452,9 @@ OpenSSL.
 Antes de discutir o pacote OpenSSL, é importante apresentar de forma geral o
 protocolo \boldAndIndex{Secure Sockets Layers (SSL)}. O principal objetivo de
 SSL é fornecer um conjunto de protocolos criptográficos que permita a
-comunicação segura em rede. É uma ferramenta de uso
-cotidiano, e diversas \hltodo[aplicações de missão crítica]{O certo é ``aplicações críticas à missão''}dependendo dele,
-o que o torna um constante alvo de ataques.
+comunicação segura em rede. É uma ferramenta de uso cotidiano, e diversas
+aplicações críticas à missão dependendo dele, o que o torna um constante alvo
+de ataques.
 
 O SSL utiliza um mecanismo chamado \boldAndIndex{handshake}, que
 nada mais é do que um processo de negociação entre o cliente e o servidor de uma conexão de rede, de
@@ -481,17 +500,68 @@ abstrata para lidar com I/O.
   \label{fig:openssl_arch}
 \end{figure}
 
-\todo[inline]{Acho que vale citar alguma/algumas aplicações que usem o OpenSSL;
-o apache usa? nginx? openssh?}
+Dado a sua versatilidade e constante aprimoramento, o OpenSSL tornou-se uma das
+ferramentas mais utilizadas por diversos projetos consagrados. Dentre eles
+destacam-se:
+
+\begin{description}
+  \item [Apache-SSL/mod\_ssl:] módulo do Apache que fornece suporte para utilizar protocolos de criptografia;
+  \item [Net::SSLeay:] módulo \emph{Perl} que funciona como uma interface para as operações fornecidas pelo OpenSSL sendo amplamente utilizado por diversas aplicações escritas em \emph{Perl};
+  \item [cURL:] software que fornece uma biblioteca e ferramentas de linha de comando para transferir dados usando diversos protocolos (p.ex., FTP, HTTP, HTTPS, GOPHER e DICT); 
+  \item [Samba:] popular sistema de compartilhamento de arquivos integrado com vários clientes;
+  \item [OpenSSH:] conjunto de utilitários que fornece um canal seguro de comunicação em rede (discutiremos sobre essa ferramenta na próxima seção).
+\end{description}
+
+As aplicações citadas acima representam apenas algumas das ferramentas que
+utilizam o OpenSSL, note que alterações nessa biblioteca impactam diretamente
+em uma ampla variedade de ferramentas. Dado a sua vasta utilização, várias
+vulnerabilidades foram encontradas e catalogadas na forma de \boldAndIndex{Vulnerabilidades e
+Exposições Comuns (\emph{Common Vulnerabilities and Exposures} - CVE)}. A CVE é
+um sistema que fornece de forma pública e metodológica, informações sobre uma
+vulnerabilidade conhecidas. Dentre as CVEs registradas do OpenSSL destacamos
+apenas duas com o objetivo de ilustrar como abrações de processos podem
+demonstrar melhorias na prática, segue:
+
+\begin{description}
+  \item [Heartbleed:] Das versões 1.0.1 até 1.0.1f do OpenSSL é possível
+encontrar uma falha de segurança chamada de \textbf{Sagramento do Coração};
+essa falha nasce de um erro de implementação, em uma extensão chamada de
+\emph{heartbeat} (batida do coração). O \emph{heartbeat} é um mecanismo que
+permite ao cliente manter a conexão segura por mais tempo, para isso o cliente
+solicita um byte de informação toda vez que tenta manter a conexão (``batimento
+do coração''). Contudo, o OpenSSL cegamente acreditava no valor solicitado sem
+realizar qualquer tipo de validação; isso permitia que alguém solicitasse mais
+dados da memória do que o permitido (``sangramento do coração''). Essa falha
+permite que um agressor consiga roubar ou vazar informações como nomes e
+senhas de usuários; em casos extremos, pode ser possível recuperar a chave
+privada usada pelo OpenSSL\footnote{\url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160}}.
+
+  \item [CCS Injection Vulnerability:] As versões 0.9.8za, 1.0.0m e 1.0.1h do
+OpenSSL são comprometidas com essa falha. Essa vulnerabilidade pode ser
+explorada por um atacante que fique entre o cliente e o servidor.  Basicamente,
+o agressor captura as requisições feitas durante o \emph{handshake}
+(Figura~\ref{fig:openssl_handshake}) e manipula a chave que será usada para
+criptografar o tráfego. Essa falha ocorre devido a fraquezas no método de gerar
+chaves
+\footnote{\url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0224}}.
+
+\end{description}
+
+Proposta de extensão da abstração de processos que visem trazer melhorias de
+segurança, podem utilizar versões comprometidas do OpenSSL e tentar mostrar que
+a nova abstração resolve um problema real. O pesquisador pode consultar a longa
+lista de CVEs, selecionar um dos problemas, replicar e em seguida resolver a
+falha utilizando a sua proposta. Dado a ampla utilização do OpenSSL, fica claro
+o impacto de propostas que tragam melhorias de segurança para tal ferramenta.
 
 \subsection{OpenSSH}
 
-Uma das tarefas mais comuns do dia-a-dia de muitos desenvolvedores\todo{e administradores de sistemas} consiste em
-acessar servidores em diversos locais do mundo e configurar uma determinada
-aplicação. Na prática, boa parte dos profissionais de TI faz uso de conexões
-seguras na Internet por meio do protocolo \emph{Secure Shell (SSH)}. Existem
-diversas implementações desse protocolo, mas para este trabalho discutiremos o
-OpenSSH.
+Uma das tarefas mais comuns do dia-a-dia de muitos desenvolvedores e
+administradores de sistemas, consiste em acessar servidores em diversos locais
+do mundo e configurar uma determinada aplicação. Na prática, boa parte dos
+profissionais de TI faz uso de conexões seguras na Internet por meio do
+protocolo \emph{Secure Shell (SSH)}. Existem diversas implementações desse
+protocolo, mas para este trabalho discutiremos o OpenSSH.
 
 A Figura \ref{fig:openssh_layer} apresenta uma visão geral da arquitetura do
 OpenSSH. Primeiramente, repare que as três camadas correspondentes às camadas
@@ -502,7 +572,7 @@ de tempos em tempos. Logo após a primeira camada temos o \emph{ssh-userauth},
 que é responsável pela autenticação: se tudo der certo durante a autenticação,
 então a troca de chaves acontece e a conexão segura é estabelecida. Por fim, a
 camada \emph{ssh-connection} estabelece um canal seguro e fica responsável
-por gerir a multiplexação de múltiplas \hltodo[conexões]{Vale explicar um pouco melhor que dá para ``tunelar'' coisas aqui} e redirecionamentos
+por gerir a multiplexação de múltiplas conexões e redirecionamentos
 \citep{proopenssh, opensshhood}.
 
 %TODO: CVE
@@ -514,38 +584,56 @@ por gerir a multiplexação de múltiplas \hltodo[conexões]{Vale explicar um po
 \end{figure}
 
 Dada a enorme importância do OpenSSH, ele é alvo de constantes ataques e,
-consequentemente, recebe diversos \hltodo[aprimoramentos]{Aprimoramentos ou só patches consertando? Ou você quis dizer aprimoramentos de projetos de pesquisa?}. Como resultado, algumas \hltodo[CVEs]{Precisa explicar o que é isso}
-foram criadas e resolvidas no OpenSSH. Dentre as CVEs destacamos: \hltodo[TODO :(]{TODO :-p}
+consequentemente, recebe diversas melhorias do ponto de vista do
+desenvolvimentos e de adoção de novas técnicas mais seguras. Como resultado, algumas CVEs
+foram criadas e resolvidas no OpenSSH. Dentre as CVEs destacamos:
 
-% TODO: Destacar
+\begin{description}
+  \item [Escalada de privilégios:] Das versões 6.8 até a 6.9 do OpenSSH,
+existiu uma vulnerabilidade conhecida como escalada de privilégios
+(\emph{privilege escalation}). Este tipo de vulnerabilidade descreve um cenário
+na qual um atacante é capaz de enganar o sistema de forma a fazer com que ele
+ofereça permissões extras ou de outro usuário. Era possível realizar esse
+ataque por meio da opção \texttt{TIOCSTI} passada para a função
+\texttt{ioctl()}, que permitia injetar caracteres dentro do terminal do usuário
+e assim executar qualquer
+comando\footnote{\url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-6565}}.
 
-\hltodo[Do ponto de vista do uso de tal aplicação para validar propostas de abstrações
+  \item [Recuperação de Texto Simples contra cifras CBC:] Quando o OpenSSH utiliza algoritmo de criptografia em bloco em modo
+Criptografia de Blocos Encadeados (\emph{Cipher Block Chaining (CBC)}), fica
+relativamente simples para um atacante remotamente recuperar pedaços de textos
+de blocos criptografados em uma sessão SSH. Essa vulnerabilidade foi mitigada
+na versão 5.2 do
+OpenSSH\footnote{\url{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5161}}.
+
+\end{description}
+
+Do ponto de vista do uso de tal aplicação para validar propostas de abstrações
 de processos, destacamos que ela pode ser usada para demonstrar ganhos de
 segurança e controle de acesso à memória. Uma abordagem é partir de uma versão
 antiga do OpenSSH, que não tem a correção para alguma vulnerabilidade, e
-demonstrar que a nova abstração sugerida consegue resolver o problema.]{Legal; seria bom ter um comentário nesse estilo sobre o openSSL também} Note que
+demonstrar que a nova abstração sugerida consegue resolver o problema. Note que
 os pontos mais fracos do OpenSSH podem ser destacados:
 
 \begin{itemize}
-  \item \hltodo[Acesso à chave é uma região crítica e deve ter o seu acesso restrito;]{Este item não seque o padrão dos demais; eu trocaria para ``Acesso indevido à chave criptográfica da sessão'' ou algo assim}
+  \item Acesso indevido à chave criptográfica da sessão;
   \item Potencial vazamento de dados;
   \item Escalada de privilégios.
 \end{itemize}
 
-\section{Outras Aplicações para Avaliar Diferentes Aspectos}
-
-\todo[inline]{Precisa de um nome melhor isto aqui, ``avaliar diferentes aspectos'' tá bem feinho}
+\section{Outras Aplicações}
 
 As propostas de novas abstrações de processos podem levar benefícios para
 outras áreas além das mostradas nas Seções \ref{sec:web_server} e
 \ref{sec:com_enc}. Por esse motivo, apresentamos algumas ferramentas que são de
 ampla utilização no mercado e que podem ser utilizadas na validação da
-utilidades de algumas das novas abstrações \hltodo[sugeridas.]{Hmmm... acho que seria ``mencionadas no capítulo 3''}
+utilidades de algumas das novas abstrações mencionadas no
+capítulo~\ref{cap:trabalhos-analisados}.
 
 \subsection{Redis}
 
-\hltodo[Escalar]{Não há esse sentido da palavra em português; eu trocaria por ``Fazer alguns sistemas capazes de operar em grande escala não é uma tarefa trivial...''} alguns sistemas não é uma tarefa trivial e exige constantes
-\hltodo[customizações]{Também não existe em português! hahaha que tal só ``ajustes''?}. Como resultado dessa necessidade, surgiu o sistema Redis, que
+Fazer alguns sistemas capazes de operar em grande escala não é uma tarefa trivial e exige constantes
+ajustes. Como resultado dessa necessidade, surgiu o sistema Redis, que
 implementa a ideia de utilizar um sistema que pode ser um cache e, ao mesmo tempo,
 um mecanismo de armazenamento de dados utilizando a memória principal (RAM) com o objetivo
 de levar ganhos de desempenho para a aplicação. O Redis também salva os dados
@@ -570,8 +658,8 @@ vários tipos diferentes. Dentre as abstrações de dados suportadas por ele, de
 \end{itemize}
 
 O tipo utilizado no valor determina qual operação é possível de ser aplicada.
-De forma geral o Redis permite realizar operações de alto nível (e.g.,
-\hltodo[operações do lado do servidor]{Dafuq?}, uniões e diferenças).
+De forma geral o Redis permite realizar operações de alto nível (p.ex., uniões
+e diferenças).
 
 A Figura \ref{fig:redis} apresenta uma visão de geral da organização do Redis.
 Repare que ele fornece uma interface de interação do lado do cliente (via
@@ -589,30 +677,33 @@ pai continua realizando as suas tarefas.
   \label{fig:redis}
 \end{figure}
 
-Um dos aspectos mais interessante de Redis, da perspectiva das novas abstrações
-de processo, é a persistência dos dados. Redis fornece três \hltodo[formas]{Acho que aqui seria melhor ``... das novas abstrações de processo é o mecanismo de persistência dos dados. Redis pode utilizar três:...''}
-\citep{redisio}: \emph{Relational Database (RDB)}, \emph{Append-Only-File
-(AOF)} e comando SAVE. RDB faz uma cópia de todos os dados presentes na
-memória para o disco. Por padrão, Redis escreve os dados a cada dois
-segundos. Repare que RDB pode causar perda de dados em caso de mau funcionamento;
-uma alternativa seria configurá-lo para fazer mais escritas, contudo isso
-elevaria consideravelmente o consumo de memória pela natureza do uso de
-\texttt{fork()}. AOF registra todas as operações de escrita feitas pelo
-servidor, logo tudo é persistido. AOF tem o problema de que pode ser mais
-lento do que RDB, a depender da política de sincronização adotada, e também
-consumir mais memória.  Por fim, o comando SAVE força o servidor a criar um
-\emph{dump} dos dados no momento em que foi solicitado.\todo{Parece igual ao RDB mas só quando ``alguém'' pede, é isso mesmo?}
+Um dos aspectos mais interessante de Redis, da perspectiva das novas
+abstrações de processo é o mecanismo de persistência dos dados. Redis pode
+utilizar três: \citep{redisio}: \emph{Relational Database (RDB)},
+\emph{Append-Only-File (AOF)} e comando SAVE. RDB faz uma cópia de todos os
+dados presentes na memória para o disco. Por padrão, Redis escreve os dados a
+cada dois segundos. Repare que RDB pode causar perda de dados em caso de mau
+funcionamento; uma alternativa seria configurá-lo para fazer mais escritas,
+contudo isso elevaria consideravelmente o consumo de memória pela natureza do
+uso de \texttt{fork()}. AOF registra todas as operações de escrita feitas pelo
+servidor, logo tudo é persistido. AOF tem o problema de que pode ser mais lento
+do que RDB, a depender da política de sincronização adotada, e também consumir
+mais memória.  Por fim, o comando SAVE força o servidor a criar um \emph{dump}
+dos dados no momento em que foi solicitado.
 
 % TODO: Vale a pena dar um certo nível de detalhes do código? Não é tão complicado fazer isso, mas preciso ter certeza antes se vale a pena
 % Além da referencia do "Redis: under the hood" tem esse artigo aqui: http://robertlehmann.de/img/redis.pdf
 
-\todo[inline]{Acho que aqui seria legal mencionar que ``dá para melhorar essa bagaça em tal lugar, que é o que é feito com o sistema XXX}
+Do ponto de vista das novas abstração de processos, o Redis pode ser utilizado
+para testar propostas que visam trazer melhorias para a forma como os dados são
+compartilhados. Além disso, ele pode ser utilizado para testar formas mais
+eficientes e confiável de persistir os dados da memória para o disco.
 
 \subsection{Garbage Collection (GC)}
 \label{sec:gc}
 
 Várias linguagens de alto nível possuem mecanismos de gerenciamento automático de recursos
-(e.g., memória, processamento paralelo, datas, etc) que garantem a portabilidade
+(p.ex., memória, processamento paralelo, datas, etc) que garantem a portabilidade
 da aplicação e removem a complexidade de ter que gerenciar recursos de baixo
 nível. Dentre as vantagens de tais tecnologias, destacam-se o fato de que o
 programador pode manter o foco nas características da aplicação e também a redução
@@ -633,8 +724,8 @@ O GC é uma aplicação que é parte da JVM, executando junto com a aplicação.
 Independentemente do algoritmo de gerenciamento de memória implementado pelo
 GC, todos eles definem o termo \boldAndIndex{Stop the World (STW)} ou
 \emph{Parar tudo} \citep{gc_pauseless}. O STW é uma operação realizada pela
-JVM  na qual todas as threads da aplicação são suspensas para que o GC execute.
-Em outras palavras, a única thread executando será a do coletor. Note que o GC
+JVM  na qual todas as \emph{threads} da aplicação são suspensas para que o GC execute.
+Em outras palavras, a única \emph{thread} executando será a do coletor. Note que o GC
 requer essa pausa para funcionar; isso é preciso pois seus algoritmos precisam que
 aplicação não faça nenhuma atualização da memória durante uma das fases do
 processo de limpeza da memória.
@@ -646,11 +737,11 @@ consiste em inspecionar os objetos na memória para verificar quais ainda são
 considerados ``vivos''. Para determinar se um objeto está vivo, o GC começa por
 elementos conhecidos como objetos raiz ou \emph{Garbage Collection Roots}. Os
 seguintes componentes são considerados GC roots: variáveis locais,
-entrada de parâmetros, threads ativas, campos estáticos e referências JNI
+entrada de parâmetros, \emph{threads} ativas, campos estáticos e referências JNI
 \citep{gc_basics}. Partindo de um GC root, o GC atravessa o grafo dos objetos
 alcançáveis e, para cada elemento que consegue acessar, ele ``pinta'' a referência
 como viva. A Figura \ref{fig:gc_alg} ilustra o algoritmo descrito. No contexto
-do GC, o processo de parar as threads para que a JVM possa executar a etapa de
+do GC, o processo de parar as \emph{threads} para que a JVM possa executar a etapa de
 \emph{Marking} recebe o nome de \emph{safe point} (ponto seguro) e essa
 gera um evento STW. O tamanho da pausa é definido pela quantidade de objetos
 alcançáveis e seu tamanho no \emph{heap}.
@@ -690,8 +781,6 @@ potencial de uso de tal aplicação para validar novas abstrações de processos
 \section{Discussão Sobre as Aplicações}
 \label{sec:disc_app}
 
-\todo[inline]{Aqui está a parte que eu disse mais acima que sentia falta em cada uma das seções, o ``por que estou falando nisto''; acho que vale manter esta seção aqui, mas colocar uma menção em cada aplicação dizendo tipo ``serve para tal coisa, como veremos mais adiante''}
-
 Desde o começo deste capítulo até esta seção, apresentamos algumas aplicações
 destacando o seu funcionamento, estruturas básicas e os recursos exigidos por
 elas. Contudo, o nosso principal objetivo é verificar quais são os tipos de benefícios
@@ -701,40 +790,42 @@ demonstrar algum aspecto da nova abstração, mas idealmente é interessante
 evidenciar que as demais aplicações apresentadas também não sofrem com a nova
 abstração.
 
-Apache e Nginx são aplicações cujo o objetivo é servir requisições feitas
-pelos usuários, ou seja, são servidores web. Esse tipo de aplicação normalmente
+Apache e Nginx são aplicações cujo o objetivo é servir requisições feitas pelos
+usuários, ou seja, são servidores web. Esse tipo de aplicação normalmente
 oferece opções para que sejam amplamente configuradas de forma a atender os
 requisitos do usuário da melhor maneira possível. Tais aplicações são
-especializadas para tirar o máximo de proveito possível dos recursos de hardware,
-uma vez que servidores web podem lidar com enormes cargas de requisições
-levando a um ostensivo uso do hardware. Nesse tipo de aplicação, é comum que
-ocorra um amplo consumo da memória e que a CPU esteja próxima do 100\% de
-utilização em situações de estresse (muitos usuários acessando).  Note que, quanto
-mais tempo uma requisição vive, mais memória é consumida, por isso é desejável
-que as requisições sejam atendidas o mais rapidamente possível. Por sua vez, o
-SO tem que manipular diversos aspectos relacionados à memória, processos e
-arquivos. Por esse motivo, utilizar esse tipo de software como prova de
-conceito para demonstrar a eficácia de uma nova abstração de processos é algo
-extremamente desejável. Essas aplicações podem ser utilizadas para mostrar que
-o comportamento da alteração na abstração de processos em uma situação de alta
-demanda\todo{esta frase acabou no meio}. Contudo, é importante ressaltar que os testes realizados em tais
-ferramentas devem gerar uma carga substancial \hltodo[para que a configuração padrão
-tenha que ser alterada.]{Hmm? Não vejo por que; no caso do apache precisamos mexer na configuração, mas dependendo do software não precisa de nada para chegar ao máximo que a aplicação e o hardware dão conta} Esse aspecto é fundamental, uma vez que não existe
-grande valor em demonstrar algo usando tais ferramentas com uma carga pequena,
-pois isso pouco ajuda na verificação dos reais impactos gerados pela nova
-extensão do processo.
+especializadas para tirar o máximo de proveito possível dos recursos de
+hardware, uma vez que servidores web podem lidar com enormes cargas de
+requisições levando a um ostensivo uso do hardware. Nesse tipo de aplicação, é
+comum que ocorra um amplo consumo da memória e que a CPU esteja próxima do
+100\% de utilização em situações de estresse (muitos usuários acessando).  Note
+que, quanto mais tempo uma requisição vive, mais memória é consumida, por isso
+é desejável que as requisições sejam atendidas o mais rapidamente possível. Por
+sua vez, o SO tem que manipular diversos aspectos relacionados à memória,
+processos e arquivos. Por esse motivo, utilizar esse tipo de software como
+prova de conceito para demonstrar a eficácia de uma nova abstração de processos
+é algo extremamente desejável. Essas aplicações podem ser utilizadas para
+mostrar que o comportamento da alteração na abstração de processos em uma
+situação de alta demanda evidenciando assim o real impacto da nova abstração de
+processos. Contudo, é importante ressaltar que os testes realizados em tais
+ferramentas devem gerar uma carga substancial (em alguns casos é preciso
+alterar as configurações padrão da ferramenta). Esse aspecto é fundamental, uma
+vez que não existe grande valor em demonstrar algo usando tais ferramentas com
+uma carga pequena, pois isso pouco ajuda na verificação dos reais impactos
+gerados pela nova extensão do processo.
 
-Apache também possui um ambiente que permite testar processos e threads de
-forma \hltodo[equivalente]{Aqui ficou parecendo que isso é uma ferramenta ou uma coisa padrão dele, e não é bem isso; o apache, por conta dos MPMs, permite fazer uma comparação}. Tal característica é interessante para comparar novas
-abstrações diante de dois modos de execução amplamente utilizados. De forma
-similar, o Nginx usa outro modelo chamado de \emph{event}, que também
-representa outro contexto para validação. Da forma como Apache e Nginx
-manipulam requisições, podemos dizer que o primeiro fornece um isolamento
+Devido ao uso dos módulos de MPM do Apache, esse permite testar processos e
+\emph{threads} de forma equivalente.  Tal característica é interessante para
+comparar novas abstrações diante de dois modos de execução amplamente
+utilizados. De forma similar, o Nginx usa outro modelo chamado de \emph{event},
+que também representa outro contexto para validação. Da forma como Apache e
+Nginx manipulam requisições, podemos dizer que o primeiro fornece um isolamento
 horizontal enquanto o segundo proporciona isolamento vertical. O isolamento
 horizontal vem do fato de que um processo cria vários outros e o vertical vem
 da criação de um único processo por núcleo do processador durante a
-inicialização. Esses \hltodo[dois níveis de isolamento]{Você não explicou o que está chamando de horizontal e vertical} podem ser úteis para demonstrar
-que uma nova abstração pode melhorar o isolamento sem degradar o desempenho.
+inicialização. Ambas as formas de isolamento, horizontal e vertical,  podem ser
+úteis para demonstrar que uma nova abstração pode melhorar o isolamento sem
+degradar o desempenho.
 
 Apache trabalha com diversos \emph{plugins} que são acoplados ao código
 principal dinamicamente. Essa junção tem uma boa relação entre desempenho e
@@ -798,7 +889,7 @@ No Capítulo \ref{cap:trabalhos-analisados}, apresentamos diversas propostas que
 buscam de alguma maneira lidar com os mecanismos de acesso à memória. Várias
 dessas propostas permitem o controle fino da memória ou algum ganho de
 segurança que os autores normalmente demonstram por meio da alteração de
-algumas aplicações (e.g., OpenSSL ou OpenSSH). Contudo, alterações no
+algumas aplicações (p.ex., OpenSSL ou OpenSSH). Contudo, alterações no
 gerenciamento da memória podem incorrer em erros e em problemas de desempenho.
 Nesse sentido, alguns \emph{microbenchmarks} podem ser extremamente oportunos
 para validar o uso de novas abstrações de processos que lidam com a memória.
@@ -812,7 +903,7 @@ Com base em todos os trabalhos analisados no Capítulo
 Algumas propostas criam mecanismos de alocação de memória contendo
 características novas, por isso é interessante comparar os mecanismos
 propostos pelo pesquisador utilizando como base a forma padrão de alocação
-(e.g., \texttt{malloc()} e \texttt{calloc()}). Tendo os valores base extraídos
+(p.ex., \texttt{malloc()} e \texttt{calloc()}). Tendo os valores base extraídos
 das operações já consolidadas e os valores coletados do modelo proposto,
 torna-se possível ter um critério para compreender o real impacto da mudança.
 Vale observar que esse tipo de \emph{microbenchmark} precisa ser feito com
@@ -824,13 +915,13 @@ KBs, MBs e GBs.
 Mensurar o tempo de leitura e escrita em memória usando os mecanismos
 padrão é importante para obter o custo de acesso base. Tal informação deve ser
 utilizada para comparar com novas propostas de abstrações de processos que
-adicionam camadas extras para acessar a memória (e.g., Nooks e Wedge).
+adicionam camadas extras para acessar a memória (p.ex., Nooks e Wedge).
 Novamente, é importante que várias cargas de trabalho sejam utilizadas.
 
 \end{description}
 
 Algumas propostas sugerem a adição de novas chamadas de sistema que adicionam
-novos modelos de programação (e.g., lwC e MVAS). Apesar de as chamadas de sistema
+novos modelos de programação (p.ex., lwC e MVAS). Apesar de as chamadas de sistema
 serem relativamente rápidas, elas adicionam \emph{overhead}. Por isso, é
 desejável que o pesquisador identifique alguma \emph{syscall} padrão que tenha
 algum nível de similaridade com a nova chamada que ele está propondo; assim, ele
@@ -862,7 +953,7 @@ por isso é valioso medir tal aspecto referente à nova chamada.
 
 \end{description}
 
-Várias propostas propõem um novo hardware (e.g., Mondrix) ou uma mudança na
+Várias propostas propõem um novo hardware (p.ex., Mondrix) ou uma mudança na
 forma como um dispositivo é usado, o que torna importante validar alguns
 aspectos de uso. Contudo, para a questão do \emph{microbenchmark} vamos
 considerar apenas os aspectos referentes à reutilização do hardware de
