@@ -1,26 +1,28 @@
 \begin{pseudocode}
 \begin{lstlisting}[language=pseudocode, style=pseudocode]
-function replace_segment(id, segment)
-  struct bead_data bead
-  bead.switch_option $\gets$ segment
-  beadctl(BEAD_SET_CONFIG, &bead)
-
-  beadctl(BEAD_SWITCH, id)
-
 function live_patch_handler(signal)
-  // Se estiver no processo de amostragem, cria um novo contexto persistente
-  if signal == SIG_SAMPLE then
-    id $\gets$ persistent_context()
-    exit
-  else // O processo que será atualizado
-    id $\gets$ open("PATH/FILE")
-    replace_segment(id, VAS_CODE)
+  // ... qualquer outro tipo de manipulação de sintal ...
+  struct bead_data bead
 
-function MAIN() /// \label{line:livePatch}
+  if signal = SIG_LIVE_PATCHING then
+    bead.switch_option $\gets$ DIFF /// \label{line:liveConf}
+    \func{beadctl(BEAD_SET_CONFIG, &bead)}
+
+    id $\gets$ \func{get_snapshot_target()} /// \label{line:getSnap}
+    \func{beadctl(BEAD_SWITCH, id)}
+
+function live_patch_action()
+  // ... qualquer código necessário ...
+  \func{persistent_context()}
+  \func{signal(SIG_LIVE_PATCHING)}
+
+function MAIN(args) /// \label{line:livePatch}
+  if args = "--live-patching" /// \label{line:arg}
+    \func{live_patch_action()}
+    exit 0
   // ... qualquer código ...
-  sample_live_patch()
 \end{lstlisting}
 
-  \caption{Padrão Live Patch}
+  \caption{Padrão Atualização em Tempo Real}
   \label{alg:livePatch}
 \end{pseudocode}

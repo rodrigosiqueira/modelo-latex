@@ -1,23 +1,25 @@
 \begin{table}[]
 \small
 \centering
-  \begin{tabular}{|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|}
+\setlength{\tabcolsep}{1pt}
+  %\begin{tabular}{|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
   % TOPO DA TABELA
   % |M{2.5cm}|M{2.5cm}|M{2.5cm}|
   \hline
-  \multicolumn{1}{|l|}{\diagbox[width=2.5cm, height=2cm]{Desacoplar}{Vantagem}} &
+  \multicolumn{1}{|l|}{\diagbox[width=2.5cm, height=2cm]{\textbf{Desacoplar}}{\textbf{Vantagem}}} &
     % Troca de contexto
-    \multicolumn{1}{@{}c@{}|}{\begin{tabular}[c]{@{}c@{}}Novos\\modelos de\\programação\end{tabular}} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Novos}\\\textbf{modelos de}\\\textbf{programação}\end{tabular}} &
     % Persistência de processos
-    \multicolumn{1}{@{}c@{}|}{\begin{tabular}[c]{@{}c@{}} Persistência\\ de processos \end{tabular}} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}} \textbf{Persistência}\\ \textbf{de processos} \end{tabular}} &
     % Controle fino de privilégios
-    \multicolumn{1}{@{}c|}{\begin{tabular}[c]{@{}c@{}}Controle \\fino de \\ privilégios\end{tabular}} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Controle} \\\textbf{fino de} \\ \textbf{privilégios}\end{tabular}} &
     % Segurança
-    \multicolumn{1}{@{}c|}{Segurança} &
+    \multicolumn{1}{c|}{\textbf{Segurança}} &
     % Recuperação
-    \multicolumn{1}{@{}c|}{Recuperação} &
+    \multicolumn{1}{c|}{\textbf{Recuperação}} &
     % Otimização
-    \multicolumn{1}{@{}c|}{Otimização} \\ \hline \hline
+    \multicolumn{1}{c|}{\textbf{Otimização}} \\ \hline \hline
   % Início da tabela
   PC                                                                    & \ding{52}\ding{52}\ding{52} &                    & & & & \ding{52}\ding{52} \\ \hline
   VAS                                                                   & \ding{52}\ding{52}          & \ding{52}\ding{52} & & & \ding{52}\ding{52} & \\ \hline

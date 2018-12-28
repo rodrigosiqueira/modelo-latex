@@ -31,7 +31,7 @@ utilizadas por um sistema web. A Figura \ref{fig:web_server} ilustra duas
 arquiteturas diferentes. A primeira mostra uma situação na qual uma página web
 é totalmente manipulada pelo Apache HTTPD. Basicamente, o HTTPD manipula uma
 solicitação e passa ela para um módulo específico responsável por executar um
-software (e.g.: uma página web em PHP é executado por um módulo PHP chamado de
+software (p.ex.: uma página web em PHP é executado por um módulo PHP chamado de
 \emph{php\_mod}). A segunda arquitetura é um exemplo de página web escrita em
 \emph{Ruby on Rails} que é composta de duas camadas: (1) um servidor web para
 manipular as requisições que chegaram dos clientes (pode ser o Apache ou
@@ -177,7 +177,7 @@ GNU/Linux e HTTPD permite que boa parte do hardware seja utilizado.
 \input{tables/kernel_config.tex}
 
 Também é necessário customizar o GNU/Linux uma vez que as configurações padrão
-deste são feita para evitar o consumo de todos os recursos de hardware (e.g.; o
+deste são feita para evitar o consumo de todos os recursos de hardware (p.ex.; o
 Linux limita uma aplicação como o HTTPD). A Tabela \ref{tab:kernel_config}
 mostra todas as configurações feita no GNU/Linux para esse experimento.
 Observe que o GNU/Linux estabelece um limite de arquivos que podem ser abertos
@@ -473,7 +473,7 @@ Para o primeiro problema, nós conversamos diretamente com o autor do MVAS para
 tentar identificar o problema. Depois de várias verificações na implementação,
 o autor detectou problemas nas heurísticas de manipulação dos segmentos de
 memória.  Basicamente, MVAS tem problemas relacionados a alocação de
-\emph{stack}.  Infelizmente, resolver esse problema requer mudar praticamente
+pilha.  Infelizmente, resolver esse problema requer mudar praticamente
 toda a implementação atual do MVAS.
 
 % TODO: O comportamento já está descrito na fundamentação. Refatorar o texto

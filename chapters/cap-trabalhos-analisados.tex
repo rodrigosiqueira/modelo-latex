@@ -174,8 +174,8 @@ de hardware expostas pelo Dune, destacamos as principais diferenças:
 
 Existe uma categoria de ataques chamada ``abusos intra-processos de conteúdo
 de memória'', na qual o invasor busca acessar determinado tipo de conteúdo
-sensível na memória (e.g., dados secretos) ou uma região de código crítica
-(e.g., funções privilegiadas) \citep{shreds}. O roubo desse tipo de dados
+sensível na memória (p.ex., dados secretos) ou uma região de código crítica
+(p.ex., funções privilegiadas) \citep{shreds}. O roubo desse tipo de dados
 acontece por meio da introdução de algum código injetado ou por meio de alguma
 biblioteca maliciosa que permite acessar alguma região da memória não protegida
 da vítima. Note que bibliotecas maliciosas são especialmente perigosas, uma vez
@@ -282,11 +282,11 @@ domínio.
 
 Uma das funcionalidades fornecidas pelo \emph{shread} é a habilidade de
 permitir fazer cópias de dados para regiões de memória não protegidas de forma segura
-(e.g., atribuir dados de um \emph{s-pool} para uma variável local). Note que,
-para realizar tal procedimento, é preciso acessar uma stack regular que pode ter
+(p.ex., atribuir dados de um \emph{s-pool} para uma variável local). Note que,
+para realizar tal procedimento, é preciso acessar uma pilha regular que pode ter
 sido atacada e conter um código mal-intencionado, o que violaria toda proteção
 fornecida pelo \emph{s-compiler} e \emph{S-driver}. Para prevenir que dados
-sejam vazados via stack, o \emph{S-driver} cria uma stack segura para cada
+sejam vazados via pilha, o \emph{S-driver} cria uma pilha segura para cada
 \emph{shred} alocada partindo do \emph{s-pool} associado a si.
 
 \section{Wedge}
@@ -442,7 +442,7 @@ primeiro cenário consiste em uma aplicação rodando em \textit{user space} que
 não necessita de qualquer recurso diretamente controlado pelo Kernel e,
 portanto, cujo consumo de recursos não se estende para o Kernel. O segundo
 cenário representa uma aplicação que precisa utilizar recursos do Kernel para
-terminar alguma de suas tarefas (e.g., um software que usa recursos de rede).
+terminar alguma de suas tarefas (p.ex., um software que usa recursos de rede).
 Note que parte da aplicação consome recursos dentro do \textit{user space};
 contudo, a outra parte da aplicação se expande para o Kernel. O terceiro cenário
 mostra múltiplos processos cooperando para concluir uma tarefa sem precisar
@@ -616,7 +616,7 @@ vias: do Kernel para a extensão (\texttt{nooks\_driver\_call}) e da extensão
 para o Kernel (\texttt{nooks\_kernel\_call}). Essas funções esperam
 três argumentos: um ponteiro para a função que será executada, uma lista de
 argumentos e o domínio em que será executada. Toda vez que a rotina de
-transferência é chamada, o contexto da stack que realizou a chamada é salvo e o
+transferência é chamada, o contexto da pilha que realizou a chamada é salvo e o
 \emph{Page Table} para o novo domínio alvo carregado.
 
 Um dos objetivos do \emph{Nooks} é o de ser usado em SOs de produção. Para isso,
@@ -724,7 +724,7 @@ definições de permissão da memória são descritas por três elementos:
 \begin{enumerate}
 	\item \emph{Permissão de Acesso}: As permissões de acesso são definidas pelo
 				seguinte conjunto de elementos: permissão do domínio, \emph{gates},
-        tabela de \emph{stack};
+        tabela de pilha;
 	\item \emph{Dono da Memória}: Define quem tem autoridade sobre a região de
 				memória (domínio). Note que o espaço de endereçamento é contínuo e sem
 				sobreposição, logo, cada região tem apenas um dono;
@@ -749,9 +749,9 @@ memória solicitada.
 
 O Supervisor também é responsável por revogar permissões quando uma região de
 memória é liberada, além de manter o rastreamento de qual domínio tem acesso a
-qual região de memória. O Supervisor ainda gerencia o acesso à \emph{stack}
-das \emph{threads} (uma \emph{thread} só pode controlar \emph{stacks} que estão
-no seu domínio), cria e destrói proteções de domínio e também valida as
+qual região de memória. O Supervisor ainda gerencia o acesso à pilha
+das \emph{threads} (uma \emph{thread} só pode controlar pilha que estão
+no seu domínio), cria e destrói proteções de domínio e também válida as
 políticas de acesso.
 
 \section{SpaceJMP}
@@ -987,7 +987,7 @@ segura os recursos de hardware e ao mesmo tempo fornecer uma interface de
 baixo-nível na qual as abstrações do SO podem ser construída sobre ela. Para
 que seja possível implementar um SO usando este conceito é preciso implementar
 a chamada \textit{biblioteca do SO} com acesso aos recursos de baixo nível e
-com as abstrações construídas nela (e.g. processos, arquivos, escalonador,
+com as abstrações construídas nela (p.ex. processos, arquivos, escalonador,
 etc). Para que a implementação de tal conceito seja possível, os autores os
 seguintes princípios:
 

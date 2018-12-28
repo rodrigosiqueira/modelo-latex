@@ -36,7 +36,7 @@ interage com o SO, que é importante por causa de segurança, desempenho,
 estabilidade e confiabilidade. A seguir, observamos o papel do SO em fornecer a
 infraestrutura para diferentes modelos de programação, o que é importante no
 contexto de diversas tecnologias e técnicas que vêm tomando força nos últimos
-anos (e.g., \emph{Machine Learning}, IoT, e \emph{big data}). Finalmente,
+anos (p.ex., \emph{Machine Learning}, IoT, e \emph{big data}). Finalmente,
 abordamos dois temas tradicionalmente independentes de processos (controladores
 de dispositivos e virtualização) que possibilitam expandir o
 conceito das abstrações de processos de forma a melhorar o desempenho de alguns
@@ -76,14 +76,14 @@ não inicializável também é comumente conhecido como \emph{block started by
 symbol (BSS)} por causa de um antigo operador usado pelos montadores
 \citep{gdb}.} são responsáveis pelas variáveis estáticas. O
 \boldAndIndex{segmento de mapeamento de memória} (\emph{memory mapping
-segment}) é a região na qual o SO mapeia arquivos diretamente na memória (e.g.,
+segment}) é a região na qual o SO mapeia arquivos diretamente na memória (p.ex.,
 bibliotecas dinâmicas ou arquivos especificados pelo programador). O
 \boldAndIndex{segmento de pilha} (\emph{stack segment}) compreende os dados
 usados pelo programa durante a execução, como por exemplo, valores de
 parâmetros de função, endereços de retorno e variáveis locais (dados
 temporários) \citep{silberschatz}. Por fim, o \boldAndIndex{segmento do monte (\emph{heap segment}}
 mantém a memória dinamicamente alocada durante a execução do programa; repare
-que a \emph{stack} e o \emph{heap} crescem em direções opostadas da memória.
+que a pilha e o \emph{heap} crescem em direções opostadas da memória.
 
 O primeiro passo realizado pelo SO quando ele lê o arquivo executável é processar o \emph{header}, obtendo as informações sobre o tamanho dos segmentos de
 texto e dados e criando um novo espaço de endereçamento (\emph{address space}).
@@ -119,7 +119,7 @@ logo após o \emph{frame} da função anterior. Esse procedimento permite que a
 execução do processo ocorra de forma consistente, uma vez que basta desempilhar
 o \emph{frame} para retomar ao contexto da função anterior. No fim da execução
 da função, a execução retorna para o ponto na qual a função foi invocada e o
-processo de preencher e esvaziar a \emph{stack} continua.
+processo de preencher e esvaziar a pilha continua.
 
 Todos os processos são descritos por meio de uma estrutura de dados chamada
 \boldAndIndex{Process Control Block (PCB)}, responsável por manter informações
@@ -156,13 +156,13 @@ mencionado, o paralelismo tem seus próprios custos. Como resultado direto
 do esforço em minimizá-los,
 surgiu o conceito de um único processo com múltiplas \emph{threads}
 compartilhando praticamente todos os elementos básicos de sua estrutura com exceção da
-\emph{stack} e do PC. A Figura~\ref{fig:single_thread_multi_thread} mostra um
+pilha e do PC. A Figura~\ref{fig:single_thread_multi_thread} mostra um
 processo com uma \emph{thread} e outro com múltiplas \emph{threads}.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=.7\textwidth]{process_and_threads}
-	\caption[Única thread e multi-thread.]{Única thread e multi-thread. Note o isolamento da \emph{stack} e dos registrador (PC)~\citep{silberschatz}}
+	\caption[Única thread e multi-thread.]{Única thread e multi-thread. Note o isolamento da pilha e dos registrador (PC)~\citep{silberschatz}}
   \label{fig:single_thread_multi_thread}
 \end{figure}
 
@@ -411,7 +411,7 @@ Além do mecanismo de gerenciamento de memória fornecido pela paginação, tamb
 existe uma alternativa chamada de \boldAndIndex{segmentação}. Esse modelo
 decompõe a memória referente ao programa em segmentos de acordo com as suas
 seções; por exemplo, uma área para o \textit{text}, outra para os dados,
-\textit{stack}, etc. Os tamanhos de cada segmento podem ser variáveis, o que
+pilha, etc. Os tamanhos de cada segmento podem ser variáveis, o que
 leva a uma visão bidimensional da memória uma vez que os endereços passam a ser
 construídos como uma tupla: \texttt{<número do segmento, offset>}
 \citep{silberschatz}. Apesar dessa visão bidimensional, a memória continua
@@ -536,7 +536,7 @@ substituídas mas o kernel permanece constante.
 Note que, até esse momento, temos uma visão de uma sequência padrão para os
 segmentos do processo descrita pela ordem: \emph{text}, \emph{dados
 inicializados}, \emph{BSS}, \emph{heap}, \emph{mapeamento de memória} e
-\emph{stack}. Esse tipo de informação torna o sistema mais vulnerável, uma vez
+a pilha. Esse tipo de informação torna o sistema mais vulnerável, uma vez
 que um atacante que conheça tal sequência terá uma forma de encontrar dados na
 memória explorando uma eventual falha de segurança. Como uma resposta a essa situação,
 o Kernel implementa uma série de mecanismos de embaralhamento
@@ -548,12 +548,12 @@ ataque.
 
 Ainda na Figura~\ref{fig:vas_contexto}, tenha em mente que o programa em
 execução faz alocações na pilha durante a sua execução, como explicado
-na Seção~\ref{sec:processos-e-threads}. No Linux, essa \textit{stack} começa
+na Seção~\ref{sec:processos-e-threads}. No Linux, essa pilha começa
 com um tamanho pré-definido (8 Mb) que normalmente é o suficiente para a
 maioria das aplicações; contudo, esse limite pode ser ultrapassado. Se o
-tamanho máximo da \textit{stack} for atingido, o Kernel fornece meios para
-expandir o tamanho da \emph{stack}. Vale observar que depois que a
-\textit{stack} é aumentada ela não pode ser encolhida. Por fim, na
+tamanho máximo da pilha for atingido, o Kernel fornece meios para
+expandir o tamanho da pilha. Vale observar que depois que a
+pilha é aumentada ela não pode ser encolhida. Por fim, na
 Figura~\ref{fig:vas_contexto}, repare que o processo possui um conjunto de
 segmentos que mapeia arquivos diretamente na memória para rápido acesso; esse
 segmento recebe o nome de \boldAndIndex{segmento de memória mapeada}. O Kernel
@@ -716,14 +716,14 @@ de todos os dados dos registradores que devem ser carregados recebe o nome de
 \boldAndIndex{contexto de hardware}~\citep{entendendo_kernel}, que pode ser
 visto como um subconjunto do contexto do processo. No Linux, o contexto de
 hardware é armazenado na própria estrutura do processo, enquanto as demais
-partes são salvas em uma interna \emph{stack} do kernel. Toda troca de processo
+partes são salvas em uma interna pilha do kernel. Toda troca de processo
 precisa armazenar o contexto de hardware, por isso a \texttt{task\_struct}
 inclui um campo chamado \texttt{thread\_struct}, que armazena o contexto do
 hardware (dependente da arquitetura de hardware).
 
 Para realizar a troca de processos, o Kernel Linux realiza duas
 operações~\citep{entendendo_kernel}: (1) Instala o novo espaço de endereço e
-(2) Muda o \emph{stack} do domínio do Kernel e o contexto de hardware
+(2) Muda a pilha do domínio do Kernel e o contexto de hardware
 
 A operação de troca é extremamente dependente da arquitetura de hardware, pois
 precisa ser executada de forma rápida e, por isso, o Linux tenta tirar proveito
@@ -803,7 +803,7 @@ interessante área para inovações.
 As abstrações de processos são o ponto central no projeto de um SO moderno,
 mapeando outras abstrações para ele. Assim, outros serviços são oferecidos pelo
 SO com a intenção de fornecer os mecanismos necessários para orquestrar todas
-as operações dos processos (e.g., escalonador e gerenciamento de memória). Toda
+as operações dos processos (p.ex., escalonador e gerenciamento de memória). Toda
 estrutura necessária para gerir processos tem o lado negativo de utilizar CPU
 (\emph{overhead}); para tentar mitigar essa situação, os SOs empregam um vasto
 número de otimizações de hardware e software.
@@ -985,7 +985,7 @@ pelo VMM. É interessante observar que os dois modos têm suporte para os quatro
 níveis de privilégios fornecidos pelos processadores Intel; isto permite que a
 máquina \emph{guest}, ao tentar executar uma instrução privilegiada em algum
 desses níveis, forneça informações para o VMM. Os software em execução como
-\emph{VMX non-root} (e.g., uma máquina com Debian) pode tentar acessar um dos
+\emph{VMX non-root} (p.ex., uma máquina com Debian) pode tentar acessar um dos
 modos privilegiados, contudo o modo \emph{non-root} não tem privilégios reais
 para executar instruções que exigem permissões maiores que a sua; nesses casos,
 o VMM entra em ação para intermediar a situação.

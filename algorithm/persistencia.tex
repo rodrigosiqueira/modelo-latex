@@ -6,24 +6,24 @@ function persistent_context()
   bead.decouple_vas $\gets$ SHARED | PERSISTENT
   bead.max_snapshot_level $\gets 1$
   bead.enable_recursive_snapshot $\gets$ false
-  beadctl(BEAD_SET_CONFIG, &bead)
+  \func{beadctl(BEAD_SET_CONFIG, &bead)}
 
   id $\gets$ context_instance(&data) /// \label{line:persistenciaCxtInstance}
-  save("PATH/FILE", id)
+  \func{save("PATH/FILE", id)}
 
   return id
 
 // Primeira execução da função principal
 function MAIN() /// \label{line:persistenciaMain1}
   // .. qualquer código ...
-  persistent_context()
+  \func{persistent_context()}
   // .. qualquer código ...
   exit 0
 
 // Execução de outra função principal
 function MAIN() /// \label{line:persistenciaMain2}
-  open("PATH/FILEID", value)
-  beadctl(BEAD_SWITCH, value)
+  \func{open("PATH/FILEID", value)}
+  \func{beadctl(BEAD_SWITCH, value)}
   
 \end{lstlisting}
 

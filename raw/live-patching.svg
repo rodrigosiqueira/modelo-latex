@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1062.3137mm"
+   height="354.80664mm"
+   viewBox="0 0 1062.3137 354.80664"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="live-patching.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker2176"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path2174"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker1522"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1520"
+         style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker12273"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#008066;fill-opacity:1;fill-rule:evenodd;stroke:#008066;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path12271"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker9097"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path9095"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker8209"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8207"
+         style="fill:#37abc8;fill-opacity:1;fill-rule:evenodd;stroke:#37abc8;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker100380"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path100378" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker101792"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path101790"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker78254"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         id="path78252"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker86594"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path86592"
+         style="fill:#c83737;fill-opacity:1;fill-rule:evenodd;stroke:#c83737;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.19591347"
+     inkscape:cx="3142.3844"
+     inkscape:cy="54.348562"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1039"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:object-nodes="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(312.9037,-65.681223)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:5.26964998;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.26965001, 10.5393;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker78254);paint-order:normal"
+       d="M 236.52446,341.32446 V 252.42365"
+       id="path78250"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:connector-curvature="0"
+       id="path101788"
+       d="M -242.34192,216.82581 H 294.18521"
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:8.06538773;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker101792);paint-order:normal" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-299.31073"
+       y="84.197922"
+       id="text3626"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="-299.31073"
+         y="84.197922"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke-width:0.26458332px"
+         id="tspan3624">A'</tspan></text>
+    <g
+       id="g1300"
+       transform="translate(-217.72988,81.171229)">
+      <circle
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+         r="62.2738"
+         cx="-23.843182"
+         cy="52.040108"
+         id="circle3620"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+         inkscape:connector-curvature="0"
+         d="m -23.840864,52.039526 c 0,0 12.92103,11.089711 0,24.010741 -12.92103,12.921029 0,25.028133 0,25.028133 m 0,-98.0777346 c 0,0 12.92103,11.0897006 0,24.0107206 -12.92103,12.92104 0,25.02814 0,25.02814"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path3628" />
+    </g>
+    <text
+       id="text5015"
+       y="385.2157"
+       x="22.727097"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         id="tspan5013"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.75555611px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="385.2157"
+         x="22.727098"
+         sodipodi:role="line">./A --live-patching</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-241.89465"
+       y="264.93719"
+       id="text15454"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="-241.89465"
+         y="264.93719"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.75px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan15452">t<tspan
+   style="font-size:31.75px;baseline-shift:sub"
+   id="tspan4276">0</tspan></tspan></text>
+    <g
+       transform="translate(61.502489,250.41016)"
+       id="g1510">
+      <circle
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="circle1506"
+         cy="52.040108"
+         cx="-23.843182"
+         r="62.2738"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+      <path
+         id="path1508"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -23.840864,52.039526 c 0,0 12.92103,11.089711 0,24.010741 -12.92103,12.921029 0,25.028133 0,25.028133 m 0,-98.0777346 c 0,0 12.92103,11.0897006 0,24.0107206 -12.92103,12.92104 0,25.02814 0,25.02814"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-ydpi="144.75999" />
+    </g>
+    <path
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:8.06499958;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="m 35.933772,228.76342 v -23.906"
+       id="path1518"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:8.06538773;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2176);paint-order:normal"
+       d="M 37.337479,404.54111 H 299.73915"
+       id="path2172"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:connector-curvature="0"
+       id="path2874"
+       d="m 236.48469,228.76342 v -23.906"
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:8.06499958;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+    <path
+       style="fill:#444444;stroke:#444444;stroke-width:0.4524059"
+       id="use8"
+       d="m 321.27503,396.42588 h 4.78516 c 5.74218,0 9.57028,0 13.39839,-0.94598 3.82814,-0.94598 7.65624,-3.78391 10.52733,-7.56781 2.87109,-3.78391 3.8281,-7.56781 4.78516,-12.29769 0.95701,-4.72989 0.95701,-13.24367 0.95701,-24.59539 0,-8.51379 0,-14.18965 0.95702,-18.91953 0.95705,-4.72988 2.87109,-9.45977 5.74218,-12.29769 2.87108,-2.83794 6.69922,-4.72989 12.4414,-4.72989 v -15.13562 c -5.74218,0 -9.57032,-1.89195 -12.4414,-4.72988 -2.87109,-2.83793 -4.78513,-7.56781 -5.74218,-12.2977 -0.95702,-4.72988 -0.95702,-10.40573 -0.95702,-18.91953 0,-11.35171 0,-19.8655 -0.95701,-24.59539 -0.95706,-4.72986 -1.91407,-8.51378 -4.78516,-12.29768 -2.87109,-3.7839 -6.69919,-6.62183 -10.52733,-7.56782 -3.82811,-0.94597 -7.65621,-0.94597 -13.39839,-0.94597 h -4.78516 v 14.18965 h 2.87109 c 6.6992,0 10.52733,0.94597 12.44137,2.83793 2.87109,2.83792 3.82814,3.78389 3.82814,6.62182 v 23.64942 c 0,14.18964 1.91404,23.64941 4.78512,29.32527 2.87109,5.67586 8.61326,9.45976 14.35544,12.29769 -5.74218,2.83793 -11.48435,6.62184 -14.35544,12.2977 -2.87108,5.67585 -4.78512,15.13562 -4.78512,29.32527 v 23.64941 c 0,2.83793 -0.95705,3.7839 -3.82814,6.62183 -1.91404,1.89196 -5.74217,2.83793 -12.44137,2.83793 h -2.87109 z"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/ssh_layers.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <g
+       id="g4260"
+       transform="translate(626.71938,259.14636)">
+      <circle
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+         r="62.2738"
+         cx="-23.843182"
+         cy="52.040108"
+         id="circle4256"
+         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="144.75999"
+         inkscape:export-xdpi="144.75999"
+         inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+         inkscape:connector-curvature="0"
+         d="m -23.840864,52.039526 c 0,0 12.92103,11.089711 0,24.010741 -12.92103,12.921029 0,25.028133 0,25.028133 m 0,-98.0777346 c 0,0 12.92103,11.0897006 0,24.0107206 -12.92103,12.92104 0,25.02814 0,25.02814"
+         style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path4258" />
+    </g>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       id="text4274"
+       y="278.05392"
+       x="-43.382603"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan4272"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke-width:0.26458332px"
+         y="278.05392"
+         x="-43.382603"
+         sodipodi:role="line">A''</tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       id="text4288"
+       y="163.7119"
+       x="37.907349"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan4286"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.75px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="163.7119"
+         x="37.907349"
+         sodipodi:role="line">t<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4296">1</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="232.71829"
+       y="163.7119"
+       id="text4294"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="232.71829"
+         y="163.7119"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.75px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan4292">t<tspan
+   style="font-size:64.99999762%;baseline-shift:sub"
+   id="tspan4298">2</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       id="text4304"
+       y="369.98233"
+       x="244.17776"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan4302"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.75px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="369.98233"
+         x="244.17776"
+         sodipodi:role="line">signal</tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:connector-curvature="0"
+       id="path4456"
+       d="m -242.91327,228.76342 v -23.906"
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:8.06499958;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:connector-curvature="0"
+       id="path4458"
+       d="m 35.933772,416.45536 v -23.906"
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:8.06499958;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+    <path
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:8.06499958;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       d="m 236.48469,416.45536 v -23.906"
+       id="path4514"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g4752"
+       transform="translate(-67.80185,4.2659404)">
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect9785"
+         width="52.629925"
+         height="27.439291"
+         x="-153.09795"
+         y="141.71669" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-126.08431"
+         y="161.48868"
+         id="text9791"><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="161.48868"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan9787">text'</tspan><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="169.81396"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan9789" /></text>
+    </g>
+    <g
+       id="g4758"
+       transform="translate(-67.80185,34.378403)">
+      <rect
+         y="54.815727"
+         x="-153.09795"
+         height="27.439291"
+         width="52.629925"
+         id="rect4726"
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text4732"
+         y="74.587715"
+         x="-126.08431"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4728"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="74.587715"
+           x="-126.08431"
+           sodipodi:role="line">BSS'</tspan><tspan
+           id="tspan4730"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="82.912994"
+           x="-126.08431"
+           sodipodi:role="line" /></text>
+    </g>
+    <g
+       id="g4746"
+       transform="translate(-67.80185,27.693719)">
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4734"
+         width="52.629925"
+         height="27.439291"
+         x="-153.09795"
+         y="89.894669" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-126.08431"
+         y="109.66666"
+         id="text4740"><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="109.66666"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan4736">data'</tspan><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="117.99194"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan4738" /></text>
+    </g>
+    <g
+       transform="translate(210.56772,175.68048)"
+       id="g4768">
+      <rect
+         y="141.71669"
+         x="-153.09795"
+         height="27.439291"
+         width="52.629925"
+         id="rect4760"
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text4766"
+         y="161.48868"
+         x="-126.08431"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4762"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="161.48868"
+           x="-126.08431"
+           sodipodi:role="line">text''</tspan><tspan
+           id="tspan4764"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="169.81396"
+           x="-126.08431"
+           sodipodi:role="line" /></text>
+    </g>
+    <g
+       transform="translate(210.56772,205.79294)"
+       id="g4778">
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4770"
+         width="52.629925"
+         height="27.439291"
+         x="-153.09795"
+         y="54.815727" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-126.08431"
+         y="74.587715"
+         id="text4776"><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="74.587715"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan4772">BSS''</tspan><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="82.912994"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan4774" /></text>
+    </g>
+    <g
+       transform="translate(210.56772,199.10826)"
+       id="g4788">
+      <rect
+         y="89.894669"
+         x="-153.09795"
+         height="27.439291"
+         width="52.629925"
+         id="rect4780"
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text4786"
+         y="109.66666"
+         x="-126.08431"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4782"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="109.66666"
+           x="-126.08431"
+           sodipodi:role="line">data''</tspan><tspan
+           id="tspan4784"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="117.99194"
+           x="-126.08431"
+           sodipodi:role="line" /></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="545.41937"
+       y="248.58844"
+       id="text4792"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="545.41937"
+         y="248.58844"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke-width:0.26458332px"
+         id="tspan4790">A'''</tspan></text>
+    <g
+       id="g4802"
+       transform="translate(787.23601,175.68048)">
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4794"
+         width="52.629925"
+         height="27.439291"
+         x="-153.09795"
+         y="141.71669" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-126.08431"
+         y="161.48868"
+         id="text4800"><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="161.48868"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan4796">text''</tspan><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="169.81396"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan4798" /></text>
+    </g>
+    <g
+       id="g4812"
+       transform="translate(538.06669,282.13035)">
+      <rect
+         y="54.815727"
+         x="-153.09795"
+         height="27.439291"
+         width="52.629925"
+         id="rect4804"
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text4810"
+         y="74.587715"
+         x="-126.08431"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4806"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="74.587715"
+           x="-126.08431"
+           sodipodi:role="line">BSS''</tspan><tspan
+           id="tspan4808"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="82.912994"
+           x="-126.08431"
+           sodipodi:role="line" /></text>
+    </g>
+    <g
+       id="g4822"
+       transform="translate(612.3448,163.28619)">
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4814"
+         width="52.629925"
+         height="27.439291"
+         x="-153.09795"
+         y="89.894669" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-126.08431"
+         y="109.66666"
+         id="text4820"><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="109.66666"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan4816">data'</tspan><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="117.99194"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan4818" /></text>
+    </g>
+    <g
+       transform="translate(538.06669,198.36513)"
+       id="g4832">
+      <rect
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4824"
+         width="52.629925"
+         height="27.439291"
+         x="-153.09795"
+         y="54.815727" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-126.08431"
+         y="74.587715"
+         id="text4830"><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="74.587715"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan4826">BSS'</tspan><tspan
+           sodipodi:role="line"
+           x="-126.08431"
+           y="82.912994"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           id="tspan4828" /></text>
+    </g>
+    <g
+       transform="translate(612.3448,247.05141)"
+       id="g4842">
+      <rect
+         y="89.894669"
+         x="-153.09795"
+         height="27.439291"
+         width="52.629925"
+         id="rect4834"
+         style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text4840"
+         y="109.66666"
+         x="-126.08431"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4836"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="109.66666"
+           x="-126.08431"
+           sodipodi:role="line">data''</tspan><tspan
+           id="tspan4838"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+           y="117.99194"
+           x="-126.08431"
+           sodipodi:role="line" /></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="453.50699"
+       y="320.68869"
+       id="text4846"
+       inkscape:export-filename="/home/siqueira/Documents/Repositories/thesis/survey/figures/lwC.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         x="453.50699"
+         y="320.68869"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.75px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan4844">diff</tspan></text>
+    <rect
+       style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4848"
+       width="113.60516"
+       height="27.439291"
+       x="634.13806"
+       y="260.60867" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="684.5481"
+       y="280.38065"
+       id="text4854"><tspan
+         sodipodi:role="line"
+         x="684.5481"
+         y="280.38065"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan4850">BSS' + diff</tspan><tspan
+         sodipodi:role="line"
+         x="684.5481"
+         y="288.70593"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan4852" /></text>
+    <rect
+       y="289.00293"
+       x="634.13806"
+       height="27.439291"
+       width="113.79266"
+       id="rect4858"
+       style="fill:#f9f9f9;fill-opacity:1;stroke:#37abc8;stroke-width:2.95850778;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       id="text4864"
+       y="308.7749"
+       x="689.24225"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan4860"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="308.7749"
+         x="689.24225"
+         sodipodi:role="line">data' + diff</tspan><tspan
+         id="tspan4862"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="317.10019"
+         x="689.24225"
+         sodipodi:role="line" /></text>
+  </g>
+</svg>
