@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1140.0333mm"
-   height="184.6949mm"
-   viewBox="0 0 1140.0333 184.6949"
+   width="1164.5515mm"
+   height="185.00082mm"
+   viewBox="0 0 1164.5515 185.00082"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
@@ -176,9 +176,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748737"
-     inkscape:cx="778.28874"
-     inkscape:cy="766.04357"
+     inkscape:zoom="0.27427884"
+     inkscape:cx="1966.4435"
+     inkscape:cy="636.84617"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -210,7 +210,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(359.7943,-62.230904)">
+     transform="translate(384.31254,-61.924979)">
     <rect
        ry="0.065703265"
        y="85.140892"
@@ -269,37 +269,30 @@
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/request_phases.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999" />
-    <g
-       id="g7504"
-       transform="translate(71.496633,-4.4790878)"
-       inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/request_phases.png"
-       inkscape:export-xdpi="144.75999"
-       inkscape:export-ydpi="144.75999">
-      <rect
-         ry="0.027238002"
-         y="121.15778"
-         x="295.26746"
-         height="66.24057"
-         width="146.5945"
-         id="rect4504-3-7"
-         style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3.99999976;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <text
-         id="text4508-3-6-9"
-         y="152.25235"
-         x="368.08591"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.22222137px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28.22222137px;line-height:23.8125px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.26458332px"
-           y="152.25235"
-           x="368.08591"
-           id="tspan4506-6-1-2"
-           sodipodi:role="line">Content</tspan><tspan
-           id="tspan7498"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28.22222137px;line-height:23.8125px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.26458332px"
-           y="176.06485"
-           x="368.08591"
-           sodipodi:role="line">Generator</tspan></text>
-    </g>
+    <rect
+       style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3.99999976;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4504-3-7"
+       width="210.26144"
+       height="66.24057"
+       x="339.35138"
+       y="116.6787"
+       ry="0.027238002" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.22222137px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="445.93265"
+       y="147.77327"
+       id="text4508-3-6-9"><tspan
+         sodipodi:role="line"
+         x="445.93265"
+         y="147.77327"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28.22222137px;line-height:23.8125px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.26458332px"
+         id="tspan7498">Gerador</tspan><tspan
+         id="tspan938"
+         sodipodi:role="line"
+         x="445.93265"
+         y="171.58577"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:28.22222137px;line-height:23.8125px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.26458332px">de Conteúdo</tspan></text>
     <ellipse
        ry="17.372519"
        rx="44.366741"
@@ -333,7 +326,7 @@
     <ellipse
        style="opacity:1;fill:#f9f9f9;fill-opacity:1;stroke:#a7b3cd;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="ellipse7448"
-       cx="589.22711"
+       cx="607.55548"
        cy="149.79898"
        rx="44.366741"
        ry="17.372519"
@@ -343,26 +336,26 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.22222137px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-309.61166"
-       y="144.91521"
+       x="-317.32886"
+       y="145.87985"
        id="text4508-3-6-9-8"
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/request_phases.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
-         id="tspan4506-6-1-2-4"
-         x="-309.61166"
-         y="144.91521"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.26458332px">Accept</tspan><tspan
-         sodipodi:role="line"
-         x="-309.61166"
-         y="166.08188"
+         x="-317.32886"
+         y="145.87985"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.26458332px"
-         id="tspan7493">Request</tspan></text>
+         id="tspan7493">Requisição</tspan><tspan
+         sodipodi:role="line"
+         x="-317.32886"
+         y="167.04652"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.57777786px;line-height:21.16666603px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;fill:#000000;stroke:none;stroke-width:0.26458332px"
+         id="tspan934">Aceita</tspan></text>
     <text
        id="text7479"
        y="237.59615"
-       x="8.381217"
+       x="-49.497837"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.22222137px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/request_phases.png"
@@ -370,9 +363,9 @@
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none;stroke-width:0.26458332px"
          y="237.59615"
-         x="8.381217"
+         x="-49.497837"
          id="tspan7477"
-         sodipodi:role="line">Metadata Processing</tspan></text>
+         sodipodi:role="line">Processamento de metadados</tspan></text>
     <g
        id="g115359">
       <ellipse
@@ -434,18 +427,18 @@
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/request_phases.png"
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.22222137px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-231.82892"
+       x="-223.53337"
        y="230.11259"
        id="text115363"><tspan
          sodipodi:role="line"
          id="tspan115361"
-         x="-231.82892"
+         x="-223.53337"
          y="230.11259"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none;stroke-width:0.26458332px">CREATE</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none;stroke-width:0.26458332px">Criar</tspan></text>
     <text
        id="text115367"
        y="230.11259"
-       x="702.21295"
+       x="692.42175"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.22222137px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-filename="/home/siqueira/Documents/usp/mestrado/thesis/quali/figures/request_phases.png"
@@ -453,9 +446,9 @@
        inkscape:export-ydpi="144.75999"><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#000000;stroke:none;stroke-width:0.26458332px"
          y="230.11259"
-         x="702.21295"
+         x="692.42175"
          id="tspan115365"
-         sodipodi:role="line">DELETE</tspan></text>
+         sodipodi:role="line">Remover</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#aa8800;stroke-width:3.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999987, 3.99999987;stroke-dashoffset:0;stroke-opacity:1"
        d="M -199.92758,171.01534 V 218.0735"
@@ -487,6 +480,6 @@
          y="75.096268"
          x="194.42001"
          id="tspan115391"
-         sodipodi:role="line">Isolate request</tspan></text>
+         sodipodi:role="line">Requisição Isolada</tspan></text>
   </g>
 </svg>

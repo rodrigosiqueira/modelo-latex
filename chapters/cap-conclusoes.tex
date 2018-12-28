@@ -2,36 +2,35 @@
 \chapter{Conclusões}
 \label{cap:conclusoes}
 
-Ao longo desse trabalho investigamos diversos aspectos referentes as abstrações
+Ao longo deste trabalho investigamos diversos aspectos referentes as abstrações
 de processos, começamos revisitando conceitos já consolidados (Capítulo
 \ref{cap:fundamentacao}) para que em seguida pudéssemos expandir a visão sobre
-os processos, finalmente apresentamos diferentes perspectivas sob tal conceito.
+os processos (procuramos apresentar diferentes perspectivas sobre este conceito).
 Buscamos o estado da arte e suas intersecções com o estado da prática
 utilizando a implementação do MVAS como estudo de caso (Capítulo
-\ref{cap:estudo-de-caso}). Durante esse trabalho interagimos com a indústria
-por meio do Kernel Linux e com uma parceria com a HPe (tal parceria durou
-apenas alguns meses). Por várias vezes tentamos consertar o MVAS não atingindo
-exito em tal tarefa, contudo, extraímos dessa experiência diversas ideias na
-qual buscamos refina-las realizando uma análise crítica sobre o estado da arte.
+\ref{cap:estudo-de-caso}). Além disso, durante este trabalho, interagimos com a
+indústria por meio do Kernel Linux e com uma parceria com a HPe (tal parceria
+durou apenas alguns meses). Por várias vezes tentamos consertar o MVAS,
+juntamente com alguns funcionários da HPe, não atingindo exito em tal tarefa;
+contudo, extraímos dessa experiência diversas ideias na qual refinamos
+no decorrer deste mestrado.
 
-Ao nós aprofundarmos na pesquisa sobre novas abstrações de processos percebemos
-que por vários anos a academia vem buscando inovações nesse campo, mas tais
-progressos não chegam ao estado da prática. Como o Capítulo
-\ref{cap:estudo-de-caso} discute, parte disso vem do fato de que algumas
-propostas negligenciam aspectos importantes que precisam ser considerados para
-avançar o estado da prática. Por exemplo, é fundamental que as novas gerações
+Durante o aprofundamento na pesquisa sobre novas abstrações de processos
+percebemos que por vários anos a academia vem buscando inovações nesse campo,
+mas tais progressos não chegam aos SOs de uso cotidiano. Como o Capítulo
+\ref{cap:validacoes} discute, parte disso vem do fato de que algumas propostas
+negligenciam aspectos importantes que precisam ser considerados para avançar
+sistemas usados em produção. Por exemplo, é fundamental que as novas gerações
 de abstração de processos levem em consideração aplicações amplamente adotadas.
 No Capítulo \ref{cap:validacoes} evidenciamos um subconjunto de aplicações que
 podem servir como alicerce para demonstrar o uso e potencial de adoção de uma
 nova abstração. Além disto, não basta levar ganhos em uma área ao custo de
-fazer com que outras partes da aplicação tenha o seu comportamento afetado
-negativamente.
-
-As validações de novas abstrações também devem passar por um rigoroso processo
-de validação para se provar útil. Como exemplo, os estudos de caso revelaram
-como uma determinada proposta pode comprometer todo o sistema. Muitos dos
-trabalhos analisados não realizam testes de estresse consistentes, o que não
-revela a real natureza dos impactos.
+fazer com que outras partes da aplicação seja afetado negativamente, é preciso
+fazer uma análise geral dos impactos gerados por novas abstrações. Como
+exemplo, o estudo de caso apresentado no Capítulo~\ref{cap:estudo-de-caso}
+revelaram como uma determinada proposta pode comprometer todo o sistema. Por
+fim, muitos dos trabalhos analisados não realizam testes de estresse
+consistentes, o que não revela a real natureza dos impactos.
 
 Por outro lado, notamos da análise dos diversos trabalhos que não há uma
 tentativa de unificar as propostas, normalmente cada trabalho busca
@@ -42,39 +41,38 @@ pesquisas e adaptando elas para as necessidades atuais. No Capítulo
 \ref{cap:analise-sobre-abstracoes-de-processos} buscamos mostrar tal aspecto
 apontando um caminho para a próxima geração de abstrações de processos.
 Qualquer tentativa de avançar o estado da prática também deve buscar o menor
-impacto possível nos SOs. O conjunto de experimentos realizado, em junção com
-os diversos trabalhos apresentados ilustram um potencial avanço nos SOs atuais.
+impacto possível nos SOs.
 
 \section{Trabalhos Futuros}
 
 % <chaws> acho que um ponto de partida seria pegar as CVEs existentes de kernel e tentar prioriza-las pra iniciar os testes
 
-Esse trabalho teve como objetivo estudar e por em evidência um campo de
+Este trabalho teve como objetivo estudar e por em evidência um campo de
 pesquisa com pouca visibilidade. Dentre os trabalhos futuros que identificamos,
 nós destacamos: escrever um \textit{survey} sobre o estado da arte das
 abstrações de processos e outro criando uma taxonomia das aplicações, a criação
 de um sistema de validações de abstrações de processos que funcione de forma
 automatizada e a implementação da abstração de processos da próxima geração
-proposta nesse trabalho.
+proposta no Capítulo~\ref{cap:analise-sobre-abstracoes-de-processos}.
 
 Como podemos observar no Capítulo \ref{cap:trabalhos-analisados}, diversos
 pesquisadores vem colocando esforços para fazer com que as abstrações de
 processo evoluam. Além disto, as abstrações de processos adotadas na prática
 também distinguem-se daquelas apresentadas na bibliografia padrão. Por esse
-motivo, faz-se necessário um levantamento profundo e detalhado das pesquisas e
-desenvolvimento referentes as abstrações de processos. Acreditamos que um
+motivo, faz-se necessário um levantamento profundo e detalhado das pesquisas
+referentes as abstrações de processos. Acreditamos que um
 \textit{survey} com tal temática traria novas perspectivas de pesquisa para a
 área de SO. Além deste trabalho, o Capítulo \ref{cap:validacoes} apontou a
-falta de um trabalho que gere uma taxonomia das aplicações de forma similar ao
-que é feito na biologia.  Tal taxonomia pode ser útil para generalizar certas
-características das aplicações e assim facilitar a seleção de subgrupos para
-serem utilizadas em outros trabalho (p.ex., o Capítulo \ref{cap:validacoes}
-poderia ter feito uso de tal taxonomia);
+falta de um trabalho que apresente uma taxonomia das aplicações de forma
+similar ao que é feito na biologia.  Tal taxonomia pode ser útil para
+generalizar certas características das aplicações e assim facilitar a seleção
+de subgrupos de software para serem utilizadas em outros trabalho (p.ex., o
+Capítulo \ref{cap:validacoes} poderia ter feito uso de tal taxonomia).
 
-O Capítulo \ref{cap:validacoes} em conjunto com a experiência adquirida sobre o
+O assunto tratado no Capítulo \ref{cap:validacoes} em conjunto com a experiência adquirida sobre o
 Kernel Linux e os experimentos realizados (Capítulo \ref{cap:estudo-de-caso}),
 revelaram a necessidade de uma ferramenta automatizada para testar falhas de
-segurança. Seria interessante construir uma ferramenta que de forma sistemática
+segurança. Seria interessante construir um software que de forma sistemática
 tente explorar as falhas de segurança já catalogadas e assim verificar se
 alguma regressão aconteceu. Por exemplo, o openSSL apresentou a vulnerabilidade
 \textit{Heartbleed} nas versões 1.0.1 e que foram corrigidas, nesse contexto
@@ -87,45 +85,45 @@ processos resolve algum problema de segurança.
 
 A Seção \ref{sec:micro} abordou o tema dos \textit{microbenchmarks} tendo como
 foco as validações para novas abstrações de processos. Nesse contexto, seria
-interessante a construção de uma ferramenta de \textit{microbenchmark}
+interessante a construção de um arcabouço de \textit{microbenchmark}
 automatizada que possa ser utilizada para validar as novas abstrações. Tal
 ferramenta tem que ser simples de ser alterada para que seja possível validar
 as diferentes propostas sem grandes esforços de implementação.
 
 Por fim, o trabalho futuro mais interessante consiste em implementar a nova
 geração de abstrações de processos apresentada no Capítulo
-\ref{cap:analise-sobre-abstracoes-de-processos} no GNU/Linux. Tal implementação
+\ref{cap:analise-sobre-abstracoes-de-processos}. Tal implementação
 em um Kernel monolítico pode significar um avanço de como os SO modernos são
 organizados e abrir caminhos para uma nova geração de SOs. Além disso, novos
 paradigmas, técnicas e padrões de projetos podem torna-se possíveis com a nova
 geração de abstrações de processos.
 
-\section{Outras Contribuições do Mestrado}
+\section{Outras Contribuições deste Mestrado}
 
-Durante esse mestrado, busquei investir na minha formação passando pelas
+Durante este mestrado, busquei investir na minha formação passando pelas
 seguintes áreas: ensino, pesquisa, orientação e desenvolvimento. Nesse sentido,
 segue o resumo de outras contribuições que tive durante o mestrado:
 
 \begin{enumerate}
   \item Publicações como primeiro autor:
     \begin{itemize}
-      \item Continuous delivery: building trust in a large-scale, complex government organization - IEEE Software
-      \item The Next-Generation OS Process Abstraction - IEEE Computer (Aguardando revisão)
+      \item \emph{Continuous delivery: building trust in a large-scale, complex government organization} -- IEEE Software
+      \item \emph{The Next-Generation OS Process Abstraction} -- IEEE Computer (Aguardando para submeter)
     \end{itemize}
 
   \item Publicações como co-autor:
     \begin{itemize}
-      \item FLOSS Project Management in Government-Academia Collaboration
-      \item Brazilian Public Software Portal: an integrated platform for collaborative development
-      \item Optimizing a Boundary Elements Method for Stationary Elastodynamic Problems implementation with GPUs (Prêmio de segundo melhor paper)
-      \item Leading successful government-academia collaboration using FLOSS and agile values (Aguardando Revisão)
+      \item \emph{FLOSS Project Management in Government-Academia Collaboration} -- (Prêmio de melhor artigo)
+      \item \emph{Brazilian Public Software Portal: an integrated platform for collaborative development}
+      \item \emph{Optimizing a Boundary Elements Method for Stationary Elastodynamic Problems implementation with GPUs} -- (Prêmio de segundo melhor artigo)
+      \item \emph{Leading successful government-academia collaboration using FLOSS and agile values} -- (Aguardando Revisão)
     \end{itemize}
-  \item Orientandos:
+  \item Trabalhos relacionados a orientandos:
     \begin{itemize}
       \item
-Giuliano A. F. Belinassi: Indiretamente orientei o Giuliano no TCC, e na
-produção do artigo: Optimizing a Boundary Elements Method for Stationary
-Elastodynamic Problems implementation with GPUs (Prêmio de segundo melhor
+Giuliano A. F. Belinassi: Auxiliei na orientação do Giuliano no seu TCC, e na
+produção do artigo: \emph{Optimizing a Boundary Elements Method for Stationary
+Elastodynamic Problems implementation with GPUs} (Prêmio de segundo melhor
 paper). Durante o mestrado dele, eu tenho auxiliado na definição do tema.
 
     \end{itemize}
@@ -134,20 +132,20 @@ paper). Durante o mestrado dele, eu tenho auxiliado na definição do tema.
       \item Kernel Linux:
         \begin{itemize}
           \item VKMS: Fui um dos autores do driver VKMS
-          \item IIO: Ajudei a fundar o grupo de estudo de Kernel na USP. Esse grupo já colaborou movendo mais de três drivers da staging do Linux para a árvore princípal. Veja: \url{flusp.ime.usp.br}.
-          \item Tenho mais de 30 patches na árvore princípal do Kernel
+          \item IIO: Ajudei a fundar o grupo de estudo de Kernel na USP. Esse grupo já colaborou movendo mais de três \emph{drivers} da \emph{staging} do Linux para a árvore princípal. Veja: \url{flusp.ime.usp.br}.
+          \item Tenho mais de 30 \emph{patches} na árvore principal do Kernel
         \end{itemize}
       \item Debian:
         \begin{itemize}
           \item Mantenedor de alguns pacotes, em especial do Dia
-          \item Promovi diversos eventos sobre o Debian em São Paulo e Brasília
+          \item Promovi diversos eventos sobre o Debian em São Paulo e em Brasília
         \end{itemize}
     \end{itemize}
 
   \item Apresentações:
     \begin{itemize}
       \item Linuxdev-br: Da linuxdev-br ao GSoC: Displays Virtuais no Kernel (\url{https://youtu.be/S0hBHiiTDjA})
-      \item XDC19: Da linuxdev-br ao GSoC: Displays Virtuais no Kernel (\url{https://youtu.be/ber_9vkj_-U})
+      \item XDC18: VKMS (\url{https://youtu.be/ber_9vkj_-U})
       \item The 14th International Conference on Open Source Systems: FLOSS Project Management in Government-Academia Collaboration
     \end{itemize}
 
