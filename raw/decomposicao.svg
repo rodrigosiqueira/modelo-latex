@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="4758.3052mm"
+   height="1437.7628mm"
+   viewBox="0 0 4758.3052 1437.7628"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.072607237"
-     inkscape:cx="6373.8962"
-     inkscape:cy="1826.3097"
+     inkscape:zoom="0.05134107"
+     inkscape:cx="5101.0585"
+     inkscape:cy="1970.7981"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -42,10 +42,16 @@
      inkscape:object-paths="false"
      inkscape:object-nodes="false"
      inkscape:guide-bbox="true"
-     inkscape:showpageshadow="true">
+     inkscape:showpageshadow="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
     <inkscape:grid
        type="xygrid"
-       id="grid902" />
+       id="grid902"
+       originx="1024.6585"
+       originy="394.21459" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -55,14 +61,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(1024.6585,746.54823)">
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:5.10525274;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.10525288, 5.10525288;stroke-dashoffset:0;stroke-opacity:1"
        id="rect888"
@@ -292,7 +299,7 @@
          sodipodi:role="line"
          id="tspan5660">Controle fino</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:91.96059418px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332"
-         y="-89.116814"
+         y="-89.116821"
          x="799.52777"
          sodipodi:role="line"
          id="tspan911">da memória</tspan></text>

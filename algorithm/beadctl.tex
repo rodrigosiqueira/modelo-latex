@@ -5,29 +5,31 @@ function beadctl(code, data)
   ret $\gets 0$
   switch(code)
     case BEAD_SET_CONFIG:
-      bead_set_config(data)
+      ret $\gets$ \func{bead_set_config(data)}
       break
     case BEAD_GET_CONFIG:
+      ret $\gets$ \func{bead_get_config(data)}
       break
     case BEAD_NEW_CONTEXT_INSTANCE:
-      ret $\gets$ bead_ctx_instance(data)
+      ret $\gets$ \func{bead_ctx_instance(data)}
       break
     case BEAD_SWITCH:
-      ret $\gets$ bead_ctx_switch(data)
+      ret $\gets$ \func{bead_ctx_switch(data)}
       break
     case BEAD_VIRTUALIZATION_MODE:
-      ret $\gets$ bead_virtualization(data)
+      ret $\gets$ \func{bead_virtualization(data)}
       break
     case BEAD_ALLOC_COMPARTMENT:
-      break
+      /// ...
     case BEAD_FREE_COMPARTMENT:
-      break
+      /// ...
     case BEAD_ENTER_COMPARTMENT:
       break
+      /// ...
     case BEAD_EXIT_COMPARTMENT:
-      break
+      /// ...
     default:
-      break
+      /// ...
 
   return ret
 

@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="1246.2476mm"
+   height="290.20941mm"
+   viewBox="0 0 1246.2476 290.20941"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="redis.svg">
+   sodipodi:docname="redis_overview.svg">
   <defs
      id="defs2">
     <marker
@@ -116,8 +116,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.25"
-     inkscape:cx="40.120228"
-     inkscape:cy="744.17519"
+     inkscape:cx="1559.7775"
+     inkscape:cy="678.73566"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -126,7 +126,11 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:object-nodes="false" />
+     inkscape:object-nodes="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -135,14 +139,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(600.5135,6.2902879)">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:5.10500002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:5.1050002, 5.1050002;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker2724);paint-order:normal"
        d="m 97.70564,132.20947 100.27963,-1.5575"
@@ -387,7 +392,7 @@
          sodipodi:role="line"
          id="tspan4685">Envio e Recebimento</tspan><tspan
          style="font-size:22.57777786px;line-height:0;text-align:center;text-anchor:middle;stroke-width:0.26458332"
-         y="167.58527"
+         y="167.58525"
          x="-279.12708"
          sodipodi:role="line"
          id="tspan4687">de Dados</tspan></text>

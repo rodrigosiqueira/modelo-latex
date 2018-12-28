@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 744.09448819 1052.3622047"
+   width="353.26605mm"
+   height="202.28256mm"
+   viewBox="0 0 1251.7301 716.74924"
    id="svg7529"
    version="1.1"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="traditional_vs_new_b.svg"
+   sodipodi:docname="traditional_vs_mvas.svg"
    inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/traditional_vs_mvas.png"
    inkscape:export-xdpi="293.84"
    inkscape:export-ydpi="293.84">
@@ -70,16 +70,17 @@
     <marker
        inkscape:stockid="Arrow1Mend"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow1Mend"
-       style="overflow:visible;"
+       style="overflow:visible"
        inkscape:isstock="true">
       <path
          id="path4329"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         transform="scale(0.4) rotate(180) translate(10,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        inkscape:isstock="true"
@@ -105,19 +106,23 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="561.36693"
-     inkscape:cy="789.07299"
+     inkscape:zoom="0.5"
+     inkscape:cx="630.04244"
+     inkscape:cy="216.14106"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="1920"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="false"
-     inkscape:object-nodes="false" />
+     inkscape:object-nodes="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata7534">
     <rdf:RDF>
@@ -126,14 +131,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(114.82595,21.587332)">
     <rect
        inkscape:export-ydpi="293.84"
        inkscape:export-xdpi="293.84"
@@ -608,7 +614,7 @@
        inkscape:export-xdpi="293.84"
        inkscape:export-ydpi="293.84" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:7.50000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:none;fill-rule:evenodd;stroke:#c83737;stroke-width:7.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 338.74834,150.80106 h -43.08932 v 50.38136 h 43.08932"
        id="path5610"
        inkscape:connector-curvature="0"
@@ -848,7 +854,7 @@
        inkscape:connector-curvature="0"
        id="path12592"
        d="m 814.77321,35.558407 70.98267,90.504083"
-       style="fill:none;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.50000002, 15.00000003999999976;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12596);paint-order:normal" />
+       style="fill:none;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.50000002, 15.00000004;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker12596);paint-order:normal" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#1a1a1a;stroke-width:7.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:7.50000002, 15.00000004;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker13430);paint-order:normal"
        d="m 769.38751,107.06045 c 28.60553,34.43898 57.21105,27.91727 85.81658,0"

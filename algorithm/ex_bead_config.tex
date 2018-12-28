@@ -6,13 +6,13 @@ function MAIN()
   status $\gets 0$
 
   // Queremos que o processo utilize recursos de virtualização e tenha multiplas VAS
-  data.virtualization_flags = EXCEPTIONS
-  data.vas_flags = VAS_CODE
+  data.virtualization_flags $\gets$ EXCEPTIONS
+  data.vas_flags $\gets$ VAS_CODE
 
-  status $\gets$ beadctl(BEAD_SET_CONFIG, &data)
+  status $\gets$ \func{beadctl(BEAD_SET_CONFIG, &data)}
   // Idealmente, status deve ser verificado para checar se tudo ocorreu bem
 
-  status $\gets$ beadctl(BEAD_GET_CONFIG, &retrieve)
+  status $\gets$ \func{beadctl(BEAD_GET_CONFIG, &retrieve)}
 
 \end{lstlisting}
 

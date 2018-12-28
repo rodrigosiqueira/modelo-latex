@@ -3,25 +3,25 @@
 function virtualization_mode(void *func_pointer, options)
   struct bead_data bead
   id $\gets$ 0
-  options $\gets$ (!options ? ALL_VIRT_CAPABILITY : options)
+  options $\gets$ ($\neg$ options ? ALL_VIRT_CAPABILITY : options)
 
   // Configuração básica para o modo de virtualização
-  bead.virtualization = options /// \label{line:confBegin}
+  bead.virtualization $\gets$ options /// \label{line:confBegin}
   bead.vas_flags $\gets$ SHARED_HEAP_STACK
   bead.max_snapshot_level $\gets$ 1
   bead.enable_recursive_snapshot $\gets$ false
-  beadctl(BEAD_SET_CONFIG, &bead) /// \label{line:confEnd}
+  \func{beadctl(BEAD_SET_CONFIG, &bead)} /// \label{line:confEnd}
 
-  id $\gets$ context_instace() /// \label{line:instance}
-  if $id != -1$ then // pai, entra em modo virtualização
-    beadctl(BEAD_VIRTUALIZATION_MODE, &bead)
+  id $\gets$ \func{context_instace()} /// \label{line:instance}
+  if $id \neq -1$ then // pai, entra em modo virtualização
+    \func{beadctl(BEAD_VIRTUALIZATION_MODE, &bead)}
 
-  if !func_pointer then /// \label{line:funcParam}
-    if $id != -1$ then
-      func_pointer()
-      beadctl(BEAD_SWITCH, &bead) /// \label{line:backState}
+  if $\neg$ func_pointer then /// \label{line:funcParam}
+    if $id \neq -1$ then
+      \func{func_pointer()}
+      \func{beadctl(BEAD_SWITCH, &bead)} /// \label{line:backState}
     else /// \label{line:virtModeElse}
-      beadctl(BEAD_VIRTUALIZATION_EXIT, &bead)
+      \func{beadctl(BEAD_VIRTUALIZATION_EXIT, &bead)}
       return VM_OPERATION_END // Avisa que a operação executou com sucesso
 
   return VM_MODE_EXIT // Indica que a VM saiu do modo de virtualização
@@ -32,7 +32,7 @@ function any_function() /// \label{line:exFuncHook}
 function MAIN() /// \label{line:virtMAIN}
   // ... qualquer código ...
   OPTIONS $\gets 0$
-  virtualization_mode(any_function, OPTIONS) /// \label{line:virtModeCall}
+  \func{virtualization_mode(any_function, OPTIONS)} /// \label{line:virtModeCall}
   
 \end{lstlisting}
 

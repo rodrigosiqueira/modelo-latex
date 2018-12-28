@@ -1,28 +1,28 @@
 \begin{table}[]
 \small
 \centering
-
-\begin{tabular}{|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c|c@{}|@{}c@{}|}
+\setlength{\tabcolsep}{1pt}
+%\begin{tabular}{|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c|c|}
+\begin{tabular} {|c|c|c|c|c|c|c|c|}
 % HEADERS
 \hline
-  \multirow{2}{*}{Trabalho}          &
-  \multicolumn{3}{c|}{Dependência}   &
-  \multicolumn{2}{c|}{Implementação} &
-  \multicolumn{2}{c|}{Hardware}       &
-  \multirow{2}{*}{Adoção} \\ \cline{2-8} &
-      Técnica & Compatibilidade & Compilador & Pesada & Independente &
-      \multicolumn{1}{c|}{Novo} & Característica &
+  \multirow{2}{*}{\textbf{Trabalho}}          &
+  \multicolumn{3}{c|}{\textbf{Dependência}}   &
+  \multicolumn{2}{c|}{\textbf{Implementação}} &
+  \multicolumn{2}{c|}{\textbf{Hardware}} \\ \cline{2-8} &
+      \textbf{Técnica} & \textbf{Compatibilidade} & \textbf{Compilador} & \textbf{Pesada} & \textbf{Independente} &
+        \multicolumn{1}{c|}{\textbf{Novo}} & \textbf{Característica}
 \\ \hline\hline
 %           Técnica     Compatib    Compilaca   Pesada      Independente                     Novo        Caracact   Adocao
-Dune      & \ding{52} & \ding{52} & \ding{52} & \ding{52} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{54} & 6 \\ \hline
-Shreds    & \ding{52} & \ding{54} & \ding{54} & \ding{52} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{54} & 4 \\ \hline
-Wedge     & \ding{52} & \ding{54} & \ding{52} & \ding{54} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{52} & 5 \\ \hline
-\begin{tabular}[c]{@{}c@{}}Resource\\ Container\end{tabular} & & & & & \multicolumn{1}{c|}{} & & & \\ \hline
-Nooks     & \ding{52} & \ding{54} & \ding{52} & \ding{54} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{52} & 5 \\ \hline
-Mondrian  & -- & -- & -- & -- & \multicolumn{1}{c|}{ -- } & -- & -- & 4 \\ \hline
-SpaceJMP  & \ding{52} & \ding{54} & \ding{54} & \ding{54} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{52} & 5 \\ \hline
-LwC       & \ding{52} & \ding{54} & \ding{52} & \ding{54} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{52} & 2 \\ \hline
-Exokernel & \ding{54} & \ding{54} & \ding{54} & \ding{54} & \multicolumn{1}{c|}{\ding{54}} & \ding{52} & \ding{52} & \\ \hline
+Dune      & \ding{52} & \ding{52} & \ding{52} & \ding{52} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{54}  \\ \hline
+Shreds    & \ding{52} & \ding{54} & \ding{54} & \ding{52} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{54}  \\ \hline
+Wedge     & \ding{52} & \ding{54} & \ding{52} & \ding{54} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{52}  \\ \hline
+\begin{tabular}[c]{@{}c@{}}Resource\\ Container\end{tabular} & \ding{52} & \ding{54} & \ding{52} & \ding{54} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{52} \\ \hline
+Nooks     & \ding{52} & \ding{54} & \ding{52} & \ding{54} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{52}  \\ \hline
+Mondrian  & \ding{52} & \ding{54} & \ding{52} & \ding{54} & \multicolumn{1}{c|}{\ding{52}} & \ding{54} & \ding{54}  \\ \hline
+SpaceJMP  & \ding{52} & \ding{54} & \ding{54} & \ding{54} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{52}  \\ \hline
+LwC       & \ding{52} & \ding{54} & \ding{52} & \ding{54} & \multicolumn{1}{c|}{\ding{52}} & \ding{52} & \ding{52}  \\ \hline
+Exokernel & \ding{54} & \ding{54} & \ding{54} & \ding{54} & \multicolumn{1}{c|}{\ding{54}} & \ding{52} & \ding{52}  \\ \hline
 \end{tabular}
 
 \caption{Potencial de adoção}
