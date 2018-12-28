@@ -14,6 +14,8 @@
 \usepackage{etoolbox}
 \usepackage{xstring}
 \usepackage{xparse}
+\usepackage{diagbox}
+\usepackage{pifont}
 
 % Vários pacotes e opções de configuração genéricos
 \input{extras/basics}
@@ -87,24 +89,24 @@
 \nocite{bronevetsky02,schmidt03:MSc, FSF:GNU-GPL, CORBA:spec, MenaChalco08}
 % Acrescenta tudo do arquivo .bib
 %\nocite{*}
+\title[The shortened title]{Uma Visão Sobre a Próxima Geração de Abstrações de Processos em Sistemas Operacionais}
+%\subtitle{The (optional) subtitle}
 
-\title[The shortened title]{The full title, which may be quite,\\ quite long indeed}
-\subtitle{The (optional) subtitle}
+\author[Rodrigo Siqueira Jordão]{Rodrigo Siqueira Jordão}
 
-\author[Authors Name]{Authors Name}
-
-\institute[USP]{\textbf{Workshop Name} \\ Computer Science Department \\ IME USP}
+\institute[USP]{\textbf{Orientador: Fabio Kon} \\ Instituto de Matemática e Estatística \\ IME USP}
 %\institute[USP]{\textbf{Orientador:} \\ Computer Science Department \\ IME USP}
 
-\date{Month and day, year}
+%\date{Month and day, year}
 
 % Coloca a imagem no fundo da página de título
-\bgimage{\includegraphics[width=\paperwidth]{fundo_predios_e_grafo}}
+%\bgimage{\includegraphics[width=\paperwidth]{fundo_predios_e_grafo}}
 
 % Logotipos no rodapé da página de título
 \logos{
   \hfil\hfil\includegraphics[width=.1\textwidth]{usp-logo}\hfil%
-  \raisebox{-.0103\paperheight}{\includegraphics[height=.0932\paperheight]{interscity-logo}}\hfil%
+  \raisebox{-.0103\paperheight}{\includegraphics[height=.0932\paperheight]{interscity-logo-branco}}\hfil%
+%  \raisebox{-.00517\paperheight}{\includegraphics[height=.057\paperheight]{cnpq-logo}}\hfil%
   \raisebox{-.033\paperheight}{\includegraphics[width=.07\textwidth,trim=0 230 0 0,clip]{ime-logo}}\hfil\hfil
 }
 
@@ -117,7 +119,7 @@
 %}
 
 % Usado para criar o qrcode com o endereço da apresentação
-\presentationurl{http://interscity.org}
+\presentationurl{https://siqueira.tech}
 
 % Inclui o qrcode no sumário da apresentação
 \includeqrcodeintoc
@@ -142,13 +144,688 @@
 % Slide com o qrcode
 \showqrcode
 
-\begin{frame}{Overview}
-  \overview
+% TODO: Sendo bem realista com o seu estilo de apresentação: vc quer manter esse slide? -> Resposta direta: NÃO!
+%\begin{frame}{Sumário}
+%  \overview
+%\end{frame}
+%
+%\section{Introdução}
+%\section{Fundamentação Teórica}
+%\section{Validação de Novas Abstrações de Processos}
+%\section{Estudo de Caso}
+%\section{Análise Sobre Abstrações de Processos}
+%\section{Conclusão}
+
+%------------------------------------------------------------------------------
+% FUNDAMENTAÇÃO TEÓRICA
+%------------------------------------------------------------------------------
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_sec_one}
 \end{frame}
 
+% SUBSEÇÃO
+\begin{frame}{Uma Breve Jornada Sobre os Processos}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.4\textwidth]{memory_segment} 
+		\caption{Segmento de memória\label{fig:memory_segment}}
+	\end{figure}
+\end{frame}
 
-\section{Introduction}
+\begin{frame}{Uma Breve Jornada Sobre os Processos}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{stack_frame}
+		\caption{Alocação e desalocação de Stack frames considerando o padrão CDECL\label{fig:stack_frames}}
+		%\caption{Alocação e desalocação de Stack frames considerando o padrão CDECL~\citep{patterson}\label{fig:stack_frames}}
+	\end{figure}
+\end{frame}
 
+\begin{frame}{Uma Breve Jornada Sobre os Processos}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.7\textwidth]{process_and_threads}
+		\caption{Única thread e multi-thread. Note o isolamento da pilha e dos registrador (PC)\label{fig:single_thread_multi_thread}}
+		%\caption{Única thread e multi-thread. Note o isolamento da pilha e dos registrador (PC)~\citep{silberschatz}\label{fig:single_thread_multi_thread}}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Uma Breve Jornada Sobre os Processos}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.80\textwidth]{theads_and_stack} 
+		\caption[Um processo com uma thread e um processo com três threads]{Um processo com uma thread (esquerda) e um processo com três threads (direita)\label{fig:stack_threads}}
+	\end{figure}
+\end{frame}
+
+% SUBSEÇÃO
+\begin{frame}{Gerenciamento da Memória Relacionada aos Processos}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{mmu} 
+		\caption{Do endereço lógico ao físico com o auxílio da MMU}
+		\label{fig:mmu}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Gerenciamento da Memória Relacionada aos Processos}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.5\textwidth]{virtual_vs_fisico} 
+		\caption{Espaço de endereçamento virtual vs. físico}
+		\label{fig:vas_pas}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{O Modelo de Paginação}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{paginacao} 
+		\caption{Os elementos básicos presentes no modelo de paginação. Note que a busca na TLB e na tabela de página ocorre em paralelo}
+		\label{fig:paginacao}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{O Modelo de Paginação}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{pte}
+		\caption{entrada da tabela de páginas}
+		\label{fig:pte}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{O Modelo de Paginação}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{paginacao_passos} 
+		\caption{Passos do acesso a memória usando o modelo de paginação. A figura ilustra o caso simples na qual pelo menos dois acessos a memória são necessários}
+		\label{fig:passos_paginacao}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{O Modelo de Paginação}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.80\textwidth]{segmentacao} 
+		\caption{Comportamento do modelo de segmentação. Note que a tabela de segmento é acessada para obter o valor base e esse é sempre verificado para evitar acessos indevidos a outras regiões da memória}
+		\label{fig:segmentacao} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Proteção da memória}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.80\textwidth]{pte_domain} 
+		\caption{Ilustração de uma entrada da tabela de páginas utilizando novos bits}
+		\label{fig:ptedominio} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Exemplo Prático Usando o GNU/Linux}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{segmento_troca_contexto}
+		\caption{VAS durante a troca de contexto}
+		%\caption{VAS durante a troca de contexto~\citep{kernel_manage_mem}}
+		\label{fig:vas_contexto}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Exemplo Prático Usando o GNU/Linux}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.9\textwidth]{kernel_manages_memory}
+		\caption{Visão interna do gerenciamento da memória}
+		\label{fig:kernel_manages_memory}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Exemplo Prático Usando o GNU/Linux}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{malloc}
+		\caption{Passos envolvidos na alocação de memória com \texttt{malloc()}}
+    % \caption[Passos envolvidos na alocação de memória com \texttt{malloc()}]{Passos envolvidos na alocação de memória com \texttt{malloc()} (imagem baseada em \cite{anatomy_program_mem})}
+		\label{fig:malloc_linux}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Chamadas de Sistema}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{userspace_to_kernel} 
+		\caption{Execução do user space até o kernel space}
+		\label{fig:userspace_kernelspace}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Troca de Contexto}
+\end{frame}
+
+\begin{frame}{Descritores de Arquivo}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.70\textwidth]{descritores} 
+		\caption{Tabela local e global de arquivos}
+		\label{fig:descritores} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Modelos de Programação}
+\end{frame}
+
+\begin{frame}{Aspectos de Implementação}
+\end{frame}
+
+\begin{frame}{Gerenciamento de Recursos}
+\end{frame}
+
+\begin{frame}{Outros Conceitos Indiretamente Relacionados a Abstração de Processos}
+\end{frame}
+
+\begin{frame}{Device Drivers}
+\end{frame}
+
+\begin{frame}{Virtualização}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{vt-x_flow} 
+		\caption{Fluxo do comportamento da tecnologia VT-x}
+		\label{fig:vt-x_flow}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{A Tecnologia VT-x}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Trabalhos Analisados
+%------------------------------------------------------------------------------
+% TODO: Slide de transição
+\begin{frame}{Dune}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.4\textwidth]{dune_architecture} 
+		\caption[Arquitetura do Dune]{Arquitetura do Dune}
+		%\caption[Arquitetura do Dune]{Arquitetura do Dune~\citep{belay}}
+		\label{fig:dune_architecture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Shreds}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{shreds} 
+		\caption{Funcionamento geral do shreds}
+		\label{fig:shreds}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Wedge}
+\end{frame}
+
+\begin{frame}{Resource Container}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{resource_constainer_scenarios} 
+		\caption{Cenários das aplicações}
+		\label{fig:resource_constainer_scenarios}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Nooks}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{nooks_nim}
+		\caption[Visão geral da arquitetura do Nooks]{Visão geral da arquitetura do Nooks}
+		%\caption[Visão geral da arquitetura do Nooks]{Visão geral da arquitetura do Nooks \citep{nooks}}
+		\label{fig:nooks_nim}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Nooks}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{nooks_mem}
+		\caption[Acesso à memória do Nooks]{Acesso à memória do Nooks}
+		%\caption[Acesso à memória do Nooks]{Acesso à memória do Nooks \citep{nooks}}
+		\label{fig:nooks_mem}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Mondrian Memory Protection e Mondrix}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{mondrix_pd}
+		\caption{Representação dos domínios de proteção do Mondrix}
+		%\caption{Representação dos domínios de proteção do Mondrix (\cite{mondrix})}
+		\label{fig:mondrixPD} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{SpaceJMP}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.7\textwidth]{vas_vs_physical_address} 
+		\caption{VAS e Memóra Física}
+		\label{fig:vas_vs_physical} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{SpaceJMP}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.7\textwidth]{solve_huge_address_memory}
+		\caption{Resolvendo o problema de endereçar memórias físicas grandes}
+		\label{fig:large_memory}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{SpaceJMP}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.7\textwidth]{traditional_vs_mvas} 
+		\caption{VAS e MVAS}
+		%\caption{VAS e MVAS \citep{spacejmp}}
+		\label{fig:traditional_vs_mvas} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{SpaceJMP}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.7\textwidth]{mvas_example} 
+		\caption{System Call disponibilizada pelo SpaceJMP}
+		%\caption{System Call disponibilizada pelo SpaceJMP \cite{ellarge}}
+		\label{fig:mvas_example}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Light-weight Contexts}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{lwC} 
+		\caption{Exemplo do comportamento do lwC}
+		\label{fig:lwc} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Exokernel}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Validação de Novas Abstrações de Processos
+%------------------------------------------------------------------------------
+\begin{frame}{Servidores Web}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.50\textwidth]{request_a_page}
+		\caption{Do cliente para o servidor Web.}
+		\label{fig:client_to_web_server}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Servidores Web}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{keep_alive}
+		\caption{Com keep alive}
+		\label{fig:keep_alive}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Servidores Web}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{no_keep_alive}
+		\caption{Sem keep alive}
+		\label{fig:no_keep_alive}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Servidor Apache HTTPD}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.7\textwidth]{apache_arhitecture} 
+		\caption{Arquitetura do servidor Apache HTTP}
+		\label{fig:apache_architecture} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Servidor Apache HTTPD}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.7\textwidth]{units} 
+		\caption{Unidade do Servidor Apache HTTP}
+		\label{fig:units} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Servidor Apache HTTPD}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.9\textwidth]{request_phases} 
+		\caption{Gerador de Conteúdo}
+		%\caption[Gerador de Conteúdo]{Gerador de Conteúdo \citep{apache_module_book}}
+		\label{fig:content_generator} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Servidor Apache HTTPD}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{prefork} 
+		\caption{Prefork}
+		\label{fig:prefork} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Servidor Apache HTTPD}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{worker} 
+		\caption{Worker}
+		\label{fig:worker} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Servidor Apache HTTPD}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.7\textwidth]{event} 
+		\caption{Event}
+		\label{fig:event} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Nginx}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{nginx_load_balancer_ex} 
+		\caption{Nginx comportando-se como reverse-proxy}
+		%\caption[Nginx comportando-se como reverse-proxy]{Nginx comportando-se como reverse-proxy \citep{soni}}
+		\label{fig:nginx_basico} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Ferramentas de Comunicação Criptografada}
+\end{frame}
+
+\begin{frame}{OpenSSL}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{ssl_handshake}
+		\caption{Do cliente para o servidor Web}
+		\label{fig:openssl_handshake}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{OpenSSL}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{openssl_arch}
+		\caption{Arquitetura do OpenSSL}
+		\label{fig:openssl_arch}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{OpenSSH}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.3\textwidth]{ssh_layers}
+		\caption{Camadas SSH}
+		%\caption[Camadas SSH]{Camadas SSH \citep{opensshhood}}
+		\label{fig:openssh_layer}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Outras Aplicações}
+\end{frame}
+
+\begin{frame}{Redis}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{redis_overview}
+		\caption{Visão geral do funcionamento do Redis}
+		\label{fig:redis}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Garbage Collection (GC)}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{gc_algoritmo}
+		\caption{Algoritmo de pintura da memória}
+		%\caption[Algoritmo de pintura da memória]{Algoritmo de pintura da memória\citep{gc_basics}}
+		\label{fig:gc_alg}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Garbage Collection (GC)}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{gc_memory}
+		\caption{Visão da memória durante a aplicação do algoritmo de GC}
+		%\caption[Visão da memória durante a aplicação do algoritmo de GC]{Visão da memória durante a aplicação do algoritmo de GC\citep{gc_basics}}
+		\label{fig:gc_mem}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Discussão Sobre as Aplicações}
+	\input{tables/app_alvo}
+\end{frame}
+
+\begin{frame}{Microbenchmarks}
+\end{frame}
+
+\begin{frame}{Discussão}
+	\begin{quote}
+		\item \emph{QP3:.} ``Quais aplicações podem ser utilizadas para avaliar as novas abstrações adicionadas ao SO?''
+		\item \emph{QP4:.} ``Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada às abstrações de processos?''
+	\end{quote}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Estudo de caso
+%------------------------------------------------------------------------------
+\begin{frame}{Estudo de Caso}
+\end{frame}
+
+\begin{frame}{Metodologia}
+	\begin{figure}[!h] \centering
+		\includegraphics[width=.60\textwidth]{web_server_organization_strategy}
+		\caption{Visão geral da organização de aplicações utilizando servidores Web}
+	\label{fig:web_server} \end{figure}
+\end{frame}
+
+\begin{frame}{Metodologia}
+	\begin{figure}[!h] \centering
+		\includegraphics[width=.90\textwidth]{experiment_arhitecture}
+		\caption{Arquitetura do experimento} \label{fig:experiment_architecture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Customizações no Servidor Apache e no GNU/Linux}
+	\input{tables/mpm_config.tex}
+\end{frame}
+
+\begin{frame}{Customizações no Servidor Apache e no GNU/Linux}
+	\input{tables/kernel_config.tex}
+\end{frame}
+
+\begin{frame}{Cenário}
+	\input{tables/files_size.tex}
+\end{frame}
+
+\begin{frame}{Cenário}
+	\input{tables/cargas.tex}
+\end{frame}
+
+\begin{frame}{MVAS Dentro do GNU/Linux e Apache HTTP Server}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{mvas_httpd}
+		\caption{HTTPD com MVAS}
+		\label{fig:httpd_mvas}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Resultados}
+	\input{tables/hardware.tex}
+\end{frame}
+
+\begin{frame}{Resultados}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.60\textwidth]{static_file}
+		\caption{Arquivos estáticos: tempo gasto para servir o percentual de requisições}
+		\label{fig:static_file}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Resultados}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.70\textwidth]{static_file_memory_usage}
+		\caption{Arquivos estáticos: O consumo de memória necessário para atender todas as requisições}
+		\label{fig:static_file_memory}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Resultados}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.60\textwidth]{dynamic_file_request_time}
+
+		\caption{Arquivos Dinâmicos: Tempo gasto por percentual de requisições}
+		\label{fig:dynamic_file}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Resultados}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.60\textwidth]{dynamic_file_memory_usage}
+
+		\caption{Arquivos Dinâmicos: Consumo de memória necessário para servir as requisições}
+		\label{fig:dynamic_file_memory}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Discussão Sobre os Experimentos}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Análise Sobre Abstrações de Processos
+%------------------------------------------------------------------------------
+\begin{frame}{Análise Sobre Abstrações de Processos}
+\end{frame}
+
+\begin{frame}{Análise Sobre Abstrações de Processos}
+	\begin{quote}
+	 \item \textit{QP1:.} ``Quais são as características desejáveis para a próxima geração de abstrações de processos?''
+	 \item \textit{QP2:.} ``Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?''
+	\end{quote}
+\end{frame}
+
+\begin{frame}{Potenciais e Dificuldades Para a Adoção de Novas Abstrações de Processos}
+	\input{tables/potencial_adocao}
+\end{frame}
+
+\begin{frame}{Extração de Conceitos Derivados das Pesquisas em Abstrações de Processos}
+\end{frame}
+
+\begin{frame}{Bead: Um Modelo Teórico Para a Próxima Geração de Abstrações de Processos}
+	\input{tables/desacoplar_beneficios}
+\end{frame}
+
+\begin{frame}{Bead: Um Modelo Teórico Para a Próxima Geração de Abstrações de Processos}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{decomposicao_overview}
+		\caption{Decomposição do processo}
+		\label{fig:decomposicao_proc}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{A API Bead}
+\end{frame}
+
+\begin{frame}{Padrões de Utilização}
+\end{frame}
+
+\begin{frame}{Padrões de Utilização}
+ %\input{algorithm/beadctl.tex}
+ %\input{algorithm/bead_data.tex}
+\end{frame}
+
+\begin{frame}{Padrão Configuração}
+ %\input{algorithm/ex_bead_config.tex}
+\end{frame}
+
+\begin{frame}{Padrão Configuração}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{decomposition_conf}
+		\caption{Ilustração do padrão configuração}
+		\label{fig:decomposicao_conf}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Padrão Fotografia}
+	%\input{algorithm/snapshot.tex}
+\end{frame}
+
+\begin{frame}{Padrão Fotografia}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.8\textwidth]{decomposition_fotografia}
+		\caption{Ilustração dos principais elemento envolvidos no padrão fotografia}
+		\label{fig:decomposicao_fotografia}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Padrão Virtualização Controlada}
+	%\input{algorithm/virt_mode.tex}
+\end{frame}
+
+\begin{frame}{Padrão Virtualização Controlada}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=.8\textwidth]{decomposicao_virt_controlada}
+		\caption{Ilustração dos elementos envolvidos no padrão virtualização}
+		\label{fig:decomposicao_virt}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Padrão Persistência}
+	%\input{algorithm/persistencia.tex}
+\end{frame}
+
+\begin{frame}{Padrão Atualização em Tempo Real}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{live-patching}
+		\caption{Funcionamento do padrão atualização em tempo real}
+		\label{fig:atr}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Padrão Compartimento}
+	%\input{algorithm/compartimento.tex}
+\end{frame}
+
+\begin{frame}{Discussão}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Conclusão
+%------------------------------------------------------------------------------
+\begin{frame}{Conclusão}
+\end{frame}
+
+% TODO: =========================== DESCARTAR ======================================
 \begin{frame}{Context}
   \begin{itemize}
     \item The copyright compromise seeked to balance public and private interests
@@ -165,10 +842,6 @@
     \end{itemize}
   \end{itemize}
 
-\end{frame}
-
-\begin{frame}[plain]
-  \includegraphics[width=\textwidth]{interscity-logo}
 \end{frame}
 
 \begin{frame}[standout]
@@ -188,7 +861,6 @@
   \end{block}
 \end{frame}
 
-\section{Concepts}
 
 \begin{frame}{Concepts}
   \begin{columns}[t]
@@ -244,33 +916,6 @@
     Proposition\dots
   \end{proposition}
 \end{frame}
-
-\section{Related Works}
-
-\begin{frame}{Related Works}
-\end{frame}
-
-\section{Methodology}
-
-\begin{frame}{Methodology}
-\end{frame}
-
-\section{Results}
-
-\subsection{Validation and Analysis}
-
-\begin{frame}{Validation}
-\end{frame}
-
-\begin{frame}{Case Study}
-\end{frame}
-
-\section{Conclusion and Future works}
-
-\begin{frame}{Conclusion and Future works}
-\end{frame}
-
-\section{References}
 
 \begin{frame}[allowframebreaks]{References}
   \printbibliography

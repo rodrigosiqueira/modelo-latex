@@ -86,9 +86,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748738"
-     inkscape:cx="1467.9162"
-     inkscape:cy="263.59179"
+     inkscape:zoom="0.54855771"
+     inkscape:cx="928.99252"
+     inkscape:cy="312.77804"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -151,17 +151,6 @@
        d="M 186.88366,86.926149 H 454.15319"
        id="path4572-1-4-5-7-0"
        inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:6.08541679px;font-family:hack;-inkscape-font-specification:'hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="418.11746"
-       y="207.62228"
-       id="text6309-3"><tspan
-         sodipodi:role="line"
-         id="tspan6307-5"
-         x="418.11746"
-         y="207.62228"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke:#000000;stroke-width:0.26458332px">Thread</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 185.90629,121.39223 H 453.17583"
@@ -314,7 +303,7 @@
          id="tspan6307"
          x="-39.309502"
          y="166.97618"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke:#000000;stroke-width:0.26458332px">Thread</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:hack;-inkscape-font-specification:'hack Bold';stroke:#000000;stroke-width:0.26458332px;letter-spacing:0.68262507px">Thread</tspan></text>
     <path
        sodipodi:nodetypes="ccscc"
        inkscape:connector-curvature="0"
@@ -492,5 +481,16 @@
          x="371.38947"
          id="tspan1094"
          sodipodi:role="line">registrador</tspan></text>
+    <text
+       id="text925"
+       y="207.49152"
+       x="411.66476"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:6.08541679px;font-family:hack;-inkscape-font-specification:'hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:hack;-inkscape-font-specification:'hack Bold';letter-spacing:0.68262506px;stroke:#000000;stroke-width:0.26458332px"
+         y="207.49152"
+         x="411.66476"
+         id="tspan923"
+         sodipodi:role="line">Thread</tspan></text>
   </g>
 </svg>
