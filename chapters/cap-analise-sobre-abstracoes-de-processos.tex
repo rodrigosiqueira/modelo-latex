@@ -907,6 +907,8 @@ calcula a diferença (\emph{diff}) do segmento de \emph{BSS} e \emph{Data} de
 $A'$ com $A''$; por fim, é feito uma troca do segmento de texto de $A'$ com
 $A''$.
 
+\input{algorithm/live_patch.tex}
+
 O Pseudocódigo~\ref{alg:livePatch} ilustra como seria uma possível
 implementação do padrão ATR. A função \texttt{MAIN()} de algum programa
 qualquer precisaria ser alterada para aceitar o parâmetro
@@ -925,8 +927,6 @@ e consistência; para esse pseudocódigo, apenas considere que ela retornará o
 identificador da fotografia tirada do processo na Linha~\ref{line:arg}. Por
 fim, o processo faz a atualização por meio da operação de \texttt{BEAD\_SWITCH}
 previamente configurada.
-
-\input{algorithm/live_patch.tex}
 
 \subsubsection{Padrão Compartimento}
 %TODO: Atualizar o switch para ele aceitar os compartimentos. BEAD_CONTEXT_SWITCH -> BEAD_SWITCH
