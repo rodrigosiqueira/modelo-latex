@@ -171,15 +171,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="810.73073"
-     inkscape:cy="137.82136"
+     inkscape:zoom="1.0971154"
+     inkscape:cx="1137.4967"
+     inkscape:cy="279.1383"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="0"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="false"
@@ -196,7 +196,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -610,33 +610,33 @@
        inkscape:export-xdpi="144.75999"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        id="text19249"
-       y="247.69688"
+       y="236.36224"
        x="154.48105"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555534px;line-height:5.29166651px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="247.69688"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="236.36224"
          x="154.48105"
          sodipodi:role="line"
          id="tspan19253">Domínio da aplicação</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555534px;line-height:5.29166651px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="254.38789"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="249.59142"
          x="154.48105"
          sodipodi:role="line"
          id="tspan19257">extende-se para o Kernel,</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555534px;line-height:5.29166651px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="261.07892"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="262.82056"
          x="154.48105"
          sodipodi:role="line"
          id="tspan19259">mas a sua atividade</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555534px;line-height:5.29166651px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="267.76993"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;line-height:13.22916698px;font-family:hack;-inkscape-font-specification:'hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="276.04974"
          x="154.48105"
          sodipodi:role="line"
          id="tspan19261">não é controlável</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker19277);paint-order:normal"
-       d="M 104.32524,240.52827 63.023196,204.88297"
+       d="M 79.967805,223.64688 63.023196,204.88297"
        id="path19273"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
@@ -650,7 +650,7 @@
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/resource_constainer_scenarios.png"
        inkscape:connector-curvature="0"
        id="path20725"
-       d="m 202.37304,240.52827 41.30204,-35.6453"
+       d="m 236.61814,224.29949 21.5267,-20.21089"
        style="fill:none;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker20729);paint-order:normal" />
     <text
        xml:space="preserve"

@@ -1,12 +1,12 @@
 \chapter{Trabalhos Analisados}
 \label{cap:trabalhos-analisados}
 
-Esse capítulo tem como objetivo destacar as principais pesquisas recentemente
+Este capítulo tem como objetivo destacar as principais pesquisas recentemente
 realizadas com o objetivo de expandir as abstrações de processos. Para a
 seleção dos trabalhos aqui apresentados, o autor levou em consideração os
 seguintes aspectos: quantidade de citações dos trabalhos, implementação
 funcional e pesquisas que tenham a abstração de processos como objeto de
-estudo. Por uma questão de organização, esse trabalho considerou três tipos de
+estudo. Por uma questão de organização, este trabalho considerou três tipos de
 implementação funcional: \textit{Implementação Estrutural Leve, Implementação
 Estrutural Pesada e Implementação Independente}.
 
@@ -29,22 +29,22 @@ As \boldAndIndex{Implementações Independentes} são aquelas que se propõem a
 criar um SO totalmente novo, visando demonstrar um ou mais conceitos. Essas
 abordagens têm poucas chances de serem adotadas diretamente, contudo apresentam
 conceitos e ideias que podem ser interessantes para serem estendidas para SOs
-atuais. Nessa dissertação trataremos especificamente do Exokernel devido ao seu
+atuais. Nesta dissertação trataremos especificamente do Exokernel devido ao seu
 grande impacto (Seção~\ref{sec:exokernel}), contudo, trabalhos como o
 \emph{Singularity}~\citep{aiken} e o \emph{Corey}~\citep{corey} também
-influenciaram essa dissertação.
+influenciaram esta dissertação.
 
-Em resumo, esse capítulo busca fornecer uma visão geral sobre o estado da arte
-das abstrações de processos. Além disto, essa seção visa proporciona as bases
+Em resumo, este capítulo busca fornecer uma visão geral sobre o estado da arte
+das abstrações de processos. Além disso, esta seção visa proporcionar as bases
 para a discussão apresentada no Capítulo
-\ref{cap:analise-sobre-abstracoes-de-processos}, tema central desse trabalho.
+\ref{cap:analise-sobre-abstracoes-de-processos}, tema central deste trabalho.
 Os trabalhos apresentados adiante, se encaixam em pelo menos uma das
 características de implementação discutidas acima.
 
 \section{Dune}
 \label{sec:dune}
 
-Como mostrado na Seção \ref{sec:virtualizacao}, o conceito de virtualização já
+Como discutido na Seção \ref{sec:virtualizacao}, o conceito de virtualização já
 é amplamente conhecido e adotado pela indústria; dentre os recentes avanços,
 destaca-se a virtualização via hardware proporcionada pelos processadores
 modernos. O mecanismo de virtualização é normalmente utilizado fornecendo
@@ -54,12 +54,12 @@ fornecer características adicionais para processos ao invés de máquinas
 virtuais.
 
 Os autores defendem que uma ampla variedade de aplicações pode tirar proveito
-do acesso a certos recursos que são apenas disponíveis ao kernel. Dentre as
+do acesso a certos recursos que são apenas disponíveis ao núcleo. Dentre as
 aplicações que podem comprovadamente ganhar algum desempenho ao obter acesso
 direto ao hardware, destacam-se:
 
 \begin{itemize}
-  \item \textbf{Coletor de Lixo (\emph{Garbage Collection -- GC})}: O GC pode ganhar desempenho caso
+  \item \textbf{Coletor de Lixo (\emph{Garbage Collector -- GC})}: O GC pode ganhar desempenho caso
         tenha como controlar diretamente o hardware de paginação, como
         \citet{pauseless} demostraram em seu trabalho;
   \item \textbf{Migração de Processos}: Programas no espaço de usuário podem tirar
@@ -69,13 +69,13 @@ direto ao hardware, destacam-se:
 
 Não obstante, fornecer o acesso direto aos recursos de hardware de forma segura
 e gerenciável não é uma tarefa trivial, uma vez que requer mudanças na forma
-como o espaço de usuário e o espaço do Kernel interagem. Além disso, alterações
-no Kernel são consideradas invasivas e perigosas, uma vez que uma modificação
+como o espaço de usuário e o espaço do núcleo interagem. Além disso, alterações
+no núcleo são consideradas invasivas e perigosas, uma vez que uma modificação
 feita de forma errada pode comprometer toda a estabilidade do sistema. Outra
 alternativa para dar acesso de hardware para aplicações é por meio de execução
-em uma máquina virtual assim uma aplicação consegue acesso seguro aos recursos
-de hardware através da interface de virtualização. Uma desvantagem desta
-abordagem é que ela tem pouca integração com o SO da máquina \emph{host}, o que
+em uma máquina virtual; assim uma aplicação consegue acesso seguro aos recursos
+de hardware através da interface de virtualização. Uma desvantagem dessa
+abordagem é que ela tem pouca integração com o SO da máquina hospedeira, o que
 impede o processo de obter ganhos de desempenho.
 
 \citet{belay} oferecem uma alternativa que consiste em utilizar a abstração de
@@ -101,7 +101,7 @@ consegue ser mais simples e rápido. As aplicações que se adequam ao uso desse
 modelo podem obter melhorias de desempenho e isolamento, como veremos adiante.
 
 Para implementar o Dune, os pesquisadores utilizaram processadores Intel com
-suporte para a tecnologia VT-x e parte do código do KVM já disponível no Kernel
+suporte para a tecnologia VT-x e parte do código do KVM já disponível no núcleo do
 Linux. Na Seção~\ref{sec:vtx} apresentamos o VT-x e algumas instruções
 importantes para o contexto da virtualização, agora introduzimos os três tipos
 de instruções privilegiadas que o Dune fornece para os processos:
@@ -110,9 +110,9 @@ de instruções privilegiadas que o Dune fornece para os processos:
 	\item \textbf{Exceções}:  As instruções \texttt{LIDT, LTR, IRET, STI e CLI} são
         expostas diretamente para os processos. Note que emulação, depuração e
         rastreamento de desempenho são atividades que podem tirar proveito
-        desta característica, uma vez que o Dune pode reduzir consideravelmente
-        a sobrecarga em entregar exceções. Isso se deve ao fato que o Dune
-        consegue entregar exceções diretamente para o hardware de forma segura
+        dessa característica, uma vez que o Dune pode reduzir consideravelmente
+        a sobrecarga ao tratar exceções diretamente. Isso se deve ao fato que o Dune
+        consegue passar as exceções diretamente para o hardware de forma segura
         (encapsulado pelo hardware de virtualização);
   \item \textbf{Memória Virtual}: As instruções \texttt{MOV CRn, INVLPG} e
         \texttt{INVPCID} são oferecidas para o processo Dune. O acesso
@@ -128,7 +128,7 @@ de instruções privilegiadas que o Dune fornece para os processos:
   \item \textbf{Modos privilegiados}: As instruções \texttt{SYSRET, SYSEXIT, IRET}
         permitem que o Dune exponha os modos privilegiados de
         forma segura. O Dune expõe esse modos de forma eficiente e segura por
-        que o VMX non-root mantém o seu próprio conjunto de anéis privilegiados
+        que o \emph{VMX non-root} utiliza o seu próprio conjunto de anéis privilegiados
         (Veja \ref{sec:vtx}).
 \end{itemize}
 
@@ -136,7 +136,7 @@ A Figura \ref{fig:dune_architecture} ilustra a arquitetura do Dune. O Dune
 estende o Kernel como um módulo que habilita o VT-x, colocando-o no
 modo VMX root. Assim, processos usando Dune têm acesso seguro e garantido para
 hardware privilegiado utilizando o modo VMX non-root. O módulo Dune intercepta
-transições para o {VM exits} (Seção~\ref{sec:vtx}), o único motivo para o
+transições do tipo \emph{VM exit} (Seção~\ref{sec:vtx}), o único motivo para o
 processo acessar o kernel e realizar qualquer ação. Repare que o Dune é
 aplicado de forma seletiva aos processos que de fato precisam dele, o que
 significa que um processo que não usa o Dune não é afetado. A transição de um
@@ -153,7 +153,7 @@ reentrar caso queira.
   \label{fig:dune_architecture}
 \end{figure}
 
-Na Seção \ref{sec:virtualizacao}, apresentamos as principais propriedades dos VMMs.
+Na Seção \ref{sec:virtualizacao}, discutimos diversas propriedades dos VMMs.
 Com o objetivo de deixar claras as diferenças entre o VMM e as características
 de hardware expostas pelo Dune, destacamos as principais diferenças:
 
@@ -170,6 +170,15 @@ de hardware expostas pelo Dune, destacamos as principais diferenças:
         de usuário.
 \end{itemize}
 
+Em resumo, o Dune é um trabalho que se destaca por sua arrojada decisão de
+tentar dar outras utilidades para um recurso de hardware bem consolidado e
+heterogêneo. Além disto, a forma como os autores propuseram fazer o Dune
+se mostra versátil uma vez que é mantido a compatibilidade com as aplicações
+atuais, essa característica permite a adoção de tal proposta em larga escala.
+Durante este trabalho, replicamos os resultados publicado pelos autores e
+também contribuímos com os mesmos na forma de envio de melhorias código para o
+projeto.
+
 \section{Shreds}
 
 Existe uma categoria de ataques chamada ``abusos intra-processos de conteúdo
@@ -181,12 +190,12 @@ biblioteca maliciosa que permite acessar alguma região da memória não protegi
 da vítima. Note que bibliotecas maliciosas são especialmente perigosas, uma vez
 que elas podem executar funções privilegiadas que são de fato parte do
 processo como, por exemplo, a função \texttt{dlopen}. Por fim, se o atacante
-conseguir o acesso a memória, ele pode ler todos os dados buscando por outras
+conseguir o acesso à memória, ele pode ler todos os dados buscando por outras
 informações.
 
 \citet{shreds} defendem que o problema de segurança referente aos ataques
 intra-processos decorrem da falta de controle fino e eficiente do conteúdo
-sensível da memória; além disso, eles argumentam que seria benéfico se tais
+sensível da memória; além disso, argumentam que seria benéfico se tais
 funcionalidades fossem disponibilizadas para os programadores. Para resolver tal
 problema, os autores apresentam uma nova abstração de processos que cria uma
 nova unidade de execução chamada \emph{shred}, que tem associado a si um
@@ -216,7 +225,7 @@ segurança:
 Para melhor entender o comportamento dos \emph{shreds}, veja a Figura
 \ref{fig:shreds}, ilustrando uma aplicação que lida com uma senha (dado
 sensível) e o código que manipula tal dado. A aplicação possui uma \emph{thread} que
-comporta-se da forma padrão, contudo, ao ter que lidar com um dado sensível, ela
+se comporta da forma padrão, contudo, ao ter que lidar com um dado sensível, ela
 faz uma chamada para uma função da API fornecida pelo \emph{shred},
 \texttt{shred\_enter()}. Ao realizar a chamada para essa função, o fluxo de
 execução entra em um modo seguro em que o \emph{shreds} gerencia o acesso à
@@ -289,16 +298,23 @@ fornecida pelo \emph{s-compiler} e \emph{S-driver}. Para prevenir que dados
 sejam vazados via pilha, o \emph{S-driver} cria uma pilha segura para cada
 \emph{shred} alocada partindo do \emph{s-pool} associado a si.
 
+Em síntese, o \emph{shred} apresenta-se como um projeto inovador ao tentar
+utilizar um recurso disponível em hardware porém pouco utilizado. Além disso, a
+sua implementação leve faz com que tal solução seja flexível e elegante uma vez
+que não exige uma mudança generalizada nas aplicações atuais com o objetivo de
+manter a compatibilidade.
+
 \section{Wedge}
 
-Existe um princípio chamado de \emph{``Princípio do Menor Privilégio''} que diz:
+Existe um fundamento proposto em 1975 chamado de \emph{``Princípio do Menor
+Privilégio''} que diz:
 
 \begin{quote}
-O princípio do menor privilégio implica dividir o código em compartimentos,
+\emph{"O princípio do menor privilégio implica dividir o código em compartimentos,
 cada um dos quais executa com os privilégios mínimos necessários para completar
 sua tarefa. Essa abordagem não apenas limita o dano que um ataque pode causar,
 mas também pode evitar que os \emph{bugs} vazem acidentalmente informações
-confidenciais.
+confidenciais."} \citep{protectionprinciple}
 \end{quote}
 
 Apesar desse princípio ter sido apresentado em 1975 e ser amplamente aceito,
@@ -307,35 +323,35 @@ para o mundo) não buscam atender a esse fundamento e acabam abrindo
 potenciais pontes de vazamento de dados ou falhas de segurança. Alguns
 pesquisadores defendem que esse problema surge do fato de que os SO atuais
 garantem privilégios por padrão. Isso significa que impor limites requer mais
-esforço por parte do programador e também é propenso a erros.
+esforço por parte do programador e também está sujeito a erros.
 
 A chamada de sistema \texttt{fork()} ilustra a característica de garantir
-privilégios por padrão. Quando o processo pai cria um filho, este inicia como uma
-cópia praticamente exata do pai. Se o programador desejar restringir o nível de
-acesso do processo filho, é preciso realizar uma série de operações manuais que
-não garantem que nenhum aspecto tenha sido ignorado.
+privilégios por padrão. Quando o processo pai cria um filho, este inicia como
+uma cópia praticamente exata do pai. Se o programador desejar restringir o
+nível de acesso do processo filho, é preciso realizar uma série de operações
+manuais e, muitas vezes, algum aspecto acaba sendo ignorado.
 
 \citet{wedge} buscaram resolver tal problema mudando o princípio atual, de
 garantir privilégio por padrão, para negar privilégios por padrão. Nessa
 abordagem, o programador deve indicar explicitamente que deseja garantir
 permissões adicionais. Os autores alteraram o GNU/Linux para que ele
-suportasse a remoção de permissões por padrão e chamaram o modelo proposto por
-eles de \emph{Wedge}. \emph{Wedge} fornece um conjunto de primitivas de
-programação para permitir criar componentes com semântica de negação de permissões
-por padrão, tornando o acesso mais restrito. Para isso, \emph{Wedge} oferece
+adotasse a remoção de permissões por padrão e chamaram o modelo proposto por
+eles de \emph{Wedge}. Esse sistema fornece um conjunto de primitivas de
+programação para permitir a criação de componentes com semântica de negação de permissões
+por padrão, tornando o acesso mais restrito. Para isso, Wedge oferece
 um esquema simples e flexível de marcação (\emph{tagging}) das permissões de
 acesso à memória, permitindo que o programador aloque objetos na memória de
 acordo com essa informação.
 
-\emph{Wedge} permite que o programador crie um número arbitrário de
-componentes, cada um sem privilégios por padrão, mas existem mecanismos que
-permitem o controle fino. Neste sentido, \emph{Wedge} busca se assemelhar às
+Wedge permite que o programador crie um número arbitrário de
+componentes, cada um sem privilégios por padrão, mas oferecE MECANISmos que
+permitem o controle fino. Nesse sentido, \emph{Wedge} busca se assemelhar às
 primitivas atuais para facilitar a sua adoção e para que seja simples a
-introdução delas em aplicações legadas. A proposta é constituída de três
-primitivas: \emph{Sthread}, \emph{Tagged Memory} e \emph{callgates}. O
+introdução delas em aplicações legadas. A proposta é constituída por três
+primitivas: \emph{sthread}, \emph{tagged memory} e \emph{callgates}. O
 acesso a todas essas primitivas é feito via chamadas de sistema.
 
-Uma \emph{Sthread} pode ser comparada com uma \emph{thread} fornecida pela biblioteca
+Uma \emph{sthread} pode ser comparada com uma \emph{thread} fornecida pela biblioteca
 \textit{pthread}, definindo um compartimento dentro de uma
 aplicação. O programador pode então atribuir permissão de acesso para a memória
 e outros recursos por meio dessas \emph{sthreads}. Elas consistem de uma
@@ -355,7 +371,7 @@ duplicação quando o recurso é modificado (\emph{copy-on-write}); nesse contex
 uma nova \emph{sthread} não mantém as permissões de acesso por padrão, a não
 ser pela memória ainda intocado do \emph{copy-on-write}. Note que o novo
 componente não tem permissão para acessar qualquer outra memória ou mesmo
-descritor de arquivo do pai, contudo o pai pode anexar permissões de acesso no
+descritor de arquivo do pai, contudo o pai pode anexar permissões de acesso ao
 filho durante a sua criação. Uma \emph{sthread} só pode criar um filho com
 permissão igual ou menor do que a sua. Para a implementação, os autores criaram
 \emph{sthreads} como uma variante dos processos do GNU/Linux, só que, ao invés
@@ -363,12 +379,12 @@ de herdar as informações do pai, ela apenas herda as regiões de memória e
 tabela de descritores asseguradas pela política de segurança.
 
 No \emph{Wedge} é preciso seguir alguns passos para alocar memória. O passo
-inicial consiste em criar uma \emph{tag} que contém as permissões de acesso a
+inicial consiste em criar uma \emph{tag} que contém as permissões de acesso à
 região de memória que se deseja alocar. Em seguida, o programador deve utilizar
-uma chamada específica do \emph{Wedge} para fazer a alocação, essa função
+uma chamada específica do \emph{Wedge} para fazer a alocação; essa função
 espera uma \emph{tag} que contém as permissões. Quando alguma alocação de
 memória ocorre, o programador deve marcar a memória com uma única \emph{tag};
-as permissões de acesso a esta memória são garantidas em termos delas. Essa
+as permissões de acesso a essa memória são garantidas em termos delas. Essa
 operação aloca um segmento de memória e armazena um mapa da \emph{tag} para o
 segmento. Por exemplo, o programador pode criar uma \emph{tag} ``t'' que define
 que a memória será apenas para leitura. O programador expressa os privilégios
@@ -393,9 +409,9 @@ de entrada que foi registrado.
 
 Para a implementação dos \emph{callgates}, a função \texttt{sc\_cgate\_add()}
 adiciona permissões para o ponto de entrada \texttt{cgate} com as permissões e
-os argumentos confiáveis, e todos esses dados são salvos no Kernel para evitar
+os argumentos confiáveis, e todos esses dados são salvos no núcleo para evitar
 acessos indevidos. Um \emph{callgate} é invocado por meio da função
-\texttt{cgate()}, que faz com que o Kernel verifique as permissões. De forma
+\texttt{cgate()}, que faz com que o núcleo verifique as permissões. De forma
 geral, a API do \emph{Wedge} é composta por diversas funções; destacamos apenas
 algumas:
 
@@ -414,6 +430,14 @@ Adiciona permissões para chamar um \emph{callgate};
 \emph{callgate}.
 \end{itemize}
 
+Em suma, o Wedge revive e explora um importante conceito: negar acesso por
+padrão (``Princípio do Menor Privilégio''). Note que a implementação pesada
+exigida pelo Wedge faz com que a sua solução seja extremamente poderosas e de
+certa forma expansível. Por outro lado, o Wedge exigiria mudanças complicadas
+nos SOs atuais além de demandar alterações em diversas aplicações. Por fim, o
+Wedge é um projeto auspicioso uma vez que esse pode trazer diversos benefícios
+de segurança sem degradar o desempenho geral dos SOs. 
+
 \section{Resource Container}
 \label{sec:rc}
 
@@ -426,7 +450,7 @@ com que todos os recursos da máquina sejam consumidos. Eles também
 assumem que a raiz dos problemas de gestão de
 recursos encontra-se no modelo atual dos SOs de propósito geral, em
 que primitivas de escalonamento e de gerência de recursos estendem-se por todo
-o Kernel. Esse acoplamento torna complicado o processo de permitir que uma
+o núcleo. Esse acoplamento torna complicado o processo de permitir que uma
 aplicação controle os seus próprios recursos.
 
 \begin{figure}[!h]
@@ -438,7 +462,7 @@ aplicação controle os seus próprios recursos.
 
 Para ilustrar as questões referentes à gestão de recursos nos SOs, a Figura
 \ref{fig:resource_constainer_scenarios} mostra 4 cenários diferentes. O
-primeiro cenário consiste em uma aplicação rodando em \textit{user space} que
+primeiro cenário consiste em uma aplicação executar em \textit{user space} que
 não necessita de qualquer recurso diretamente controlado pelo Kernel e,
 portanto, cujo consumo de recursos não se estende para o Kernel. O segundo
 cenário representa uma aplicação que precisa utilizar recursos do Kernel para
@@ -449,7 +473,7 @@ mostra múltiplos processos cooperando para concluir uma tarefa sem precisar
 do Kernel. Por fim, temos uma aplicação com um único processo que dispõe de
 múltiplas \emph{threads} que, além de utilizar recursos no \textit{user space}, também
 demanda recursos oriundos do Kernel. Repare como sistemas tradicionais têm
-pouco ou nenhum controle sobre os recursos consumidos;esses casos
+pouco ou nenhum controle sobre os recursos consumidos; esses casos
 podem levar o escalonador a fazer contagens imprecisas levando-o a
 comportar-se de forma inadequada.
 
@@ -458,8 +482,8 @@ parte dos SOs, \citet{resourcecontainers} sugeriram a criação de uma nova
 abstração chamada \emph{Resource Container (RC)}. Este é uma entidade que
 logicamente contém todos os recursos utilizados pela aplicação para completar
 uma determinada atividade. Seus atributos são usados para fornecer parâmetros
-de escalonamento, limites de recursos, e \emph{QoS} para rede. A ideia é que o
-Kernel cuidadosamente manipule esses recursos, tal qual CPU e memória, consumidos
+de escalonamento, limites de recursos e \emph{QoS} para rede. A ideia é que o
+núcleo cuidadosamente manipule esses recursos, tal qual CPU e memória, consumidos
 por um RC. O escalonador pode acessar as informações provenientes dos RCs e
 utilizá-las para melhorar o processo de escalonamento.
 
@@ -474,49 +498,57 @@ caso exista a necessidade.
 
 Uma das implicações diretas do RC é que uma aplicação pode associar informações a
 uma atividade ao invés de a uma \emph{thread} ou processo, permitindo que
-o \emph{scheduler} forneça informações diretas para a atividade.
+o escalonador forneça informações diretas para a atividade.
 
 % TODO: Voltar no artigo e elaborar mais essa questão dos atributos
 A alocação de atributos está diretamente associada com um modelo de
 escalonamento relacionado com cada RC em um sistema. Uma \emph{thread} é normalmente
 escalonada de acordo com os atributos do RC ao qual é limitada. Contudo, se uma
-\emph{thread} é multiplexada entre vários \emph{containers}, o escalonamento torna-se custoso
+\emph{thread} é multiplexada entre vários contêineres, o escalonamento torna-se custoso
 para cada mudança de \textit{binding}. Na prática, a \emph{thread} deve ser escalonada com base
 na combinação entre alocação de recursos e uso de RC. Para isso, o modelo
-define um \emph{scheduler binding} entre cada \emph{thread} e um conjunto de \emph{containers}
+define um \emph{scheduler binding} entre cada \emph{thread} e um conjunto de contêineres
 sob o atual sendo multiplexado. 
 
-É interessante observar que os \emph{containers} formam hierarquias, ou seja, o uso de
-um recurso usado por um \emph{container} filho é restringido pelos parâmetros do
-\emph{container} pai. Por exemplo, se o \emph{container} pai tem 70\% dos recursos
-garantidos, então os \emph{container} filhos não podem extrapolar esse limite.
+É interessante observar que os contêineres formam hierarquias, ou seja, o uso de
+um recurso usado por um contêiner filho é restringido pelos parâmetros do
+contêiner pai. Por exemplo, se o contêiner pai tem 70\% dos recursos
+garantidos, então os contêineres filhos não podem extrapolar esse limite.
 
 Para se utilizar RCs, os autores sugerem uma API com as seguintes
 características:
 
 \begin{itemize}
-	\item \textbf{Criar um Novo Container:} Por padrão, um \emph{container} é criado
+	\item \textbf{Criar um novo contêiner:} Por padrão, um \emph{contêiner} é criado
 				como parte do \texttt{fork()} e é visível para a aplicação na forma
 				de um descritor de arquivos;
-	\item \textbf{Ajuste do Container Pai:} Um processo pode mudar quem é o seu
-				\emph{container} pai;
-	\item \textbf{Liberar o Container:} Um processo pode liberar a sua referência
-				para um \emph{container} usando \texttt{close()};
-	\item \textbf{Compartilhar Container entre Processos:} Quando um processo
-				recebe uma referência para um \emph{container}, ele pode usar o recurso como
+	\item \textbf{Ajuste do contêiner pai:} Um processo pode mudar quem é o seu
+				contêiner pai;
+	\item \textbf{Liberar o contêiner:} Um processo pode liberar a sua referência
+				para um contêiner usando \texttt{close()};
+	\item \textbf{Compartilhar contêiner entre processos:} Quando um processo
+				recebe uma referência para um contêiner, ele pode usar o recurso como
 				um \emph{resource context}. Isto permite mover uma aplicação ou
 				computação entre vários domínios de proteção;
-	\item \textbf{Atributos do Container:} Uma aplicação pode ler e ajustar
-				atributos de um \emph{container};
-	\item \textbf{Uso de Informações dos Containers:} Uma aplicação tem diversos
+	\item \textbf{Atributos do contêiner:} Uma aplicação pode ler e ajustar
+				atributos de um contêiner;
+	\item \textbf{Uso de informações dos contêineres:} Uma aplicação tem diversos
         níveis de acesso às informações do SO;
-	\item \textbf{Binding threads para um container:} Uma \emph{thread} pode fazer o
-		\emph{binding} para uma \emph{container} a qualquer momento;
-	\item \textbf{Restaurar o Scheduler Binding}
-	\item \textbf{Binding de Socket ou Arquivo para um Container:} Um processo
-				pode fazer o \emph{bind} de um socket ou arquivo para um \emph{container},
-				assim o consumo subsequente dos recursos do kernel ficam no \emph{container}.
+	\item \textbf{Binding threads para um contêiner:} Uma \emph{thread} pode fazer o
+		\emph{binding} para uma contêiner a qualquer momento;
+	\item \textbf{Restaurar o scheduler binding}
+	\item \textbf{Binding de socket ou arquivo para um contêiner:} Um processo
+				pode fazer o \emph{bind} de um socket ou arquivo para um contêiner,
+				assim o consumo subsequente dos recursos do kernel ficam no contêiner.
 \end{itemize}
+
+Resumidamente, o \emph{Resource Container} é um projeto na qual podemos
+encontrar as suas ideias no GNU/Linux na forma dos \emph{cgroups}. Note que o
+\emph{Resource Container} propõe conceitos que vão além daqueles disponíveis
+pelo o Linux, como por exemplo, permitir que os algoritmos de escalonamento
+recebam algum tipo de informação adicional da aplicação. Apesar de ser uma
+implementação pesada, os benefícios que tal técnica traz são consideravelmente
+importante para os SOs atuais.
 
 \section{Nooks}
 % deixar claro que tudo isso é no nível do kernel
@@ -535,7 +567,7 @@ passadas via kernel para os módulos e vice-versa; o controle feito sobre cada
 parte representa uma camada a mais de verificação que adiciona mais segurança e
 confiabilidade para o SO. Para fornecer a separação e controle dentro do SO,
 \emph{Nooks} apresenta o conceito de \emph{lightweight kernel protection
-domain} (LKPD). Esta abstração permite isolar partes da memória no nível do
+domain} (LKPD). Essa abstração permite isolar partes da memória no nível do
 Kernel e atribuir diferentes permissões de leitura e escrita para a região.
 Note que todo o controle entre as regiões de memória e a comunicação entre o
 kernel com as extensões ocorre no domínio do kernel, não tendo relação direta
@@ -590,7 +622,7 @@ O \emph{Nooks} fornece isolamento por meio do LKPD: toda extensão
 adicionada ao SO executa dentro do seu próprio LKPD que, por sua vez, é chamado
 de \emph{contexto de execução}. Os domínios utilizam o mesmo nível de proteção
 fornecido pelo processador para o Kernel, com a diferença de que o acesso de
-escrita para certas porções é limitada e gerenciada pelo \emph{NIM}. Neste
+escrita para certas porções é limitada e gerenciada pelo \emph{NIM}. Nesse
 sentido, podemos dividir o esquema de isolamento de \emph{Nooks} em duas partes:
 o gerenciador de memória e o \emph{Extension Procedure Call} (XPC).
 
@@ -760,11 +792,11 @@ políticas de acesso.
 Toda vez que um processo é criado, ele inicializa diferentes estruturas de
 dados relacionadas à sua execução. Um dos elementos fundamentais dos processos
 é o espaço de endereçamento virtual (\emph{Virtual Address Space -- VAS}), que é
-completamente acoplado aos processos. Normalmente, os VAS são maiores que a
+completamente acoplado aos processos. Normalmente, os VASes são maiores que a
 memória física e são totalmente isolados de outros processos. Se um processo
 precisar compartilhar dados com outros processos, será necessário criar e
-gerenciar uma região de memória compatilhada que permita a escrita e/ou leitura
-por outros processos. O atual modelo de VAS não dá suporte para
+gerenciar uma região de memória compartilhada que permita a escrita e/ou leitura
+por outros processos. O modelo convencional de VAS não dá suporte para
 o compartilhamento de estruturas de dados entre processos com base em ponteiros;
 normalmente, é necessário serializar os dados, o que tem se tornado um incômodo.
 
@@ -783,7 +815,7 @@ não foram mais capazes de endereçar diretamente todo o endereço de memória d
 mencionados acima: a parte da esquerda ilustra uma CPU com bits suficientes
 para o VAS, que consegue endereçar todo o espaço de endereçamento
 físico da memória. O lado direito da figura representa uma situação na qual o
-VAS é menor do que a memória física. Assim, um um único processo não é capaz de
+VAS é menor do que a memória física. Assim, um único processo não é capaz de
 acessar toda a memória física disponível, impondo um limite ao processo
 quanto ao tamanho que ele pode ter. Essa situação
 não é uma novidade: enquanto a indústria não produzia
@@ -873,6 +905,16 @@ processo por meio da chamada de sistema \texttt{vas\_attach()}. Por fim, o
 processo pode mudar entre os VAS por meio da chamada para
 \texttt{vas\_switch()}.
 
+O SpaceJMP é um projeto com uma proposta muito interessante: desacoplar o VAS.
+Essa ideia representa um enorme desafio para ser implementada em SOs de
+produção, contudo, ela abre precedentes para novos modelos de programação. Em
+especial, trabalhamos ativamente neste projeto em parceria com a HPe durante
+esta pesquisa sendo esse um importante trabalho para revelar os desafios em se
+implementar novas abstrações de processos. Discutiremos com mais detalhes esse
+trabalho no Capítulo~\ref{cap:estudo-de-caso}; além disso, indiretamente, o
+SpaceJMP/MVAS foi um dos catalisadores para o parte da pesquisa apresentada no
+Capítulo~\ref{cap:validacoes}.
+
 \section{Light-weight Contexts}
 \label{sec:lwc}
 
@@ -904,8 +946,8 @@ O \texttt{lwCreate()} tem uma semântica similar ao da chamada de sistema
 duplicados no processo filho. Contudo, ao contrário do \texttt{fork()}, o
 \texttt{lwCreate()} não cria uma nova \emph{thread} e nem um novo \emph{PID}.
 Ao final da execução da chamada de sistema, o \texttt{lwCreate()} retorna um
-identificador do novo contexto para o processo pai e se estiver no processo
-filho ele retorna -1. A cópia do estado do processo pai na forma do contexto,
+identificador do novo contexto para o processo pai e, se estiver no processo
+filho, ele retorna -1. A cópia do estado do processo pai na forma do contexto,
 recebe o nome de \emph{snapshot}. Depois da criação do processo filho, a
 aplicação é livre para fazer a troca (com o \texttt{lwSwitch()}) para algum de
 seus \emph{snapshots} a qualquer momento.
@@ -942,24 +984,29 @@ proteção. A API do lwC é composta das seguintes funções:
 \end{itemize}
 
 Os autores demonstram os conceitos do lwC em uma implementação no FreeBSD. As
-modificações principais foram feitas no gerenciador de memória e estruturas de dados do
-processo. Seu uso foi demonstrado em adaptações feitas no Apache, Nginx e
-OpenSSH. Por fim, os autores propõem certos algoritmos que discutiremos no
-Capítulo \ref{cap:analise-sobre-abstracoes-de-processos}.
+modificações principais foram feitas no gerenciador de memória e estruturas de
+dados do processo. Seu uso foi demonstrado em adaptações feitas no Apache,
+Nginx e OpenSSH. Por fim, os autores propõem certos algoritmos que discutiremos
+no Capítulo \ref{cap:analise-sobre-abstracoes-de-processos}; esses algoritmos
+são extremamente interessantes uma vez que representam de forma clara novos
+modelos de programação.
 
 \section{Exokernel}
 \label{sec:exokernel}
 
-\citet{exokernel} defendem que os projetos de SOs possuem uma série de
-desvantagens por terem várias abstrações diretamente programadas no núcleo. Os
-autores argumentam que as abstrações implementadas diretamente no SO possuem
-sérios impactos no desempenho, reduz consideravelmente a flexibilidade das
-aplicações e limita as possibilidades de ampliar as funcionalidade
-disponibilizadas no espaço do usuário. A implementação dessas abstrações
-diretamente no núcleo do SO são problemática uma vez que: impedem a aplicação
-de tirar proveito das otimizações que são especificas do seu domínio, as
-mudanças em tais abstrações são desencorajadas e reduzem as possibilidade do
-que pode ser feito no espaço de usuário.
+Introduzimos um trabalho de 1995 chamado que apresenta uma visão
+de desacoplamento do SO que consideramos moderna e que se alinha com a
+argumentação que desenvolvemos durante este trabalho. \citet{exokernel}
+defendem que os projetos de SOs possuem uma série de desvantagens por terem
+várias abstrações diretamente programadas no núcleo. Os autores argumentam que
+as abstrações implementadas diretamente no SO possuem sérios impactos no
+desempenho, reduz consideravelmente a flexibilidade das aplicações e limita as
+possibilidades de ampliar as funcionalidade disponibilizadas no espaço do
+usuário. A implementação dessas abstrações diretamente no núcleo do SO são
+problemática uma vez que: impedem a aplicação de tirar proveito das otimizações
+que são especificas do seu domínio, as mudanças em tais abstrações são
+desencorajadas e reduzem as possibilidade do que pode ser feito no espaço de
+usuário.
 
 Segundo os autores, a fixação das abstrações de alto-nível apresentam as
 seguintes limitações:
@@ -1056,7 +1103,7 @@ armazenadas em um vetor de recuperação.
 \section{Considerações Finais}
 
 Neste capítulo buscamos apresentar diversos trabalhos que representam
-contribuições variadas para a áreas da abstração de processos. Durante essa
+contribuições variadas para a área da abstração de processos. Durante essa
 pesquisa, vários trabalhos foram analisados, contudo por uma questão prática
 selecionamos aqueles que trazem propostas diferentes e que podem ser
 combinadas. No próximo capítulo, faremos uma análise sobre validações de tais
