@@ -7,7 +7,8 @@
 \RequirePackage{xcolor}
 
 \definecolor{InterSCity}{HTML}{00998C}
-\definecolor{DarkInterSCity}{HTML}{0D6D65}
+% TODO: Alterei aqui para ter o fundo do título branco
+\definecolor{DarkInterSCity}{HTML}{FFFFFF}
 \definecolor{DarkRed}{HTML}{872718}
 \definecolor{GreenishBrown}{HTML}{363020}
 \definecolor{SandyPaper}{HTML}{FFFCE2}
@@ -71,7 +72,8 @@
 \DeclareOption{greeny}{
     \setbeamercolor{structure}{fg=InterSCity}
     \setbeamercolor{alerted text}{fg=DarkRed}
-    \setbeamercolor{palette primary}{fg=white,bg=DarkInterSCity}
+		% TODO: Eu alterei aqui para ter o título na cor preta
+    \setbeamercolor{palette primary}{fg=black,bg=DarkInterSCity}
     \setbeamercolor{progress bar}{fg=InterSCity!75!green}
     \setbeamercolor{headline}{fg=PastelGreen!10!white,bg=InterSCity}
     \setbeamercolor{footline}{fg=white,bg=InterSCity}
