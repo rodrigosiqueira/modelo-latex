@@ -63,30 +63,38 @@ texto texto texto texto. Texto opcional.
 % automaticamente a referência para o próprio documento, conforme as normas
 % sugeridas da USP
 \begin{resumo}{port}
-Sistemas Operacionais (SO) são constituídos de um conjunto por abstrações com o
-objetivo de fornecer meios para o gerenciamento de processadores, memória,
+
+\todo[inline]{
+Os comentários abaixo são mais revisão de texto, mas eu mudaria um pouco a estrutura:
+(1) Removeria o início, até ``... atender as mudanças de requisitos blah blah'', ou seja, começaria com ``Nas últimas décadas'';
+(2) Explicaria que a mudança no modelo de abstração de processos é porque essa abstração é central para o SO, pois é onde se encontram os recursos de hardware, a aplicação do usuário e recursos relacionados a modelos de programação oferecidos pelo SO;
+(3) Onde diz ``esta dissertação...'' eu faria ``Neste trabalho, após um levantamento preliminar dos trabalhos relacionados ao tema, nos focamos em 15 trabalhos blah...''
+}
+
+Sistemas Operacionais (\hltodo[SO]{Talvez seja melhor ``SOs''}) são constituídos de um conjunto de abstrações com o
+objetivo de fornecer meios para o gerenciamento de \hltodo[processadores]{processos?}, memória,
 armazenamento e dispositivos de entrada e saída. Os conceitos adotados pelos SOs evoluem pela
 adição ou remoção de novas características buscando atender as mudanças de
 requisitos de segurança, desempenho, suporte de hardware e modelo de
 programação. Nas últimas décadas, muitos pesquisadores dedicaram-se a
 avançar o modelo atual de abstração de processos por meio da adição de camadas
 extras de segurança, melhorias de desempenho, ou dando suporte para novos
-recursos de hardware. Os esforços para expandir as capacidades do SO em uma
-abstração de processo abrem uma nova área de pesquisa ainda pouco explorada.
+recursos de hardware. Os esforços para expandir as capacidades do SO \hltodo[em uma
+abstração de processo]{Esquisito isso; acho que seria ``expandir as capacidades dos SOs no nível da abstração de processos...} abrem uma nova área de pesquisa ainda pouco explorada.
 Esta dissertação tem como objetivo levantar o estado da arte referente à
-pesquisas em abstrações de processos. Nós analisamos 15 trabalhos relacionados
-com foco nas novas propostas e implementações, agrupamos elas em três
-categorias e derivamos um conjunto de características para guiar o
+pesquisa em abstrações de processos. Nós analisamos 15 trabalhos relacionados
+com foco nas novas propostas e implementações, as agrupamos em três
+categorias e derivamos um conjunto de características \todo{... características que consideramos importantes para guiar...} para guiar o
 desenvolvimento da próxima geração de abstrações de processos. Além disso,
 sugerimos uma coleção de \emph{microbenchmarks} que podem ser utilizos para
 revelar parte dos impactos de uma nova abstração de processos. Por fim,
-realizamos uma discussão sobre o uso de softwares que pode ser utilizado para
-validação e que também podem se beneficiar de novas extensões nas abstrações de
+realizamos uma discussão sobre programas que podem ser utilizados para
+validação \todo{... validação dessas propostas...} e que também podem se beneficiar de novas extensões nas abstrações de
 processos.  Destacamos que é importante que as novas abstrações sejam
 demonstradas e validadas por meio de aplicações já consagradas para tornar
-evidente as vantagens e limitações da abordagem. Este trabalho auxiliará a
-entender os potencias da próxima geração de abstrações e processos e como
-explorar os benefícios delas.
+evidente as vantagens e limitações da abordagem\todo{Essa frase (destacamos...) está meio redundante com a anterior}. Este trabalho auxiliará a
+entender os potenciais da próxima geração de abstrações de processos e como
+explorar seus benefícios.
 \end{resumo}
 
 % O resumo é obrigatório, em português e inglês. Este comando também gera
