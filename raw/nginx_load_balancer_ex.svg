@@ -15,7 +15,7 @@
    viewBox="0 0 459.06613 70.161659"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="nginx_load_balancer_ex.svg"
    inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/request_a_page.png"
    inkscape:export-xdpi="144.75999"
@@ -274,9 +274,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="542.95153"
-     inkscape:cy="7.1541638"
+     inkscape:zoom="0.54519231"
+     inkscape:cx="1014.0876"
+     inkscape:cy="210.60753"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -298,7 +298,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -387,48 +387,42 @@
          x="57.172218"
          y="100.83344"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">HTTPS</tspan></text>
-    <g
-       id="g916"
-       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nginx_load_balancer_ex.png"
-       inkscape:export-xdpi="144.16"
-       inkscape:export-ydpi="144.16">
-      <rect
-         inkscape:export-ydpi="144.75999"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         ry="0.007236063"
-         y="37.417229"
-         x="366.35852"
-         height="19.243404"
-         width="99.200363"
-         id="rect14924"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#71c837;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <text
-         inkscape:export-ydpi="144.75999"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         id="text12514-1-9"
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#71c837;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect14924"
+       width="99.200363"
+       height="19.243404"
+       x="366.35852"
+       y="37.417229"
+       ry="0.007236063"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="371.26602"
+       y="50.984425"
+       id="text12514-1-9"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan12512-3-7"
+         x="371.26602"
          y="50.984425"
-         x="381.94269"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
-           y="50.984425"
-           x="381.94269"
-           id="tspan12512-3-7"
-           sodipodi:role="line">Web server</tspan></text>
-      <rect
-         inkscape:export-ydpi="144.75999"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         ry="0.0048240419"
-         y="40.619072"
-         x="455.53629"
-         height="12.828936"
-         width="5.3453879"
-         id="rect14924-9"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#0088aa;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    </g>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Servidor Web</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#0088aa;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect14924-9"
+       width="5.3453879"
+       height="12.828936"
+       x="455.53629"
+       y="40.619072"
+       ry="0.0048240419"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
     <g
        id="g6602"
        transform="matrix(0.39351971,0,0,0.40264647,59.110959,40.708886)"
@@ -453,135 +447,114 @@
          id="path6450"
          style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:10.04881382;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
     </g>
-    <g
-       id="g926"
-       transform="translate(0,24.362771)"
-       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nginx_load_balancer_ex.png"
-       inkscape:export-xdpi="144.16"
-       inkscape:export-ydpi="144.16">
-      <rect
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#71c837;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect918"
-         width="99.200363"
-         height="19.243404"
-         x="366.35852"
-         y="37.417229"
-         ry="0.007236063"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-ydpi="144.75999" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="381.94269"
-         y="50.984425"
-         id="text922"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-ydpi="144.75999"><tspan
-           sodipodi:role="line"
-           id="tspan920"
-           x="381.94269"
-           y="50.984425"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Web server</tspan></text>
-      <rect
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#0088aa;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect924"
-         width="5.3453879"
-         height="12.828936"
-         x="455.53629"
-         y="40.619072"
-         ry="0.0048240419"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-ydpi="144.75999" />
-    </g>
-    <g
-       transform="translate(0,48.725546)"
-       id="g936"
-       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nginx_load_balancer_ex.png"
-       inkscape:export-xdpi="144.16"
-       inkscape:export-ydpi="144.16">
-      <rect
-         inkscape:export-ydpi="144.75999"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         ry="0.007236063"
-         y="37.417229"
-         x="366.35852"
-         height="19.243404"
-         width="99.200363"
-         id="rect928"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#71c837;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <text
-         inkscape:export-ydpi="144.75999"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         id="text932"
-         y="50.984425"
-         x="381.94269"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
-           y="50.984425"
-           x="381.94269"
-           id="tspan930"
-           sodipodi:role="line">Web server</tspan></text>
-      <rect
-         inkscape:export-ydpi="144.75999"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         ry="0.0048240419"
-         y="40.619072"
-         x="455.53629"
-         height="12.828936"
-         width="5.3453879"
-         id="rect934"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#0088aa;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    </g>
-    <g
-       transform="translate(-156.10417,24.362771)"
-       id="g946"
-       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/nginx_load_balancer_ex.png"
-       inkscape:export-xdpi="144.16"
-       inkscape:export-ydpi="144.16">
-      <rect
-         inkscape:export-ydpi="144.75999"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         ry="0.007236063"
-         y="37.417229"
-         x="366.35852"
-         height="19.243404"
-         width="99.200363"
-         id="rect938"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#71c837;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <text
-         inkscape:export-ydpi="144.75999"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         id="text942"
-         y="50.984425"
-         x="381.94269"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
-           y="50.984425"
-           x="381.94269"
-           id="tspan940"
-           sodipodi:role="line">Web server</tspan></text>
-      <rect
-         inkscape:export-ydpi="144.75999"
-         inkscape:export-xdpi="144.75999"
-         inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
-         ry="0.0048240419"
-         y="40.619072"
-         x="455.53629"
-         height="12.828936"
-         width="5.3453879"
-         id="rect944"
-         style="opacity:1;fill:none;fill-opacity:1;stroke:#0088aa;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    </g>
+    <rect
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       ry="0.007236063"
+       y="61.779999"
+       x="366.35852"
+       height="19.243404"
+       width="99.200363"
+       id="rect918"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#71c837;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       id="text922"
+       y="75.347198"
+       x="371.26602"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px"
+         y="75.347198"
+         x="371.26602"
+         id="tspan920"
+         sodipodi:role="line">Servidor Web</tspan></text>
+    <rect
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       ry="0.0048240419"
+       y="64.981842"
+       x="455.53629"
+       height="12.828936"
+       width="5.3453879"
+       id="rect924"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#0088aa;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#71c837;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect928"
+       width="99.200363"
+       height="19.243404"
+       x="366.35852"
+       y="86.142776"
+       ry="0.007236063"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="371.26602"
+       y="99.709969"
+       id="text932"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan930"
+         x="371.26602"
+         y="99.709969"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Servidor Web</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#0088aa;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect934"
+       width="5.3453879"
+       height="12.828936"
+       x="455.53629"
+       y="89.34462"
+       ry="0.0048240419"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#71c837;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect938"
+       width="99.200363"
+       height="19.243404"
+       x="210.25435"
+       y="61.779999"
+       ry="0.007236063"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="215.16185"
+       y="75.347198"
+       id="text942"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999"><tspan
+         sodipodi:role="line"
+         id="tspan940"
+         x="215.16185"
+         y="75.347198"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Servidor Web</tspan></text>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#0088aa;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect944"
+       width="5.3453879"
+       height="12.828936"
+       x="299.43213"
+       y="64.981842"
+       ry="0.0048240419"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-ydpi="144.75999" />
     <path
        inkscape:export-ydpi="144.16"
        inkscape:export-xdpi="144.16"

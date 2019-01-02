@@ -1,23 +1,24 @@
 \begin{table}[]
 \small
 \centering
-  \begin{tabular}{|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|@{}c@{}|}
+\setlength{\tabcolsep}{2pt}
+  \begin{tabular}{|c|c|c|c|c|c|c|}
   % TOPO DA TABELA
   % |M{2.5cm}|M{2.5cm}|M{2.5cm}|
   \hline
-  \multicolumn{1}{|l|}{\diagbox[width=2.5cm, height=2cm]{App}{Alvo}} &
+  \multicolumn{1}{|l|}{\diagbox[width=2.5cm, height=2cm]{\textbf{App}}{\textbf{Alvo}}} &
     % Troca de contexto
-    \multicolumn{1}{@{}c@{}|}{\begin{tabular}[c]{@{}c@{}}Controle\\fino da\\Memória\end{tabular}} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{c}\textbf{Controle}\\\textbf{fino da}\\\textbf{Memória}\end{tabular}} &
     % Persistência de processos
-    \multicolumn{1}{@{}c@{}|}{\begin{tabular}[c]{@{}c@{}}Consumo\\ de CPU \end{tabular}} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{c}\textbf{Consumo}\\ \textbf{de CPU} \end{tabular}} &
     % Controle fino de privilégios
-    \multicolumn{1}{@{}c|}{\begin{tabular}[c]{@{}c@{}}Consumo \\de Memória \end{tabular}} &
+    \multicolumn{1}{c|}{\begin{tabular}[c]{c}\textbf{Consumo} \\\textbf{de Memória} \end{tabular}} &
     % Segurança
-    \multicolumn{1}{@{}c|}{Segurança} &
+    \multicolumn{1}{c|}{\textbf{Segurança}} &
     % Recuperação
-    \multicolumn{1}{@{}c|}{Recuperação} &
+    \multicolumn{1}{c|}{\textbf{Recuperação}} &
     % Otimização
-    \multicolumn{1}{@{}c|}{Otimização} \\ \hline \hline
+    \multicolumn{1}{c|}{\textbf{Otimização}} \\ \hline \hline
   % Início da tabela
   Apache  &                             & \ding{52}\ding{52}\ding{52} & \ding{52}\ding{52}\ding{52} & \ding{52}\ding{52}            & \ding{52}\ding{52} & \ding{52}\ding{52}          \\ \hline
   Nginx   & \ding{52}                   & \ding{52}\ding{52}          & \ding{52}\ding{52}          & \ding{52}                     & \ding{52}          & \ding{52}\ding{52}          \\ \hline

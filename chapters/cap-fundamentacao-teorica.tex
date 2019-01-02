@@ -451,7 +451,7 @@ aplicações de outros SOs. Por exemplo, o
 Wine\footnote{\url{https://www.winehq.org/}} executa aplicações Windows no
 Linux utilizando parte dos recursos de segmentação fornecidos pela CPU.
 
-\subsection{Proteção da memória}
+\subsection{Proteção da Memória}
 \label{sec:outros_mecanismos_memoria}
 
 A Seção~\ref{sec:modelopaginacao} descreveu a forma como o mecanismo de
@@ -722,13 +722,12 @@ hardware (dependente da arquitetura de hardware).
 
 Para realizar a troca de processos, o Kernel Linux realiza duas
 operações~\citep{entendendo_kernel}: (1) Instala o novo espaço de endereço e
-(2) Muda a pilha do domínio do Kernel e o contexto de hardware
-
-A operação de troca é extremamente dependente da arquitetura de hardware, pois
-precisa ser executada de forma rápida e, por isso, o Linux tenta tirar proveito
-de todo recurso disponibilizado pela CPU\footnote{Note que é preciso levar em
-consideração os registradores que lidam com pontos flutuantes, o que faz a troca
-de contexto ainda mais pesada}.
+(2) Muda a pilha do domínio do Kernel e o contexto de hardware. A operação de
+troca é extremamente dependente da arquitetura de hardware, pois precisa ser
+executada de forma rápida e, por isso, o Linux tenta tirar proveito de todo
+recurso disponibilizado pela CPU\footnote{Note que é preciso levar em
+consideração os registradores que lidam com pontos flutuantes, o que faz a
+troca de contexto ainda mais pesada}.
 
 % Falar de PCID?
 \section{Descritores de Arquivo}
@@ -799,7 +798,7 @@ interessante área para inovações.
 %TODO: Mudar esse nome para algo melhor
 \section{Aspectos de Implementação}
 
-As abstrações de processos são o ponto central no projeto de um SO moderno,
+As abstrações de processos são o ponto central no projeto de um SO moderno de propósito geral,
 mapeando outras abstrações para ele. Assim, outros serviços são oferecidos pelo
 SO com a intenção de fornecer os mecanismos necessários para orquestrar todas
 as operações dos processos (p.ex., escalonador e gerenciamento de memória). Toda

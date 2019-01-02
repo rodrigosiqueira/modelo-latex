@@ -15,7 +15,7 @@
    viewBox="0 0 238.12694 135.65239"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="request_a_page.svg"
    inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/thesis-repo/figures/request_a_page.png"
    inkscape:export-xdpi="144.75999"
@@ -164,9 +164,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="552.18247"
-     inkscape:cy="305.06947"
+     inkscape:zoom="1.0903846"
+     inkscape:cx="482.6047"
+     inkscape:cy="292.03026"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -187,7 +187,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -302,21 +302,21 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="69.419792"
-       y="77.267876"
+       y="72.414848"
        id="text12514-85"
        inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          x="69.419792"
-         y="77.267876"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:7.9375px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         id="tspan13341">Solicita</tspan><tspan
+         y="72.414848"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46666622px;line-height:9.52499962px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan4623">via</tspan><tspan
          sodipodi:role="line"
          x="69.419792"
-         y="85.205376"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:7.9375px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         id="tspan914">página</tspan></text>
+         y="81.93985"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46666622px;line-height:9.52499962px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan4646">navegador</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#71c837;stroke-width:1.99999988;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Send-3-0-4)"
        d="m 133.32678,18.576395 c -16.4762,0.02908 -20.70416,9.771221 -19.41029,26.658756"
@@ -378,7 +378,7 @@
          id="tspan12512-3-7"
          x="78.152893"
          y="140.75482"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Web server</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';stroke-width:0.26458332px">Servidor Web</tspan></text>
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#0088aa;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect14924-9"
@@ -392,7 +392,7 @@
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#225500;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:2.00000006, 4.00000011;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Send-5-9)"
-       d="M 132.56569,95.05114 V 120.4952"
+       d="M 116.30805,95.05114 V 120.4952"
        id="path11233-5-2"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
@@ -430,5 +430,54 @@
        id="path4576"
        d="M 145.39463,123.05164 V 97.607579"
        style="fill:none;fill-rule:evenodd;stroke:#225500;stroke-width:2;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker4580)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="79.690605"
+       y="111.03461"
+       id="text4629"><tspan
+         sodipodi:role="line"
+         id="tspan4627"
+         x="79.690605"
+         y="149.56071"
+         style="stroke-width:0.26458332"></tspan></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       id="text4639"
+       y="47.907059"
+       x="69.419792"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         id="tspan4633"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87777805px;line-height:9.52499962px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="47.907059"
+         x="69.419792"
+         sodipodi:role="line">Solicita</tspan><tspan
+         id="tspan4635"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87777805px;line-height:9.52499962px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="57.43206"
+         x="69.419792"
+         sodipodi:role="line">página</tspan><tspan
+         id="tspan4637"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:9.87777805px;line-height:9.52499962px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="65.434128"
+         x="69.419792"
+         sodipodi:role="line" /></text>
+    <text
+       inkscape:export-ydpi="144.75999"
+       inkscape:export-xdpi="144.75999"
+       inkscape:export-filename="/home/siqueira/Documents/usp/research/thesis/quali/figures/request_a_page.png"
+       id="text4956"
+       y="42.405792"
+       x="119.99033"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:6.08541679px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555534px;font-family:'Istok Web';-inkscape-font-specification:'Istok Web Bold';fill:#ffffff;stroke-width:0.26458332px"
+         y="42.405792"
+         x="119.99033"
+         id="tspan4954"
+         sodipodi:role="line">Navegador</tspan></text>
   </g>
 </svg>

@@ -144,18 +144,6 @@
 % Slide com o qrcode
 \showqrcode
 
-% TODO: Sendo bem realista com o seu estilo de apresentação: vc quer manter esse slide? -> Resposta direta: NÃO!
-%\begin{frame}{Sumário}
-%  \overview
-%\end{frame}
-%
-%\section{Introdução}
-%\section{Fundamentação Teórica}
-%\section{Validação de Novas Abstrações de Processos}
-%\section{Estudo de Caso}
-%\section{Análise Sobre Abstrações de Processos}
-%\section{Conclusão}
-
 %------------------------------------------------------------------------------
 % FUNDAMENTAÇÃO TEÓRICA
 %------------------------------------------------------------------------------
@@ -204,6 +192,16 @@
 \end{frame}
 
 \begin{frame}{Gerenciamento da Memória Relacionada aos Processos}
+  \begin{block}{}
+    \begin{itemize}
+      \item Endereço Virtual
+      \item Endereço Lógico
+			\item Espaço de Endereçamento Virtual (VAS) e Lógico
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Gerenciamento da Memória Relacionada aos Processos}
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=\textwidth]{mmu} 
@@ -215,16 +213,20 @@
 \begin{frame}{Gerenciamento da Memória Relacionada aos Processos}
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[width=.5\textwidth]{virtual_vs_fisico} 
+		\includegraphics[width=.7\textwidth]{virtual_vs_fisico} 
 		\caption{Espaço de endereçamento virtual vs. físico}
 		\label{fig:vas_pas}
 	\end{figure}
 \end{frame}
 
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_sec_four}
+\end{frame}
+
 \begin{frame}{O Modelo de Paginação}
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[width=0.8\textwidth]{paginacao} 
+		\includegraphics[width=0.7\textwidth]{paginacao} 
 		\caption{Os elementos básicos presentes no modelo de paginação. Note que a busca na TLB e na tabela de página ocorre em paralelo}
 		\label{fig:paginacao}
 	\end{figure}
@@ -234,7 +236,7 @@
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=\textwidth]{pte}
-		\caption{entrada da tabela de páginas}
+		\caption{Entrada da tabela de páginas}
 		\label{fig:pte}
 	\end{figure}
 \end{frame}
@@ -242,13 +244,17 @@
 \begin{frame}{O Modelo de Paginação}
 	\begin{figure}[!h]
 		\centering
-		\includegraphics[width=0.8\textwidth]{paginacao_passos} 
+		\includegraphics[width=0.6\textwidth]{paginacao_passos} 
 		\caption{Passos do acesso a memória usando o modelo de paginação. A figura ilustra o caso simples na qual pelo menos dois acessos a memória são necessários}
 		\label{fig:passos_paginacao}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{O Modelo de Paginação}
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_sec_five}
+\end{frame}
+
+\begin{frame}{O Modelo de Segmentação}
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=.80\textwidth]{segmentacao} 
@@ -257,7 +263,7 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Proteção da memória}
+\begin{frame}{Proteção da Memória}
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=.80\textwidth]{pte_domain} 
@@ -296,7 +302,7 @@
 \end{frame}
 
 \begin{frame}[plain]
-  \includegraphics[width=\textwidth]{presentation_sec_three}
+  \includegraphics[width=\textwidth]{presentation_sec_six}
 \end{frame}
 
 \begin{frame}{Chamadas de Sistema}
@@ -309,46 +315,18 @@
 \end{frame}
 
 \begin{frame}[plain]
-  \includegraphics[width=\textwidth]{presentation_sec_four}
-\end{frame}
-
-\begin{frame}{Troca de Contexto}
-\end{frame}
-
-\begin{frame}[plain]
-  \includegraphics[width=\textwidth]{presentation_sec_five}
-\end{frame}
-
-\begin{frame}{Descritores de Arquivo}
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=.70\textwidth]{descritores} 
-		\caption{Tabela local e global de arquivos}
-		\label{fig:descritores} 
-	\end{figure}
-\end{frame}
-
-\begin{frame}[plain]
-  \includegraphics[width=\textwidth]{presentation_sec_six}
-\end{frame}
-
-\begin{frame}{Modelos de Programação}
-\end{frame}
-
-\begin{frame}[plain]
-	\centering
-  \includegraphics[width=\textwidth]{presentation_sec_seven}
-\end{frame}
-
-\begin{frame}{Aspectos de Implementação}
-\end{frame}
-
-\begin{frame}[plain]
 	\centering
   \includegraphics[width=\textwidth]{presentation_sec_eight}
 \end{frame}
 
-\begin{frame}{Gerenciamento de Recursos}
+\begin{frame}{Troca de Contexto}
+  \begin{block}{Passos gerais da troca de contexto}
+    \begin{enumerate}
+      \item A troca tem início quando uma interrupção vinda do hardware ocorre
+      \item Salvar o estado do processo em execução
+			\item Carregar o estado do novo processo na CPU
+    \end{enumerate}
+  \end{block}
 \end{frame}
 
 \begin{frame}[plain]
@@ -356,13 +334,64 @@
   \includegraphics[width=\textwidth]{presentation_sec_nine}
 \end{frame}
 
-\begin{frame}{Outros Conceitos Indiretamente Relacionados a Abstração de Processos}
+\begin{frame}{Descritores de Arquivo}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=\textwidth]{descritores} 
+		\caption{Tabela local e global de arquivos}
+		\label{fig:descritores} 
+	\end{figure}
+\end{frame}
+
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_sec_three}
+\end{frame}
+
+\begin{frame}{Modelos de Programação, Aspectos de Implementação e Gerenciamento de Recursos}
+
+  \begin{proof}[Modelos de Programação]
+		Os SOs fornecem vários recursos adicionais para o espaço de usuário, por
+isso, SOs implementam um dado modelo de programação através de uma API própria
+  \end{proof}
+
+  \begin{proof}[Aspectos de Implementação]
+		As abstrações de processos são o ponto central no projeto de um SO moderno
+de propósito geral, mapeando outras abstrações para ele
+  \end{proof}
+
+  \begin{proof}[Gerenciamento de Recursos]
+		Indiretamente diversos software demandam significativa participação do SO,
+estendendo assim o seu consumo de recursos para o sistema
+  \end{proof}
+
+\end{frame}
+
+\begin{frame}[plain]
+	\centering
+  \includegraphics[width=\textwidth]{presentation_sec_seven}
 \end{frame}
 
 \begin{frame}{Device Drivers}
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width=0.3\textwidth]{dd} 
+		\caption{Tabela local e global de arquivos}
+		\label{fig:descritores} 
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Virtualização}
+    \begin{itemize}
+			\item Elemento central da virtualização é o hypervisor, também conhecido
+como Virtual Machine Monitor (VMM)
+			\item \emph{Guest} vs. \emph{Host}
+			\item Instruções sensíveis
+			\item Instruções privilegiadas
+			\item Instruções de controle de fluxo sensíveis
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{A Tecnologia VT-x}
 	\begin{figure}[!h]
 		\centering
 		\includegraphics[width=0.7\textwidth]{vt-x_flow} 
@@ -371,12 +400,12 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{A Tecnologia VT-x}
-\end{frame}
-
 %------------------------------------------------------------------------------
 % Trabalhos Analisados
 %------------------------------------------------------------------------------
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_cap2_zero}
+\end{frame}
 
 % TODO: Slide de transição
 \begin{frame}{Dune}
@@ -402,7 +431,15 @@
 	\end{figure}
 \end{frame}
 
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_cap2_three}
+\end{frame}
+
 \begin{frame}{Wedge}
+\end{frame}
+
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_cap2_four}
 \end{frame}
 
 \begin{frame}{Resource Container}
@@ -412,6 +449,10 @@
 		\caption{Cenários das aplicações}
 		\label{fig:resource_constainer_scenarios}
 	\end{figure}
+\end{frame}
+
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_cap2_five}
 \end{frame}
 
 \begin{frame}{Nooks}
