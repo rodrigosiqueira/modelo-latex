@@ -18,7 +18,7 @@ validação que exercitem todas as características apresentadas.
 Na prática, queremos algo que gere uma carga razoável de CPU, disco, rede e
 paralelismo; além disso, que seja algo relativamente fácil de gerar carga e
 medir o desempenho. Servidores web, atendem bem esses requisitos: são altamente
-paralelos, geram bastante I/O e tráfego de rede, dependem de algum
+paralelos, geram bastante E/S e tráfego de rede, dependem de algum
 processamento na CPU e há ferramentas para gerar carga e medir o desempenho. No
 caso da segurança, faz sentido utilizar aplicações dedicadas, como
 \emph{gnugpg} ou \emph{openssh}, e/ou uma biblioteca, como \emph{openssl}. Não
@@ -48,15 +48,6 @@ perguntas:
   \item \emph{QP4:.} ``Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada às abstrações de processos?''
 \end{quote}
 
-
-%Não vi a parte de \emph{microbenchmarks}, mas talvez você também possa argumentar
-%algo como ``se é para validar com \emph{microbenchmarks}, precisamos ter um conjunto
-%mínimo desses \emph{microbenchmarks} que todo mundo usa para minimizar as chances de
-%efeitos colaterais indesejados escaparem''. Isso justificaria a existência da
-%RQ4.
-%}
-
-
 Defendemos que uma das formas mais eficientes para validar uma nova extensão da
 abstração de processos é por meio de aplicações já consagradas, amplamente adotadas por
 diversos sistemas e que exercitam várias partes do SO. Por esses motivos,
@@ -73,15 +64,17 @@ propõem novos mecanismos dos quais alguns tipos de aplicações podem se
 beneficiar, como por exemplo, novas formas de compartilhamento de memória e
 otimizações. Nesses casos, é interessante utilizar alguma aplicação do tipo
 adequado para a validação.
-% TODO: Explicar o que é microbenchmark - validação Microbenchmarks têm por objetivo mensurar e fornecer meios para analisar uma única característica do objeto de estudo.
-Outra perspectiva sobre a validação é representada pelos \emph{microbenchmarks}
-que auxiliam no estudo dos impactos das alterações.  Esses testes são
-vantajosos durante as etapas iniciais da implementação da nova abstração, uma
-vez que são rápidos e podem ajudam durante o processo de desenvolvimento. Um
-conjunto de \emph{microbenchmarks} pode ser usado para indicar que a nova
-abstração traz vantagens, contudo, dado o seu alto nível de especialização, ele
-não consegue revelar possíveis efeitos colaterais ou interferências com outras
-funcionalidades.
+
+Outra perspectiva sobre a validação é representada pelos
+\emph{microbenchmarks}, que tem por objetivo mensurar e prover formas para
+analisar uma única característica do objeto de estudo; além disso essa é uma
+importante ferramenta que auxiliam no estudo dos impactos das alterações.
+Esses testes são vantajosos durante as etapas iniciais da implementação da nova
+abstração, uma vez que são rápidos e podem ajudam durante o processo de
+desenvolvimento. Um conjunto de \emph{microbenchmarks} pode ser usado para
+indicar que a nova abstração traz vantagens, contudo, dado o seu alto nível de
+especialização, ele não consegue revelar possíveis efeitos colaterais ou
+interferências com outras funcionalidades.
 
 A análise feita sobre as aplicações e \emph{microbenchmarks} foram originadas
 dos diversos experimentos realizados pelos pesquisadores que mostramos no
@@ -395,9 +388,9 @@ arquivos e CPU), degradando o desempenho da aplicação em situações de elevad
 demanda.
 
 O Nginx utiliza uma outra abordagem de servidor web, baseada na ideia de eventos;
-esse mecanismo, é uma técnica baseada em requisições de I/O assíncronas. Por
+esse mecanismo, é uma técnica baseada em requisições de E/S assíncronas. Por
 uma questão histórica o Apache não faz uso desse método pois as operações de
-I/O assíncronas não funcionavam bem nas suas primeiras versões no Linux. A
+E/S assíncronas não funcionavam bem nas suas primeiras versões no Linux. A
 estratégia de eventos parte do princípio de que deve-se evitar ao máximo a
 troca de contexto e, assim, tirar o máximo de proveito da CPU com processamento
 útil.  Por esse motivo, Nginx cria apenas três tipos de processos
@@ -484,7 +477,7 @@ inclui várias funções criptográficas e utilitárias. A Figura
 derivação de chaves, \emph{hash} seguro, código de autenticação de mensagens,
 criptografia/decriptografia de algoritmos simétricos/assimétricos, dentre outros. A
 arquitetura também fornece uma pilha de manipulação de erros e uma interface
-abstrata para lidar com I/O.
+abstrata para lidar com E/S.
 
 \begin{figure}[!h]
   \centering
@@ -715,7 +708,7 @@ abstrações de processos.
 O coletor de lixo é um módulo que é parte da JVM, executando junto com a aplicação.
 Independentemente do algoritmo de gerenciamento de memória implementado pelo
 GC, todos eles definem o termo \boldAndIndex{Stop the World (STW)} ou
-\emph{Parar tudo} \citep{gc_pauseless}. O STW é uma operação realizada pela
+\emph{Parar tudo} \citep{pauseless}. O STW é uma operação realizada pela
 JVM  na qual todas as \emph{threads} da aplicação são suspensas para que o GC execute.
 Em outras palavras, a única \emph{thread} executando será a do coletor. Note que o GC
 requer essa pausa para funcionar; isso é preciso pois seus algoritmos precisam que
