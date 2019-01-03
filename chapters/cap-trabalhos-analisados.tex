@@ -392,7 +392,7 @@ de memória em termos das \emph{tags} que são atribuídas para a memória em te
 de alocação.
 
 Um \emph{callgate} é uma porção de código que executa em um nível de privilégio
-(normalmente) diferente de quem o chamou. Como um \emph{sthread} sempre roda
+(normalmente) diferente de quem o chamou. Como um \emph{sthread} sempre executa
 com o menor privilégio possível, sempre que for preciso executar algo em um
 nível de permissão maior, será preciso chamar um \emph{callgate} para executar
 a operação. Para criar e usar um \emph{callgate}, é necessário indicar um ponto
@@ -681,7 +681,7 @@ na maioria dos casos, os gastos com a estrutura são compensados pelas vantagens
 
 \section{Mondrian Memory Protection e Mondrix}
 
-\citet{mmp} buscaram explorar técnicas para realizar controle fino sobre da
+\citet{mmp} buscaram explorar técnicas para realizar controle fino sobre à
 memória, com o objetivo de adicionar mais confiabilidade e segurança para os
 SOs. Os autores discutem os problemas associados com a decisão usual de se promover
 isolamento por meio da separação do espaço de endereçamento dos processos, que
@@ -712,7 +712,7 @@ casos, desempenho. Nesse sentido, \citet{mmp} propuseram uma abordagem
 que permite o controle de acesso à memória no nível do tamanho das palavras de
 dado. Para isso é apresentado um novo tipo de abordagem baseada em hardware e
 software chamado \emph{Mondrian Memory Protection (MMP)}~\citep{mmp}. Além
-disso, uma implementação prática chamada \emph{Mondrix}~\cite{mondrix} foi
+disso, uma implementação prática chamada \emph{Mondrix}~\citep{mondrix} foi
 feita no GNU/Linux. A Figura~\ref{fig:mondrixPD} resume a representação de
 memória que o MMP busca atingir. Repare que não existem porções de memória
 específica; a memória é dividida em diversos compartimentos chamados
