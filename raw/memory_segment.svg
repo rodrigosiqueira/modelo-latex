@@ -86,15 +86,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="-371.38887"
-     inkscape:cy="375.02594"
+     inkscape:zoom="0.77577773"
+     inkscape:cx="495.49998"
+     inkscape:cy="689.68933"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="0"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="false"
@@ -110,7 +110,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -162,44 +162,44 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.58333302px;line-height:13.22916698px;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="142.81392"
-       y="200.15625"
+       y="199.47414"
        id="text4508-7"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/memory_segment.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          x="142.81392"
-         y="200.15625"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.22916698px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="199.47414"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:19.97604179px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4578">Segmento de dados</tspan><tspan
          sodipodi:role="line"
          x="142.81392"
-         y="215.19559"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.22916698px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="219.45018"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:19.97604179px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan888">inicializados</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="143.11984"
-       y="146.34999"
+       y="145.82083"
        id="text4508-35"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/memory_segment.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
          sodipodi:role="line"
          x="143.11984"
-         y="146.34999"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="145.82083"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:16.32479286px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan4570">Segmento de dados</tspan><tspan
          sodipodi:role="line"
          x="143.11984"
-         y="159.685"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="162.14563"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:16.32479286px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan884">não inicializados</tspan><tspan
          sodipodi:role="line"
          x="143.11984"
-         y="173.01999"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="178.47041"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:16.32479286px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
          id="tspan890">(BSS)</tspan></text>
     <text
        xml:space="preserve"
@@ -239,7 +239,7 @@
        inkscape:export-ydpi="144.75999" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#a7b3cd;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 28.063304,179.93595 H 253.78865"
+       d="M 28.063304,183.68756 H 253.78865"
        id="path4572-3"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/memory_segment.png"
@@ -303,20 +303,20 @@
        inkscape:export-ydpi="144.75999" />
     <text
        id="text4614"
-       y="47.395714"
+       y="46.372547"
        x="142.64441"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.58333302px;line-height:6.61458349px;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/memory_segment.png"
        inkscape:export-xdpi="144.75999"
        inkscape:export-ydpi="144.75999"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="47.395714"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:17.0391674px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="46.372547"
          x="142.64441"
          sodipodi:role="line"
          id="tspan4618">Segmento de</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:13.33500004px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
-         y="60.730713"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;line-height:17.0391674px;font-family:Hack;-inkscape-font-specification:'Hack Bold';text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="63.411716"
          x="142.64441"
          sodipodi:role="line"
          id="tspan880">memória mapeada</tspan></text>

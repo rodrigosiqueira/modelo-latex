@@ -2,10 +2,10 @@
 \label{cap:analise-sobre-abstracoes-de-processos}
 
 No Capítulo \ref{cap:trabalhos-analisados}, introduzimos os principais trabalhos
-que orbitam sobre as novas abstrações de processos e, a partir de tais
-pesquisas, pretendemos desenvolver neste capítulo uma reflexão das suas principais
-características. Para isso, realizaremos diversas análises sobre o estado da arte
-da pesquisa em processos e apresentaremos um modelo teórico que visa fornecer
+que orbitam em torno de novas abstrações de processos e, a partir de tais
+pesquisas, pretendemos desenvolver neste capítulo uma reflexão sobre suas principais
+características. Para isso, realizamos diversas análises sobre o estado da arte
+da pesquisa em processos e apresentamos um modelo teórico que visa fornecer
 uma perspectiva para a nova geração de abstrações de processos. Como resultado,
 responderemos as seguintes questões de pesquisa:
 
@@ -17,14 +17,14 @@ responderemos as seguintes questões de pesquisa:
 Este trabalho se diferencia dos trabalhos apresentados no
 Capítulo~\ref{cap:trabalhos-analisados} por buscar uma visão unificada sobre as
 novas extensões nas abstrações de processos e por levar em conta SOs de uso
-cotidiano, em especial o GNU/Linux. Este último critério torna-se relevante
+cotidiano, em especial o GNU/Linux. Esse último critério torna-se relevante
 para futuras investigações na área, uma vez que, se tais abstrações alcançarem
-SOs de ampla utilização, novos ramos de pesquisa podem surgir.
+SOs de ampla utilização, o impacto e o crescimento da área serão significativos.
 
 \section{Potenciais e Dificuldades Para a Adoção de Novas Abstrações de Processos}
 \label{sec:potenciais}
 %TODO: Ver a onde da para cortar
-Quando a academia faz uma nova proposta para aplicações que estão no ``estado da
+Quando a academia faz uma nova proposta para sistemas que estão no ``estado da
 prática'', ela deve ser genérica o bastante para ser utilizada por
 múltiplas linguagens de programação e deve também considerar questões
 referentes a compatibilidade, melhor uso do hardware disponível e
@@ -38,7 +38,7 @@ prevenir acessos ilegais à memória, impossibilitar a violação de APIs, evita
 consumo excessivo de recursos e impedir erros de sincronização ou
 \textit{locking}. Essas características precisam ser garantidas pelo SO
 \citep{mondrix}, porém, como esperado, tais restrições dificilmente são
-atendidas por propostas de pesquisas devido à centralização dos pesquisadores
+atendidas por propostas de pesquisas devido ao foco dos pesquisadores
 em um único problema, desconsiderando assim outros impactos. Por esse motivo,
 para que um novo componente sugerido a partir de uma pesquisa acadêmica chegue
 aos SOs atuais, é importante garantir que as aplicações que já existem não
@@ -78,18 +78,18 @@ citadas nessa seção para que possam atender aos requisitos de qualidade
 exigidos pelos SOs de uso cotidiano. Infelizmente, afirmar que uma proposta da
 academia pode ser adotada ou não pela indústria é uma tarefa impossível dada a
 enorme quantidade de variáveis envolvidas em tal análise. Mesmo assim, para
-posicionar o leitor em termos do estado da arte e da prática, nós buscamos
+posicionar o leitor em termos do estado da arte e da prática, buscamos
 estabelecer um ``potencial de adoção'' de uma nova proposta. Com base nos
-critérios apresentados, buscamos definir um conjunto de variáveis que auxilie
+critérios apresentados, definimos um conjunto de variáveis que auxilie
 na definição das chances de uma pesquisa ser adotada pela indústria:
 
 \begin{enumerate}
   \item
-\textbf{Dependência Técnica}: essa variável indica se o trabalho é construído
+\textbf{Dependência Técnica}: indica se o trabalho é construído
 levando-se em consideração outras tecnologias não estabilizadas. Consideramos
 tal aspecto um problema para a adoção da nova técnica.
 
-	\item \textbf{Dependência de Compatibilidade}: refere-se as propostas que
+  \item \textbf{Dependência de Compatibilidade}: refere-se às propostas que
 exigem alterações na semântica das aplicações em espaço de usuário para que
 elas possam tirar proveito de alguma melhoria.
 
@@ -108,7 +108,7 @@ dificulta a adoção.
 implementações, claramente de difícil adoção.
 
   \item
-\textbf{Hardware Novo}: essa variável indica que a proposta depende de um
+\textbf{Hardware Novo}: indica que a proposta depende de um
 hardware novo que só existe em algum contexto específico ou mesmo que ainda não
 foi implementado.
 
@@ -121,7 +121,7 @@ original.
 
 A Tabela \ref{tab:adocao} tenta apresentar o potencial de adoção de cada uma
 das propostas citadas no Capítulo \ref{cap:trabalhos-analisados} de acordo com
-as variáveis discutidas nessa seção. Na tabela, temos uma marcação indicada
+as variáveis discutidas nesta seção. Na tabela, temos uma marcação indicada
 pelo simbolo \ding{54} que significa que uma determinada proposta possui a
 limitação indicada na coluna correspondente. Se a proposta não contém tal restrição, então ela
 é marcada com o simbolo \ding{52}. Por uma questão de simplicidade, para
@@ -129,7 +129,7 @@ definir o potencial de adoção, atribuímos zero para cada \ding{54} e um para
 \ding{52}. Por fim, toda vez que a opção ``Hardware Novo'' é marcada,
 consideramos que a proposta também requer características específicas de
 hardware; para as variáveis referentes à implementação, consideramos que quando
-uma proposta parte de uma implementação independente ela também é considerada
+uma proposta parte de uma implementação independente, ela também é considerada
 pesada.
 
 \input{tables/potencial_adocao}
@@ -181,9 +181,11 @@ De forma mais direta e sistemática, o \textit{Resource Container} sugere o
 controle fino do gerenciamento de recursos e consequentemente o
 \textbf{desacoplamento do gerenciamento de recursos} de tal elemento. De certa
 maneira, essa proposta já pode ser encontrada incorporada nos SOs atuais, sob a
-forma de containers no Linux, mais especificamente, como o \textit{cgroups}. A
-principal contribuição do trabalho vem da sua capacidade de permitir que a
-própria aplicação tome conta da sua execução. Ainda que parte das ideias
+forma de contêineres no Linux, mais especificamente, como o
+\textit{cgroups}\footnote{\emph{cgroups} é uma funcionalidade fornecida pelo
+Linux que permite limitar e isolar recursos de uma coleção de processos.}. A
+principal contribuição do do \emph{Resource Container} vem da sua capacidade de permitir que a
+própria aplicação tome conta da sua execução.  Ainda que parte das ideias
 apresentadas por esse trabalho estejam presentes em alguns SOs, as
 implementações ainda são relativamente reduzidas em termos do escopo
 apresentado na pesquisa.
@@ -191,15 +193,15 @@ apresentado na pesquisa.
 Uma abordagem alternativa que visa atender uma nova geração de computadores com
 memórias não voláteis na ordem dos petabytes é o SpaceJMP/MVAS.  Os autores
 sugerem o \textbf{desacoplamento do VAS dos processos} e permitir que eles tenham
-múltiplas VAS e, de forma reativa, a aplicação torne-se capaz de mudar o VAS
+múltiplos VAS e, de forma reativa, a aplicação torne-se capaz de mudar o VAS
 atual. Essa abordagem faz com que um processo consiga acessar regiões muito
 maiores do que aquelas garantidas pelo tamanho de um VAS. Indiretamente,
 desacoplar um VAS adiciona a possibilidade de criar processos persistentes,
-isto é, que vivem mesmo após o boot ou mesmo após um problema. Desacoplar o VAS
+isto é, que vivem mesmo após o reboot ou mesmo após um problema. Desacoplar o VAS
 pode trazer benefícios para aplicações de \textit{checkpoints}, melhorar o
 gerenciamento de bibliotecas, e elevar o nível de isolamento e compartilhamento.
 
-Light-weight Context (lwC) indiretamente propõe o total
+O projeto  Light-weight Context (lwC) indiretamente propõe o total
 \textbf{desacoplamento do PC}; vale observar que os autores explicitam outros
 desacoplamentos, contudo, para esse trabalho, acreditamos que o desacoplamento
 do PC é o que melhor descreve as inovações propostas. Desacoplar o PC leva uma
@@ -233,7 +235,7 @@ falhas de segurança ocasionados por binários de terceiros. Em segundo lugar, o
 controle do compartilhamento de memória acontece no tamanho de uma página e
 cria a oportunidade para explorar falhas, tais quais \emph{buffer e stack
 overflow} ou mesmo o compartilhamento de bibliotecas comprometidas. Com essa preocupação, os
-trabalhos Wedge, shreds e mondrix/mondrian buscam trazer melhorias para estas fragilidades.
+trabalhos Wedge, shreds e mondrix/mondrian buscam trazer melhorias para essas fragilidades.
 
 Analisando as abstrações de processos da perspectiva da segurança, o projeto
 Wedge retoma uma antiga premissa que defende o princípio do menor privilégio.
@@ -265,13 +267,13 @@ possível. Indiretamente, shreds e mondrix são propostas de
 \section{Bead: Um Modelo Teórico Para a Próxima Geração de Abstrações de Processos}
 \label{sec:bead}
 
-Neste trabalhos discutimos as abstrações de processos partindo do conhecimento
+Neste trabalho discutimos as abstrações de processos partindo do conhecimento
 já estabelecido e consolidado pela indústria até chegar ao estado da arte de
 novas propostas para melhorar o conceito de processo. Durante toda a pesquisa,
 percebemos que as diversas propostas giram em torno do desacoplamento de
 elementos do processo, contudo, não existe uma tentativa de organizar as
 diversas ideias propostas. Nesse sentido, observamos e analisamos diferentes propostas de
-desacoplamento que ainda consistem no estado da arte, acreditando que várias
+desacoplamento que representam o estado da arte, acreditando que várias
 das ideias apresentadas podem atingir o ``estado da prática'' e assim pavimentar
 novos ramos de pesquisas. Como resultado dessa pesquisa, compilamos os diversos
 trabalhos estudados em um modelo que busca elevar o grau de desacoplamento
@@ -299,6 +301,9 @@ refere-se às pequenas contas que compõem um colar ou pulseira. Normalmente,
 existe uma ampla variedade de tais objetos.} que consiste em buscar um elevado
 grau de desacoplamento dos elementos da abstração de processos.
 
+
+\input{tables/desacoplar_beneficios}
+
 Como apresentado na Seção \ref{sec:potenciais}, para que os desacoplamentos
 propostos nas pesquisas sejam absorvidos pelos SOs atuais é preciso considerar
 diversos aspectos. Em especial, destacamos que as abordagens que seguem uma
@@ -308,21 +313,6 @@ propostas de desacoplamento na vertical e os benefícios que elas podem trazer
 aos SOs. Por fim, utilizamos uma escala de zero a três \ding{52}, que indica o
 quanto de benefício um determinado desacoplamento pode levar para uma área.
 
-\input{tables/desacoplar_beneficios}
-
-A Figura \ref{fig:decomposicao_proc} busca mostrar de forma visual o modelo de
-abstração de processos proposto por este trabalho. Na parte central da figura
-temos os três elementos fundamentais para o uso dos processos: PC, Pilha e
-contexto de IO. Nas camadas mais externas temos o VAS, que é um elemento
-importante para que os processos em SOs de propósito geral funcionem de forma
-apropriada (dada sua importância, ele ocupa boa parte da representação da
-abstração).  Em seguida notamos diversos elementos que orbitam a abstração
-atual de processos. Eles podem ser vistos como elementos menos importantes para
-o correto funcionamento da abstração, mas são fundamentais para diversas
-aplicações modernas. Note na Figura a presença de ``??'', esse foi inserido na
-imagem com o objetivo para simbolizar outros desacoplamentos nos quais não
-detectamos ou que venha a surgir no futuro.
-
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{decomposicao_overview}
@@ -330,20 +320,39 @@ detectamos ou que venha a surgir no futuro.
   \label{fig:decomposicao_proc}
 \end{figure}
 
+A Figura \ref{fig:decomposicao_proc} busca mostrar de forma visual o modelo de
+abstração de processos proposto por este trabalho. Na parte central da figura
+temos os três elementos fundamentais para o uso dos processos: PC, Pilha e
+contexto de E/S. Nas camadas mais externas temos o VAS, que é um elemento
+importante para que os processos em SOs de propósito geral funcionem de forma
+apropriada (dada sua importância, ele ocupa boa parte da representação da
+abstração).  Em seguida notamos diversos elementos que orbitam a abstração
+atual de processos. Eles podem ser vistos como elementos menos importantes para
+o correto funcionamento da abstração, mas são fundamentais para diversas
+aplicações modernas. Note na Figura a presença de ``??'', esse foi inserido na
+imagem com o objetivo de simbolizar outros desacoplamentos que não detectamos
+ou que venham a surgir no futuro. Por fim, no canto direito da figura,
+destacamos apenas os dois principais elementos envolvidos na criação das
+\emph{threads}; repare que \emph{threads} podem ser vistas como desacoplamentos
+do PC e da pilha.
+
 \subsection{A API Bead}
 \label{sec:api}
 
-Em termos de API e implementação, queremos manter os critérios para adoção
-descritos na Seção \ref{sec:potenciais} e, ao mesmo tempo, fornecer uma API
-unificada que possa ser utilizada no espaço de usuário. Para que tal modelo
-possa ser implementado, é preciso usar uma abordagem que caminha entre uma
-implementação estrutural leve e pesada. Implementação pesada significa que será
-necessário inserir códigos intermediários nas atuais abstrações de processo para
-que esses forneçam mecanismos externos e permitam às extensões atuar sobre o
-núcleo do SO. Tal abordagem visa manter a compatibilidade com as
-aplicações já existentes sem forçar mudanças nas aplicações no espaço
-do usuário. Implementação leve é quando queremos o maior grau de desacoplamento
-possível como também facilidade para futuras expansões no modelo.
+Nesta subseção discutiremos a proposta de API do \emph{Bead}, que tem por
+objetivo fornecer uma visão do funcionamento desse modelo; note que a
+implementação do \emph{Bead} consiste em um trabalho futuro. Em termos de API e
+implementação, queremos manter os critérios para adoção descritos na Seção
+\ref{sec:potenciais} e, ao mesmo tempo, fornecer uma API unificada que possa
+ser utilizada no espaço de usuário. Para que tal modelo possa ser implementado,
+é preciso usar uma abordagem que caminha entre uma implementação estrutural
+leve e pesada.  Implementação pesada significa que será necessário inserir
+códigos intermediários nas atuais abstrações de processo para que esses
+forneçam mecanismos externos e permitam às extensões atuar sobre o núcleo do
+SO. Tal abordagem visa manter a compatibilidade com as aplicações já existentes
+sem forçar mudanças nas aplicações no espaço do usuário. Implementação leve é
+quando queremos o maior grau de desacoplamento possível como também facilidade
+para futuras expansões no modelo.
 
 Como mostrado no Capítulo \ref{cap:trabalhos-analisados}, cada proposta de
 extensão na abstração de processo sugere uma API para o seu contexto
@@ -384,7 +393,7 @@ especificamos tais valores.}.
 Essa operação surge da necessidade de unificar as diversas propostas, por isso
 não tem referência direta a nenhum trabalho.
 
-	\end{itemize}
+  \end{itemize}
 
   \item [\texttt{BEAD\_GET\_CONFIG}:]
 
@@ -406,7 +415,7 @@ erro.
 
 Operação criada no contexto deste trabalho.
 
-	\end{itemize}
+  \end{itemize}
 
   \item [\texttt{BEAD\_NEW\_CONTEXT\_INSTANCE}:]
 
@@ -470,7 +479,7 @@ possibilidade de restringir qual operação de virtualização deseja-se utiliza
     \item \textbf{Parâmetros:}
 
     \begin{itemize}
-    \item \texttt{Options}: Recebe opções que determina o modo de virtualização.
+    \item \texttt{Options}: Recebe opções que determinam o modo de virtualização.
     \end{itemize}
 
     \item \textbf{Retorno:}
@@ -483,7 +492,7 @@ Chamada baseada em \texttt{dune\_entry()}, do Dune.
 
   \end{itemize}
 
-	\item [\texttt{BEAD\_ENTER\_COMPARTMENT}:]
+  \item [\texttt{BEAD\_ENTER\_COMPARTMENT}:]
 
 Essa operação faz com que a \emph{thread} em execução tenha associado a si um
 compartimento ao qual apenas ela tem acesso. Isso auxilia contra
@@ -519,7 +528,7 @@ Devolve 0 se tudo ocorrer bem, ou um código de erro se algo der errado.
 
 Chamada baseada em \texttt{shred\_exit()}, proposta pelo Shred.
 
-	\end{itemize}
+  \end{itemize}
 
   \item [\texttt{BEAD\_ALLOC\_COMPARTMENT}:]
 
@@ -546,7 +555,7 @@ NULL é devolvido.
 
 Chamada baseada no Shred.
 
-	\end{itemize}
+  \end{itemize}
 
   \item [\texttt{BEAD\_FREE\_COMPARTMENT}:]
 
@@ -568,7 +577,7 @@ Não devolve nada.
 
 Chamada baseada no Shred.
 
-	\end{itemize}
+  \end{itemize}
 %  \item [\texttt{BEAD\_REGISTER\_TRANSFER\_CONTROL}:]
 %  \item [\texttt{BEAD\_REGISTER\_TRANSFER\_ENTRY}:]
 %  \item [\texttt{BEAD\_NEW\_EXECUTION\_CONTEXT}:]
@@ -580,7 +589,7 @@ Chamada baseada no Shred.
 As operações indicadas na Seção~\ref{sec:api} podem ser entendidas como funções
 ou constantes utilizadas para determinar o procedimento que deve ser
 feito\footnote{Entendemos que tal decisão deve ser tomada pelo próprio
-desenvolvedor}. Para manipular as diversas operações fornecidas pelo
+desenvolvedor.}. Para manipular as diversas operações fornecidas pelo
 \emph{bead}, utilizaremos uma função central (\texttt{beadctl()}) responsável
 por gerenciar as chamadas de sistema solicitadas pelo usuário. Essa função
 receberá dois valores como parâmetro: (1) uma constante representando a
@@ -970,7 +979,7 @@ pode solicitar ao \emph{bead} para sair do compartimento. A
 Linha~\ref{line:compartimentoExit} ilustra a função que faz a operação de sair
 do compartimento.
 
-\section{Discussão}
+\section{Sumário}
 
 Neste capítulo os nossos objetivos consistiram em responder as seguintes
 questões de pesquisa:

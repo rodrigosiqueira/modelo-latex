@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.05134107"
-     inkscape:cx="11758.224"
-     inkscape:cy="1010.081"
+     inkscape:zoom="0.056898941"
+     inkscape:cx="10221.989"
+     inkscape:cy="709.13864"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -61,7 +61,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -448,15 +448,6 @@
        d="m 1319.5651,102.52501 -79.231,-47.585051 a 93.165632,93.166407 0 0 1 79.2376,-44.295389 93.165632,93.166407 0 0 1 78.8653,43.777362 z"
        style="opacity:1;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:5.29166603;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:connector-curvature="0"
-       inkscape:export-xdpi="19.121189"
-       inkscape:export-ydpi="19.121189"
-       inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
-    <path
-       style="fill:none;stroke:#ffcc00;stroke-width:15.875;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -426.54858,-274.69146 -295.05256,-335.41102 h 494.31459"
-       id="path1135"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc"
        inkscape:export-xdpi="19.121189"
        inkscape:export-ydpi="19.121189"
        inkscape:export-filename="/home/siqueira/Documents/Repositories/modelo-latex/figuras/decomposicao.png" />
