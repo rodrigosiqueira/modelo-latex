@@ -371,7 +371,7 @@ Essa operação atua diretamente nas configurações referentes às abstrações
 processos. Ela espera que o programa indique explicitamente quais
 desacoplamentos utilizar. Se nenhuma informação for passada, assume-se um
 conjunto de configurações padrão compatível com a maioria das aplicações
-atuais. As configurações do que sera desacoplado são feitas por meio desse comando.
+atuais. As configurações do que será desacoplado são feitas por meio desse comando.
 
   \begin{itemize}
     \item \textbf{Parâmetros:}
@@ -769,6 +769,7 @@ melhorar o isolamento entre as requisições. Essa mesma ideia é expansível pa
 aplicações menores que têm uma etapa de iniciação reutilizável.
 
 \subsubsection{Padrão Virtualização Controlada}
+\label{sec:virtctl}
 
 O padrão virtualização controlada nasce do projeto Dune como uma especialização
 do modo de operação no qual o processo faz uso dos recursos de virtualização.
@@ -880,9 +881,10 @@ Quando o novo processo indicado na Linha~\ref{line:persistenciaMain2} inicia,
 ele abre o arquivo contendo o identificador e recupera o valor. Em seguida, a
 operação de troca de contexto é feita utilizando o valor carregado.
 
-\subsubsection{Padrão Atualização em Tempo Real}
+\subsubsection{Padrão Atualização em Tempo Execução}
+\label{sec:ate}
 
-O padrão de Atualização em Tempo Real (ATR), ou simplesmente
+O padrão de Atualização em Tempo de Execução (ATE), ou simplesmente
 \emph{live-patching}, nasce do desacoplamento do VAS, PC e da utilização de
 técnicas que calculam a diferença entre dois arquivos (\emph{diff}). Em
 complemento ao trabalho do SpaceJMP, o \emph{bead} busca adicionar um nível de
@@ -896,13 +898,13 @@ espaço do usuário ainda é um desafio.
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\textwidth]{live-patching}
-  \caption{Funcionamento do padrão atualização em tempo real}
+  \caption{Funcionamento do padrão atualização em tempo de execução}
   \label{fig:atr}
 \end{figure}
 
 Buscando uma possível solução para este problema, a Figura~\ref{fig:atr}
-ilustra de forma geral o padrão ATR. Na ilustração temos um processo chamado de
-$A'$ que é o alvo da atualização em tempo real; ainda na figura, repare a linha
+ilustra de forma geral o padrão ATE. Na ilustração temos um processo chamado de
+$A'$ que é o alvo da atualização em tempo de execução; ainda na figura, repare a linha
 do tempo indicando a execução de $A'$. No período de tempo $t_1$, uma instância
 idêntica do processo $A$ é iniciada e recebe o nome de $A''$.  Repare que o
 processo $A''$ recebe a \emph{flag} \texttt{--live-patching} como parâmetro
@@ -919,7 +921,7 @@ $A''$.
 \input{algorithm/live_patch.tex}
 
 O Pseudocódigo~\ref{alg:livePatch} ilustra como seria uma possível
-implementação do padrão ATR. A função \texttt{MAIN()} de algum programa
+implementação do padrão ATE. A função \texttt{MAIN()} de algum programa
 qualquer precisaria ser alterada para aceitar o parâmetro
 \texttt{--live-patching}\footnote{O nome do parâmetro poderia ser qualquer um
 que o programador queira adotar.} como a Linha~\ref{line:arg} ilustra. Se o
@@ -978,6 +980,60 @@ Quando todas as operações sobre dados sensíveis tiver acabado, o programador
 pode solicitar ao \emph{bead} para sair do compartimento. A
 Linha~\ref{line:compartimentoExit} ilustra a função que faz a operação de sair
 do compartimento.
+
+\subsection{A biblioteca \texttt{libbead}}
+
+Na Seção~\ref{sec:padroes}, procuramos evidenciar o comportamento de baixo
+nível do \emph{bead} de forma a explicitar o desacoplamento das abstrações de
+processos. Na prática, não esperamos que os usuários do \emph{bead} utilizem os
+padrões da forma como foi descrito na Seção~\ref{sec:padroes}, uma vez que elas
+representam operações de baixo nível. Idealmente, a implementação do
+\emph{bead} deve vir acompanhada de uma biblioteca (chamaremos de
+\emph{libbead} neste texto) que se comporte como uma camada de abstração sobre
+as operações de baixo nível e assim facilite a utilização nos novos recursos
+oferecidos pelo \emph{bead}. Note que tal biblioteca deve prover os padrões
+descritos da Seção~\ref{sec:padroes}.
+
+O padrão fotografia (Seção~\ref{sec:fotografia}) poderia ser encapsulado em
+duas funções: \texttt{beadGetContext()} e \texttt{beadSwitch()}. A função
+\texttt{beadGetContext()} espera alguns parâmetro de configuração que definem a
+forma como a fotografia deve operar e em seguida salva o contexto.
+Posteriormente, o desenvolvedor precisaria realizar o \texttt{beadSwitch()}
+para o contexto novo. O Pseudocódigo~\ref{alg:libBeadFotografia} ilustra como
+pode ser usado a operação descrita na Seção~\ref{sec:fotografia}, da perpectiva
+de um usuário da \emph{libbead}.
+
+\input{algorithm/lib_bead_snapshot.tex}
+
+Outra funcionalidade que poderia ser consideravelmente simplificada pela
+\texttt{libbead} é a operação de virtualização controlada apresentada na
+Seção~\ref{sec:virtctl}. O Código~\ref{alg:libBeadvirtMode} ilustra como a
+\texttt{libbead} pode simplificar a tarefa de usar os recursos de
+virtualização. Note que a função \texttt{beadVirtualMode()} espera um conjunto
+de parâmetros de configuração e uma função para ser executada em modo
+virtualização; se \texttt{NULL} for passada no último parâmetro, todo o
+processo vai executar em modo de virtualização.
+
+\input{algorithm/lib_bead_virt_mode.tex}
+
+Em termos de utilização do padrão de atualização em tempo de execução
+(Seção~\ref{sec:ate}), a \emph{libbead} representa uma enorme simplificação. O
+Pseudocódigo~\ref{alg:beadLivePatch} ilustra o padrão ATE da perspectiva do
+\emph{libbead}, note que precisamos apenas da função
+\texttt{beadInstallLivePatching()} para adicionar suporte para a atualização em
+tempo de execução. Essa função instala no processo um mecanismo que leva ele
+para um estado \emph{quiescence}~\citep{quiescence} que pode permitir a
+atualização em tempo de execução. Note do pseudocódigo, que ainda é necessário
+tratar o recebimento do pedido de atualização.
+
+\input{algorithm/lib_bead_live_patch.tex}
+
+Por fim, o mais importante a se notar sobre a \texttt{libbead} é que ela
+comporta-se como uma camada de abstração para as operações de baixo nível. Essa
+biblioteca deve tornar simles o processo de utilização do \texttt{bead}, assim
+como a \texttt{libc}\footnote{\url{https://www.gnu.org/software/libc/}} e a
+\texttt{libdrm}\footnote{\url{https://01.org/linuxgraphics/community/libdrm}}
+fazem.
 
 \section{Sumário}
 

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-void * thread_kernel( void * message_pointer ) {
+void * thread_kernel(void * message_pointer) {
   char * message = NULL;
   message = (char *) message_pointer;
   printf("%s \n", message);

@@ -14,7 +14,7 @@
    viewBox="0 0 196.7597 169.91115"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
    sodipodi:docname="presentation_cap2_eight.svg">
   <defs
      id="defs2">
@@ -195,9 +195,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.85975869"
-     inkscape:cx="-82.134141"
-     inkscape:cy="236.57971"
+     inkscape:zoom="0.47641546"
+     inkscape:cx="443.2218"
+     inkscape:cy="313.00521"
      inkscape:document-units="mm"
      inkscape:current-layer="layer5"
      showgrid="false"
@@ -221,7 +221,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -280,6 +280,17 @@
        id="path960"
        d="m 150.49896,122.34684 29.36782,-10.31223"
        style="fill:none;stroke:#000000;stroke-width:0.30000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter1048)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="162.50993"
+       y="178.61224"
+       id="text869"><tspan
+         sodipodi:role="line"
+         id="tspan867"
+         x="162.50993"
+         y="178.61224"
+         style="font-size:14.11111069px;stroke-width:0.26458332">LwC</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

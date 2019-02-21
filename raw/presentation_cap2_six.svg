@@ -14,7 +14,7 @@
    viewBox="0 0 270.88876 246.94209"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
    sodipodi:docname="presentation_cap2_six.svg">
   <defs
      id="defs2">
@@ -234,9 +234,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.94875354"
-     inkscape:cx="750.88509"
-     inkscape:cy="469.21931"
+     inkscape:zoom="0.5257299"
+     inkscape:cx="813.3713"
+     inkscape:cy="274.7259"
      inkscape:document-units="mm"
      inkscape:current-layer="layer4"
      showgrid="false"
@@ -260,7 +260,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -323,6 +323,50 @@
        id="path4687"
        d="M 218.95769,74.631753 207.3618,148.64081 158.9319,67.128529 129.26007,151.71032 59.684729,89.297144 48.770949,136.36281 83.217564,162.62409 119.71051,72.585418 177.34891,146.93554 240.10314,136.70387 47.747782,138.06809 236.01047,117.60476 46.383561,125.10798 229.87147,92.7077 40.244559,107.37309 222.02719,78.042309 80.830176,86.909753 174.27941,68.492753 109.13779,73.267529 231.9178,103.96253 55.933117,152.73348 238.73891,142.50181 218.61663,149.32293 81.85334,88.615032 65.823729,166.3757 55.933117,152.73348 136.42224,68.833806 237.71574,145.57131"
        style="fill:none;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter4766)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="137.89558"
+       y="202.1512"
+       id="text881"><tspan
+         sodipodi:role="line"
+         x="137.89558"
+         y="202.1512"
+         style="font-size:14.11111069px;stroke-width:0.26458332"
+         id="tspan887">Mondrian</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="213.88913"
+       y="201.44839"
+       id="text893"><tspan
+         sodipodi:role="line"
+         id="tspan891"
+         x="213.88913"
+         y="201.44839"
+         style="font-size:14.11111069px;stroke-width:0.26458332">Memory</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="149.47075"
+       y="215.73946"
+       id="text897"><tspan
+         sodipodi:role="line"
+         id="tspan895"
+         x="149.47075"
+         y="215.73946"
+         style="font-size:14.11111069px;stroke-width:0.26458332">Protection e</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="170.83379"
+       y="231.19983"
+       id="text897-3"><tspan
+         sodipodi:role="line"
+         id="tspan895-6"
+         x="170.83379"
+         y="231.19983"
+         style="font-size:14.11111069px;stroke-width:0.26458332">Mondrix</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

@@ -8,16 +8,18 @@ abstrações de processos. Utilizamos uma estrutura para preparar o ambiente
 (\emph{deploy}) que é responsável por configurar todas as máquinas alvos
 envolvidas nos experimentos. Para automatizar tal passo, decidimos utilizar a
 ferramenta \emph{Ansible}\footnote{\url{https://www.ansible.com/}} para
-controlar a implantação dos experimentos uma vez que esta é amplamente utilizada e é
-relativamente simples de se utilizar. Adicionalmente, temos um grupo de \emph{scripts}
-projetados para estressar diferentes cenários, esses \emph{scripts} são baseados em
-uma ferramenta chamada \emph{Apache Benchmark Tool} (ab) que por sua vez tem
-configurações específicas para testar diferentes aspectos do SO e de um servidor
-HTTP. Temos uma coleção de programas para processar todos os dados gerados
-durante a execução do experimento e produzir os gráficos. Neste capítulo,
-apresentamos alguns experimentos e buscamos validar os benefícios da abordagem
-utilizando Múltiplos Endereços Virtuais (MVAS); ou seja, esse capítulo tem como
-objetivo testar parte do que foi apresentado no Capítulo~\ref{cap:validacoes}.
+controlar a implantação dos experimentos uma vez que esta é amplamente
+utilizada e é relativamente simples de se utilizar. Adicionalmente, temos um
+grupo de \emph{scripts} projetados para estressar diferentes
+cenários\footnote{\url{https://github.com/LSS-USP/web_server_benchmark}}, esses
+\emph{scripts} são baseados em uma ferramenta chamada \emph{Apache Benchmark
+Tool} (ab) que por sua vez tem configurações específicas para testar diferentes
+aspectos do SO e de um servidor HTTP. Temos uma coleção de programas para
+processar todos os dados gerados durante a execução do experimento e produzir
+os gráficos. Neste capítulo, apresentamos alguns experimentos e buscamos
+validar os benefícios da abordagem utilizando Múltiplos Endereços Virtuais
+(MVAS); ou seja, esse capítulo tem como objetivo testar parte do que foi
+apresentado no Capítulo~\ref{cap:validacoes}.
 
 \section{Metodologia} \label{sec:metodologia}
 
@@ -26,8 +28,8 @@ objetivo testar parte do que foi apresentado no Capítulo~\ref{cap:validacoes}.
   \caption{Visão geral da organização de aplicações utilizando servidores Web}
 \label{fig:web_server} \end{figure}
 
-Atualmente podemos encontrar um grande número de arquiteturas que podem ser
-utilizadas por um sistema web. A Figura \ref{fig:web_server} ilustra duas
+Atualmente podemos encontrar um grande número de arquiteturas que pode ser
+utilizada por um sistema web. A Figura \ref{fig:web_server} ilustra duas
 arquiteturas diferentes. A primeira mostra uma situação na qual uma página web
 é totalmente manipulada pelo \emph{Apache HTTP Server} (httpd). Basicamente, o httpd manipula uma
 solicitação e a passa para um módulo específico responsável por executar um
@@ -172,33 +174,38 @@ Espera um inteiro positivo que represente o total de thread por processo filho
 
 \input{tables/mpm_config.tex}
 
-A Tabela \ref{tab:configuration}, ilustra as customizações que utilizamos para
-configurar o httpd para os experimentos. Nossa configuração permite que o
-Apache responda a uma elevada quantidade de requisições, o que torna o
-experimentos próximo de uma situação realista. Nossas customizações no
-GNU/Linux e httpd permite que boa parte do hardware seja utilizado.
+Definir os valores para cada um dos parâmetros citados acima não é uma tarefa
+trivial, por isso, fizemos de forma incremental diversos testes para encontrar
+a configuração que melhor utiliza os recursos das máquinas que tínhamos.  A
+Tabela \ref{tab:configuration}, ilustra os resultados finais após os nossos
+testes e que definem as customizações que utilizamos para configurar o httpd
+para os experimentos. Nossa configuração permite que o Apache responda a uma
+elevada quantidade de requisições, o que torna o experimentos próximo de uma
+situação realista. Nossas customizações no GNU/Linux e httpd permite que boa
+parte do hardware seja utilizado.
 
 \input{tables/kernel_config.tex}
 
 Também é necessário customizar o GNU/Linux uma vez que as configurações padrão
-deste são feita para evitar o consumo de todos os recursos de hardware (p.ex.; o
-Linux limita uma aplicação como o httpd). A Tabela \ref{tab:kernel_config}
-mostra todas as configurações feita no GNU/Linux para esse experimento.
-Observe que o GNU/Linux estabelece um limite de arquivos que podem ser abertos
-por meio dos \emph{File Descriptor (FD)}, tal situação representa um problema
-quando o httpd precisa manipular uma grande quantidade de requisições uma vez que cada uma
-mantém um FD. Para superar esse problema, elevamos a quantidade
-total de FDs permitidos pelo Linux (na Tabela \ref{tab:kernel_config}, o
-parâmetro \emph{Max map count}), tal alteração permite que o httpd manipule um
-maior número de requisições. Além disso, o GNU/Linux tem uma coleção de
-arquivos de configuração que previne alguns ataques de rede bem conhecidos. No
-nosso caso, precisamos desabilitar o \emph{SYN Flood Protection} (Tabela
-\ref{tab:kernel_config}, TCP syncookies) uma vez que essa configuração evita
-que o SO manipule uma quantidade gigantesca de requisições feitas de uma mesma
-máquina. Por fim, o tamanho padrão da fila TCP é pequena para esse estudo de
-caso, portanto, nós elevamos consideravelmente o seu tamanho (na Tabela
-\ref{tab:kernel_config}, TCP max syn backlog, Max queue events, e Max user
-instances).
+deste são feita para evitar o consumo de todos os recursos de hardware (p.ex.;
+o Linux limita uma aplicação como o httpd). A Tabela \ref{tab:kernel_config}
+mostra todas as configurações feita no GNU/Linux para esse experimento (tais
+valores foram derivados de forma experimental, assim como a
+Tabela~\ref{tab:configurações}).  Observe que o GNU/Linux estabelece um limite
+de arquivos que podem ser abertos por meio dos \emph{File Descriptor (FD)}, tal
+situação representa um problema quando o httpd precisa manipular uma grande
+quantidade de requisições uma vez que cada uma mantém um FD. Para superar esse
+problema, elevamos a quantidade total de FDs permitidos pelo Linux (na Tabela
+\ref{tab:kernel_config}, o parâmetro \emph{Max map count}), tal alteração
+permite que o httpd manipule um maior número de requisições. Além disso, o
+GNU/Linux tem uma coleção de arquivos de configuração que previne alguns
+ataques de rede bem conhecidos. No nosso caso, precisamos desabilitar o
+\emph{SYN Flood Protection} (Tabela \ref{tab:kernel_config}, TCP syncookies)
+uma vez que essa configuração evita que o SO manipule uma quantidade gigantesca
+de requisições feitas de uma mesma máquina. Por fim, o tamanho padrão da fila
+TCP é pequena para esse estudo de caso, portanto, nós elevamos
+consideravelmente o seu tamanho (na Tabela \ref{tab:kernel_config}, TCP max syn
+backlog, Max queue events, e Max user instances).
 
 Resumindo, fizemos ajustes finos no httpd e GNU/Linux para que esses
 suportassem cargas de requisições elevadas. Essas configurações são
@@ -364,7 +371,7 @@ estratégia baseada em processos.
 \section{Resultados}
 \label{sec:preliminary}
 
-O método proposto na Seção \ref{sec:metodologia} busca evidênciar, de forma
+O método proposto na Seção \ref{sec:metodologia} busca evidenciar, de forma
 clara, sistemática e replicável, as diferenças entre as estratégias baseadas em
 processos e \emph{threads}. Por isso, o primeiro passo desses experimentos consiste em
 deixar claro a diferença entre as estratégias de MPM, para que em seguida, com
@@ -443,7 +450,7 @@ troca de contexto para \emph{threads} e processos é o mesmo no GNU/Linux
 
 A Figura \ref{fig:dynamic_file} mostra um cenário com arquivos dinâmicos. Nesse
 caso, a diferença entre processos e \emph{threads} são muito mais claras. O
-\emph{prefork} é muito mais lento do que o \emph{Event} e \emph{Worker}, a
+\emph{prefork} é mais lento do que o \emph{Event} e \emph{Worker}, a
 diferença é próxima de 42 segundos o que é inaceitável em um cenário real.
 Para entender melhor esse caso, a Figura \ref{fig:dynamic_file_memory} mostra o
 consumo de memória e explicita o enorme gasto de memória do \emph{prefork}
@@ -455,10 +462,10 @@ consumindo memória. Por outro lado, \emph{threads} compartilham dados com os
 processos pai, o que reduz o total de memória gasta, assim, mantendo as
 \emph{threads} vivas com um custo menor.
 
-Podemos concluir que os experimentos tornam claro as diferenças entre processos
-e \emph{threads} dentro do httpd. Os dois cenários descritos são suficientes
-para servir como critério para mostrar a diferença entre os MPMs. O atual
-resultado fornece informações básicas necessárias para o restante dos
+Podemos concluir que os experimentos tornam as diferenças claras entre
+processos e \emph{threads} dentro do httpd. Os dois cenários descritos são
+suficientes para servir como critério para mostrar a diferença entre os MPMs. O
+atual resultado fornece informações básicas necessárias para o restante dos
 experimentos.
 
 \subsection{Qual a Diferença de Desempenho do Apache Utilizando MVAS Quando

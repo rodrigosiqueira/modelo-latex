@@ -129,7 +129,8 @@ navegador os solicita para o servidor de forma paralela ou serial. O exemplo
 ilustra de forma simplificada como uma requisição acontece e como múltiplas
 requisições podem ser geradas para construir uma simples tela. Um exemplo real
 pode ser considerado da caracterização da carga gerada sobre o site da copa do
-mundo de 1998, na qual foi gerado uma média de 10796
+mundo de 1998 (tenha em mente que hoje as cargas que um servidor precisar
+suportar são ainda maiores), na qual foi gerado uma média de 10796
 requisições/min~\citep{worldcup}.  Um servidor web tem que responder a milhares
 de usuários e as estratégias utilizadas para lidar com tal volume são as mais
 variadas.
@@ -209,7 +210,7 @@ que podem ser conectados ao projeto. Esses módulos facilitam o processo de
 adicionar e remover elementos do núcleo, normalmente como bibliotecas
 dinâmicas. Módulos na forma de bibliotecas dinamicamente ligadas fornecem
 flexibilidade, um bom desempenho e portabilidade entre diferentes SOs (p.ex.,
-Window e Linux podem ter diferentes implementações para o mesmo módulo). A
+Windows e Linux podem ter diferentes implementações para o mesmo módulo). A
 Figura \ref{fig:apache_architecture} também ilustra o MPM como um componente
 diretamente conectado ao SO, porque o MPM manipula os elementos de
 paralelização e cada SO precisa implementar essa parte de acordo com as suas
@@ -451,7 +452,7 @@ tipo ``Oi, sou o cliente'' para o servidor; nessa mensagem, o cliente informa a
 versão do SSL que está usando, os algoritmos de criptografia e os métodos de
 compressão que ele sabe manipular. O servidor, por sua vez, responde com ``Oi, sou o
 servidor'', dizendo qual algoritmo usar (selecionado da lista que o cliente
-mandou), um ID da seção, um certificado digital e a sua chave pública. Com o
+mandou), um ID da sessão, um certificado digital e a sua chave pública. Com o
 certificado, o cliente consulta uma Autoridade Certificadora (\emph{Certificate Authority -- CA})
 que valida se o servidor é valido ou não,
 estabelecendo a confiança sobre o servidor. Depois que o cliente recebe a
@@ -597,14 +598,7 @@ Do ponto de vista do uso de tal aplicação para validar propostas de abstraçõ
 de processos, destacamos que ela pode ser usada para demonstrar ganhos de
 segurança e controle de acesso à memória. Uma abordagem é partir de uma versão
 antiga do OpenSSH, que não tem a correção para alguma vulnerabilidade, e
-demonstrar que a nova abstração sugerida consegue resolver o problema. Note que
-os pontos mais fracos do OpenSSH podem ser destacados:
-
-\begin{itemize}
-  \item Acesso indevido à chave criptográfica da sessão;
-  \item Potencial vazamento de dados;
-  \item Escalada de privilégios.
-\end{itemize}
+demonstrar que a nova abstração sugerida consegue resolver o problema.
 
 \section{Outras Aplicações}
 
@@ -688,7 +682,7 @@ eficientes e confiável de persistir os dados da memória para o disco.
 \label{sec:gc}
 
 Várias linguagens de alto nível possuem mecanismos de gerenciamento automático de recursos
-(p.ex., memória, processamento paralelo, datas, etc.) que garantem a portabilidade
+(p.ex., memória, processamento paralelo, etc.) que garantem a portabilidade
 da aplicação e removem a complexidade de ter que gerenciar recursos de baixo
 nível. Dentre as vantagens de tais tecnologias, destacam-se o fato de que o
 programador pode manter o foco nas características da aplicação e também a redução
@@ -705,15 +699,15 @@ GC tem sido alvo de constantes otimizações ao longo dos anos e esse é um
 elemento que pode se beneficiar de novos recursos oferecidos por extensões às
 abstrações de processos.
 
-O coletor de lixo é um módulo que é parte da JVM, executando junto com a aplicação.
-Independentemente do algoritmo de gerenciamento de memória implementado pelo
-GC, todos eles definem o termo \boldAndIndex{Stop the World (STW)} ou
-\emph{Parar tudo} \citep{pauseless}. O STW é uma operação realizada pela
-JVM  na qual todas as \emph{threads} da aplicação são suspensas para que o GC execute.
-Em outras palavras, a única \emph{thread} executando será a do coletor. Note que o GC
-requer essa pausa para funcionar; isso é preciso pois seus algoritmos precisam que
-aplicação não faça nenhuma atualização da memória durante uma das fases do
-processo de limpeza da memória.
+O coletor de lixo é um módulo que é parte da JVM, executando junto com a
+aplicação.  Vários algoritmos de gerenciamento de memória implementado pelo GC,
+fazem uso de uma técnica chamada de \boldAndIndex{Stop the World (STW)} ou
+\emph{Parar tudo}~\citep{pauseless}. O STW é uma operação realizada pela JVM
+na qual todas as \emph{threads} da aplicação são suspensas para que o GC
+execute.  Em outras palavras, a única \emph{thread} executando será a do
+coletor. Note que o GC requer essa pausa para funcionar; isso é preciso pois
+seus algoritmos precisam que aplicação não faça nenhuma atualização da memória
+durante uma das fases do processo de limpeza da memória.
 
 Existem diversos algoritmos que podem ser adotados pelo GC, contudo podemos
 generalizar três etapas gerais: \emph{Marking}, \emph{Sweep} e
@@ -845,12 +839,15 @@ pode ser otimizada se o endereço virtual for mantido e apenas o endereço físi
 alterado \citep{pauseless}.
 
 A Tabela \ref{tab:app_alvos} busca resumir quais aplicações podem ser usadas
-para demonstrar algum aspecto da nova abstração de processos. Além disso, esta
-seção inteira responde a pergunta RQ3, uma vez que apresenta e discute diversas
-aplicações. Por fim, repare na Tabela \ref{tab:app_alvos} que Apache é uma das
-ferramentas que melhor pode ser usada para demonstrar os aspectos de uma nova
-abstração de processos. No Capítulo \ref{cap:estudo-de-caso} aprofundamos a
-validação utilizando Apache para testar o MVAS.
+para demonstrar algum aspecto da nova abstração de processos. Note que
+utilizamos uma escala que vai de nenhum \ding{52} até três \ding{52} que indica
+o quanto uma determinada aplicação pode influenciar na observação de algum dos
+alvos indicados nas colunas. Além disso, esta seção inteira responde a pergunta
+RQ3, uma vez que apresenta e discute diversas aplicações. Por fim, repare na
+Tabela \ref{tab:app_alvos} que Apache é uma das ferramentas que melhor pode ser
+usada para demonstrar os aspectos de uma nova abstração de processos. No
+Capítulo \ref{cap:estudo-de-caso} aprofundamos a validação utilizando Apache
+para testar o MVAS.
 
 \input{tables/app_alvo}
 
@@ -895,7 +892,7 @@ Vale observar que esse tipo de \emph{microbenchmark} precisa ser feito com
 múltiplas cargas de tamanhos variados; no mínimo, espera-se cargas na ordem dos
 KBs, MBs e GBs.
 
-  \item[Medir tempo gasto com operações de litura e escrita:]
+  \item[Medir tempo gasto com operações de leitura e escrita:]
 
 Mensurar o tempo de leitura e escrita em memória usando os mecanismos
 padrão é importante para obter o custo de acesso base. Tal informação deve ser

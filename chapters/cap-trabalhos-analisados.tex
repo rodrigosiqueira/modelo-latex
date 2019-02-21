@@ -313,7 +313,7 @@ Privilégio''} que diz:
 \emph{"O princípio do menor privilégio implica dividir o código em compartimentos,
 cada um dos quais executa com os privilégios mínimos necessários para completar
 sua tarefa. Essa abordagem não apenas limita o dano que um ataque pode causar,
-mas também pode evitar que os \emph{bugs} vazem acidentalmente informações
+mas também pode evitar que os bugs vazem acidentalmente informações
 confidenciais."} \citep{protectionprinciple}
 \end{quote}
 
@@ -344,7 +344,7 @@ acesso à memória, permitindo que o programador aloque objetos na memória de
 acordo com essa informação.
 
 Wedge permite que o programador crie um número arbitrário de
-componentes, cada um sem privilégios por padrão, mas oferecE MECANISmos que
+componentes, cada um sem privilégios por padrão, mas oferece mecanismos que
 permitem o controle fino. Nesse sentido, \emph{Wedge} busca se assemelhar às
 primitivas atuais para facilitar a sua adoção e para que seja simples a
 introdução delas em aplicações legadas. A proposta é constituída por três
@@ -359,7 +359,7 @@ e outros recursos por meio dessas \emph{sthreads}. Elas consistem de uma
 
 \begin{itemize}
 	\item As marcações de memória que a \emph{sthread} pode acessar e a permissão
-				sobre cada cada uma (leitura, leitura-escrita e \textit{copy-on-write});
+				sobre cada uma (leitura, leitura-escrita e \textit{copy-on-write});
 	\item Os descritores de arquivo que a \emph{sthread} pode acessar e as
 				permissões sobre cada (leitura, escrita, leitura-escrita);
 	\item Os \emph{callgates} que a \emph{sthread} pode chamar;
@@ -994,7 +994,7 @@ modelos de programação.
 \section{Exokernel}
 \label{sec:exokernel}
 
-Introduzimos um trabalho de 1995 chamado que apresenta uma visão
+Introduzimos um trabalho de 1995 chamado de Exokernel que apresenta uma visão
 de desacoplamento do SO que consideramos moderna e que se alinha com a
 argumentação que desenvolvemos durante este trabalho. \citet{exokernel}
 defendem que os projetos de SOs possuem uma série de desvantagens por terem
@@ -1015,8 +1015,7 @@ seguintes limitações:
   \item A degradação do desempenho ocorre uma vez que atender ao maior número
         de aplicações possível com a mesma abstração tem um custo
         computacional. Por exemplo, algumas aplicações podem sofrer com o
-        \emph{overhead} gerado por outras camadas de abstrações na qual não
-        precisa;
+        \emph{overhead} gerado por outras camadas de abstrações;
   \item As informações de utilização de recursos são escondidas das aplicações,
         isto dificulta a aplicação ter controle sobre os recursos utilizados;
   \item As aplicações ficam limitadas a utilizar apenas aquelas interfaces

@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="215.53001mm"
+   width="235.81551mm"
    height="161.62503mm"
-   viewBox="0 0 215.53001 161.62503"
+   viewBox="0 0 235.81551 161.62503"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="presentation_cap2_zero.svg">
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   sodipodi:docname="presentation_cap2_zero.svg.2019_01_31_16_16_26.0.svg">
   <defs
      id="defs2">
     <filter
@@ -611,15 +611,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.7195174"
-     inkscape:cx="84.551227"
-     inkscape:cy="460.46118"
+     inkscape:zoom="0.67375321"
+     inkscape:cx="424.9653"
+     inkscape:cy="59.987226"
      inkscape:document-units="mm"
      inkscape:current-layer="layer4"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1039"
-     inkscape:window-x="1920"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-others="false"
@@ -630,7 +630,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0">
     <sodipodi:guide
-       position="159.22641,98.352737"
+       position="159.22642,98.352737"
        orientation="0,1"
        id="guide1067"
        inkscape:locked="false" />
@@ -678,6 +678,28 @@
        id="path1167"
        d="M 73.497479,69.345391 65.482673,65.593779 58.149979,65.764306 56.615229,66.958 V 60.989529 L 61.04895,54.68 l 9.037973,-4.433723 8.526391,2.557917 4.60425,2.387389 -5.797944,6.480058 -2.898974,6.650583 -5.968473,-1.023168 8.014806,-4.263194 -19.610694,-2.728444 5.96847,-6.30953 18.928585,0.17053 -16.711723,11.425361 1.53475,-13.983279 7.162168,-0.682112 5.797944,8.014806 -19.95175,6.650585 1.193694,-10.743252 22.339141,0.341056 -26.602335,9.720085 1.193694,0.682111 -1.193694,1.023168 1.193694,-7.332697 1.53475,6.309529 4.263194,-11.936946 1.364223,11.595891 5.286362,-15.006447 0.852638,17.90542 3.751612,-2.387391 -1.53475,-14.835918 8.014806,5.968474 v -2.898974 l -24.556003,8.526391 5.115835,2.557918 2.898971,-11.936947 3.751612,13.81275 8.526391,-5.286359 -0.852641,-9.379029 -10.913777,1.193694 -1.875806,12.619056 -5.456891,-7.844277 0.511586,8.014806 19.610694,-13.812753"
        style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter1250)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="142.02632"
+       y="157.50955"
+       id="text998"><tspan
+         sodipodi:role="line"
+         x="142.02632"
+         y="157.50955"
+         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.11111069px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';stroke-width:0.26458332"
+         id="tspan1000">Trabalhos</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="130.36371"
+       y="183.47275"
+       id="text1008"><tspan
+         sodipodi:role="line"
+         id="tspan1006"
+         x="130.36371"
+         y="183.47275"
+         style="font-style:oblique;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.93333244px;font-family:Hack;-inkscape-font-specification:'Hack Bold Oblique';stroke-width:0.26458332">Analisados</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

@@ -134,6 +134,10 @@
 \newcommand\logos[1]{
   \gdef\thelogos{%
       \noindent\begin{minipage}[b][\paperheight][b]{\paperwidth}
+
+          \vskip 6\baselineskip plus \baselineskip minus 2\baselineskip
+          {\centering\noindent\qrcode[height=.3\paperheight,level=H]{\thepresentationurl}\par}
+
           % O centro da área de impressão não é o centro do papel;
           % aqui queremos centralizar no papel, então compensamos
           % a diferença (esse ajuste foi feito "no olho") com
@@ -171,6 +175,9 @@
       \begin{frame}
           \titlepage
       \end{frame}
+
+
+
   }
 }
 

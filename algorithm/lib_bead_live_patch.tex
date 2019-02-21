@@ -1,0 +1,14 @@
+\begin{pseudocode}
+\begin{lstlisting}[language=pseudocode, style=pseudocode]
+function MAIN(args) /// \label{line:livePatch}
+  beadInstallLivePatching()
+
+  if args = "--live-patching" /// \label{line:arg}
+    \func{live_patch_action()}
+    exit 0
+  // ... qualquer código ...
+\end{lstlisting}
+
+  \caption{\emph{libbead:} Padrão Atualização em Tempo Real}
+  \label{alg:beadLivePatch}
+\end{pseudocode}

@@ -10,11 +10,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="114.80751mm"
-   height="96.561333mm"
-   viewBox="0 0 114.80751 96.561333"
+   height="107.74325mm"
+   viewBox="0 0 114.80751 107.74325"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
    sodipodi:docname="presentation_cap2_seven.svg">
   <defs
      id="defs2">
@@ -104,9 +104,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.4317648"
-     inkscape:cx="119.03083"
-     inkscape:cy="214.74828"
+     inkscape:zoom="1.3475064"
+     inkscape:cx="401.60731"
+     inkscape:cy="140.61394"
      inkscape:document-units="mm"
      inkscape:current-layer="layer3"
      showgrid="false"
@@ -169,6 +169,17 @@
        id="path943"
        d="m 59.94052,182.23479 1.023168,-0.76737 0.255791,-0.93791"
        style="fill:none;stroke:#000000;stroke-width:0.30000001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter1019)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:Hack;-inkscape-font-specification:'Hack Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="58.084438"
+       y="209.95445"
+       id="text842"><tspan
+         sodipodi:role="line"
+         id="tspan840"
+         x="58.084438"
+         y="209.95445"
+         style="font-size:14.11111069px;stroke-width:0.26458332">SpaceJMP</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

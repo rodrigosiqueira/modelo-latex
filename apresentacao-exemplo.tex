@@ -73,9 +73,9 @@
 % Blocos de cor personalizada
 \newenvironment{coloredblock}[2]%
 {
-    \setbeamercolor{block title}{fg=white,bg=#1!80!white}
-    \setbeamercolor{block body}{fg=darkgray,bg=#1!20!white}
-    \setbeamercolor{local structure}{fg=darkgray,bg=#1!20!white}
+    \setbeamercolor{block title}{fg=white,white}
+    \setbeamercolor{block body}{fg=white,white}
+    \setbeamercolor{local structure}{fg=white,bg=white}
     \begin{block}{#2}
 }{
     \end{block}
@@ -137,7 +137,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-
+\definecolor{MyBackground}{rgb}{255, 255, 255}
+\setbeamercolor{background canvas}{bg=MyBackground}
 \def\apresentacao{\relax}
 
 % É complicado colocar uma imagem de fundo, os logos das agências e
@@ -146,7 +147,11 @@
 \customtitlepage
 
 % Slide com o qrcode
-\showqrcode
+%\showqrcode
+
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{airplane}
+\end{frame}
 
 %------------------------------------------------------------------------------
 % FUNDAMENTAÇÃO TEÓRICA
@@ -169,48 +174,15 @@
 \begin{frame}{Uma Breve Jornada Sobre os Processos}
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=\textwidth]{stack_frame}
-    \caption*{Alocação e desalocação de Stack frames considerando o padrão CDECL}
-    %\caption{Alocação e desalocação de Stack frames considerando o padrão CDECL~\citep{patterson}\label{fig:stack_frames}}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Uma Breve Jornada Sobre os Processos}
-  \begin{figure}[!h]
-    \centering
     \includegraphics[width=.7\textwidth]{process_and_threads}
-    \caption*{Única thread e multi-thread. Note o isolamento da pilha e dos registrador (PC)}
+    \caption*{Única thread e multi-thread. Note o isolamento da pilha e do registrador (PC)}
     %\caption{Única thread e multi-thread. Note o isolamento da pilha e dos registrador (PC)~\citep{silberschatz}\label{fig:single_thread_multi_thread}}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Uma Breve Jornada Sobre os Processos}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=.80\textwidth]{theads_and_stack} 
-    \caption*{Um processo com uma thread (esquerda) e um processo com três threads (direita)}
   \end{figure}
 \end{frame}
 
 % SUBSEÇÃO
 \begin{frame}[plain]
   \includegraphics[width=\textwidth]{presentation_sec_two}
-\end{frame}
-
-\begin{frame}{Gerenciamento da Memória Relacionada aos Processos}
-  \begin{itemize}
-    \item Endereço Virtual
-    \item Endereço Lógico
-    \item Espaço de Endereçamento Virtual (VAS) e Lógico
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Gerenciamento da Memória Relacionada aos Processos}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{mmu} 
-    \caption*{Do endereço lógico ao físico com o auxílio da MMU}
-  \end{figure}
 \end{frame}
 
 \begin{frame}{Gerenciamento da Memória Relacionada aos Processos}
@@ -221,164 +193,99 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}[plain]
-  \includegraphics[width=\textwidth]{presentation_sec_four}
-\end{frame}
+%\begin{frame}[plain]
+%  \includegraphics[width=\textwidth]{presentation_sec_four}
+%\end{frame}
 
 \begin{frame}{O Modelo de Paginação}
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.7\textwidth]{paginacao} 
-    \caption*{Os elementos básicos presentes no modelo de paginação. Note que a busca na TLB e na tabela de página ocorre em paralelo}
+    \includegraphics[width=\textwidth]{paginacao_presentation} 
+    \caption*{Elementos básicos presentes no modelo de paginação}
   \end{figure}
 \end{frame}
 
-\begin{frame}{O Modelo de Paginação}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{pte}
-    \caption*{Entrada da tabela de páginas}
-  \end{figure}
-\end{frame}
+%\begin{frame}{Exemplo Prático Usando o GNU/Linux}
+%  \begin{figure}[!h]
+%    \centering
+%    \includegraphics[width=\textwidth]{segmento_troca_contexto}
+%    \caption*{VAS durante a troca de contexto}
+%    %\caption{VAS durante a troca de contexto~\citep{kernel_manage_mem}}
+%  \end{figure}
+%\end{frame}
 
-\begin{frame}{O Modelo de Paginação}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{paginacao_passos} 
-    \caption*{Passos do acesso a memória usando o modelo de paginação. A figura ilustra o caso simples na qual pelo menos dois acessos a memória são necessários}
-  \end{figure}
-\end{frame}
+% TODO: MOVER O MALLOC PARA OS RESULTADOS
+%
+%\begin{frame}[plain]
+%  \centering
+%  \includegraphics[width=\textwidth]{presentation_sec_nine}
+%\end{frame}
+%
+%\begin{frame}{Exemplo Prático Usando o GNU/Linux}
+%  \begin{figure}[!h]
+%    \centering
+%    \includegraphics[width=\textwidth]{malloc}
+%    \caption*{Passos envolvidos na alocação de memória com \texttt{malloc()}}
+%    % \caption[Passos envolvidos na alocação de memória com \texttt{malloc()}]{Passos envolvidos na alocação de memória com \texttt{malloc()} (imagem baseada em \cite{anatomy_program_mem})}
+%  \end{figure}
+%\end{frame}
 
 \begin{frame}[plain]
   \includegraphics[width=\textwidth]{presentation_sec_five}
 \end{frame}
 
-\begin{frame}{O Modelo de Segmentação}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=.80\textwidth]{segmentacao} 
-    \caption*{Comportamento do modelo de segmentação. Note que a tabela de segmento é acessada para obter o valor base e esse é sempre verificado para evitar acessos indevidos a outras regiões da memória}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Proteção da Memória}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=.80\textwidth]{pte_domain} 
-    \caption*{Ilustração de uma entrada da tabela de páginas utilizando novos bits}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Exemplo Prático Usando o GNU/Linux}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{segmento_troca_contexto}
-    \caption*{VAS durante a troca de contexto}
-    %\caption{VAS durante a troca de contexto~\citep{kernel_manage_mem}}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Exemplo Prático Usando o GNU/Linux}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=.9\textwidth]{kernel_manages_memory}
-    \caption*{Visão interna do gerenciamento da memória}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Exemplo Prático Usando o GNU/Linux}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{malloc}
-    \caption*{Passos envolvidos na alocação de memória com \texttt{malloc()}}
-    % \caption[Passos envolvidos na alocação de memória com \texttt{malloc()}]{Passos envolvidos na alocação de memória com \texttt{malloc()} (imagem baseada em \cite{anatomy_program_mem})}
-  \end{figure}
-\end{frame}
-
-\begin{frame}[plain]
-  \includegraphics[width=\textwidth]{presentation_sec_six}
-\end{frame}
+%\begin{frame}[plain]
+%  \includegraphics[width=\textwidth]{presentation_sec_six}
+%\end{frame}
 
 \begin{frame}{Chamadas de Sistema}
   \begin{figure}[!h]
     \centering
     \includegraphics[width=0.5\textwidth]{userspace_to_kernel} 
-    \caption*{Execução do user space até o kernel space}
+    \caption*{Execução do user space até o kernel space (\texttt{SYSCALL})}
   \end{figure}
 \end{frame}
+
+%\begin{frame}[plain]
+%  \centering
+%  \includegraphics[width=\textwidth]{presentation_sec_eight}
+%\end{frame}
+
+%\begin{frame}{Troca de Contexto}
+%  \begin{block}{Passos gerais da troca de contexto}
+%    \begin{enumerate}
+%      \item A troca tem início quando uma interrupção vinda do hardware ocorre
+%      \item Salvar o estado do processo em execução
+%      \item Carregar o estado do novo processo na CPU
+%    \end{enumerate}
+%  \end{block}
+%\end{frame}
+
+%\begin{frame}{Descritores de Arquivo}
+%  \begin{figure}[!h]
+%    \centering
+%    \includegraphics[width=\textwidth]{descritores} 
+%    \caption*{Tabela local e global de arquivos}
+%  \end{figure}
+%\end{frame}
+%
+%\begin{frame}[plain]
+%  \centering
+%  \includegraphics[width=\textwidth]{presentation_sec_seven}
+%\end{frame}
 
 \begin{frame}[plain]
   \centering
   \includegraphics[width=\textwidth]{presentation_sec_eight}
 \end{frame}
 
-\begin{frame}{Troca de Contexto}
-  \begin{block}{Passos gerais da troca de contexto}
-    \begin{enumerate}
-      \item A troca tem início quando uma interrupção vinda do hardware ocorre
-      \item Salvar o estado do processo em execução
-      \item Carregar o estado do novo processo na CPU
-    \end{enumerate}
-  \end{block}
-\end{frame}
-
-\begin{frame}[plain]
-  \centering
-  \includegraphics[width=\textwidth]{presentation_sec_nine}
-\end{frame}
-
-\begin{frame}{Descritores de Arquivo}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{descritores} 
-    \caption*{Tabela local e global de arquivos}
-  \end{figure}
-\end{frame}
-
-\begin{frame}[plain]
-  \includegraphics[width=\textwidth]{presentation_sec_three}
-\end{frame}
-
-\begin{frame}{Modelos de Programação, Aspectos de Implementação e Gerenciamento de Recursos}
-
-  \begin{proof}[Modelos de Programação]
-    Os SOs fornecem vários recursos adicionais para o espaço de usuário, por
-isso, SOs implementam um dado modelo de programação através de uma API própria
-  \end{proof}
-
-  \begin{proof}[Aspectos de Implementação]
-    As abstrações de processos são o ponto central no projeto de um SO moderno
-de propósito geral, mapeando outras abstrações para ele
-  \end{proof}
-
-  \begin{proof}[Gerenciamento de Recursos]
-    Indiretamente diversos software demandam significativa participação do SO,
-estendendo assim o seu consumo de recursos para o sistema
-  \end{proof}
-
-\end{frame}
-
-\begin{frame}[plain]
-  \centering
-  \includegraphics[width=\textwidth]{presentation_sec_seven}
-\end{frame}
-
-\begin{frame}{Device Drivers}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.3\textwidth]{dd} 
-    \caption*{Tabela local e global de arquivos}
-  \end{figure}
-\end{frame}
-
 \begin{frame}{Virtualização}
     \begin{itemize}
-      \item Elemento central da virtualização é o hypervisor, também conhecido
-como Virtual Machine Monitor (VMM)
       \item \emph{Guest} vs. \emph{Host}
-      \item Instruções sensíveis
-      \item Instruções privilegiadas
-      \item Instruções de controle de fluxo sensíveis
+      \item Elemento central da virtualização é o hypervisor, também conhecido
+            como Virtual Machine Monitor (VMM)
+      \item Virtualização completa em hardware
+      \item \texttt{VMCALL}
     \end{itemize}
 \end{frame}
 
@@ -389,6 +296,31 @@ como Virtual Machine Monitor (VMM)
     \caption*{Fluxo do comportamento da tecnologia VT-x}
   \end{figure}
 \end{frame}
+
+%\begin{frame}[plain]
+%  \includegraphics[width=\textwidth]{presentation_sec_three}
+%\end{frame}
+%
+% TODO: MOVER ESSAS PARTES PARA OUTROS LUGARES QUE FAZEM MAIS SENTIDO
+%\begin{frame}{Modelos de Programação, Aspectos de Implementação e Gerenciamento de Recursos}
+%
+%  \begin{proof}[Modelos de Programação]
+%    Os SOs fornecem vários recursos adicionais para o espaço de usuário, por
+%isso, SOs implementam um dado modelo de programação através de uma API própria
+%  \end{proof}
+%
+%  \begin{proof}[Aspectos de Implementação]
+%    As abstrações de processos são o ponto central no projeto de um SO moderno
+%de propósito geral, mapeando outras abstrações para ele
+%  \end{proof}
+%
+%  \begin{proof}[Gerenciamento de Recursos]
+%    Indiretamente diversos software demandam significativa participação do SO,
+%estendendo assim o seu consumo de recursos para o sistema
+%  \end{proof}
+%
+%\end{frame}
+
 
 %------------------------------------------------------------------------------
 % Trabalhos Analisados
@@ -407,11 +339,11 @@ novas características para as abstrações de processos.
   \end{proof}
 
     \begin{itemize}
-      \item Substitui chamadas para \texttt{SYSCALL} por \texttt{VMCALL}
       \item Utiliza tecnologia VT-x
+      \item Substitui chamadas para \texttt{SYSCALL} por \texttt{VMCALL}
       \item Dune expõe: Exceções, Memória Virtual e Modos privilegiados
-      \item Instruções privilegiadas
-      \item Instruções de controle de fluxo sensíveis
+      %\item Instruções privilegiadas
+      %\item Instruções de controle de fluxo sensíveis
     \end{itemize}
 
 \end{frame}
@@ -437,10 +369,15 @@ Evitar abusos intra-processos de conteúdo de memória
 
   \begin{itemize}
     \item Faz uso dos domínios de memória
+      \begin{figure}[!h]
+        \centering
+        \includegraphics[width=.8\textwidth]{pte_domain} 
+        %\caption*{Ilustração de uma entrada da tabela de páginas utilizando novos bits}
+      \end{figure}
+
     \item Fragmento de memória protegida: \emph{shred-private pool (s-pool)}
     \item Pilares do \emph{Shred}: API, \emph{S-compiler} e \emph{S-driver}
   \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Shreds}
@@ -470,102 +407,18 @@ confidenciais."}% \citep{protectionprinciple}
 \end{frame}
 
 \begin{frame}{Wedge}
-
+  Primitivas do Wedge: \emph{sthread}, \emph{tagged memory} e \emph{callgates}
   \begin{itemize}
-    \item Primitivas do Wedge: \emph{shread}, \emph{tagged memory} e \emph{callgates}
-    \item \emph{shread}: São como \emph{threads}, mas o programador pode atribuir permissões de acesso a memória
+    \item \emph{sthread}: São como \emph{threads}, mas o programador pode atribuir permissões de acesso a memória
     \item \emph{tagged memory}: Contém as permissões de acesso
     \item \emph{callgates}: Uma porção de código que executa em um nível de privilégio diferente de quem o chamou
   \end{itemize}
 
 \end{frame}
 
-\begin{frame}[plain]
-  \includegraphics[width=\textwidth]{presentation_cap2_four}
-\end{frame}
-
-\begin{frame}{Resource Container}
-
-  \begin{proof}[Ideia central]
-Criação de uma entidade logica que contem os recursos utilizados pelas aplicações.
-  \end{proof}
-
-    \begin{itemize}
-      \item Fornece mecanismos para ligar recursos a uma \emph{thread}
-      \item Operações para \emph{Resource Container}
-    \end{itemize}
-
-\end{frame}
-
-\begin{frame}{Resource Container}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{resource_constainer_scenarios} 
-    \caption*{Cenários das aplicações}
-  \end{figure}
-\end{frame}
-
-\begin{frame}[plain]
-  \includegraphics[width=\textwidth]{presentation_cap2_five}
-\end{frame}
-
-\begin{frame}{Nooks}
-
-  \begin{proof}[Ideia central]
-Nooks é uma camada que se interpõe entre o Kernel e suas extensões. Essa camada
-comporta-se como um subsistema responsável por tratar as operações passadas via
-kernel para os módulos e vice-versa; o controle feito sobre cada parte
-representa uma camada a mais de verificação que adiciona mais segurança e
-confiabilidade para o SO.
-  \end{proof}
-
-\end{frame}
-
-\begin{frame}{Nooks}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{nooks_nim}
-    \caption*{Visão geral da arquitetura do Nooks}
-    %\caption*[Visão geral da arquitetura do Nooks]{Visão geral da arquitetura do Nooks \citep{nooks}}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Nooks}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{nooks_mem}
-    \caption*{Acesso à memória do Nooks}
-    %\caption*[Acesso à memória do Nooks]{Acesso à memória do Nooks \citep{nooks}}
-  \end{figure}
-\end{frame}
-
-\begin{frame}[plain]
-  \includegraphics[width=0.7\textwidth]{presentation_cap2_six}
-\end{frame}
-
-\begin{frame}{Nooks}
-
-  \begin{proof}[Ideia central]
-Buscaram explorar técnicas para realizar controle fino sobre da memória, com o
-objetivo de adicionar mais confiabilidade e segurança para os SOs.
-  \end{proof}
-
-  \begin{itemize}
-    \item Solução de hardware: \emph{Mondrian Memory Protection (MMP)}
-    \item Solução de software: \emph{Mondrix}
-  \end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Mondrian Memory Protection e Mondrix}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{mondrix_pd}
-    \caption*{Representação dos domínios de proteção do Mondrix}
-    %\caption*{Representação dos domínios de proteção do Mondrix (\cite{mondrix})}
-  \end{figure}
-\end{frame}
+%\begin{frame}[plain]
+%  \includegraphics[width=\textwidth]{presentation_cap2_four}
+%\end{frame}
 
 \begin{frame}[plain]
   \includegraphics[width=0.7\textwidth]{presentation_cap2_seven}
@@ -578,22 +431,12 @@ Desacoplar o espaço de endereçamento virtual do processo com o objetivo de
 permitir mapear memórias na ordem dos petabytes
   \end{proof}
 
-\end{frame}
-
-\begin{frame}{SpaceJMP}
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=.7\textwidth]{vas_vs_physical_address} 
+    \includegraphics[width=.5\textwidth]{vas_vs_physical_address} 
     \caption*{VAS e Memóra Física}
   \end{figure}
-\end{frame}
 
-\begin{frame}{SpaceJMP}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=.7\textwidth]{solve_huge_address_memory}
-    \caption*{Resolvendo o problema de endereçar memórias físicas grandes}
-  \end{figure}
 \end{frame}
 
 \begin{frame}{SpaceJMP}
@@ -602,15 +445,6 @@ permitir mapear memórias na ordem dos petabytes
     \includegraphics[width=.7\textwidth]{traditional_vs_mvas} 
     \caption*{VAS e MVAS}
     %\caption*{VAS e MVAS \citep{spacejmp}}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{SpaceJMP}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=.7\textwidth]{mvas_example} 
-    \caption*{System Call disponibilizada pelo SpaceJMP}
-    %\caption*{System Call disponibilizada pelo SpaceJMP \cite{ellarge}}
   \end{figure}
 \end{frame}
 
@@ -630,61 +464,32 @@ privilégios dos processos trazem benefícios.
     \item Troca de contexto (\texttt{lwSwitch})
   \end{itemize}
 
-\end{frame}
-
-\begin{frame}{Light-weight Contexts}
   \begin{figure}[!h]
     \centering
     \includegraphics[width=\textwidth]{lwC} 
     \caption*{Exemplo do comportamento do lwC}
   \end{figure}
-\end{frame}
-
-\begin{frame}[plain]
-  \includegraphics[width=0.7\textwidth]{presentation_cap2_nine}
-\end{frame}
-
-\begin{frame}{Exokernel}
-  \begin{proof}[Ideia central]
-Exokernel busca ser um núcleo mínimo que permita multiplexar de forma segura os
-recursos de hardware e ao mesmo tempo fornecer uma interface de baixo-nível na
-qual as abstrações do SO podem ser construída sobre ela.
-  \end{proof}
-
-  \begin{itemize}
-    \item Expor o hardware de forma segura
-    \item Expor alocações
-    \item Expor nomes
-    \item Expor revogações
-  \end{itemize}
 
 \end{frame}
+
+%\begin{frame}[plain]
+%  \includegraphics[width=0.7\textwidth]{presentation_cap2_nine}
+%\end{frame}
 
 %------------------------------------------------------------------------------
 % Validação de Novas Abstrações de Processos
 %------------------------------------------------------------------------------
 \section{Validação de Novas Abstrações de Processos}
 
-\begin{frame}{Discussão}
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_cap3_sec1}
+\end{frame}
+
+\begin{frame}{Questões de Pesquisa}
   \begin{quote}
     \item \emph{QP3:.} ``Quais aplicações podem ser utilizadas para avaliar as novas abstrações adicionadas ao SO?''
     \item \emph{QP4:.} ``Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada às abstrações de processos?''
   \end{quote}
-\end{frame}
-
-\begin{frame}{Servidores Web}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=.8\textwidth]{request_a_page}
-    \caption*{Do cliente para o servidor Web.}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Servidores Web}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{with_without_keep_alive}
-  \end{figure}
 \end{frame}
 
 \begin{frame}{Servidor Apache HTTPD}
@@ -692,23 +497,6 @@ qual as abstrações do SO podem ser construída sobre ela.
     \centering
     \includegraphics[width=\textwidth]{apache_arhitecture} 
     \caption*{Arquitetura do servidor Apache HTTP}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Servidor Apache HTTPD}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{units} 
-    \caption*{Unidade do Servidor Apache HTTP}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Servidor Apache HTTPD}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{request_phases} 
-    \caption*{Gerador de Conteúdo}
-    %\caption*[Gerador de Conteúdo]{Gerador de Conteúdo \citep{apache_module_book}}
   \end{figure}
 \end{frame}
 
@@ -726,12 +514,10 @@ qual as abstrações do SO podem ser construída sobre ela.
     \includegraphics[width=\textwidth]{worker} 
     \caption*{Worker}
   \end{figure}
-\end{frame}
-
-\begin{frame}{Servidor Apache HTTPD}
+\addvspace{-20pt}
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=\textwidth]{event} 
+    \includegraphics[width=.5\textwidth]{event} 
     \caption*{Event}
   \end{figure}
 \end{frame}
@@ -745,35 +531,30 @@ qual as abstrações do SO podem ser construída sobre ela.
   \end{figure}
 \end{frame}
 
-\begin{frame}{Ferramentas de Comunicação Criptografada}
+%Ferramentas de Comunicação Criptografada
+\begin{frame}[plain]
+  \centering
+  \includegraphics[width=.6\textwidth]{presentation_cap3_sec2}
 \end{frame}
 
-\begin{frame}{OpenSSL}
+\begin{frame}{OpenSSL e OpenSSH}
   \begin{figure}[!h]
     \centering
     \includegraphics[width=\textwidth]{ssl_handshake}
-    \caption*{Do cliente para o servidor Web}
+%    \caption*{Do cliente para o servidor Web}
   \end{figure}
-\end{frame}
 
-\begin{frame}{OpenSSL}
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=\textwidth]{openssl_arch}
-    \caption*{Arquitetura do OpenSSL}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{OpenSSH}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{ssh_layers}
-    \caption*{Camadas SSH}
+    \includegraphics[width=0.4\textwidth]{ssh_layers}
+%    \caption*{Camadas SSH}
     %\caption*[Camadas SSH]{Camadas SSH \citep{opensshhood}}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Outras Aplicações}
+%Outras Aplicações
+\begin{frame}[plain]
+  \includegraphics[width=.8\textwidth]{presentation_cap3_sec3}
 \end{frame}
 
 \begin{frame}{Redis}
@@ -793,35 +574,25 @@ qual as abstrações do SO podem ser construída sobre ela.
   \end{figure}
 \end{frame}
 
-\begin{frame}{Garbage Collection (GC)}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{gc_memory}
-    \caption*{Visão da memória durante a aplicação do algoritmo de GC}
-    %\caption*[Visão da memória durante a aplicação do algoritmo de GC]{Visão da memória durante a aplicação do algoritmo de GC\citep{gc_basics}}
-  \end{figure}
+\begin{frame}[plain]
+  \centering
+  \includegraphics[width=.7\textwidth]{discuss}
 \end{frame}
 
 \begin{frame}{Discussão Sobre as Aplicações}
   \input{tables/app_alvo}
 \end{frame}
 
-\begin{frame}{Microbenchmarks}
-  \begin{proof}[Microbenchmarks]
-Microbenchmarks têm por objetivo mensurar e fornecer meios para analisar uma
-única característica do objeto de estudo. Eles facilitam o processo de
-desenvolvimento, mostram o impacto em um único elemento de forma a facilitar a
-análise e são relativamente simples de serem implementados.
-  \end{proof}
-
+%Microbenchmarks
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_cap3_sec4}
 \end{frame}
 
 \begin{frame}{Microbenchmarks}
 
   \begin{itemize}
     \item Medir tempo gasto com novos mecanismos de alocação de memória
-    \item Medir tempo gasto com operações de litura e escrita
-    \item Tempo total gasto na chamada
+    \item Medir tempo gasto com operações de leitura e escrita
     \item Tempo total gasto na chamada em um contexto de concorrência
     \item Quantidade de trocas de contexto
     \item Custos de operações que executam VM Entry e Exit
@@ -830,27 +601,14 @@ análise e são relativamente simples de serem implementados.
 
 \end{frame}
 
-\begin{frame}{Discussão}
-  \begin{quote}
-    \item \emph{QP3:.} ``Quais aplicações podem ser utilizadas para avaliar as novas abstrações adicionadas ao SO?''
-    \item \emph{QP4:.} ``Qual conjunto de \emph{microbenchmarks} pode ser utilizado para auxiliar a entender os impactos de uma nova característica adicionada às abstrações de processos?''
-  \end{quote}
-\end{frame}
-
 %------------------------------------------------------------------------------
 % Estudo de caso
 %------------------------------------------------------------------------------
 \section{Estudo de caso}
 
-\begin{frame}{Estudo de Caso}
-  TODO: IMAGEM
-\end{frame}
-
-\begin{frame}{Metodologia}
-  \begin{figure}[!h] \centering
-    \includegraphics[width=\textwidth]{web_server_organization_strategy}
-    \caption*{Visão geral da organização de aplicações utilizando servidores Web}
-  \end{figure}
+\begin{frame}[plain]
+  \centering
+  \includegraphics[width=\textwidth]{presentation_cap4_sec1}
 \end{frame}
 
 \begin{frame}{Metodologia}
@@ -858,31 +616,6 @@ análise e são relativamente simples de serem implementados.
     \includegraphics[width=\textwidth]{experiment_arhitecture}
     \caption*{Arquitetura do experimento}
   \end{figure}
-\end{frame}
-
-\begin{frame}{Customizações no Servidor Apache e no GNU/Linux}
-  \input{tables/mpm_config.tex}
-\end{frame}
-
-\begin{frame}{Customizações no Servidor Apache e no GNU/Linux}
-  \input{tables/kernel_config.tex}
-\end{frame}
-
-\begin{frame}{Cenário}
-  \input{tables/files_size.tex}
-  \input{tables/cargas.tex}
-\end{frame}
-
-\begin{frame}{MVAS Dentro do GNU/Linux e Apache HTTP Server}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=\textwidth]{mvas_httpd}
-    \caption*{HTTPD com MVAS}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Resultados}
-  \input{tables/hardware.tex}
 \end{frame}
 
 \begin{frame}{Resultados}
@@ -913,8 +646,23 @@ análise e são relativamente simples de serem implementados.
   \end{figure}
 \end{frame}
 
+\begin{frame}[plain]
+  \centering
+  \includegraphics[width=.7\textwidth]{discuss}
+\end{frame}
+
 \begin{frame}{Discussão Sobre os Experimentos}
-  TODO: FIGURA
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{mvas_httpd}
+    \caption*{HTTPD com MVAS}
+  \end{figure}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{malloc}
+    \caption*{Passos envolvidos na alocação de memória com \texttt{malloc()}}
+    % \caption[Passos envolvidos na alocação de memória com \texttt{malloc()}]{Passos envolvidos na alocação de memória com \texttt{malloc()} (imagem baseada em \cite{anatomy_program_mem})}
+  \end{figure}
 \end{frame}
 
 %------------------------------------------------------------------------------
@@ -922,8 +670,10 @@ análise e são relativamente simples de serem implementados.
 %------------------------------------------------------------------------------
 \section{Análise Sobre Abstrações de Processos}
 
-\begin{frame}{Análise Sobre Abstrações de Processos}
-  TODO: FIGURA
+%Análise Sobre Abstrações de Processos
+\begin{frame}[plain]
+  \centering
+  \includegraphics[width=\textwidth]{presentation_cap7}
 \end{frame}
 
 \begin{frame}{Análise Sobre Abstrações de Processos}
@@ -931,18 +681,6 @@ análise e são relativamente simples de serem implementados.
    \item \textit{QP1:.} ``Quais são as características desejáveis para a próxima geração de abstrações de processos?''
    \item \textit{QP2:.} ``Quais são os principais desafios em se implementar a próxima geração de abstrações de processos?''
   \end{quote}
-\end{frame}
-
-\begin{frame}{Discussão}
-  \begin{itemize}
-    \item Dependência Técnica
-    \item Dependência de Compatibilidade
-    \item Dependência de Compilador
-    \item Implementação Pesada
-    \item Implementação Independente
-    \item Hardware Novo
-    \item Característica Específica de Hardware
-  \end{itemize}
 \end{frame}
 
 \begin{frame}{Potenciais e Dificuldades Para a Adoção de Novas Abstrações de Processos}
@@ -993,9 +731,6 @@ análise e são relativamente simples de serem implementados.
 \end{frame}
 
 \begin{frame}{Padrões de Utilização}
-\end{frame}
-
-\begin{frame}{Padrões de Utilização}
   \begin{columns}[t]
     \col
       \centering
@@ -1008,16 +743,6 @@ análise e são relativamente simples de serem implementados.
  %\input{algorithm/bead_data.tex}
 \end{frame}
 
-\begin{frame}{Padrões de Utilização}
-  \centering
-  \includegraphics[width=\textwidth]{beadData}
-\end{frame}
-
-\begin{frame}{Padrão Configuração}
-  \centering
-  \includegraphics[width=\textwidth]{padraoConfig}
-\end{frame}
-
 \begin{frame}{Padrão Configuração}
   \begin{figure}[!h]
     \centering
@@ -1026,34 +751,17 @@ análise e são relativamente simples de serem implementados.
   \end{figure}
 \end{frame}
 
-\begin{frame}{Padrão Fotografia}
-  \begin{columns}[t]
-    \col
-      \centering
-      \includegraphics[width=0.8\textwidth]{snapshotOne}
-    \col
-      \centering
-      \includegraphics[width=0.9\textwidth]{snapshotTwo}
-  \end{columns}
+\begin{frame}{Padrão Configuração}
+  \centering
+  \includegraphics[width=\textwidth]{padraoConfig}
 \end{frame}
 
 \begin{frame}{Padrão Fotografia}
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=.8\textwidth]{decomposition_fotografia}
+    \includegraphics[width=\textwidth]{decomposition_fotografia}
     \caption*{Ilustração dos principais elemento envolvidos no padrão fotografia}
   \end{figure}
-\end{frame}
-
-\begin{frame}{Padrão Fotografia}
-  \begin{columns}[t]
-    \col
-      \centering
-      \includegraphics[width=0.8\textwidth]{virtOne}
-    \col
-      \centering
-      \includegraphics[width=0.8\textwidth]{virtTwo}
-  \end{columns}
 \end{frame}
 
 \begin{frame}{Padrão Virtualização Controlada}
@@ -1061,13 +769,6 @@ análise e são relativamente simples de serem implementados.
     \centering
     \includegraphics[width=.8\textwidth]{decomposicao_virt_controlada}
     \caption*{Ilustração dos elementos envolvidos no padrão virtualização}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Padrão Persistência}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=.4\textwidth]{persistente}
   \end{figure}
 \end{frame}
 
@@ -1079,10 +780,220 @@ análise e são relativamente simples de serem implementados.
   \end{figure}
 \end{frame}
 
-\begin{frame}{Padrão Atualização em Tempo Real}
+%------------------------------------------------------------------------------
+% Conclusão
+%------------------------------------------------------------------------------
+\section{Conclusão}
+
+%Conclusão
+\begin{frame}[plain]
+  \includegraphics[width=.9\textwidth]{self-made}
+\end{frame}
+
+\begin{frame}{Conclusão}
+  \begin{itemize}
+    \item Estabelecemos um panorama sobre diversos trabalhos relacionados a
+          abstração de processos
+    \item Formas de validação
+    \item Uma visão para a nova geração de abstrações de processos
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Trabalhos Futuros}
+  \begin{itemize}
+    \item Survey sobre abstrações de processos
+    \item Ferramenta de testes para as novas abstrações
+    \item Implementar o bead no Linux
+  \end{itemize}
+\end{frame}
+
+%------------------------------------------------------------------------------
+% Perguntas
+%------------------------------------------------------------------------------
+\begin{frame}{Perguntas}
+  \tableofcontents
+\end{frame}
+
+\appendix
+
+\begin{frame}{Servidores Web}
   \begin{figure}[!h]
     \centering
-    \includegraphics[width=.4\textwidth]{tempoReal}
+    \includegraphics[width=.8\textwidth]{request_a_page}
+    \caption*{Do cliente para o servidor Web.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Servidores Web}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{with_without_keep_alive}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{O Modelo de Paginação}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{paginacao_passos} 
+    \caption*{Passos do acesso a memória usando o modelo de paginação. A figura ilustra o caso simples na qual pelo menos dois acessos a memória são necessários}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Nooks}
+  \begin{proof}[Ideia central]
+Nooks é uma camada que se interpõe entre o Kernel e suas extensões. Essa camada
+comporta-se como um subsistema responsável por tratar as operações passadas via
+kernel para os módulos e vice-versa; o controle feito sobre cada parte
+representa uma camada a mais de verificação que adiciona mais segurança e
+confiabilidade para o SO.
+  \end{proof}
+\end{frame}
+
+\begin{frame}{SpaceJMP}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=.7\textwidth]{solve_huge_address_memory}
+    \caption*{Resolvendo o problema de endereçar memórias físicas grandes}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Customizações no Servidor Apache e no GNU/Linux}
+  \input{tables/mpm_config.tex}
+\end{frame}
+
+\begin{frame}{Customizações no Servidor Apache e no GNU/Linux}
+  \input{tables/kernel_config.tex}
+\end{frame}
+
+\begin{frame}{Discussão}
+  \begin{itemize}
+    \item Dependência Técnica
+    \item Dependência de Compatibilidade
+    \item Dependência de Compilador
+    \item Implementação Pesada
+    \item Implementação Independente
+    \item Hardware Novo
+    \item Característica Específica de Hardware
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Padrões de Utilização}
+  \centering
+  \includegraphics[width=\textwidth]{beadData}
+\end{frame}
+
+\begin{frame}{Exemplo Prático Usando o GNU/Linux}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=.9\textwidth]{kernel_manages_memory}
+    \caption*{Visão interna do gerenciamento da memória}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Virtualização}
+    \begin{itemize}
+      \item \emph{Guest} vs. \emph{Host}
+      \item Elemento central da virtualização é o hypervisor, também conhecido
+            como Virtual Machine Monitor (VMM)
+      \item Virtualização completa em hardware
+          \begin{itemize}
+          \item Instruções sensíveis
+          \item Instruções privilegiadas
+          \item Instruções de controle de fluxo sensíveis
+      \end{itemize}
+      \item \texttt{VMCALL}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{O Modelo de Segmentação}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=.80\textwidth]{segmentacao} 
+    \caption*{Comportamento do modelo de segmentação. Note que a tabela de segmento é acessada para obter o valor base e esse é sempre verificado para evitar acessos indevidos a outras regiões da memória}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{SpaceJMP}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=.7\textwidth]{mvas_example} 
+    \caption*{System Call disponibilizada pelo SpaceJMP}
+    %\caption*{System Call disponibilizada pelo SpaceJMP \cite{ellarge}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Servidor Apache HTTPD}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{request_phases} 
+    \caption*{Gerador de Conteúdo}
+    %\caption*[Gerador de Conteúdo]{Gerador de Conteúdo \citep{apache_module_book}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Metodologia}
+  \begin{figure}[!h] \centering
+    \includegraphics[width=\textwidth]{web_server_organization_strategy}
+    \caption*{Visão geral da organização de aplicações utilizando servidores Web}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Garbage Collection (GC)}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{gc_memory}
+    \caption*{Visão da memória durante a aplicação do algoritmo de GC}
+    %\caption*[Visão da memória durante a aplicação do algoritmo de GC]{Visão da memória durante a aplicação do algoritmo de GC\citep{gc_basics}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Microbenchmarks}
+  \begin{proof}[Microbenchmarks]
+Microbenchmarks têm por objetivo mensurar e fornecer meios para analisar uma
+única característica do objeto de estudo. Eles facilitam o processo de
+desenvolvimento, mostram o impacto em um único elemento de forma a facilitar a
+análise e são relativamente simples de serem implementados.
+  \end{proof}
+\end{frame}
+
+\begin{frame}{Device Drivers}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{dd} 
+    \caption*{Tabela local e global de arquivos}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Uma Breve Jornada Sobre os Processos}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{stack_frame}
+    \caption*{Alocação e desalocação de Stack frames considerando o padrão CDECL}
+    %\caption{Alocação e desalocação de Stack frames considerando o padrão CDECL~\citep{patterson}\label{fig:stack_frames}}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{OpenSSL}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=\textwidth]{openssl_arch}
+    \caption*{Arquitetura do OpenSSL}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Cenário}
+  \input{tables/files_size.tex}
+  \input{tables/cargas.tex}
+\end{frame}
+
+\begin{frame}{MVAS Dentro do GNU/Linux e Apache HTTP Server}
+  \input{tables/hardware.tex}
+\end{frame}
+
+\begin{frame}{Padrão Persistência}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=.4\textwidth]{persistente}
   \end{figure}
 \end{frame}
 
@@ -1098,31 +1009,120 @@ análise e são relativamente simples de serem implementados.
   \end{columns}
 \end{frame}
 
-\begin{frame}{Discussão}
+\begin{frame}{Resource Container}
+
+  \begin{proof}[Ideia central]
+Criação de uma entidade lógica que contém os recursos utilizados pelas aplicações.
+  \end{proof}
+
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=.8\textwidth]{resource_constainer_scenarios} 
+    \caption*{Cenários das aplicações}
+  \end{figure}
+%    \begin{itemize}
+%      \item Fornece mecanismos para ligar recursos a uma \emph{thread}
+%      \item Operações para \emph{Resource Container}
+%    \end{itemize}
+
 \end{frame}
 
-%------------------------------------------------------------------------------
-% Conclusão
-%------------------------------------------------------------------------------
-\section{Conclusão}
-
-\begin{frame}{Conclusão}
+\begin{frame}[plain]
+  \includegraphics[width=\textwidth]{presentation_cap2_five}
 \end{frame}
 
-%------------------------------------------------------------------------------
-% Perguntas
-%------------------------------------------------------------------------------
-\begin{frame}{Perguntas}
-  \tableofcontents
+\begin{frame}{Nooks}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{nooks_nim}
+    \caption*{Visão geral da arquitetura do Nooks}
+    %\caption*[Visão geral da arquitetura do Nooks]{Visão geral da arquitetura do Nooks \citep{nooks}}
+  \end{figure}
 \end{frame}
 
-\appendix
+\begin{frame}{Nooks}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{nooks_mem}
+    \caption*{Acesso à memória do Nooks}
+    %\caption*[Acesso à memória do Nooks]{Acesso à memória do Nooks \citep{nooks}}
+  \end{figure}
+\end{frame}
 
-\begin{frame}{Extra info}
+\begin{frame}[plain]
+  \includegraphics[width=0.7\textwidth]{presentation_cap2_six}
+\end{frame}
+
+\begin{frame}{Mondrian Memory Protection e Mondrix}
+
+  \begin{proof}[Ideia central]
+Buscaram explorar técnicas para realizar controle fino sobre da memória, com o
+objetivo de adicionar mais confiabilidade e segurança para os SOs.
+  \end{proof}
+
   \begin{itemize}
-    \item It is usually useful to have some extra slides addressing likely questions from the audience at the end of the presentation
-    \item By putting them after the ``appendix'' command, they are not counted in the page count indicator
+    \item Solução de hardware: \emph{Mondrian Memory Protection (MMP)}
+    \item Solução de software: \emph{Mondrix}
   \end{itemize}
+
 \end{frame}
+
+
+\begin{frame}{Mondrian Memory Protection e Mondrix}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{mondrix_pd}
+    \caption*{Representação dos domínios de proteção do Mondrix}
+    %\caption*{Representação dos domínios de proteção do Mondrix (\cite{mondrix})}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}[t]{Padrão Fotografia}
+  \begin{columns}
+    \col
+      \centering
+      \includegraphics[width=0.8\textwidth]{snapshotOne}
+    \col
+      \centering
+      \includegraphics[width=0.9\textwidth]{snapshotTwo}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Padrão Virtualização Controlada}
+  \begin{columns}[t]
+    \col
+      \centering
+      \includegraphics[width=0.8\textwidth]{virtOne}
+    \col
+      \centering
+      \includegraphics[width=0.8\textwidth]{virtTwo}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Padrão Atualização em Tempo Real}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=.4\textwidth]{tempoReal}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Exokernel}
+  \begin{proof}[Ideia central]
+Exokernel busca ser um núcleo mínimo que permita multiplexar de forma segura os
+recursos de hardware e ao mesmo tempo fornecer uma interface de baixo-nível na
+qual as abstrações do SO podem ser construída sobre ela.
+  \end{proof}
+
+  \begin{itemize}
+    \item Expor o hardware de forma segura
+    \item Expor alocações
+    \item Expor nomes
+    \item Expor revogações
+  \end{itemize}
+
+\end{frame}
+
+
 
 \end{document}

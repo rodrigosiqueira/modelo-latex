@@ -1,6 +1,6 @@
 \chapter{Fundamentação Teórica}
 \label{cap:fundamentacao}
-
+%leiaote
 Neste capítulo, visitamos vários conceitos consolidados relativos à abstrações
 de processos e outras indiretamente relacionadas (threads, \emph{fork},
 representação na memória, virtualização, dentre outros). Introduzimos
@@ -12,10 +12,10 @@ adotados.
 
 As informações apresentadas aqui representam a prática tradicional de sistemas
 operacionais e, portanto, são bem conhecidas, sendo objeto de estudo básico na
-formação em ciência da computação. Consequentemente, não nos aprofundamos nos
-aspectos discutidos para além do necessário para a compreensão das seções
-posteriores, pois há bastante material didático e de referência sobre o tema.
-Em particular, utilizamos como fundamentos para esta seção os seguintes livros:
+formação em ciência da computação. Consequentemente, mantemos a discussão
+dentro do escopo necessário para a compreensão dos capítulos posteriores, pois
+há bastante material didático e de referência sobre o tema. Em particular,
+utilizamos como fundamentos para esta seção os seguintes livros:
 
 \begin{itemize}
   \item \textit{Operating system concepts}~\citep{silberschatz};
@@ -52,7 +52,7 @@ de processos, dentre outros.
 
 O arquivo binário de um programa tem um conjunto de metadados inseridos pelo
 compilador logo no início do arquivo que recebe o nome de cabeçalho (ou \textit{header}), ele
-auxilia o SO a executá-lo de forma correta.  Quando o SO carrega o
+possibilita o SO a executá-lo de forma correta.  Quando o SO carrega o
 executável do disco para a memória com o objetivo de criar um novo processo,
 ele realiza a leitura desses metadados e utiliza tais informações para criar os
 segmentos de memória pertencentes ao processo. Cada um desses segmentos tem um
@@ -66,8 +66,9 @@ propósito específico que habilita o SO a gerir o processo.
 \end{figure}
 
 A Figura~\ref{fig:memory_segment} ilustra seis segmentos de memória diferentes
-representando o leioute típico de um processo após sua criação (essa estrutura
-pode variar a depender do SO e do compilador utilizado). O \boldAndIndex{segmento de texto} (\emph{text segment}) representa a região da
+representando o leiaute típico de um processo após sua criação (essa estrutura
+pode variar a depender do SO e do compilador utilizado). O
+\boldAndIndex{segmento de texto} (\emph{text segment}) representa a região da
 memória que mantém a cópia em memória do código executável (compartilhável e
 apenas para leitura). O \boldAndIndex{segmento de dados inicializados}
 (\emph{initialized data segment}) e o \boldAndIndex{segmento de dados não
@@ -75,27 +76,31 @@ inicializados} (\emph{uninitialized data segment})\footnote{O segmento de dados
 não inicializável também é comumente conhecido como \emph{block started by
 symbol (BSS)} por causa de um antigo operador usado pelos montadores
 \citep{gdb}.} são responsáveis pelas variáveis estáticas. O
-\boldAndIndex{segmento de mapeamento de memória} (\emph{memory mapping
-segment}) é a região na qual o SO mapeia arquivos diretamente na memória (p.ex.,
-bibliotecas dinâmicas ou arquivos especificados pelo programador). O
-\boldAndIndex{segmento de pilha} (\emph{stack segment}) compreende os dados
-usados pelo programa durante a execução, como por exemplo, valores de
-parâmetros de função, endereços de retorno e variáveis locais (dados
-temporários) \citep{silberschatz}. Por fim, o \boldAndIndex{segmento do monte (\emph{heap segment}}
-mantém a memória dinamicamente alocada durante a execução do programa; repare
-que a pilha e o \emph{heap} crescem em direções opostadas da memória.
+\boldAndIndex{segmento de memória mapeada} (\emph{memory mapping segment}) é a
+região na qual o SO mapeia arquivos diretamente na memória (p.ex., bibliotecas
+dinâmicas ou arquivos especificados pelo programador). O \boldAndIndex{segmento
+de pilha} (\emph{stack segment}) compreende os dados usados pelo programa
+durante a execução, como por exemplo, valores de parâmetros de função,
+endereços de retorno e variáveis locais (dados temporários)
+\citep{silberschatz}. Por fim, o \boldAndIndex{segmento do monte (\emph{heap
+segment}} mantém a memória dinamicamente alocada durante a execução do
+programa; repare que a pilha e o \emph{heap} crescem em direções opostas da
+memória na imagem, contudo isso pode ser configurável em algumas arquiteturas.
 
-O primeiro passo realizado pelo SO quando ele lê o arquivo executável é processar o \emph{header}, obtendo as informações sobre o tamanho dos segmentos de
-texto e dados e criando um novo espaço de endereçamento (\emph{address space}).
-O próximo passo consiste em alocar a memória inicialmente necessária e copiar
-toda a região de código e dados lidas do arquivo binário do programa executável ou bibliotecas para essa memória
-recém alocada. Em seguida, é feita a inicialização da PCB (descrita mais adiante)
-e os devidos ajustes no \emph{stack pointer}\footnote{Um \emph{stack pointer} é
-um registrador que armazena o endereço do último acesso feito pelo programa
-para à pilha.} e no \emph{program counter} (PC), que é ajustado para a
-o ponto de início do programa, por exemplo, a função \texttt{main} em um programa na linguagem C~\citep{patterson}. Por fim, quando o SO termina
-de inicializar todos os elementos necessários para que o processo possa
-executar, ele insere o novo processo na fila do escalonador.
+O primeiro passo realizado pelo SO quando ele lê o arquivo executável é
+processar o \emph{header}, obtendo as informações sobre o tamanho dos segmentos
+de texto e dados e criando um novo espaço de endereçamento (\emph{address
+space}).  O próximo passo consiste em alocar a memória inicialmente necessária
+e copiar toda a região de código e dados lidas do arquivo binário do programa
+executável ou bibliotecas para essa memória recém alocada. Em seguida, é feita
+a inicialização da PCB (descrita mais adiante) e os devidos ajustes no
+\emph{stack pointer}\footnote{Um \emph{stack pointer} é um registrador que
+armazena o endereço do último acesso feito pelo programa para à pilha.} e no
+\emph{instruction pointer} (IP), que é ajustado para a o ponto de início do
+programa, por exemplo, a função \texttt{main} em um programa na linguagem
+C~\citep{patterson}. Por fim, quando o SO termina de inicializar todos os
+elementos necessários para que o processo possa executar, ele insere o novo
+processo na fila do escalonador.
 
 \begin{figure}[!h]
   \centering
@@ -138,17 +143,19 @@ O conceito apresentado acima revela uma característica de isolamento associada
 com a forma na qual os processos funcionam, promovendo segurança e
 estabilidade.  Por outro lado, existem situações que demandam que os processos
 cooperem entre si e, nesses casos, é possível notar algumas das desvantagens
-inerentes da estratégia de processos atual. Para resolver parte desse problema,
-algumas bibliotecas ou chamadas de sistema são fornecidas como interfaces para
-coordenar a interação entre processos executando simultaneamente, oferecendo
-mecanismos de \boldAndIndex{Comunicação entre processos}
-(\boldAndIndex{Interprocess Communication}) ou simplesmente \boldAndIndex{IPC}.
-Desenvolvedores podem utilizar IPC para compartilhar dados, melhorar o
-desempenho das aplicações, refinar a modularidade da aplicação ou por alguma
-questão de conveniência da sua aplicação. Os mecanismos de IPC têm três
-limitações principais: elevam o consumo de memória, adicionam custos extras de
-comunicação e apresentam uma certa complexidade para serem implementados. Essas
-limitações são proibitivas em aplicações com grande demanda computacional.
+inerentes da estratégia de processos atual (e.g., necessidade de mecanismos
+complexos para possibilitar a comunicação, controle do consumo de memória,
+dentre outros). Para resolver parte desse problema, algumas bibliotecas ou
+chamadas de sistema são fornecidas como interfaces para coordenar a interação
+entre processos executando simultaneamente, oferecendo mecanismos de
+\boldAndIndex{Comunicação entre processos} (\boldAndIndex{Interprocess
+Communication}) ou simplesmente \boldAndIndex{IPC}.  Desenvolvedores podem
+utilizar IPC para compartilhar dados, melhorar o desempenho das aplicações,
+refinar a modularidade da aplicação ou por alguma questão de conveniência da
+sua aplicação. Os mecanismos de IPC têm três limitações principais: elevam o
+consumo de memória, adicionam custos extras de comunicação e apresentam uma
+certa complexidade para serem implementados. Essas limitações são proibitivas
+em aplicações com grande demanda computacional.
 
 Por muito tempo, buscou-se formas de elevar o desempenho das
 aplicações por meio de melhorias no grau de paralelismo. No entanto, como
@@ -161,8 +168,8 @@ processo com uma \emph{thread} e outro com múltiplas \emph{threads}.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=.7\textwidth]{process_and_threads}
-	\caption[Única thread e multi-thread.]{Única thread e multi-thread. Note o isolamento da pilha e dos registrador (PC)~\citep{silberschatz}}
+  \includegraphics[width=.8\textwidth]{process_and_threads}
+	\caption[Única thread e multi-thread.]{Única thread e multi-thread. Note o isolamento da pilha e do registrador (PC)~\citep{silberschatz}}
   \label{fig:single_thread_multi_thread}
 \end{figure}
 
@@ -392,17 +399,19 @@ necessários vários acessos à memória para construir o endereço físico e
 finalmente conseguir acessar a palavra de dados, o que faz com que essa técnica
 não seja eficiente.  Nesse sentido, existe um mecanismo que busca reduzir esses
 acessos por meio de uma tabela chamada de \boldAndIndex{translation look-aside
-buffer (TLB)}. Essa tabela salva o último acesso (coluna e valor) feito à
+buffer (TLB)}. Essa tabela salva os últimos acessos (coluna e valor) feitos à
 tabela de páginas evitando que a memória seja consultada inúmeras vezes. Na
 Figura~\ref{fig:paginacao}, é possível ver a TLB sendo usada para acelerar o
 acesso aos dados: se uma consulta for encontrada na TLB, ocorre o chamado
 \boldAndIndex{acerto na TLB (TLB hit)}; do contrário, \boldAndIndex{falta na
-TLB (TLB miss)}. Note que a busca na memória sempre é feita, o que significa
-que, no pior caso (\emph{TLB miss}), a busca na memória já foi iniciada. Além
-disso, o mecanismo de paginação facilita a operação de realizar o
-compartilhamento de dados entre os processos; o SO orquestra um conjunto de
-páginas com a mesma visibilidade (indicada pelo programa no espaço de usuário)
-para ser compartilhado entre processos.
+TLB (TLB miss)}. Note que no exemplo ilustrado pela
+Figura~\ref{fig:passos_paginacao} a busca na memória sempre é feita, o que
+significa que, no pior caso (\emph{TLB miss}), a busca na memória já foi
+iniciada (na prática, nem sempre a busca na memória é feita). Além disso, o
+mecanismo de paginação facilita a operação de realizar o compartilhamento de
+dados entre os processos; o SO orquestra um conjunto de páginas com a mesma
+visibilidade (indicada pelo programa no espaço de usuário) para ser
+compartilhado entre processos.
 
 \subsection{Modelo de Segmentação}
 \label{sec:segmentacao}
@@ -543,7 +552,7 @@ o Kernel implementa uma série de mecanismos de embaralhamento
 conhecidos como ASLR\footnote{\url{https://lwn.net/Articles/330866/}}, KASLR e
 KARL~\citep{kaslr}. Dentre as áreas a que o Linux aplica a aleatorização,
 destacam-se os segmentos dos processos. Portanto, toda vez que um processo é
-inicializado o seu leioute na memória é embaralhado aleatoriamente, dificultando um eventual
+inicializado o seu leiaute na memória é embaralhado aleatoriamente, dificultando um eventual
 ataque.
 
 Ainda na Figura~\ref{fig:vas_contexto}, tenha em mente que o programa em
@@ -564,24 +573,27 @@ biblioteca C (\textit{libc}) utiliza esse recurso como uma forma de otimizar
 grandes alocações solicitadas via \texttt{malloc()}: ela cria um mapeamento
 anonimo para tais casos.}.
 
-A Figura~\ref{fig:kernel_manages_memory} detalha
-como o Kernel manipula as estruturas de dados da PCB. Vamos explorar essa
-imagem de duas perspectivas: primeiramente, observando os segmentos do processo
-e, depois, examinando a implementação. Começamos nosso estudo pelo \textit{heap}
-\footnote{O \emph{heap} é comumente manipulado através das funções \texttt{malloc()} e
+A Figura~\ref{fig:kernel_manages_memory} detalha como o Kernel manipula as
+estruturas de dados da PCB. Vamos explorar essa imagem de duas perspectivas:
+primeiramente, observando os segmentos do processo e, depois, examinando a
+implementação. Começamos nosso estudo pelo \textit{heap} \footnote{O
+\emph{heap} é comumente manipulado através das funções \texttt{malloc()} e
 \texttt{free()} na maior parte do tempo}; por uma questão de otimização, todo
-processo inicia com um pequeno espaço de memória previamente alocado para o \textit{heap}
-(esse pode ser manipulado via libc), já que a maioria dos
+processo inicia com um pequeno espaço de memória previamente alocado para o
+\textit{heap} (esse pode ser manipulado via libc), já que a maioria dos
 processos vai alocar memória mas que não vai precisar de muito espaço.
 Contudo, se o programa demandar mais memória, então uma chamada de sistema para
 \texttt{brk()}\footnote{A libc encapsula essa chamada} é feita com o intuito de
-que expandir o tamanho do \textit{heap}. Note na
-Figura~\ref{fig:kernel_manages_memory} que o BSS é um segmento anônimo, uma vez
-que ele armazena variáveis estáticas não inicializadas (valores não disponíveis
-no código fonte). Ao contrário do BSS, a região \emph{Data} (dados
+que expandir o tamanho do \textit{heap}. Por fim, em último caso, se o usuário
+solicitar uma porção muito grande de memória, o SO utiliza \texttt{mmap} para
+alocar a memória.
+
+Note na Figura~\ref{fig:kernel_manages_memory} que o BSS é um segmento anônimo,
+uma vez que ele armazena variáveis estáticas não inicializadas (valores não
+disponíveis no código fonte). Ao contrário do BSS, a região \emph{Data} (dados
 inicializados) mapeia uma parte do arquivo, uma vez que esse mantém o conteúdo
 das variáveis estáticas (i.e., pode ser mapeado do código fonte). A mesma ideia
-é valida para a região do \textit{text}.
+é válida para a região do \textit{text}.
 
 \begin{figure}[!h]
   \centering
@@ -857,7 +869,7 @@ ele fornece um mecanismo e não uma política \citep{ddbook}. Entenda por
 mecanismo a capacidade que deve ser fornecida e, por política, a forma com
 que a capacidade deve ser usada. Esse separação é interessante pois limita o
 que um \emph{driver} deve fazer e, por sua vez, simplifica a implementação. Um
-exemplo disso é o \emph{Direct Rendering Managemente} do Linux, que
+exemplo disso é o \emph{Direct Rendering Management} do Linux, que
 fornece várias capacidades, dentre elas, a operação de trocar
 \emph{framebuffers} primários e secundários; contudo, é a aplicação que deve
 controlar tal operação.
@@ -892,7 +904,7 @@ conhecido como \boldAndIndex{Virtual Machine Monitor (VMM)}), que é responsáve
 criar a ilusão de múltiplas máquinas em um mesmo hardware
 físico~\citep{tanenbaum}. Essas máquinas virtuais executam sobre o mesmo hardware
 e tem a capacidade de executar diferentes SOs. Existe a ideia de máquina
-convidada (\boldAndIndex{guest}) e máquina hóspede (\boldAndIndex{host}). A
+convidada (\boldAndIndex{guest}) e máquina anfitriã (\boldAndIndex{host}). A
 primeira refere-se ao SO que está executando sobre o VMM e a segunda refere-se
 à máquina que está executando sobre o hardware com privilégios.
 

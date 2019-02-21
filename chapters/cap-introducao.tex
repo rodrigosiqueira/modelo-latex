@@ -16,14 +16,14 @@ Uma das abstrações mais antigas fornecida pelos SOs é o conceito de
 \textit{processos}. Estes dão a noção de virtualização do processador, pois
 oferecem a ilusão de múltiplos programas executando
 simultaneamente~\citep{love, tanenbaum}. Os SOs de propósito geral possuem
-grande dependência sobre o conceito de processos, sendo esse o principal
+grande dependência do conceito de processos, sendo esse o principal
 mecanismo de interação com os demais recursos oferecidos. Dado o papel central
 de tal abstração nos SOs modernos, fica evidente que alterações nessa área
 reverberam em todo tipo de usuário. Por esse motivo, é comum observar que os
-processos evoluem de forma a atender novas demandas de hardware, segurança,
-escalabilidade, modelos de programação e desempenho.
+conceitos de processos evoluem de forma a atender novas demandas de hardware,
+segurança, escalabilidade, modelos de programação e desempenho.
 
-Infelizmente, melhorar a abstração de processos para atender novos requisitos é
+Melhorar a abstração de processos para atender novos requisitos é
 uma tarefa delicada. Em um SO voltado para produção (p.ex., GNU/Linux e
 FreeBSD), uma mudança incorreta na abstração de processos pode comprometer
 completamente a estabilidade do SO e, consequentemente, afetar diversos sistemas em
