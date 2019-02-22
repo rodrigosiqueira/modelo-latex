@@ -27,13 +27,13 @@ function virtualization_mode(void *func_pointer, options)
   return VM_MODE_EXIT // Indica que a VM saiu do modo de virtualização
 
 function any_function() /// \label{line:exFuncHook}
-  // ... qualquer código para ser executado em modo virtualização ...      
+  // ... qualquer código para ser executado em modo virtualização ...
 
 function MAIN() /// \label{line:virtMAIN}
   // ... qualquer código ...
   OPTIONS $\gets 0$
   \func{virtualization_mode(any_function, OPTIONS)} /// \label{line:virtModeCall}
-  
+
 \end{lstlisting}
 
   \caption{Padrão Virtualização Controlada}
