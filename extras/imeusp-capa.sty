@@ -1,7 +1,7 @@
 % Authors: Nelson Lago and Jesus P. Mena-Chalco
 % This file is distributed under the MIT Licence
 
-\ProvidesPackage{imeusp-capa}[2018/10/19 IME/USP initial thesis pages]
+\ProvidesPackage{imeusp-capa}[2019/01/02 IME/USP initial thesis pages]
 
 % Várias funções úteis
 \RequirePackage{etoolbox}
@@ -152,30 +152,12 @@
 
 \newcommand*{\subtituloeng}[1]{
     \gdef\@subtituloengcapa{#1}
-    \def\@subtituloeng{%
+    \gdef\@subtituloeng{%
         \let \\ \disablelinebreak%
         \let \newline \disablelinebreak%
         \let \break \disablelinebreak%
         #1%
     }
-}
-
-% Default é usar o valor definido por \title
-\gdef\@tituloptcapa\@title
-\gdef\@tituloengcapa\@title
-
-\gdef\@titulopt{%
-    \let \\ \disablelinebreak%
-    \let \newline \disablelinebreak%
-    \let \break \disablelinebreak%
-    \@title%
-}
-
-\gdef\@tituloeng{%
-    \let \\ \disablelinebreak%
-    \let \newline \disablelinebreak%
-    \let \break \disablelinebreak%
-    \@title%
 }
 
 % Caso alguém se confunda e use o comando errado
@@ -200,21 +182,25 @@
 \newcommand*{\orientadoreng}[1]{\gdef\@orientadoreng{#1}}
 \newcommand*{\coorientadoreng}[1]{\gdef\@coorientadoreng{#1}}
 \newcommand*{\programa}[1]{\gdef\@programa{#1}}
-\newcommand*{\programaeng}[1]{\renewcommand*{\@programaeng}{#1}}
+\newcommand*{\programaeng}[1]{\gdef\@programaeng{#1}}
 \newcommand*{\apoio}[1]{\gdef\@apoio{#1}}
-\newcommand*{\apoioeng}[1]{\renewcommand*{\@apoioeng}{#1}}
+\newcommand*{\apoioeng}[1]{\gdef\@apoioeng{#1}}
 \newcommand*{\ano}[1]{\gdef\@ano{#1}}
 \newcommand*{\datadefesa}[1]{\gdef\@datadefesa{#1}}
-\newcommand*{\datadefesaeng}[1]{\renewcommand*{\@datadefesaeng}{#1}}
+\newcommand*{\datadefesaeng}[1]{\gdef\@datadefesaeng{#1}}
 \newcommand*{\localdefesa}[1]{\gdef\@localdefesa{#1}}
 \newcommand{\banca}[1]{\gdef\@banca{#1}}
-\newcommand{\bancaeng}[1]{\renewcommand{\@bancaeng}{#1}}
+\newcommand{\bancaeng}[1]{\gdef\@bancaeng{#1}}
 \newcommand*{\palavraschave}[1]{\gdef\@palavraschave{#1}}
 \newcommand*{\keywords}[1]{\gdef\@keywords{#1}}
 \newcommand*{\direitos}[1]{\gdef\@direitos{#1}}
 \newcommand{\fichacatalografica}[1]{\gdef\@fichacatalografica{#1}}
 
-\NewDocumentCommand{\tese}{O{masc}}{
+\newtoggle{@mestrado}
+\newtoggle{@doutorado}
+\newtoggle{@qualificacao}
+
+\NewDocumentCommand{\tese}{O{masc} O{}}{
   % "Tese" e "dissertação" têm sentido contrário em língua inglesa:
   % http://guides.lib.berkeley.edu/dissertations_theses
   % https://www.grad.ubc.ca/handbook-graduate-supervision/graduate-thesis
@@ -224,57 +210,81 @@
   \renewcommand*{\@nometituloeng}{Doctor}
   \renewcommand*{\@grau}{Doutorado}
   \renewcommand*{\@graueng}{Doctorate}
+  \toggletrue{@doutorado}
+  \togglefalse{@mestrado}
   \ifstrequal{#1}{masc}{
     \renewcommand*{\@nometitulo}{Doutor}
-    \RenewDocumentCommand{\@porquem}{m}{pelo candidato}
+    \RenewDocumentCommand{\@porquem}{m}{pelo candidato \@author}
   }{
     \renewcommand*{\@nometitulo}{Doutora}
-    \RenewDocumentCommand{\@porquem}{m}{pela candidata}
+    \RenewDocumentCommand{\@porquem}{m}{pela candidata \@author}
   }
+  \ifstrequal{#2}{quali}{
+    \toggletrue{@qualificacao}
+    \renewcommand\@nometrabalho{Exame de Qualificação}
+    \renewcommand\@nometrabalhoeng{Qualifying Exam}
+  }{}
 }
-\NewDocumentCommand{\doutorado}{O{masc}}{\tese[#1]}
+\NewDocumentCommand{\doutorado}{O{masc} O{}}{\tese[#1][#2]}
 
-\NewDocumentCommand{\dissertacao}{O{masc}}{
+\NewDocumentCommand{\dissertacao}{O{masc} O{}}{
   % Veja observação acima
   \renewcommand*{\@nometrabalho}{Dissertação}
   \renewcommand*{\@nometrabalhoeng}{Thesis}
   \renewcommand*{\@nometituloeng}{Master}
   \renewcommand*{\@grau}{Mestrado}
   \renewcommand*{\@graueng}{Masters}
+  \toggletrue{@mestrado}
+  \togglefalse{@doutorado}
   \ifstrequal{#1}{masc}{
     \renewcommand*{\@nometitulo}{Mestre}
-    \RenewDocumentCommand{\@porquem}{m}{pelo candidato}
+    \RenewDocumentCommand{\@porquem}{m}{pelo candidato \@author}
   }{
     \renewcommand*{\@nometitulo}{Mestra}
-    \RenewDocumentCommand{\@porquem}{m}{pela candidata}
+    \RenewDocumentCommand{\@porquem}{m}{pela candidata \@author}
   }
+  \ifstrequal{#2}{quali}{
+    \toggletrue{@qualificacao}
+    \renewcommand\@nometrabalho{Exame de Qualificação}
+    \renewcommand\@nometrabalhoeng{Qualifying Exam}
+  }{}
 }
-\NewDocumentCommand{\mestrado}{O{masc}}{\dissertacao[#1]}
+\NewDocumentCommand{\mestrado}{O{masc} O{}}{\dissertacao[#1][#2]}
 
 % Defaults quando o usuário não define alguma dessas variáveis
-\newcommand*{\@orientador}{Orientador não definido!}
-\newcommand*{\@programa}{Programa não definido!}
-\newcommand*{\@ano}{Ano não definido!}
-\newcommand*{\@datadefesa}{Data não definida!}
-\newcommand*{\@localdefesa}{Local não definido!}
-\newcommand*{\@banca}{Banca não definida!}
-\newcommand*{\@palavraschave}{Palavras-chave não definidas!}
-\newcommand*{\@keywords}{Keywords não definidas!}
-\newcommand*{\@subtitulo}{}
-\newcommand*{\@direitos}{}
-\NewDocumentCommand{\@porquem}{m}{pelo candidato}
-\newcommand{\@fichacatalografica}{}
+
+\titulopt{\@title}
+\tituloeng{\@title}
+
+% Default é vazio; não vamos usar "\subtitulo{}" porque, com isso,
+% \@subtitulo deixa de ser vazio (embora nada seja impresso, ele
+% inclui os comandos para desabilitar quebras de linha)
+\gdef\@subtitulocapa{}
+\gdef\@subtitulo{}
+
+\orientador{Orientador não definido!}
+\programa{Programa não definido!}
+\apoio{}
+\ano{Ano não definido!}
+\datadefesa{Data não definida!}
+\localdefesa{Local não definido!}
+\banca{Banca não definida!}
+\palavraschave{Palavras-chave não definidas!}
+\keywords{Keywords não definidas!}
+\direitos{}
+\NewDocumentCommand{\@porquem}{m}{pelo candidato \@author}
+\fichacatalografica{}
 
 % Se estes não forem definidos, usamos a variável correspondente
 % em português.
 \newcommand*{\@subtituloeng}{\@subtitulo}
 \newcommand*{\@subtituloengcapa}{\@subtitulocapa}
+\newcommand*{\@orientadoreng}{\@orientador}
+\newcommand*{\@coorientadoreng}{\@coorientador}
 \newcommand*{\@programaeng}{\@programa}
 \newcommand*{\@apoioeng}{\@apoio}
 \newcommand*{\@datadefesaeng}{\@datadefesa}
 \newcommand*{\@bancaeng}{\@banca}
-\newcommand*{\@orientadoreng}{\@orientador}
-\newcommand*{\@coorientadoreng}{\@coorientador}
 
 \newcommand*{\@nometrabalho}{Dissertação}
 \newcommand*{\@nometrabalhoeng}{Thesis}
@@ -289,21 +299,37 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand*{\@textocapa}[1][port] {%
-  \ifstrequal{port}{#1}{%
-    \@nometrabalho{} apresentada ao\\[-0.25cm]
-    Instituto de Matemática e Estatística\\[-0.25cm]
-    da Universidade de São Paulo\\[-0.25cm]
-    para obtenção do título de\\[-0.25cm]
-    \@nometitulo{} em Ciências%
+  \iftoggle{@qualificacao} {%
+    \ifstrequal{port}{#1}{%
+      Texto apresentado ao\\[-0.25cm]
+      Instituto de Matemática e Estatística\\[-0.25cm]
+      da Universidade de São Paulo\\[-0.25cm]
+      para exame de qualificação de\\[-0.25cm]
+      \@grau{} em Ciências%
+    }{%
+      Text presented to the \\[-0.25cm]
+      Institute of Mathematics and Statistics\\[-0.25cm]
+      of the University of São Paulo\\[-0.25cm]
+      for the \iftoggle{@mestrado}{\@nometituloeng}{\@graueng} of Science\\[-0.25cm]
+      qualifying examination\\[-0.25cm]%
+    }%
   }{%
-    \@nometrabalhoeng{} presented to the \\[-0.25cm]
-    Institute of Mathematics and Statistics\\[-0.25cm]
-    of the University of São Paulo\\[-0.25cm]
-    in partial fulfillment\\[-0.25cm]
-    of the requirements\\[-0.25cm]
-    for the degree of\\[-0.25cm]
-    \@nometituloeng{} of Science%
-  }
+    \ifstrequal{port}{#1}{%
+      \@nometrabalho{} apresentada ao\\[-0.25cm]
+      Instituto de Matemática e Estatística\\[-0.25cm]
+      da Universidade de São Paulo\\[-0.25cm]
+      para obtenção do título de\\[-0.25cm]
+      \@nometitulo{} em Ciências%
+    }{%
+      \@nometrabalhoeng{} presented to the \\[-0.25cm]
+      Institute of Mathematics and Statistics\\[-0.25cm]
+      of the University of São Paulo\\[-0.25cm]
+      in partial fulfillment\\[-0.25cm]
+      of the requirements\\[-0.25cm]
+      for the degree of\\[-0.25cm]
+      \@nometituloeng{} of Science%
+    }%
+  }%
 }
 
 \newcommand*{\@pessoascapa}[1][port] {%
@@ -321,13 +347,23 @@
 }
 
 \newcommand*{\@textorostoprovisoria}[1][port] {%
-  \ifstrequal{port}{#1}{%
-    Esta é a versão original da \MakeLowercase{\@nometrabalho} elaborada
-    \@porquem{} \@author, tal como submetida à Comissão Julgadora.%
+  \iftoggle{@qualificacao}{%
+    \ifstrequal{port}{#1}{%
+      Esta é a versão original do texto de qualificação elaborado
+      \@porquem{}, tal como submetido à Comissão Julgadora.%
+    }{%
+      This is the original version of the qualifying text prepared
+      by the candidate \@author, as submitted to the Examining Committee.%
+    }%
   }{%
-    This is the original version of the \MakeLowercase{\@nometrabalhoeng} prepared
-    by the candidate \@author, as submitted to the Examining Committee.%
-  }
+    \ifstrequal{port}{#1}{%
+      Esta é a versão original da \MakeLowercase{\@nometrabalho} elaborada
+      \@porquem{}, tal como submetida à Comissão Julgadora.%
+    }{%
+      This is the original version of the \MakeLowercase{\@nometrabalhoeng} prepared
+      by the candidate \@author, as submitted to the Examining Committee.%
+    }%
+  }%
 }
 
 \newcommand*{\@textorostodefinitiva}[1][port] {%
@@ -346,7 +382,7 @@
     ~\\
     A copy of the original version is available at the Institute of
     Mathematics and Statistics of the University of São Paulo.%
-  }
+  }%
 }
 
 \newcommand{\@textobanca}[1][port] {%
@@ -374,7 +410,7 @@
     Institute of Mathematics and Statistics,
     University of São Paulo,%
   }
-  São Paulo, \@ano.
+  São Paulo, \@ano.%
 }
 
 

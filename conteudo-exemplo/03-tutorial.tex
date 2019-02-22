@@ -52,7 +52,7 @@ visualmente, como LibreOffice Writer, MS-Word, Google Docs etc.;
 
 \item Se você precisa fazer um documento relativamente longo com estrutura
 regular (capítulos, seções etc.), é melhor usar ferramentas que formalizam
-essa estrutura (como \LaTeX{}) ao invés de usar ferramentas visuais;
+essa estrutura (como \LaTeX{}) ao invés de ferramentas visuais;
 
 \item Se você precisa fazer um documento envolvendo referências cruzadas,
 bibliografia relativamente extensa ou fórmulas matemáticas, é difícil
@@ -222,7 +222,7 @@ uma linha em branco e versos são separados por \cmd{\sla\sla{}*}. O asterisco
 é opcional; ele instrui \LaTeX{} a manter as linhas na mesma página). A package
 \pkg{csquotes} acrescenta recursos sofisticados para citações.
 
-\enlargethispage{\baselineskip}
+\enlargethispage{.5\baselineskip}
 
 Para inserir uma nota de rodapé, use o comando
 \ltxcmd{footnote\{texto da nota\}}\index{Notas de rodapé}. Um espaço
@@ -239,7 +239,7 @@ Uma outra maneira de encontrar símbolos é usar este sítio: \url{detexify.kire
 \label{sec:refs}
 
 É comum que um trecho do texto faça referência a outro trecho (``como
-discutimos no capítulo~X\ldots''). Isso pode ser feito diretamente, mas
+discutimos no Capítulo~X\ldots''). Isso pode ser feito diretamente, mas
 se você reorganizar o documento ou acrescentar seções, a numeração pode
 mudar. Para evitar esse problema, você pode gerar essas referências
 automaticamente com o par de comandos \ltxcmd{label\{nome-sugestivo\}} e
@@ -249,15 +249,18 @@ automaticamente com o par de comandos \ltxcmd{label\{nome-sugestivo\}} e
 Esse mecanismo também é muito útil para figuras e tabelas.
 É claro que o ideal seria que tabelas e figuras sempre aparecessem junto ao
 texto a que se referem. No entanto, isso é impossível por conta da divisão
-do texto em páginas. Em \LaTeX{}, figuras e tabelas são incluídas como
-\emph{floats} (localização flexível) usando \ltxcmd{begin\{figure\}}
-e \ltxcmd{begin\{table\}} e o programa procura o ``melhor''
-lugar para colocá-las. Dentro do \emph{float} é inserido um
-\ltxcmd{label} para que se possa fazer referência à figura/tabela
-no texto (com o comando \ltxcmd{ref}). A figura/tabela em
-si é definida com \ltxcmd{includegraphics} ou \ltxcmd{begin\{tabular\}},
-e em geral é uma boa ideia acrescentar uma descrição com
-\ltxcmd{caption}\index{Legendas}.
+do texto em páginas. Em \LaTeX{}, é melhor incluir figuras e tabelas como
+\emph{floats} (localização flexível) usando \ltxcmd{begin\{figure\}} e
+\ltxcmd{begin\{table\}} e deixar o programa procurar o ``melhor'' lugar para
+colocá-las. A figura/tabela em si é definida com \ltxcmd{includegraphics}
+ou \ltxcmd{begin\{tabular\}}, e em geral é uma boa ideia acrescentar uma
+legenda com \ltxcmd{caption}\index{Legendas}. Finalmente, dentro da
+legenda, é possível inserir um \ltxcmd{label} para que se possa fazer
+referência à figura/tabela no texto (com os comandos \ltxcmd{ref} e
+\ltxcmd{pageref})\footnote{Em alguns casos, é possível colocar o
+\ltxcmd{label} de uma figura ou tabela fora do comando \ltxcmd{caption}
+mas, como em muitos casos isso gera problemas, é um bom hábito sempre
+colocá-lo dentro dele.}.
 
 \LaTeX{}\index{Floats!Ordem} garante que a sequência das figuras e a
 sequência das tabelas sejam respeitadas (a Figura~6 nunca aparece depois da
@@ -266,9 +269,9 @@ diferentes, ou seja, se você definiu a Figura~5, a Tabela~3 e a Figura~6,
 elas podem aparecer no documento na ordem ``Figura~5, Tabela~3, Figura~6'',
 ``Figura~5, Figura~6, Tabela~3'' ou ``Tabela~3, Figura~5, Figura~6''.
 
-\enlargethispage{\baselineskip}
-
 \section{Múltiplas Execuções e Comandos Auxiliares}
+
+\enlargethispage{.5\baselineskip}
 
 \LaTeX{} numera capítulos, seções, figuras etc. automaticamente
 e pode fazer referências a seções ou figuras que aparecem tanto antes
@@ -341,8 +344,6 @@ A geração de bibliografias no \LaTeX{} é feita através da package
 O funcionamento geral dos dois mecanismos é similar e o formato do banco
 de dados de ambos é o mesmo.} e envolve três passos:
 
-\enlargethispage{\baselineskip}
-
 \begin{enumerate}
 \item A criação de um banco de dados, no formato ``.bib'', das obras de
 interesse. Esse banco de dados pode incluir obras que não vão ser de fato
@@ -353,15 +354,15 @@ não é necessário.}.
 
 \item A inserção de referências às obras ao longo do texto, usando
 diferentes comandos dependendo do caso: \ltxcmd{cite}, \ltxcmd{citet},
-\ltxcmd{citep} etc. Esses comandos estão descritos tanto na documentação
-da package \pkg{biblatex}\index{biblatex} quanto na da package
-\pkg{natbib}\index{natbib}. Normalmente, apenas as obras efetivamente
-citadas são incluídas na bibliografia, mas é possível forçar a inclusão
-de uma obra não-citada com o comando \ltxcmd{nocite}.
+\ltxcmd{citep} etc. Como já mencionado, esses comandos estão descritos
+na documentação da package \pkg{natbib}\index{natbib} \citep{natbib}.
 
 \item A escolha do estilo bibliográfico (usando as opções da package
 \pkg{biblatex}) que formata as citações ao longo do texto e gera a bibliografia
-automaticamente através do comando \ltxcmd{printbibliography}.
+automaticamente através do comando \ltxcmd{printbibliography}.  Normalmente,
+apenas as obras efetivamente citadas são incluídas na lista de referências,
+mas é possível forçar a inclusão de uma obra sem citá-la explicitamente com
+o comando \ltxcmd{nocite}.
 \end{enumerate}
 
 O banco de dados é um arquivo de texto contendo uma \emph{entrada} para cada
@@ -414,8 +415,6 @@ para letras minúsculas. Para evitar que isso afete siglas e nomes próprios,
 basta colocá-los entre chaves (``Automated Application-Level Checkpointing
 of \{MPI\} Programs'').
 
-\enlargethispage{\baselineskip}
-
 Finalmente, os campos \textsf{author} e \textsf{publisher} podem incluir uma
 lista de nomes separados por \textsf{and}; biblatex reconhece que cada nome é
 composto por nome e sobrenome, às vezes com partículas como ``de'', ``dos''
@@ -426,13 +425,18 @@ instituição entre chaves (``\{Universidade de São Paulo --- Sistema Integrado
 de Bibliotecas\}'') para que biblatex não faça alterações desse tipo. Se o
 nome é longo, pode ser interessante definir o campo \textsf{shortauthor}.
 
-A fonte mais detalhada de informações sobre o banco de dados é a
-documentação da package \pkg{biblatex}, mas o material ali é um tanto denso.
+A fonte mais detalhada de informações sobre o banco de dados é a documentação
+da package \pkg{biblatex} \citep[em especial as seções 2.1.1 e 2.2.2]{biblatex},
+mas o material ali é um tanto denso.
 Há muito material introdutório ao formato ``.bib'' e ao bibtex disponível
 \emph{online}, e você pode se inspirar em exemplos para criar seu banco de
 dados bibliográfico. Além disso, ferramentas como Zotero\index{Zotero} ou
 Mendeley\index{Mendeley} (o uso de uma delas é altamente recomendado!)
-podem exportar para o formato .bib.
+podem exportar para o formato .bib. Observe que \pkg{biblatex}
+\index{biblatex} oferece recursos bastante sofisticados para o tratamento de
+referências e bibliografias. Se você precisar de alguma funcionalidade
+especial, consulte a documentação do pacote ou a Internet; é quase certeza
+que \pkg{biblatex} oferece uma solução.
 
 \section{Imagens, Ilustrações, Diagramas e Gráficos}
 
@@ -464,17 +468,20 @@ Em \LaTeX{}, é possível importar imagens fotográficas nos formatos
 \textsc{png} e \textsc{jpg} e imagens dos demais tipos no formato
 \textsc{pdf}. Além disso, \LaTeX{} tem recursos para criar ilustrações,
 diagramas e gráficos diretamente, mas usá-los em geral não é trivial.
-Ainda assim, para traçar linhas ou curvas simples, o comando
-\textsf{picture} e a package \textsf{pict2e} podem ser úteis, e Gnuplot
-é capaz de exportar gráficos na forma de comandos \textsf{picture}.
-A package \textsf{tikz} oferece bons recursos para a criação de
-ilustrações e diagramas, e o programa \textsf{Asymptote} tem excelente
-integração com \LaTeX{}.
+Em particular, a package \pkg{tikz} oferece bons recursos para a
+criação de ilustrações e diagramas (incluindo funções pré-prontas
+para formas geométricas, grafos, matrizes etc.) e é fácil usá-la
+para traçar linhas ou curvas simples. Você também pode criar gráficos
+de dados ou de funções matemáticas com ela ou com a package
+\pkg{pgfplots}; \cmd{Gnuplot} é capaz de exportar gráficos na forma
+de comandos para \pkg{tikz} (garantindo maior consistência visual entre
+o texto principal e o gráfico), e o programa \cmd{Asymptote} tem
+excelente integração com \LaTeX{}.
 
 \section{Formatação Manual}
 
 Às vezes é preciso inserir formatação de forma manual; os comandos mais
-importantes são
+importantes são:
 \ltxcmd{emph} (texto \emph{enfatizado}, em geral itálico),
 \ltxcmd{texttt} (texto \texttt{teletype}, imitando um
 terminal de texto ou uma impressora),
@@ -495,12 +502,28 @@ as fontes oferecem essa possibilidade),
 \ltxcmd{vspace\{\sla{}baselineskip\}} (deixa uma linha em branco),
 \ltxcmd{begin\{center\}} (centraliza parágrafos),
 \ltxcmd{begin\{flushleft\}} (alinha parágrafos à esquerda),
-\ltxcmd{begin\{flushright\}} (alinha parágrafos à direita)\footnote{É altamente
-recomendável carregar a package \pkg{ragged2e} e utilizar \cmd{Center},
-\cmd{FlushLeft} e \cmd{FlushRight} ao invés de \cmd{center},
-\cmd{flushleft} e \cmd{flushright}.},
-\ltxcmd{leftskip=1cm} (aumenta a margem esquerda) e
-\ltxcmd{rightskip=1cm} (aumenta a margem direita).
+\ltxcmd{begin\{flushright\}} (alinha parágrafos à direita)\footnote{É
+altamente recomendável carregar a package \pkg{ragged2e} (já incluída
+neste modelo) e utilizar \ltxcmd{Center}, \ltxcmd{FlushLeft} e
+\ltxcmd{FlushRight} ao invés de \ltxcmd{center}, \ltxcmd{flushleft}
+e \ltxcmd{flushright}.},
+\ltxcmd{hyphenation} (permite ``ensinar'' \LaTeX{} como hifenizar uma
+lista de palavras; note que, em geral, a hifenização automática de \LaTeX{}
+é excelente),
+\ltxcmd{-} (sugere uma possível hifenização localizada),
+\ltxcmd{leftskip=1cm} (aumenta a margem esquerda),
+\ltxcmd{rightskip=1cm} (aumenta a margem direita),
+\ltxcmd{linebreak}[0--4] (sugere uma quebra de linha; o número indica
+quão forte é a sugestão, ou seja, 4 faz a quebra obrigatória; se o
+parágrafo é justificado, a linha quebrada também é justificada),
+\ltxcmd{newline} ou \cmd{\sla\sla} (força uma quebra de linha; a
+linha \emph{não} é justificada nesse caso),
+\ltxcmd{pagebreak}[0--4] (sugere uma quebra de página; como
+\ltxcmd{linebreak}, o número indica quão forte é a sugestão; o texto
+da página é espalhado verticalmente de maneira a fazer a última linha
+alinhada com o final das demais páginas) e
+\ltxcmd{newpage} (força uma quebra de página; o final da página
+\emph{não} é alinhado com o final das demais páginas nesse caso).
 
 Mas, como discutido na Seção~\ref{sec:basico}, não é recomendável
 usar esses comandos ao longo do texto: o ideal em \LaTeX{} é expressar
@@ -511,7 +534,7 @@ facilidade. Assim, quando os recursos pré-definidos do \LaTeX{}
 o mais adequado é definir comandos novos, em geral usando os comandos
 de formatação mencionados acima. Esse é um tópico avançado, mas você
 pode consultar o início do arquivo \LaTeX{} deste capítulo para alguns
-exemplos.
+exemplos simples.
 
 \section{Detalhes da Linguagem}
 
@@ -580,28 +603,22 @@ embora também só possa usar as fontes adaptadas para uso com o \LaTeX{}.
 \item \XeLaTeX{} que, além dos recursos do pdf\LaTeX{}, opera internamente
 em UTF-8 (ou seja, funciona melhor com múltiplas línguas) e pode funcionar
 não só com as fontes adaptadas para o \LaTeX{} como também com as fontes
-instaladas no sistema. A desvantagem desta versão é que ela é um pouco
-mais lenta que pdf\LaTeX{}.
+instaladas no sistema.
 
 \item \LuaLaTeX{}, que oferece os mesmos recursos que o \XeLaTeX{} e
 também pode ser estendido internamente com mais facilidade (através da
-linguagem de programação Lua). Como \XeLaTeX{}, esta versão é um pouco
-mais lenta que pdf\LaTeX{}.
+linguagem de programação Lua).
 \end{enumerate}
 
-Todas essas versões são instaladas quando você instala o \LaTeX{} no seu
-sistema, então trocar de uma para outra é muito fácil (basta escolher o
-comando a executar: pdflatex, xelatex ou lualatex). \XeLaTeX{} e
-\LuaLaTeX{} são as duas propostas da comunidade para o futuro novo padrão
-do sistema, mas você não tem nada a perder se escolher a ``errada'', pois
-para todos os efeitos práticos elas são equivalentes.
-
-Se você pretende escrever apenas com línguas no alfabeto latino e não
-pretende usar fontes diferentes das disponíveis por padrão no \LaTeX{},
-então qualquer uma das três versões modernas (pdf\LaTeX{}, \XeLaTeX{}
-e \LuaLaTeX{}) é adequada. Se você pretende usar línguas com outros
-alfabetos ou se gostaria de escolher fontes diferentes, use \XeLaTeX{}
-ou \LuaLaTeX{}.
+Todas essas versões são instaladas quando você instala o \LaTeX{} na sua
+máquina. \XeLaTeX{} e \LuaLaTeX{} são as duas propostas da comunidade para
+o futuro novo padrão do sistema, mas você não tem nada a perder se escolher
+a ``errada'', pois para todos os efeitos práticos elas são equivalentes.
+Em geral, se você pretende escrever apenas com línguas no alfabeto latino e
+não pretende usar fontes diferentes das disponíveis por padrão no \LaTeX{},
+qualquer das três versões modernas (pdf\LaTeX{}, \XeLaTeX{}
+e \LuaLaTeX{}) é adequada. Se você pretende usar outros
+alfabetos ou se gostaria de escolher fontes diferentes, use \LuaLaTeX{}.
 
 \section{Limitações do \LaTeX{} e Algumas Dicas}
 \label{sec:limitations}
@@ -614,10 +631,11 @@ indesejáveis:
     \item A linguagem é muito prolixa: é bastante tedioso escrever
     coisas como ``\ltxcmd{begin\linebreak[0]{}\{itemize\}}'' etc. Linguagens
     como asciidoc/asciidoctor (\url{asciidoctor.org}) e markdown
-    (\url{daringfireball.net/projects/markdown}) funcionam de
+    (\url{daringfireball.net/projects/markdown}) operam de
     maneira similar a \LaTeX{}, mas sua sintaxe é bem mais enxuta.
-    No entanto, elas não têm alguns recursos avançados oferecidos
-    por \LaTeX{}, em particular para a gestão de bibliografias.
+    Embora não possuam alguns recursos avançados oferecidos por \LaTeX{},
+    em particular para a gestão de bibliografias, elas são bastante
+    eficazes e funcionam muito bem para a geração de páginas web.
 
     \item \LaTeX{} procura ser uma linguagem \emph{declarativa}, ou seja,
     os comandos buscam expressar o que se deseja e não como fazer algo
@@ -637,14 +655,13 @@ indesejáveis:
     isso pode ser contornado mudando a ordem em que elas são carregadas,
     mas em outros pode simplesmente não ser possível combiná-las.
 
-    \item Embora o algoritmo de colocação dos \emph{floats} funcione bem,
-    às vezes ele pode gerar resultados não tão bons. Isso acontece porque
-    \LaTeX{} decide o posicionamento de cada \emph{float} individualmente,
-    sem levar em conta os próximos \emph{floats}, e nunca reavalia essa
-    decisão. No exemplo da Seção~\ref{sec:refs}, se a ordem ``Figura~5,
-    Tabela~3, Figura~6'' for aceitável, esse vai ser o resultado, mesmo
-    que a ordem ``Tabela~3, Figura~5, Figura~6'' seja melhor. Apenas se
-    não for possível encontrar um lugar aceitável para a Figura~5
+    \item A colocação automática dos \emph{floats} em geral funciona bem, mas
+    nem sempre. Isso acontece porque \LaTeX{} decide o posicionamento de cada
+    \emph{float} individualmente, sem levar em conta os próximos \emph{floats},
+    e nunca reavalia essa decisão. No exemplo da Seção~\ref{sec:refs}, se a
+    ordem ``Figura~5, Tabela~3, Figura~6'' for aceitável, esse vai ser o
+    resultado, mesmo que a ordem ``Tabela~3, Figura~5, Figura~6'' seja melhor.
+    Apenas se não for possível encontrar um lugar aceitável para a Figura~5
     imediatamente (ou seja, na página atual) é que \LaTeX{} processa os
     \emph{floats} seguintes e, depois, procura novamente um lugar para ela.
     Por isso, depois que seu trabalho estiver finalizado, vale a pena
@@ -652,7 +669,7 @@ indesejáveis:
     mudar a ordem em que eles são definidos no documento pode fazer \LaTeX{}
     gerar um resultado melhor (mas lembre-se que isso só faz sentido depois
     que o documento estiver pronto, pois qualquer mudança no texto pode
-    mudar totalmente a colocação dos \emph{floats}).
+    mudar totalmente a posição final dos \emph{floats}).
 
     \item O algoritmo que \LaTeX{} usa para quebrar páginas é excelente,
     minimizando linhas órfãs ou viúvas e garantindo uma distribuição
@@ -708,5 +725,9 @@ indesejáveis:
     possibilidades de customização. A classe \pkg{memoir} tem o mesmo objetivo,
     mas procura dar suporte a livros e artigos com uma única classe. Ambas
     abordagens são muito boas, mas a maioria dos modelos usados por revistas e
-    outras publicações é baseada nas classes padrão.
+    outras publicações é baseada nas classes padrão. A versão 3 de \LaTeX{}
+    está em desenvolvimento com vistas a resolver boa parte dos problemas
+    atuais do sistema, mas ainda deve demorar muitos anos para ficar pronta.
+    \textsc{Con\TeX{}t} é um ``irmão mais novo'' de \LaTeX{} com diversas
+    vantagens, mas com sintaxe diferente e que ainda não é tão popular.
 \end{itemize}

@@ -20,6 +20,7 @@ Dois outros bons livros sobre o tema são \emph{The Craft of Research}~\citep{cr
 e \emph{The Dissertation Journey}~\citep{dissertjourney}. Além disso, a USP
 tem uma compilação de normas relativas à produção de documentos
 acadêmicos~\citep{usp:guidelines} que pode ser utilizada como referência.
+
 Para a escrita de textos especificamente sobre Ciência da Computação, o
 livro de Justin Zobel, \emph{Writing for Computer Science}~\citep{zobel:04}
 é uma leitura obrigatória. O livro \emph{Metodologia de Pesquisa para
@@ -31,6 +32,14 @@ recomendados são o de Nicholas Higham, \emph{Handbook of Writing for
 Mathematical Sciences}~\citep{Higham:98} e o do criador do \TeX{}, Donald
 Knuth, juntamente com Tracy Larrabee e Paul Roberts, \emph{Mathematical
 Writing}~\citep{Knuth:96}.
+
+Apresentar os resultados de forma simples, clara e completa é uma tarefa que
+requer inspiração. Nesse sentido, o livro de
+%Edward Tufte~\cite{tufte01:visualDisplay}, % usando o estilo alpha
+Edward~\citet{tufte01:visualDisplay}, % usando o estilo plainnat
+\emph{The Visual Display of Quantitative Information}, serve de ajuda na
+criação de figuras que permitam entender e interpretar dados/resultados de forma
+eficiente.
 
 Além desse material, também vale muito a pena a leitura do trabalho de
 %Uri Alon \cite{alon09:how}, % usando o estilo alpha
@@ -49,11 +58,12 @@ frase\footnote{E não se deve abusar das notas de rodapé.\index{Notas de rodap�
 No entanto, usando referências em algum estilo autor-data (como o estilo
 plainnat do \LaTeX{}), é comum que o nome do autor faça parte da frase. Nesses
 casos, pode valer a pena mudar o formato da citação para não repetir o nome do
-autor (no \LaTeX{}, isso pode ser feito usando os comandos
+autor; no \LaTeX{}, isso pode ser feito usando os comandos
 \textsf{\textbackslash{}citet}, \textsf{\textbackslash{}citep},
 \textsf{\textbackslash{}citeyear} etc. documentados no pacote
-natbib)\index{natbib}. Em geral, portanto, as citações devem seguir estes
-exemplos:
+natbib \citep{natbib}\index{natbib} (esses comandos são compatíveis com biblatex
+usando a opção \textsf{natbib=true}, ativada por padrão neste modelo). Em geral,
+portanto, as citações devem seguir estes exemplos:
 
 \small
 \begin{verbatim}
@@ -75,14 +85,6 @@ Uma prática recomendável na escrita de textos é descrever as
 legendas\index{Legendas} das figuras e tabelas em forma auto-contida: as
 legendas devem ser razoavelmente completas, de modo que o leitor possa entender
 a figura sem ler o texto onde a figura ou tabela é citada.\index{Floats}
-
-Apresentar os resultados de forma simples, clara e completa é uma tarefa que
-requer inspiração. Nesse sentido, o livro de
-%Edward Tufte~\cite{tufte01:visualDisplay}, % usando o estilo alpha
-Edward~\citet{tufte01:visualDisplay}, % usando o estilo plainnat
-\emph{The Visual Display of Quantitative Information}, serve de ajuda na
-criação de figuras que permitam entender e interpretar dados/resultados de forma
-eficiente.
 
 \section{Ferramentas Bibliográficas}
 
@@ -114,7 +116,7 @@ gratuitas que permitem a busca de referências acadêmicas já no formato .bib:
 \begin{itemize}
   \item \emph{CiteULike}\index{CiteULike} (patrocinados por Springer): \url{www.citeulike.org}
   \item Coleção de bibliografia em Ciência da Computação: \url{liinwww.ira.uka.de/bibliography}
-  \item Google acadêmico\index{Google Scholar} (habilitar bibtex nas preferências): \url{scholar.google.com.br}
+  \item Google acadêmico\index{Google Scholar} (habilitar bibtex nas preferências): \url{scholar.google.com}
 \end{itemize}
 
 Lamentavelmente, ainda não existe um mecanismo de verificação ou validação das

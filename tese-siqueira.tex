@@ -21,6 +21,8 @@
 % É possível mudar esse comportamento com a opção "openany". Observe que você
 % pode adaptar este modelo para escrever artigos, mudando a classe do
 % documento de "book" para "article" ou a classe de algum periódico específico.
+% No entanto, o arquivo "artigo-exemplo.tex" é um ponto de partida melhor: ele
+% é similar a este, mas já inclui as mudanças necessárias para a classe article.
 %
 % A opção frente-e-verso aqui significa, por exemplo, que as margens das páginas
 % ímpares e pares são diferentes ou que números de página aparecem à direita
@@ -34,7 +36,6 @@
 % A última língua da lista é a língua padrão do documento.
 %\documentclass[12pt,twoside,brazil,english]{book}
 \documentclass[12pt,twoside,english,brazil]{book}
-%\documentclass[12pt,twoside,english,brazil]{article}
 
 % tamanho da página e margens
 \usepackage[a4paper]{geometry}
@@ -73,9 +74,9 @@
 \input{extras/source-code}
 \input{extras/utils}
 
-% Diretório onde estão as figuras; com isso, não é preciso colocar o caminho
+% Diretórios onde estão as figuras; com isso, não é preciso colocar o caminho
 % completo em \includegraphics (e nem a extensão).
-\graphicspath{{figuras/}}
+\graphicspath{{figuras/},{logos/}}
 
 % Comandos rápidos para mudar de língua:
 % \en -> muda para o inglês
@@ -84,10 +85,31 @@
 % \textbr{blah} -> o texto "blah" é em português
 \babeltags{br = brazil, en = english}
 
+% Espaçamento simples
+\singlespacing
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAFIA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Para personalizar o formato da bibliografia e citações, modifique este arquivo.
+% O estilo de citação e de lista de referências usado por biblatex
+\PassOptionsToPackage{
+  % Estilo similar a plainnat
+  bibstyle=extras/plainnat-ime,
+  citestyle=extras/plainnat-ime,
+  % Estilo similar a alpha
+  %bibstyle=alphabetic,
+  %citestyle=alphabetic,
+  % O estilo numérico é comum em artigos
+  %bibstyle=numeric,
+  %citestyle=numeric,
+  % Um estilo que busca ser compatível com a ABNT:
+  %bibstyle=abnt,
+  %citestyle=abnt,
+  %style=bwl-FU,
+}{biblatex}
+
+% Para personalizar outros aspectos da bibliografia e citações ou
+% para utilizar bibtex, modifique este arquivo.
 \input{extras/bibconfig}
 
 % O arquivo com os dados bibliográficos; você pode usar este comando
@@ -97,6 +119,12 @@
 \newcommand\boldAndIndex[1]{\textbf{#1}\index{#1}}
 \usepackage{diagbox}
 \usepackage{pifont}
+% Este comando permite acrescentar itens à lista de referências sem incluir
+% uma referência de fato no texto (pode ser usado em qualquer lugar do texto)
+%\nocite{bronevetsky02,schmidt03:MSc, FSF:GNU-GPL, CORBA:spec, MenaChalco08}
+% Com este comando, todos os itens do arquivo .bib são incluídos na lista
+% de referências
+%\nocite{*}
 
 \usepackage{amsmath}
 \usepackage{algorithm}
@@ -121,15 +149,15 @@
   pdfkeywords={LaTeX, tese, dissertação, IME/USP},
 }
 
-% Os dados (nome do orientador, banca etc.) que devem ser incluídos na capa
-% e folhas de rosto no formato sugerido para teses/dissertações do IME/USP.
-% Esses dados são usados mais abaixo (no arquivo "folhas-de-rosto"). Se
-% estiver escrevendo um artigo ou for gerar a capa etc. manualmente, remova.
-\input{conteudo/metadados-tese}
+% Este pacote define o formato sugerido da capa, páginas de rosto,
+% dedicatória e resumo. Se você pretende criar essas páginas manualmente,
+% não precisa carregar este pacote nem carregar o arquivo folhas-de-rosto.
+\dowithsubdir{extras/}{\usepackage{imeusp-capa}}
 
 % É possível definir como determinadas palavras podem (ou não) ser
 % hifenizadas; no entanto, a hifelização automática geralmente funciona bem
 \hyphenation{documentclass latexmk Fu-la-no}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%% AQUI COMEÇA O CONTEÚDO DE FATO %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -137,9 +165,8 @@
 
 \begin{document}
 
-% Se estiver usando a classe "article" ao invés de "book", não existem os
-% comandos "frontmatter", "mainmatter" etc. abaixo. Além disso, para gerar o
-% título, você pode usar o comando padrão do LaTeX "\maketitle"
+% Para gerar o título sem seguir o formato deste modelo, você pode usar o
+% comando padrão do LaTeX "\maketitle".
 %\maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% CAPA E FOLHAS DE ROSTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,18 +174,17 @@
 % Aqui vai o conteúdo inicial que aparece antes do capítulo 1, ou seja,
 % página de rosto, resumo, sumário etc. O comando frontmatter faz números
 % de página aparecem em algarismos romanos ao invés de arábicos e
-% desabilita a contagem de capítulos (ele não existe na classe "article")
+% desabilita a contagem de capítulos.
 \frontmatter
 
 % Este formato está definido na package imeusp-headers
 \pagestyle{plain}
 %\pagestyle{frontback}
 
-% As folhas de rosto no formato sugerido para teses/dissertações do IME/USP,
-% usando as informações incluídas acima em metadados-tese. Se estiver
-% escrevendo um artigo ou não quiser usar, remova.
-
+% Capa e folhas de rosto no formato sugerido para teses/dissertações do IME/USP.
+% Se for gerar a capa etc. manualmente, remova.
 \onehalfspacing % Espaçamento 1,5 nas páginas iniciais
+%\input{conteudo-exemplo/folhas-de-rosto}
 \input{conteudo/folhas-de-rosto}
 
 % Um parágrafo em LaTeX termina com uma linha vazia; como não é possível ter
@@ -171,13 +197,11 @@
 
 % Aqui vai o conteúdo principal do trabalho, ou seja, os capítulos que compõem
 % a dissertação/tese. O comando mainmatter reinicia a contagem de páginas,
-% modifica a numeração para números arábicos e ativa a contagem de capítulos
-% (ele não existe na classe "article")
+% modifica a numeração para números arábicos e ativa a contagem de capítulos.
 \mainmatter
 
-% Este formato está definido na package imeusp-headers
-% e só funciona com book/report, pois usa o nome dos capítulos nos cabeçalhos;
-% se estiver usando article, comente ou troque por "plain"
+% Este formato está definido na package imeusp-headers e só funciona com
+% book/report, pois usa o nome dos capítulos nos cabeçalhos.
 \pagestyle{mainmatter}
 
 % Espaçamento simples
@@ -189,6 +213,7 @@
 \par
 
 \input{chapters/cap-fundamentacao-teorica}
+
 \par
 
 \input{chapters/cap-trabalhos-analisados}
@@ -215,23 +240,15 @@
 %
 % Um anexo é um documento que não é de sua autoria mas que é relevante para
 % a tese; por exemplo, a especificação do padrão que o trabalho discute.
+%
 % Os comandos appendix e annex reiniciam a numeração de capítulos e passam
-% a numerá-los com letras. Como os anteriores, eles não existem na classe
-% "article". Além disso, "annex" não faz parte de nenhuma classe padrão,
-% ele foi definido em miolo-preambulo.tex. Se o trabalho não tiver apêndices
-% ou anexos, remova.
+% a numerá-los com letras. "annex" não faz parte de nenhuma classe padrão,
+% ele foi criado para este modelo (em annex.sty e utils.tex). Se o
+% trabalho não tiver apêndices ou anexos, remova estas linhas.
 
 % Apêndices
 %\appendix
-%
-%\input{conteudo/apendices}
-%\par
-%
-%% Anexos
-%\annex
-%
-%\input{conteudo/anexos}
-%\par
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SEÇÕES FINAIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -240,8 +257,7 @@
 % Espaço adicional no sumário antes das referências / índice remissivo
 \addtocontents{toc}{\vspace{2\baselineskip plus .5\baselineskip minus .5\baselineskip}}
 
-% O comando backmatter desabilita a numeração de capítulos e também não existe
-% na classe "article".
+% O comando backmatter desabilita a numeração de capítulos.
 \backmatter
 
 % Este formato está definido na package imeusp-headers
@@ -259,7 +275,7 @@
 \printbibliography[
   title=\refname\label{bibliografia}, % "Referências", recomendado pela ABNT
   %title=\bibname\label{bibliografia}, % "Bibliografia"
-  % Inclui a bibliografia no sumário; comente se estiver usando "article"
+  % Inclui a bibliografia no sumário
   heading=bibintoc,
 ]
 

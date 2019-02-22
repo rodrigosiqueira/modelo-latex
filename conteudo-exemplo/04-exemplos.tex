@@ -3,9 +3,10 @@
 
 \section{Bibliografia e Referências}
 
-A documentação do pacote biblatex\index{biblatex} é bastante extensa e explica
-os diversos tipos de documento suportados, bem como o significado
-de cada campo. Na prática, às vezes é preciso fazer escolhas sobre
+A documentação do pacote biblatex\index{biblatex} \citep{biblatex} é
+bastante extensa e explica (nas Seções 2.1.1 e 2.2.2) os diversos
+tipos de documento suportados, bem como o significado de cada campo.
+Na prática, às vezes é preciso fazer escolhas sobre
 o que incluir na descrição de um item bibliográfico e muitas vezes
 é mais fácil aprender copiando exemplos já existentes, como estes (consulte o
 arquivo \texttt{bibliografia.bib} para ver como foi criado o banco de dados e a
@@ -13,15 +14,13 @@ bibliografia na página \pageref{bibliografia} para ver o resultado impresso):
 
 \begin{multicols}{2}
   \begin{itemize}
-    \item @Book: \cite{JW82}.
+    \item @Book: \cite{Knuth:96}.
 
-    \item @Article: \cite{MenaChalco08}.
+    \item @Article (em periódico): \cite{MenaChalco08}.
 
-    \item @InProceedings: \cite{alves03:simi}.
+    \item @InProceedings (ou @Conference): \cite{alves03:simi}.
 
-    \item @Conference (sinônimo de @InProceedings): \cite{bronevetsky02}.
-
-    \item @InCollection: \cite{bobaoglu93:concepts}.
+    \item @InCollection (capítulo de livro ou coletânea): \cite{bobaoglu93:concepts}.
 
     \item @PhdThesis: \cite{garcia01:PhD}.
 
@@ -29,7 +28,7 @@ bibliografia na página \pageref{bibliografia} para ver o resultado impresso):
 
     \item @Techreport: \cite{alvisi99:analysisCIC}.
 
-    \item @Manual: \cite{CORBA:spec}.
+    \item @Manual: \cite{biblatex}.
 
     \item @Misc: \cite{gridftp}.
 
@@ -60,10 +59,10 @@ denotado por\textasciitilde{}\$\textbackslash{}Delta\$}'').\label{orphanchar}
 \end{equation}
 
 \begin{gather}
-\label{eq:bhaskara}
+  \label{eq:bhaskara}
     y=0 \Leftrightarrow x=\frac{-b \pm \sqrt{\Delta}}{2a}
     \Leftrightarrow x \text{ é raiz da equação}\\
-\label{eq:delta}
+  \label{eq:delta}
     \Delta\enspace(\mathit{delta}) = b^2-4ac
 \end{gather}
 
@@ -99,9 +98,8 @@ Apêndice\textasciitilde\textbackslash{}ref\{ap:pseudocode\}}''.}.
 
   \begin{subfigure}{0.4\textwidth}
     \centering
-    \includegraphics[width=.7\textwidth]{graph}
-    \caption{Uma figura simples.}
-    \label{fig:subfigures:a}
+    \includegraphics[width=.7\textwidth]{exemplo-grafo}
+    \caption{Uma figura simples.\label{fig:subfigures:a}}
   \end{subfigure}
   % ATENÇÃO: Se você deixar uma linha em branco entre as subfiguras,
   % LaTeX vai considerar que cada uma delas pertence a um "parágrafo"
@@ -110,14 +108,12 @@ Apêndice\textasciitilde\textbackslash{}ref\{ap:pseudocode\}}''.}.
   \begin{subfigure}{0.4\textwidth}
     \centering
     \begin{turn}{90}
-      \includegraphics[width=.7\textwidth]{graph}
+      \includegraphics[width=.7\textwidth]{exemplo-grafo}
     \end{turn}
-    \caption{O mesmo exemplo, girado.}
-    \label{fig:subfigures:b}
+    \caption{O mesmo exemplo, girado.\label{fig:subfigures:b}}
   \end{subfigure}
 
-  \caption{Exemplo de subfiguras.}
-  \label{fig:subfigures}
+  \caption{Exemplo de subfiguras.\label{fig:subfigures}}
 \end{figure}
 
 %%%%%%%% Código fonte %%%%%%%%
@@ -129,15 +125,14 @@ Apêndice\textasciitilde\textbackslash{}ref\{ap:pseudocode\}}''.}.
   \centering
 
 \begin{lstlisting}[language=Java, style=wider]
-for (i = 0; i < 20; i++)
-{
-	// Comentário
-	System.out.println("Mensagem...");
-}
+  for (i = 0; i < 20; i++)
+  {
+      // Comentário
+      System.out.println("Mensagem...");
+  }
 \end{lstlisting}
 
-  \caption{Exemplo de laço em Java.}
-  \label{prog:java}
+  \caption{Exemplo de laço em Java.\label{prog:java}}
 \end{program}
 
 %%%%%%% Cronograma %%%%%%%
@@ -163,8 +158,7 @@ for (i = 0; i < 20; i++)
     \ganttmilestone{Submissão}{2018-4}
   \end{ganttchart}
 
-  \caption{Exemplo de cronograma.}
-  \label{fig:gantt}
+  \caption{Exemplo de cronograma.\label{fig:gantt}}
 \end{figure}
 
 %%%%%
@@ -211,8 +205,7 @@ tabelas\index{Floats}; um exemplo simples é a Tabela~\ref{tab:amino_acidos}.
   \end{subtable}
   \hspace*{\fill}
 
-  \caption{Códigos, abreviaturas e nomes dos aminoácidos.}
-  \label{tab:amino_acidos}
+  \caption{Códigos, abreviaturas e nomes dos aminoácidos.\label{tab:amino_acidos}}
 \end{table}
 
 Se a tabela tem muitas linhas e, portanto, não cabe em uma única página, é
@@ -235,7 +228,8 @@ começar em uma página em modo paisagem.}.
 %\begin{landscape}
 \begin{center}
 \begin{longtable}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\caption{Exemplo de tabela com valores numéricos.}\\
+ % O label não deve ficar em um cabeçalho que se repete!
+\caption{Exemplo de tabela com valores numéricos.\label{tab:numeros}}\\
 \hline
 \emph{Lim.} &
 \multicolumn{3}{c|}{MGWT} &
@@ -254,7 +248,7 @@ começar em uma página em modo paisagem.}.
 % pelo comando caption; essa diferença impede que a lista de
 % tabelas inclua uma referência para cada página da tabela
 
-	\caption[]{Exemplo de tabela com valores numéricos (cont.).}\\
+\caption[]{Exemplo de tabela com valores numéricos (cont.).}\\
 \hline
 \emph{Lim.} &
 \multicolumn{3}{c|}{MGWT} &
@@ -276,7 +270,6 @@ começar em uma página em modo paisagem.}.
 
 \hline
 \endlastfoot % Final do rodapé da última página (neste caso, apenas uma linha)
-\label{tab:numeros} % O label não deve ficar em um cabeçalho que se repete!
  1 & 1.00 & 0.16 & 0.08 & 1.00 & 0.16 & 0.08 & 1.00 & 0.16 & 0.08 & 1.00 & 0.16 & 0.08 \\
  2 & 1.00 & 0.16 & 0.09 & 1.00 & 0.16 & 0.09 & 1.00 & 0.16 & 0.09 & 1.00 & 0.16 & 0.09 \\
  3 & 1.00 & 0.16 & 0.10 & 1.00 & 0.16 & 0.10 & 1.00 & 0.16 & 0.10 & 1.00 & 0.16 & 0.10 \\
@@ -308,6 +301,10 @@ começar em uma página em modo paisagem.}.
 29 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
 30 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
 31 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
+% Como nesta página há uma nota de rodapé, a linha separadora da nota
+% e a linha final da tabela ficam muito próximas; vamos forçar uma
+% quebra de página uma linha antes para resolver isso.
+\pagebreak
 32 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
 33 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
 34 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
@@ -332,10 +329,6 @@ começar em uma página em modo paisagem.}.
 53 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
 54 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
 55 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
-56 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
-57 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
-58 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
-59 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 & 1.00 & 0.19 & 0.22 \\
 
 \end{longtable}
 \end{center}
@@ -354,10 +347,12 @@ Resumindo:
 
 \begin{itemize}
   \item Se uma tabela cabe em uma página, defina-a como um \textit{float};
-  \item se cabe em uma página em modo paisagem, use \textsf{sidewaystable};
-  \item se não cabe em uma página, use \textsf{longtable};
-  \item se não cabe em uma página e precisa ser impressa em modo paisagem,
-        use \textsf{longtable} em conjunto com \textsf{landscape}.
+  \item se cabe em uma página mas é muito larga e precisa ser impressa em
+        modo paisagem, use \textsf{sidewaystable} (que também é um \textit{float});
+  \item se não cabe em uma página por ser muito longa, use \textsf{longtable};
+  \item se não cabe em uma página por ser muito longa e precisa ser impressa
+        em modo paisagem por ser muito larga, use \textsf{longtable} em
+        conjunto com \textsf{landscape}.
 \end{itemize}
 
 %%%%%%%% Tabela em forma de ficha %%%%%%%%
@@ -383,8 +378,7 @@ Resumindo:
   \tabularnewline \hline
 \end{tabular}
 
-\caption{Exemplo de tabela similar a uma ficha.}
-\label{tab:ficha}
+\caption{Exemplo de tabela similar a uma ficha.\label{tab:ficha}}
 \end{sidewaystable}
 
 % Redefinindo para o valor default
