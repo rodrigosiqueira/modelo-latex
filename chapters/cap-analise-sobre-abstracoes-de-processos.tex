@@ -981,7 +981,41 @@ pode solicitar ao \emph{bead} para sair do compartimento. A
 Linha~\ref{line:compartimentoExit} ilustra a função que faz a operação de sair
 do compartimento.
 
-\subsection{A biblioteca \texttt{libbead}}
+\subsubsection{Outras Possibilidades de Padrões}
+
+Os padrões ilustrados na Seção~\ref{sec:padroes} são apenas algumas das
+possibilidades ao se usar a API do \emph{bead}, note que outros padrões podem
+surgir da utilização dos recursos de desacoplamento dos processos. Em especial
+é importante ressaltar que alguns recursos de hardware modernos podem ser
+utilizados para dar maior controle de acesso a memória. Tais recursos podem
+significar uma alternativa a propostas como a do \emph{Mondrian}
+(Seção~\ref{sec:mondrian}) que exigem a alterações no hardware da CPU.
+
+Em 2015 a Intel lançou um novo recurso chamado de \textbf{Extensões de Proteção
+de Memória} ou simplesmente MPX (\boldAndIndex{Memory Protection Extensions}).
+Essa extensão adiciona um novo conjunto de registradores, instruções e uma
+tabala de limites; o objetivo principal dessa alteração consistem em inserir
+novos mecanismos de segurança para a verificação dos ponteiros utilizado pelas
+aplicações. O MPX adiciona proteções na forma como um ponteiro é acesso com o
+objetivo de evitar acessos não permitidos a certas regiões da
+memória~\citep{mpx}. Note que essa tecnologia, de certa forma, é similar ao que
+foi proposto pelo \emph{Mondrian} e representa uma alternativa para implementar
+o nível de controle fino sugerido pelos pesquisadores. A tecnologia MPX ainda é
+pouco explorada e tem alguns problemas de desempenho como demonstrado
+por~\cite{intelmpx}; contudo, essa tecnologia ainda mostra-se promissora para
+ser explorado do ponto de vista das abstrações de processos.
+
+Ainda no campo do desacoplamento do isolamento e do controle fino da memória,
+citamos uma nova tecnologia presente nos processadores da Intel e que recebe o
+nome de \boldAndIndex{Software Guard Extensions (SGX)}. O objetivo dessa nova
+tecnologia consiste em criar formas para que as aplicações possam executar
+códigos que exigem maior proteção de forma isolada dentro da
+CPU~\citep{intelsgx}. Repare que esse conjunto de instruções se interpõe entre
+a proposta feita pelo \emph{Mondrix}~(Seção \ref{sec:mondrian}) e
+\emph{Shreds}~(Seção~\ref{sec:shreds}), adicionando assim novos mecanismos de
+isolamento de códigos considerados sensíveis.
+
+\subsection{A Biblioteca \texttt{libbead}}
 
 Na Seção~\ref{sec:padroes}, procuramos evidenciar o comportamento de baixo
 nível do \emph{bead} de forma a explicitar o desacoplamento das abstrações de

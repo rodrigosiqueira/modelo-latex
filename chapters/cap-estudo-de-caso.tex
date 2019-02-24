@@ -529,17 +529,26 @@ aplicação real foi demonstrado que uma nova abstração pode não escalar em u
 Note que esse resultado não significa que desacoplar a VAS é uma ideia ruim,
 apenas ilustra que os estudos referentes a tal ideia ainda precisam avançar.
 
+Repare que nos experimentos, nós utilizamos uma abordagem na qual criamos o
+nosso \emph{benchmark} do zero; essa decisão foi tomada de forma natural uma
+vez que o nosso principal objetivo era inserir o MVAS dentro do Apache.
+Contudo, dada a complexidade em se construir
+\emph{benchmarks}~\citep{benchrocketscience}, o melhor cenário a longo prazo
+consiste na adoção de uma ferramenta bem consolidada de \emph{benchmark}, como
+PHORONIX\footnote{\url{https://www.phoronix-test-suite.com/}} ou
+LMbench\footnote{\url{http://www.bitmover.com/lmbench/}}.
+
 Durante este trabalho, também buscamos replicar os resultados apresentados pelo
 Dune; também colaboramos com os desenvolvedores do Dune por meio do envio de
-correções na implementação original deles (\textit{patches}). Os \textit{microbenchmarks} apresentados pelos pesquisadores
-comportam-se perfeitamente como reportado, mas não foi possível replicar os
-resultados com as aplicações pois parte do código não estava mais disponível. O
-Dune é uma das propostas com maior potencial de ser incorporada nos SOs
-modernos, contudo a sua implementação é insegura e não escalável. O principal
-motivo para isso está no fato do Dune interceptar os endereços das chamadas de
-sistemas. Tal abordagem não funciona desde o momento que o Kernel adotou o
-sistema de aleatorização dos endereços de chamadas conhecido por
-KASLR~\citep{kaslr}.
+correções na implementação original deles (\textit{patches}). Os
+\textit{microbenchmarks} apresentados pelos pesquisadores comportam-se
+perfeitamente como reportado, mas não foi possível replicar os resultados com
+as aplicações pois parte do código não estava mais disponível. O Dune é uma das
+propostas com maior potencial de ser incorporada nos SOs modernos, contudo a
+sua implementação é insegura e não escalável. O principal motivo para isso está
+no fato do Dune interceptar os endereços das chamadas de sistemas. Tal
+abordagem não funciona desde o momento que o Kernel adotou o sistema de
+aleatorização dos endereços de chamadas conhecido por KASLR~\citep{kaslr}.
 
 Portanto, o principal objetivo deste capítulo era apresentar evidências e uma
 visão prática da validação de uma nova abstração de processo usando uma

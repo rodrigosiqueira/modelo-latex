@@ -3,6 +3,42 @@
 % copie, com as alterações necessárias, o conteúdo do arquivo
 % conteudo-exemplo/folhas-de-rosto.tex
 
+%%%% INFO
+\mestrado[masc]
+
+\orientador[masc]{Prof. Dr. Fabio Kon}
+
+\programa{Ciência da Computação}
+\programaeng{Computer Science}
+
+\apoio{Durante o desenvolvimento deste trabalho o autor recebeu auxílio do CNpQ}
+\localdefesa{São Paulo}
+\datadefesa{5 de fevereiro de 2019}
+
+\ano{2019}
+
+\banca{
+  \begin{itemize}
+    \item Prof. Dr. Fabio Kon - IME-USP
+    \item Prof. Dr. Emilio de Camargo Francesquini - UFABC
+    \item Dr. João Moreira - Suse
+  \end{itemize}
+}
+
+% Se isto não for definido, "\banca" é utilizado no lugar
+\bancaeng{
+  \begin{itemize}
+    \item Prof. Dr. Nome Completo (advisor) - IME-USP [sem ponto final]
+    \item Prof. Dr. Nome Completo - IME-USP [sem ponto final]
+    \item Prof. Dr. Nome Completo - IMPA [sem ponto final]
+  \end{itemize}
+}
+
+% Palavras-chave separadas por ponto e finalizadas também com ponto.
+\palavraschave{Abstração de processos. Gerenciamento de processos. Processos. Sistemas Operacionais. SO.}
+
+\keywords{Processes abstractions. Processes management. Processes. Operating Systems. OS.}
+
 % Embora as páginas iniciais *pareçam* não ter numeração, a numeração existe,
 % só não é impressa. O comando \mainmatter (mais abaixo) reinicia a contagem
 % de páginas e elas passam a ser impressas. Isso significa que existem duas
@@ -30,36 +66,6 @@
 %\pagrostoime[eng]{definitiva}
 %\pagrostoime[eng]{provisoria}
 
-%%%% INFO
-\mestrado[masc]
-
-\orientador[masc]{Prof. Dr. Fabio Kon}
-
-\programa{Ciência da Computação}
-\programaeng{Computer Science}
-
-\apoio{Durante o desenvolvimento deste trabalho o autor recebeu auxílio}
-\localdefesa{São Paulo}
-\datadefesa{5 de fevereiro de 2019}
-
-\ano{2019}
-
-\banca{
-  \begin{itemize}
-    \item Profª. Drª. Fabio Kon - IME-USP [sem ponto final]
-    \item Prof. Dr. Nome Completo - IME-USP [sem ponto final]
-    \item Prof. Dr. Nome Completo - IMPA [sem ponto final]
-  \end{itemize}
-}
-
-% Se isto não for definido, "\banca" é utilizado no lugar
-\bancaeng{
-  \begin{itemize}
-    \item Prof. Dr. Nome Completo (advisor) - IME-USP [sem ponto final]
-    \item Prof. Dr. Nome Completo - IME-USP [sem ponto final]
-    \item Prof. Dr. Nome Completo - IMPA [sem ponto final]
-  \end{itemize}
-}
 
 %%%%%%%%%%%%%%%%%%%% DEDICATÓRIA, RESUMO, AGRADECIMENTOS %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -244,20 +250,31 @@ be used to validate these proposals, and that could also benefit from them.
 
 %\chapter*{Lista de Abreviaturas}
 \disablenewpage{\chapter*{Lista de Abreviaturas}}
-
 \begin{tabular}{rl}
-  MMP      & Mondrian Memory Protection\\
-  PD       & Protection Domain\\
-  SO       & Sistema Operacional\\
-  SB       & Secure binding \\
-  TLB      & Translation Lookaside Buffer \\
-  VMM      & Virtual Machine Monitor \\
-  MPM      & Multi-Processing Module \\
   APR      & Apache Portable Runtime \\
+  CVE      & Common Vulnerabilities and Exposures\\
   GC       & Garbage Collection \\
-  VMA      & Virtual Memory AREA\\
+  IP       & Instruction Pointer\\
+  MMP      & Mondrian Memory Protection\\
+  MMU      & Memory-Management Unit\\
+  MPM      & Multi-Processing Module \\
+  MPX      & Memory Protection Extensions\\
+  PCB      & Process Control Block\\
+  PD       & Protection Domain\\
   PTE      & Page Table Entry\\
-  USP      & Universidade de São Paulo
+  SB       & Secure binding \\
+  SGX      & Software Guard Extensions\\
+  SO       & Sistema Operacional\\
+  SSL      & Secure Sockets Layers\\
+  SSL      & Secure Sockets Layers\\
+  SSL      & Secure Sockets Layers\\
+  STW      & Stop the World\\
+  SVM      & Secure Virtual Machine\\
+  TLB      & Translation Lookaside Buffer \\
+  USP      & Universidade de São Paulo \\
+  VMA      & Virtual Memory AREA\\
+  VMCS     & Virtual-Machine Control Structure\\
+  VMM      & Virtual Machine Monitor
 \end{tabular}
 
 %\chapter*{Lista de Símbolos}
