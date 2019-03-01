@@ -1,4 +1,4 @@
-\imgchapter[left]{8cm}{chapter_6_title}{Análise Sobre Abstrações de Processos}
+\imgchapter[right,width=8cm,bleed=19pt,shift=37pt]{chapter_6_title}{Análise Sobre Abstrações de Processos}
 \label{cap:analise-sobre-abstracoes-de-processos}
 
 No Capítulo \ref{cap:trabalhos-analisados}, introduzimos os principais trabalhos
@@ -80,7 +80,7 @@ academia pode ser adotada ou não pela indústria é uma tarefa complexa dada a
 enorme quantidade de variáveis envolvidas em tal análise. Mesmo assim, para
 posicionar o leitor em termos do estado da arte e da prática, buscamos
 estabelecer um ``potencial de adoção'' de uma nova proposta. Com base nos
-critérios apresentados, definimos um conjunto de variáveis que auxilie
+critérios apresentados, definimos um conjunto de variáveis que auxilia
 na definição das chances de uma pesquisa ser adotada pela indústria:
 
 \begin{enumerate}
@@ -147,7 +147,7 @@ sistematização de tais ideias. Ao analisar cada uma das propostas, notamos que
 todas elas propõem direta ou indiretamente algum nível de desacoplamento entre
 os elementos presentes no SO. Tal observação nasce da abordagem radical tomada
 pelos criadores do Exokernel, que levaram o nível de desacoplamento do SO ao
-extremo. Apesar do Exokernel ser um sistema de difícil adoção em termos
+extremo. Apesar de o Exokernel ser um sistema de difícil adoção em termos
 práticos, ele nos alerta sobre as vantagens da redução de dependências
 entre os elementos do SO e as possibilidades que ela pode levar ao espaço de
 usuário. Tendo isso em mente, revisitamos de forma breve alguns dos trabalhos
@@ -184,7 +184,7 @@ maneira, essa proposta já pode ser encontrada incorporada nos SOs atuais, sob a
 forma de contêineres no Linux, mais especificamente, como o
 \textit{cgroups}\footnote{\emph{cgroups} é uma funcionalidade fornecida pelo
 Linux que permite limitar e isolar recursos de uma coleção de processos.}. A
-principal contribuição do do \emph{Resource Container} vem da sua capacidade de permitir que a
+principal contribuição do \emph{Resource Container} vem da sua capacidade de permitir que a
 própria aplicação tome conta da sua execução.  Ainda que parte das ideias
 apresentadas por esse trabalho estejam presentes em alguns SOs, as
 implementações ainda são relativamente reduzidas em termos do escopo
@@ -251,7 +251,7 @@ Entrando um pouco mais nas questões de proteção e controle-fino da memória,
 destacamos o shreds e o mondrix/mondrian. shreds nasce com a ideia de evitar
 ataques conhecidos como abusos intra-processos de conteúdo da memória. Os
 autores defendem que o acesso a certas regiões da memória de um processo
-que esteja executando em espaço de usuário merecem proteção especial. Em tal proposta, os
+que esteja executando em espaço de usuário merece proteção especial. Em tal proposta, os
 autores utilizaram um recurso específico dos processadores ARM em conjunto com
 um mecanismo de gerenciamento da região de memória (Seção
 \ref{sec:outros_mecanismos_memoria}). Essa proposta entrega mais flexibilidade,
@@ -356,9 +356,9 @@ para futuras expansões no modelo.
 
 Como mostrado no Capítulo \ref{cap:trabalhos-analisados}, cada proposta de
 extensão na abstração de processo sugere uma API para o seu contexto
-específico. Nesse sentido, buscamos aprender as técnicas utilizadas pelos
+específico. Nesse sentido, buscamos absorver as técnicas utilizadas pelos
 trabalhos anteriores e combinamos as principais chamadas dentro do bead. A
-seguir, apresentamos as operações fornecidas, uma breve descrição sobre o seu
+seguir, apresentamos cada uma das operações fornecidas, uma breve descrição sobre o seu
 comportamento e o trabalho do qual foi derivada. Observe que o conjunto dessas
 operações pode ser abstraído para uma biblioteca no espaço do usuário e que a
 combinação das várias operações possibilita a criação de novos modelos de
@@ -429,8 +429,8 @@ receber alguns parâmetros que alteram o seu comportamento padrão.
     \item \textbf{Retorno:}
 
 Se estiver no processo que invocou a operação, então um descritor do novo
-contexto é retornado. Caso contrário, se estiver dentro de um contexto criado,
-retorna -1.
+contexto é devolvido. Caso contrário, se estiver dentro de um contexto criado,
+devolve -1.
 
     \item \textbf{Referência:}
 
@@ -494,7 +494,7 @@ Chamada baseada em \texttt{dune\_entry()}, do Dune.
 
   \item [\texttt{BEAD\_ENTER\_COMPARTMENT}:]
 
-Essa operação faz com que a \emph{thread} em execução tenha associado a si um
+Essa operação faz com que a \emph{thread} em execução tenha associada a si um
 compartimento ao qual apenas ela tem acesso. Isso auxilia contra
 ataques intra-processos. Nenhuma outra \emph{thread} do processo tem acesso a qualquer
 dado do compartimento e o mesmo vale para os dados dentro do compartimento
@@ -608,7 +608,7 @@ uma estrutura de dados para realizar a troca de informações de forma
 padronizada. O Pseudocódigo~\ref{alg:beadata} ilustra uma potencial estrutura
 de dados para realizar a troca de informação do espaço de usuário para o kernel.
 Note que essa estrutura de dados nasce com o objetivo de simplificar as
-chamadas de função, unificar as diferentes propostas e a facilitar a
+chamadas de função, unificar as diferentes propostas e facilitar a
 comunicação.
 
 \input{algorithm/bead_data.tex}
@@ -641,7 +641,7 @@ utilização das operações de ajuste e recuperação da configuração. A
 estrutura \texttt{bead\_data} padroniza a comunicação entre o espaço de usuário
 e o Kernel. Vale acrescentar que esse tipo de operação pode ser facilmente
 encapsulada e explorada em bibliotecas no espaço do usuário (p.ex.,
-\texttt{libead}).
+\texttt{libbead}).
 
 A operação \texttt{BEAD\_SET\_CONFIG} recebe uma estrutura de dados do tipo
 \texttt{bead\_data}. Por sua vez, essa estrutura deve ser preenchida no espaço
@@ -800,7 +800,7 @@ consiste em configurar os elementos da virtualização, como pode ser visto da
 Linha~\ref{line:confBegin} até a Linha~\ref{line:confEnd} (seguindo o padrão
 configuração). Os parâmetros de virtualização podem aceitar diversos argumentos,
 permitindo o controle fino dos recursos de virtualização (não definimos esse
-nível de compartilhamento, pois pode haver diversas formas de implementar tal
+nível de detalhamento, pois pode haver diversas formas de implementar tal
 recurso); por padrão, vamos supor que o processo quer utilizar todos os
 recursos de virtualização disponíveis.
 
@@ -865,7 +865,7 @@ temos o processo que criará um novo contexto persistente, isto é, o contexto d
 processo viverá além do tempo de execução do processo que o criou. O primeiro
 passo da função consiste em realizar a configuração sobre o contexto que será
 criado, por isso é preciso passar duas \emph{flags} específicas:
-\texttt{SHARED} e \texttt{PERSISTENT}. A combinação dessas duas \emph{flags},
+\texttt{SHARED} e \texttt{PERSISTENT}. A combinação dessas duas \emph{flags}
 faz com que o \emph{bead} crie um contexto persistente gerenciado pelo núcleo
 do SO que pode ser utilizado por outras aplicações. Idealmente, para que o
 padrão persistência funcione corretamente, o SO deve armazenar diversos
@@ -888,9 +888,9 @@ O padrão de Atualização em Tempo de Execução (ATE), ou simplesmente
 \emph{live-patching}, nasce do desacoplamento do VAS, PC e da utilização de
 técnicas que calculam a diferença entre dois arquivos (\emph{diff}). Em
 complemento ao trabalho do SpaceJMP, o \emph{bead} busca adicionar um nível de
-controle maior sobre a VAS, permitindo o controle fino em cada um dos seus
+controle maior sobre o VAS, permitindo o controle fino em cada um dos seus
 elementos. A ideia do \emph{live-patching} já existe e consiste em aplicar
-\emph{patches} \footnote{Um pedaço de software que visa consertar ou melhorar
+\emph{patches}\footnote{Um pedaço de software que visa consertar ou melhorar
 algum programa.} sem desligar/reiniciar o sistema; o Kernel Linux já suporta
 tal funcionalidade, mas empregar esse tipo de atualização em aplicações no
 espaço do usuário ainda é um desafio.
@@ -927,14 +927,14 @@ qualquer precisaria ser alterada para aceitar o parâmetro
 que o programador queira adotar.} como a Linha~\ref{line:arg} ilustra. Se o
 parâmetro \texttt{--live-patching} for recebido, uma função especial deve entrar em ação para por o
 software em um estado considerado seguro pela aplicação para em seguida tirar
-uma fotografia persistente do estado atual; por fim, essa deve enviar um sinal
+uma fotografia persistente do estado atual; por fim, ela deve enviar um sinal
 para o processo que será atualizado. Quando o sinal chegar para a aplicação,
-então a função \texttt{live\_patch\_handler()} deve ser executada de forma a
-tratar o sinal e como a Linha~\ref{line:liveConf} indica o \emph{bead} deve ser
+a função \texttt{live\_patch\_handler()} deve ser executada de forma a
+tratar o sinal e, como a Linha~\ref{line:liveConf} indica, o \emph{bead} deve ser
 configurado para realizar a atualização. A Linha~\ref{line:getSnap} mostra uma
 função que deve buscar a fotografia persistente referente ao processo, note que
 essa função pode ser implementada de várias maneiras visando garantir segurança
-e consistência; para esse pseudocódigo, apenas considere que ela retornará o
+e consistência; para esse pseudocódigo, apenas considere que ela devolverá o
 identificador da fotografia tirada do processo na Linha~\ref{line:arg}. Por
 fim, o processo faz a atualização por meio da operação de \texttt{BEAD\_SWITCH}
 previamente configurada.
@@ -943,7 +943,7 @@ previamente configurada.
 %TODO: Atualizar o switch para ele aceitar os compartimentos. BEAD_CONTEXT_SWITCH -> BEAD_SWITCH
 
 O padrão Compartimento nasce dos conceitos apresentados pelo shred, que busca apresentar uma técnica para evitar ataques intra-processos
-baseado em um recurso de hardware subutilizado. Essa ideia é fundamentada em um
+baseada em um recurso de hardware subutilizado. Essa ideia é fundamentada em um
 novo recurso fornecido por várias CPUs que permite definir domínios de acesso
 dentro da memória do processo (Seção~\ref{sec:outros_mecanismos_memoria}). O
 principal objetivo do compartimento dentro do próprio processo consiste em
@@ -985,25 +985,25 @@ do compartimento.
 
 Os padrões ilustrados na Seção~\ref{sec:padroes} são apenas algumas das
 possibilidades ao se usar a API do \emph{bead}, note que outros padrões podem
-surgir da utilização dos recursos de desacoplamento dos processos. Em especial
+surgir da utilização dos recursos de desacoplamento dos processos. Em especial,
 é importante ressaltar que alguns recursos de hardware modernos podem ser
-utilizados para dar maior controle de acesso a memória. Tais recursos podem
+utilizados para dar maior controle de acesso à memória. Tais recursos podem
 significar uma alternativa a propostas como a do \emph{Mondrian}
-(Seção~\ref{sec:mondrian}) que exigem a alterações no hardware da CPU.
+(Seção~\ref{sec:mondrian}), que exigem a alterações no hardware da CPU.
 
 Em 2015 a Intel lançou um novo recurso chamado de \textbf{Extensões de Proteção
 de Memória} ou simplesmente MPX (\boldAndIndex{Memory Protection Extensions}).
 Essa extensão adiciona um novo conjunto de registradores, instruções e uma
-tabala de limites; o objetivo principal dessa alteração consistem em inserir
+tabela de limites; o objetivo principal dessa alteração consiste em inserir
 novos mecanismos de segurança para a verificação dos ponteiros utilizado pelas
-aplicações. O MPX adiciona proteções na forma como um ponteiro é acesso com o
+aplicações. O MPX adiciona proteções na forma como um ponteiro é acessado com o
 objetivo de evitar acessos não permitidos a certas regiões da
 memória~\citep{mpx}. Note que essa tecnologia, de certa forma, é similar ao que
 foi proposto pelo \emph{Mondrian} e representa uma alternativa para implementar
 o nível de controle fino sugerido pelos pesquisadores. A tecnologia MPX ainda é
 pouco explorada e tem alguns problemas de desempenho como demonstrado
-por~\cite{intelmpx}; contudo, essa tecnologia ainda mostra-se promissora para
-ser explorado do ponto de vista das abstrações de processos.
+por~\citet{intelmpx}; contudo, essa tecnologia ainda mostra-se promissora para
+ser explorada do ponto de vista das abstrações de processos.
 
 Ainda no campo do desacoplamento do isolamento e do controle fino da memória,
 citamos uma nova tecnologia presente nos processadores da Intel e que recebe o
@@ -1020,7 +1020,7 @@ isolamento de códigos considerados sensíveis.
 Na Seção~\ref{sec:padroes}, procuramos evidenciar o comportamento de baixo
 nível do \emph{bead} de forma a explicitar o desacoplamento das abstrações de
 processos. Na prática, não esperamos que os usuários do \emph{bead} utilizem os
-padrões da forma como foi descrito na Seção~\ref{sec:padroes}, uma vez que elas
+padrões da forma descrita na Seção~\ref{sec:padroes}, uma vez que elas
 representam operações de baixo nível. Idealmente, a implementação do
 \emph{bead} deve vir acompanhada de uma biblioteca (chamaremos de
 \emph{libbead} neste texto) que se comporte como uma camada de abstração sobre
@@ -1030,11 +1030,11 @@ descritos da Seção~\ref{sec:padroes}.
 
 O padrão fotografia (Seção~\ref{sec:fotografia}) poderia ser encapsulado em
 duas funções: \texttt{beadGetContext()} e \texttt{beadSwitch()}. A função
-\texttt{beadGetContext()} espera alguns parâmetro de configuração que definem a
+\texttt{beadGetContext()} espera alguns parâmetros de configuração que definem a
 forma como a fotografia deve operar e em seguida salva o contexto.
 Posteriormente, o desenvolvedor precisaria realizar o \texttt{beadSwitch()}
 para o contexto novo. O Pseudocódigo~\ref{alg:libBeadFotografia} ilustra como
-pode ser usado a operação descrita na Seção~\ref{sec:fotografia}, da perpectiva
+pode ser usada a operação descrita na Seção~\ref{sec:fotografia}, da perpectiva
 de um usuário da \emph{libbead}.
 
 \input{algorithm/lib_bead_snapshot.tex}
@@ -1055,23 +1055,26 @@ Em termos de utilização do padrão de atualização em tempo de execução
 Pseudocódigo~\ref{alg:beadLivePatch} ilustra o padrão ATE da perspectiva do
 \emph{libbead}, note que precisamos apenas da função
 \texttt{beadInstallLivePatching()} para adicionar suporte para a atualização em
-tempo de execução. Essa função instala no processo um mecanismo que leva ele
+tempo de execução. Essa função instala no processo um mecanismo que o leva
 para um estado \emph{quiescence}~\citep{quiescence} que pode permitir a
-atualização em tempo de execução. Note do pseudocódigo, que ainda é necessário
-tratar o recebimento do pedido de atualização.
+atualização em tempo de execução. Na seção~\ref{sec:ate} foi descrito em
+detalhes o comportamento do padrão ATE, lembre-se que essa técnica precisa
+tratar o recebimento do pedido de atualização feito no espaço de usuário; note
+que mesmo utilizando a \emph{libbead}, ainda é preciso realizar o pedido de
+atualização.
 
 \input{algorithm/lib_bead_live_patch.tex}
 
 Por fim, o mais importante a se notar sobre a \texttt{libbead} é que ela
 comporta-se como uma camada de abstração para as operações de baixo nível. Essa
-biblioteca deve tornar simles o processo de utilização do \texttt{bead}, assim
+biblioteca deve tornar simples o processo de utilização do \texttt{bead}, assim
 como a \texttt{libc}\footnote{\url{https://www.gnu.org/software/libc/}} e a
 \texttt{libdrm}\footnote{\url{https://01.org/linuxgraphics/community/libdrm}}
-fazem.
+fazem para seus respectivos sistemas.
 
 \section{Sumário}
 
-Neste capítulo os nossos objetivos consistiram em responder as seguintes
+Neste capítulo, os nossos objetivos consistiram em responder as seguintes
 questões de pesquisa:
 
 \begin{quote}
@@ -1081,13 +1084,13 @@ questões de pesquisa:
 
 Para responder a primeira questão de pesquisa, fizemos uma análise da
 Seção~\ref{sec:extracao} até a \ref{sec:bead} discutindo as diversas
-característica desejáveis para a próxima geração de abstração de processos. Em
+características desejáveis para a próxima geração de abstração de processos. Em
 especial, a Tabela~\ref{tab:desacoplamento_beneficio} apresenta uma visão
 centralizada dos diversos desacoplamentos passíveis de serem adotados. Além
-disso a Figura~\ref{fig:decomposicao_proc} ilustra graficamente como a nova
+disso, a Figura~\ref{fig:decomposicao_proc} ilustra graficamente como a nova
 geração de abstrações de processo pode se organizar levando-se em consideração
-os diversos desacoplamentos sugeridos. Por fim, introduzimos da
-Seção~\ref{sec:bead} até \ref{sec:padroes} um modelo teórico chamado de
+os diversos desacoplamentos sugeridos. Por fim, introduzimos na
+Seção~\ref{sec:bead} um modelo teórico chamado de
 \emph{bead} que tem por principal objetivo mostrar uma unificação dos diversos
 trabalhos e ilustrar os potenciais usos dessa nova técnica.
 
