@@ -1057,8 +1057,11 @@ Pseudocódigo~\ref{alg:beadLivePatch} ilustra o padrão ATE da perspectiva do
 \texttt{beadInstallLivePatching()} para adicionar suporte para a atualização em
 tempo de execução. Essa função instala no processo um mecanismo que o leva
 para um estado \emph{quiescence}~\citep{quiescence} que pode permitir a
-atualização em tempo de execução. Note do pseudocódigo, que ainda é necessário
-tratar o recebimento do pedido de atualização\todo{?}.
+atualização em tempo de execução. Na seção~\ref{sec:ate} foi descrito em
+detalhes o comportamento do padrão ATE, lembre-se que essa técnica precisa
+tratar o recebimento do pedido de atualização feito no espaço de usuário; note
+que mesmo utilizando a \emph{libbead}, ainda é preciso realizar o pedido de
+atualização.
 
 \input{algorithm/lib_bead_live_patch.tex}
 
